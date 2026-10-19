@@ -1,0 +1,95 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-classify-criterion",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "c",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "s",
+   "expr": "sample(1, 12, 4)"
+  },
+  {
+   "name": "xs",
+   "expr": "[2 * s[0], 2 * s[1], 2 * s[2], 2 * s[3]] if c == 0 else ([2 * s[0] + 1, 2 * s[1] + 1, 2 * s[2] + 1, 2 * s[3] + 1] if c == 1 else ([5 * s[0], 5 * s[1], 5 * s[2], 5 * s[3]] if c == 2 else [3 * s[0], 3 * s[1], 3 * s[2], 3 * s[3]]))"
+  },
+  {
+   "name": "r2",
+   "expr": "xs[0] % 2 + xs[1] % 2 + xs[2] % 2 + xs[3] % 2"
+  },
+  {
+   "name": "r3",
+   "expr": "xs[0] % 3 + xs[1] % 3 + xs[2] % 3 + xs[3] % 3"
+  },
+  {
+   "name": "r5",
+   "expr": "xs[0] % 5 + xs[1] % 5 + xs[2] % 5 + xs[3] % 5"
+  },
+  {
+   "name": "fits",
+   "expr": "(1 if r2 == 0 else 0) + (1 if r2 == 4 else 0) + (1 if r5 == 0 else 0) + (1 if r3 == 0 else 0)"
+  },
+  {
+   "name": "names",
+   "expr": "['parzyste', 'nieparzyste', 'podzielne przez 5', 'podzielne przez 3']"
+  }
+ ],
+ "constraints": [
+  "fits == 1",
+  "(names[c]) != (names[(c + 1) % 4])",
+  "(names[c]) != (names[(c + 2) % 4])",
+  "(names[c]) != (names[(c + 3) % 4])",
+  "(names[(c + 1) % 4]) != (names[(c + 2) % 4])",
+  "(names[(c + 1) % 4]) != (names[(c + 3) % 4])",
+  "(names[(c + 2) % 4]) != (names[(c + 3) % 4])"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Co łączy wszystkie liczby: @{xs|list}? Wszystkie są …",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdź każdą cechę po kolei: czy pasuje do wszystkich czterech liczb?"
+   },
+   {
+    "kind": "conclude",
+    "text": "Wszystkie są @{names[c]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{names[c]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{names[(c + 1) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{names[(c + 2) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{names[(c + 3) % 4]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,233 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-composite",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(5, 14)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(4, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 4)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "ar",
+   "expr": "a * b + c * d if mode == 0 else a * b - c * c"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or (c < a and c < b)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{('Figura składa się z dwóch prostokątów: jeden ma wymiary ' + str(a) + ' ' + un + ' × ' + str(b) + ' ' + un + ', a drugi ' + str(c) + ' ' + un + ' × ' + str(d) + ' ' + un + '. Prostokąty się nie nakładają. Oblicz pole figury.' if mode == 0 else 'Z prostokąta o wymiarach ' + str(a) + ' ' + un + ' × ' + str(b) + ' ' + un + ' wycięto kwadrat o boku ' + str(c) + ' ' + un + '. Oblicz pole pozostałej figury.')}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ar"
+   },
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Pola figur składowych dodajemy.' if mode == 0 else 'Od pola prostokąta odejmujemy pole wyciętego kwadratu.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a * b) + ' + ' + str(c * d) + ' = ' + str(ar) if mode == 0 else str(a * b) + ' − ' + str(c * c) + ' = ' + str(ar))}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Dwa prostokąty obok siebie.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       {
+        "$expr": "b"
+       }
+      ],
+      [
+       0,
+       {
+        "$expr": "b"
+       }
+      ]
+     ],
+     "extras": [
+      {
+       "pts": [
+        [
+         {
+          "$expr": "a"
+         },
+         0
+        ],
+        [
+         {
+          "$expr": "a + c"
+         },
+         0
+        ],
+        [
+         {
+          "$expr": "a + c"
+         },
+         {
+          "$expr": "d"
+         }
+        ],
+        [
+         {
+          "$expr": "a"
+         },
+         {
+          "$expr": "d"
+         }
+        ]
+       ],
+       "fill": "fill2"
+      }
+     ],
+     "sides": [
+      {
+       "i": 0,
+       "text": {
+        "$expr": "str(a) + ' ' + un"
+       }
+      },
+      {
+       "i": 3,
+       "text": {
+        "$expr": "str(b) + ' ' + un"
+       }
+      }
+     ]
+    },
+    "when": "mode == 0"
+   },
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Prostokąt z wyciętym kwadratem w rogu.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       {
+        "$expr": "b - c"
+       }
+      ],
+      [
+       {
+        "$expr": "a - c"
+       },
+       {
+        "$expr": "b - c"
+       }
+      ],
+      [
+       {
+        "$expr": "a - c"
+       },
+       {
+        "$expr": "b"
+       }
+      ],
+      [
+       0,
+       {
+        "$expr": "b"
+       }
+      ]
+     ],
+     "sides": [
+      {
+       "i": 0,
+       "text": {
+        "$expr": "str(a) + ' ' + un"
+       }
+      },
+      {
+       "i": 5,
+       "text": {
+        "$expr": "str(b) + ' ' + un"
+       }
+      },
+      {
+       "i": 3,
+       "text": {
+        "$expr": "str(c) + ' ' + un"
+       }
+      }
+     ]
+    },
+    "when": "mode == 1"
+   }
+  ]
+ }
+}

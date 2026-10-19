@@ -1,0 +1,106 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-distance",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "m": "12"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "m": "30"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(-m, m)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-m, m)"
+  },
+  {
+   "name": "lo",
+   "expr": "min(a, b)"
+  },
+  {
+   "name": "hi",
+   "expr": "max(a, b)"
+  }
+ ],
+ "constraints": [
+  "a != b",
+  "a < 0 or b < 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaka jest odległość między liczbami @{a} i @{b} na osi liczbowej?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "abs(a - b)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odległość to różnica większej i mniejszej liczby."
+   },
+   {
+    "kind": "compute",
+    "text": "@{hi} − @{par(lo)} = @{hi - lo}"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "number-line",
+    "essential": false,
+    "alt": "Oś liczbowa z zaznaczonymi punktami @{a} i @{b}.",
+    "params": {
+     "min": {
+      "$expr": "min(lo, 0) - 2"
+     },
+     "max": {
+      "$expr": "max(hi, 0) + 2"
+     },
+     "tick": 1,
+     "labelEvery": 5,
+     "points": [
+      {
+       "label": "A",
+       "at": {
+        "$expr": "a"
+       }
+      },
+      {
+       "label": "B",
+       "at": {
+        "$expr": "b"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "sum_of_abs",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "abs(a) + abs(b)"
+     }
+    },
+    "feedback": "Dodajemy wartości bez znaku tylko wtedy, gdy liczby leżą po różnych stronach zera.",
+    "when": "abs(a) + abs(b) != abs(a - b)"
+   }
+  ]
+ }
+}

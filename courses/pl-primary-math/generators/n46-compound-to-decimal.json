@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-compound-to-decimal",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[['m', 'cm', 100], ['zł', 'gr', 100]]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[['kg', 'dag', 100], ['kg', 'g', 1000]]"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ps": "[['km', 'm', 1000], ['l', 'ml', 1000], ['t', 'kg', 1000]]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "pp",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "big",
+   "expr": "pp[0]"
+  },
+  {
+   "name": "small",
+   "expr": "pp[1]"
+  },
+  {
+   "name": "r",
+   "expr": "pp[2]"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, 20)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, r - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a + b / r"
+  }
+ ],
+ "selfCheck": [
+  "(x - a) * r == b"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Uzupełnij: @{a} @{big} @{b} @{small} = ? @{big}",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "x"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "1 @{small} to $\\frac{1}{@{r}}$ @{big}, więc @{b} @{small} to @{b / r|dec} @{big}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} + @{b / r|dec} = @{x|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "wrong_places",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "a + b / (r * 10)"
+     }
+    },
+    "feedback": "Sprawdź, ile jednostek mniejszych mieści się w większej: 100 – dwa miejsca po przecinku, 1000 – trzy."
+   }
+  ]
+ }
+}

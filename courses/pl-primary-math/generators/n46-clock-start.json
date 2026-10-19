@@ -1,0 +1,63 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-clock-start",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dmax": "55"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dmax": "240"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "arrive",
+   "expr": "randint(480, 1260) // 5 * 5"
+  },
+  {
+   "name": "dur",
+   "expr": "randint(10, dmax) // 5 * 5"
+  },
+  {
+   "name": "leave",
+   "expr": "arrive - dur"
+  },
+  {
+   "name": "c",
+   "expr": "choice(['Musimy być na dworcu o ', 'Zajęcia zaczynają się o ', 'Wizyta u lekarza jest o '])"
+  }
+ ],
+ "constraints": [
+  "dur >= 10"
+ ],
+ "selfCheck": [
+  "leave + dur == arrive"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "time-input",
+  "prompt": "@{c}@{hhmm(arrive)}. Droga zajmuje @{dur} min. O której najpóźniej trzeba wyjść z domu?",
+  "answer": {
+   "type": "time",
+   "value": {
+    "$expr": "hhmm(leave)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odejmij czas drogi od godziny przyjazdu."
+   },
+   {
+    "kind": "compute",
+    "text": "@{hhmm(arrive)} − @{dur} min = @{hhmm(leave)}"
+   }
+  ]
+ }
+}

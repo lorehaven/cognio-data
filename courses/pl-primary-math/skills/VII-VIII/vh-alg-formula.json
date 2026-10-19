@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-formula",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Przekształcanie wzorów"
+ },
+ "objectives": [
+  "VII-VIII.2.8"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedno działanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwa działania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-formula.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "n46-alg-formula"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby przekształcić wzór, wykonuj te same działania po obu stronach, aż niewiadoma zostanie sama. Potem podstaw dane."
+  }
+ }
+}

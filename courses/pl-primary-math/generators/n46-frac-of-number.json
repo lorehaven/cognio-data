@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-of-number",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "bmax": "10",
+    "mmax": "12"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "bmax": "20",
+    "mmax": "40"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(2, bmax)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, mmax)"
+  },
+  {
+   "name": "n",
+   "expr": "b * m"
+  }
+ ],
+ "constraints": [
+  "gcd(a, b) == 1"
+ ],
+ "selfCheck": [
+  "a * m * b == a * n"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz $\\frac{@{a}}{@{b}}$ z liczby @{n}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a * m"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw dzielimy liczbę przez @{b}: @{n} : @{b} = @{m}. Potem bierzemy @{a} z tych części."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} · @{m} = @{a * m}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "divide_only",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "m"
+     }
+    },
+    "feedback": "Podzieliłeś na części, ale trzeba jeszcze wziąć ich tyle, ile mówi licznik.",
+    "when": "a != 1"
+   },
+   {
+    "id": "multiply_only",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a * n"
+     }
+    },
+    "feedback": "Ułamek mniejszy od 1 daje wynik mniejszy od całości."
+   }
+  ]
+ }
+}

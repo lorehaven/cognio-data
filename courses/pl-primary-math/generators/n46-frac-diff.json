@@ -1,0 +1,80 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-diff",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 3)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, b - 1)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, b - 1) if kind == 0 else randint(1, b * k - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "y",
+   "expr": "c / b if kind == 0 else c / (b * k)"
+  },
+  {
+   "name": "r",
+   "expr": "x - y"
+  }
+ ],
+ "constraints": [
+  "x > y",
+  "denom(r) > 1"
+ ],
+ "selfCheck": [
+  "r + y == x"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "O ile ułamek $\\frac{@{a}}{@{b}}$ jest większy od ułamka $\\frac{@{c}}{@{(b if kind == 0 else b * k)}}$?",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(r)"
+   },
+   "den": {
+    "$expr": "denom(r)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprowadzamy ułamki do wspólnego mianownika i odejmujemy liczniki."
+   },
+   {
+    "kind": "conclude",
+    "text": "Różnica: $\\frac{@{numer(r)}}{@{denom(r)}}$"
+   }
+  ]
+ }
+}

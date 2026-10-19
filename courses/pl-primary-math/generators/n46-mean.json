@@ -1,0 +1,109 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-mean",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "3",
+    "frac": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "4",
+    "frac": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "4",
+    "frac": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "m",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "vs",
+   "expr": "sample(1, 14, 4)"
+  },
+  {
+   "name": "nums",
+   "expr": "take(vs, k - 1) + [k * m - sum(take(vs, k - 1))] if frac != 1 else take(vs, k)"
+  },
+  {
+   "name": "s",
+   "expr": "sum(nums)"
+  },
+  {
+   "name": "avg",
+   "expr": "s / k"
+  },
+  {
+   "name": "ctx",
+   "expr": "choice(['Ala przeczytała w kolejnych dniach tyle stron', 'W kolejnych dniach zmierzono temperatury (w °C)', 'Franek zrobił w kolejnych dniach tyle tysięcy kroków'])"
+  },
+  {
+   "name": "given",
+   "expr": "take(nums, k - 1)"
+  },
+  {
+   "name": "miss",
+   "expr": "nums[k - 1]"
+  },
+  {
+   "name": "txt",
+   "expr": "(ctx + ': ' + join(nums, ', ') + '. Jaka jest średnia arytmetyczna tych liczb?') if frac < 2 else ('Średnia arytmetyczna czterech liczb wynosi ' + str(m) + '. Trzy z nich to: ' + join(given, ', ') + '. Jaka jest czwarta liczba?')"
+  },
+  {
+   "name": "ans",
+   "expr": "avg if frac < 2 else miss"
+  }
+ ],
+ "constraints": [
+  "frac != 1 or (s % k != 0 and denom(avg) in divisors(100))",
+  "frac == 1 or s % k == 0",
+  "min(nums) >= 1",
+  "len(uniq(nums)) == len(nums)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Średnia to suma liczb podzielona przez ich liczbę.' if frac < 2 else 'Suma wszystkich liczb to średnia razy liczba składników. Odejmij sumę znanych liczb.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(fmt(s) + ' : ' + str(k) + ' = ' + fmt(avg) if frac < 2 else str(k) + ' · ' + str(m) + ' − ' + str(sum(given)) + ' = ' + str(miss))}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "forgot_divide",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "s"
+     }
+    },
+    "feedback": "Średnia to suma podzielona przez liczbę składników.",
+    "when": "frac < 2"
+   }
+  ]
+ }
+}

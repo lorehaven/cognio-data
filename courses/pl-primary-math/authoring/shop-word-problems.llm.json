@@ -1,0 +1,58 @@
+{
+  "formatVersion": "1.0",
+  "id": "shop-word-problems",
+  "skill": "n46-unit-price",
+  "mode": "author",
+  "modelHint": "any strong instruction-following model; run offline on a PC, review a sample, commit the resulting bank",
+  "system": "Jesteś autorem zadań z matematyki dla uczniów klas 4–6 szkoły podstawowej w Polsce. Piszesz po polsku, prostym językiem, przyjaznym tonem. Zadania dotyczą codziennych zakupów. Nigdy nie podajesz rozwiązania ani odpowiedzi. Zwracasz wyłącznie poprawny JSON zgodny z podanym schematem.",
+  "instructions": "Napisz @{count} różnych zadań tekstowych (poziom @{level}) o zakupie kilku sztuk jednego towaru. Dla każdego zadania zwróć obiekt JSON: {\"story\": <treść zadania>, \"params\": {\"item_forms\": [<mianownik lp.>, <mianownik lm. 2–4>, <dopełniacz lm. 5+>], \"n\": <liczba sztuk>, \"unit_price\": <cena jednej sztuki jako napis z kropką, np. \"2.50\">, \"discount_pct\": <rabat w procentach>}}. W treści zadania liczby zapisuj po polsku (przecinek dziesiętny, „zł”), liczbę sztuk odmieniaj poprawnie (1 zeszyt, 2 zeszyty, 5 zeszytów). Każda liczba z params MUSI wystąpić w treści zadania; rabat podawaj w treści jako „rabat 20%” (albo bez wzmianki, gdy discount_pct = 0). Pytanie ma brzmieć: ile zapłacimy za całość? Zmieniaj postacie, sklepy i towary (szkoła, sport, zwierzęta, gotowanie, wycieczka). Treść: 1–3 zdania, bez ocen dzieci, bez marek, bez treści nieodpowiednich dla 10-latka.",
+  "perLevel": [
+    { "level": 1, "count": 40, "constraints": "n od 2 do 12, cena jednostkowa od 0,50 zł do 15 zł w pełnych 10 gr, discount_pct = 0" },
+    { "level": 2, "count": 40, "constraints": "n od 2 do 12, cena od 0,50 zł do 50 zł, discount_pct ∈ {10, 20, 25, 50}; cena końcowa musi wyjść w pełnych groszach" }
+  ],
+  "examples": [
+    { "story": "Maja kupiła 4 zeszyty po 3,50 zł każdy. Ile zapłaciła za wszystkie zeszyty?",
+      "params": { "item_forms": ["zeszyt", "zeszyty", "zeszytów"], "n": 4, "unit_price": "3.50", "discount_pct": 0 } },
+    { "story": "Klasa 4b kupuje 10 piłeczek do tenisa po 8 zł. W sklepie jest rabat 25%. Ile zapłaci klasa za wszystkie piłeczki?",
+      "params": { "item_forms": ["piłeczka", "piłeczki", "piłeczek"], "n": 10, "unit_price": "8.00", "discount_pct": 25 } }
+  ],
+  "output": {
+    "format": "params+story",
+    "jsonSchema": {
+      "type": "object", "required": ["story", "params"], "additionalProperties": false,
+      "properties": {
+        "story": { "type": "string", "minLength": 20, "maxLength": 400 },
+        "params": { "type": "object", "required": ["item_forms", "n", "unit_price", "discount_pct"], "additionalProperties": false,
+          "properties": {
+            "item_forms": { "type": "array", "items": { "type": "string" }, "minItems": 3, "maxItems": 3 },
+            "n": { "type": "integer" }, "unit_price": { "type": "string", "pattern": "^\\d+(\\.\\d{1,2})?$" }, "discount_pct": { "type": "integer" } } } } }
+  },
+  "verifier": {
+    "vars": [
+      { "name": "gross", "expr": "n * unit_price" },
+      { "name": "total", "expr": "gross * (100 - discount_pct) / 100" }
+    ],
+    "constraints": [
+      "n >= 2 and n <= 12",
+      "unit_price >= 0.5 and unit_price <= 50",
+      "discount_pct in [0, 10, 20, 25, 50]",
+      "level != 1 or discount_pct == 0",
+      "level != 1 or (unit_price <= 15 and unit_price * 10 == floor(unit_price * 10))",
+      "total * 100 == floor(total * 100)"
+    ],
+    "mustAppearInText": ["n", "unit_price"],
+    "answer": { "type": "quantity", "value": { "$expr": "total" }, "unit": "zł" },
+    "steps": [
+      "Cena bez rabatu: @{n} · @{unit_price|money} = @{gross|money}.",
+      "Rabat @{discount_pct}% to @{(gross * discount_pct / 100)|money}.",
+      "Do zapłaty: @{total|money}."
+    ]
+  },
+  "taskTemplate": {
+    "kind": "quantity-input",
+    "input": { "unit": "zł", "decimals": 2 },
+    "estimatedSeconds": 60,
+    "tags": ["finance", "no-calculator"]
+  },
+  "acceptance": { "minVerifiedRatio": 0.0, "dedupe": "params", "humanReview": "sample" }
+}

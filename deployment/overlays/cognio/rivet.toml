@@ -1,0 +1,4 @@
+[package]
+name = "cognio"
+version = "0.1.0"
+description = "cognio-server: serves Cognio course packs (.cognio) and the tutor-model catalog"

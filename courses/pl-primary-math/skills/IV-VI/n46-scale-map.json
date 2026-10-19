@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-scale-map",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Skala: odległość na mapie"
+ },
+ "objectives": [
+  "IV-VI.2.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Plany i modele"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mapy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-scale-map.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-scale-real"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Skala 1 : 100 000 oznacza, że 1 cm na mapie to 100 000 cm w rzeczywistości, czyli 1 km. Zamień odległość i podziel przez skalę."
+  }
+ }
+}

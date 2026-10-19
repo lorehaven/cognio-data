@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-solid-recognize",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "['prostopadłościan', 'sześcian', 'graniastosłup trójkątny', 'ostrosłup czworokątny', 'walec', 'stożek', 'kula']"
+  },
+  {
+   "name": "descs",
+   "expr": "[['Ma 6 ścian, a każda ściana jest prostokątem.', 'Ma 8 wierzchołków i 12 krawędzi, a jego ściany to prostokąty.'], ['Ma 6 ścian i wszystkie są kwadratami.', 'Wszystkie jego 12 krawędzi są jednakowej długości.'], ['Ma dwie podstawy w kształcie trójkątów, a ściany boczne są prostokątami.', 'Ma 5 ścian i 9 krawędzi.'], ['Ma podstawę w kształcie kwadratu, a ściany boczne to trójkąty o wspólnym wierzchołku.', 'Ma 5 wierzchołków i 8 krawędzi.'], ['Ma dwie podstawy w kształcie kół i jedną powierzchnię zakrzywioną.', 'Puszka konserwowa ma taki kształt.'], ['Ma jedną podstawę w kształcie koła i jeden wierzchołek.', 'Lejek do wlewania płynów (rożek lodów) ma taki kształt.'], ['Nie ma ani ścian płaskich, ani krawędzi.', 'Piłka do koszykówki ma taki kształt.']]"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 6)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "constraints": [
+  "(names[s]) != (names[(s + 1) % 7])",
+  "(names[s]) != (names[(s + 3) % 7])",
+  "(names[s]) != (names[(s + 5) % 7])",
+  "(names[(s + 1) % 7]) != (names[(s + 3) % 7])",
+  "(names[(s + 1) % 7]) != (names[(s + 5) % 7])",
+  "(names[(s + 3) % 7]) != (names[(s + 5) % 7])"
+ ],
+ "minDistinct": 14,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Jaką bryłę opisuje zdanie: „@{descs[s][d]}”?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zwróć uwagę na kształt podstaw i ścian bocznych oraz liczbę ścian, krawędzi i wierzchołków."
+   },
+   {
+    "kind": "conclude",
+    "text": "To @{names[s]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{names[s]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{names[(s + 1) % 7]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{names[(s + 3) % 7]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{names[(s + 5) % 7]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

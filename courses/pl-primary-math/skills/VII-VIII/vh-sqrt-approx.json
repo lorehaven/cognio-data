@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sqrt-approx",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Przybliżone wartości pierwiastków (kalkulator)"
+ },
+ "objectives": [
+  "VII-VIII.1.7",
+  "VII-VIII.1.12"
+ ],
+ "tags": [
+  "calculator-allowed"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwiastek kwadratowy, do części dziesiątych"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pierwiastek kwadratowy, do części setnych"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Pierwiastek sześcienny, do części setnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-sqrt-approx.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-sqrt-between"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przybliżone wartości pierwiastków odczytujemy z kalkulatora i zaokrąglamy do żądanego miejsca po przecinku."
+  }
+ }
+}

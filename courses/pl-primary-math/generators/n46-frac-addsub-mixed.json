@@ -1,0 +1,112 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-addsub-mixed",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hard": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hard": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "choice([2, 3, 4, 5, 6, 8, 10])"
+  },
+  {
+   "name": "d",
+   "expr": "b * randint(1, 2) if hard == 0 else choice([2, 3, 4, 5, 6, 8, 10])"
+  },
+  {
+   "name": "w1",
+   "expr": "randint(1, 5)"
+  },
+  {
+   "name": "w2",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, d - 1)"
+  },
+  {
+   "name": "plus",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "x",
+   "expr": "w1 + a / b"
+  },
+  {
+   "name": "y",
+   "expr": "w2 + c / d"
+  },
+  {
+   "name": "r",
+   "expr": "x + y if plus else x - y"
+  },
+  {
+   "name": "sg",
+   "expr": "'+' if plus else '-'"
+  },
+  {
+   "name": "rw",
+   "expr": "floor(r)"
+  },
+  {
+   "name": "rf",
+   "expr": "r - rw"
+  }
+ ],
+ "constraints": [
+  "plus or x > y",
+  "denom(rf) > 1",
+  "rw >= 1",
+  "gcd(b, d) == 1 or b % d == 0 or d % b == 0",
+  "gcd(a, b) == 1",
+  "gcd(c, d) == 1",
+  "hard == 1 or ((a / b + c / d < 1) if plus else (a / b > c / d))",
+  "hard == 0 or ((a / b + c / d >= 1) if plus else (a / b < c / d))"
+ ],
+ "selfCheck": [
+  "rw + rf == r"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "mixed-number-input",
+  "prompt": "Oblicz: $@{w1}\\frac{@{a}}{@{b}} @{sg} @{w2}\\frac{@{c}}{@{d}}$",
+  "answer": {
+   "type": "mixed",
+   "whole": {
+    "$expr": "rw"
+   },
+   "num": {
+    "$expr": "numer(rf)"
+   },
+   "den": {
+    "$expr": "denom(rf)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dodaj (odejmij) osobno całości i osobno ułamki; w razie potrzeby zamień nadmiar ułamka na całość."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: $@{rw}\\frac{@{numer(rf)}}{@{denom(rf)}}$"
+   }
+  ]
+ }
+}

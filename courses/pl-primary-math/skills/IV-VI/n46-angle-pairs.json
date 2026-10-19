@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-pairs",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kąty przyległe, wierzchołkowe, odpowiadające"
+ },
+ "objectives": [
+  "IV-VI.4.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przyległe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wierzchołkowe"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Odpowiadające i naprzemianległe"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Różnica kątów przyległych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-angle-pairs.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-angle-types"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kąty przyległe razem dają 180°. Kąty wierzchołkowe są równe. Przy prostych równoległych kąty odpowiadające i naprzemianległe też są równe."
+  }
+ }
+}

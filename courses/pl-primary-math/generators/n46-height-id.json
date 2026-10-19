@@ -1,0 +1,132 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-height-id",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(8, 12)"
+  },
+  {
+   "name": "cx",
+   "expr": "randint(3, b - 3)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(4, 8)"
+  },
+  {
+   "name": "ok",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "x1",
+   "expr": "cx if ok == 0 else cx + 1"
+  },
+  {
+   "name": "x2",
+   "expr": "cx if ok == 1 else cx - 1"
+  },
+  {
+   "name": "x3",
+   "expr": "cx if ok == 2 else cx + 2"
+  },
+  {
+   "name": "lab",
+   "expr": "['D', 'E', 'F'][ok]"
+  }
+ ],
+ "minDistinct": 3,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Na rysunku z wierzchołka C poprowadzono trzy odcinki: CD, CE i CF do podstawy AB. Który z nich jest wysokością trójkąta ABC?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (ok == 0) else []) + (['b'] if (ok == 1) else []) + (['c'] if (ok == 2) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wysokość trójkąta to odcinek poprowadzony z wierzchołka prostopadle do podstawy (lub jej przedłużenia)."
+   },
+   {
+    "kind": "conclude",
+    "text": "Prostopadły do AB jest odcinek C@{lab}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "CD",
+    "correct": "ok == 0"
+   },
+   {
+    "id": "b",
+    "text": "CE",
+    "correct": "ok == 1"
+   },
+   {
+    "id": "c",
+    "text": "CF",
+    "correct": "ok == 2"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle",
+    "essential": true,
+    "alt": "Trójkąt ABC z trzema odcinkami CD, CE, CF poprowadzonymi do podstawy.",
+    "params": {
+     "A": [
+      0,
+      0
+     ],
+     "B": [
+      {
+       "$expr": "b"
+      },
+      0
+     ],
+     "C": [
+      {
+       "$expr": "cx"
+      },
+      {
+       "$expr": "h"
+      }
+     ],
+     "feet": [
+      {
+       "label": "D",
+       "x": {
+        "$expr": "x1"
+       }
+      },
+      {
+       "label": "E",
+       "x": {
+        "$expr": "x2"
+       }
+      },
+      {
+       "label": "F",
+       "x": {
+        "$expr": "x3"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-mean-outlier",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "base",
+   "expr": "500 * randint(6, 9)"
+  },
+  {
+   "name": "d",
+   "expr": "sample(0, 6, 4)"
+  },
+  {
+   "name": "ws",
+   "expr": "[base + 100 * d[0], base + 100 * d[1], base + 100 * d[2], base + 100 * d[3]]"
+  },
+  {
+   "name": "boss",
+   "expr": "1000 * randint(15, 30)"
+  },
+  {
+   "name": "all",
+   "expr": "ws + [boss]"
+  },
+  {
+   "name": "mn",
+   "expr": "sum(all) / 5"
+  },
+  {
+   "name": "md",
+   "expr": "sorted(all)[2]"
+  }
+ ],
+ "constraints": [
+  "md < mn",
+  "len(uniq(ws)) == 4"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "W małej firmie pięć osób zarabia miesięcznie (w zł): @{join(all, \", \")}. Pracownicy chcą poinformować nowego kandydata, ile zwykle zarabia się w firmie. Która miara lepiej opisuje typową pensję?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (md < mn) else []) + (['b'] if (md > mn) else []) + (['c'] if (md == mn) else []) + (['d'] if (boss < 0) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Jedna wyjątkowo wysoka wartość zawyża średnią, a mediana pozostaje w środku zestawu."
+   },
+   {
+    "kind": "compute",
+    "text": "Średnia: @{sum(all)} : 5 = @{mn|dec} zł. Mediana: @{md} zł."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Mediana (@{md} zł), bo nie zależy od jednej bardzo wysokiej pensji.",
+    "correct": "md < mn"
+   },
+   {
+    "id": "b",
+    "text": "Średnia arytmetyczna (@{mn|dec} zł).",
+    "correct": "md > mn"
+   },
+   {
+    "id": "c",
+    "text": "Obie opisują typową pensję tak samo dobrze.",
+    "correct": "md == mn"
+   },
+   {
+    "id": "d",
+    "text": "Najwyższa pensja (@{boss} zł).",
+    "correct": "boss < 0"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

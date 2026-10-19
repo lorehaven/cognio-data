@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-pion-poziom",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice([['Maszt z flagą', 'pionowo'], ['Linia horyzontu nad morzem', 'poziomo'], ['Ściana boczna dachu domu', 'skośnie'], ['Rząd cegieł w murze', 'poziomo'], ['Komin wysokiego domu', 'pionowo'], ['Drabina oparta o ścianę', 'skośnie'], ['Deska, na której bąbelek poziomicy jest w środku', 'poziomo'], ['Latarnia uliczna', 'pionowo']])"
+  }
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Jak najczęściej ustawiony jest przedmiot: @{f[0]}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (f[1] == 'pionowo') else []) + (['b'] if (f[1] == 'poziomo') else []) + (['c'] if (f[1] == 'skośnie') else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Pion – jak sznurek z ciężarkiem. Poziom – jak woda w kałuży. Skos – coś pomiędzy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Jest ustawiony @{f[1]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "pionowo",
+    "correct": "f[1] == 'pionowo'"
+   },
+   {
+    "id": "b",
+    "text": "poziomo",
+    "correct": "f[1] == 'poziomo'"
+   },
+   {
+    "id": "c",
+    "text": "skośnie",
+    "correct": "f[1] == 'skośnie'"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

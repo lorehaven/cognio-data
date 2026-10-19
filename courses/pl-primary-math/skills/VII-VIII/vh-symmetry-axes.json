@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-symmetry-axes",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Liczba osi symetrii"
+ },
+ "objectives": [
+  "VII-VIII.3.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Figury płaskie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-symmetry-axes.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-symmetry-axes"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Oś symetrii dzieli figurę na dwie części, które się pokrywają po złożeniu. Figura może mieć kilka osi, np. kwadrat 4, albo żadnej, np. równoległobok."
+  }
+ }
+}

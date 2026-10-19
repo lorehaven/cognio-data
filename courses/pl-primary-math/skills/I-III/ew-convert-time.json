@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-convert-time",
+ "stage": "I-III",
+ "title": {
+  "pl": "Jednostki czasu"
+ },
+ "objectives": [
+  "I-III.2.g"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Godziny na minuty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Minuty na sekundy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "W obie strony (okrągłe liczby)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-convert-time.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Czas: 1 godzina = 60 minut, 1 minuta = 60 sekund."
+  }
+ }
+}

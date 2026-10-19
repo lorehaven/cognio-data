@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-exists",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czy da się zbudować trójkąt?"
+ },
+ "objectives": [
+  "IV-VI.4.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Trzy odcinki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-triangle-exists.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-by-sides"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trójkąt o danych bokach istnieje, jeśli najdłuższy bok jest krótszy od sumy dwóch pozostałych (nierówność trójkąta)."
+  }
+ }
+}

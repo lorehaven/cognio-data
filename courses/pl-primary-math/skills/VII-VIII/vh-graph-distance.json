@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-graph-distance",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wykres drogi w czasie"
+ },
+ "objectives": [
+  "VII-VIII.4.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Odczyt drogi"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Prędkość w jednej godzinie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Droga w dwóch godzinach"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Średnia prędkość"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-graph-distance.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "n46-line-chart"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Na wykresie drogi w czasie prędkość w danym odcinku to przyrost drogi podzielony przez czas. Płaski odcinek oznacza postój."
+  }
+ }
+}

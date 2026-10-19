@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-factorization-fact",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "12",
+    "hi": "60"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "40",
+    "hi": "99"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "f",
+   "expr": "factorize(n)"
+  },
+  {
+   "name": "u",
+   "expr": "uniq(f)"
+  },
+  {
+   "name": "ask",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "q",
+   "expr": "'Ile różnych liczb pierwszych występuje w rozkładzie liczby ' + str(n) + ' na czynniki pierwsze?' if ask == 0 else ('Jaki jest największy czynnik pierwszy liczby ' + str(n) + '?' if ask == 1 else 'Ile czynników (licząc powtórzenia) ma rozkład liczby ' + str(n) + ' na czynniki pierwsze?')"
+  },
+  {
+   "name": "ans",
+   "expr": "len(u) if ask == 0 else (max(f) if ask == 1 else len(f))"
+  }
+ ],
+ "constraints": [
+  "len(f) >= 2"
+ ],
+ "selfCheck": [
+  "product(f) == n"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{q}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Rozkładamy liczbę: @{n} = @{join(f, \" · \")}."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

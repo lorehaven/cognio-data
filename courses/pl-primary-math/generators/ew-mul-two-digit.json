@@ -1,0 +1,52 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-mul-two-digit",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fs": "[2, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fs": "[3, 5]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice(fs)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(11, 40) if f != 10 else randint(11, 99)"
+  }
+ ],
+ "constraints": [
+  "a % 10 != 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} · @{f}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a * f"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Rozbij liczbę na dziesiątki i jedności i pomnóż każdą część."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a - a % 10} · @{f} = @{(a - a % 10) * f}, @{a % 10} · @{f} = @{(a % 10) * f}; razem @{a * f}"
+   }
+  ]
+ }
+}

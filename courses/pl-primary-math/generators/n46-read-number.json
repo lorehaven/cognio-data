@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-read-number",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "1000",
+    "hi": "9999"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "10000",
+    "hi": "999999"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "1000000",
+    "hi": "99999999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(0, 3)"
+  }
+ ],
+ "constraints": [
+  "(words(n)) != (words(n + pow(10, p)))",
+  "(words(n)) != (words(n - pow(10, p)))",
+  "(words(n)) != (words(n * 10))",
+  "(words(n + pow(10, p))) != (words(n - pow(10, p)))",
+  "(words(n + pow(10, p))) != (words(n * 10))",
+  "(words(n - pow(10, p))) != (words(n * 10))",
+  "n > pow(10, p)"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Jak poprawnie przeczytać liczbę @{n|int}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielimy liczbę na grupy po trzy cyfry od prawej strony i czytamy grupa po grupie."
+   },
+   {
+    "kind": "conclude",
+    "text": "Liczbę @{n|int} czytamy: @{words(n)}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{words(n)}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{words(n + pow(10, p))}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{words(n - pow(10, p))}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{words(n * 10)}",
+    "correct": "false"
+   }
+  ]
+ }
+}

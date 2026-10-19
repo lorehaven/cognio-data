@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compound",
+ "stage": "I-III",
+ "title": {
+  "pl": "Wyrażenia dwumianowane"
+ },
+ "objectives": [
+  "I-III.2.i"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Metry i centymetry"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kilogramy i dekagramy lub gramy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Godziny i minuty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-compound.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "prerequisites": [
+  "ew-convert-length"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wyrażenie dwumianowane ma dwie jednostki, np. 2 m 35 cm. Zamień większą jednostkę na mniejszą (2 m = 200 cm) i dopiero licz."
+  }
+ }
+}

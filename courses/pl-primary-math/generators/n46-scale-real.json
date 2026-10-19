@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-scale-real",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ss": "[10, 20, 50, 100, 200, 500, 1000]",
+    "un": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ss": "[10000, 20000, 25000, 50000, 100000]",
+    "un": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "sc",
+   "expr": "choice(ss)"
+  },
+  {
+   "name": "cm",
+   "expr": "randint(2, 30)"
+  },
+  {
+   "name": "real",
+   "expr": "cm * sc"
+  },
+  {
+   "name": "ans",
+   "expr": "real / 100 if un == 0 else real / 100000"
+  },
+  {
+   "name": "u",
+   "expr": "'m' if un == 0 else 'km'"
+  }
+ ],
+ "constraints": [
+  "denom(ans) in divisors(1000)"
+ ],
+ "selfCheck": [
+  "ans * (100 if un == 0 else 100000) == real"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Skala planu wynosi 1 : @{sc|int}. Odcinek na planie ma długość @{cm} cm. Jaka jest rzeczywista długość tego odcinka w @{('metrach' if un == 0 else 'kilometrach')}?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Skala 1 : @{sc|int} oznacza, że 1 cm na planie to @{sc|int} cm w rzeczywistości."
+   },
+   {
+    "kind": "compute",
+    "text": "@{cm} · @{sc|int} cm = @{real|int} cm = @{fmt(ans)} @{u}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "wrong_conversion",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "real / 10 if un == 0 else real / 1000"
+     },
+     "unit": {
+      "$expr": "u"
+     }
+    },
+    "feedback": "Sprawdź przeliczenie jednostek: 1 m = 100 cm, 1 km = 100 000 cm."
+   }
+  ]
+ }
+}

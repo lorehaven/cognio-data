@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-laws",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "mode": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "b2",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "mm",
+   "expr": "choice([0, 1, 2]) if mode == 3 else 0"
+  },
+  {
+   "name": "sg1",
+   "expr": "m if mode != 3 else -m"
+  },
+  {
+   "name": "txt",
+   "expr": "('$' + str(b) + '^{' + str(m) + '} \\\\cdot ' + str(b) + '^{' + str(n) + '} = ' + str(b) + '^{?}$') if mode == 0 else (('$' + str(b) + '^{' + str(m) + '} \\\\cdot ' + str(b2) + '^{' + str(m) + '} = (?)^{' + str(m) + '}$') if mode == 1 else (('$\\\\left(' + str(b) + '^{' + str(m) + '}\\\\right)^{' + str(n) + '} = ' + str(b) + '^{?}$') if mode == 2 else ('$' + str(b) + '^{' + str(sg1) + '} \\\\cdot ' + str(b) + '^{' + str(n) + '} : ' + str(b) + '^{' + str(m + 1) + '} = ' + str(b) + '^{?}$')))"
+  },
+  {
+   "name": "ans",
+   "expr": "m + n if mode == 0 else (b * b2 if mode == 1 else (m * n if mode == 2 else sg1 + n - (m + 1)))"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or b != b2"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Uzupełnij wykładnik lub podstawę (zamiast „?”): @{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Mnożenie potęg o tej samej podstawie: wykładniki dodajemy.' if mode == 0 else ('Mnożenie potęg o tym samym wykładniku: mnożymy podstawy.' if mode == 1 else ('Potęga potęgi: wykładniki mnożymy.' if mode == 2 else 'Mnożąc potęgi dodajemy wykładniki, dzieląc – odejmujemy.')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-velocity",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Prędkość: v = s : t"
+ },
+ "objectives": [
+  "IV-VI.2.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne godziny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Czas w minutach"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-speed-velocity.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-speed-distance"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Prędkość = droga : czas. Pokazuje, ile przebywamy w jednostce czasu, np. kilometrów w ciągu godziny."
+  }
+ }
+}

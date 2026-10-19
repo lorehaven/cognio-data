@@ -1,0 +1,69 @@
+# Cognio monorepo - rules that apply everywhere. Each subproject adds its own .gitignore for its tooling.
+
+# --- operating system and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+*.iml
+
+# --- secrets and local configuration: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.age
+age.key
+*.jks
+*.keystore
+keystore.properties
+secrets/
+.claude/settings.local.json
+CLAUDE.local.md
+
+# --- Python (tools/, content-src/, server/)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# --- build output and generated files that are not part of the source
+build/
+out/
+*.log
+*.tmp
+*.bak
+# foreman logs
+.run/
+/tmp/
+/scratch/
+# python3 -I tools/gallery.py courses/<pack> gallery.html
+/gallery.html
+
+# Binaries do not belong in the data repository.
+*.apk
+*.aab
+
+# dist/ IS tracked: index.json + courses/*.cognio + models/catalog.json is what the app downloads straight from GitHub
+# (raw.githubusercontent.com/<owner>/<repo>/<branch>/dist/). Anything else dropped into dist/ is scratch.
+/dist/*
+!/dist/index.json
+!/dist/courses/
+!/dist/models/
+
+# coursegen workspaces (tools/coursegen.py): sources + plan + authored modules are kept, downloads/logs/scratch builds are not
+/course-work/*/input/
+/course-work/*/logs/
+/course-work/*/tmp/
+/course-work/*/review.json

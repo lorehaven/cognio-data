@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-write-digits",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Zapisz liczbę cyframi"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 9 999"
+   },
+   "capsNote": "IV-VI.1.1"
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 999 999"
+   },
+   "capsNote": "IV-VI.1.1"
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 999 999 999"
+   },
+   "capsNote": "IV-VI.1.1"
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-write-digits.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Duże liczby zapisujemy w grupach po trzy cyfry: jedności, tysiące, miliony. Czytamy od lewej, grupa po grupie. Jeśli czegoś brakuje (np. setek), na tym miejscu piszemy zero."
+  },
+  "keyIdeas": [
+   {
+    "pl": "Każda grupa ma setki, dziesiątki i jedności."
+   },
+   {
+    "pl": "Zero zajmuje miejsce, gdy w danym rzędzie nic nie ma."
+   }
+  ]
+ }
+}

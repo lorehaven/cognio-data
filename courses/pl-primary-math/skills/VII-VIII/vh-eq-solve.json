@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-solve",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Rozwiązywanie równań pierwszego stopnia"
+ },
+ "objectives": [
+  "VII-VIII.2.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Niewiadoma po jednej stronie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Nawias lub ułamek"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Niewiadoma po obu stronach"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-eq-solve.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-eq-check",
+  "n46-alg-solve"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Równanie rozwiązujemy, wykonując te same działania po obu stronach: przenieś wyrazy z x w jedną stronę, liczby w drugą i podziel przez współczynnik przy x."
+  }
+ }
+}

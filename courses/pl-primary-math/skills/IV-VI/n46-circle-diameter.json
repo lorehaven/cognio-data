@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-circle-diameter",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Promień i średnica"
+ },
+ "objectives": [
+  "IV-VI.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby całkowite"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ułamki dziesiętne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-circle-diameter.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-line-terms"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Średnica koła jest dwa razy dłuższa od promienia: d = 2r. Promień to połowa średnicy."
+  }
+ }
+}

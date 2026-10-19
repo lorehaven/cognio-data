@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-similar-methods",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Podobne zadania, ta sama metoda"
+ },
+ "objectives": [
+  "VII-VIII.5.1.d"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wspólna metoda"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-similar-methods.jsonl"
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-think-structure"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Różne zadania często mają tę samą strukturę. Gdy ją dostrzeżesz, możesz użyć znanej metody."
+  }
+ }
+}

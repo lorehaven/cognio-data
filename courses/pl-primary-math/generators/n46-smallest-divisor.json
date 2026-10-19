@@ -1,0 +1,57 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-smallest-divisor",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "10",
+    "hi": "60"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "40",
+    "hi": "99"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "d",
+   "expr": "divisors(n)[1]"
+  }
+ ],
+ "constraints": [
+  "not is_prime(n)"
+ ],
+ "selfCheck": [
+  "n % d == 0",
+  "is_prime(d)"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaki jest najmniejszy dzielnik liczby @{n} większy od 1?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "d"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdzamy kolejne liczby: 2, 3, 5, 7… (cechy podzielności)."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{n} : @{d} = @{n // d}"
+   }
+  ]
+ }
+}

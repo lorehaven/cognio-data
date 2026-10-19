@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-coord-rectangle",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "0",
+    "hi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "-8",
+    "hi": "8"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x1",
+   "expr": "randint(lo, hi - 3)"
+  },
+  {
+   "name": "y1",
+   "expr": "randint(lo, hi - 3)"
+  },
+  {
+   "name": "w",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(2, 6)"
+  }
+ ],
+ "constraints": [
+  "x1 + w <= hi",
+  "y1 + h <= hi"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "point-input",
+  "prompt": "Trzy wierzchołki prostokąta ABCD o bokach równoległych do osi układu to A(@{x1}, @{y1}), B(@{x1 + w}, @{y1}) i C(@{x1 + w}, @{y1 + h}). Jakie współrzędne ma wierzchołek D?",
+  "answer": {
+   "type": "point",
+   "x": {
+    "$expr": "x1"
+   },
+   "y": {
+    "$expr": "y1 + h"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wierzchołek D leży nad A (taka sama współrzędna x) i obok C (taka sama współrzędna y)."
+   },
+   {
+    "kind": "conclude",
+    "text": "D = (@{x1}, @{y1 + h})"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "wrong_corner",
+    "answer": {
+     "type": "point",
+     "x": {
+      "$expr": "x1 + w"
+     },
+     "y": {
+      "$expr": "y1"
+     }
+    },
+    "feedback": "To wierzchołek B. D leży naprzeciwko B."
+   }
+  ]
+ }
+}

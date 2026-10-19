@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-parallelogram",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Pole równoległoboku"
+ },
+ "objectives": [
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Podstawa i wysokość"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-parallelogram.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-rect"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pole równoległoboku to podstawa razy wysokość, czyli odległość od tej podstawy do przeciwległego boku. Drugi bok nie jest potrzebny."
+  }
+ }
+}

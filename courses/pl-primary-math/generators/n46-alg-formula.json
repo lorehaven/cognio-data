@@ -1,0 +1,89 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-formula",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fmin": "0",
+    "fmax": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fmin": "3",
+    "fmax": "4"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "fmin": "5",
+    "fmax": "5"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "randint(fmin, fmax)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "names",
+   "expr": "['pole prostokąta', 'obwód prostokąta', 'drogę przebytą ruchem jednostajnym', 'pole trójkąta', 'objętość prostopadłościanu', 'pole trapezu']"
+  },
+  {
+   "name": "forms",
+   "expr": "['P = a \\\\cdot b', 'O = 2a + 2b', 's = v \\\\cdot t', 'P = \\\\frac{1}{2} \\\\cdot a \\\\cdot h', 'V = a \\\\cdot b \\\\cdot c', 'P = \\\\frac{1}{2} \\\\cdot (a + b) \\\\cdot h']"
+  },
+  {
+   "name": "given",
+   "expr": "['a = ' + str(a) + ', b = ' + str(b), 'a = ' + str(a) + ', b = ' + str(b), 'v = ' + str(a) + ', t = ' + str(b), 'a = ' + str(2 * a) + ', h = ' + str(b), 'a = ' + str(a) + ', b = ' + str(b) + ', c = ' + str(c), 'a = ' + str(a) + ', b = ' + str(b) + ', h = ' + str(2 * c)]"
+  },
+  {
+   "name": "vals",
+   "expr": "[a * b, 2 * a + 2 * b, a * b, a * b, a * b * c, (a + b) * c]"
+  },
+  {
+   "name": "v",
+   "expr": "vals[f]"
+  }
+ ],
+ "selfCheck": [
+  "denom(v) == 1"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz @{names[f]} ze wzoru $@{forms[f]}$ dla @{given[f]}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Podstaw podane liczby w miejsce liter i oblicz."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{v}."
+   }
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-graph-change",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Zmiany cen i wynagrodzeń w czasie"
+ },
+ "objectives": [
+  "VII-VIII.4.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Różnica wartości"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "O ile procent wzrosło?"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "O ile procent zmalało?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-graph-change.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-percent-what",
+  "vh-graph-distance"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Na wykresie liniowym odczytujesz wartości w kolejnych latach. Zmiana procentowa to różnica podzielona przez wartość początkową."
+  }
+ }
+}

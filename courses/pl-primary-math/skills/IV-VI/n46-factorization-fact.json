@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-factorization-fact",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czynniki pierwsze: pytania"
+ },
+ "objectives": [
+  "IV-VI.1.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby do 60"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby do 99"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-factorization-fact.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-factorization-pick"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Każdą liczbę złożoną można zapisać jako iloczyn liczb pierwszych, np. 12 = 2 · 2 · 3. Liczby pierwsze mają tylko dwa dzielniki: 1 i siebie."
+  }
+ }
+}

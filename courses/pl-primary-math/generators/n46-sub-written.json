@@ -1,0 +1,98 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sub-written",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "1000",
+    "hi": "9999",
+    "zeros": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "10000",
+    "hi": "999999",
+    "zeros": "0"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "10000",
+    "hi": "999999",
+    "zeros": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a0",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "a",
+   "expr": "(a0 // 100) * 100 if zeros == 1 else a0"
+  },
+  {
+   "name": "b",
+   "expr": "randint(lo // 10, hi // 10)"
+  },
+  {
+   "name": "r",
+   "expr": "a - b"
+  }
+ ],
+ "constraints": [
+  "r > 0"
+ ],
+ "selfCheck": [
+  "r + b == a"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Odejmij pisemnie: @{a|int} − @{b|int}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odejmujemy od prawej. Gdy nie można odjąć, pożyczamy z sąsiedniego rzędu (a gdy tam jest zero – z następnego)."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{r|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "borrow_10",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r + 10"
+     }
+    },
+    "feedback": "Przy pożyczaniu zmniejsz sąsiednią cyfrę o 1.",
+    "when": "a % 10 < b % 10"
+   },
+   {
+    "id": "borrow_100",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r + 100"
+     }
+    },
+    "feedback": "Przy pożyczaniu z setek pamiętaj o zmniejszeniu cyfry setek.",
+    "when": "(a % 1000) // 100 < (b % 1000) // 100"
+   }
+  ]
+ }
+}

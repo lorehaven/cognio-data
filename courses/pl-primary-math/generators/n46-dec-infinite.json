@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-infinite",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "choice([3, 6, 9, 11])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "good",
+   "expr": "expand(x, 4)"
+  },
+  {
+   "name": "w1",
+   "expr": "expand(x, 2)"
+  },
+  {
+   "name": "w2",
+   "expr": "expand(round(x, 1), 1)"
+  },
+  {
+   "name": "w3",
+   "expr": "expand(x + 1 / 100, 4)"
+  }
+ ],
+ "constraints": [
+  "gcd(a, b) == 1",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "denom(x) in [3, 6, 9, 11, 18, 33]"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który zapis jest początkiem rozwinięcia dziesiętnego ułamka $\\frac{@{a}}{@{b}}$?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (true) else []) + (['b'] if (false) else []) + (['c'] if (false) else []) + (['d'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielimy licznik przez mianownik. Reszty się powtarzają, więc cyfry wracają – dlatego dopisujemy wielokropek."
+   },
+   {
+    "kind": "conclude",
+    "text": "$\\frac{@{a}}{@{b}}$ = @{good}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

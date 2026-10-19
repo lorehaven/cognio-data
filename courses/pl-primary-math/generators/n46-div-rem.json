@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-div-rem",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "blo": "2",
+    "bhi": "9",
+    "qhi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "blo": "11",
+    "bhi": "30",
+    "qhi": "40"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "blo": "12",
+    "bhi": "99",
+    "qhi": "200"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, qhi)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "a",
+   "expr": "b * q + r"
+  },
+  {
+   "name": "ask",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "what",
+   "expr": "'iloraz niepełny' if ask == 0 else 'reszta'"
+  }
+ ],
+ "selfCheck": [
+  "a == b * q + r",
+  "r < b"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Podziel z resztą @{a|int} przez @{b|int}. Ile wynosi @{what}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q if ask == 0 else r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Szukamy największej wielokrotności @{b}, która mieści się w @{a|int}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a|int} = @{b} · @{q} + @{r}, więc iloraz niepełny to @{q}, a reszta to @{r}."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "swap",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r if ask == 0 else q"
+     }
+    },
+    "feedback": "Iloraz niepełny to „ile razy się mieści”, a reszta to to, co zostaje."
+   }
+  ]
+ }
+}

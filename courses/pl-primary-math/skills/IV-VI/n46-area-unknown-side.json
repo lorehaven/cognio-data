@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-unknown-side",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Brakujący bok lub wysokość"
+ },
+ "objectives": [
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Prostokąt"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trójkąt"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-unknown-side.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-triangle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy znasz pole i jeden bok prostokąta, drugi bok obliczysz, dzieląc pole przez znany bok."
+  }
+ }
+}

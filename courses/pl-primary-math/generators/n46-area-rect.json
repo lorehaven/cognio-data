@@ -1,0 +1,113 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-rect",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0",
+    "dec": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1",
+    "dec": "0"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "0",
+    "dec": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 30) / pow(10, dec) if dec > 0 else randint(2, 30)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 30) / pow(10, dec) if dec > 0 else randint(2, 30)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "ar",
+   "expr": "a * a if mode == 1 else a * b"
+  }
+ ],
+ "constraints": [
+  "mode == 1 or a != b",
+  "denom(ar) in divisors(10000)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{('Kwadrat ma bok długości ' + fmt(a) + ' ' + un + '. Oblicz jego pole.' if mode == 1 else 'Prostokąt ma boki ' + fmt(a) + ' ' + un + ' i ' + fmt(b) + ' ' + un + '. Oblicz jego pole.')}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ar"
+   },
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Pole prostokąta to iloczyn jego boków (kwadratu – bok razy bok)."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(fmt(a) + ' · ' + fmt(a) if mode == 1 else fmt(a) + ' · ' + fmt(b))} = @{fmt(ar)} @{un}²"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "rect",
+    "essential": false,
+    "alt": "Prostokąt o bokach @{a} i @{b}.",
+    "params": {
+     "w": {
+      "$expr": "a"
+     },
+     "h": {
+      "$expr": "a if mode == 1 else b"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    }
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "perimeter",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "2 * (a + b) if mode == 0 else 4 * a"
+     },
+     "unit": {
+      "$expr": "un + '²'"
+     }
+    },
+    "feedback": "To jest obwód. Pole to iloczyn boków.",
+    "when": "(2 * (a + b) if mode == 0 else 4 * a) != ar"
+   }
+  ]
+ }
+}

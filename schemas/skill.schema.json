@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/skill.schema.json",
+  "title": "Skill = one class of problems (skills/<stage>/<id>.json)",
+  "type": "object",
+  "required": ["formatVersion", "id", "stage", "title", "objectives", "levels", "taskSources"],
+  "additionalProperties": false,
+  "properties": {
+    "formatVersion": { "type": "string", "pattern": "^1\\.\\d+$" },
+    "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "stage": { "enum": ["I-III", "IV-VI", "VII-VIII"], "description": "Official stage. NOT a school year." },
+    "area": { "type": "string", "description": "Area id from curriculum.json, e.g. IV-VI.1" },
+    "title": { "$ref": "common.schema.json#/$defs/localized" },
+    "description": { "$ref": "common.schema.json#/$defs/localized" },
+    "objectives": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/objectiveId" },
+      "description": "Official requirements this skill trains (ids from curriculum.json)" },
+    "prerequisites": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" } },
+    "tags": { "type": "array", "items": { "enum": ["finance", "culture", "thinking", "geometry-canvas", "calculator-allowed", "no-calculator", "reading-heavy"] }, "uniqueItems": true },
+    "order": { "type": "integer", "description": "Suggested position inside the stage/area (soft hint; the engine orders by prerequisites + learner state)" },
+    "levels": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["level", "label"], "additionalProperties": false,
+      "properties": { "level": { "type": "integer", "minimum": 1 }, "label": { "$ref": "common.schema.json#/$defs/localized" },
+                      "capsNote": { "type": "string", "description": "Which limit of the regulation this level respects (documentation + test hint)" },
+                      "masteryThreshold": { "type": "number", "minimum": 0, "maximum": 1 } } } },
+    "taskSources": { "type": "array", "minItems": 1, "items": { "oneOf": [
+      { "type": "object", "required": ["type", "ref", "levels"], "additionalProperties": false,
+        "properties": { "type": { "const": "generator" }, "ref": { "type": "string" }, "levels": { "type": "array", "items": { "type": "integer" } },
+                        "weight": { "type": "number", "minimum": 0, "default": 1 }, "args": { "type": "object", "description": "Level-specific parameter overrides, see generator.levels" } } },
+      { "type": "object", "required": ["type", "ref"], "additionalProperties": false,
+        "properties": { "type": { "const": "bank" }, "ref": { "type": "string", "description": "path of a .jsonl file of tasks" }, "weight": { "type": "number", "minimum": 0, "default": 1 } } },
+      { "type": "object", "required": ["type", "ref"], "additionalProperties": false,
+        "properties": { "type": { "const": "quest" }, "ref": { "type": "string", "description": "path of a quests/<id>.json file" } } },
+      { "type": "object", "required": ["type", "ref"], "additionalProperties": false,
+        "properties": { "type": { "const": "llm" }, "ref": { "type": "string", "description": "path of an llm-spec file" }, "weight": { "type": "number", "minimum": 0, "default": 1 } } }
+    ] } },
+    "tutor": { "type": "object", "additionalProperties": false, "description": "Skill-level tutoring content used by the template tutor and as LLM grounding",
+      "properties": {
+        "intro": { "$ref": "common.schema.json#/$defs/localized", "description": "Short worked example / explanation shown first when mastery is low" },
+        "keyIdeas": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/localized" } },
+        "commonErrors": { "type": "array", "items": { "type": "object", "required": ["id", "feedback"], "properties": { "id": { "type": "string" }, "feedback": { "$ref": "common.schema.json#/$defs/localized" } } } }
+      } }
+  }
+}

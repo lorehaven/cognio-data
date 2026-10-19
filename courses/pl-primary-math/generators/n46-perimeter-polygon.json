@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-perimeter-polygon",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "4"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "6"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(4, k)"
+  },
+  {
+   "name": "xs",
+   "expr": "sample(2, 20, 6)"
+  },
+  {
+   "name": "sides",
+   "expr": "take(xs, n)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "names",
+   "expr": "['', '', '', '', 'Czworokąt', 'Pięciokąt', 'Sześciokąt']"
+  },
+  {
+   "name": "lst",
+   "expr": "join(sides, ' ' + un + ', ') + ' ' + un"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{names[n]} ma boki o długościach: @{lst}. Oblicz jego obwód.",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "sum(sides)"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Obwód to suma długości wszystkich boków."
+   },
+   {
+    "kind": "compute",
+    "text": "@{join(sides, ' + ')} = @{sum(sides)} @{un}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  }
+ }
+}

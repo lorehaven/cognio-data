@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-convex",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kąt wypukły czy wklęsły?"
+ },
+ "objectives": [
+  "IV-VI.4.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wypukły lub wklęsły"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-angle-convex.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-angle-types"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kąt wypukły ma mniej niż 180°, a wklęsły – więcej niż 180° (i mniej niż 360°). Wklęsły to „kąt z drugiej strony”."
+  }
+ }
+}

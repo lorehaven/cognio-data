@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-two",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Dwa rzuty: monety i kostki"
+ },
+ "objectives": [
+  "VII-VIII.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwie monety"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy monety"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Suma oczek dwóch kostek"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Inne zdarzenia dla dwóch kostek"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prob-two.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-prob-dice"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy dwóch rzutach wypisz wszystkie wyniki (np. OO, OR, RO, RR dla monet; 36 par dla kostek) i policz sprzyjające."
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-calendar-weekday",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jaki to będzie dzień tygodnia?"
+ },
+ "objectives": [
+  "IV-VI.2.8"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Za kilka dni"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Za wiele dni"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-calendar-weekday.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-calendar-weeks"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dni tygodnia powtarzają się co 7 dni. Podziel liczbę dni przez 7 – liczy się reszta, bo to ona przesuwa dzień tygodnia."
+  }
+ }
+}

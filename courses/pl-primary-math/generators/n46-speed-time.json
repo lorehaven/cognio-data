@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-time",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "un": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "un": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "who",
+   "expr": "choice(['Pociąg', 'Rowerzysta', 'Samochód', 'Autobus'])"
+  },
+  {
+   "name": "v",
+   "expr": "10 * randint(2, 12)"
+  },
+  {
+   "name": "hh",
+   "expr": "randint(1, 8) if un == 0 else 15 * randint(1, 12) / 60"
+  },
+  {
+   "name": "s",
+   "expr": "v * hh"
+  },
+  {
+   "name": "ans",
+   "expr": "hh if un == 0 else hh * 60"
+  },
+  {
+   "name": "u",
+   "expr": "'h' if un == 0 else 'min'"
+  }
+ ],
+ "constraints": [
+  "denom(s) in divisors(100)"
+ ],
+ "selfCheck": [
+  "v * hh == s"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{who} jedzie ze stałą prędkością @{v} km/h. Ile czasu zajmie mu przejechanie @{s|dec} km? Podaj wynik w @{('godzinach' if un == 0 else 'minutach')}.",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Czas = droga : prędkość."
+   },
+   {
+    "kind": "compute",
+    "text": "@{s|dec} : @{v} = @{hh|dec} h@{(' = ' + fmt(hh * 60) + ' min' if un == 1 else '')}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  }
+ }
+}

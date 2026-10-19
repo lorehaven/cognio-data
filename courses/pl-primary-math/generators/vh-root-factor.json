@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-root-factor",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "r",
+   "expr": "choice([2, 3, 5, 6, 7])"
+  },
+  {
+   "name": "n",
+   "expr": "a * a * r"
+  }
+ ],
+ "constraints": [
+  "n < 400"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zapisz $\\sqrt{@{n}}$ w postaci $a\\sqrt{@{r}}$. Ile wynosi a?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Rozłóż liczbę pod pierwiastkiem na iloczyn kwadratu liczby naturalnej i innej liczby: @{n} = @{a * a} · @{r}."
+   },
+   {
+    "kind": "conclude",
+    "text": "$\\sqrt{@{n}} = \\sqrt{@{a * a}} \\cdot \\sqrt{@{r}} = @{a}\\sqrt{@{r}}$"
+   }
+  ]
+ }
+}

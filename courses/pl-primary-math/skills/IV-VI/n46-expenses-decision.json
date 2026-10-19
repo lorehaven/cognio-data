@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-expenses-decision",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czy budżet wystarczy?"
+ },
+ "objectives": [
+  "IV-VI.5.4"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Porównaj średnią z budżetem"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-expenses-decision.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "prerequisites": [
+  "n46-expenses-average"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby ocenić, czy budżet wystarczy, policz średnie wydatki i porównaj je z kwotą, którą możesz przeznaczyć."
+  }
+ }
+}

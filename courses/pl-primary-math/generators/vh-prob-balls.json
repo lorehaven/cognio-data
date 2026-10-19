@@ -1,0 +1,103 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-balls",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "r",
+   "expr": "randint(1, 8)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, 8)"
+  },
+  {
+   "name": "g",
+   "expr": "randint(1, 8)"
+  },
+  {
+   "name": "tot",
+   "expr": "r + b + g"
+  },
+  {
+   "name": "c",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "c2",
+   "expr": "(c + 1) % 3"
+  },
+  {
+   "name": "cnt",
+   "expr": "[r, b, g]"
+  },
+  {
+   "name": "col",
+   "expr": "['czerwona', 'niebieska', 'zielona']"
+  },
+  {
+   "name": "colg",
+   "expr": "['czerwonych', 'niebieskich', 'zielonych']"
+  },
+  {
+   "name": "k",
+   "expr": "cnt[c] if mode == 0 else (tot - cnt[c] if mode == 1 else cnt[c] + cnt[c2])"
+  },
+  {
+   "name": "sol",
+   "expr": "k / tot"
+  },
+  {
+   "name": "txt",
+   "expr": "('W worku są kule: czerwone (' + str(r) + '), niebieskie (' + str(b) + ') i zielone (' + str(g) + '). Losujemy jedną kulę. Jakie jest prawdopodobieństwo, że będzie ona ' + col[c] + '?') if mode == 0 else (('W worku są kule: czerwone (' + str(r) + '), niebieskie (' + str(b) + ') i zielone (' + str(g) + '). Losujemy jedną kulę. Jakie jest prawdopodobieństwo, że NIE będzie ona ' + col[c] + '?') if mode == 1 else ('W worku są kule: czerwone (' + str(r) + '), niebieskie (' + str(b) + ') i zielone (' + str(g) + '). Losujemy jedną kulę. Jakie jest prawdopodobieństwo, że będzie ona ' + col[c] + ' lub ' + col[c2] + '?'))"
+  }
+ ],
+ "constraints": [
+  "denom(sol) != 1",
+  "tot <= 20"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "@{txt} Podaj wynik jako ułamek nieskracalny.",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(sol)"
+   },
+   "den": {
+    "$expr": "denom(sol)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Prawdopodobieństwo = liczba kul sprzyjających : liczba wszystkich kul."
+   },
+   {
+    "kind": "compute",
+    "text": "@{k} z @{tot}, czyli $@{sol|frac}$"
+   }
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-mean-missing",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(3, 7)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(10, 40)"
+  },
+  {
+   "name": "dd",
+   "expr": "choice([-3, -2, -1, 1, 2, 3])"
+  },
+  {
+   "name": "m2",
+   "expr": "m + dd"
+  },
+  {
+   "name": "new",
+   "expr": "m + dd * (n + 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Średnia z ' + str(n) + ' wyników testów Ani wynosi ' + str(m) + ' pkt. Po kolejnym teście średnia z ' + str(n + 1) + ' wyników wynosi ' + str(m2) + ' pkt. Ile punktów Ania zdobyła w ostatnim teście?') if mode == 0 else ('Średnia z ' + str(n) + ' kartkówek Kuby wynosi ' + str(m) + ' pkt. Ile punktów musi zdobyć z następnej kartkówki, aby średnia z ' + str(n + 1) + ' kartkówek wyniosła ' + str(m2) + ' pkt?')"
+  }
+ ],
+ "constraints": [
+  "new >= 0 and new <= 100"
+ ],
+ "selfCheck": [
+  "(m * n + new) == m2 * (n + 1)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "new"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Suma wyników = średnia · liczba wyników. Porównaj sumę po dodaniu nowej wartości z sumą wcześniejszą."
+   },
+   {
+    "kind": "compute",
+    "text": "Nowa suma: @{m2} · @{n + 1} = @{m2 * (n + 1)}; stara suma: @{m} · @{n} = @{m * n}; różnica: @{new}."
+   }
+  ]
+ }
+}

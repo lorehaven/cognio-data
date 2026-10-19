@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-distance",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odległość na osi liczbowej"
+ },
+ "objectives": [
+  "IV-VI.1.16"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna liczba ujemna"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolne dwie liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-int-distance.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-int-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Odległość dwóch liczb na osi to różnica większej i mniejszej. Np. odległość −3 od 5 to 5 − (−3) = 8."
+  }
+ }
+}

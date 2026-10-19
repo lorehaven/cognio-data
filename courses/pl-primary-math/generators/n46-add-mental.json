@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-add-mental",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "alo": "11",
+    "ahi": "99",
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "101",
+    "bhi": "999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(alo, ahi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "b0",
+   "expr": "b - b % 10"
+  },
+  {
+   "name": "s",
+   "expr": "a + b"
+  }
+ ],
+ "constraints": [
+  "b % 10 != 0"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz w pamięci: @{a|int} + @{b|int}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "s"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dodajemy etapami: najpierw dziesiątki, potem jedności."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a|int} + @{b0|int} = @{a + b0|int}, a potem + @{b % 10} = @{s|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "no_carry_10",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "s - 10"
+     }
+    },
+    "feedback": "Sprawdź jeszcze raz przeniesienie: 10 jedności to 1 dziesiątka.",
+    "when": "s - 10 != s"
+   },
+   {
+    "id": "extra_10",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "s + 10"
+     }
+    },
+    "feedback": "Za dużo o 10 – sprawdź dodawanie dziesiątek."
+   }
+  ]
+ }
+}

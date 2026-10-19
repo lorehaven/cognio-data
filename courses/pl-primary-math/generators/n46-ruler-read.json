@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-ruler-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "start",
+   "expr": "randint(1, 6) if mode == 2 else 0"
+  },
+  {
+   "name": "mm",
+   "expr": "randint(2, 14) * 10 if mode == 0 else randint(21, 149)"
+  },
+  {
+   "name": "len",
+   "expr": "mm / 10"
+  }
+ ],
+ "constraints": [
+  "mode != 2 or start * 10 + mm <= 200"
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Jaką długość ma odcinek zaznaczony na rysunku? Podaj wynik w centymetrach.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "len"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odczytaj początek i koniec odcinka na linijce, a potem odejmij. Jedna kreska to 1 mm = 0,1 cm."
+   },
+   {
+    "kind": "compute",
+    "text": "Długość: @{len|dec} cm."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "ruler",
+    "essential": true,
+    "alt": "Linijka z odcinkiem o początku w @{start} cm.",
+    "params": {
+     "startMm": {
+      "$expr": "start * 10"
+     },
+     "lengthMm": {
+      "$expr": "mm"
+     },
+     "unit": "cm"
+    }
+   }
+  ]
+ }
+}

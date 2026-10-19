@@ -1,0 +1,77 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-div-meaning",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "qhi": "9",
+    "bhi": "6"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "qhi": "30",
+    "bhi": "12"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(2, bhi)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, qhi)"
+  },
+  {
+   "name": "a",
+   "expr": "b * q"
+  },
+  {
+   "name": "mode",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "it",
+   "expr": "choice([['cukierek', 'cukierki', 'cukierków'], ['naklejka', 'naklejki', 'naklejek'], ['jabłko', 'jabłka', 'jabłek'], ['kartka', 'kartki', 'kartek']])"
+  },
+  {
+   "name": "bag",
+   "expr": "choice([['torebki', 'torebek'], ['paczki', 'paczek'], ['koperty', 'kopert'], ['skrzynki', 'skrzynek']])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Rozdzielono po równo ' + pln(a, it) + ' między ' + pln(b, ['osoba', 'osoby', 'osób']) + '. Ile dostała każda osoba?') if mode == 0 else ('Mamy ' + pln(a, it) + '. Do każdej ' + bag[0] + ' wkładamy po ' + pln(b, it) + '. Ile ' + bag[1] + ' potrzeba?')"
+  },
+  {
+   "name": "idea",
+   "expr": "'To podział na równe części: dzielimy ' + str(a) + ' przez ' + str(b) + '.' if mode == 0 else 'To mieszczenie: sprawdzamy, ile razy ' + str(b) + ' mieści się w ' + str(a) + '.'"
+  }
+ ],
+ "selfCheck": [
+  "a == b * q"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{idea}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{a|int} : @{b} = @{q}"
+   }
+  ]
+ }
+}

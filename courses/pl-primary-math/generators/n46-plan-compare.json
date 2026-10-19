@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-plan-compare",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(3, 9) * 10"
+  },
+  {
+   "name": "b",
+   "expr": "a - 10 * randint(1, 2)"
+  },
+  {
+   "name": "f",
+   "expr": "randint(2, 12) * 10"
+  },
+  {
+   "name": "months",
+   "expr": "choice([6, 12, 24])"
+  },
+  {
+   "name": "costA",
+   "expr": "a * months"
+  },
+  {
+   "name": "costB",
+   "expr": "f + b * months"
+  }
+ ],
+ "constraints": [
+  "costA != costB"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Abonament A kosztuje @{a} zł miesięcznie. Abonament B kosztuje @{b} zł miesięcznie, ale trzeba jednorazowo zapłacić @{f} zł za aktywację. Który abonament jest tańszy w ciągu @{months} miesięcy?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (costA < costB) else []) + (['b'] if (costB < costA) else []) + (['c'] if (costA == costB) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz łączny koszt każdego abonamentu w całym okresie."
+   },
+   {
+    "kind": "compute",
+    "text": "A: @{a} · @{months} = @{costA} zł. B: @{f} + @{b} · @{months} = @{costB} zł."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Abonament A",
+    "correct": "costA < costB"
+   },
+   {
+    "id": "b",
+    "text": "Abonament B",
+    "correct": "costB < costA"
+   },
+   {
+    "id": "c",
+    "text": "Kosztują tyle samo",
+    "correct": "costA == costB"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

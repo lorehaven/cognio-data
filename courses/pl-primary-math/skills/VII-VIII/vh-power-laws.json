@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-laws",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Działania na potęgach"
+ },
+ "objectives": [
+  "VII-VIII.1.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ta sama podstawa"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ten sam wykładnik"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Potęga potęgi"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Mieszane, z wykładnikami ujemnymi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-power-laws.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-power-negative"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Prawa działań na potęgach: $a^m \\cdot a^n = a^{m+n}$, $a^m : a^n = a^{m-n}$, $(a^m)^n = a^{mn}$."
+  }
+ }
+}

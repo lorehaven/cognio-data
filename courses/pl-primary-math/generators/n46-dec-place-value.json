@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-place-value",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "2"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "nn",
+   "expr": "randint(pow(10, k + 1), pow(10, k + 3) - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "nn / pow(10, k)"
+  },
+  {
+   "name": "pos",
+   "expr": "randint(-k, 1)"
+  },
+  {
+   "name": "pn",
+   "expr": "['tysięcznych', 'setnych', 'dziesiątych', 'jedności', 'dziesiątek', 'setek'][pos + 3]"
+  },
+  {
+   "name": "d",
+   "expr": "(nn // pow(10, pos + k)) % 10"
+  }
+ ],
+ "constraints": [
+  "nn % 10 != 0"
+ ],
+ "selfCheck": [
+  "d < 10"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaka cyfra stoi na miejscu @{pn} w liczbie @{x|dec:k}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "d"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Za przecinkiem kolejne miejsca to: dziesiąte, setne, tysięczne. Przed przecinkiem: jedności, dziesiątki, setki."
+   },
+   {
+    "kind": "conclude",
+    "text": "Na miejscu @{pn} stoi cyfra @{d}."
+   }
+  ]
+ }
+}

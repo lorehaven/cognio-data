@@ -1,0 +1,38 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-nim",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Misja: gra w patyczki"
+ },
+ "objectives": [
+  "VII-VIII.5.1",
+  "VII-VIII.5.3"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q78-nim.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: analiza prostej gry strategicznej i strategii wygrywającej."
+  }
+ },
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-think-structure"
+ ]
+}

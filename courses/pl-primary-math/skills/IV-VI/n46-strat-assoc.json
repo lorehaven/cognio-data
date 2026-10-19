@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-strat-assoc",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wygodne mnożenie: łączność"
+ },
+ "objectives": [
+  "IV-VI.1.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mnożniki 25 i 4"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mnożniki 5, 20, 50, 125"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-strat-assoc.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "W mnożeniu można zmieniać grupowanie czynników: 25 · 12 = 25 · 4 · 3 = 100 · 3. Szukaj par dających okrągłe liczby."
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-symmetry-axes",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "sh",
+   "expr": "[['kwadrat', 4, 1], ['prostokąt, który nie jest kwadratem', 2, 1], ['trójkąt równoboczny', 3, 0], ['trójkąt równoramienny, który nie jest równoboczny', 1, 0], ['romb, który nie jest kwadratem', 2, 1], ['równoległobok, który nie jest rombem ani prostokątem', 0, 1], ['trapez równoramienny, który nie jest równoległobokiem', 1, 0], ['pięciokąt foremny', 5, 0], ['sześciokąt foremny', 6, 1], ['trójkąt różnoboczny', 0, 0], ['deltoid, który nie jest rombem', 1, 0]]"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, len(sh) - 1)"
+  },
+  {
+   "name": "nm",
+   "expr": "sh[i][0]"
+  },
+  {
+   "name": "axes",
+   "expr": "sh[i][1]"
+  }
+ ],
+ "minDistinct": 10,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile osi symetrii ma ten wielokąt: @{nm}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "axes"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Oś symetrii dzieli figurę na dwie części, które pokrywają się po złożeniu wzdłuż tej osi."
+   },
+   {
+    "kind": "conclude",
+    "text": "Liczba osi symetrii: @{axes}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Rysunek figury.",
+    "params": {
+     "pts": {
+      "$expr": "[[[0, 0], [3, 0], [3, 3], [0, 3]], [[0, 0], [5, 0], [5, 3], [0, 3]], [[0, 0], [4, 0], [2, 3.46]], [[1, 0], [3, 0], [2, 3]], [[0, 2], [3, 0], [6, 2], [3, 4]], [[0, 0], [5, 0], [7, 3], [2, 3]], [[0, 0], [6, 0], [5, 3], [1, 3]], [[0, 0], [4, 0], [5, 2.9], [2, 4.7], [-1, 2.9]], [[0, 0], [2, 0], [3, 1.73], [2, 3.46], [0, 3.46], [-1, 1.73]], [[0, 0], [5, 0], [1.5, 3]], [[0, 1.5], [2, 0], [4, 1.5], [2, 5]]][i]"
+     }
+    }
+   }
+  ]
+ }
+}

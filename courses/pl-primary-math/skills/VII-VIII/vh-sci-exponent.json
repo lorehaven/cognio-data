@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sci-exponent",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Notacja wykładnicza: wykładnik"
+ },
+ "objectives": [
+  "VII-VIII.1.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Duże liczby"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Małe liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-sci-exponent.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-power-negative"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zapis wykładniczy: $a \\cdot 10^n$, gdzie 1 ≤ a < 10. Wykładnik n to liczba miejsc, o które przesuwamy przecinek (dla małych liczb ujemna)."
+  }
+ }
+}

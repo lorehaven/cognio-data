@@ -1,0 +1,86 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-budget",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   },
+   "minDistinct": 40
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   },
+   "minDistinct": 12
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   },
+   "minDistinct": 12
+  }
+ ],
+ "vars": [
+  {
+   "name": "start",
+   "expr": "choice([20, 30, 40, 50, 60, 80, 100])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(5, 19) * 50 / 100"
+  },
+  {
+   "name": "b",
+   "expr": "randint(5, 19) * 50 / 100"
+  },
+  {
+   "name": "goal",
+   "expr": "choice([60, 80, 90, 120, 150, 200])"
+  },
+  {
+   "name": "week",
+   "expr": "choice([5, 10, 15, 20, 30])"
+  },
+  {
+   "name": "have",
+   "expr": "randint(1, 5) * week"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ola dostała ' + str(start) + ' zł kieszonkowego. Kupiła zeszyt za ' + fmt(a, 2) + ' zł i długopisy za ' + fmt(b, 2) + ' zł. Ile złotych jej zostało?') if mode == 0 else (('Franek chce kupić grę za ' + str(goal) + ' zł. Co tydzień odkłada ' + str(week) + ' zł. Po ilu tygodniach uzbiera tyle pieniędzy?') if mode == 1 else ('Marta oszczędza na rower za ' + str(goal) + ' zł. Ma już ' + str(have) + ' zł i co tydzień dokłada ' + str(week) + ' zł. Ile tygodni jeszcze musi oszczędzać?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "start - a - b if mode == 0 else (goal / week if mode == 1 else (goal - have) / week)"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or start > a + b",
+  "mode != 1 or goal % week == 0",
+  "mode != 2 or (goal > have and (goal - have) % week == 0)"
+ ],
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Odejmij oba wydatki od kwoty kieszonkowego.' if mode == 0 else 'Podziel to, co jeszcze trzeba uzbierać, przez kwotę odkładaną co tydzień.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans|dec}."
+   }
+  ]
+ }
+}

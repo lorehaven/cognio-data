@@ -1,0 +1,107 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-part-figure",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dmax": "8"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dmax": "12"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "randint(3, dmax)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, d - 1)"
+  },
+  {
+   "name": "shape",
+   "expr": "choice([['Prostokąt', 'prostokąta'], ['Koło', 'koła'], ['Pasek papieru', 'paska']])"
+  },
+  {
+   "name": "eqp",
+   "expr": "'równe' if d in [2, 3, 4] else 'równych'"
+  }
+ ],
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "@{shape[0]} podzielono na @{d} @{eqp} części i zacieniowano @{k} z nich. Jaką część @{shape[1]} zacieniowano?",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "k"
+   },
+   "den": {
+    "$expr": "d"
+   },
+   "form": "any"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Ułamek to liczba zacieniowanych części (licznik) przez liczbę wszystkich równych części (mianownik)."
+   },
+   {
+    "kind": "conclude",
+    "text": "$\\frac{@{k}}{@{d}}$"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "fraction-bar",
+    "essential": false,
+    "alt": "@{shape[0]} podzielony na @{d} równych części, @{k} zacieniowane.",
+    "params": {
+     "parts": {
+      "$expr": "d"
+     },
+     "shaded": {
+      "$expr": "k"
+     }
+    }
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "flip",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "d"
+     },
+     "den": {
+      "$expr": "k"
+     },
+     "form": "any"
+    },
+    "feedback": "W liczniku jest liczba zacieniowanych części, a w mianowniku – wszystkich.",
+    "when": "k != 1"
+   },
+   {
+    "id": "rest",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "d - k"
+     },
+     "den": {
+      "$expr": "d"
+     },
+     "form": "any"
+    },
+    "feedback": "To jest część niezacieniowana. Zapisz część zacieniowaną."
+   }
+  ]
+ }
+}

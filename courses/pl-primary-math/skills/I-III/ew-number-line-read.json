@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-number-line-read",
+ "stage": "I-III",
+ "title": {
+  "pl": "Liczba na osi liczbowej"
+ },
+ "objectives": [
+  "I-III.1.e"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Od 0 do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Od 0 do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Od 0 do 1000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-number-line-read.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Policz, ile wynosi odległość między kreskami. Potem policz kreski od zera do zaznaczonego punktu i odczytaj jego liczbę."
+  }
+ }
+}

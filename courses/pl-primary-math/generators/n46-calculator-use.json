@@ -1,0 +1,70 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-calculator-use",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "yes",
+   "expr": "shuffle(['Dodajesz 15 różnych cen z paragonów z kilku sklepów, aby sprawdzić miesięczne wydatki.', 'Obliczasz 12,5% z 1 847 zł, żeby poznać wysokość podatku.', 'Porównujesz ceny jednostkowe sześciu różnych opakowań w sklepie internetowym.', 'Liczysz średnią z 20 pomiarów temperatury z całego miesiąca.', 'Zamieniasz dziesięć odległości z mapy na kilometry w skali 1 : 75 000.'])"
+  },
+  {
+   "name": "no",
+   "expr": "shuffle(['Obliczasz 6 · 7, żeby sprawdzić tabliczkę mnożenia.', 'Dodajesz 25 + 15 w pamięci.', 'Ćwiczysz pisemne dzielenie 756 : 6 w zeszycie.', 'Liczysz połowę z 40.', 'Porównujesz, czy 0,5 jest większe niż 0,05.'])"
+  }
+ ],
+ "constraints": [
+  "(yes[0]) != (no[0])",
+  "(yes[0]) != (no[1])",
+  "(yes[0]) != (no[2])",
+  "(no[0]) != (no[1])",
+  "(no[0]) != (no[2])",
+  "(no[1]) != (no[2])"
+ ],
+ "minDistinct": 5,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "W której sytuacji kalkulator naprawdę się przyda, bo rachunki są długie, a liczy się wynik, a nie sam trening rachowania?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Kalkulator pomaga, gdy liczb jest dużo albo są duże. Nie używamy go, gdy ćwiczymy rachunki lub gdy łatwo policzyć w pamięci."
+   },
+   {
+    "kind": "conclude",
+    "text": "Warto użyć kalkulatora, gdy: @{yes[0]}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{yes[0]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{no[0]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{no[1]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{no[2]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-percent-what",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[10, 20, 25, 40, 50, 60, 75, 80]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[5, 12, 15, 24, 35, 45, 48, 64, 85]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "step",
+   "expr": "100 // gcd(p, 100)"
+  },
+  {
+   "name": "b",
+   "expr": "step * randint(2, 12)"
+  },
+  {
+   "name": "a",
+   "expr": "b * p / 100"
+  },
+  {
+   "name": "c",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "lit",
+   "expr": "['litr', 'litry', 'litrów']"
+  },
+  {
+   "name": "pg",
+   "expr": "['strona', 'strony', 'stron']"
+  },
+  {
+   "name": "kr",
+   "expr": "['kredka', 'kredki', 'kredek']"
+  },
+  {
+   "name": "txts",
+   "expr": "['Zbiornik pomieści ' + pln(b, lit) + '. Jest w nim ' + pln(a, lit) + ' wody. Na ile procent jest napełniony?', 'Książka ma ' + pln(b, pg) + '. Ola przeczytała ' + pln(a, pg) + '. Jaki procent książki przeczytała?', 'W pudełku jest ' + pln(b, kr) + '. Czerwonych jest ' + str(a) + '. Jaki procent kredek jest czerwonych?']"
+  }
+ ],
+ "constraints": [
+  "denom(a) == 1",
+  "a < b"
+ ],
+ "selfCheck": [
+  "a * 100 == p * b"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txts[c]}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "p"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Procent to część ze 100. Podziel część przez całość i pomnóż przez 100%."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} : @{b} · 100% = @{p}%"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "inverse",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "100 - p"
+     }
+    },
+    "feedback": "Zadanie pyta o część, a nie o resztę.",
+    "when": "p != 50"
+   }
+  ]
+ }
+}

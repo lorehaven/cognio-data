@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wp-add-sub",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "20",
+    "kmin": "0",
+    "kmax": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "100",
+    "kmin": "0",
+    "kmax": "2"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "1000",
+    "kmin": "0",
+    "kmax": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "q",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "it",
+   "expr": "choice([['jabłko', 'jabłka', 'jabłek'], ['ciastko', 'ciastka', 'ciastek'], ['naklejka', 'naklejki', 'naklejek'], ['kredka', 'kredki', 'kredek'], ['klocek', 'klocki', 'klocków'], ['cukierek', 'cukierki', 'cukierków']])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(kmin, kmax)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(hi // 4, hi // 2) // (1 if hi < 100 else 10) * (1 if hi < 100 else 10)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(hi // 10 + 1, hi // 4) // (1 if hi < 100 else 10) * (1 if hi < 100 else 10)"
+  },
+  {
+   "name": "txt",
+   "expr": "(p[0] + ' miał' + p[1] + ' ' + pln(a, it) + '. ' + p[0] + ' dostał' + p[1] + ' jeszcze ' + pln(b, it) + '. Ile ' + it[2] + ' ma teraz ' + p[0] + '?') if k == 0 else ((p[0] + ' miał' + p[1] + ' ' + pln(a, it) + '. ' + p[0] + ' oddał' + p[1] + ' ' + pln(b, it) + '. Ile ' + it[2] + ' zostało?') if k == 1 else (p[0] + ' ma ' + pln(a + b, it) + ', a ' + q[0] + ' ma ' + pln(a, it) + '. O ile ' + it[2] + ' więcej ma ' + p[0] + '?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "a + b if k == 0 else (a - b if k == 1 else b)"
+  }
+ ],
+ "constraints": [
+  "a > b",
+  "b > 0",
+  "p[0] != q[0]",
+  "k != 0 or a + b <= hi"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Dostał(a) jeszcze – więc dodajemy.' if k == 0 else ('Oddał(a) – więc odejmujemy.' if k == 1 else 'Porównujemy: odejmujemy mniejszą liczbę od większej.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "@{(str(a) + ' + ' + str(b) + ' = ' + str(a + b) if k == 0 else (str(a) + ' − ' + str(b) + ' = ' + str(a - b) if k == 1 else str(a + b) + ' − ' + str(a) + ' = ' + str(b)))}"
+   }
+  ]
+ }
+}

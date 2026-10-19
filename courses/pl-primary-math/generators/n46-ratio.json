@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-ratio",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "bhi": "12",
+    "khi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "bhi": "60",
+    "khi": "12"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "bhi": "500",
+    "khi": "20"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "y",
+   "expr": "randint(2, bhi)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, khi)"
+  },
+  {
+   "name": "big",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "x",
+   "expr": "y * k if big else y"
+  },
+  {
+   "name": "z",
+   "expr": "y if big else y * k"
+  },
+  {
+   "name": "adj",
+   "expr": "'większa' if big else 'mniejsza'"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile razy liczba @{x|int} jest @{adj} od liczby @{z|int}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "k"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównanie ilorazowe: dzielimy większą liczbę przez mniejszą."
+   },
+   {
+    "kind": "compute",
+    "text": "@{max(x, z)|int} : @{min(x, z)|int} = @{k}"
+   }
+  ]
+ }
+}

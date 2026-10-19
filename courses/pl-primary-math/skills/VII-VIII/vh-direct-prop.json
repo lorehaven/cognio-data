@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-direct-prop",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wielkości wprost proporcjonalne"
+ },
+ "objectives": [
+  "VII-VIII.1.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Znajdź brakującą wartość"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwie pary wartości"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-direct-prop.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "n46-wp-proportion"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dwie wielkości są wprost proporcjonalne, gdy jedna rośnie ileś razy, druga rośnie tyle samo razy. Iloraz y : x jest wtedy stały."
+  }
+ }
+}

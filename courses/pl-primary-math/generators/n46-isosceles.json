@@ -1,0 +1,96 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-isosceles",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "apex",
+   "expr": "2 * randint(10, 85)"
+  },
+  {
+   "name": "base",
+   "expr": "randint(25, 85)"
+  },
+  {
+   "name": "leg",
+   "expr": "randint(4, 20)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, leg * 2 - 1)"
+  },
+  {
+   "name": "per",
+   "expr": "2 * leg + b"
+  },
+  {
+   "name": "txt",
+   "expr": "('W trójkącie równoramiennym kąt między ramionami ma ' + str(apex) + '°. Ile stopni ma każdy z kątów przy podstawie?') if mode == 0 else (('W trójkącie równoramiennym kąt przy podstawie ma ' + str(base) + '°. Ile stopni ma kąt między ramionami?') if mode == 1 else ('Obwód trójkąta równoramiennego wynosi ' + str(per) + ' cm, a jego ramię ma ' + str(leg) + ' cm. Ile centymetrów ma podstawa?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "(180 - apex) // 2 if mode == 0 else (180 - 2 * base if mode == 1 else per - 2 * leg)"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or base < 89",
+  "mode != 2 or b != leg"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Kąty przy podstawie są równe, a razem z kątem przy wierzchołku dają 180°.' if mode < 2 else 'Obwód to suma wszystkich boków: dwa ramiona i podstawa.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle-angles",
+    "essential": false,
+    "alt": "Trójkąt równoramienny z zaznaczonymi kątami.",
+    "params": {
+     "angles": {
+      "$expr": "[(180 - apex) // 2, (180 - apex) // 2, apex] if mode == 0 else [base, base, 180 - 2 * base]"
+     },
+     "labels": {
+      "$expr": "['?', '?', str(apex) + '°'] if mode == 0 else [str(base) + '°', str(base) + '°', '?']"
+     }
+    },
+    "when": "mode < 2"
+   }
+  ]
+ }
+}

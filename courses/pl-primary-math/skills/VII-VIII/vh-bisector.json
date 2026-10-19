@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-bisector",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Symetralna odcinka i dwusieczna kąta"
+ },
+ "objectives": [
+  "VII-VIII.3.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Symetralna odcinka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwusieczna kąta"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwusieczna i ramię kąta"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-bisector.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-angle-types"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Symetralna odcinka jest prostopadła do niego i przechodzi przez jego środek; jej punkty są jednakowo oddalone od końców odcinka. Dwusieczna dzieli kąt na dwa równe kąty."
+  }
+ }
+}

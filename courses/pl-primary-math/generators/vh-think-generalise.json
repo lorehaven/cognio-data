@@ -1,0 +1,71 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-think-generalise",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(8, 30)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, 9)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "sh",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Suma pierwszych ' + str(n) + ' kolejnych liczb nieparzystych (1 + 3 + 5 + …) jest równa kwadratowi pewnej liczby. Ile wynosi ta suma?') if mode == 0 and sh == 0 else (('Ile wynosi suma wszystkich liczb naturalnych od 1 do ' + str(n) + '?') if mode == 0 else (('W ciągu ' + str(a) + ', ' + str(a + d) + ', ' + str(a + 2 * d) + ', ' + str(a + 3 * d) + ', … każdy następny wyraz jest większy o ' + str(d) + '. Ile wynosi ' + str(n) + '. wyraz tego ciągu?') if mode == 1 else ('Z zapałek układamy w rzędzie trójkąty: jeden trójkąt wymaga 3 zapałek, dwa trójkąty 5 zapałek, trzy trójkąty 7 zapałek itd. Ile zapałek potrzeba na ' + str(n) + ' trójkątów?')))"
+  },
+  {
+   "name": "ans",
+   "expr": "(n * n if sh == 0 else n * (n + 1) // 2) if mode == 0 else (a + (n - 1) * d if mode == 1 else 2 * n + 1)"
+  }
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Szukaj wzoru: 1 = 1², 1 + 3 = 2², 1 + 3 + 5 = 3². Suma n pierwszych nieparzystych to n².' if mode == 0 and sh == 0 else ('Sparuj pierwszą liczbę z ostatnią, drugą z przedostatnią: każda para daje n + 1. Par jest n : 2.' if mode == 0 else ('n-ty wyraz to pierwszy wyraz plus (n − 1) · różnica.' if mode == 1 else 'Pierwszy trójkąt: 3 zapałki, każdy następny dodaje 2 zapałki: 3 + 2(n − 1) = 2n + 1.')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

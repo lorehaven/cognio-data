@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-tally",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zapisz wyniki w tabeli"
+ },
+ "objectives": [
+  "I-III.4.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwie odpowiedzi"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy odpowiedzi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-tally.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.4",
+ "tutor": {
+  "intro": {
+   "pl": "Kreskami zapisujemy wyniki liczenia: każda odpowiedź to jedna kreska. Piątą kreskę stawiamy w poprzek czterech, żeby łatwo liczyć."
+  }
+ }
+}

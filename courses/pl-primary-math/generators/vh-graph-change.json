@@ -1,0 +1,126 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-graph-change",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "years",
+   "expr": "[2019, 2020, 2021, 2022, 2023, 2024]"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(i + 1, 5)"
+  },
+  {
+   "name": "base",
+   "expr": "20 * randint(10, 25)"
+  },
+  {
+   "name": "p",
+   "expr": "choice([5, 10, 20, 25, 50])"
+  },
+  {
+   "name": "vi",
+   "expr": "base"
+  },
+  {
+   "name": "vj",
+   "expr": "base + base * p // 100 if ask < 2 else base - base * p // 100"
+  },
+  {
+   "name": "o",
+   "expr": "sample(200, 500, 6)"
+  },
+  {
+   "name": "vals",
+   "expr": "setat(setat(o, i, vi), j, vj)"
+  },
+  {
+   "name": "txt",
+   "expr": "('O ile złotych zmienił się koszt koszyka zakupów między rokiem ' + str(years[i]) + ' a ' + str(years[j]) + '? Podaj wynik bez znaku.') if ask == 0 else (('O ile procent wzrósł koszt koszyka zakupów między rokiem ' + str(years[i]) + ' a ' + str(years[j]) + '?') if ask == 1 else ('O ile procent zmalał koszt koszyka zakupów między rokiem ' + str(years[i]) + ' a ' + str(years[j]) + '?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "abs(vj - vi) if ask == 0 else p"
+  },
+  {
+   "name": "u",
+   "expr": "'zł' if ask == 0 else '%'"
+  }
+ ],
+ "constraints": [
+  "len(uniq(vals)) == 6",
+  "vi >= 200 and vj >= 200",
+  "min(vals) >= 150 and max(vals) <= 800"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Wykres pokazuje roczny koszt koszyka zakupów (w zł). @{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Odczytaj obie wartości i odejmij mniejszą od większej.' if ask == 0 else 'Oblicz różnicę wartości i podziel ją przez wartość początkową (z roku wcześniejszego). Wynik zamień na procent.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "Wartość w roku @{years[i]}: @{vi} zł, w roku @{years[j]}: @{vj} zł."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "media": [
+   {
+    "type": "chart",
+    "kind": "line",
+    "essential": true,
+    "alt": "Wykres liniowy: koszt koszyka zakupów w latach 2019–2024.",
+    "params": {
+     "x": {
+      "$expr": "years"
+     },
+     "y": {
+      "$expr": "vals"
+     },
+     "xLabel": "rok",
+     "yLabel": "koszt (zł)"
+    }
+   }
+  ]
+ }
+}

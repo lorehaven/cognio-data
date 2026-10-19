@@ -1,0 +1,100 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "kind": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "v1",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "u1",
+   "expr": "randint(1, v1 - 1)"
+  },
+  {
+   "name": "eq",
+   "expr": "randint(0, 3) == 0 if kind == 3 else False"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 3)"
+  },
+  {
+   "name": "v2",
+   "expr": "v1 * k if eq else (v1 if kind == 0 else (randint(u1 + 1, 12) if kind == 1 else randint(3, 12)))"
+  },
+  {
+   "name": "u2",
+   "expr": "u1 * k if eq else (u1 if kind == 1 else randint(1, v2 - 1))"
+  }
+ ],
+ "constraints": [
+  "eq or u1 * v2 != u2 * v1"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Porównaj ułamki $\\frac{@{u1}}{@{v1}}$ i $\\frac{@{u2}}{@{v2}}$. Który znak należy wstawić między nie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (u1 * v2 < u2 * v1) else []) + (['b'] if (u1 * v2 == u2 * v1) else []) + (['c'] if (u1 * v2 > u2 * v1) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Przy jednakowych mianownikach większy jest ułamek z większym licznikiem.' if kind == 0 else ('Przy jednakowych licznikach większy jest ułamek z mniejszym mianownikiem.' if kind == 1 else 'Sprowadź ułamki do wspólnego mianownika i porównaj liczniki.'))}"
+   },
+   {
+    "kind": "compute",
+    "text": "Po sprowadzeniu do mianownika @{v1 * v2}: liczniki @{u1 * v2} i @{u2 * v1}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "u1 * v2 < u2 * v1"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "u1 * v2 == u2 * v1"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "u1 * v2 > u2 * v1"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

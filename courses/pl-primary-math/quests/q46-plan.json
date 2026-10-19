@@ -1,0 +1,186 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-plan",
+ "title": {
+  "pl": "Misja: plan sali w skali"
+ },
+ "experience": 2,
+ "vars": [
+  {
+   "name": "L",
+   "expr": "randint(6, 12)"
+  },
+  {
+   "name": "Wd",
+   "expr": "randint(4, 9)"
+  },
+  {
+   "name": "s",
+   "expr": "choice([20, 25, 50, 100])"
+  }
+ ],
+ "intro": "Klasa mierzy salę lekcyjną: ma ona @{L} m długości i @{Wd} m szerokości. Uczniowie rysują jej plan w skali 1 : @{s}. Pomóż obliczyć rozmiary planu i przygotować remont podłogi.",
+ "steps": [
+  {
+   "kind": "quantity-input",
+   "prompt": "Jaką długość (w centymetrach) ma sala na planie?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "L * 100 / s"
+    },
+    "unit": "cm"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Skala 1 : @{s} oznacza, że 1 cm na planie to @{s} cm w rzeczywistości. Zamień @{L} m na centymetry i podziel przez @{s}."
+    },
+    {
+     "kind": "compute",
+     "text": "@{L * 100} : @{s} = @{L * 100 / s|dec}"
+    }
+   ],
+   "input": {
+    "unit": "cm"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jaką szerokość (w centymetrach) ma sala na planie?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "Wd * 100 / s"
+    },
+    "unit": "cm"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Postępuj tak samo jak z długością."
+    },
+    {
+     "kind": "compute",
+     "text": "@{Wd * 100} : @{s} = @{Wd * 100 / s|dec}"
+    }
+   ],
+   "input": {
+    "unit": "cm"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie jest rzeczywiste pole podłogi w sali?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "L * Wd"
+    },
+    "unit": "m²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole prostokąta = długość · szerokość."
+    },
+    {
+     "kind": "compute",
+     "text": "@{L} · @{Wd} = @{L * Wd}"
+    }
+   ],
+   "input": {
+    "unit": "m²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma prostokąt przedstawiający salę na planie?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "L * 100 / s * Wd * 100 / s"
+    },
+    "unit": "cm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pomnóż rozmiary planu z poprzednich kroków."
+    },
+    {
+     "kind": "compute",
+     "text": "@{L * 100 / s|dec} · @{Wd * 100 / s|dec} = @{L * 100 / s * Wd * 100 / s|dec}"
+    }
+   ],
+   "input": {
+    "unit": "cm²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Wzdłuż wszystkich ścian (oprócz drzwi o szerokości 1 m) klasa chce przybić listwy przypodłogowe. Ile metrów listew potrzeba?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "2 * (L + Wd) - 1"
+    },
+    "unit": "m"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Obwód sali minus szerokość drzwi."
+    },
+    {
+     "kind": "compute",
+     "text": "2 · (@{L} + @{Wd}) − 1 = @{2 * (L + Wd) - 1}"
+    }
+   ],
+   "input": {
+    "unit": "m"
+   }
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Podłogę pokryją kwadratowymi płytkami o boku 50 cm, bez przycinania. Ile płytek trzeba kupić?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "(2 * L) * (2 * Wd)"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Wzdłuż 1 m mieszczą się 2 płytki. Policz płytki wzdłuż długości i szerokości i pomnóż."
+    },
+    {
+     "kind": "compute",
+     "text": "@{2 * L} · @{2 * Wd} = @{(2 * L) * (2 * Wd)}"
+    }
+   ]
+  }
+ ],
+ "constraints": [
+  "L > Wd + 1"
+ ],
+ "media": [
+  {
+   "type": "figure",
+   "kind": "rect",
+   "essential": false,
+   "alt": "Prostokątny kształt sali z podanymi wymiarami.",
+   "params": {
+    "w": {
+     "$expr": "L"
+    },
+    "h": {
+     "$expr": "Wd"
+    },
+    "unit": "m"
+   }
+  }
+ ],
+ "outro": "Plan gotowy! Znasz rozmiary sali na rysunku, jej pole i liczbę płytek potrzebnych do remontu."
+}

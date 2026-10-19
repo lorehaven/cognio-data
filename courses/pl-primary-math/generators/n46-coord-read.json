@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-coord-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "0",
+    "hi": "8"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "-7",
+    "hi": "7"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(lo, hi)"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "point-input",
+  "prompt": "Jakie współrzędne ma punkt A zaznaczony w układzie współrzędnych? Najpierw podaj współrzędną x (poziomą), potem y (pionową).",
+  "answer": {
+   "type": "point",
+   "x": {
+    "$expr": "x"
+   },
+   "y": {
+    "$expr": "y"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odczytaj, ile kratek w prawo (lub w lewo) od początku układu, a potem ile w górę (lub w dół)."
+   },
+   {
+    "kind": "conclude",
+    "text": "A = (@{x}, @{y})"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "coordinate-plane",
+    "essential": true,
+    "alt": "Układ współrzędnych z zaznaczonym punktem A.",
+    "params": {
+     "min": {
+      "$expr": "lo - 1"
+     },
+     "max": {
+      "$expr": "hi + 1"
+     },
+     "points": [
+      {
+       "label": "A",
+       "x": {
+        "$expr": "x"
+       },
+       "y": {
+        "$expr": "y"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "swapped",
+    "answer": {
+     "type": "point",
+     "x": {
+      "$expr": "y"
+     },
+     "y": {
+      "$expr": "x"
+     }
+    },
+    "feedback": "Najpierw podajemy współrzędną poziomą x, potem pionową y.",
+    "when": "x != y"
+   }
+  ]
+ }
+}

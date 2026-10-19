@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-factor",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wyłączanie jednomianu przed nawias"
+ },
+ "objectives": [
+  "VII-VIII.2.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wspólny czynnik liczbowy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wspólny czynnik z literą"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-factor.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-mul-mono"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wyłączanie przed nawias to odwrotność mnożenia: 6x + 9 = 3(2x + 3). Znajdź największy wspólny czynnik wszystkich wyrazów."
+  }
+ }
+}

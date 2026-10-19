@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wp-add-sub",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zadania tekstowe: dodawanie i odejmowanie"
+ },
+ "objectives": [
+  "I-III.5.b",
+  "I-III.5.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 1000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-wp-add-sub.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "prerequisites": [
+  "ew-add",
+  "ew-sub"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W zadaniu tekstowym ustal, czy coś dodajemy (razem, w sumie), czy odejmujemy (zostało, o ile więcej). Zapisz działanie i oblicz."
+  }
+ }
+}

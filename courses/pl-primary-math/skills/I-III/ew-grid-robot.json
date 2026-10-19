@@ -1,0 +1,45 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-grid-robot",
+ "stage": "I-III",
+ "title": {
+  "pl": "Robot na kratkach"
+ },
+ "objectives": [
+  "I-III.3.e",
+  "I-III.3.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa ruchy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy ruchy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-grid-robot.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "tutor": {
+  "intro": {
+   "pl": "W prawo zwiększa pierwszą liczbę, w górę – drugą. W lewo i w dół liczby się zmniejszają. Wykonuj polecenia po kolei."
+  }
+ }
+}

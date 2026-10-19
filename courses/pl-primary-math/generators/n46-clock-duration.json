@@ -1,0 +1,80 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-clock-duration",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dmax": "55"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dmax": "180"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "dmax": "420"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "start",
+   "expr": "randint(360, 1100) // 5 * 5"
+  },
+  {
+   "name": "dur",
+   "expr": "randint(10, dmax) // 5 * 5"
+  },
+  {
+   "name": "end",
+   "expr": "start + dur"
+  },
+  {
+   "name": "c",
+   "expr": "choice([['Lekcja rozpoczęła się o ', ' i skończyła o ', 'Ile minut trwała lekcja?'], ['Wycieczka wyruszyła o ', ', a wróciła o ', 'Ile minut trwała wycieczka?'], ['Turniej zaczął się o ', ' i zakończył o ', 'Ile minut trwał turniej?']])"
+  }
+ ],
+ "constraints": [
+  "dur >= 10",
+  "dmax > 55 or (start % 60) + dur < 60"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{c[0]}@{hhmm(start)}@{c[1]}@{hhmm(end)}. @{c[2]}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "dur"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz, ile minut mija od jednej godziny do drugiej: najpierw do pełnej godziny, potem dalej."
+   },
+   {
+    "kind": "compute",
+    "text": "Od @{hhmm(start)} do @{hhmm(end)} jest @{dur} min (@{dur // 60} h @{dur % 60} min)."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "subtract_clock",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "abs(end // 60 * 100 + end % 60 - (start // 60 * 100 + start % 60))"
+     }
+    },
+    "feedback": "Godzina ma 60 minut – nie odejmuj godzin jak zwykłych liczb.",
+    "when": "start // 60 != end // 60"
+   }
+  ]
+ }
+}

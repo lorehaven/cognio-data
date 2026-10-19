@@ -1,0 +1,57 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-shopping",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zakupy i reszta"
+ },
+ "objectives": [
+  "I-III.2.h",
+  "I-III.5.h"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne złote"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ceny z groszami"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Reszta z banknotu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-shopping.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "prerequisites": [
+  "ew-money-notation",
+  "ew-add"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy zakupach dodaj ceny towarów, a resztę oblicz, odejmując sumę od kwoty, którą zapłaciłeś."
+  }
+ }
+}

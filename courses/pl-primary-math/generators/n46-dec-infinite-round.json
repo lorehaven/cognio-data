@@ -1,0 +1,69 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-infinite-round",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pl": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pl": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "choice([3, 6, 7, 9, 11, 12])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "pn",
+   "expr": "['jedności', 'części dziesiątych', 'części setnych'][pl]"
+  },
+  {
+   "name": "r",
+   "expr": "round(x, pl)"
+  }
+ ],
+ "constraints": [
+  "gcd(a, b) == 1",
+  "denom(x) != 1",
+  "denom(x) not in divisors(1000)"
+ ],
+ "selfCheck": [
+  "abs(r - x) * 2 <= 1 / pow(10, pl)"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Zapisz ułamek $\\frac{@{a}}{@{b}}$ w postaci dziesiętnej, zaokrąglając do @{pn}.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielimy licznik przez mianownik z jednym miejscem więcej niż potrzeba i zaokrąglamy."
+   },
+   {
+    "kind": "conclude",
+    "text": "$\\frac{@{a}}{@{b}} \\approx @{r|dec:pl}$"
+   }
+  ]
+ }
+}

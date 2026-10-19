@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/quest.schema.json",
+  "title": "Quest = a story-driven multi-step activity (quests/<id>.json). One instance = (quest, seed): variables are drawn once and shared by all steps.",
+  "type": "object",
+  "required": [
+    "formatVersion",
+    "id",
+    "title",
+    "intro",
+    "steps"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "formatVersion": {
+      "type": "string",
+      "pattern": "^1\\.\\d+$"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "title": {
+      "$ref": "common.schema.json#/$defs/localized"
+    },
+    "experience": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Index into stages[].experiences of curriculum.json: the official 'doświadczenie edukacyjne' this quest realises"
+    },
+    "vars": {
+      "$ref": "generator.schema.json#/properties/vars"
+    },
+    "constraints": {
+      "$ref": "generator.schema.json#/properties/constraints"
+    },
+    "selfCheck": {
+      "$ref": "generator.schema.json#/properties/selfCheck"
+    },
+    "minDistinct": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "intro": {
+      "type": "string",
+      "description": "Story text (template, like a task prompt) shown before step 1"
+    },
+    "media": {
+      "$ref": "task.schema.json#/properties/media",
+      "description": "Figures/tables shown with the story and kept visible during the steps"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 10,
+      "items": {
+        "$ref": "generator.schema.json#/properties/task"
+      },
+      "description": "Ordinary task templates answered one after another; later prompts may use any variable (e.g. results of earlier steps)"
+    },
+    "outro": {
+      "type": "string",
+      "description": "Closing text shown after the last step (template)"
+    }
+  }
+}

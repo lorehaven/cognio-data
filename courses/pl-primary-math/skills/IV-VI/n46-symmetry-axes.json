@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-symmetry-axes",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Osie symetrii figur"
+ },
+ "objectives": [
+  "IV-VI.4.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Figury płaskie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wielokąty foremne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-symmetry-axes.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-quad-properties"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Oś symetrii dzieli figurę na dwie części, które po złożeniu dokładnie się pokrywają. Kwadrat ma 4 osie, prostokąt 2, a wielokąt foremny o n bokach – n osi."
+  }
+ }
+}

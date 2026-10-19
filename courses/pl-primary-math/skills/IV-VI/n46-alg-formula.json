@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-formula",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Obliczanie ze wzoru"
+ },
+ "objectives": [
+  "IV-VI.3.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pole i obwód prostokąta, droga"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trójkąt i prostopadłościan"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Trapez"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-alg-formula.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.3",
+ "prerequisites": [
+  "n46-alg-evaluate"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wzór to zapis zależności między wielkościami za pomocą liter, np. pole prostokąta $P = a \\cdot b$. Aby obliczyć wartość, podstawiamy liczby w miejsce liter."
+  }
+ }
+}

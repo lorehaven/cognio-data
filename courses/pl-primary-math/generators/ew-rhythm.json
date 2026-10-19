@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-rhythm",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "3"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "4"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "syms",
+   "expr": "shuffle(['A', 'B', 'C', 'D', 'E'])"
+  },
+  {
+   "name": "pat",
+   "expr": "take(syms, k)"
+  },
+  {
+   "name": "shown",
+   "expr": "[pat[0], pat[1 % k], pat[2 % k], pat[3 % k], pat[4 % k], pat[5 % k], pat[6 % k]]"
+  },
+  {
+   "name": "nxt",
+   "expr": "pat[7 % k]"
+  },
+  {
+   "name": "idx",
+   "expr": "index(syms, nxt)"
+  }
+ ],
+ "constraints": [
+  "(nxt) != (syms[(idx + 1) % 5])",
+  "(nxt) != (syms[(idx + 2) % 5])",
+  "(nxt) != (syms[(idx + 3) % 5])",
+  "(syms[(idx + 1) % 5]) != (syms[(idx + 2) % 5])",
+  "(syms[(idx + 1) % 5]) != (syms[(idx + 3) % 5])",
+  "(syms[(idx + 2) % 5]) != (syms[(idx + 3) % 5])"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Jaki znak będzie następny w ciągu: @{join(shown, \" \")} ___ ?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź powtarzający się fragment: @{join(pat, \" \")}. Potem sprawdź, który znak jest na kolejnym miejscu."
+   },
+   {
+    "kind": "conclude",
+    "text": "Następny znak: @{nxt}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{nxt}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{syms[(idx + 1) % 5]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{syms[(idx + 2) % 5]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{syms[(idx + 3) % 5]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-converse",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Twierdzenie i twierdzenie odwrotne"
+ },
+ "objectives": [
+  "VII-VIII.5.3.a"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Twierdzenie odwrotne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-converse.jsonl"
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-justify-right"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Twierdzenie „jeśli A, to B” ma twierdzenie odwrotne „jeśli B, to A”. Prawdziwość jednego nie gwarantuje prawdziwości drugiego."
+  }
+ }
+}

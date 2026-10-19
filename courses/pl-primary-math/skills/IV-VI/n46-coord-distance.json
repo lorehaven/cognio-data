@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-coord-distance",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odległość punktów o wspólnej współrzędnej"
+ },
+ "objectives": [
+  "IV-VI.4.17"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwsza ćwiartka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Cały układ współrzędnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-coord-distance.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-coord-read",
+  "n46-int-distance"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy dwa punkty mają taką samą jedną współrzędną, leżą na jednej prostej poziomej lub pionowej. Odległość to różnica drugiej współrzędnej."
+  }
+ }
+}

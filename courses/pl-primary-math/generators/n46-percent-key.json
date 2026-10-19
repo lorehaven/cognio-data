@@ -1,0 +1,77 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-percent-key",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[50, 10, 100]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[50, 10, 25, 1, 100]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "step",
+   "expr": "100 // gcd(p, 100)"
+  },
+  {
+   "name": "n",
+   "expr": "step * randint(2, 40)"
+  },
+  {
+   "name": "r",
+   "expr": "n * p / 100"
+  },
+  {
+   "name": "how",
+   "expr": "['całość', 'połowa', 'jedna czwarta', 'jedna dziesiąta', 'jedna setna'][index([100, 50, 25, 10, 1], p)]"
+  }
+ ],
+ "selfCheck": [
+  "r * 100 == n * p"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile to jest @{p}% z liczby @{n|int}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{p}% to @{how} całości."
+   },
+   {
+    "kind": "compute",
+    "text": "@{n|int} · @{p} : 100 = @{r|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "percent_as_number",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "p"
+     }
+    },
+    "feedback": "Procent mówi, jaką częścią liczby jest wynik – to nie jest jeszcze wynik.",
+    "when": "p != r"
+   }
+  ]
+ }
+}

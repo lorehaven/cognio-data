@@ -1,0 +1,96 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-cuboid-compound",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "l",
+   "expr": "randint(2, 6) * 10"
+  },
+  {
+   "name": "w",
+   "expr": "randint(2, 5) * 10"
+  },
+  {
+   "name": "hh",
+   "expr": "randint(2, 5) * 10"
+  },
+  {
+   "name": "vol",
+   "expr": "l * w * hh"
+  },
+  {
+   "name": "txt",
+   "expr": "('Bryła składa się z dwóch prostopadłościanów, które się nie nakładają: pierwszy ma wymiary ' + str(a) + ' cm × ' + str(b) + ' cm × ' + str(c) + ' cm, a drugi ' + str(d) + ' cm × ' + str(b) + ' cm × ' + str(c) + ' cm. Oblicz objętość bryły w cm³.') if mode == 0 else ('Akwarium ma wymiary dna ' + str(l) + ' cm × ' + str(w) + ' cm i wysokość ' + str(hh) + ' cm. Ile litrów wody zmieści się w nim po brzegi? (1 l = 1000 cm³)')"
+  },
+  {
+   "name": "ans",
+   "expr": "(a + d) * b * c if mode == 0 else vol / 1000"
+  },
+  {
+   "name": "u",
+   "expr": "'cm³' if mode == 0 else 'l'"
+  }
+ ],
+ "constraints": [
+  "denom(ans) == 1 or mode == 0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Objętości dodajemy: a·b·c + d·b·c.' if mode == 0 else 'Najpierw objętość w cm³, potem na litry: 1000 cm³ = 1 l.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "@{('Razem: ' + str(ans) + ' cm³.' if mode == 0 else str(vol) + ' cm³ : 1000 = ' + fmt(ans) + ' l.')}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  }
+ }
+}

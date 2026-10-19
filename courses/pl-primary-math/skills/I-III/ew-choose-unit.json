@@ -1,0 +1,38 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-choose-unit",
+ "stage": "I-III",
+ "title": {
+  "pl": "Jaka jednostka pasuje?"
+ },
+ "objectives": [
+  "I-III.2.c",
+  "I-III.2.j"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wybierz jednostkę"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-choose-unit.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Długość mierzymy w milimetrach, centymetrach, metrach i kilometrach, a ciężar w gramach i kilogramach. Wyobraź sobie przedmiot: zeszyt ma około 20 cm, a droga do szkoły – kilometr."
+  }
+ }
+}

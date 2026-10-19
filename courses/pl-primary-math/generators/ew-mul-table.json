@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-mul-table",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fs": "[2, 5, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fs": "[3, 4]"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "fs": "[6, 7, 8, 9]"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "fs": "[2, 3, 4, 5, 6, 7, 8, 9, 10]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice(fs)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(1, 10)"
+  },
+  {
+   "name": "sw",
+   "expr": "randint(0, 1) == 1"
+  }
+ ],
+ "minDistinct": 18,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{('Oblicz: ' + str(m) + ' · ' + str(f) if sw else 'Oblicz: ' + str(f) + ' · ' + str(m))}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "f * m"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mnożenie to dodawanie takich samych liczb: @{f} · @{m} to @{m} razy po @{f}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{f} · @{m} = @{f * m}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "add_instead",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "f + m"
+     }
+    },
+    "feedback": "Mnożenie to nie dodawanie. Policz @{m} razy po @{f}.",
+    "when": "f + m != f * m"
+   },
+   {
+    "id": "neighbor",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "f * m + f"
+     }
+    },
+    "feedback": "Wynik o jedną „grupę” za duży – sprawdź tabliczkę."
+   }
+  ]
+ }
+}

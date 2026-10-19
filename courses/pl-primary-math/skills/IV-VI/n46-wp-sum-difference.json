@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-sum-difference",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Suma i różnica, suma i iloraz"
+ },
+ "objectives": [
+  "IV-VI.6.1.a",
+  "IV-VI.6.1.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Suma i różnica"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Suma i „ile razy więcej”"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-wp-sum-difference.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-wp-shopping"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy znasz sumę i różnicę dwóch liczb, odejmij różnicę od sumy i podziel na dwa – to mniejsza liczba. Większa to mniejsza plus różnica."
+  }
+ }
+}

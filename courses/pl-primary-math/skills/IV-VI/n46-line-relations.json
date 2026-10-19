@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-line-relations",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Proste prostopadłe i równoległe"
+ },
+ "objectives": [
+  "IV-VI.4.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwie zależności"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy zależności"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-line-relations.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-line-terms"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dwie proste równoległe do trzeciej są równoległe do siebie. Prostopadłość „obraca” kierunek o 90° – dwa obroty dają znów równoległość."
+  }
+ }
+}

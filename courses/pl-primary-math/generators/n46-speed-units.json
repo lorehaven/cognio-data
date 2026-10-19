@@ -1,0 +1,76 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-units",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "rev": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "rev": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "ms",
+   "expr": "randint(2, 30)"
+  },
+  {
+   "name": "kmh",
+   "expr": "ms * 36 / 10"
+  },
+  {
+   "name": "k9",
+   "expr": "9 * randint(1, 16)"
+  },
+  {
+   "name": "ms2",
+   "expr": "k9 * 10 / 36"
+  },
+  {
+   "name": "ans",
+   "expr": "kmh if rev == 0 else ms2"
+  },
+  {
+   "name": "u",
+   "expr": "'km/h' if rev == 0 else 'm/s'"
+  }
+ ],
+ "constraints": [
+  "denom(ans) in divisors(100)"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{(fmt(ms) + ' m/s' if rev == 0 else fmt(k9) + ' km/h')} to ile @{('km/h' if rev == 0 else 'm/s')}?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "1 m/s = 3,6 km/h. W ciągu godziny (3600 s) przejeżdżamy 3600 razy więcej metrów, a 1 km to 1000 m."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(fmt(ms) + ' · 3,6 = ' + fmt(kmh) if rev == 0 else fmt(k9) + ' : 3,6 = ' + fmt(ms2))}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  }
+ }
+}

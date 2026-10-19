@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-counterexample",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Kontrprzykład do twierdzenia"
+ },
+ "objectives": [
+  "VII-VIII.5.3.d"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Znajdź przykład, który obala twierdzenie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-counterexample.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-justify-right"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby obalić twierdzenie, wystarczy jeden kontrprzykład – przypadek spełniający założenie, ale nie wniosek."
+  }
+ }
+}

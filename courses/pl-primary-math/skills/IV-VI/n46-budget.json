@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-budget",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kieszonkowe i oszczędzanie"
+ },
+ "objectives": [
+  "IV-VI.2.13"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ile zostało?"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Po ilu tygodniach?"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ile jeszcze tygodni?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-budget.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-total-cost"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Budżet to plan wydatków. Od kwoty, którą masz, odejmuj kolejne wydatki, aby zobaczyć, ile zostanie."
+  }
+ }
+}

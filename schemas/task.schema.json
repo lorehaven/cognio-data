@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/task.schema.json",
+  "title": "Compiled task — the unit the app renders. Banks (.jsonl) contain one per line; generators produce them.",
+  "type": "object",
+  "required": [
+    "id",
+    "skill",
+    "level",
+    "kind",
+    "prompt",
+    "answer",
+    "steps",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable id. Generated tasks: <skill>/<generator>/<level>/<seed>"
+    },
+    "skill": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "level": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "kind": {
+      "enum": [
+        "column-arithmetic",
+        "coordinate-plot",
+        "decimal-input",
+        "equation-solve",
+        "expression-input",
+        "find-the-mistake",
+        "fraction-input",
+        "free-text-explain",
+        "geometry-classify",
+        "geometry-measure",
+        "matching",
+        "mixed-number-input",
+        "multi-select",
+        "multiple-choice",
+        "number-input",
+        "number-line-tap",
+        "order-items",
+        "point-input",
+        "quantity-input",
+        "shade-fraction",
+        "time-input",
+        "word-problem"
+      ]
+    },
+    "prompt": {
+      "type": "string",
+      "description": "Polish text; math in $…$ (LaTeX subset)"
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "kind"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "figure",
+              "table",
+              "chart"
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "description": "figure: clock, number-line, fraction-bar, angle, protractor, ruler, thermometer, rect, triangle, coordinate-plane, polygon, regular-polygon, right-triangle, circle, cuboid, solid, net, grid-shape, balance; table: table; chart: bar, line, pie, pictogram. Parameters of every kind: docs/03-media.md"
+          },
+          "params": {
+            "type": "object"
+          },
+          "alt": {
+            "type": "string",
+            "description": "Text description for screen readers / renderers without this figure kind. Must NOT reveal the answer."
+          },
+          "essential": {
+            "type": "boolean",
+            "default": false,
+            "description": "True if the task cannot be solved without seeing the figure. Non-essential figures only illustrate data that the prompt also states."
+          },
+          "when": {
+            "type": "string",
+            "description": "Generator templates only: expression; the media item is attached to the task only when it is true (removed from the compiled task)."
+          }
+        }
+      }
+    },
+    "input": {
+      "type": "object"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "correct": {
+            "type": "boolean"
+          },
+          "errorRule": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "answer": {
+      "$ref": "common.schema.json#/$defs/value"
+    },
+    "equivalent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "answer",
+          "verdict"
+        ],
+        "properties": {
+          "answer": {
+            "$ref": "common.schema.json#/$defs/value"
+          },
+          "verdict": {
+            "enum": [
+              "almost"
+            ]
+          },
+          "feedbackKey": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "errorRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "answer",
+          "feedback"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "answer": {
+            "$ref": "common.schema.json#/$defs/value"
+          },
+          "feedback": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "given",
+              "idea",
+              "compute",
+              "check",
+              "conclude"
+            ]
+          }
+        }
+      }
+    },
+    "estimatedSeconds": {
+      "type": "integer",
+      "minimum": 5
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "enum": [
+            "generator",
+            "bank-human",
+            "bank-llm"
+          ]
+        },
+        "generator": {
+          "type": "string"
+        },
+        "seed": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "specId": {
+          "type": "string"
+        },
+        "verifiedBy": {
+          "enum": [
+            "solver",
+            "human",
+            "none"
+          ],
+          "description": "Anything bank-llm with verifiedBy 'none' is rejected by the pack linter"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

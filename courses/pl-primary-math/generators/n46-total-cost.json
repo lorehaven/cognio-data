@@ -1,0 +1,115 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-total-cost",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "two": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "two": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "two": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "items",
+   "expr": "[['zeszyt', 'zeszyty', 'zeszytów', 150, 800], ['długopis', 'długopisy', 'długopisów', 100, 600], ['batonik', 'batoniki', 'batoników', 200, 450], ['bułka', 'bułki', 'bułek', 80, 250], ['pomarańcza', 'pomarańcze', 'pomarańczy', 150, 350], ['naklejka', 'naklejki', 'naklejek', 50, 300], ['bilet', 'bilety', 'biletów', 250, 1500], ['kredka', 'kredki', 'kredek', 100, 400]]"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 7)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(0, 7)"
+  },
+  {
+   "name": "it",
+   "expr": "items[i]"
+  },
+  {
+   "name": "jt",
+   "expr": "items[j]"
+  },
+  {
+   "name": "n",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "u",
+   "expr": "randint(it[3] // 10, it[4] // 10) * 10 / 100"
+  },
+  {
+   "name": "v",
+   "expr": "randint(jt[3] // 10, jt[4] // 10) * 10 / 100"
+  },
+  {
+   "name": "cost",
+   "expr": "n * u if two == 0 else n * u + m * v"
+  },
+  {
+   "name": "bill",
+   "expr": "choice([20, 50, 100])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Cena: ' + it[0] + ' – ' + fmt(u, 2) + ' zł za sztukę. Ile zapłacimy za ' + pln(n, it) + '?') if two == 0 else ('Cennik: ' + it[0] + ' – ' + fmt(u, 2) + ' zł, ' + jt[0] + ' – ' + fmt(v, 2) + ' zł (za sztukę). ' + ('Ile zapłacimy za ' + pln(n, it) + ' i ' + pln(m, jt) + '?' if two == 1 else 'Kupiono ' + pln(n, it) + ' i ' + pln(m, jt) + ' i zapłacono banknotem ' + str(bill) + ' zł. Ile reszty otrzymano?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "cost if two < 2 else bill - cost"
+  }
+ ],
+ "constraints": [
+  "i != j",
+  "two < 2 or bill > cost"
+ ],
+ "selfCheck": [
+  "denom(cost) in divisors(100)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mnożymy cenę jednej sztuki przez liczbę sztuk i dodajemy koszty."
+   },
+   {
+    "kind": "compute",
+    "text": "Za zakupy: @{cost|dec:2} zł."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{('Reszta: ' + str(bill) + ' − ' + fmt(cost, 2) + ' = ' + fmt(bill - cost, 2) + ' zł.' if two == 2 else 'Do zapłaty: ' + fmt(cost, 2) + ' zł.')}"
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  }
+ }
+}

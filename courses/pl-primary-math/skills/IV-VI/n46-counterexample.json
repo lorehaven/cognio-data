@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-counterexample",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kontrprzykład"
+ },
+ "objectives": [
+  "IV-VI.6.3.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Obal twierdzenie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-counterexample.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-examples"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kontrprzykład to konkretny przypadek, który pokazuje, że twierdzenie jest fałszywe: spełnia założenie, ale nie spełnia wniosku."
+  }
+ }
+}

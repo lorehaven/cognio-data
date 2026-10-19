@@ -1,0 +1,45 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-estimate-sum",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Oszacuj sumę lub różnicę"
+ },
+ "objectives": [
+  "IV-VI.1.37",
+  "IV-VI.6.1.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do setek"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do tysięcy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-estimate-sum.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Aby oszacować sumę lub różnicę, zaokrąglij liczby do najwyższego rzędu i policz w pamięci. Wynik będzie bliski dokładnemu."
+  }
+ }
+}

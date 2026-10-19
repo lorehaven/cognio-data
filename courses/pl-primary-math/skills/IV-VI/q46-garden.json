@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-garden",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Misja: szkolny ogródek warzywny"
+ },
+ "objectives": [
+  "IV-VI.4.14",
+  "IV-VI.4.15",
+  "IV-VI.1.35"
+ ],
+ "tags": [
+  "finance",
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q46-garden.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: rozwiązanie problemu z życia z użyciem obwodu, pola, ułamków i procentów."
+  }
+ },
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-rect",
+  "n46-perimeter-unknown"
+ ]
+}

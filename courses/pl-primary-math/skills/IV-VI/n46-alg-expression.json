@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-expression",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wyrażenie algebraiczne z treści zadania"
+ },
+ "objectives": [
+  "IV-VI.3.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedno działanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwa działania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-alg-expression.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.3",
+ "tutor": {
+  "intro": {
+   "pl": "Litery w matematyce zastępują liczby. Wyrażenie algebraiczne to zapis działań na liczbach i literach, np. $x + 3$ (liczba x zwiększona o 3) albo $5 \\cdot x$ (pięć razy x)."
+  }
+ }
+}

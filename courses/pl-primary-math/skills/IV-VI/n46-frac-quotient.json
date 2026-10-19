@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-quotient",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek jako iloraz"
+ },
+ "objectives": [
+  "IV-VI.1.18"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Podział w zadaniu"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Zapis ilorazu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-quotient.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-part-set"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kreska ułamkowa to znak dzielenia. 3 : 4 = $\\frac{3}{4}$: dzielna to licznik, dzielnik to mianownik."
+  }
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-negative",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "e",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "bn",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "bd",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "base",
+   "expr": "b if kind == 0 else bn / bd"
+  },
+  {
+   "name": "v",
+   "expr": "pow(base, -e)"
+  },
+  {
+   "name": "bt",
+   "expr": "str(b) if kind == 0 else '\\\\left(\\\\frac{' + str(bn) + '}{' + str(bd) + '}\\\\right)'"
+  }
+ ],
+ "constraints": [
+  "kind == 0 or (gcd(bn, bd) == 1 and bn != 1)"
+ ],
+ "minDistinct": 16,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Oblicz: $@{bt}^{-@{e}}$",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(v)"
+   },
+   "den": {
+    "$expr": "denom(v)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Potęga o wykładniku ujemnym to odwrotność potęgi o wykładniku dodatnim: $a^{-n} = \\frac{1}{a^n}$."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: $@{v|frac}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "negative_result",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "-numer(v)"
+     },
+     "den": {
+      "$expr": "denom(v)"
+     },
+     "form": "any"
+    },
+    "feedback": "Ujemny wykładnik nie zmienia znaku liczby – odwracamy ułamek."
+   }
+  ]
+ }
+}

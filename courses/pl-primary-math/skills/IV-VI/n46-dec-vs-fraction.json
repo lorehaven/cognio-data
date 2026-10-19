@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-vs-fraction",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek zwykły czy dziesiętny – który większy?"
+ },
+ "objectives": [
+  "IV-VI.1.26"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ułamki o mianownikach 2, 4, 5, 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mianowniki 8, 20, 25"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-vs-fraction.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-compare",
+  "n46-dec-from-fraction"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby porównać ułamek zwykły z dziesiętnym, zamień jeden na drugi (np. $\\frac{1}{4} = 0{,}25$) i porównaj w jednej postaci."
+  }
+ }
+}

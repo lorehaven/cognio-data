@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wp-two-step",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "th",
+   "expr": "choice([['zeszyt', 'zeszyty', 'zeszytów'], ['długopis', 'długopisy', 'długopisów'], ['pierniczek', 'pierniczki', 'pierniczków']])"
+  },
+  {
+   "name": "n",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "u",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "v",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "money",
+   "expr": "n * u + randint(3, 9)"
+  },
+  {
+   "name": "kr",
+   "expr": "['kredka', 'kredki', 'kredek']"
+  },
+  {
+   "name": "txt",
+   "expr": "(p[0] + ' miał' + p[1] + ' ' + str(money) + ' zł. Kupił' + p[1] + ' ' + pln(n, th) + ' po ' + str(u) + ' zł. Ile złotych zostało?') if f == 0 else ('W jednym pudełku jest ' + pln(u, kr) + ', a w drugim ' + pln(v, kr) + '. Mamy ' + pln(n, ['pudełko', 'pudełka', 'pudełek']) + ' pierwszego rodzaju i ' + pln(m, ['pudełko', 'pudełka', 'pudełek']) + ' drugiego. Ile kredek mamy razem?')"
+  },
+  {
+   "name": "ans",
+   "expr": "money - n * u if f == 0 else n * u + m * v"
+  }
+ ],
+ "constraints": [
+  "f != 0 or money > n * u"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Najpierw policz, ile kosztowały zakupy, potem odejmij od pieniędzy.' if f == 0 else 'Policz osobno kredki z każdego rodzaju pudełek, potem dodaj.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "@{(str(money) + ' − ' + str(n * u) + ' = ' + str(money - n * u) if f == 0 else str(n * u) + ' + ' + str(m * v) + ' = ' + str(n * u + m * v))}"
+   }
+  ]
+ }
+}

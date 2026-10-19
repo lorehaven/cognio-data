@@ -1,0 +1,58 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-convert-length",
+ "stage": "I-III",
+ "title": {
+  "pl": "Jednostki długości"
+ },
+ "objectives": [
+  "I-III.2.e"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Centymetry na milimetry"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Metry na centymetry"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Kilometry na metry"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "W obie strony (okrągłe liczby)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-convert-length.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Jednostki długości: 1 cm = 10 mm, 1 m = 100 cm, 1 km = 1000 m. Z większej jednostki na mniejszą mnożymy, z mniejszej na większą dzielimy."
+  }
+ }
+}

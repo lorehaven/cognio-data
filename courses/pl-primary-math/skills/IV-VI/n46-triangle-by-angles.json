@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-by-angles",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Trójkąt: ostrokątny, prostokątny czy rozwartokątny?"
+ },
+ "objectives": [
+  "IV-VI.4.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Znane trzy kąty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-triangle-by-angles.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-angle-types"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trójkąt ostrokątny ma wszystkie kąty ostre, prostokątny – jeden prosty, rozwartokątny – jeden rozwarty. Sprawdź największy kąt."
+  }
+ }
+}

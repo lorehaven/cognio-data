@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-perimeter-regular",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "rev": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "rev": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "side",
+   "expr": "randint(2, 25)"
+  },
+  {
+   "name": "n",
+   "expr": "[3, 4, 6][f]"
+  },
+  {
+   "name": "nm",
+   "expr": "['trójkąta równobocznego', 'kwadratu', 'sześciokąta foremnego'][f]"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "per",
+   "expr": "n * side"
+  },
+  {
+   "name": "txt",
+   "expr": "('Bok ' + ['trójkąta równobocznego', 'kwadratu', 'sześciokąta foremnego'][f] + ' ma długość ' + str(side) + ' ' + un + '. Oblicz obwód.') if rev == 0 else ('Obwód ' + ['trójkąta równobocznego', 'kwadratu', 'sześciokąta foremnego'][f] + ' wynosi ' + str(per) + ' ' + un + '. Ile wynosi długość jego boku?')"
+  },
+  {
+   "name": "ans",
+   "expr": "per if rev == 0 else side"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Obwód = liczba boków · długość boku.' if rev == 0 else 'Długość boku = obwód : liczba boków.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(n) + ' · ' + str(side) + ' = ' + str(per) if rev == 0 else str(per) + ' : ' + str(n) + ' = ' + str(side))}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  }
+ }
+}

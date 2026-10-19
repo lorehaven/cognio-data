@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-roman-read",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Z rzymskich na dziesiątkowe"
+ },
+ "objectives": [
+  "IV-VI.1.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 39"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 399"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 3000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-roman-read.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Cyfry rzymskie: I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000. Dodajemy je od lewej do prawej. Gdy mniejsza cyfra stoi przed większą, odejmujemy ją (IV = 4, IX = 9, XL = 40)."
+  }
+ }
+}

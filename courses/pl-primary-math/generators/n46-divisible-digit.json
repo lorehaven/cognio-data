@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-divisible-digit",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "d": "3"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "d": "9"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "randint(3, 5)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(pow(10, k - 1), pow(10, k) - 1)"
+  },
+  {
+   "name": "ds",
+   "expr": "digits(n)"
+  },
+  {
+   "name": "i",
+   "expr": "randint(1, k - 1)"
+  },
+  {
+   "name": "rest",
+   "expr": "sum(ds) - ds[i]"
+  },
+  {
+   "name": "x",
+   "expr": "(d - rest % d) % d"
+  },
+  {
+   "name": "pattern",
+   "expr": "join(setat(ds, i, 'x'), '')"
+  }
+ ],
+ "selfCheck": [
+  "(rest + x) % d == 0",
+  "x < d"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaka jest najmniejsza cyfra x, dla której liczba @{pattern} jest podzielna przez @{d}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "x"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Suma cyfr musi dzielić się przez @{d}. Suma pozostałych cyfr to @{rest}."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{rest} + @{x} = @{rest + x}, a @{rest + x} dzieli się przez @{d}."
+   }
+  ]
+ }
+}

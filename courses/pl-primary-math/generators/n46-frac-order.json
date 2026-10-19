@@ -1,0 +1,114 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-order",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "v",
+   "expr": "randint(8, 16)"
+  },
+  {
+   "name": "n",
+   "expr": "sample(1, v - 1, 4)"
+  },
+  {
+   "name": "fam",
+   "expr": "choice([[2, 4, 8], [3, 6, 12], [5, 10, 20]])"
+  },
+  {
+   "name": "m0",
+   "expr": "randint(1, fam[0] - 1)"
+  },
+  {
+   "name": "m1",
+   "expr": "randint(1, fam[1] - 1)"
+  },
+  {
+   "name": "m2",
+   "expr": "randint(1, fam[2] - 1)"
+  },
+  {
+   "name": "m3",
+   "expr": "randint(1, fam[2] - 1)"
+  },
+  {
+   "name": "xs",
+   "expr": "[n[0] / v, n[1] / v, n[2] / v, n[3] / v] if kind == 0 else [m0 / fam[0], m1 / fam[1], m2 / fam[2], m3 / fam[2]]"
+  },
+  {
+   "name": "desc",
+   "expr": "randint(0, 1) == 1"
+  }
+ ],
+ "constraints": [
+  "len(xs) == 4",
+  "xs[0] != xs[1]",
+  "xs[0] != xs[2]",
+  "xs[0] != xs[3]",
+  "xs[1] != xs[2]",
+  "xs[1] != xs[3]",
+  "xs[2] != xs[3]"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "order-items",
+  "prompt": "@{('Ułóż ułamki od największego do najmniejszego.' if desc else 'Ułóż ułamki od najmniejszego do największego.')}",
+  "answer": {
+   "type": "sequence",
+   "value": {
+    "$expr": "(reverse(sorted(xs)) if desc else sorted(xs))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprowadź ułamki do wspólnego mianownika i porównaj liczniki."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kolejność: @{(reverse(sorted(xs)) if desc else sorted(xs))|list:semi:frac}"
+   }
+  ],
+  "input": {
+   "items": [
+    {
+     "id": {
+      "$expr": "str(xs[0])"
+     },
+     "text": "$@{xs[0]|frac}$"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[1])"
+     },
+     "text": "$@{xs[1]|frac}$"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[2])"
+     },
+     "text": "$@{xs[2]|frac}$"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[3])"
+     },
+     "text": "$@{xs[3]|frac}$"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-expected",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "den",
+   "expr": "choice([2, 3, 4, 5, 6, 10])"
+  },
+  {
+   "name": "num",
+   "expr": "randint(1, den - 1)"
+  },
+  {
+   "name": "trials",
+   "expr": "den * randint(5, 30)"
+  },
+  {
+   "name": "what",
+   "expr": "choice(['wylosowania wygranego kuponu', 'trafienia do celu', 'wyrzucenia pożądanego wyniku'])"
+  }
+ ],
+ "constraints": [
+  "gcd(num, den) == 1"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Prawdopodobieństwo @{what} w jednej próbie wynosi $\\frac{@{num}}{@{den}}$. Ile razy zdarzenie to zajdzie średnio w @{trials} niezależnych próbach?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "trials * num // den"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Spodziewana liczba zajść = prawdopodobieństwo · liczba prób."
+   },
+   {
+    "kind": "compute",
+    "text": "@{num}/@{den} · @{trials} = @{trials * num // den}"
+   }
+  ]
+ }
+}

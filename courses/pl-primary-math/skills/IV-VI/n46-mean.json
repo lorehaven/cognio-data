@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-mean",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Średnia arytmetyczna"
+ },
+ "objectives": [
+  "IV-VI.5.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Średnia całkowita"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Średnia z ułamkiem"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Brakujący składnik"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-mean.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "tutor": {
+  "intro": {
+   "pl": "Średnia arytmetyczna to suma wszystkich liczb podzielona przez ich liczbę. Pokazuje, ile wynosiłaby każda liczba, gdyby były wyrównane."
+  }
+ }
+}

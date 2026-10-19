@@ -1,0 +1,89 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-velocity",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "who",
+   "expr": "choice(['Pociąg', 'Rowerzysta', 'Samochód', 'Autobus'])"
+  },
+  {
+   "name": "v",
+   "expr": "5 * randint(3, 20)"
+  },
+  {
+   "name": "tm",
+   "expr": "randint(1, 6) * 60 if mode == 0 else 30 * randint(1, 10)"
+  },
+  {
+   "name": "h",
+   "expr": "tm / 60"
+  },
+  {
+   "name": "s",
+   "expr": "v * h"
+  },
+  {
+   "name": "ttxt",
+   "expr": "(str(tm // 60) + ' h') if tm % 60 == 0 else (str(tm) + ' min')"
+  }
+ ],
+ "constraints": [
+  "denom(s) in divisors(100)"
+ ],
+ "selfCheck": [
+  "v * h == s"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{who} przebył @{s|dec} km w czasie @{ttxt}. Jaka była jego średnia prędkość w km/h?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "v"
+   },
+   "unit": "km/h"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Prędkość = droga : czas (w godzinach)."
+   },
+   {
+    "kind": "compute",
+    "text": "@{s|dec} : @{h|dec} = @{v}"
+   }
+  ],
+  "input": {
+   "unit": "km/h"
+  },
+  "errorRules": [
+   {
+    "id": "multiply",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "s * h"
+     },
+     "unit": "km/h"
+    },
+    "feedback": "Prędkość to droga podzielona przez czas, a nie pomnożona.",
+    "when": "s * h != v"
+   }
+  ]
+ }
+}

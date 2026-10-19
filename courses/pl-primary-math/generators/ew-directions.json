@@ -1,0 +1,99 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-directions",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "ppl",
+   "expr": "[['Ola', 'Oli', 'Olą'], ['Ania', 'Ani', 'Anią'], ['Kuba', 'Kuby', 'Kubą'], ['Marek', 'Marka', 'Markiem'], ['Maja', 'Mai', 'Mają'], ['Zosia', 'Zosi', 'Zosią']]"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 5)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(0, 5)"
+  },
+  {
+   "name": "p1",
+   "expr": "ppl[i]"
+  },
+  {
+   "name": "p2",
+   "expr": "ppl[j]"
+  },
+  {
+   "name": "rel",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "phr",
+   "expr": "['po lewej stronie ' + p2[1], 'po prawej stronie ' + p2[1], 'przed ' + p2[2], 'za ' + p2[2]]"
+  },
+  {
+   "name": "words",
+   "expr": "['po lewej stronie', 'po prawej stronie', 'przed', 'za']"
+  },
+  {
+   "name": "inv",
+   "expr": "['po prawej stronie', 'po lewej stronie', 'za', 'przed']"
+  }
+ ],
+ "constraints": [
+  "i != j",
+  "(inv[rel]) != (words[rel])",
+  "(inv[rel]) != (inv[(rel + 2) % 4])",
+  "(inv[rel]) != (words[(rel + 2) % 4])",
+  "(words[rel]) != (inv[(rel + 2) % 4])",
+  "(words[rel]) != (words[(rel + 2) % 4])",
+  "(inv[(rel + 2) % 4]) != (words[(rel + 2) % 4])"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{p1[0]} siedzi @{phr[rel]}. Gdzie siedzi @{p2[0]} względem @{p1[1]}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wyobraź sobie, że siedzisz na miejscu drugiej osoby i patrzysz na pierwszą."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{inv[rel]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{inv[rel]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{words[rel]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{inv[(rel + 2) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{words[(rel + 2) % 4]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

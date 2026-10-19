@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-cuboid-volume",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Objętość prostopadłościanu"
+ },
+ "objectives": [
+  "IV-VI.4.22"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Prostopadłościan"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Sześcian"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Brakująca krawędź"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-cuboid-volume.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-cuboid-surface"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Objętość prostopadłościanu to długość razy szerokość razy wysokość. Mierzymy ją w jednostkach sześciennych, np. cm³."
+  }
+ }
+}

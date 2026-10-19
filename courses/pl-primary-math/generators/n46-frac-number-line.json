@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-number-line",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "maxv": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "maxv": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "randint(3, 10)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, d * maxv - 1)"
+  },
+  {
+   "name": "mx",
+   "expr": "maxv"
+  }
+ ],
+ "constraints": [
+  "gcd(k, d) == 1"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Jaki ułamek oznacza punkt A na osi liczbowej?",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "k"
+   },
+   "den": {
+    "$expr": "d"
+   },
+   "form": "any"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Każda jednostka jest podzielona na @{d} równych części, więc jedna kreska to $\\frac{1}{@{d}}$."
+   },
+   {
+    "kind": "conclude",
+    "text": "Punkt A leży na @{k}. kresce: $\\frac{@{k}}{@{d}}$."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "number-line",
+    "essential": true,
+    "alt": "Oś liczbowa od 0 do @{mx}, każda jednostka podzielona na @{d} równych części; zaznaczony punkt A.",
+    "params": {
+     "min": 0,
+     "max": {
+      "$expr": "mx"
+     },
+     "partsPerUnit": {
+      "$expr": "d"
+     },
+     "points": [
+      {
+       "label": "A",
+       "at": {
+        "num": {
+         "$expr": "k"
+        },
+        "den": {
+         "$expr": "d"
+        }
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

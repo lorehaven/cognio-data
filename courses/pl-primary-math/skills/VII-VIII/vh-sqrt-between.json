@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sqrt-between",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Między którymi liczbami całkowitymi leży pierwiastek?"
+ },
+ "objectives": [
+  "VII-VIII.1.8"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwiastki kwadratowe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pierwiastki sześcienne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-sqrt-between.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-sqrt-exact"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby ocenić, między którymi liczbami całkowitymi leży pierwiastek, znajdź najbliższe kwadraty (lub sześciany) po obu stronach liczby pod pierwiastkiem."
+  }
+ }
+}

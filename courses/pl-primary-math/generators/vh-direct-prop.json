@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-direct-prop",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "x1",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "x2",
+   "expr": "randint(x1 + 1, 15)"
+  },
+  {
+   "name": "x3",
+   "expr": "randint(x2 + 1, 20)"
+  },
+  {
+   "name": "y1",
+   "expr": "k * x1"
+  },
+  {
+   "name": "y2",
+   "expr": "k * x2"
+  },
+  {
+   "name": "y3",
+   "expr": "k * x3"
+  },
+  {
+   "name": "ctx",
+   "expr": "choice([['kilogramów jabłek', 'zł'], ['godzin pracy', 'zł'], ['litrów benzyny', 'km'], ['metrów tkaniny', 'zł']])"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{('Za ' + str(x1) + ' ' + ctx[0] + ' płacimy (lub otrzymujemy) ' + str(y1) + ' ' + ctx[1] + '. Ile ' + ctx[1] + ' odpowiada ' + str(x2) + ' ' + ctx[0] + ', jeśli zależność jest wprost proporcjonalna?' if mode == 0 else 'Zależność jest wprost proporcjonalna. Dla ' + str(x1) + ' ' + ctx[0] + ' mamy ' + str(y1) + ' ' + ctx[1] + ', a dla ' + str(x2) + ' ' + ctx[0] + ' mamy ' + str(y2) + ' ' + ctx[1] + '. Ile ' + ctx[1] + ' odpowiada ' + str(x3) + ' ' + ctx[0] + '?')}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "y2 if mode == 0 else y3"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wielkości wprost proporcjonalne mają stały iloraz y : x. Policz go dla znanej pary."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(y1) + ' : ' + str(x1) + ' = ' + str(k) + '; ' + str(k) + ' · ' + str(x2) + ' = ' + str(y2) if mode == 0 else str(y2) + ' : ' + str(x2) + ' = ' + str(k) + '; ' + str(k) + ' · ' + str(x3) + ' = ' + str(y3))}"
+   }
+  ]
+ }
+}

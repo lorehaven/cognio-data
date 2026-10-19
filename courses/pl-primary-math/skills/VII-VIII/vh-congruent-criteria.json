@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-congruent-criteria",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Cechy przystawania trójkątów"
+ },
+ "objectives": [
+  "VII-VIII.3.6"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Cechy przystawania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-congruent-criteria.jsonl"
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-congruent-find"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dwa trójkąty są przystające, gdy jeden da się nałożyć na drugi. Wystarczy sprawdzić jedną z cech: BBB (trzy boki), BKB (dwa boki i kąt między nimi), KBK (bok i dwa przyległe kąty)."
+  }
+ }
+}

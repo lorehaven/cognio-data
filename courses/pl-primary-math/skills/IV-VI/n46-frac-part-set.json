@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-part-set",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jaka część zbioru?"
+ },
+ "objectives": [
+  "IV-VI.1.17"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 12 przedmiotów"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 30 przedmiotów"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-part-set.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-part-figure"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Ułamek mówi, jaka część zbioru ma daną cechę: licznik to liczba elementów z tą cechą, mianownik – liczba wszystkich elementów."
+  }
+ }
+}

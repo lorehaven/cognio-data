@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-number-line",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek dziesiętny na osi liczbowej"
+ },
+ "objectives": [
+  "IV-VI.1.21"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Co 0,1"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Co 0,01"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Co 0,001"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-number-line.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-place-value"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Na osi z ułamkami dziesiętnymi jedna kreska to zwykle 0,1 (albo 0,01). Policz kreski od znanej liczby do punktu."
+  }
+ }
+}

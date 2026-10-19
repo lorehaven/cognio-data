@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-build",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wyrażenie z dwiema zmiennymi"
+ },
+ "objectives": [
+  "VII-VIII.2.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Zakupy i wiek"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Geometria i ruch"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-build.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "n46-alg-expression"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zapisz zadanie wzorem: oznacz niewiadome literami, a związki między nimi zapisz działaniami. Np. koszt 3 zeszytów po a zł to 3a."
+  }
+ }
+}

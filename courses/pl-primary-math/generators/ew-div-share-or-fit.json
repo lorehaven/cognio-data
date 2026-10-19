@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-share-or-fit",
+ "levels": [
+  {
+   "level": 1,
+   "minDistinct": 20
+  }
+ ],
+ "vars": [
+  {
+   "name": "it",
+   "expr": "choice([['jabłko', 'jabłka', 'jabłek'], ['cukierek', 'cukierki', 'cukierków'], ['naklejka', 'naklejki', 'naklejek'], ['ciastko', 'ciastka', 'ciastek'], ['kulka', 'kulki', 'kulek'], ['gruszka', 'gruszki', 'gruszek']])"
+  },
+  {
+   "name": "rc",
+   "expr": "choice(['talerzy', 'pudełek', 'koszyków', 'misek'])"
+  },
+  {
+   "name": "pk",
+   "expr": "choice(['woreczka', 'pudełka', 'koszyka', 'torebki'])"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "tot",
+   "expr": "q * k"
+  },
+  {
+   "name": "kind",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "ctx",
+   "expr": "('Rozłożono ' + pln(tot, it) + ' po równo do ' + str(k) + ' ' + rc + '.') if kind == 0 else ('Mamy ' + pln(tot, it) + ' i pakujemy je po ' + str(q) + ' do jednego ' + pk + '.')"
+  }
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{ctx} Czy to jest dzielenie jako podział po równo, czy jako mieszczenie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (kind == 0) else []) + (['b'] if (kind == 1) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Podział: znamy liczbę części i szukamy, ile w każdej. Mieszczenie: znamy wielkość porcji i szukamy, ile porcji."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{('To jest podział po równo.' if kind == 0 else 'To jest mieszczenie.')}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Podział po równo",
+    "correct": "kind == 0"
+   },
+   {
+    "id": "b",
+    "text": "Mieszczenie (ile razy mieści się)",
+    "correct": "kind == 1"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-lattice-vertex",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Współrzędne wierzchołków i symetria względem osi"
+ },
+ "objectives": [
+  "VII-VIII.3.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Czwarty wierzchołek równoległoboku"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Odbicie względem osi OX"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Odbicie względem osi OY"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Symetria środkowa względem początku układu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-lattice-vertex.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-coord-rectangle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Współrzędne czwartego wierzchołka równoległoboku znajdziesz, przesuwając o ten sam wektor. Odbicie względem osi zmienia znak jednej współrzędnej."
+  }
+ }
+}

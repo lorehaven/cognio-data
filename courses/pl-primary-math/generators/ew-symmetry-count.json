@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-symmetry-count",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "items",
+   "expr": "[['kwadrat', 4], ['prostokąt (niebędący kwadratem)', 2], ['trójkąt równoboczny', 3], ['motyl z rozłożonymi skrzydłami', 1], ['litera H', 2], ['litera T', 1], ['litera A', 1], ['litera O', 2], ['litera X', 2], ['litera M', 1], ['litera B', 1], ['litera E', 1], ['trójkąt równoramienny (niebędący równobocznym)', 1], ['romb (niebędący kwadratem)', 2], ['pięcioramienna gwiazda', 5], ['znak plus (+)', 4], ['serce', 1], ['cyfra 8', 1], ['cyfra 0', 2], ['trapez równoramienny', 1]]"
+  },
+  {
+   "name": "it",
+   "expr": "choice(items)"
+  },
+  {
+   "name": "ph",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{('Ile osi symetrii ma ten kształt: ' + it[0] + '?' if ph == 0 else 'Na ile sposobów można złożyć ' + it[0] + ' wzdłuż prostej tak, aby obie części się pokryły?')}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "it[1]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Spróbuj złożyć kształt na różne sposoby tak, aby obie części się pokryły."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{it[1]}."
+   }
+  ]
+ }
+}

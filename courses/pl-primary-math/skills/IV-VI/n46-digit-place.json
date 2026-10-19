@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-digit-place",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Cyfra na danym miejscu"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby czterocyfrowe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby sześciocyfrowe"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Liczby dziewięciocyfrowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-digit-place.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-write-digits"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Miejsca w liczbie liczymy od prawej: jedności, dziesiątki, setki, tysiące. Odczytaj, jaka cyfra stoi na wskazanym miejscu."
+  }
+ }
+}

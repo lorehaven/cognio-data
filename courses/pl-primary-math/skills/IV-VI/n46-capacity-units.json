@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-capacity-units",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jednostki objętości i pojemności"
+ },
+ "objectives": [
+  "IV-VI.2.5",
+  "IV-VI.2.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "l i ml"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Litry, dm³ i cm³"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "m³ i dm³"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-capacity-units.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-len-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pojemność i objętość: 1 l = 1000 ml = 1 dm³, 1 ml = 1 cm³, 1 m³ = 1000 dm³ = 1000 l."
+  }
+ }
+}

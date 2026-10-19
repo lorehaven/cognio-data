@@ -1,0 +1,76 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-quad-angle",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(40, 120)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(40, 120)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(40, 120)"
+  },
+  {
+   "name": "al",
+   "expr": "randint(40, 140)"
+  },
+  {
+   "name": "txt",
+   "expr": "('W czworokącie trzy kąty mają miary ' + str(a) + '°, ' + str(b) + '° i ' + str(c) + '°. Ile stopni ma czwarty kąt?') if mode == 0 else (('W równoległoboku jeden kąt ma ' + str(al) + '°. Ile stopni ma kąt sąsiedni?') if mode == 1 else ('W trapezie prostokątnym jeden z kątów przy dłuższej podstawie ma ' + str(al) + '°. Ile stopni ma kąt przy tym samym ramieniu, ale przy krótszej podstawie?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "360 - a - b - c if mode == 0 else 180 - al"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or (360 - a - b - c > 30 and 360 - a - b - c < 170)",
+  "al != 90",
+  "mode != 2 or al < 90"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Suma kątów w czworokącie wynosi 360°.' if mode == 0 else 'Kąty leżące przy jednym ramieniu (przy jednym boku równoległoboku lub trapezu) dają razem 180°.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}°."
+   }
+  ]
+ }
+}

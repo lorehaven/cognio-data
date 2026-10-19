@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-power",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Potęgi ułamków dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.29"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kwadraty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Sześciany"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-power.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-mul",
+  "n46-power-calc"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Potęga to mnożenie liczby przez siebie. Przy ułamkach dziesiętnych liczbę miejsc po przecinku w wyniku liczymy tak jak przy mnożeniu."
+  }
+ }
+}

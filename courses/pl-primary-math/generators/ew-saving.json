@@ -1,0 +1,71 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-saving",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "week",
+   "expr": "choice([2, 3, 4, 5, 10])"
+  },
+  {
+   "name": "have",
+   "expr": "randint(1, 3) * week"
+  },
+  {
+   "name": "weeks",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "goal",
+   "expr": "have + weeks * week"
+  },
+  {
+   "name": "txt",
+   "expr": "('Franek ma ' + str(have) + ' zł i chce uzbierać ' + str(goal) + ' zł. Co tydzień odkłada ' + str(week) + ' zł. Po ilu tygodniach uzbiera tyle pieniędzy?') if mode == 0 else (('Ola ma ' + str(have) + ' zł. Co tydzień odkłada ' + str(week) + ' zł. Ile złotych będzie miała po ' + pln(weeks, ['tygodniu', 'tygodniach', 'tygodniach']) + '?') if mode == 1 else ('Maja chce kupić grę za ' + str(goal) + ' zł. Ma już ' + str(have) + ' zł. Ile złotych jeszcze jej brakuje?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "weeks if mode == 0 else (goal if mode == 1 else goal - have)"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Podziel to, co jeszcze trzeba uzbierać, przez kwotę odkładaną co tydzień.' if mode == 0 else ('Dodaj odłożone pieniądze do tego, co już masz.' if mode == 1 else 'Odejmij to, co masz, od ceny.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

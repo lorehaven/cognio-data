@@ -1,0 +1,33 @@
+{
+  "formatVersion": "1.0",
+  "courses": [
+    {
+      "id": "pl-primary-math",
+      "version": "0.1.0",
+      "latest": true,
+      "title": {
+        "pl": "Matematyka – szkoła podstawowa (podstawa programowa 2026)"
+      },
+      "language": "pl",
+      "formatVersion": "1.0",
+      "engine": {
+        "min": "1.0.0",
+        "features": [
+          "decimal-input",
+          "find-the-mistake",
+          "fraction-input",
+          "multi-select",
+          "multiple-choice",
+          "number-input",
+          "order-items",
+          "quantity-input",
+          "quest"
+        ]
+      },
+      "size": 538297,
+      "sha256": "52a89a66c42b712aea38a67c4133afd3542049fa79f98575504e7dd6c93d3541",
+      "url": "courses/pl-primary-math-0.1.0.cognio"
+    }
+  ],
+  "models": "models/catalog.json"
+}

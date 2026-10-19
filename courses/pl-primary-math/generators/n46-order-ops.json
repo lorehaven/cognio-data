@@ -1,0 +1,111 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-order-ops",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fmax": "3",
+    "hi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fmax": "5",
+    "hi": "12"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "fmax": "7",
+    "hi": "15"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "randint(0, fmax)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "vals",
+   "expr": "[a + b * c, (a + b) * c, a * b - c, a - b * c, (a - b) / c, a + b / c, a * (b + c) - d, a / b + c * d]"
+  },
+  {
+   "name": "oks",
+   "expr": "[True, True, a * b > c, a > b * c, a > b and (a - b) % c == 0, b % c == 0, a * (b + c) > d, a % b == 0]"
+  },
+  {
+   "name": "txts",
+   "expr": "[str(a) + ' + ' + str(b) + ' · ' + str(c), '(' + str(a) + ' + ' + str(b) + ') · ' + str(c), str(a) + ' · ' + str(b) + ' − ' + str(c), str(a) + ' − ' + str(b) + ' · ' + str(c), '(' + str(a) + ' − ' + str(b) + ') : ' + str(c), str(a) + ' + ' + str(b) + ' : ' + str(c), str(a) + ' · (' + str(b) + ' + ' + str(c) + ') − ' + str(d), str(a) + ' : ' + str(b) + ' + ' + str(c) + ' · ' + str(d)]"
+  },
+  {
+   "name": "ltr",
+   "expr": "[(a + b) * c, (a + b) * c, a * b - c, (a - b) * c, (a - b) / c, (a + b) / c, a * (b + c) - d, (a / b + c) * d]"
+  },
+  {
+   "name": "v",
+   "expr": "vals[f]"
+  },
+  {
+   "name": "txt",
+   "expr": "txts[f]"
+  }
+ ],
+ "constraints": [
+  "oks[f]",
+  "v > 0",
+  "denom(v) == 1"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw wykonujemy działania w nawiasach, potem mnożenie i dzielenie (od lewej do prawej), na końcu dodawanie i odejmowanie."
+   },
+   {
+    "kind": "compute",
+    "text": "@{txt} = @{v}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "left_to_right",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "ltr[f]"
+     }
+    },
+    "feedback": "Mnożenie i dzielenie wykonujemy przed dodawaniem i odejmowaniem – nie po kolei od lewej.",
+    "when": "ltr[f] != v"
+   }
+  ]
+ }
+}

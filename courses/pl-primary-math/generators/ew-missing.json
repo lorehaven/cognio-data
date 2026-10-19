@@ -1,0 +1,114 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-missing",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ops": "[0, 1]",
+    "hi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ops": "[0, 1]",
+    "hi": "100"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ops": "[2, 3]",
+    "hi": "10"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "ops": "[0, 1, 2, 3]",
+    "hi": "10"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "op",
+   "expr": "choice(ops)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "pos",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "i",
+   "expr": "pos + 2 * (op % 2)"
+  },
+  {
+   "name": "big",
+   "expr": "a + b"
+  },
+  {
+   "name": "prod",
+   "expr": "a * b"
+  },
+  {
+   "name": "eq1",
+   "expr": "[str(a) + ' + □ = ' + str(big), '□ + ' + str(b) + ' = ' + str(big), str(big) + ' − □ = ' + str(a), '□ − ' + str(b) + ' = ' + str(a)]"
+  },
+  {
+   "name": "eq2",
+   "expr": "[str(a) + ' · □ = ' + str(prod), '□ · ' + str(b) + ' = ' + str(prod), str(prod) + ' : □ = ' + str(a), '□ : ' + str(b) + ' = ' + str(a)]"
+  },
+  {
+   "name": "an1",
+   "expr": "[b, a, b, big]"
+  },
+  {
+   "name": "an2",
+   "expr": "[b, a, b, prod]"
+  },
+  {
+   "name": "text",
+   "expr": "eq1[i] if op < 2 else eq2[i]"
+  },
+  {
+   "name": "ans",
+   "expr": "an1[i] if op < 2 else an2[i]"
+  }
+ ],
+ "constraints": [
+  "op >= 2 or big <= hi",
+  "op < 2 or (a >= 2 and b >= 2)",
+  "op != 2 or a != b"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaka liczba pasuje w miejsce kwadratu? @{text}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Użyj działania odwrotnego do znalezienia brakującej liczby."
+   },
+   {
+    "kind": "conclude",
+    "text": "Brakuje liczby @{ans}."
+   }
+  ]
+ }
+}

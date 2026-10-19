@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-round",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pl": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pl": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "pl": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "kx",
+   "expr": "pl + randint(1, 2)"
+  },
+  {
+   "name": "nn",
+   "expr": "randint(pow(10, kx), pow(10, kx + 2) - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "nn / pow(10, kx)"
+  },
+  {
+   "name": "pn",
+   "expr": "['jedności', 'części dziesiątych', 'części setnych'][pl]"
+  },
+  {
+   "name": "r",
+   "expr": "round(x, pl)"
+  }
+ ],
+ "constraints": [
+  "(x * pow(10, pl)) != floor(x * pow(10, pl))",
+  "nn % 10 != 0"
+ ],
+ "selfCheck": [
+  "abs(r - x) * 2 <= 1 / pow(10, pl)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Zaokrąglij liczbę @{x|dec:kx} do @{pn}.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Patrzymy na cyfrę po miejscu zaokrąglania: 0–4 – zostawiamy, 5–9 – zwiększamy o 1."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{x|dec:kx} ≈ @{r|dec:pl}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "truncate",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "floor(x * pow(10, pl)) / pow(10, pl)"
+     }
+    },
+    "feedback": "Przy cyfrze 5 lub większej zaokrąglamy w górę.",
+    "when": "floor(x * pow(10, pl)) / pow(10, pl) != r"
+   }
+  ]
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-symmetry-count",
+ "stage": "I-III",
+ "title": {
+  "pl": "Ile osi symetrii?"
+ },
+ "objectives": [
+  "I-III.3.d"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Figury i przedmioty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-symmetry-count.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "prerequisites": [
+  "ew-symmetry-letters"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Oś symetrii to prosta, po której można złożyć figurę tak, że obie części się pokryją. Figura może mieć jedną oś, kilka osi albo żadnej."
+  }
+ }
+}

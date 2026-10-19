@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-protractor-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "deg",
+   "expr": "randint(1, 17) * 10 if mode == 0 else randint(5, 175)"
+  },
+  {
+   "name": "flip",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "minDistinct": 17,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile stopni ma kąt narysowany na rysunku?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "deg"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Ustaw środek kątomierza w wierzchołku kąta, a jedno ramię na zerze. Odczytaj wartość tam, gdzie leży drugie ramię (pilnuj właściwej skali)."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kąt ma @{deg}°."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "protractor",
+    "essential": true,
+    "alt": "Kąt narysowany obok kątomierza.",
+    "params": {
+     "degrees": {
+      "$expr": "deg"
+     },
+     "mirrored": {
+      "$expr": "flip"
+     }
+    }
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "wrong_scale",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "180 - deg"
+     }
+    },
+    "feedback": "Kątomierz ma dwie skale. Zacznij od zera na tym ramieniu, które leży na linii podstawy.",
+    "when": "deg != 90"
+   }
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-chart-choice",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Jak przedstawić dane?"
+ },
+ "objectives": [
+  "VII-VIII.4.2"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dobór wykresu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-chart-choice.jsonl"
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-data-sources"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dane można pokazać w tabeli, na diagramie słupkowym, kołowym lub na wykresie liniowym. Wybierz taki sposób, który pomaga odpowiedzieć na pytanie."
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-compose",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Złóż liczbę z części"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 9 999"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 999 999"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-compose.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-digit-place"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Liczbę złożoną z części (tysięcy, setek, dziesiątek, jedności) zapisz, dodając wartości każdej części."
+  }
+ }
+}

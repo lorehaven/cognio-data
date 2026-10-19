@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-div-dec",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dzielenie przez ułamek dziesiętny"
+ },
+ "objectives": [
+  "IV-VI.1.28.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dzielnik z jednym miejscem po przecinku"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dzielnik z dwoma miejscami po przecinku"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-div-dec.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-div-nat"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzieląc przez ułamek dziesiętny, przesuń przecinek w dzielnej i dzielniku o tyle samo miejsc w prawo, aż dzielnik będzie liczbą naturalną."
+  }
+ }
+}

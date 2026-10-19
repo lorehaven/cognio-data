@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-pion-poziom",
+ "stage": "I-III",
+ "title": {
+  "pl": "Pion, poziom, skos"
+ },
+ "objectives": [
+  "I-III.3.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jak ustawiona jest linia?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-pion-poziom.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "prerequisites": [
+  "ew-lines-surroundings"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pion jest jak sznurek z ciężarkiem, poziom jak woda w naczyniu. Skos to ustawienie pomiędzy nimi."
+  }
+ }
+}

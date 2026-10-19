@@ -1,0 +1,102 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare-expr",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "l",
+   "expr": "a * 2 if kind == 2 else a + b"
+  },
+  {
+   "name": "r",
+   "expr": "c - d if kind == 1 else c + d"
+  },
+  {
+   "name": "lt",
+   "expr": "str(a) + ' · 2' if kind == 2 else str(a) + ' + ' + str(b)"
+  },
+  {
+   "name": "rt",
+   "expr": "str(c) + ' − ' + str(d) if kind == 1 else str(c) + ' + ' + str(d)"
+  }
+ ],
+ "constraints": [
+  "kind != 1 or c > d"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Wstaw odpowiedni znak między wyrażenia: @{lt} … @{rt}.",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (l < r) else []) + (['b'] if (l == r) else []) + (['c'] if (l > r) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Oblicz wartość każdego wyrażenia i porównaj wyniki."
+   },
+   {
+    "kind": "compute",
+    "text": "@{l} @{('<' if l < r else ('=' if l == r else '>'))} @{r}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "l < r"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "l == r"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "l > r"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

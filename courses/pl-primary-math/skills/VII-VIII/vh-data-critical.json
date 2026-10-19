@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-data-critical",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Krytyczna interpretacja danych"
+ },
+ "objectives": [
+  "VII-VIII.4.5"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Czy ten wniosek wynika z danych?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-data-critical.jsonl"
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-mean-outlier"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pytaj: skąd są dane, ile ich jest, jak zaczyna się oś wykresu i czy wniosek rzeczywiście z nich wynika. Korelacja nie oznacza przyczyny."
+  }
+ }
+}

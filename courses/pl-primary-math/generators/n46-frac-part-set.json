@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-part-set",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "thi": "12"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "thi": "30"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "ctx",
+   "expr": "choice([[['kredka', 'kredki', 'kredek'], 'czerwonych', 'czerwone'], [['piłka', 'piłki', 'piłek'], 'białych', 'białe'], [['jabłko', 'jabłka', 'jabłek'], 'zielonych', 'zielone'], [['kartka', 'kartki', 'kartek'], 'żółtych', 'żółte'], [['guzik', 'guziki', 'guzików'], 'niebieskich', 'niebieskie']])"
+  },
+  {
+   "name": "t",
+   "expr": "randint(5, thi)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(1, t - 1)"
+  }
+ ],
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "W pudełku jest @{t|pl:ctx[0]}, w tym @{ctx[1]}: @{p}. Jaką część wszystkich @{ctx[0][2]} stanowią @{ctx[2]}?",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "p"
+   },
+   "den": {
+    "$expr": "t"
+   },
+   "form": "any"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Licznik: ile jest @{ctx[1]}. Mianownik: ile jest wszystkich."
+   },
+   {
+    "kind": "conclude",
+    "text": "$\\frac{@{p}}{@{t}}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "rest",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "t - p"
+     },
+     "den": {
+      "$expr": "t"
+     },
+     "form": "any"
+    },
+    "feedback": "To jest część pozostałych. Zapisz część pytaną w zadaniu."
+   }
+  ]
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-gcd-lcm-word",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dzielniki i wielokrotności w zadaniach"
+ },
+ "objectives": [
+  "IV-VI.1.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pakowanie i dzielenie (NWD)"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Jednoczesne zdarzenia (NWW)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-gcd-lcm-word.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-lcm"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W zadaniach o paczkach i grupach szukamy największego wspólnego dzielnika (NWD). W zadaniach o powtarzających się zdarzeniach – najmniejszej wspólnej wielokrotności (NWW)."
+  }
+ }
+}

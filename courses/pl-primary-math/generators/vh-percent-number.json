@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-percent-number",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[10, 20, 25, 50]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[5, 15, 30, 35, 40, 60, 120]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "b",
+   "expr": "(100 // gcd(p, 100)) * randint(2, 30)"
+  },
+  {
+   "name": "a",
+   "expr": "b * p / 100"
+  }
+ ],
+ "constraints": [
+  "denom(a) == 1"
+ ],
+ "selfCheck": [
+  "a * 100 == b * p"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{p}% pewnej liczby to @{a}. Jaka to liczba?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "b"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz, ile wynosi 1% (podziel przez @{p}), a potem pomnóż przez 100."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} : @{p} · 100 = @{b}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "percent_of",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a * p // 100"
+     }
+    },
+    "feedback": "Znamy część, a szukamy całości. Podziel część przez liczbę procentów i pomnóż przez 100.",
+    "when": "a * p % 100 == 0 and a * p // 100 != b"
+   }
+  ]
+ }
+}

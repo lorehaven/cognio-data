@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-ruler-read",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odczytaj długość z linijki"
+ },
+ "objectives": [
+  "IV-VI.2.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne centymetry od zera"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Z dokładnością do milimetra"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Odcinek nie zaczyna się od zera"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-ruler-read.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "tutor": {
+  "intro": {
+   "pl": "Odczytaj na linijce początek i koniec odcinka, a potem odejmij. Duże kreski to centymetry, małe – milimetry (0,1 cm)."
+  }
+ }
+}

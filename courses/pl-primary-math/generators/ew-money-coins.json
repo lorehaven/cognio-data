@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-money-coins",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "gr": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "gr": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, 5)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Masz ' + pln(a, ['monetę', 'monety', 'monet']) + ' po 5 zł, ' + pln(b, ['monetę', 'monety', 'monet']) + ' po 2 zł i ' + pln(c, ['monetę', 'monety', 'monet']) + ' po 1 zł. Ile złotych masz?') if gr == 0 else ('Masz ' + pln(a, ['monetę', 'monety', 'monet']) + ' po 50 gr, ' + pln(b, ['monetę', 'monety', 'monet']) + ' po 20 gr i ' + pln(c, ['monetę', 'monety', 'monet']) + ' po 10 gr. Ile groszy masz?')"
+  },
+  {
+   "name": "ans",
+   "expr": "a * 5 + b * 2 + c if gr == 0 else a * 50 + b * 20 + c * 10"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz osobno każdy rodzaj monet, a potem dodaj."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a) + ' · 5 + ' + str(b) + ' · 2 + ' + str(c) + ' = ' + str(ans) if gr == 0 else str(a) + ' · 50 + ' + str(b) + ' · 20 + ' + str(c) + ' · 10 = ' + str(ans))}"
+   }
+  ]
+ }
+}

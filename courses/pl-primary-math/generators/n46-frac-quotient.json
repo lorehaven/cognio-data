@@ -1,0 +1,74 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-quotient",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1",
+    "bhi": "12"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(3, bhi)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, b - 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Podzielono po równo ' + pln(a, ['tabliczkę', 'tabliczki', 'tabliczek']) + ' czekolady między ' + pln(b, ['osobę', 'osoby', 'osób']) + '. Jaką część tabliczki dostała każda osoba?') if mode == 0 else 'Zapisz iloraz ' + str(a) + ' : ' + str(b) + ' w postaci ułamka zwykłego.'"
+  }
+ ],
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "a"
+   },
+   "den": {
+    "$expr": "b"
+   },
+   "form": "any"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielenie liczb naturalnych można zapisać ułamkiem: dzielna to licznik, dzielnik to mianownik."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{a} : @{b} = $\\frac{@{a}}{@{b}}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "flip",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "b"
+     },
+     "den": {
+      "$expr": "a"
+     },
+     "form": "any"
+    },
+    "feedback": "Dzielna idzie do licznika, a dzielnik do mianownika."
+   }
+  ]
+ }
+}

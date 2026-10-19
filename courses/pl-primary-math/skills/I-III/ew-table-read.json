@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-table-read",
+ "stage": "I-III",
+ "title": {
+  "pl": "Odczytaj dane z tabeli"
+ },
+ "objectives": [
+  "I-III.4.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna wartość"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Suma w wierszu"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Różnica dwóch wartości"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-table-read.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.4",
+ "tutor": {
+  "intro": {
+   "pl": "W tabeli odczytujesz wartość z miejsca, w którym spotykają się wiersz i kolumna. Znajdź oba nagłówki i sprawdź komórkę."
+  }
+ }
+}

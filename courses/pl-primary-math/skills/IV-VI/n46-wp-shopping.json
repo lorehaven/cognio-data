@@ -1,0 +1,57 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-shopping",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Zakupy: zadania tekstowe"
+ },
+ "objectives": [
+  "IV-VI.6.1.a",
+  "IV-VI.6.1.b",
+  "IV-VI.1.9"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa towary: razem"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Reszta z banknotu"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Trzy towary"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-wp-shopping.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-total-cost"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy zadaniach tekstowych najpierw zapisz, co wiesz i o co pytają. Potem zaplanuj kroki: co policzysz najpierw, a co potem. Na końcu sprawdź, czy wynik jest sensowny."
+  }
+ }
+}

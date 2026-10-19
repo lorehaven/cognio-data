@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-mul-two-digit",
+ "stage": "I-III",
+ "title": {
+  "pl": "Mnożenie liczby dwucyfrowej"
+ },
+ "objectives": [
+  "I-III.1.h"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Razy 2 i 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Razy 3 i 5"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-mul-two-digit.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-mul-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Rozbij większą liczbę na dziesiątki i jedności. Np. 23 · 4 = 20 · 4 + 3 · 4 = 80 + 12 = 92."
+  }
+ }
+}

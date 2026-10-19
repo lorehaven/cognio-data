@@ -1,0 +1,19 @@
+# riveter deployment overlays for cognio-server (k3s)
+
+# rendered manifests are build output and may contain plaintext Secrets (riveter also writes its own .gitignore there)
+manifests/
+packages/
+*.rivet
+
+# secrets and keys: never commit (the age key lives in ~/.config/riveter/age.key)
+**/.env
+**/.env.*
+!**/.env.example
+*.key
+*.age
+*.dec
+*.dec.*
+secrets/
+
+.run/
+*.log

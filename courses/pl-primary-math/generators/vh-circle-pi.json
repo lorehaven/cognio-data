@@ -1,0 +1,63 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-circle-pi",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "r",
+   "expr": "randint(2, 20)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Okrąg ma promień ' + str(r) + ' ' + un + '. Jego długość to k·π ' + un + '. Ile wynosi k?') if mode == 0 else (('Koło ma promień ' + str(r) + ' ' + un + '. Jego pole to k·π ' + un + '². Ile wynosi k?') if mode == 1 else ('Okrąg ma długość ' + str(2 * r) + 'π ' + un + '. Pole koła o tym obwodzie to k·π ' + un + '². Ile wynosi k?')) "
+  },
+  {
+   "name": "ans",
+   "expr": "2 * r if mode == 0 else r * r"
+  }
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('L = 2πr, więc k = 2r.' if mode == 0 else ('P = πr², więc k = r².' if mode == 1 else 'Z 2πr = długość wynika r. Potem P = πr², więc k = r².'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "k = @{ans}."
+   }
+  ]
+ }
+}

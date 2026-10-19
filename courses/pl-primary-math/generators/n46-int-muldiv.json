@@ -1,0 +1,74 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-muldiv",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mul": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mul": "0"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(-9, 9)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(2, 9) * choice([-1, 1])"
+  },
+  {
+   "name": "p",
+   "expr": "x * y"
+  },
+  {
+   "name": "a",
+   "expr": "p if mul == 0 else x"
+  },
+  {
+   "name": "b",
+   "expr": "y if mul == 0 else y"
+  },
+  {
+   "name": "r",
+   "expr": "x if mul == 0 else p"
+  }
+ ],
+ "constraints": [
+  "x != 0",
+  "x != 1",
+  "x != -1",
+  "x < 0 or y < 0"
+ ],
+ "selfCheck": [
+  "(r * b == a) if mul == 0 else (a * b == r)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} @{('·' if mul == 1 else ':')} @{par(b)}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dwie liczby o takich samych znakach dają wynik dodatni, a o różnych znakach – ujemny."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{a} @{('·' if mul == 1 else ':')} @{par(b)} = @{r}"
+   }
+  ]
+ }
+}

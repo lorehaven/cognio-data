@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-add-mental",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dodawanie w pamięci"
+ },
+ "objectives": [
+  "IV-VI.1.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwie liczby dwucyfrowe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzycyfrowa i dwucyfrowa"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwie liczby trzycyfrowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-add-mental.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Dodawaj w pamięci etapami: najpierw dziesiątki, potem jedności. Np. 47 + 36 = 47 + 30 + 6 = 77 + 6 = 83."
+  }
+ }
+}

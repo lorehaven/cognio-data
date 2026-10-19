@@ -1,0 +1,95 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-by-angles",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "a0",
+   "expr": "[randint(45, 75), 90, randint(95, 140)][t]"
+  },
+  {
+   "name": "b0",
+   "expr": "[randint(45, 75), randint(15, 75), randint(10, 40)][t]"
+  },
+  {
+   "name": "c0",
+   "expr": "180 - a0 - b0"
+  },
+  {
+   "name": "angs",
+   "expr": "shuffle([a0, b0, c0])"
+  }
+ ],
+ "constraints": [
+  "t != 0 or (c0 > 20 and c0 < 90)",
+  "t != 2 or c0 > 5"
+ ],
+ "selfCheck": [
+  "a0 + b0 + c0 == 180"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Trójkąt ma kąty: @{angs[0]}°, @{angs[1]}° i @{angs[2]}°. Jaki to trójkąt?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (max(angs) < 90) else []) + (['b'] if (max(angs) == 90) else []) + (['c'] if (max(angs) > 90) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdź największy kąt: mniejszy niż 90° – ostrokątny, równy 90° – prostokątny, większy niż 90° – rozwartokątny."
+   },
+   {
+    "kind": "conclude",
+    "text": "Suma: @{angs[0] + angs[1] + angs[2]}°. Największy kąt: @{max(angs)}°."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Ostrokątny",
+    "correct": "max(angs) < 90"
+   },
+   {
+    "id": "b",
+    "text": "Prostokątny",
+    "correct": "max(angs) == 90"
+   },
+   {
+    "id": "c",
+    "text": "Rozwartokątny",
+    "correct": "max(angs) > 90"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle-angles",
+    "essential": false,
+    "alt": "Trójkąt z podanymi kątami.",
+    "params": {
+     "angles": {
+      "$expr": "angs"
+     },
+     "labels": {
+      "$expr": "[str(angs[0]) + '°', str(angs[1]) + '°', str(angs[2]) + '°']"
+     }
+    }
+   }
+  ]
+ }
+}

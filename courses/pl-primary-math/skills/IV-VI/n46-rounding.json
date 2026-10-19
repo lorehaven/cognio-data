@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-rounding",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Zaokrąglanie liczb naturalnych"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do dziesiątek i setek"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do tysięcy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do większych rzędów"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-rounding.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Patrz na cyfrę po prawej od rzędu zaokrąglania: 0–4 – zostawiamy, 5–9 – zwiększamy o 1, a dalsze cyfry zamieniamy na zera."
+  }
+ }
+}

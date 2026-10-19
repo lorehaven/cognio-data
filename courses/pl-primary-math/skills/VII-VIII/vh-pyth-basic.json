@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyth-basic",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Twierdzenie Pitagorasa: przeciwprostokątna i przyprostokątna"
+ },
+ "objectives": [
+  "VII-VIII.3.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przeciwprostokątna"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przyprostokątna"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-pyth-basic.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-triangle-by-angles",
+  "vh-sqrt-exact"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W trójkącie prostokątnym kwadrat długości przeciwprostokątnej jest równy sumie kwadratów długości przyprostokątnych: a² + b² = c²."
+  }
+ }
+}

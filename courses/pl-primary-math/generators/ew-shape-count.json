@@ -1,0 +1,53 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-shape-count",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "sh",
+   "expr": "choice([['trójkąt', 3], ['kwadrat', 4], ['prostokąt', 4], ['czworokąt', 4]])"
+  },
+  {
+   "name": "ask",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile @{('boków' if ask == 0 else 'wierzchołków')} ma @{sh[0]}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "sh[1]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz boki (odcinki) lub wierzchołki (rogi) figury."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{sh[1]}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Rysunek figury.",
+    "params": {
+     "pts": {
+      "$expr": "[[[0, 0], [4, 0], [2, 3]], [[0, 0], [3, 0], [3, 3], [0, 3]], [[0, 0], [5, 0], [5, 3], [0, 3]], [[0, 0], [5, 0], [6, 3], [1, 3]]][index(['trójkąt', 'kwadrat', 'prostokąt', 'czworokąt'], sh[0])]"
+     }
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-exchange",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wymiana walut"
+ },
+ "objectives": [
+  "IV-VI.2.13"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Euro na złote"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Złote na euro"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-exchange.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-dec-mul",
+  "n46-dec-div-dec"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy wymianie walut mnożymy kwotę przez kurs. 20 euro po kursie 4,3 zł to 20 · 4,3 = 86 zł."
+  }
+ }
+}

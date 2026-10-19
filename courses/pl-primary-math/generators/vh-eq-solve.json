@@ -1,0 +1,109 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-solve",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "2"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "f": "0"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "r",
+   "expr": "randint(-6, 9)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, 5)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-8, 9)"
+  },
+  {
+   "name": "mult",
+   "expr": "randint(2, 4)"
+  },
+  {
+   "name": "d",
+   "expr": "a * r + b - c * r"
+  },
+  {
+   "name": "rhs1",
+   "expr": "a * (r + b)"
+  },
+  {
+   "name": "rhs2",
+   "expr": "a * (r - b) + c"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "rr",
+   "expr": "q * mult - b"
+  },
+  {
+   "name": "eqs",
+   "expr": "[poly([a, b], ['x', '']) + ' = ' + poly([c, d], ['x', '']), str(a) + '(x ' + ('+ ' if b >= 0 else '− ') + str(abs(b)) + ') = ' + str(rhs1), str(a) + '(x ' + ('− ' if b >= 0 else '+ ') + str(abs(b)) + ') ' + ('+ ' if c >= 0 else '− ') + str(abs(c)) + ' = ' + str(rhs2)]"
+  },
+  {
+   "name": "hint",
+   "expr": "['Przenieś wyrazy z x na jedną stronę, a liczby na drugą, potem podziel przez współczynnik przy x.', 'Opuść nawias (lub podziel obie strony przez ' + str(a) + ') i rozwiąż równanie.', 'Opuść nawias, przenieś liczby na jedną stronę i podziel.']"
+  },
+  {
+   "name": "sol",
+   "expr": "r"
+  }
+ ],
+ "constraints": [
+  "f != 0 or a != c",
+  "c != 0",
+  "b != 0"
+ ],
+ "selfCheck": [
+  "f != 0 or a * r + b == c * r + d",
+  "f != 1 or a * (r + b) == rhs1",
+  "f != 2 or a * (r - b) + c == rhs2"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Rozwiąż równanie: $@{eqs[f]}$",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "sol"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{hint[f]}"
+   },
+   {
+    "kind": "conclude",
+    "text": "x = @{sol}. Sprawdzenie: podstaw @{sol} do równania."
+   }
+  ]
+ }
+}

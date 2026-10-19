@@ -1,0 +1,36 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-calculator",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Kalkulator i aplikacje obliczeniowe"
+ },
+ "objectives": [
+  "VII-VIII.1.12",
+  "VII-VIII.5.1.c"
+ ],
+ "tags": [
+  "thinking",
+  "calculator-allowed"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mądre użycie narzędzi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-calculator.jsonl"
+  }
+ ],
+ "area": "VII-VIII.1",
+ "tutor": {
+  "intro": {
+   "pl": "Kalkulator i arkusz kalkulacyjny przyspieszają rachunki, ale to ty ustawiasz dane i oceniasz, czy wynik jest sensowny."
+  }
+ }
+}

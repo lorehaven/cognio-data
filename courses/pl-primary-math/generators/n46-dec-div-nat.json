@@ -1,0 +1,99 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-div-nat",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "blo": "101",
+    "bhi": "300"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "kq",
+   "expr": "randint(1, 2)"
+  },
+  {
+   "name": "qn",
+   "expr": "randint(2, 99)"
+  },
+  {
+   "name": "q",
+   "expr": "qn / pow(10, kq)"
+  },
+  {
+   "name": "x",
+   "expr": "q * b"
+  }
+ ],
+ "constraints": [
+  "qn % 10 != 0",
+  "denom(x) in divisors(1000)"
+ ],
+ "selfCheck": [
+  "q * b == x"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $@{x|dec} : @{b}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielimy jak liczby naturalne, a przecinek w wyniku stawiamy dokładnie nad przecinkiem dzielnej."
+   },
+   {
+    "kind": "compute",
+    "text": "@{q|dec} · @{b} = @{x|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "comma_shift",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "q * 10"
+     }
+    },
+    "feedback": "Sprawdź mnożeniem: wynik razy dzielnik powinien dać dzielną."
+   },
+   {
+    "id": "comma_shift_down",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "q / 10"
+     }
+    },
+    "feedback": "Sprawdź mnożeniem: wynik razy dzielnik powinien dać dzielną."
+   }
+  ]
+ }
+}

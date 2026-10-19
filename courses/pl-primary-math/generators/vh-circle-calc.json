@@ -1,0 +1,140 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-circle-calc",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "mode": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "r",
+   "expr": "randint(2, 30)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "c",
+   "expr": "314 / 100 * 2 * r"
+  },
+  {
+   "name": "p",
+   "expr": "314 / 100 * r * r"
+  },
+  {
+   "name": "txt",
+   "expr": "('Oblicz długość okręgu o promieniu ' + str(r) + ' ' + un + '. Przyjmij π ≈ 3,14.') if mode == 0 else (('Oblicz pole koła o promieniu ' + str(r) + ' ' + un + '. Przyjmij π ≈ 3,14.') if mode == 1 else (('Okrąg ma długość ' + fmt(c) + ' ' + un + '. Oblicz jego promień. Przyjmij π ≈ 3,14.') if mode == 2 else ('Średnica koła wynosi ' + str(2 * r) + ' ' + un + '. Oblicz pole koła. Przyjmij π ≈ 3,14.')))"
+  },
+  {
+   "name": "ans",
+   "expr": "c if mode == 0 else (p if mode == 1 else (r if mode == 2 else p))"
+  },
+  {
+   "name": "u",
+   "expr": "un + '²' if mode == 1 or mode == 3 else un"
+  }
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Długość okręgu: L = 2πr.' if mode == 0 else ('Pole koła: P = πr².' if mode == 1 else ('Z L = 2πr wynika r = L : (2π).' if mode == 2 else 'Promień to połowa średnicy. Pole koła: P = πr².')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans|dec} @{u}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "area_for_length",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "p"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "feedback": "To jest pole koła. Długość okręgu to 2πr.",
+    "when": "mode == 0"
+   },
+   {
+    "id": "diameter_as_r",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "314 / 100 * 4 * r * r"
+     },
+     "unit": {
+      "$expr": "un + '²'"
+     }
+    },
+    "feedback": "Pamiętaj: we wzorze na pole koła występuje promień, a średnica jest dwa razy dłuższa.",
+    "when": "mode == 3"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "circle",
+    "essential": false,
+    "alt": "Koło z zaznaczonym promieniem lub średnicą.",
+    "params": {
+     "draw": {
+      "$expr": "['diameter'] if mode == 3 else ['radius']"
+     },
+     "labels": {
+      "radius": {
+       "$expr": "'r = ?' if mode == 2 else 'r = ' + str(r) + ' ' + un"
+      },
+      "diameter": {
+       "$expr": "'d = ' + str(2 * r) + ' ' + un"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

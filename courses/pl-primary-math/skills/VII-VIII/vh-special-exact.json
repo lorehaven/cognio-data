@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-special-exact",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Dokładne długości w trójkątach szczególnych"
+ },
+ "objectives": [
+  "VII-VIII.3.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Trójkąt równoramienny prostokątny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dłuższa przyprostokątna"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wysokość trójkąta równobocznego"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-special-exact.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-special-numeric",
+  "vh-root-multiply"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W trójkącie prostokątnym równoramiennym przeciwprostokątna to $a\\sqrt{2}$. W trójkącie 30°–60°–90° dłuższa przyprostokątna to $a\\sqrt{3}$, gdy krótsza ma a."
+  }
+ }
+}

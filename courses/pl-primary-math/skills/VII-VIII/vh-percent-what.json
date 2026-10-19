@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-percent-what",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Jakim procentem jednej liczby jest druga?"
+ },
+ "objectives": [
+  "VII-VIII.1.1.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wyniki okrągłe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolne procenty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-percent-what.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "tutor": {
+  "intro": {
+   "pl": "Procent to setna część całości. Żeby sprawdzić, jakim procentem liczby b jest liczba a, dzielimy a przez b i mnożymy przez 100%."
+  }
+ }
+}

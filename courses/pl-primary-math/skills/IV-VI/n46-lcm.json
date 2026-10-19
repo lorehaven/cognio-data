@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-lcm",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Najmniejsza wspólna wielokrotność"
+ },
+ "objectives": [
+  "IV-VI.1.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby do 12"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby do 30"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Liczby do 99"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-lcm.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-gcd"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Najmniejsza wspólna wielokrotność (NWW) to najmniejsza liczba podzielna przez obie dane liczby. Wypisuj wielokrotności większej, aż trafisz na taką, którą dzieli druga."
+  }
+ }
+}

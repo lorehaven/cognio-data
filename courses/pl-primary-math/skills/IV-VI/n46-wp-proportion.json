@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-proportion",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rozumowanie proporcjonalne"
+ },
+ "objectives": [
+  "IV-VI.6.3.d"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Cena i liczba sztuk"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Droga i czas"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Przepis dla większej liczby osób"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-wp-proportion.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-wp-shopping"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zadania proporcjonalne: najpierw policz, ile przypada na jedną sztukę (osobę, godzinę), a potem pomnóż przez żądaną liczbę."
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-round",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Zaokrąglanie ułamków dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.25"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do jedności"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do części dziesiątych"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do części setnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-round.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-place-value"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Patrz na cyfrę zaraz za miejscem zaokrąglania: 0–4 – zostawiamy poprzednią cyfrę, 5–9 – zwiększamy ją o 1."
+  }
+ }
+}

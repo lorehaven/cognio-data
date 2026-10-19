@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-real-model",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "s",
+   "expr": "choice([20, 25, 30, 40, 50])"
+  },
+  {
+   "name": "na",
+   "expr": "randint(4, 14)"
+  },
+  {
+   "name": "nb",
+   "expr": "randint(4, 14)"
+  },
+  {
+   "name": "wa",
+   "expr": "randint(3, 8)"
+  },
+  {
+   "name": "wb",
+   "expr": "randint(5, 12)"
+  },
+  {
+   "name": "wd",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "cov",
+   "expr": "randint(4, 9)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(3, 20)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Podłoga ma wymiary ' + str(s * na) + ' cm na ' + str(s * nb) + ' cm. Układamy kwadratowe płytki o boku ' + str(s) + ' cm, bez przycinania i bez fug. Ile płytek potrzeba?') if mode == 0 else (('Chcemy pomalować ścianę o wymiarach ' + str(wa) + ' m na ' + str(wb) + ' m. Drzwi i okno zajmują razem ' + str(wd) + ' m², których nie malujemy. Jeden litr farby wystarcza na ' + str(cov) + ' m². Ile litrów (w pełnych litrach) trzeba kupić?') if mode == 1 else ('Okrągły plac ma promień ' + str(r) + ' m. Chcemy ogrodzić go siatką sprzedawaną w rolkach po 10 m. Ile rolek trzeba kupić? Przyjmij π ≈ 3,14.')) "
+  },
+  {
+   "name": "ans",
+   "expr": "na * nb if mode == 0 else (ceil((wa * wb - wd) / cov) if mode == 1 else ceil(314 / 100 * 2 * r / 10))"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or na != nb",
+  "mode != 1 or wa * wb - wd > cov",
+  "mode != 1 or (wa * wb - wd) % cov != 0"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Policz, ile płytek mieści się wzdłuż każdego boku, i pomnóż.' if mode == 0 else ('Od pola ściany odejmij pole drzwi i okna, podziel przez wydajność 1 litra i zaokrąglij w górę.' if mode == 1 else 'Długość ogrodzenia to długość okręgu 2πr. Podziel przez 10 m i zaokrąglij w górę – nie można kupić części rolki.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

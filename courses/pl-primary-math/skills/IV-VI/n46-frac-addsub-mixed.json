@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-addsub-mixed",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Liczby mieszane: dodawanie i odejmowanie"
+ },
+ "objectives": [
+  "IV-VI.1.27"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Bez przekraczania całości"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Z przenoszeniem całości"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-addsub-mixed.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-addsub",
+  "n46-frac-to-mixed"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy liczbach mieszanych dodaj osobno całości i osobno ułamki. Jeśli ułamków wyjdzie więcej niż całość, zamień nadmiar na całości."
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-percent-of",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Procent danej wielkości w zadaniach"
+ },
+ "objectives": [
+  "IV-VI.1.34"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Procenty okrągłe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolne procenty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-percent-of.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-percent-key"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Procent danej wielkości: podziel wielkość przez 100 (to 1%) i pomnóż przez liczbę procent."
+  }
+ }
+}

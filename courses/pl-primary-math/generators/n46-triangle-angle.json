@@ -1,0 +1,106 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-angle",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(25, 100)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(20, 100)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(2, 4)"
+  },
+  {
+   "name": "x",
+   "expr": "randint(15, 40)"
+  },
+  {
+   "name": "txt",
+   "expr": "('W trójkącie dwa kąty mają miary ' + str(a) + '° i ' + str(b) + '°. Ile stopni ma trzeci kąt?') if mode == 0 else (('W trójkącie prostokątnym jeden z kątów ostrych ma ' + str(a) + '°. Ile stopni ma drugi kąt ostry?') if mode == 1 else ('W trójkącie jeden kąt ma ' + str(x) + '°, a drugi jest ' + str(r) + ' razy większy. Ile stopni ma trzeci kąt?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "180 - a - b if mode == 0 else (90 - a if mode == 1 else 180 - x - r * x)"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or a + b < 175",
+  "mode != 1 or a < 80",
+  "mode != 2 or x * (1 + r) < 170"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Suma kątów w trójkącie wynosi 180°."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}°."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "sum_360",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "360 - a - b if mode == 0 else ans"
+     }
+    },
+    "feedback": "W trójkącie suma kątów to 180°, nie 360°.",
+    "when": "mode == 0 and 360 - a - b != ans"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle-angles",
+    "essential": false,
+    "alt": "Trójkąt z zaznaczonymi kątami; znak zapytania oznacza szukany kąt.",
+    "params": {
+     "angles": {
+      "$expr": "[a, b, 180 - a - b] if mode == 0 else [90, a, 90 - a]"
+     },
+     "labels": {
+      "$expr": "[str(a) + '°', str(b) + '°', '?'] if mode == 0 else ['', str(a) + '°', '?']"
+     }
+    },
+    "when": "mode < 2"
+   }
+  ]
+ }
+}

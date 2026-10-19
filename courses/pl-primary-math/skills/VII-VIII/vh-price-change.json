@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-price-change",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Podwyżki i obniżki"
+ },
+ "objectives": [
+  "VII-VIII.1.2"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Cena po jednej zmianie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Cena początkowa"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwie zmiany po sobie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-price-change.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-percent-of"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Podwyżka o p% to mnożenie ceny przez 1 + p/100, a obniżka – przez 1 − p/100. Np. podwyżka o 25% to mnożenie przez 1,25."
+  }
+ }
+}

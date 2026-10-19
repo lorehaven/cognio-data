@@ -1,0 +1,110 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-examples",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "d1",
+   "expr": "choice([2, 3, 4, 5, 9])"
+  },
+  {
+   "name": "d2",
+   "expr": "choice([3, 4, 5, 6, 7])"
+  },
+  {
+   "name": "lim",
+   "expr": "randint(2, 8) * 10"
+  },
+  {
+   "name": "l",
+   "expr": "lcm(d1, d2)"
+  },
+  {
+   "name": "m",
+   "expr": "lim // l + randint(1, 2)"
+  },
+  {
+   "name": "good",
+   "expr": "l * m"
+  },
+  {
+   "name": "w1",
+   "expr": "d1 * (randint(lim // d1 + 1, lim // d1 + 6))"
+  },
+  {
+   "name": "w2",
+   "expr": "d2 * (randint(lim // d2 + 1, lim // d2 + 6))"
+  },
+  {
+   "name": "w3",
+   "expr": "l * (lim // l)"
+  }
+ ],
+ "constraints": [
+  "d1 != d2",
+  "w1 % d2 != 0",
+  "w2 % d1 != 0",
+  "w3 <= lim",
+  "w3 > 0",
+  "good > lim",
+  "good % d1 == 0",
+  "good % d2 == 0",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "selfCheck": [
+  "w1 > lim",
+  "w2 > lim"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Którą liczbę można wpisać? Szukamy liczby większej od @{lim}, podzielnej przez @{d1} i przez @{d2}.",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdź po kolei wszystkie warunki. Liczba musi spełniać każdy z nich."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{good} : @{d1} = @{good // d1}, @{good} : @{d2} = @{good // d2}, a @{good} > @{lim}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

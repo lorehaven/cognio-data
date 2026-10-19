@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-puzzle-heads-legs",
+ "stage": "I-III",
+ "title": {
+  "pl": "Kury i króliki"
+ },
+ "objectives": [
+  "I-III.5.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Głowy i nogi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-puzzle-heads-legs.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "Wypróbuj różne liczby zwierząt i sprawdzaj nogi. Tabelka pomaga: ile kur, ile królików, ile głów, ile nóg."
+  }
+ }
+}

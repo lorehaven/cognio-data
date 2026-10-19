@@ -1,0 +1,83 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-quad-properties",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "['kwadrat', 'prostokąt', 'romb', 'równoległobok', 'trapez', 'trapez równoramienny', 'trapez prostokątny']"
+  },
+  {
+   "name": "props",
+   "expr": "[[1, 0, 1, 0, 0, 0, 0], [1, 1, 1, 1, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 0, 0, 0], [1, 1, 0, 0, 0, 1, 0], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 0, 0, 1, 0]]"
+  },
+  {
+   "name": "p",
+   "expr": "choice([0, 1, 2, 3, 4, 6])"
+  },
+  {
+   "name": "ptxt",
+   "expr": "['wszystkie boki równe', 'dwie pary boków równoległych', 'wszystkie kąty proste', 'przekątne prostopadłe', 'przekątne równej długości', 'co najmniej jedną parę boków równoległych', 'co najmniej jedną oś symetrii'][p]"
+  },
+  {
+   "name": "idx",
+   "expr": "shuffle([0, 1, 2, 3, 4, 5, 6])"
+  }
+ ],
+ "constraints": [
+  "count([props[p][idx[0]] == 1, props[p][idx[1]] == 1, props[p][idx[2]] == 1, props[p][idx[3]] == 1, props[p][idx[4]] == 1], true) >= 1",
+  "count([props[p][idx[0]] == 1, props[p][idx[1]] == 1, props[p][idx[2]] == 1, props[p][idx[3]] == 1, props[p][idx[4]] == 1], false) >= 1"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multi-select",
+  "prompt": "Które z poniższych czworokątów mają @{ptxt}? Zaznacz wszystkie.",
+  "answer": {
+   "type": "set",
+   "value": {
+    "$expr": "((['a'] if (props[p][idx[0]] == 1) else []) + (['b'] if (props[p][idx[1]] == 1) else []) + (['c'] if (props[p][idx[2]] == 1) else []) + (['d'] if (props[p][idx[3]] == 1) else []) + (['e'] if (props[p][idx[4]] == 1) else []))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Przypomnij sobie rysunki: kwadrat i romb mają równe boki; prostokąt i kwadrat – cztery kąty proste; romb i kwadrat – prostopadłe przekątne."
+   },
+   {
+    "kind": "conclude",
+    "text": "Sprawdź każdy czworokąt po kolei: czy ma własność „@{ptxt}”?"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{names[idx[0]]}",
+    "correct": "props[p][idx[0]] == 1"
+   },
+   {
+    "id": "b",
+    "text": "@{names[idx[1]]}",
+    "correct": "props[p][idx[1]] == 1"
+   },
+   {
+    "id": "c",
+    "text": "@{names[idx[2]]}",
+    "correct": "props[p][idx[2]] == 1"
+   },
+   {
+    "id": "d",
+    "text": "@{names[idx[3]]}",
+    "correct": "props[p][idx[3]] == 1"
+   },
+   {
+    "id": "e",
+    "text": "@{names[idx[4]]}",
+    "correct": "props[p][idx[4]] == 1"
+   }
+  ]
+ }
+}

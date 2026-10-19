@@ -1,0 +1,52 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-len-units",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jednostki długości"
+ },
+ "objectives": [
+  "IV-VI.2.2",
+  "IV-VI.2.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "m i cm, cm i mm"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "km i m, dm"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ułamki dziesiętne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-len-units.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "tutor": {
+  "intro": {
+   "pl": "Jednostki długości: 1 km = 1000 m, 1 m = 10 dm = 100 cm = 1000 mm, 1 dm = 10 cm, 1 cm = 10 mm. Z większej jednostki na mniejszą mnożymy, z mniejszej na większą dzielimy."
+  }
+ }
+}

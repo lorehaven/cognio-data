@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-sub",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odejmowanie ułamków dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.28.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dziesiąte"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do setnych"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do tysięcznych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-sub.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-add",
+  "n46-sub-written"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Odejmując ułamki dziesiętne, zapisz je jedna pod drugą: przecinek pod przecinkiem. Brakujące miejsca uzupełnij zerami."
+  }
+ }
+}

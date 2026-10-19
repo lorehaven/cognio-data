@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-rect",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Pole prostokąta i kwadratu"
+ },
+ "objectives": [
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Prostokąt"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kwadrat"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Boki z ułamkami dziesiętnymi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-rect.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-dec-mul"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pole prostokąta to długość razy szerokość, a kwadratu – bok razy bok. Pole mierzymy w jednostkach kwadratowych, np. cm²."
+  }
+ }
+}

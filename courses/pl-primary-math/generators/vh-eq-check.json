@@ -1,0 +1,118 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-check",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "f": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "f": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "r",
+   "expr": "randint(-4, 5)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-5, 6)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "yes",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "dd",
+   "expr": "choice([-2, -1, 1, 2])"
+  },
+  {
+   "name": "t",
+   "expr": "r if yes else r + dd"
+  },
+  {
+   "name": "half",
+   "expr": "choice([4, 5, 8, 10])"
+  },
+  {
+   "name": "eq",
+   "expr": "poly([a, b], ['x', '']) + ' = ' + str(a * r + b) if f == 0 else (poly([1, b], ['x²', 'x']) + ' = ' + str(r * r + b * r) if f == 1 else (poly([1, b], ['x³', 'x']) + ' = ' + str(r * r * r + b * r) if f == 2 else poly([a * 2, b], ['x', '']) + ' = ' + str(a + b)))"
+  },
+  {
+   "name": "cand",
+   "expr": "str(t) if f < 3 else ('1/2' if yes else '1/' + str(half))"
+  },
+  {
+   "name": "lhs",
+   "expr": "a * t + b if f == 0 else (t * t + b * t if f == 1 else (t * t * t + b * t if f == 2 else (a * 2 * (1 / 2) + b if yes else a * 2 * (1 / half) + b)))"
+  },
+  {
+   "name": "rhs",
+   "expr": "a * r + b if f == 0 else (r * r + b * r if f == 1 else (r * r * r + b * r if f == 2 else a + b))"
+  }
+ ],
+ "constraints": [
+  "f == 3 or b != 0",
+  "f != 2 or abs(r) <= 3",
+  "f != 1 or r != 0",
+  "f == 3 or yes or lhs != rhs"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Czy liczba @{cand} jest rozwiązaniem równania @{eq}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (lhs == rhs) else []) + (['b'] if (lhs != rhs) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Podstaw liczbę w miejsce x po obu stronach równania. Jeśli wyniki są równe – to rozwiązanie."
+   },
+   {
+    "kind": "compute",
+    "text": "Lewa strona: @{lhs|dec}, prawa strona: @{rhs|dec}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Tak",
+    "correct": "lhs == rhs"
+   },
+   {
+    "id": "b",
+    "text": "Nie",
+    "correct": "lhs != rhs"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

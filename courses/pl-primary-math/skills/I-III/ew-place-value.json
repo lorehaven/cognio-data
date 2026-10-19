@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-place-value",
+ "stage": "I-III",
+ "title": {
+  "pl": "Rzędy liczby"
+ },
+ "objectives": [
+  "I-III.1.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dziesiątki i jedności"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Setki"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Tysiące"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-place-value.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-write-number"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Miejsce cyfry w liczbie decyduje o jej wartości. Od prawej: jedności, dziesiątki, setki, tysiące. W liczbie 352 cyfra 3 oznacza 300."
+  }
+ }
+}

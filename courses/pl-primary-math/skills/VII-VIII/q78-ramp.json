@@ -1,0 +1,39 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-ramp",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Misja: rampa dla rowerów"
+ },
+ "objectives": [
+  "VII-VIII.3.4",
+  "VII-VIII.3.9"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q78-ramp.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: problem z życia wymagający twierdzenia Pitagorasa, pól i szacowania zużycia materiałów."
+  }
+ },
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-pyth-basic",
+  "vh-pyth-context"
+ ]
+}

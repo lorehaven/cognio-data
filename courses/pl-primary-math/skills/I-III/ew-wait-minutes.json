@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wait-minutes",
+ "stage": "I-III",
+ "title": {
+  "pl": "Ile minut czekać?"
+ },
+ "objectives": [
+  "I-III.5.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Czas oczekiwania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-wait-minutes.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "prerequisites": [
+  "ew-read-timetable"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Znajdź najbliższy odjazd po aktualnej godzinie i policz, ile minut dzieli oba czasy."
+  }
+ }
+}

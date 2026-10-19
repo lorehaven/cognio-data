@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-isosceles",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Trójkąt równoramienny"
+ },
+ "objectives": [
+  "IV-VI.4.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kąt przy wierzchołku → kąty przy podstawie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kąt przy podstawie → kąt przy wierzchołku"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Obwód i ramię → podstawa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-isosceles.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-angle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trójkąt równoramienny ma dwa równe boki (ramiona) i równe kąty przy podstawie. Razem z trzecim kątem dają 180°."
+  }
+ }
+}

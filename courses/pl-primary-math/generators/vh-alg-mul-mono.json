@@ -1,0 +1,119 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-mul-mono",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "terms": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "terms": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "choice([-3, -2, 2, 3, 4])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(-4, 5)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-4, 5)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(-5, 5)"
+  },
+  {
+   "name": "cs",
+   "expr": "[a, b, c] if terms == 3 else [a, b, 0]"
+  },
+  {
+   "name": "sumtxt",
+   "expr": "poly(cs, ['x', 'y', '']) if terms == 3 else poly([a, b], ['x', 'y'])"
+  },
+  {
+   "name": "mono",
+   "expr": "(str(k) if k > 0 else '(−' + str(abs(k)) + ')') + 'x'"
+  },
+  {
+   "name": "good",
+   "expr": "poly([k * cs[0], k * cs[1], k * cs[2]], ['x²', 'xy', 'x'])"
+  },
+  {
+   "name": "w1",
+   "expr": "poly([k * cs[0], cs[1], k * cs[2]], ['x²', 'xy', 'x'])"
+  },
+  {
+   "name": "w2",
+   "expr": "poly([cs[0], k * cs[1], k * cs[2]], ['x²', 'xy', 'x'])"
+  },
+  {
+   "name": "w3",
+   "expr": "poly([k * cs[0], -k * cs[1], k * cs[2]], ['x²', 'xy', 'x'])"
+  }
+ ],
+ "constraints": [
+  "a != 0 and b != 0",
+  "terms == 2 or c != 0",
+  "k != 1 and k != -1",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Wymnóż: @{mono}(@{sumtxt})",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mnożymy jednomian przez każdy wyraz w nawiasie osobno: x · x = x², x · y = xy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{good}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-clock-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "step": "60"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "step": "15"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "step": "5"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "step": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "h",
+   "expr": "randint(1, 12)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(0, 59 // step) * step"
+  },
+  {
+   "name": "t",
+   "expr": "h * 60 + m"
+  }
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "time-input",
+  "prompt": "Jaką godzinę pokazuje zegar? Wpisz ją w postaci godzina:minuty.",
+  "answer": {
+   "type": "time",
+   "value": {
+    "$expr": "hhmm(t)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Krótka wskazówka pokazuje godzinę, a długa – minuty. Długa wskazówka na „12” oznacza pełną godzinę, na „6” – 30 minut."
+   },
+   {
+    "kind": "conclude",
+    "text": "Zegar pokazuje @{hhmm(t)}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "clock",
+    "essential": true,
+    "alt": "Tarcza zegara ze wskazówkami.",
+    "params": {
+     "hour": {
+      "$expr": "h"
+     },
+     "minute": {
+      "$expr": "m"
+     }
+    }
+   }
+  ]
+ }
+}

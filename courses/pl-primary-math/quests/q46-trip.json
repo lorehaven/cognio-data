@@ -1,0 +1,215 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-trip",
+ "title": {
+  "pl": "Misja: budżet wycieczki klasowej"
+ },
+ "experience": 1,
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(20, 28)"
+  },
+  {
+   "name": "ba",
+   "expr": "100 * randint(8, 14)"
+  },
+  {
+   "name": "ta",
+   "expr": "randint(12, 25)"
+  },
+  {
+   "name": "bb",
+   "expr": "100 * randint(6, 12)"
+  },
+  {
+   "name": "tb",
+   "expr": "randint(15, 30)"
+  },
+  {
+   "name": "ca",
+   "expr": "ba + n * ta"
+  },
+  {
+   "name": "cb",
+   "expr": "bb + n * tb"
+  },
+  {
+   "name": "best",
+   "expr": "min(ca, cb)"
+  }
+ ],
+ "intro": "Klasa liczy @{pln(n, ['osobę', 'osoby', 'osób'])} i planuje wycieczkę do muzeum. Dostała dwie oferty: A i B. Każda obejmuje przejazd autokarem (cena za cały autokar) i bilety wstępu (cena za jednego ucznia). Porównaj koszty i zaproponuj najlepsze rozwiązanie.",
+ "steps": [
+  {
+   "kind": "quantity-input",
+   "prompt": "Ile złotych kosztuje cała wycieczka według oferty A?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "ca"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Koszt = cena autokaru + liczba uczniów · cena biletu."
+    },
+    {
+     "kind": "compute",
+     "text": "@{ba} + @{n} · @{ta} = @{ca}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Ile złotych kosztuje cała wycieczka według oferty B?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "cb"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Koszt = cena autokaru + liczba uczniów · cena biletu."
+    },
+    {
+     "kind": "compute",
+     "text": "@{bb} + @{n} · @{tb} = @{cb}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "O ile złotych tańsza jest korzystniejsza oferta?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "abs(ca - cb)"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Odejmij mniejszą kwotę od większej."
+    },
+    {
+     "kind": "compute",
+     "text": "@{max(ca, cb)} − @{min(ca, cb)} = @{abs(ca - cb)}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "multiple-choice",
+   "prompt": "Którą ofertę powinna wybrać klasa, jeśli zależy jej na najniższym koszcie?",
+   "answer": {
+    "type": "choice",
+    "value": {
+     "$expr": "((['a'] if (ca < cb) else []) + (['b'] if (cb < ca) else []))[0]"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Wybieramy ofertę, której całkowity koszt jest mniejszy."
+    },
+    {
+     "kind": "conclude",
+     "text": "@{('Oferta A: ' + str(ca) + ' zł.' if ca < cb else 'Oferta B: ' + str(cb) + ' zł.')}"
+    }
+   ],
+   "options": [
+    {
+     "id": "a",
+     "text": "Ofertę A",
+     "correct": "ca < cb"
+    },
+    {
+     "id": "b",
+     "text": "Ofertę B",
+     "correct": "cb < ca"
+    }
+   ],
+   "input": {
+    "fixedOrder": true
+   }
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Koszt wybranej oferty dzielimy po równo między wszystkich uczniów; wpłata każdego ucznia jest zaokrąglona w górę do pełnego złotego. Ile złotych wpłaca każdy uczeń?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "ceil(best / n)"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Podziel koszt przez liczbę uczniów i zaokrąglij wynik w górę, bo nie można zebrać „ułamka” złotego za mało."
+    },
+    {
+     "kind": "compute",
+     "text": "@{best} : @{n} daje @{best // n} i resztę @{best % n}, więc po zaokrągleniu w górę: @{ceil(best / n)} zł"
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Ile złotych nadwyżki zostanie po zebraniu wpłat?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "ceil(best / n) * n - best"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Nadwyżka = suma wpłat − koszt wycieczki."
+    },
+    {
+     "kind": "compute",
+     "text": "@{ceil(best / n)} · @{n} − @{best} = @{ceil(best / n) * n - best}"
+    }
+   ]
+  }
+ ],
+ "constraints": [
+  "ca != cb",
+  "abs(ca - cb) >= 20"
+ ],
+ "media": [
+  {
+   "type": "table",
+   "kind": "table",
+   "essential": true,
+   "alt": "Tabela: dwie oferty wycieczki.",
+   "params": {
+    "headers": [
+     "Oferta",
+     "Autokar (zł)",
+     "Bilet (zł za ucznia)"
+    ],
+    "rows": {
+     "$expr": "[['A', ba, ta], ['B', bb, tb]]"
+    }
+   }
+  }
+ ],
+ "outro": "Klasa ma gotową propozycję: wybrała tańszą ofertę i wie, ile każdy uczeń ma wpłacić."
+}

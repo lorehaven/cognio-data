@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-symmetry-letters",
+ "stage": "I-III",
+ "title": {
+  "pl": "Które litery mają oś symetrii?"
+ },
+ "objectives": [
+  "I-III.3.d"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wskaż literę z osią symetrii"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-symmetry-letters.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "tutor": {
+  "intro": {
+   "pl": "Figura ma oś symetrii, jeśli da się ją złożyć wzdłuż prostej tak, że obie połowy dokładnie się pokrywają, jak skrzydła motyla."
+  }
+ }
+}

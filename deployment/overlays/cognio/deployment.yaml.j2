@@ -1,0 +1,46 @@
+# Stateless and read-only, so a RollingUpdate is safe; one replica is plenty (the data is a hostPath on one node).
+# Runs as the image's unprivileged user (uid 10001); the data directory is mounted read-only, and push-data
+# (server/foreman.toml) makes the files world-readable.
+- kind: deployment
+  name: cognio-server
+  app_name: cognio
+  instance: cognio-server
+  image: ennor.ddns.net/utilities/cognio-server:0.1.0
+  pull_policy: Always
+  replicas: 1
+  port: 8080
+  container_name: cognio-server
+  service_account: cognio-sa
+  resources:
+    requests:
+      cpu: 20m
+      memory: 64Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi
+  security_context:
+    run_as_user: 10001
+    run_as_group: 10001
+  # The app serves everything under BASE_PATH, so the probes hit the prefixed health path directly on the
+  # container (no ingress involved).
+  probes:
+    readiness:
+      http_get: { path: "${COGNIO_BASE_PATH}/healthz", port: 8080 }
+      initial_delay_seconds: 2
+      period_seconds: 10
+    liveness:
+      http_get: { path: "${COGNIO_BASE_PATH}/healthz", port: 8080 }
+      initial_delay_seconds: 10
+      period_seconds: 30
+  # The environment arrives from the ConfigMap (config.yaml.j2), not from literals here. riveter stamps this
+  # workload with a hash of it, so a changed value rolls it out.
+  env_from_config_maps:
+    - cognio-env
+  volume_mounts:
+    - name: data
+      mountPath: /data
+      readOnly: true
+  volumes:
+    - name: data
+      host_path: /mnt/dev/cognio/data
+      type: DirectoryOrCreate

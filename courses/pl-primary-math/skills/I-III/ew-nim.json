@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-nim",
+ "stage": "I-III",
+ "title": {
+  "pl": "Gra: kto zabierze ostatni patyczek?"
+ },
+ "objectives": [
+  "I-III.5.e"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Można wziąć 1 lub 2"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Można wziąć 1, 2 lub 3"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-nim.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "W tej grze wygrywa ten, kto potrafi zostawić przeciwnikowi „zły” wynik. Szukaj liczby, po której rywal zawsze przegra, i dąż do niej."
+  }
+ }
+}

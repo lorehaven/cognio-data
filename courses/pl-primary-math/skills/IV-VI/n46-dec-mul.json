@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-mul",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Mnożenie ułamków dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.28.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ułamek razy liczba naturalna"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dziesiąte razy dziesiąte"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Setne razy dziesiąte"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Do trzech miejsc po przecinku"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-mul.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-mul",
+  "n46-dec-add"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mnożymy ułamki dziesiętne, jakby nie było przecinków. W wyniku zostawiamy tyle miejsc po przecinku, ile mają razem oba czynniki."
+  }
+ }
+}

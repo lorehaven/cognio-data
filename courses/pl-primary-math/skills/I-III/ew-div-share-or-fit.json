@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-share-or-fit",
+ "stage": "I-III",
+ "title": {
+  "pl": "Podział czy mieszczenie?"
+ },
+ "objectives": [
+  "I-III.1.h"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Rozpoznaj sytuację"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-div-share-or-fit.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-div-meaning"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Podział po równo: wiemy, na ile części dzielimy. Mieszczenie: wiemy, ile ma być w jednej porcji. W obu przypadkach działanie jest to samo – dzielenie."
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-mean-exact",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "n": "5"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "n": "6"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "m",
+   "expr": "randint(20, 60)"
+  },
+  {
+   "name": "rest",
+   "expr": "sample(m - 12, m + 12, n - 1)"
+  },
+  {
+   "name": "last",
+   "expr": "m * n - sum(rest)"
+  },
+  {
+   "name": "vs",
+   "expr": "rest + [last]"
+  },
+  {
+   "name": "what",
+   "expr": "'Wyniki z ' + str(n) + ' sprawdzianów (w punktach): ' if n == 5 else 'Wydatki Oli w ostatnich ' + str(n) + ' dniach (w zł): '"
+  }
+ ],
+ "constraints": [
+  "last >= 5 and last <= 90",
+  "last not in rest"
+ ],
+ "selfCheck": [
+  "sum(vs) == m * n"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{what}@{join(vs, \", \")}. Oblicz średnią arytmetyczną tych liczb.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "m"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Średnia arytmetyczna = suma wszystkich liczb : liczba liczb."
+   },
+   {
+    "kind": "compute",
+    "text": "@{join(vs, \" + \")} = @{sum(vs)}; @{sum(vs)} : @{n} = @{m}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-build",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pmin": "0",
+    "pmax": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pmin": "3",
+    "pmax": "5"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(pmin, pmax)"
+  },
+  {
+   "name": "texts",
+   "expr": "['Zeszyt kosztuje a zł, a długopis b zł. Jakie wyrażenie opisuje koszt ' + str(k) + ' zeszytów i ' + str(m) + ' długopisów?', 'Ola ma x lat, a jej brat y lat. Jakie wyrażenie opisuje sumę ich wieku za ' + str(k) + ' lat?', 'W kinie jest x rzędów po y miejsc. Liczbę miejsc zwiększono o ' + str(k) + '. Jakie wyrażenie opisuje liczbę miejsc?', 'Prostokąt ma boki a i b. Jedną z jego długości zwiększono o ' + str(k) + '. Jakie wyrażenie opisuje nowy obwód?', 'Pociąg jechał v km/h przez t godzin, a potem jeszcze ' + str(k) + ' km. Jakie wyrażenie opisuje całą przebytą drogę?', 'Pole kwadratu o boku a zmniejszono o pole kwadratu o boku b. Jakie wyrażenie opisuje różnicę pól?']"
+  },
+  {
+   "name": "opts",
+   "expr": "[[str(k) + 'a + ' + str(m) + 'b', str(k) + 'a · ' + str(m) + 'b', str(k + m) + 'ab', 'a + b + ' + str(k + m)], ['x + y + ' + str(2 * k), 'x + y + ' + str(k), '2(x + y) + ' + str(k), '(x + ' + str(k) + ')(y + ' + str(k) + ')'], ['xy + ' + str(k), 'x + y + ' + str(k), 'x · (y + ' + str(k) + ')', '(x + ' + str(k) + ') · y'], ['2a + 2b + ' + str(k), '2(a + b + ' + str(k) + ')', 'a + b + ' + str(k), '4a + ' + str(k)], ['vt + ' + str(k), 'v + t + ' + str(k), '(v + ' + str(k) + ')t', 'v · (t + ' + str(k) + ')'], ['a² − b²', '(a − b)²', 'a − b', '2a − 2b']]"
+  }
+ ],
+ "constraints": [
+  "p != 3 or k != 2",
+  "(opts[p][0]) != (opts[p][1])",
+  "(opts[p][0]) != (opts[p][2])",
+  "(opts[p][0]) != (opts[p][3])",
+  "(opts[p][1]) != (opts[p][2])",
+  "(opts[p][1]) != (opts[p][3])",
+  "(opts[p][2]) != (opts[p][3])"
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{texts[p]}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zapisz każdą wielkość z zadania literą lub liczbą i połącz je działaniami z treści."
+   },
+   {
+    "kind": "conclude",
+    "text": "Poprawne wyrażenie: @{opts[p][0]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{opts[p][0]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{opts[p][1]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{opts[p][2]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{opts[p][3]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

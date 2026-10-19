@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-percent-fraction",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "1%, 10%, 25%, 50% i 100% jako ułamek"
+ },
+ "objectives": [
+  "IV-VI.1.33"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Z procentu na ułamek"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Z ułamka na procent"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-percent-fraction.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Procent to jedna setna całości: 1% = $\\frac{1}{100}$. Dlatego 100% to cała całość, 50% to połowa, 25% to jedna czwarta, a 10% to jedna dziesiąta."
+  }
+ }
+}

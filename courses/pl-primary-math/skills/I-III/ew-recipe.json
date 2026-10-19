@@ -1,0 +1,45 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-recipe",
+ "stage": "I-III",
+ "title": {
+  "pl": "Przepis kulinarny"
+ },
+ "objectives": [
+  "I-III.5.a",
+  "I-III.5.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa razy więcej"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy razy więcej lub dwa razy mniej"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-recipe.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "Gdy robisz dwa razy więcej porcji, potrzebujesz dwa razy więcej każdego składnika. Gdy trzy razy więcej – trzy razy więcej."
+  }
+ }
+}

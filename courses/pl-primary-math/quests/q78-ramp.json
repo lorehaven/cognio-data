@@ -1,0 +1,221 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-ramp",
+ "title": {
+  "pl": "Misja: rampa dla rowerów"
+ },
+ "experience": 4,
+ "vars": [
+  {
+   "name": "tr",
+   "expr": "choice([[5, 12, 13], [8, 15, 17], [7, 24, 25], [3, 4, 5]])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "hh",
+   "expr": "tr[0] * k"
+  },
+  {
+   "name": "dd",
+   "expr": "tr[1] * k"
+  },
+  {
+   "name": "ls",
+   "expr": "tr[2] * k"
+  },
+  {
+   "name": "ww",
+   "expr": "randint(8, 15)"
+  },
+  {
+   "name": "cov",
+   "expr": "choice([40, 50, 80, 100])"
+  }
+ ],
+ "intro": "W parku powstaje rampa dla rowerów. Jej bok ma kształt trójkąta prostokątnego: rampa wznosi się na wysokość @{hh} dm na poziomej odległości @{dd} dm. Szerokość rampy to @{ww} dm. Oblicz, ile materiałów potrzeba.",
+ "steps": [
+  {
+   "kind": "quantity-input",
+   "prompt": "Jaką długość ma powierzchnia rampy (przeciwprostokątna trójkąta)?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "ls"
+    },
+    "unit": "dm"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Z twierdzenia Pitagorasa: $c^2 = a^2 + b^2$."
+    },
+    {
+     "kind": "compute",
+     "text": "@{hh}² + @{dd}² = @{hh * hh + dd * dd} = @{ls}²"
+    }
+   ],
+   "input": {
+    "unit": "dm"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma prostokątna powierzchnia, po której jadą rowery?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "ls * ww"
+    },
+    "unit": "dm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole prostokąta o bokach: długość rampy i jej szerokość."
+    },
+    {
+     "kind": "compute",
+     "text": "@{ls} · @{ww} = @{ls * ww}"
+    }
+   ],
+   "input": {
+    "unit": "dm²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma jedna boczna ściana rampy (trójkąt prostokątny)?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "hh * dd / 2"
+    },
+    "unit": "dm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole trójkąta prostokątnego = połowa iloczynu przyprostokątnych."
+    },
+    {
+     "kind": "compute",
+     "text": "@{hh} · @{dd} : 2 = @{hh * dd / 2|dec}"
+    }
+   ],
+   "input": {
+    "unit": "dm²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole mają razem obie boczne ściany i powierzchnia rampy (powierzchnia do pomalowania)?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "ls * ww + hh * dd"
+    },
+    "unit": "dm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Dodaj pole powierzchni rampy i dwóch trójkątnych ścian bocznych."
+    },
+    {
+     "kind": "compute",
+     "text": "@{ls * ww} + 2 · @{hh * dd / 2|dec} = @{ls * ww + hh * dd}"
+    }
+   ],
+   "input": {
+    "unit": "dm²"
+   }
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Jeden litr farby wystarcza na @{cov} dm². Ile litrów (w pełnych litrach) trzeba kupić?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "ceil((ls * ww + hh * dd) / cov)"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Podziel pole do pomalowania przez wydajność farby i zaokrąglij w górę."
+    },
+    {
+     "kind": "compute",
+     "text": "@{ls * ww + hh * dd} : @{cov} ≈ @{(ls * ww + hh * dd) / cov|dec}"
+    }
+   ]
+  },
+  {
+   "kind": "multiple-choice",
+   "prompt": "Czy trójkąt o bokach @{hh} dm, @{dd} dm i @{ls} dm jest prostokątny?",
+   "answer": {
+    "type": "choice",
+    "value": {
+     "$expr": "((['a'] if (hh * hh + dd * dd == ls * ls) else []) + (['b'] if (hh * hh + dd * dd != ls * ls) else []))[0]"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Sprawdź twierdzenie odwrotne do twierdzenia Pitagorasa."
+    },
+    {
+     "kind": "conclude",
+     "text": "@{hh}² + @{dd}² = @{hh * hh + dd * dd} = @{ls}², więc trójkąt jest prostokątny."
+    }
+   ],
+   "options": [
+    {
+     "id": "a",
+     "text": "Tak",
+     "correct": "hh * hh + dd * dd == ls * ls"
+    },
+    {
+     "id": "b",
+     "text": "Nie",
+     "correct": "hh * hh + dd * dd != ls * ls"
+    }
+   ],
+   "input": {
+    "fixedOrder": true
+   }
+  }
+ ],
+ "selfCheck": [
+  "hh * hh + dd * dd == ls * ls"
+ ],
+ "media": [
+  {
+   "type": "figure",
+   "kind": "right-triangle",
+   "essential": false,
+   "alt": "Boczna ściana rampy: trójkąt prostokątny z zaznaczoną wysokością i odległością poziomą.",
+   "params": {
+    "a": {
+     "$expr": "dd"
+    },
+    "b": {
+     "$expr": "hh"
+    },
+    "labels": {
+     "a": {
+      "$expr": "str(dd) + ' dm'"
+     },
+     "b": {
+      "$expr": "str(hh) + ' dm'"
+     },
+     "c": "?"
+    }
+   }
+  }
+ ],
+ "outro": "Rampa zaplanowana: znasz jej długość, powierzchnię do pomalowania i potrzebną ilość farby."
+}

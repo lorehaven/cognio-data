@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-survey-tally",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wyniki ankiety"
+ },
+ "objectives": [
+  "IV-VI.5.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Policz odpowiedzi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-survey-tally.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "tutor": {
+  "intro": {
+   "pl": "Wyniki ankiety zapisujemy kreskami. Policz każdą odpowiedź i wpisz wyniki do tabeli."
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-units",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "m/s i km/h"
+ },
+ "objectives": [
+  "IV-VI.2.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Z m/s na km/h"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Z km/h na m/s"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-speed-units.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-speed-distance"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zamiana jednostek prędkości: 1 m/s = 3,6 km/h. Mnożymy przez 3,6, aby przejść z m/s na km/h, a dzielimy – w przeciwną stronę."
+  }
+ }
+}

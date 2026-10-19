@@ -1,0 +1,186 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-congruent-find",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "al",
+   "expr": "randint(30, 80)"
+  },
+  {
+   "name": "be",
+   "expr": "randint(30, 80)"
+  },
+  {
+   "name": "ga",
+   "expr": "180 - al - be"
+  },
+  {
+   "name": "a",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(1, 2)"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "pm",
+   "expr": "drop(['P', 'Q', 'R'], r) + take(['P', 'Q', 'R'], r)"
+  },
+  {
+   "name": "side",
+   "expr": "pm[s] + pm[(s + 1) % 3]"
+  },
+  {
+   "name": "lens",
+   "expr": "[c, a, b]"
+  },
+  {
+   "name": "vert",
+   "expr": "['A', 'B', 'C']"
+  },
+  {
+   "name": "mapping",
+   "expr": "'A i ' + pm[0] + ', B i ' + pm[1] + ', C i ' + pm[2]"
+  },
+  {
+   "name": "txt",
+   "expr": "('Trójkąty ABC i PQR są przystające, przy czym kątowi A odpowiada kąt ' + pm[0] + ', kątowi B odpowiada kąt ' + pm[1] + ', a kątowi C odpowiada kąt ' + pm[2] + '. W trójkącie ABC kąt A ma ' + str(al) + '°, a kąt B ma ' + str(be) + '°. Ile stopni ma kąt ' + pm[2] + '?') if mode == 0 else ('Trójkąty ABC i PQR są przystające, przy czym kątowi A odpowiada kąt ' + pm[0] + ', kątowi B odpowiada kąt ' + pm[1] + ', a kątowi C odpowiada kąt ' + pm[2] + '. W trójkącie ABC: AB = ' + str(c) + ' cm, BC = ' + str(a) + ' cm, CA = ' + str(b) + ' cm. Ile centymetrów ma odcinek ' + side + '?')"
+  },
+  {
+   "name": "ans",
+   "expr": "ga if mode == 0 else lens[s]"
+  },
+  {
+   "name": "u",
+   "expr": "'°' if mode == 0 else 'cm'"
+  },
+  {
+   "name": "sp",
+   "expr": "'' if mode == 0 else ' '"
+  }
+ ],
+ "constraints": [
+  "a + b > c and a + c > b and b + c > a",
+  "mode == 1 or ga > 0",
+  "mode == 0 or len(uniq([a, b, c])) == 3"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Odpowiadające sobie kąty w trójkątach przystających mają równe miary, a suma kątów trójkąta to 180°.' if mode == 0 else 'W trójkątach przystających odpowiadające sobie boki mają równe długości. Ustal, którym wierzchołkom ABC odpowiadają końce odcinka.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}@{sp}@{u}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle-angles",
+    "essential": false,
+    "alt": "Trójkąt ABC z zaznaczonymi kątami A i B.",
+    "params": {
+     "angles": {
+      "$expr": "[al, be, ga]"
+     },
+     "labels": [
+      {
+       "$expr": "str(al) + '°'"
+      },
+      {
+       "$expr": "str(be) + '°'"
+      },
+      ""
+     ],
+     "names": [
+      "A",
+      "B",
+      "C"
+     ]
+    },
+    "when": "mode == 0"
+   },
+   {
+    "type": "figure",
+    "kind": "triangle-sides",
+    "essential": false,
+    "alt": "Trójkąt ABC z podanymi bokami.",
+    "params": {
+     "sides": [
+      {
+       "$expr": "a"
+      },
+      {
+       "$expr": "b"
+      },
+      {
+       "$expr": "c"
+      }
+     ],
+     "labels": [
+      {
+       "$expr": "str(a) + ' cm'"
+      },
+      {
+       "$expr": "str(b) + ' cm'"
+      },
+      {
+       "$expr": "str(c) + ' cm'"
+      }
+     ],
+     "names": [
+      "A",
+      "B",
+      "C"
+     ]
+    },
+    "when": "mode == 1"
+   }
+  ]
+ }
+}

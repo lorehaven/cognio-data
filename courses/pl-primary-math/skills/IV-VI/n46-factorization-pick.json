@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-factorization-pick",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rozkład na czynniki pierwsze"
+ },
+ "objectives": [
+  "IV-VI.1.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby do 60"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby do 99"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-factorization-pick.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-prime-pick"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Rozkład na czynniki pierwsze to zapis liczby jako iloczynu liczb pierwszych, np. $60 = 2 \\cdot 2 \\cdot 3 \\cdot 5$. Dzielimy liczbę przez kolejne liczby pierwsze."
+  }
+ }
+}

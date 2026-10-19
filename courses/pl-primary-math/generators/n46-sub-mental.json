@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sub-mental",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "alo": "30",
+    "ahi": "99",
+    "blo": "11",
+    "bhi": "29"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "alo": "300",
+    "ahi": "999",
+    "blo": "101",
+    "bhi": "299"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(alo, ahi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "b0",
+   "expr": "b - b % 10"
+  },
+  {
+   "name": "r",
+   "expr": "a - b"
+  }
+ ],
+ "constraints": [
+  "r > 0",
+  "b % 10 != 0"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz w pamięci: @{a|int} − @{b|int}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odejmujemy etapami: najpierw dziesiątki, potem jedności."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a|int} − @{b0|int} = @{a - b0|int}, a potem − @{b % 10} = @{r|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "borrow_10",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r + 10"
+     }
+    },
+    "feedback": "Przy pożyczaniu z dziesiątek pamiętaj, że oddajesz 1 dziesiątkę."
+   },
+   {
+    "id": "extra_10",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r - 10"
+     }
+    },
+    "feedback": "Za mało o 10 – sprawdź odejmowanie dziesiątek."
+   }
+  ]
+ }
+}

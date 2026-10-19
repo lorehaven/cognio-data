@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-justify-right",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Czy trójkąt jest prostokątny? Uzasadnij"
+ },
+ "objectives": [
+  "VII-VIII.5.2.a",
+  "VII-VIII.5.3.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Twierdzenie odwrotne do Pitagorasa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-justify-right.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-pyth-basic"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trójkąt jest prostokątny, gdy kwadrat najdłuższego boku równa się sumie kwadratów pozostałych – to twierdzenie odwrotne do twierdzenia Pitagorasa."
+  }
+ }
+}

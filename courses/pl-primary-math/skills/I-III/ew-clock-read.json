@@ -1,0 +1,58 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-clock-read",
+ "stage": "I-III",
+ "title": {
+  "pl": "Która godzina?"
+ },
+ "objectives": [
+  "I-III.2.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne godziny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wpół do, kwadrans"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Co 5 minut"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Dowolna minuta"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-clock-read.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Krótka wskazówka pokazuje godziny, a długa – minuty. Gdy długa wskazuje „12”, jest równa godzina, a gdy „6” – wpół do następnej (30 minut)."
+  }
+ }
+}

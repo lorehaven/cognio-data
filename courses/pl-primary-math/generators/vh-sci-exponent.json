@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sci-exponent",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "big": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "big": "0"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(11, 99) / 10"
+  },
+  {
+   "name": "k",
+   "expr": "randint(3, 9)"
+  },
+  {
+   "name": "vtxt",
+   "expr": "fmt(a * pow(10, k)) if big == 1 else '0,' + join(repeat(0, k - 1), '') + str(a * 10)"
+  }
+ ],
+ "selfCheck": [
+  "a >= 1 and a < 10"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zapisz liczbę @{vtxt} w postaci $a \\cdot 10^{k}$, gdzie $1 \\leq a < 10$. Podaj wykładnik k.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "k if big == 1 else -k"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Przesuwaj przecinek tak, aby przed nim została jedna cyfra różna od zera. Liczba przesunięć to wykładnik (dla małych liczb – ujemny)."
+   },
+   {
+    "kind": "conclude",
+    "text": "Zapis: @{a|dec} · 10^@{(str(k) if big == 1 else '−' + str(k))}."
+   }
+  ]
+ }
+}

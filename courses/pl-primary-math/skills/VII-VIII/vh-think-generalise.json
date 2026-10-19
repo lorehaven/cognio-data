@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-think-generalise",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Uogólnianie: wzór na n-ty element"
+ },
+ "objectives": [
+  "VII-VIII.5.3.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Sumy liczb"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ciąg arytmetyczny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wzory z zapałek"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-think-generalise.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-alg-evaluate"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Uogólnianie: zauważ, co powtarza się w kilku przykładach, i zapisz regułę wzorem dla dowolnego n."
+  }
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-expenses-average",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mo": "4"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mo": "6"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "what",
+   "expr": "choice(['telefon', 'bilety autobusowe', 'zakupy spożywcze', 'prąd'])"
+  },
+  {
+   "name": "base",
+   "expr": "randint(8, 30) * 5"
+  },
+  {
+   "name": "ds",
+   "expr": "sample(-6, 6, mo)"
+  },
+  {
+   "name": "xs",
+   "expr": "[base + 5 * ds[0], base + 5 * ds[1], base + 5 * ds[2], base + 5 * ds[3]] if mo == 4 else [base + 5 * ds[0], base + 5 * ds[1], base + 5 * ds[2], base + 5 * ds[3], base + 5 * ds[4], base + 5 * ds[5]]"
+  },
+  {
+   "name": "avg",
+   "expr": "sum(xs) / mo"
+  }
+ ],
+ "constraints": [
+  "denom(avg) in divisors(100)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Rodzina Kowalskich przez @{mo|pl:['miesiąc', 'miesiące', 'miesięcy']} wydawała na @{what} kolejno: @{join(xs, \", \")} zł. Jakie były średnie miesięczne wydatki na ten cel?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "avg"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dodaj wydatki ze wszystkich miesięcy i podziel przez liczbę miesięcy."
+   },
+   {
+    "kind": "compute",
+    "text": "@{sum(xs)} : @{mo} = @{avg|dec}"
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  }
+ }
+}

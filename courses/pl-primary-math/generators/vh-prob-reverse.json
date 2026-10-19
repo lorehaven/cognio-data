@@ -1,0 +1,77 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-reverse",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "den",
+   "expr": "choice([3, 4, 5, 6, 8])"
+  },
+  {
+   "name": "num",
+   "expr": "randint(1, den - 1)"
+  },
+  {
+   "name": "mult",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(5, 15)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, r - 2)"
+  },
+  {
+   "name": "tot",
+   "expr": "den * mult"
+  },
+  {
+   "name": "txt",
+   "expr": "('W worku są kule czerwone i niebieskie, razem ' + str(tot) + ' kul. Prawdopodobieństwo wylosowania kuli czerwonej wynosi ' + str(num) + '/' + str(den) + '. Ile jest kul czerwonych?') if mode == 0 else ('W worku są kule czerwone (' + str(r) + ') i niebieskie (' + str(b) + '). Ile kul niebieskich trzeba dołożyć, aby prawdopodobieństwo wylosowania kuli czerwonej wynosiło 1/2?')"
+  },
+  {
+   "name": "ans",
+   "expr": "num * mult if mode == 0 else r - b"
+  }
+ ],
+ "constraints": [
+  "gcd(num, den) == 1",
+  "mode == 0 or r > b"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Liczba kul czerwonych = prawdopodobieństwo · liczba wszystkich kul.' if mode == 0 else 'Prawdopodobieństwo 1/2 oznacza, że kul czerwonych jest tyle samo co niebieskich.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

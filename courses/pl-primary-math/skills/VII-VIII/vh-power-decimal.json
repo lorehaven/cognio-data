@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-decimal",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Potęgi ułamków dziesiętnych"
+ },
+ "objectives": [
+  "VII-VIII.1.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kwadraty i sześciany"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Czwarta potęga"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-power-decimal.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-power-calc"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Potęgując ułamek dziesiętny, pomnóż podstawę przez siebie. Liczba miejsc po przecinku w wyniku to liczba miejsc w podstawie razy wykładnik."
+  }
+ }
+}

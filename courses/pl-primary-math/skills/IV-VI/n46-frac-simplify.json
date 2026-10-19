@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-simplify",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Skracanie ułamków"
+ },
+ "objectives": [
+  "IV-VI.1.19"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Małe liczby"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Większe liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-simplify.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-gcd"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Skrócić ułamek to podzielić licznik i mianownik przez tę samą liczbę różną od zera. Wartość ułamka się nie zmienia, np. $\\frac{6}{8} = \\frac{3}{4}$."
+  }
+ }
+}

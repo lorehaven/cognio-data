@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-net-solid",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dirn": "0"
+   },
+   "minDistinct": 40
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dirn": "1"
+   },
+   "minDistinct": 40
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "['sześcian', 'graniastosłup sześciokątny', 'ostrosłup czworokątny prawidłowy', 'graniastosłup trójkątny', 'prostopadłościan', 'ostrosłup trójkątny prawidłowy']"
+  },
+  {
+   "name": "nets",
+   "expr": "['sześciu jednakowych kwadratów', 'dwóch sześciokątów foremnych i sześciu prostokątów', 'jednego kwadratu i czterech trójkątów równoramiennych', 'dwóch trójkątów i trzech prostokątów', 'sześciu prostokątów (trzy pary jednakowych)', 'czterech trójkątów równobocznych']"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 5)"
+  },
+  {
+   "name": "sh",
+   "expr": "shuffle([1, 2, 3, 4, 5])"
+  }
+ ],
+ "constraints": [
+  "(names[s] if dirn == 0 else nets[s]) != (names[(s + sh[0]) % 6] if dirn == 0 else nets[(s + sh[0]) % 6])",
+  "(names[s] if dirn == 0 else nets[s]) != (names[(s + sh[1]) % 6] if dirn == 0 else nets[(s + sh[1]) % 6])",
+  "(names[s] if dirn == 0 else nets[s]) != (names[(s + sh[2]) % 6] if dirn == 0 else nets[(s + sh[2]) % 6])",
+  "(names[(s + sh[0]) % 6] if dirn == 0 else nets[(s + sh[0]) % 6]) != (names[(s + sh[1]) % 6] if dirn == 0 else nets[(s + sh[1]) % 6])",
+  "(names[(s + sh[0]) % 6] if dirn == 0 else nets[(s + sh[0]) % 6]) != (names[(s + sh[2]) % 6] if dirn == 0 else nets[(s + sh[2]) % 6])",
+  "(names[(s + sh[1]) % 6] if dirn == 0 else nets[(s + sh[1]) % 6]) != (names[(s + sh[2]) % 6] if dirn == 0 else nets[(s + sh[2]) % 6])"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{('Siatka składa się z ' + nets[s] + '. Jaką bryłę można z niej zbudować?' if dirn == 0 else 'Z jakich figur składa się siatka bryły: ' + names[s] + '?')}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz i nazwij ściany: podstawy i ściany boczne wskażą rodzaj bryły."
+   },
+   {
+    "kind": "conclude",
+    "text": "Siatka bryły @{names[s]} składa się z @{nets[s]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{names[s] if dirn == 0 else nets[s]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{names[(s + sh[0]) % 6] if dirn == 0 else nets[(s + sh[0]) % 6]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{names[(s + sh[1]) % 6] if dirn == 0 else nets[(s + sh[1]) % 6]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{names[(s + sh[2]) % 6] if dirn == 0 else nets[(s + sh[2]) % 6]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

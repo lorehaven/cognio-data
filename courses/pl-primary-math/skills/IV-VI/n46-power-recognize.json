@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-power-recognize",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kwadraty i sześciany liczb"
+ },
+ "objectives": [
+  "IV-VI.1.15"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kwadraty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Sześciany"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-power-recognize.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-power-calc"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kwadrat liczby to liczba pomnożona przez siebie (np. 9 = 3 · 3), a sześcian – trzy razy (27 = 3 · 3 · 3). Sprawdź, czy liczba jest takim iloczynem."
+  }
+ }
+}

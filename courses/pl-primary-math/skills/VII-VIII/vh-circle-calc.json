@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-circle-calc",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Długość okręgu i pole koła (π ≈ 3,14)"
+ },
+ "objectives": [
+  "VII-VIII.3.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Długość okręgu"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pole koła"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Promień z długości okręgu"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Pole koła o danej średnicy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-circle-calc.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-circle-diameter",
+  "n46-dec-mul"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Długość okręgu o promieniu r to L = 2πr, a pole koła P = πr². Liczba π jest w przybliżeniu równa 3,14."
+  }
+ }
+}

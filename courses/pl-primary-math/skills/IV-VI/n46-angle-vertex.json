@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-vertex",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wierzchołek i ramiona kąta"
+ },
+ "objectives": [
+  "IV-VI.4.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wierzchołek"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ramiona"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-angle-vertex.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-line-terms"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kąt ma wierzchołek i dwa ramiona. W zapisie ∠ABC litera środkowa to wierzchołek."
+  }
+ }
+}

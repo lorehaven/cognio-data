@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wp-mul-div",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zadania tekstowe: mnożenie i dzielenie"
+ },
+ "objectives": [
+  "I-III.5.b",
+  "I-III.5.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Po równo w grupach"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dzielenie po równo"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ile razy więcej?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-wp-mul-div.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "prerequisites": [
+  "ew-mul-table",
+  "ew-div-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy jest kilka takich samych grup, mnożymy. Gdy rozdzielamy po równo albo pytamy, ile mieści się razy, dzielimy."
+  }
+ }
+}

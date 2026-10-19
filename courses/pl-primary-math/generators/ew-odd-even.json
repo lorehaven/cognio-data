@@ -1,0 +1,80 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-odd-even",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "100"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "1000"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "hi": "10000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "even",
+   "expr": "n % 2 == 0"
+  },
+  {
+   "name": "ask",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "minDistinct": 10,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{('Czy liczba ' + fmt(n) + ' jest parzysta?' if ask == 0 else 'Czy liczba ' + fmt(n) + ' jest nieparzysta?')}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (even if ask == 0 else not even) else []) + (['b'] if (not even if ask == 0 else even) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Liczba parzysta kończy się cyfrą 0, 2, 4, 6 lub 8. Nieparzysta – 1, 3, 5, 7 lub 9."
+   },
+   {
+    "kind": "conclude",
+    "text": "Ostatnia cyfra liczby @{n|int} to @{n % 10}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Tak",
+    "correct": "even if ask == 0 else not even"
+   },
+   {
+    "id": "b",
+    "text": "Nie",
+    "correct": "not even if ask == 0 else even"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

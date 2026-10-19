@@ -1,0 +1,63 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-think-clever",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(11, 99)"
+  },
+  {
+   "name": "big",
+   "expr": "randint(12, 40)"
+  },
+  {
+   "name": "txt",
+   "expr": "'Oblicz sprytnie: 4 · ' + str(x) + ' · 25' if mode == 0 else ('Oblicz sprytnie: 125 · ' + str(big) + ' · 8' if mode == 1 else 'Oblicz sprytnie: 99 · ' + str(x))"
+  },
+  {
+   "name": "ans",
+   "expr": "100 * x if mode == 0 else (1000 * big if mode == 1 else 99 * x)"
+  }
+ ],
+ "minDistinct": 25,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('4 · 25 = 100, więc pomnóż najpierw te czynniki.' if mode == 0 else ('125 · 8 = 1000.' if mode == 1 else '99 = 100 − 1, więc 99 · x = 100x − x.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{ans}."
+   }
+  ]
+ }
+}

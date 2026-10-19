@@ -1,0 +1,38 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-chart",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Misja: ten sam wykres, dwie historie"
+ },
+ "objectives": [
+  "VII-VIII.4.2",
+  "VII-VIII.4.5"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q78-chart.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: wpływ sposobu przedstawiania danych na ich interpretację."
+  }
+ },
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-data-critical"
+ ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/llm-spec.schema.json",
+  "title": "Instructions for a language model that writes tasks (authoring/<id>.llm.json)",
+  "type": "object",
+  "required": ["formatVersion", "id", "skill", "mode", "instructions", "output", "verifier"],
+  "additionalProperties": false,
+  "properties": {
+    "formatVersion": { "type": "string", "pattern": "^1\\.\\d+$" },
+    "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "skill": { "$ref": "common.schema.json#/$defs/slug" },
+    "mode": { "enum": ["author", "device"],
+      "description": "author = run offline on a PC with a strong model, output committed as a bank (.jsonl). device = run on the phone at play time (small model; restricted to story variation of verified parameters)." },
+    "modelHint": { "type": "string", "description": "Free text, e.g. 'any strong instruction model' / 'on-device <=1B'" },
+    "system": { "type": "string", "description": "System prompt (Polish or English)" },
+    "instructions": { "type": "string", "description": "Task-writing brief, with the regulation caps spelled out" },
+    "perLevel": { "type": "array", "items": { "type": "object", "required": ["level", "count"], "properties": {
+        "level": { "type": "integer" }, "count": { "type": "integer", "minimum": 1 }, "constraints": { "type": "string" } } } },
+    "examples": { "type": "array", "description": "Few-shot examples in the OUTPUT format", "items": { "type": "object" } },
+    "output": { "type": "object", "required": ["format"], "properties": {
+        "format": { "enum": ["params+story", "full-task"], "description": "params+story (RECOMMENDED): model returns numbers + wording, the pack's verifier computes the answer. full-task: model also proposes the answer, which must be reproduced by the verifier." },
+        "jsonSchema": { "type": "object", "description": "Schema of one model output object" } } },
+    "verifier": { "type": "object", "required": ["answer"], "additionalProperties": false,
+      "description": "Deterministic check. Variables = output.params. The model's own answer is never trusted.",
+      "properties": {
+        "vars": { "type": "array", "items": { "type": "object", "required": ["name", "expr"], "properties": { "name": { "type": "string" }, "expr": { "type": "string" } } } },
+        "constraints": { "type": "array", "items": { "type": "string" }, "description": "Must all be true (caps of the regulation, uniqueness, realism: price > 0 …)" },
+        "answer": { "type": "object", "description": "Typed value with {\"$expr\":…} fields, as in generators" },
+        "mustAppearInText": { "type": "array", "items": { "type": "string" }, "description": "Param names whose formatted value must occur in the story text" },
+        "steps": { "type": "array", "items": { "type": "string" } } } },
+    "taskTemplate": { "type": "object", "description": "Wrapper that turns a verified output into a compiled task (kind, input, answer from verifier, steps)" },
+    "acceptance": { "type": "object", "properties": {
+        "minVerifiedRatio": { "type": "number" }, "dedupe": { "enum": ["params", "text", "both"] }, "humanReview": { "enum": ["none", "sample", "all"] } } }
+  }
+}

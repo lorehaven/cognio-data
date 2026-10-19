@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-temp-diff",
+ "stage": "I-III",
+ "title": {
+  "pl": "O ile stopni cieplej, o ile zimniej?"
+ },
+ "objectives": [
+  "I-III.2.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Obie temperatury dodatnie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przez 0 °C"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-temp-diff.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "prerequisites": [
+  "ew-thermometer-read"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Różnicę temperatur odczytasz na termometrze, licząc kreski między nimi. Gdy jedna temperatura jest poniżej zera, a druga powyżej, policz obie części osobno."
+  }
+ }
+}

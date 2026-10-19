@@ -1,0 +1,144 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-parallelogram",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(3, 25)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "side",
+   "expr": "h + randint(1, 6)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Równoległobok ma podstawę długości @{a} @{un}, drugi bok długości @{side} @{un} i wysokość opuszczoną na podstawę równą @{h} @{un}. Oblicz jego pole.",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "a * h"
+   },
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Pole równoległoboku = podstawa · wysokość opuszczona na tę podstawę. Drugi bok nie jest potrzebny."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} · @{h} = @{a * h}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "use_side",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "a * side"
+     },
+     "unit": {
+      "$expr": "un + '²'"
+     }
+    },
+    "feedback": "Do pola potrzebna jest wysokość (prostopadła do podstawy), a nie drugi bok."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Równoległobok z podstawą, bokiem i wysokością.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "a + side - h"
+       },
+       {
+        "$expr": "h"
+       }
+      ],
+      [
+       {
+        "$expr": "side - h"
+       },
+       {
+        "$expr": "h"
+       }
+      ]
+     ],
+     "sides": [
+      {
+       "i": 0,
+       "text": {
+        "$expr": "str(a) + ' ' + un"
+       }
+      },
+      {
+       "i": 1,
+       "text": {
+        "$expr": "str(side) + ' ' + un"
+       }
+      }
+     ],
+     "segments": [
+      {
+       "from": [
+        {
+         "$expr": "side - h"
+        },
+        {
+         "$expr": "h"
+        }
+       ],
+       "to": [
+        {
+         "$expr": "side - h"
+        },
+        0
+       ],
+       "text": {
+        "$expr": "str(h) + ' ' + un"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-mass-units",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jednostki masy"
+ },
+ "objectives": [
+  "IV-VI.2.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "kg i g"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "dag i tony"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ułamki dziesiętne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-mass-units.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "tutor": {
+  "intro": {
+   "pl": "Jednostki masy: 1 kg = 100 dag = 1000 g, 1 dag = 10 g, 1 t = 1000 kg."
+  }
+ }
+}

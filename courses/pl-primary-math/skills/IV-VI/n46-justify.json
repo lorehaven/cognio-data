@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-justify",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Które uzasadnienie jest poprawne?"
+ },
+ "objectives": [
+  "IV-VI.6.2",
+  "IV-VI.6.1.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Podzielność"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-justify.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-divisible-pick"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dobre uzasadnienie opiera się na definicji albo kompletnej cesze, a nie na jednym przykładzie. Wybierz to, które naprawdę dowodzi twierdzenia."
+  }
+ }
+}

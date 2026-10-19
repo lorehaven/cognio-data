@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-missing",
+ "stage": "I-III",
+ "title": {
+  "pl": "Brakująca liczba"
+ },
+ "objectives": [
+  "I-III.1.l"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie i odejmowanie do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dodawanie i odejmowanie do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Mnożenie i dzielenie"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Wszystkie działania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-missing.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-add",
+  "ew-sub"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy brakuje liczby, użyj działania odwrotnego. W równaniu □ + 4 = 10 odejmij: 10 − 4 = 6."
+  }
+ }
+}

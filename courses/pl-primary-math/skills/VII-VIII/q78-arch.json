@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-arch",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Misja: okno w kształcie łuku"
+ },
+ "objectives": [
+  "VII-VIII.3.7",
+  "VII-VIII.3.8",
+  "VII-VIII.3.9"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q78-arch.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: opis elementu architektury z obliczeniami pola i długości."
+  }
+ },
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-circle-calc",
+  "vh-area-decompose"
+ ]
+}

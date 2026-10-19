@@ -1,0 +1,66 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sqrt-approx",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "cube": "0",
+    "k": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "cube": "0",
+    "k": "2"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "cube": "1",
+    "k": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(2, 80) if cube == 0 else randint(2, 60)"
+  },
+  {
+   "name": "v",
+   "expr": "sqrt_dec(n, k) if cube == 0 else cbrt_dec(n, k)"
+  },
+  {
+   "name": "txt",
+   "expr": "'\\\\sqrt{' + str(n) + '}' if cube == 0 else '\\\\sqrt[3]{' + str(n) + '}'"
+  }
+ ],
+ "constraints": [
+  "cube == 1 or not is_square(n)",
+  "cube == 0 or pow(icbrt(n), 3) != n"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Za pomocą kalkulatora oblicz przybliżoną wartość liczby $@{txt}$ i zaokrąglij ją do @{('części dziesiątych' if k == 1 else 'części setnych')}.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wpisz pierwiastek w kalkulator, odczytaj wynik i zaokrąglij: 0–4 zostawiamy, 5–9 zwiększamy."
+   },
+   {
+    "kind": "conclude",
+    "text": "$@{txt} \\approx @{v|dec:k}$"
+   }
+  ]
+ }
+}

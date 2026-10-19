@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-rhombus-trapezoid",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Pole rombu i trapezu"
+ },
+ "objectives": [
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Romb z przekątnych"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trapez"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-rhombus-trapezoid.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-triangle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pole rombu to połowa iloczynu przekątnych. Pole trapezu to połowa iloczynu sumy podstaw i wysokości."
+  }
+ }
+}

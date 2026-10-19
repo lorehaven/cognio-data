@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-justify",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "choice([6, 12, 15, 18])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(3, 15)"
+  },
+  {
+   "name": "n",
+   "expr": "d * k"
+  },
+  {
+   "name": "good",
+   "expr": "str(n) + ' = ' + str(d) + ' · ' + str(k) + ', więc dzieli się przez ' + str(d)"
+  },
+  {
+   "name": "w1",
+   "expr": "'Liczba ' + str(n) + ' jest parzysta, więc dzieli się przez ' + str(d)"
+  },
+  {
+   "name": "w2",
+   "expr": "'Ostatnia cyfra liczby ' + str(n) + ' to ' + str(n % 10) + ', więc dzieli się przez ' + str(d)"
+  },
+  {
+   "name": "w3",
+   "expr": "'Suma cyfr liczby ' + str(n) + ' wynosi ' + str(sum(digits(n))) + ', więc dzieli się przez ' + str(d)"
+  }
+ ],
+ "constraints": [
+  "n % 2 == 0",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Ola twierdzi, że liczba @{n} jest podzielna przez @{d}. Które uzasadnienie jest w pełni poprawne?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Poprawne uzasadnienie musi wynikać z definicji lub z kompletnej cechy podzielności – jedna cecha częściowa nie wystarcza."
+   },
+   {
+    "kind": "conclude",
+    "text": "Najpewniejsze jest wskazanie takiej liczby całkowitej k, że @{n} = @{d} · k."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

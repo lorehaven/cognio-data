@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-diff",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "O ile większa, o ile mniejsza"
+ },
+ "objectives": [
+  "IV-VI.1.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Małe liczby"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzycyfrowe"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wielocyfrowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-diff.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Porównanie różnicowe: aby dowiedzieć się, o ile jedna liczba jest większa od drugiej, odejmij mniejszą od większej."
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-by-sides",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Trójkąt: równoboczny, równoramienny czy różnoboczny?"
+ },
+ "objectives": [
+  "IV-VI.4.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Trzy długości boków"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-triangle-by-sides.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-by-angles"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trójkąt równoboczny ma wszystkie boki równe, równoramienny – co najmniej dwa równe, a różnoboczny – wszystkie różne."
+  }
+ }
+}

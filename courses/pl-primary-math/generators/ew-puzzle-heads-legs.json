@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-puzzle-heads-legs",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "c",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "heads",
+   "expr": "c + r"
+  },
+  {
+   "name": "legs",
+   "expr": "2 * c + 4 * r"
+  }
+ ],
+ "constraints": [
+  "c != r"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Na podwórku są kury (każda ma 2 nogi) i króliki (każdy ma 4 nogi). Razem jest @{heads} głów i @{legs} nóg. Ile jest kur?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "c"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Spróbuj różnych liczb kur i królików (możesz narysować tabelkę). Sprawdzaj, czy liczba nóg się zgadza."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kur: @{c}, królików: @{r}. Nóg: @{2 * c} + @{4 * r} = @{legs}."
+   }
+  ]
+ }
+}

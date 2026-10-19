@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-bar-chart",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "cats",
+   "expr": "choice([['kot', 'pies', 'rybki', 'papuga'], ['lody', 'ciastka', 'owoce', 'czekolada'], ['rower', 'hulajnoga', 'rolki', 'deskorolka']])"
+  },
+  {
+   "name": "vs",
+   "expr": "sample(2, 15, 4)"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ile osób wybrało odpowiedź „' + cats[i] + '”?') if ask == 0 else (('Ile osób wybrało odpowiedź, którą wybrano najczęściej?') if ask == 1 else ('O ile więcej osób wybrało „' + cats[i] + '” niż „' + cats[j] + '”?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "vs[i] if ask == 0 else (max(vs) if ask == 1 else vs[i] - vs[j])"
+  }
+ ],
+ "constraints": [
+  "ask != 2 or vs[i] > vs[j]"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Diagram słupkowy pokazuje wyniki ankiety w klasie. @{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź słupek podpisany odpowiednią odpowiedzią i odczytaj jego wysokość."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "chart",
+    "kind": "bar",
+    "essential": true,
+    "alt": "Diagram słupkowy z wynikami ankiety.",
+    "params": {
+     "labels": {
+      "$expr": "cats"
+     },
+     "values": {
+      "$expr": "vs"
+     }
+    }
+   }
+  ]
+ }
+}

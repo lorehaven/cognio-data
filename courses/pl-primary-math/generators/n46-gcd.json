@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-gcd",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ghi": "8",
+    "xhi": "6"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ghi": "20",
+    "xhi": "9"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "g",
+   "expr": "randint(2, ghi)"
+  },
+  {
+   "name": "x",
+   "expr": "randint(2, xhi)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(2, xhi)"
+  },
+  {
+   "name": "a",
+   "expr": "g * x"
+  },
+  {
+   "name": "b",
+   "expr": "g * y"
+  }
+ ],
+ "constraints": [
+  "gcd(x, y) == 1",
+  "x != y",
+  "a <= 99",
+  "b <= 99"
+ ],
+ "selfCheck": [
+  "a % g == 0",
+  "b % g == 0",
+  "gcd(a // g, b // g) == 1"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Znajdź największy wspólny dzielnik liczb @{a} i @{b}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "g"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wypisz dzielniki obu liczb i wybierz największy wspólny."
+   },
+   {
+    "kind": "compute",
+    "text": "Dzielniki @{a}: @{divisors(a)|list}. Dzielniki @{b}: @{divisors(b)|list}."
+   },
+   {
+    "kind": "conclude",
+    "text": "NWD(@{a}, @{b}) = @{g}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "lcm_instead",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "lcm(a, b)"
+     }
+    },
+    "feedback": "Szukamy największej liczby, przez którą dzielą się obie liczby (dzielnika), a nie wielokrotności.",
+    "when": "lcm(a, b) != g"
+   }
+  ]
+ }
+}

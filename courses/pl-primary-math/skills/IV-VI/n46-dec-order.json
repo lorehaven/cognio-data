@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-order",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ustaw ułamki dziesiętne w kolejności"
+ },
+ "objectives": [
+  "IV-VI.1.26"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedno miejsce po przecinku"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do trzech miejsc po przecinku"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-order.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Ułamki dziesiętne porównuj od lewej: najpierw część całkowita, potem dziesiąte, setne, tysięczne. Ułóż je od najmniejszego do największego."
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-read-timetable",
+ "stage": "I-III",
+ "title": {
+  "pl": "Rozkład jazdy"
+ },
+ "objectives": [
+  "I-III.5.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Najbliższy odjazd"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-read-timetable.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "prerequisites": [
+  "ew-clock-read"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Rozkład jazdy zawiera godziny odjazdów. Poszukaj pierwszej godziny, która jest późniejsza od tej, którą masz."
+  }
+ }
+}

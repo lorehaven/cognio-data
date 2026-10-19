@@ -1,0 +1,43 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-choose-unit",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jaka jednostka pasuje?"
+ },
+ "objectives": [
+  "IV-VI.2.1",
+  "IV-VI.2.7",
+  "IV-VI.6.1.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wybierz jednostkę"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-choose-unit.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-len-units",
+  "n46-mass-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dobierz jednostkę, wyobrażając sobie wielkość: kartka ma około 30 cm, droga do sklepu to kilometr, a bochenek chleba waży około kilograma."
+  }
+ }
+}

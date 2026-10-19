@@ -1,0 +1,57 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-tally",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "pool",
+   "expr": "choice([['kot', 'pies', 'rybki'], ['lody', 'ciastka', 'owoce'], ['rower', 'hulajnoga', 'rolki'], ['czerwony', 'niebieski', 'zielony']])"
+  },
+  {
+   "name": "c",
+   "expr": "sample(2, 9, 3)"
+  },
+  {
+   "name": "answers",
+   "expr": "shuffle(repeat(pool[0], c[0]) + repeat(pool[1], c[1]) + (repeat(pool[2], c[2]) if k == 3 else []))"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, k - 1)"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Uczniowie wybierali ulubioną odpowiedź: @{join(answers, \", \")}. Przepisz wyniki do tabeli. Ile osób wybrało „@{pool[i]}”?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "c[i]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz odpowiedzi jedna po drugiej i stawiaj kreski w tabeli."
+   },
+   {
+    "kind": "conclude",
+    "text": "„@{pool[i]}”: @{c[i]}."
+   }
+  ]
+ }
+}

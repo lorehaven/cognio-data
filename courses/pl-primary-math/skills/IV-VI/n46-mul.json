@@ -1,0 +1,65 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-mul",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Mnożenie liczb naturalnych"
+ },
+ "objectives": [
+  "IV-VI.1.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwucyfrowa · jednocyfrowa"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzycyfrowa · jednocyfrowa"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwucyfrowa · dwucyfrowa"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Trzycyfrowa · dwucyfrowa"
+   }
+  },
+  {
+   "level": 5,
+   "label": {
+    "pl": "Trzycyfrowa · trzycyfrowa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-mul.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Mnożenie pisemne: mnożymy przez każdą cyfrę drugiej liczby i dodajemy wyniki cząstkowe, pamiętając o przesunięciu o jedno miejsce w lewo."
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-dice",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Rzut kostką"
+ },
+ "objectives": [
+  "VII-VIII.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna kostka"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prob-dice.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-prob-balls"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Prawdopodobieństwo zdarzenia to liczba wyników sprzyjających podzielona przez liczbę wszystkich wyników. Kostka ma 6 jednakowo możliwych wyników."
+  }
+ }
+}

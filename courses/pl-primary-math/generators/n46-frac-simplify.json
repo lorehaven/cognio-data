@@ -1,0 +1,113 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-simplify",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "max_b": "10",
+    "max_g": "5"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "max_b": "12",
+    "max_g": "9"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, max_b - 1)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(a + 1, max_b)"
+  },
+  {
+   "name": "g",
+   "expr": "randint(2, max_g)"
+  },
+  {
+   "name": "num",
+   "expr": "a * g"
+  },
+  {
+   "name": "den",
+   "expr": "b * g"
+  }
+ ],
+ "constraints": [
+  "gcd(a, b) == 1"
+ ],
+ "selfCheck": [
+  "gcd(a, b) == 1",
+  "num * b == den * a"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Skróć ułamek $\\frac{@{num}}{@{den}}$ do postaci nieskracalnej.",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "a"
+   },
+   "den": {
+    "$expr": "b"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Szukamy liczby, przez którą dzielą się i licznik, i mianownik."
+   },
+   {
+    "kind": "compute",
+    "text": "Największa taka liczba to NWD(@{num}, @{den}) = @{g}."
+   },
+   {
+    "kind": "compute",
+    "text": "Dzielimy: @{num} : @{g} = @{a} oraz @{den} : @{g} = @{b}."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: $\\frac{@{a}}{@{b}}$ – tego ułamka nie da się już skrócić."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "flip",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "b"
+     },
+     "den": {
+      "$expr": "a"
+     },
+     "form": "any"
+    },
+    "feedback": "Licznik z mianownikiem nie zamieniają się miejscami.",
+    "when": "a != b"
+   },
+   {
+    "id": "subtract",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "num - g"
+     },
+     "den": {
+      "$expr": "den - g"
+     },
+     "form": "any"
+    },
+    "feedback": "Skracanie to dzielenie licznika i mianownika przez tę samą liczbę – nie odejmowanie."
+   }
+  ]
+ }
+}

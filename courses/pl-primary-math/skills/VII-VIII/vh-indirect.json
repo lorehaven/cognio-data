@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-indirect",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Rozumowanie nie wprost"
+ },
+ "objectives": [
+  "VII-VIII.5.3.b"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dowód nie wprost"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-indirect.jsonl"
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-converse"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W rozumowaniu nie wprost zakładamy, że teza jest fałszywa, i pokazujemy, że prowadzi to do sprzeczności."
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-solve",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rozwiązywanie prostych równań"
+ },
+ "objectives": [
+  "IV-VI.3.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie i odejmowanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mnożenie i dzielenie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwa działania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-alg-solve.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.3",
+ "prerequisites": [
+  "n46-alg-equation-build"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby rozwiązać równanie, odwracamy działania. Jeśli do x dodano 5, odejmujemy 5; jeśli x pomnożono przez 3, dzielimy przez 3. To, co robimy z jedną stroną równania, robimy też z drugą."
+  }
+ }
+}

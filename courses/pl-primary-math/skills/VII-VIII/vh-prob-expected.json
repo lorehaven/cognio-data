@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-expected",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Ile razy można się spodziewać zdarzenia?"
+ },
+ "objectives": [
+  "VII-VIII.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Spodziewana liczba zajść"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prob-expected.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-prob-frequency"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Jeśli prawdopodobieństwo zdarzenia wynosi p, to w n próbach spodziewamy się go średnio n · p razy."
+  }
+ }
+}

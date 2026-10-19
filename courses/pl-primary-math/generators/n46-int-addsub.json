@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-addsub",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "plus": "1",
+    "m": "12"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "plus": "0",
+    "m": "12"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "plus": "2",
+    "m": "20"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(-m, m)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-m, m)"
+  },
+  {
+   "name": "op",
+   "expr": "randint(0, 1) if plus == 2 else plus"
+  },
+  {
+   "name": "r",
+   "expr": "a + b if op == 1 else a - b"
+  },
+  {
+   "name": "sg",
+   "expr": "'+' if op == 1 else '−'"
+  }
+ ],
+ "constraints": [
+  "a != 0",
+  "b != 0",
+  "b < 0 or a < 0 or op == 0",
+  "op == 1 or a != b"
+ ],
+ "selfCheck": [
+  "r - a == (b if op == 1 else -b)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} @{sg} @{par(b)}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Dodać liczbę ujemną to odjąć jej wartość bez znaku.' if op == 1 else 'Odjąć liczbę to dodać liczbę przeciwną.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} @{sg} @{par(b)} = @{r}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "wrong_sign_b",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a - b if op == 1 else a + b"
+     }
+    },
+    "feedback": "Sprawdź znak drugiej liczby: odejmowanie liczby ujemnej to dodawanie jej wartości bez znaku.",
+    "when": "b != 0"
+   }
+  ]
+ }
+}

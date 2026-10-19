@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sqrt-exact",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Pierwiastki z kwadratów i sześcianów"
+ },
+ "objectives": [
+  "VII-VIII.1.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kwadraty liczb naturalnych"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Sześciany liczb całkowitych i ułamków"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ułamki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-sqrt-exact.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "tutor": {
+  "intro": {
+   "pl": "Pierwiastek kwadratowy z liczby a to nieujemna liczba, której kwadrat wynosi a. Pierwiastek sześcienny to liczba, której sześcian wynosi a (z liczby ujemnej też można go obliczyć)."
+  }
+ }
+}

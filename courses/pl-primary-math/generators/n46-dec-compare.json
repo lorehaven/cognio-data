@@ -1,0 +1,104 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "ka",
+   "expr": "randint(1, 3)"
+  },
+  {
+   "name": "kb",
+   "expr": "ka if kind == 0 else randint(1, 3)"
+  },
+  {
+   "name": "na",
+   "expr": "randint(1, pow(10, ka + 1) - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "na / pow(10, ka)"
+  },
+  {
+   "name": "eq",
+   "expr": "randint(0, 3) == 0 if kind == 2 else False"
+  },
+  {
+   "name": "near",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "y",
+   "expr": "x if eq else ((x + randint(-9, 9) / pow(10, kb)) if near and kind > 0 else randint(1, pow(10, kb + 1) - 1) / pow(10, kb))"
+  },
+  {
+   "name": "ky",
+   "expr": "max(kb, ka) if eq else kb"
+  }
+ ],
+ "constraints": [
+  "eq or x != y",
+  "na % 10 != 0",
+  "y > 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Porównaj liczby @{x|dec} i @{y|dec:ky}. Który znak należy wstawić między nie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (x < y) else []) + (['b'] if (x == y) else []) + (['c'] if (x > y) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównuj cyfry od lewej: najpierw część całkowita, potem dziesiąte, setne… Dopisanie zer na końcu nie zmienia wartości."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{x|dec:3} @{('<' if x < y else ('=' if x == y else '>'))} @{y|dec:3}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "x < y"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "x == y"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "x > y"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

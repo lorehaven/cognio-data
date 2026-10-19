@@ -1,0 +1,93 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-clock-end",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dmax": "55",
+    "hmax": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dmax": "180",
+    "hmax": "0"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "dmax": "420",
+    "hmax": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "start",
+   "expr": "randint(60, 1200) // 5 * 5"
+  },
+  {
+   "name": "dur",
+   "expr": "randint(10, dmax) // 5 * 5"
+  },
+  {
+   "name": "end",
+   "expr": "start + dur"
+  },
+  {
+   "name": "c",
+   "expr": "choice([['Film zaczyna się o ', ' i trwa ', 'O której się skończy?'], ['Pociąg odjeżdża o ', ', a podróż trwa ', 'O której pociąg dojedzie na miejsce?'], ['Mecz rozpoczyna się o ', ' i trwa ', 'O której się zakończy?']])"
+  },
+  {
+   "name": "dtxt",
+   "expr": "(str(dur // 60) + ' h ' + str(dur % 60) + ' min') if hmax == 1 and dur >= 60 and dur % 60 != 0 else (str(dur) + ' min')"
+  }
+ ],
+ "constraints": [
+  "dur >= 10",
+  "hmax == 0 or dur >= 60",
+  "dmax >= 100 or (start % 60) + dur < 60",
+  "dmax != 180 or (start % 60) + dur >= 60",
+  "end < 1440"
+ ],
+ "selfCheck": [
+  "end - start == dur"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "time-input",
+  "prompt": "@{c[0]}@{hhmm(start)}@{c[1]}@{dtxt}. @{c[2]}",
+  "answer": {
+   "type": "time",
+   "value": {
+    "$expr": "hhmm(end)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dodaj czas trwania do godziny rozpoczęcia. Pamiętaj, że 60 minut to 1 godzina."
+   },
+   {
+    "kind": "compute",
+    "text": "@{hhmm(start)} + @{dur} min = @{hhmm(end)}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "decimal_minutes",
+    "answer": {
+     "type": "time",
+     "value": {
+      "$expr": "hhmm(start + dur // 60 * 100 + dur % 60)"
+     }
+    },
+    "feedback": "Godzina ma 60 minut, a nie 100.",
+    "when": "dur >= 60 and start + dur // 60 * 100 + dur % 60 < 1440"
+   }
+  ]
+ }
+}

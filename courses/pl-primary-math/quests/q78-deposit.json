@@ -1,0 +1,198 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-deposit",
+ "title": {
+  "pl": "Misja: która lokata jest lepsza?"
+ },
+ "experience": 1,
+ "vars": [
+  {
+   "name": "K",
+   "expr": "200 * randint(5, 45)"
+  },
+  {
+   "name": "bonus",
+   "expr": "10 * randint(1, 6)"
+  }
+ ],
+ "intro": "Pani Ewa chce założyć na rok lokatę na kwotę @{K} zł. Bank A oferuje oprocentowanie roczne 3%. Bank B oferuje 2,5% oraz jednorazową premię @{bonus} zł. Odsetki są doliczane po roku. Porównaj oferty i doradź pani Ewie.",
+ "steps": [
+  {
+   "kind": "quantity-input",
+   "prompt": "Ile złotych odsetek da lokata w banku A po roku?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "K * 3 / 100"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "3% z kwoty lokaty: podziel kwotę przez 100 i pomnóż przez 3."
+    },
+    {
+     "kind": "compute",
+     "text": "@{K} : 100 · 3 = @{K * 3 / 100|dec}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Ile złotych zyska pani Ewa w banku B (odsetki i premia)?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "K * 25 / 1000 + bonus"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Odsetki to 2,5% kwoty, do tego dochodzi premia."
+    },
+    {
+     "kind": "compute",
+     "text": "@{K * 25 / 1000|dec} + @{bonus} = @{K * 25 / 1000 + bonus|dec}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "O ile złotych zysk w korzystniejszym banku jest większy?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "abs(K * 3 / 100 - (K * 25 / 1000 + bonus))"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Odejmij mniejszy zysk od większego."
+    },
+    {
+     "kind": "conclude",
+     "text": "Różnica: @{abs(K * 3 / 100 - (K * 25 / 1000 + bonus))|dec} zł."
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "multiple-choice",
+   "prompt": "Którą lokatę powinna wybrać pani Ewa, jeśli zależy jej na największym zysku po roku?",
+   "answer": {
+    "type": "choice",
+    "value": {
+     "$expr": "((['a'] if (K * 3 / 100 > K * 25 / 1000 + bonus) else []) + (['b'] if (K * 25 / 1000 + bonus > K * 3 / 100) else []))[0]"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Wybierz ofertę z większym zyskiem."
+    },
+    {
+     "kind": "conclude",
+     "text": "@{('Bank A: ' if K * 3 / 100 > K * 25 / 1000 + bonus else 'Bank B: ')}@{max(K * 3 / 100, K * 25 / 1000 + bonus)|dec} zł."
+    }
+   ],
+   "options": [
+    {
+     "id": "a",
+     "text": "Lokatę z banku A",
+     "correct": "K * 3 / 100 > K * 25 / 1000 + bonus"
+    },
+    {
+     "id": "b",
+     "text": "Lokatę z banku B",
+     "correct": "K * 25 / 1000 + bonus > K * 3 / 100"
+    }
+   ],
+   "input": {
+    "fixedOrder": true
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Ile złotych będzie miała pani Ewa na koniec roku w korzystniejszym banku (kapitał i zysk)?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "K + max(K * 3 / 100, K * 25 / 1000 + bonus)"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Dodaj do kwoty lokaty większy zysk."
+    },
+    {
+     "kind": "conclude",
+     "text": "Odpowiedź: @{K + max(K * 3 / 100, K * 25 / 1000 + bonus)|dec} zł."
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Przy jakiej kwocie lokaty oba banki dałyby dokładnie taki sam zysk?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "bonus * 200"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Różnica oprocentowania to 3% − 2,5% = 0,5%. Premia musi być równa 0,5% kwoty, czyli kwota to premia : 0,005."
+    },
+    {
+     "kind": "compute",
+     "text": "@{bonus} : 0,005 = @{bonus * 200}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  }
+ ],
+ "constraints": [
+  "K != bonus * 200"
+ ],
+ "media": [
+  {
+   "type": "table",
+   "kind": "table",
+   "essential": true,
+   "alt": "Tabela: oferty banków.",
+   "params": {
+    "headers": [
+     "Bank",
+     "Oprocentowanie roczne",
+     "Premia"
+    ],
+    "rows": {
+     "$expr": "[['A', '3%', 'brak'], ['B', '2,5%', str(bonus) + ' zł']]"
+    }
+   }
+  }
+ ],
+ "outro": "Pani Ewa zna już zyski z obu lokat i wie, od jakiej kwoty bank A staje się korzystniejszy."
+}

@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-strat-assoc",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "25"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "0"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "f if f > 0 else choice([5, 20, 50, 125])"
+  },
+  {
+   "name": "c",
+   "expr": "4 if a == 25 else (2 if a in [5, 50] else (5 if a == 20 else 8))"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "c * m"
+  }
+ ],
+ "constraints": [
+  "c != m"
+ ],
+ "selfCheck": [
+  "c * m == b",
+  "a * c + m != a * b",
+  "(a + c) * m != a * b",
+  "a * c * c != a * b"
+ ],
+ "minDistinct": 10,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który zapis pokazuje wygodny i poprawny sposób obliczenia @{a} · @{b}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (true) else []) + (['b'] if (false) else []) + (['c'] if (false) else []) + (['d'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Rozkładamy @{b} na iloczyn @{c} · @{m}, a potem najpierw mnożymy @{a} · @{c} – to daje okrągłą liczbę."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} · @{c} = @{a * c}, a @{a * c} · @{m} = @{a * b}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$@{a} \\cdot @{b} = (@{a} \\cdot @{c}) \\cdot @{m}$",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "$@{a} \\cdot @{b} = (@{a} \\cdot @{c}) + @{m}$",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "$@{a} \\cdot @{b} = (@{a} + @{c}) \\cdot @{m}$",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "$@{a} \\cdot @{b} = @{a} \\cdot @{c} \\cdot @{c}$",
+    "correct": "false"
+   }
+  ]
+ }
+}

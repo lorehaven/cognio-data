@@ -1,0 +1,66 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-choose-unit",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice([['Długość ołówka to około 17', 'cm', ['m', 'km', 'mm']], ['Wysokość drzwi to około 2', 'm', ['cm', 'km', 'mm']], ['Odległość z Warszawy do Gdańska to około 340', 'km', ['m', 'cm', 'mm']], ['Grubość monety to około 2', 'mm', ['m', 'km', 'dm']], ['Długość boiska piłkarskiego to około 100', 'm', ['cm', 'km', 'mm']], ['Masa dorosłego człowieka to około 70', 'kg', ['g', 't', 'dag']], ['Masa tabliczki czekolady to około 100', 'g', ['kg', 't', 'mm']], ['Masa samochodu osobowego to około 1,5', 't', ['g', 'dag', 'mm']], ['Pojemność szklanki to około 250', 'ml', ['l', 'm³', 'dm³']], ['Pojemność wanny to około 150', 'l', ['ml', 'm³', 'cm³']], ['Lekcja w szkole trwa 45', 'min', ['s', 'h', 'dni']], ['Wysokość bloku mieszkalnego to około 30', 'm', ['cm', 'km', 'mm']], ['Szerokość kartki A4 to około 21', 'cm', ['mm', 'm', 'km']], ['Prędkość samochodu w mieście to około 50', 'km/h', ['m/s', 'km/s', 'cm/h']]])"
+  }
+ ],
+ "constraints": [
+  "(f[1]) != (f[2][0])",
+  "(f[1]) != (f[2][1])",
+  "(f[1]) != (f[2][2])",
+  "(f[2][0]) != (f[2][1])",
+  "(f[2][0]) != (f[2][2])",
+  "(f[2][1]) != (f[2][2])"
+ ],
+ "minDistinct": 14,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{f[0]} … Którą jednostkę należy wpisać w miejsce kropek?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wyobraź sobie ten przedmiot lub odległość i porównaj z tym, co znasz: kartka ma ok. 30 cm, litr mleka waży ok. 1 kg."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{f[0]} @{f[1]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{f[1]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{f[2][0]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{f[2][1]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{f[2][2]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

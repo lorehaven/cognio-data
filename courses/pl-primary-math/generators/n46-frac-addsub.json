@@ -1,0 +1,118 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-addsub",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "kind": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(3, 12) if kind < 3 else randint(4, 20)"
+  },
+  {
+   "name": "d",
+   "expr": "b if kind == 0 else (b * randint(2, 3) if kind == 1 else randint(3, 12) if kind == 2 else randint(4, 20))"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, d - 1)"
+  },
+  {
+   "name": "plus",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "y",
+   "expr": "c / d"
+  },
+  {
+   "name": "r",
+   "expr": "x + y if plus else x - y"
+  },
+  {
+   "name": "sg",
+   "expr": "'+' if plus else '-'"
+  }
+ ],
+ "constraints": [
+  "plus or x > y",
+  "denom(r) > 1",
+  "kind != 2 or gcd(b, d) == 1",
+  "kind != 3 or (b != d and b % d != 0 and d % b != 0)",
+  "kind != 1 or b != d",
+  "kind != 0 or b == d"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Oblicz: $\\frac{@{a}}{@{b}} @{sg} \\frac{@{c}}{@{d}}$",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(r)"
+   },
+   "den": {
+    "$expr": "denom(r)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprowadź ułamki do wspólnego mianownika, potem dodaj (odejmij) liczniki. Mianownik się nie zmienia."
+   },
+   {
+    "kind": "compute",
+    "text": "Wspólny mianownik: @{lcm(b, d)}. @{a * (lcm(b, d) // b)} @{('+' if plus else '−')} @{c * (lcm(b, d) // d)} = @{abs(a * (lcm(b, d) // b) + (c * (lcm(b, d) // d) if plus else -c * (lcm(b, d) // d)))} (licznik)."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "add_parts",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "a + c if plus else a - c"
+     },
+     "den": {
+      "$expr": "b + d if plus else b - d"
+     },
+     "form": "any"
+    },
+    "feedback": "Mianowników nie dodajemy ani nie odejmujemy: po sprowadzeniu do wspólnego mianownika zostaje on bez zmian.",
+    "when": "b + d != 0 and b - d != 0"
+   }
+  ]
+ }
+}

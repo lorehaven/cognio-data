@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sub-written",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odejmowanie pisemne"
+ },
+ "objectives": [
+  "IV-VI.1.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 4 cyfr"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 6 cyfr"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ze zerami w odjemnej"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-sub-written.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-sub-mental"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Odejmowanie pisemne od prawej strony. Gdy nie można odjąć, pożyczamy jedną jednostkę z wyższego rzędu."
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-mul",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Mnożenie ułamków"
+ },
+ "objectives": [
+  "IV-VI.1.27"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ułamek razy liczba naturalna"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ułamek razy ułamek"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Liczby mieszane"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-mul.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-simplify",
+  "n46-mixed-to-frac"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mnożymy ułamki: licznik razy licznik, mianownik razy mianownik. Przed mnożeniem można skracać, a liczbę mieszaną zamień na ułamek niewłaściwy."
+  }
+ }
+}

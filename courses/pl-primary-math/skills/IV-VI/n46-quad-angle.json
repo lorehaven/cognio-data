@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-quad-angle",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czwarty kąt czworokąta"
+ },
+ "objectives": [
+  "IV-VI.4.8",
+  "IV-VI.4.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Trzy znane kąty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Równoległobok i romb"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Trapez prostokątny"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-quad-angle.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-angle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Suma kątów w każdym czworokącie wynosi 360°. Jeśli znasz trzy kąty, czwarty to różnica."
+  }
+ }
+}

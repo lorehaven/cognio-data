@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-polygon-parts",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Przekątne wielokąta"
+ },
+ "objectives": [
+  "IV-VI.4.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przekątne z jednego wierzchołka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wszystkie przekątne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-polygon-parts.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-angle-vertex"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przekątna łączy dwa niesąsiednie wierzchołki. Z jednego wierzchołka n-kąta wychodzi n − 3 przekątnych."
+  }
+ }
+}

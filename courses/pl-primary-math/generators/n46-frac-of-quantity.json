@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-of-quantity",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "two": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "two": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "choice([2, 3, 4, 5, 6, 8, 10])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "n",
+   "expr": "b * m"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, b - a) if two == 1 else 0"
+  },
+  {
+   "name": "ctx",
+   "expr": "choice([['Książka ma', 'stron', 'Ola przeczytała'], ['Zbiornik mieści', 'litrów', 'Zużyto'], ['Droga ma długość', 'km', 'Rowerzysta przejechał'], ['Sklep miał', 'kg jabłek', 'Sprzedano']])"
+  },
+  {
+   "name": "part",
+   "expr": "n // b * a"
+  },
+  {
+   "name": "part2",
+   "expr": "n // b * c"
+  },
+  {
+   "name": "left",
+   "expr": "n - part - part2"
+  },
+  {
+   "name": "txt",
+   "expr": "(ctx[0] + ' ' + str(n) + ' ' + ctx[1] + '. ' + ctx[2] + ' $\\\\frac{' + str(a) + '}{' + str(b) + '}$ całości. Ile ' + ctx[1] + ' zostało?') if two == 0 else (ctx[0] + ' ' + str(n) + ' ' + ctx[1] + '. ' + ctx[2] + ' najpierw $\\\\frac{' + str(a) + '}{' + str(b) + '}$ całości, a potem jeszcze $\\\\frac{' + str(c) + '}{' + str(b) + '}$ całości. Ile ' + ctx[1] + ' zostało?')"
+  }
+ ],
+ "constraints": [
+  "left > 0",
+  "a + c < b"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "left"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz, ile to jedna @{b}. część całości, a potem ile jest razem zabrane."
+   },
+   {
+    "kind": "compute",
+    "text": "@{n} : @{b} = @{n // b}; zabrano @{part + part2}; zostało @{n} − @{part + part2} = @{left}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "answer_part",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "part + part2"
+     }
+    },
+    "feedback": "To jest zabrana część. Zadanie pyta o to, co zostało."
+   }
+  ]
+ }
+}

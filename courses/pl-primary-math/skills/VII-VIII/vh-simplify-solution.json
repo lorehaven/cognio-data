@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-simplify-solution",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Czy da się prościej?"
+ },
+ "objectives": [
+  "VII-VIII.5.1.b"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Prostsze rozwiązanie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-simplify-solution.jsonl"
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-think-clever"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Po rozwiązaniu zadania spytaj: czy to samo można zrobić krócej? Często wystarczy zmienić kolejność lub zastosować znaną sztuczkę."
+  }
+ }
+}

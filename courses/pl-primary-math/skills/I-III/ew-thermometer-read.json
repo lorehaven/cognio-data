@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-thermometer-read",
+ "stage": "I-III",
+ "title": {
+  "pl": "Odczytaj temperaturę"
+ },
+ "objectives": [
+  "I-III.2.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Temperatura dodatnia"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Także poniżej zera"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-thermometer-read.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Temperaturę odczytujesz tam, gdzie kończy się czerwony słupek. Powyżej zera jest ciepło, poniżej zera – mróz."
+  }
+ }
+}

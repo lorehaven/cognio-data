@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-solid-object",
+ "stage": "I-III",
+ "title": {
+  "pl": "Bryły wokół nas"
+ },
+ "objectives": [
+  "I-III.3.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jaki kształt ma przedmiot?"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Który przedmiot ma dany kształt?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-solid-object.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "tutor": {
+  "intro": {
+   "pl": "Sześcian i prostopadłościan mają płaskie ściany. Kula jest okrągła ze wszystkich stron i nie ma ścian. Walec ma dwie płaskie, okrągłe podstawy i zakrzywioną powierzchnię boczną."
+  }
+ }
+}

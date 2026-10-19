@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-percent-of",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Procent danej liczby"
+ },
+ "objectives": [
+  "VII-VIII.1.1.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Procenty okrągłe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolne procenty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-percent-of.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-percent-what"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "p% liczby to $\\frac{p}{100}$ tej liczby. Np. 15% z 80 to 80 · 0,15 = 12."
+  }
+ }
+}

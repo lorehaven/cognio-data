@@ -1,0 +1,69 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-percent-of",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[10, 20, 25, 50, 75]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[3, 8, 12, 15, 35, 45, 120]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(20, 500)"
+  },
+  {
+   "name": "r",
+   "expr": "b * p / 100"
+  }
+ ],
+ "selfCheck": [
+  "r * 100 == b * p"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz @{p}% liczby @{b}.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{p}% liczby to $\\frac{@{p}}{100}$ tej liczby."
+   },
+   {
+    "kind": "compute",
+    "text": "@{p} · @{b} : 100 = @{r|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "divide_by_p",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "b / p"
+     }
+    },
+    "feedback": "Procent to ułamek o mianowniku 100 – nie dzielimy przez liczbę procentów.",
+    "when": "b / p != r"
+   }
+  ]
+ }
+}

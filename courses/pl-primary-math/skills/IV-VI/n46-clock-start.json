@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-clock-start",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kiedy wyjść z domu?"
+ },
+ "objectives": [
+  "IV-VI.2.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Krótkie podróże"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dłuższe podróże"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-clock-start.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-clock-end"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby wiedzieć, kiedy wyjść, odejmij czas drogi od godziny, o której chcesz być na miejscu."
+  }
+ }
+}

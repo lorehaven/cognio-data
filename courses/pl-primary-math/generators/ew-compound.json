@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compound",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, 9)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, 9) * 10 if k < 2 else randint(1, 5) * 10"
+  },
+  {
+   "name": "big",
+   "expr": "['m', 'kg', 'h'][k]"
+  },
+  {
+   "name": "small",
+   "expr": "['cm', 'dag', 'min'][k]"
+  },
+  {
+   "name": "r",
+   "expr": "[100, 100, 60][k]"
+  },
+  {
+   "name": "ans",
+   "expr": "a * r + b"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Zamień na jedną jednostkę: @{a} @{big} @{b} @{small} = ? @{small}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "small"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw zamień większą jednostkę na mniejszą: @{a} @{big} = @{a * r} @{small}. Potem dodaj resztę."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a * r} + @{b} = @{ans}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "small"
+   }
+  }
+ }
+}

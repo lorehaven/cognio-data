@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-context",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "smax": "10",
+    "cmax": "10"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "smax": "15",
+    "cmax": "20"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "m",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "s",
+   "expr": "randint(-smax, smax)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(-cmax, cmax)"
+  },
+  {
+   "name": "r",
+   "expr": "s + c"
+  },
+  {
+   "name": "txt",
+   "expr": "('Rano termometr wskazywał ' + fmt(s) + ' °C. Do południa temperatura ' + ('wzrosła' if c > 0 else 'spadła') + ' o ' + str(abs(c)) + ' °C. Ile stopni pokazuje termometr w południe?') if m == 0 else (('Winda stała na poziomie ' + fmt(s) + ' (poziom 0 to parter, poziomy ujemne to piętra podziemne). Pojechała ' + ('w górę' if c > 0 else 'w dół') + ' o ' + pln(abs(c), ['piętro', 'piętra', 'pięter']) + '. Na którym poziomie jest teraz?') if m == 1 else ('Stan konta Oli wynosił ' + fmt(s) + ' zł (liczba ujemna oznacza dług). Ola ' + ('wpłaciła' if c > 0 else 'wydała') + ' ' + str(abs(c)) + ' zł. Jaki jest teraz stan konta w złotych?'))"
+  }
+ ],
+ "constraints": [
+  "c != 0",
+  "s != 0"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zaznacz start na osi liczbowej i przesuń się o zmianę: w prawo, gdy rośnie, w lewo, gdy maleje."
+   },
+   {
+    "kind": "compute",
+    "text": "@{s} @{('+' if c > 0 else '−')} @{abs(c)} = @{r}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "sign",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "-r"
+     }
+    },
+    "feedback": "Uważaj na znak wyniku: sprawdź, po której stronie zera jesteś.",
+    "when": "r != 0"
+   },
+   {
+    "id": "ignore_sign_start",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "abs(s) + c"
+     }
+    },
+    "feedback": "Liczba ujemna na początku to ruch poniżej zera.",
+    "when": "s < 0 and abs(s) + c != r"
+   }
+  ]
+ }
+}

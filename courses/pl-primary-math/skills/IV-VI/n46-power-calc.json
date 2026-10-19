@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-power-calc",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Obliczanie potęg"
+ },
+ "objectives": [
+  "IV-VI.1.15"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Małe podstawy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kwadraty liczb od 6 do 15"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wyższe wykładniki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-power-calc.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Potęga $a^n$ to iloczyn n czynników równych a. Na przykład $2^4 = 2 \\cdot 2 \\cdot 2 \\cdot 2 = 16$. Kwadrat to druga potęga, sześcian – trzecia."
+  }
+ }
+}

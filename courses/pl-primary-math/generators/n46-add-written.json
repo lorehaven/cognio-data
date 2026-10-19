@@ -1,0 +1,85 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-add-written",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "1000",
+    "hi": "9999"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "10000",
+    "hi": "999999"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "1000",
+    "hi": "99999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(lo, hi) if lo == 1000 and hi == 99999 else 0"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Dodaj pisemnie: @{a|int} + @{b|int}@{(' + ' + fmt(c) if c > 0 else '')}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a + b + c"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zapisujemy liczby jedna pod drugą (jedności pod jednościami) i dodajemy od prawej, pamiętając o przeniesieniach."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{a + b + c|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "forgot_carry_10",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a + b + c - 10"
+     }
+    },
+    "feedback": "Sprawdź przeniesienie z kolumny jedności.",
+    "when": "(a % 10) + (b % 10) + (c % 10) >= 10"
+   },
+   {
+    "id": "forgot_carry_100",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a + b + c - 100"
+     }
+    },
+    "feedback": "Sprawdź przeniesienie z kolumny dziesiątek.",
+    "when": "(a % 100) + (b % 100) + (c % 100) >= 100"
+   }
+  ]
+ }
+}

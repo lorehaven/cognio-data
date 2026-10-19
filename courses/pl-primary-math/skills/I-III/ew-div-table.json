@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-table",
+ "stage": "I-III",
+ "title": {
+  "pl": "Dzielenie w zakresie tabliczki mnożenia"
+ },
+ "objectives": [
+  "I-III.1.h"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przez 2, 5 i 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przez 3 i 4"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Przez 6, 7, 8, 9"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Cała tabliczka"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-div-table.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-mul-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzielenie jest odwrotne do mnożenia. Aby obliczyć 24 : 6, zapytaj: ile razy 6 daje 24? Odpowiedź to 4."
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-distance",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Droga: s = v · t"
+ },
+ "objectives": [
+  "IV-VI.2.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne godziny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Połowy godziny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Czas w minutach"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-speed-distance.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-time-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Droga = prędkość · czas. Jeśli prędkość jest w km/h, czas musi być w godzinach; 30 minut to 0,5 godziny."
+  }
+ }
+}

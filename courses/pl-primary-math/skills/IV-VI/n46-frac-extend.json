@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-extend",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rozszerzanie ułamków"
+ },
+ "objectives": [
+  "IV-VI.1.19"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mianowniki do 30"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mianowniki do 100"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-extend.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-simplify"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Rozszerzanie ułamka to pomnożenie licznika i mianownika przez tę samą liczbę. Wartość ułamka się nie zmienia."
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-mul-table",
+ "stage": "I-III",
+ "title": {
+  "pl": "Tabliczka mnożenia"
+ },
+ "objectives": [
+  "I-III.1.h"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Razy 2, 5 i 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Razy 3 i 4"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Razy 6, 7, 8, 9"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Cała tabliczka"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-mul-table.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Mnożenie to skrócony zapis dodawania takich samych liczb: 4 · 3 = 3 + 3 + 3 + 3 = 12. Tabliczkę mnożenia warto znać na pamięć."
+  }
+ }
+}

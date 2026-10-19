@@ -1,0 +1,92 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-odd-one-out-num",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "choice([5, 3, 10]) if mode == 1 else 2"
+  },
+  {
+   "name": "base",
+   "expr": "sample(1, 9, 4)"
+  },
+  {
+   "name": "good",
+   "expr": "[d * base[0], d * base[1], d * base[2]]"
+  },
+  {
+   "name": "bad",
+   "expr": "d * base[3] + (1 if d == 2 else randint(1, d - 1))"
+  },
+  {
+   "name": "all",
+   "expr": "shuffle(good + [bad])"
+  }
+ ],
+ "constraints": [
+  "bad % d != 0",
+  "(bad) != (good[0])",
+  "(bad) != (good[1])",
+  "(bad) != (good[2])",
+  "(good[0]) != (good[1])",
+  "(good[0]) != (good[2])",
+  "(good[1]) != (good[2])"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Trzy z czterech liczb: @{all|list} mają wspólną cechę. Która liczba nie pasuje do pozostałych?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdź, co mają wspólnego trzy liczby: @{('wszystkie są parzyste' if d == 2 else 'wszystkie dzielą się przez ' + str(d))}."
+   },
+   {
+    "kind": "conclude",
+    "text": "Niepasująca liczba: @{bad}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{bad}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{good[0]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{good[1]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{good[2]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

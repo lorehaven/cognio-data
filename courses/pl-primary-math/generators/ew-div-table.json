@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-table",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fs": "[2, 5, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fs": "[3, 4]"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "fs": "[6, 7, 8, 9]"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "fs": "[2, 3, 4, 5, 6, 7, 8, 9, 10]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice(fs)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(1, 10)"
+  },
+  {
+   "name": "a",
+   "expr": "f * q"
+  }
+ ],
+ "minDistinct": 18,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} : @{f}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Pomyśl: przez jaką liczbę trzeba pomnożyć @{f}, żeby dostać @{a}?"
+   },
+   {
+    "kind": "compute",
+    "text": "@{f} · @{q} = @{a}, więc @{a} : @{f} = @{q}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "subtract",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a - f"
+     }
+    },
+    "feedback": "Dzielenie to nie odejmowanie. Szukaj w tabliczce mnożenia.",
+    "when": "a - f != q"
+   }
+  ]
+ }
+}

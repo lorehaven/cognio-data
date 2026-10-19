@@ -1,0 +1,88 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-calendar-weekday",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dmax": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dmax": "200"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "days",
+   "expr": "['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela']"
+  },
+  {
+   "name": "t",
+   "expr": "randint(0, 6)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(8, dmax)"
+  },
+  {
+   "name": "r",
+   "expr": "(t + n) % 7"
+  }
+ ],
+ "constraints": [
+  "n % 7 != 0",
+  "(days[r]) != (days[(r + 1) % 7])",
+  "(days[r]) != (days[(r + 2) % 7])",
+  "(days[r]) != (days[(r + 6) % 7])",
+  "(days[(r + 1) % 7]) != (days[(r + 2) % 7])",
+  "(days[(r + 1) % 7]) != (days[(r + 6) % 7])",
+  "(days[(r + 2) % 7]) != (days[(r + 6) % 7])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Dziś jest @{days[t]}. Jaki dzień tygodnia będzie za @{n|pl:['dzień', 'dni', 'dni']}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dni tygodnia powtarzają się co 7. Policz resztę z dzielenia liczby dni przez 7."
+   },
+   {
+    "kind": "compute",
+    "text": "@{n} : 7 daje resztę @{n % 7}, więc przesuwamy się o @{n % 7|pl:['dzień', 'dni', 'dni']} od dnia „@{days[t]}”."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{days[r]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{days[(r + 1) % 7]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{days[(r + 2) % 7]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{days[(r + 6) % 7]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

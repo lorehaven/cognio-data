@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-net-faces",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ile figur ma siatka?"
+ },
+ "objectives": [
+  "IV-VI.4.20"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczba ścian siatki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-net-faces.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-net-solid"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Siatka bryły to jej „rozłożone” ściany. Liczba figur w siatce jest równa liczbie ścian bryły: podstaw i ścian bocznych."
+  }
+ }
+}

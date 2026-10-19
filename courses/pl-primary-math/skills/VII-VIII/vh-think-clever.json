@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-think-clever",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Rachunek sprytnym sposobem"
+ },
+ "objectives": [
+  "VII-VIII.5.1.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mnożenie przez 25 i 4"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mnożenie przez 125 i 8"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Mnożenie przez 99"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-think-clever.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-think-structure"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Sprytny rachunek: szukaj par dających okrągłe liczby (4 · 25, 8 · 125) albo użyj rozkładu 99 = 100 − 1."
+  }
+ }
+}

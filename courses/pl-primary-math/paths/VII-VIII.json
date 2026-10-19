@@ -1,0 +1,1826 @@
+{
+ "formatVersion": "1.0",
+ "stage": "VII-VIII",
+ "entry": "open",
+ "units": [
+  {
+   "id": "vh-u1",
+   "title": {
+    "pl": "Procenty"
+   },
+   "description": {
+    "pl": "Jakim procentem jest liczba, procent liczby, liczba z procentu, zmiany cen i finanse."
+   },
+   "icon": "percent",
+   "lessons": [
+    {
+     "id": "vh-u1-01",
+     "title": {
+      "pl": "Jakim procentem jednej liczby jest druga?"
+     },
+     "kind": "learn",
+     "skill": "vh-percent-what",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u1-02",
+     "title": {
+      "pl": "Procent danej liczby"
+     },
+     "kind": "learn",
+     "skill": "vh-percent-of",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u1-03",
+     "title": {
+      "pl": "Liczba, gdy znamy jej procent"
+     },
+     "kind": "learn",
+     "skill": "vh-percent-number",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u1-04",
+     "title": {
+      "pl": "Podwyżki i obniżki"
+     },
+     "kind": "learn",
+     "skill": "vh-price-change",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u1-05",
+     "title": {
+      "pl": "Odsetki, podatek i prowizja"
+     },
+     "kind": "learn",
+     "skill": "vh-interest",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u1-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-percent-what",
+       "level": 2
+      },
+      {
+       "skill": "vh-percent-of",
+       "level": 2
+      },
+      {
+       "skill": "vh-percent-number",
+       "level": 2
+      },
+      {
+       "skill": "vh-price-change",
+       "level": 2
+      },
+      {
+       "skill": "vh-interest",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.1"
+  },
+  {
+   "id": "vh-u2",
+   "title": {
+    "pl": "Potęgi"
+   },
+   "description": {
+    "pl": "Potęgi o wykładnikach naturalnych i całkowitych, działania na potęgach i notacja wykładnicza."
+   },
+   "icon": "power",
+   "lessons": [
+    {
+     "id": "vh-u2-01",
+     "title": {
+      "pl": "Potęgi liczb całkowitych i ułamków"
+     },
+     "kind": "learn",
+     "skill": "vh-power-calc",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u2-02",
+     "title": {
+      "pl": "Potęgi ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "vh-power-decimal",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u2-03",
+     "title": {
+      "pl": "Potęgi o wykładniku ujemnym"
+     },
+     "kind": "learn",
+     "skill": "vh-power-negative",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "vh-u2-04",
+     "title": {
+      "pl": "Działania na potęgach"
+     },
+     "kind": "learn",
+     "skill": "vh-power-laws",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u2-05",
+     "title": {
+      "pl": "Notacja wykładnicza: wykładnik"
+     },
+     "kind": "learn",
+     "skill": "vh-sci-exponent",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u2-06",
+     "title": {
+      "pl": "Notacja wykładnicza: która liczba jest większa?"
+     },
+     "kind": "learn",
+     "skill": "vh-sci-compare",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u2-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-power-calc",
+       "level": 2
+      },
+      {
+       "skill": "vh-power-negative",
+       "level": 2
+      },
+      {
+       "skill": "vh-power-laws",
+       "level": 2
+      },
+      {
+       "skill": "vh-sci-exponent",
+       "level": 2
+      },
+      {
+       "skill": "vh-sci-compare",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.1"
+  },
+  {
+   "id": "vh-u3",
+   "title": {
+    "pl": "Pierwiastki"
+   },
+   "description": {
+    "pl": "Pierwiastki kwadratowe i sześcienne, szacowanie i działania."
+   },
+   "icon": "root",
+   "lessons": [
+    {
+     "id": "vh-u3-01",
+     "title": {
+      "pl": "Pierwiastki z kwadratów i sześcianów"
+     },
+     "kind": "learn",
+     "skill": "vh-sqrt-exact",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "vh-u3-02",
+     "title": {
+      "pl": "Między którymi liczbami całkowitymi leży pierwiastek?"
+     },
+     "kind": "learn",
+     "skill": "vh-sqrt-between",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u3-03",
+     "title": {
+      "pl": "Przybliżone wartości pierwiastków (kalkulator)"
+     },
+     "kind": "learn",
+     "skill": "vh-sqrt-approx",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u3-04",
+     "title": {
+      "pl": "Wyłączanie liczby przed znak pierwiastka"
+     },
+     "kind": "learn",
+     "skill": "vh-root-factor",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u3-05",
+     "title": {
+      "pl": "Włączanie liczby pod znak pierwiastka"
+     },
+     "kind": "learn",
+     "skill": "vh-root-bring-in",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u3-06",
+     "title": {
+      "pl": "Mnożenie i dzielenie pierwiastków"
+     },
+     "kind": "learn",
+     "skill": "vh-root-multiply",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u3-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-sqrt-exact",
+       "level": 2
+      },
+      {
+       "skill": "vh-sqrt-between",
+       "level": 2
+      },
+      {
+       "skill": "vh-root-factor",
+       "level": 1
+      },
+      {
+       "skill": "vh-root-bring-in",
+       "level": 1
+      },
+      {
+       "skill": "vh-root-multiply",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.1"
+  },
+  {
+   "id": "vh-u4",
+   "title": {
+    "pl": "Proporcje, zliczanie i narzędzia"
+   },
+   "description": {
+    "pl": "Proporcjonalność, podział proporcjonalny, reguła mnożenia i mądre użycie kalkulatora."
+   },
+   "icon": "ratio",
+   "lessons": [
+    {
+     "id": "vh-u4-01",
+     "title": {
+      "pl": "Wielkości wprost proporcjonalne"
+     },
+     "kind": "learn",
+     "skill": "vh-direct-prop",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u4-02",
+     "title": {
+      "pl": "Podział proporcjonalny"
+     },
+     "kind": "learn",
+     "skill": "vh-prop-divide",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u4-03",
+     "title": {
+      "pl": "Reguła mnożenia"
+     },
+     "kind": "learn",
+     "skill": "vh-count-pairs",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u4-04",
+     "title": {
+      "pl": "Kalkulator i aplikacje obliczeniowe"
+     },
+     "kind": "learn",
+     "skill": "vh-calculator",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u4-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-direct-prop",
+       "level": 2
+      },
+      {
+       "skill": "vh-prop-divide",
+       "level": 2
+      },
+      {
+       "skill": "vh-count-pairs",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.1"
+  },
+  {
+   "id": "vh-u5",
+   "title": {
+    "pl": "Wyrażenia algebraiczne"
+   },
+   "description": {
+    "pl": "Zapisujemy wielkości literami, obliczamy wartości i upraszczamy."
+   },
+   "icon": "algebra",
+   "lessons": [
+    {
+     "id": "vh-u5-01",
+     "title": {
+      "pl": "Wyrażenie z dwiema zmiennymi"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-build",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "vh-u5-02",
+     "title": {
+      "pl": "Wartość wyrażenia algebraicznego"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-evaluate",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u5-03",
+     "title": {
+      "pl": "Redukcja wyrazów podobnych"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-simplify",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u5-04",
+     "title": {
+      "pl": "Dodawanie i odejmowanie sum algebraicznych"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-addsub",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u5-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-alg-build",
+       "level": 2
+      },
+      {
+       "skill": "vh-alg-evaluate",
+       "level": 2
+      },
+      {
+       "skill": "vh-alg-simplify",
+       "level": 2
+      },
+      {
+       "skill": "vh-alg-addsub",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.2"
+  },
+  {
+   "id": "vh-u6",
+   "title": {
+    "pl": "Działania na sumach algebraicznych"
+   },
+   "description": {
+    "pl": "Mnożenie jednomianu przez sumę, wyłączanie przed nawias, mnożenie dwumianów i przekształcanie wzorów."
+   },
+   "icon": "brackets",
+   "lessons": [
+    {
+     "id": "vh-u6-01",
+     "title": {
+      "pl": "Mnożenie jednomianu przez sumę"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-mul-mono",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u6-02",
+     "title": {
+      "pl": "Wyłączanie jednomianu przed nawias"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-factor",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u6-03",
+     "title": {
+      "pl": "Mnożenie dwumianów"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-binomials",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u6-04",
+     "title": {
+      "pl": "Przekształcanie wzorów"
+     },
+     "kind": "learn",
+     "skill": "vh-alg-formula",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u6-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-alg-mul-mono",
+       "level": 2
+      },
+      {
+       "skill": "vh-alg-factor",
+       "level": 2
+      },
+      {
+       "skill": "vh-alg-binomials",
+       "level": 2
+      },
+      {
+       "skill": "vh-alg-formula",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.2"
+  },
+  {
+   "id": "vh-u7",
+   "title": {
+    "pl": "Równania"
+   },
+   "description": {
+    "pl": "Sprawdzamy rozwiązania, rozwiązujemy równania i zadania tekstowe."
+   },
+   "icon": "equation",
+   "lessons": [
+    {
+     "id": "vh-u7-01",
+     "title": {
+      "pl": "Czy liczba jest rozwiązaniem równania?"
+     },
+     "kind": "learn",
+     "skill": "vh-eq-check",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u7-02",
+     "title": {
+      "pl": "Rozwiązywanie równań pierwszego stopnia"
+     },
+     "kind": "learn",
+     "skill": "vh-eq-solve",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u7-03",
+     "title": {
+      "pl": "Równania z rozwiązaniem ułamkowym"
+     },
+     "kind": "learn",
+     "skill": "vh-eq-solve-frac",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u7-04",
+     "title": {
+      "pl": "Zadania tekstowe i równania"
+     },
+     "kind": "learn",
+     "skill": "vh-eq-word",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u7-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-eq-check",
+       "level": 2
+      },
+      {
+       "skill": "vh-eq-solve",
+       "level": 2
+      },
+      {
+       "skill": "vh-eq-solve-frac",
+       "level": 2
+      },
+      {
+       "skill": "vh-eq-word",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.2"
+  },
+  {
+   "id": "vh-u8",
+   "title": {
+    "pl": "Symetria i kąty"
+   },
+   "description": {
+    "pl": "Symetralna, dwusieczna, osie i środek symetrii oraz kąty wielokątów foremnych."
+   },
+   "icon": "symmetry",
+   "lessons": [
+    {
+     "id": "vh-u8-01",
+     "title": {
+      "pl": "Symetralna odcinka i dwusieczna kąta"
+     },
+     "kind": "learn",
+     "skill": "vh-bisector",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u8-02",
+     "title": {
+      "pl": "Liczba osi symetrii"
+     },
+     "kind": "learn",
+     "skill": "vh-symmetry-axes",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u8-03",
+     "title": {
+      "pl": "Środek symetrii"
+     },
+     "kind": "learn",
+     "skill": "vh-symmetry-centre",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u8-04",
+     "title": {
+      "pl": "Kąty wielokąta foremnego"
+     },
+     "kind": "learn",
+     "skill": "vh-regular-angle",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "vh-u8-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-bisector",
+       "level": 2
+      },
+      {
+       "skill": "vh-symmetry-axes",
+       "level": 1
+      },
+      {
+       "skill": "vh-symmetry-centre",
+       "level": 1
+      },
+      {
+       "skill": "vh-regular-angle",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.3"
+  },
+  {
+   "id": "vh-u9",
+   "title": {
+    "pl": "Twierdzenie Pitagorasa i trójkąty"
+   },
+   "description": {
+    "pl": "Trójkąty prostokątne, trójkąty szczególne i przystawanie trójkątów."
+   },
+   "icon": "triangle",
+   "lessons": [
+    {
+     "id": "vh-u9-01",
+     "title": {
+      "pl": "Twierdzenie Pitagorasa: przeciwprostokątna i przyprostokątna"
+     },
+     "kind": "learn",
+     "skill": "vh-pyth-basic",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u9-02",
+     "title": {
+      "pl": "Pitagoras w różnych figurach"
+     },
+     "kind": "learn",
+     "skill": "vh-pyth-context",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u9-03",
+     "title": {
+      "pl": "Trójkąty 30°–60°–90° i 45°–45°–90°"
+     },
+     "kind": "learn",
+     "skill": "vh-special-numeric",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "vh-u9-04",
+     "title": {
+      "pl": "Dokładne długości w trójkątach szczególnych"
+     },
+     "kind": "learn",
+     "skill": "vh-special-exact",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u9-05",
+     "title": {
+      "pl": "Trójkąty przystające: odpowiadające boki i kąty"
+     },
+     "kind": "learn",
+     "skill": "vh-congruent-find",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u9-06",
+     "title": {
+      "pl": "Cechy przystawania trójkątów"
+     },
+     "kind": "learn",
+     "skill": "vh-congruent-criteria",
+     "levels": [
+      1
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "vh-u9-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-pyth-basic",
+       "level": 2
+      },
+      {
+       "skill": "vh-pyth-context",
+       "level": 2
+      },
+      {
+       "skill": "vh-special-numeric",
+       "level": 2
+      },
+      {
+       "skill": "vh-congruent-find",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.3"
+  },
+  {
+   "id": "vh-u10",
+   "title": {
+    "pl": "Koło, pola i modele"
+   },
+   "description": {
+    "pl": "Okrąg i koło, pola figur złożonych i zadania z życia."
+   },
+   "icon": "circle",
+   "lessons": [
+    {
+     "id": "vh-u10-01",
+     "title": {
+      "pl": "Długość okręgu i pole koła (π ≈ 3,14)"
+     },
+     "kind": "learn",
+     "skill": "vh-circle-calc",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u10-02",
+     "title": {
+      "pl": "Wyniki w postaci wielokrotności π"
+     },
+     "kind": "learn",
+     "skill": "vh-circle-pi",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u10-03",
+     "title": {
+      "pl": "Pole figury złożonej z części"
+     },
+     "kind": "learn",
+     "skill": "vh-area-decompose",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u10-04",
+     "title": {
+      "pl": "Zadania z życia: płytki, farba, ogrodzenie"
+     },
+     "kind": "learn",
+     "skill": "vh-real-model",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 9
+    },
+    {
+     "id": "vh-u10-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-circle-calc",
+       "level": 2
+      },
+      {
+       "skill": "vh-circle-pi",
+       "level": 2
+      },
+      {
+       "skill": "vh-area-decompose",
+       "level": 2
+      },
+      {
+       "skill": "vh-real-model",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.3"
+  },
+  {
+   "id": "vh-u11",
+   "title": {
+    "pl": "Układ współrzędnych"
+   },
+   "description": {
+    "pl": "Wierzchołki, symetrie względem osi oraz pola i obwody figur kratowych."
+   },
+   "icon": "coordinates",
+   "lessons": [
+    {
+     "id": "vh-u11-01",
+     "title": {
+      "pl": "Współrzędne wierzchołków i symetria względem osi"
+     },
+     "kind": "learn",
+     "skill": "vh-lattice-vertex",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u11-02",
+     "title": {
+      "pl": "Pola i obwody figur o wierzchołkach kratowych"
+     },
+     "kind": "learn",
+     "skill": "vh-lattice-area",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u11-03",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-lattice-vertex",
+       "level": 2
+      },
+      {
+       "skill": "vh-lattice-area",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.3"
+  },
+  {
+   "id": "vh-u12",
+   "title": {
+    "pl": "Bryły"
+   },
+   "description": {
+    "pl": "Graniastosłupy i ostrosłupy: elementy, wysokości, objętość i pole powierzchni."
+   },
+   "icon": "solid",
+   "lessons": [
+    {
+     "id": "vh-u12-01",
+     "title": {
+      "pl": "Wierzchołki, krawędzie i ściany graniastosłupów i ostrosłupów"
+     },
+     "kind": "learn",
+     "skill": "vh-solid-counts",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u12-02",
+     "title": {
+      "pl": "Wysokość ostrosłupa i wysokość ściany bocznej"
+     },
+     "kind": "learn",
+     "skill": "vh-pyramid-heights",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u12-03",
+     "title": {
+      "pl": "Graniastosłupy proste: objętość i pole powierzchni"
+     },
+     "kind": "learn",
+     "skill": "vh-prism",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u12-04",
+     "title": {
+      "pl": "Ostrosłupy prawidłowe czworokątne: objętość i pole powierzchni"
+     },
+     "kind": "learn",
+     "skill": "vh-pyramid",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u12-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-solid-counts",
+       "level": 2
+      },
+      {
+       "skill": "vh-pyramid-heights",
+       "level": 2
+      },
+      {
+       "skill": "vh-prism",
+       "level": 2
+      },
+      {
+       "skill": "vh-pyramid",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.3"
+  },
+  {
+   "id": "vh-u13",
+   "title": {
+    "pl": "Dane i wykresy"
+   },
+   "description": {
+    "pl": "Wiarygodne źródła, dobór wykresu, odczyt wykresów drogi i cen oraz krytyczna interpretacja."
+   },
+   "icon": "chart",
+   "lessons": [
+    {
+     "id": "vh-u13-01",
+     "title": {
+      "pl": "Źródła i wiarygodność danych"
+     },
+     "kind": "learn",
+     "skill": "vh-data-sources",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u13-02",
+     "title": {
+      "pl": "Jak przedstawić dane?"
+     },
+     "kind": "learn",
+     "skill": "vh-chart-choice",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u13-03",
+     "title": {
+      "pl": "Wykres drogi w czasie"
+     },
+     "kind": "learn",
+     "skill": "vh-graph-distance",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u13-04",
+     "title": {
+      "pl": "Zmiany cen i wynagrodzeń w czasie"
+     },
+     "kind": "learn",
+     "skill": "vh-graph-change",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u13-05",
+     "title": {
+      "pl": "Krytyczna interpretacja danych"
+     },
+     "kind": "learn",
+     "skill": "vh-data-critical",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "vh-u13-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-graph-distance",
+       "level": 2
+      },
+      {
+       "skill": "vh-graph-change",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.4"
+  },
+  {
+   "id": "vh-u14",
+   "title": {
+    "pl": "Średnia i mediana"
+   },
+   "description": {
+    "pl": "Średnia arytmetyczna, mediana i wybór miary do opisu danych."
+   },
+   "icon": "average",
+   "lessons": [
+    {
+     "id": "vh-u14-01",
+     "title": {
+      "pl": "Średnia arytmetyczna zestawu danych"
+     },
+     "kind": "learn",
+     "skill": "vh-mean-exact",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u14-02",
+     "title": {
+      "pl": "Mediana zestawu danych"
+     },
+     "kind": "learn",
+     "skill": "vh-median",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u14-03",
+     "title": {
+      "pl": "Średnia czy mediana? Zarobki w firmie"
+     },
+     "kind": "learn",
+     "skill": "vh-mean-outlier",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u14-04",
+     "title": {
+      "pl": "Średnia po dodaniu nowej wartości"
+     },
+     "kind": "learn",
+     "skill": "vh-mean-missing",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u14-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-mean-exact",
+       "level": 2
+      },
+      {
+       "skill": "vh-median",
+       "level": 2
+      },
+      {
+       "skill": "vh-mean-outlier",
+       "level": 1
+      },
+      {
+       "skill": "vh-mean-missing",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.4"
+  },
+  {
+   "id": "vh-u15",
+   "title": {
+    "pl": "Prawdopodobieństwo"
+   },
+   "description": {
+    "pl": "Losowanie kul, rzuty monetą i kostką, częstość i spodziewana liczba zajść."
+   },
+   "icon": "dice",
+   "lessons": [
+    {
+     "id": "vh-u15-01",
+     "title": {
+      "pl": "Losowanie kuli z worka"
+     },
+     "kind": "learn",
+     "skill": "vh-prob-balls",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u15-02",
+     "title": {
+      "pl": "Rzut kostką"
+     },
+     "kind": "learn",
+     "skill": "vh-prob-dice",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "vh-u15-03",
+     "title": {
+      "pl": "Dwa rzuty: monety i kostki"
+     },
+     "kind": "learn",
+     "skill": "vh-prob-two",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "vh-u15-04",
+     "title": {
+      "pl": "Ile kul jest w worku?"
+     },
+     "kind": "learn",
+     "skill": "vh-prob-reverse",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u15-05",
+     "title": {
+      "pl": "Doświadczenia losowe: częstość"
+     },
+     "kind": "learn",
+     "skill": "vh-prob-frequency",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u15-06",
+     "title": {
+      "pl": "Ile razy można się spodziewać zdarzenia?"
+     },
+     "kind": "learn",
+     "skill": "vh-prob-expected",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u15-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-prob-balls",
+       "level": 2
+      },
+      {
+       "skill": "vh-prob-dice",
+       "level": 1
+      },
+      {
+       "skill": "vh-prob-two",
+       "level": 2
+      },
+      {
+       "skill": "vh-prob-reverse",
+       "level": 2
+      },
+      {
+       "skill": "vh-prob-expected",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.4"
+  },
+  {
+   "id": "vh-u16",
+   "title": {
+    "pl": "Myślenie matematyczne"
+   },
+   "description": {
+    "pl": "Zapisywanie związków, upraszczanie, uzasadnianie, twierdzenie odwrotne, kontrprzykłady i dowód nie wprost."
+   },
+   "icon": "brain",
+   "lessons": [
+    {
+     "id": "vh-u16-01",
+     "title": {
+      "pl": "Zapisz związki między danymi"
+     },
+     "kind": "learn",
+     "skill": "vh-think-structure",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u16-02",
+     "title": {
+      "pl": "Rachunek sprytnym sposobem"
+     },
+     "kind": "learn",
+     "skill": "vh-think-clever",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u16-03",
+     "title": {
+      "pl": "Czy da się prościej?"
+     },
+     "kind": "learn",
+     "skill": "vh-simplify-solution",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "vh-u16-04",
+     "title": {
+      "pl": "Podobne zadania, ta sama metoda"
+     },
+     "kind": "learn",
+     "skill": "vh-similar-methods",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u16-05",
+     "title": {
+      "pl": "Czy trójkąt jest prostokątny? Uzasadnij"
+     },
+     "kind": "learn",
+     "skill": "vh-justify-right",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u16-06",
+     "title": {
+      "pl": "Uogólnianie: wzór na n-ty element"
+     },
+     "kind": "learn",
+     "skill": "vh-think-generalise",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "vh-u16-07",
+     "title": {
+      "pl": "Kontrprzykład do twierdzenia"
+     },
+     "kind": "learn",
+     "skill": "vh-counterexample",
+     "levels": [
+      1
+     ],
+     "tasks": 9
+    },
+    {
+     "id": "vh-u16-08",
+     "title": {
+      "pl": "Twierdzenie i twierdzenie odwrotne"
+     },
+     "kind": "learn",
+     "skill": "vh-converse",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "vh-u16-09",
+     "title": {
+      "pl": "Rozumowanie nie wprost"
+     },
+     "kind": "learn",
+     "skill": "vh-indirect",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u16-10",
+     "title": {
+      "pl": "Uzasadnienie bez zbędnych argumentów"
+     },
+     "kind": "learn",
+     "skill": "vh-minimal-argument",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "vh-u16-11",
+     "title": {
+      "pl": "Wnioski z rozumowania"
+     },
+     "kind": "learn",
+     "skill": "vh-conclusions",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-u16-12",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "vh-think-structure",
+       "level": 2
+      },
+      {
+       "skill": "vh-justify-right",
+       "level": 1
+      },
+      {
+       "skill": "vh-think-generalise",
+       "level": 2
+      },
+      {
+       "skill": "vh-counterexample",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "VII-VIII.5"
+  },
+  {
+   "id": "vh-uQ",
+   "title": {
+    "pl": "Misje"
+   },
+   "description": {
+    "pl": "Dłuższe zadania z życia: architektura, finanse, strategia, dane i rampa."
+   },
+   "icon": "quest",
+   "lessons": [
+    {
+     "id": "vh-uQ-01",
+     "title": {
+      "pl": "Misja: okno w kształcie łuku"
+     },
+     "kind": "quest",
+     "skill": "q78-arch",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "vh-uQ-02",
+     "title": {
+      "pl": "Misja: która lokata jest lepsza?"
+     },
+     "kind": "quest",
+     "skill": "q78-deposit",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "vh-uQ-03",
+     "title": {
+      "pl": "Misja: gra w patyczki"
+     },
+     "kind": "quest",
+     "skill": "q78-nim",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-uQ-04",
+     "title": {
+      "pl": "Misja: ten sam wykres, dwie historie"
+     },
+     "kind": "quest",
+     "skill": "q78-chart",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "vh-uQ-05",
+     "title": {
+      "pl": "Misja: rampa dla rowerów"
+     },
+     "kind": "quest",
+     "skill": "q78-ramp",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   }
+  }
+ ]
+}

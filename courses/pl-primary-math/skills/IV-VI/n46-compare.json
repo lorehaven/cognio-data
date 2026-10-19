@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-compare",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Porównywanie liczb naturalnych"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby czterocyfrowe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby sześciocyfrowe"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Liczby siedmiocyfrowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-compare.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Porównuj liczby od najwyższego rzędu. Pierwsza różna cyfra decyduje, która liczba jest większa."
+  }
+ }
+}

@@ -1,0 +1,13 @@
+env: cognio
+namespace_name: cognio
+host: ennor.ddns.net
+
+# cognio-server (source: server/). A read-only file server: the Cognio Android app downloads /cognio/index.json,
+# the course packs it lists and /cognio/models/catalog.json. State is a directory on the node (/mnt/dev/cognio/data:
+# courses/*.cognio, models/catalog.json), mounted read-only; new files show up without a restart. See README.md.
+resources:
+{% include "cognio/base.yaml.j2" %}
+{% include "cognio/config.yaml.j2" %}
+{% include "cognio/deployment.yaml.j2" %}
+{% include "cognio/service.yaml.j2" %}
+{% include "cognio/ingress.yaml.j2" %}

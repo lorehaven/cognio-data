@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prop-divide",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Podział proporcjonalny"
+ },
+ "objectives": [
+  "VII-VIII.1.10"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Na dwie części"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Na trzy części"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prop-divide.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-direct-prop"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Podział proporcjonalny: zsumuj części stosunku, podziel kwotę przez tę sumę (jedna część), a potem pomnóż przez część każdej osoby."
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-add",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dodawanie ułamków dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.28.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dziesiąte"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do setnych"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do tysięcznych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-add.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-place-value",
+  "n46-add-written"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dodając ułamki dziesiętne, zapisz je tak, by przecinek był pod przecinkiem. Brakujące miejsca uzupełnij zerami."
+  }
+ }
+}

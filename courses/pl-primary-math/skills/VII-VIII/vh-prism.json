@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prism",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Graniastosłupy proste: objętość i pole powierzchni"
+ },
+ "objectives": [
+  "VII-VIII.3.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Objętość"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pole powierzchni"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wysokość z objętości"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prism.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-cuboid-volume",
+  "vh-pyth-basic"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Objętość graniastosłupa to pole podstawy razy wysokość. Pole powierzchni to dwa pola podstawy plus pole powierzchni bocznej."
+  }
+ }
+}

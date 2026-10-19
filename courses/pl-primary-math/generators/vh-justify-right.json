@@ -1,0 +1,108 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-justify-right",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "choice([[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25]])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, 3)"
+  },
+  {
+   "name": "yes",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "bump",
+   "expr": "choice([1, 2])"
+  },
+  {
+   "name": "a",
+   "expr": "t[0] * k"
+  },
+  {
+   "name": "b",
+   "expr": "t[1] * k"
+  },
+  {
+   "name": "c",
+   "expr": "t[2] * k if yes else t[2] * k + bump"
+  },
+  {
+   "name": "good",
+   "expr": "'Tak: ' + str(a) + '² + ' + str(b) + '² = ' + str(c) + '² (' + str(a * a + b * b) + ' = ' + str(c * c) + ').' if yes else 'Nie: ' + str(a) + '² + ' + str(b) + '² = ' + str(a * a + b * b) + ', a ' + str(c) + '² = ' + str(c * c) + ' – to różne liczby.'"
+  },
+  {
+   "name": "w1",
+   "expr": "'Tak, bo suma dwóch boków jest większa od trzeciego.' if not yes else 'Nie, bo ' + str(a) + ' + ' + str(b) + ' > ' + str(c) + '.'"
+  },
+  {
+   "name": "w2",
+   "expr": "'Tak, bo wszystkie boki są liczbami całkowitymi.' if not yes else 'Nie, bo żaden bok nie jest dwa razy dłuższy od innego.'"
+  },
+  {
+   "name": "w3",
+   "expr": "'Tak, bo ' + str(a) + ' + ' + str(b) + ' = ' + str(a + b) + ' jest bliskie ' + str(c) + '.' if not yes else 'Nie, bo trójkąt prostokątny musi być równoramienny.'"
+  }
+ ],
+ "constraints": [
+  "yes or (a * a + b * b != c * c)",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Trójkąt ma boki długości @{a}, @{b} i @{c}. Czy jest on prostokątny? Wybierz poprawne uzasadnienie.",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdź, czy kwadrat najdłuższego boku jest równy sumie kwadratów dwóch pozostałych. To twierdzenie odwrotne do twierdzenia Pitagorasa."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{good}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyth-context",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "c0": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "c0": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "choice([[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29]])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, 3)"
+  },
+  {
+   "name": "sc",
+   "expr": "randint(c0, c0 + 1)"
+  },
+  {
+   "name": "a",
+   "expr": "t[0] * k"
+  },
+  {
+   "name": "b",
+   "expr": "t[1] * k"
+  },
+  {
+   "name": "c",
+   "expr": "t[2] * k"
+  },
+  {
+   "name": "txt",
+   "expr": "['Prostokąt ma boki ' + str(a) + ' cm i ' + str(b) + ' cm. Jaką długość ma jego przekątna?', 'Drabina o długości ' + str(c) + ' dm opiera się o pionową ścianę. Jej dolny koniec jest oddalony od ściany o ' + str(a) + ' dm. Na jakiej wysokości (w dm) drabina dotyka ściany?', 'Trójkąt równoramienny ma ramiona długości ' + str(c) + ' cm i podstawę ' + str(2 * a) + ' cm. Jaką długość ma wysokość opuszczona na podstawę?', 'Romb ma przekątne długości ' + str(2 * a) + ' cm i ' + str(2 * b) + ' cm. Jaką długość ma bok rombu?']"
+  },
+  {
+   "name": "ans",
+   "expr": "[c, b, b, c][sc]"
+  },
+  {
+   "name": "ideas",
+   "expr": "['Przekątna dzieli prostokąt na dwa trójkąty prostokątne, w których jest przeciwprostokątną.', 'Ściana, ziemia i drabina tworzą trójkąt prostokątny; drabina jest jego przeciwprostokątną.', 'Wysokość dzieli podstawę na połowy i tworzy trójkąt prostokątny: ramię jest przeciwprostokątną, a przyprostokątne to wysokość i połowa podstawy.', 'Przekątne rombu dzielą się na połowy pod kątem prostym. Bok rombu to przeciwprostokątna trójkąta o przyprostokątnych równych połowom przekątnych.']"
+  }
+ ],
+ "selfCheck": [
+  "a * a + b * b == c * c"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt[sc]}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{ideas[sc]}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "right-triangle",
+    "essential": false,
+    "alt": "Trójkąt prostokątny modelujący sytuację z zadania; znak zapytania oznacza szukaną długość.",
+    "params": {
+     "a": {
+      "$expr": "a"
+     },
+     "b": {
+      "$expr": "b"
+     },
+     "labels": {
+      "a": {
+       "$expr": "str(a)"
+      },
+      "b": {
+       "$expr": "'?' if sc == 1 or sc == 2 else str(b)"
+      },
+      "c": {
+       "$expr": "'?' if sc == 0 or sc == 3 else str(c)"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

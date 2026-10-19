@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-convert-mass",
+ "stage": "I-III",
+ "title": {
+  "pl": "Jednostki masy"
+ },
+ "objectives": [
+  "I-III.2.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kilogramy na dekagramy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kilogramy na gramy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "W obie strony (okrągłe liczby)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-convert-mass.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Jednostki masy: 1 kg = 100 dag = 1000 g."
+  }
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sci-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "same": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "same": "0"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a1",
+   "expr": "randint(11, 99) / 10"
+  },
+  {
+   "name": "a2",
+   "expr": "randint(11, 99) / 10"
+  },
+  {
+   "name": "k1",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "k2",
+   "expr": "k1 if same == 1 else randint(2, 8)"
+  },
+  {
+   "name": "v1",
+   "expr": "a1 * pow(10, k1)"
+  },
+  {
+   "name": "v2",
+   "expr": "a2 * pow(10, k2)"
+  }
+ ],
+ "constraints": [
+  "v1 != v2",
+  "same == 1 or k1 != k2"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Która liczba jest większa: $@{a1|dec} \\cdot 10^{@{k1}}$ czy $@{a2|dec} \\cdot 10^{@{k2}}$?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (v1 > v2) else []) + (['b'] if (v2 > v1) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw porównaj wykładniki potęgi dziesięciu: większy wykładnik oznacza (przy a od 1 do 10) większą liczbę. Przy równych wykładnikach porównaj współczynniki."
+   },
+   {
+    "kind": "conclude",
+    "text": "Większa jest ta z większą wartością: @{max([v1, v2])|int}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$@{a1|dec} \\cdot 10^{@{k1}}$",
+    "correct": "v1 > v2"
+   },
+   {
+    "id": "b",
+    "text": "$@{a2|dec} \\cdot 10^{@{k2}}$",
+    "correct": "v2 > v1"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

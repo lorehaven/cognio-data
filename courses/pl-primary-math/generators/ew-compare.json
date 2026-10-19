@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "100"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "1000"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "hi": "10000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, hi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(max(1, a - hi // 5), min(hi, a + hi // 5))"
+  }
+ ],
+ "constraints": [
+  "a != b"
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Porównaj liczby @{a|int} i @{b|int}. Który znak należy wstawić między nie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (a < b) else []) + (['b'] if (a == b) else []) + (['c'] if (a > b) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw patrzymy, która liczba ma więcej cyfr. Jeśli tyle samo – porównujemy cyfry od lewej."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{a|int} @{('<' if a < b else '>')} @{b|int}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "a < b"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "a == b"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "a > b"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

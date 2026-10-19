@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-count-cases",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   },
+   "minDistinct": 20
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   },
+   "minDistinct": 30
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   },
+   "minDistinct": 10
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "m",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "t",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "dg",
+   "expr": "sample(1, 9, 3)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Mam ' + pln(n, ['koszulkę', 'koszulki', 'koszulek']) + ' i ' + pln(m, ['spodnie', 'spodnie', 'spodni']) + '. Ile różnych zestawów (koszulka i spodnie) mogę ułożyć?') if mode == 0 else (('Ile różnych liczb trzycyfrowych można zapisać za pomocą cyfr ' + str(dg[0]) + ', ' + str(dg[1]) + ' i ' + str(dg[2]) + ', jeśli w każdej liczbie każda cyfra występuje dokładnie raz?') if mode == 1 else ('W turnieju gra ' + str(t) + ' drużyn. Każda drużyna rozgrywa dokładnie jeden mecz z każdą inną. Ile meczów odbędzie się w turnieju?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "n * m if mode == 0 else (6 if mode == 1 else t * (t - 1) // 2)"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Do każdej koszulki możesz dobrać każde spodnie: policz przypadki dla jednej koszulki i pomnóż.' if mode == 0 else ('Wypisz wszystkie liczby systematycznie: najpierw te zaczynające się od najmniejszej cyfry, potem od kolejnej.' if mode == 1 else 'Każda drużyna gra z t − 1 rywalami, ale każdy mecz policzyliśmy dwa razy.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

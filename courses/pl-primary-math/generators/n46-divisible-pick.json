@@ -1,0 +1,100 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-divisible-pick",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ds": "[2, 5, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ds": "[3, 9]"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ds": "[4]"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "ds": "[2, 3, 4, 5, 9, 10]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "choice(ds)"
+  },
+  {
+   "name": "c",
+   "expr": "d * randint(12, 800)"
+  },
+  {
+   "name": "rule",
+   "expr": "['', '', 'ostatnia cyfra jest parzysta', 'suma cyfr dzieli się przez 3', 'dwie ostatnie cyfry tworzą liczbę podzielną przez 4', 'ostatnia cyfra to 0 lub 5', '', '', '', 'suma cyfr dzieli się przez 9', 'ostatnia cyfra to 0'][d]"
+  }
+ ],
+ "constraints": [
+  "(c) != (c + 1)",
+  "(c) != (c + d + 1)",
+  "(c) != (c + 3 * d - 1)",
+  "(c + 1) != (c + d + 1)",
+  "(c + 1) != (c + 3 * d - 1)",
+  "(c + d + 1) != (c + 3 * d - 1)"
+ ],
+ "selfCheck": [
+  "c % d == 0",
+  "(c + 1) % d != 0",
+  "(c + d + 1) % d != 0",
+  "(c + 3 * d - 1) % d != 0"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Która z liczb jest podzielna przez @{d}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Cecha podzielności przez @{d}: @{rule}."
+   },
+   {
+    "kind": "conclude",
+    "text": "Liczba @{c|int} jest podzielna przez @{d}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{c|int}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{c + 1|int}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{c + d + 1|int}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{c + 3 * d - 1|int}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-table-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0",
+    "hi": "30"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1",
+    "hi": "60"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2",
+    "hi": "99"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "fr",
+   "expr": "shuffle([['jabłka', 'jabłek'], ['banany', 'bananów'], ['gruszki', 'gruszek'], ['śliwki', 'śliwek'], ['pomarańcze', 'pomarańczy']])"
+  },
+  {
+   "name": "v",
+   "expr": "sample(5, hi, 9)"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "rows",
+   "expr": "[[fr[0][0], v[0], v[1], v[2]], [fr[1][0], v[3], v[4], v[5]], [fr[2][0], v[6], v[7], v[8]]]"
+  },
+  {
+   "name": "row",
+   "expr": "rows[i]"
+  },
+  {
+   "name": "gen",
+   "expr": "fr[i][1]"
+  },
+  {
+   "name": "nums",
+   "expr": "take(drop(row, 1), 3)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ile kilogramów ' + gen + ' sprzedano w sumie we wszystkie trzy dni?') if ask == 0 else (('O ile kilogramów więcej ' + gen + ' sprzedano w dniu o największej sprzedaży niż w dniu o najmniejszej?') if ask == 1 else ('Ile kilogramów ' + gen + ' sprzedano w dniu, w którym sprzedaż była największa?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "sum(nums) if ask == 0 else (max(nums) - min(nums) if ask == 1 else max(nums))"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Tabela pokazuje sprzedaż owoców (w kg) w sklepie osiedlowym. @{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź w tabeli właściwy wiersz (rodzaj owoców) i odczytaj liczby z kolumn kolejnych dni."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "table",
+    "kind": "table",
+    "essential": true,
+    "alt": "Tabela: sprzedaż owoców w trzy dni (kg).",
+    "params": {
+     "headers": [
+      "Owoc",
+      "poniedziałek",
+      "wtorek",
+      "środa"
+     ],
+     "rows": {
+      "$expr": "rows"
+     }
+    }
+   }
+  ]
+ }
+}

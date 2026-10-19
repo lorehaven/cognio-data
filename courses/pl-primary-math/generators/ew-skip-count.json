@@ -1,0 +1,77 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-skip-count",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   },
+   "minDistinct": 12
+  }
+ ],
+ "vars": [
+  {
+   "name": "st",
+   "expr": "choice([1, 2, 3, 4, 5, 10])"
+  },
+  {
+   "name": "s0",
+   "expr": "randint(0, 9) * st if mode == 0 else (randint(10, 20) * st if mode == 1 else randint(1, 4) * st)"
+  },
+  {
+   "name": "d",
+   "expr": "st if mode == 0 else -st"
+  },
+  {
+   "name": "seq",
+   "expr": "[s0, s0 + d, s0 + 2 * d, s0 + 3 * d, s0 + 4 * d]"
+  },
+  {
+   "name": "shown",
+   "expr": "take(seq, 3)"
+  },
+  {
+   "name": "nxt",
+   "expr": "seq[3]"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or seq[3] <= 100",
+  "mode != 1 or seq[3] >= 0",
+  "mode != 2 or seq[3] < 0"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Dopisz brakującą liczbę: @{shown|list}, ___",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "nxt"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Liczymy co ' + str(st) + ' w przód.' if mode == 0 else 'Liczymy co ' + str(st) + ' w tył.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Następna liczba: @{nxt}."
+   }
+  ]
+ }
+}

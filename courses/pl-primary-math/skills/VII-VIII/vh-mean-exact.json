@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-mean-exact",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Średnia arytmetyczna zestawu danych"
+ },
+ "objectives": [
+  "VII-VIII.4.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Punkty ze sprawdzianów"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wydatki tygodniowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-mean-exact.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "n46-mean"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Średnia arytmetyczna to suma liczb podzielona przez ich liczbę. Pokazuje „typową” wartość zestawu."
+  }
+ }
+}

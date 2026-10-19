@@ -1,0 +1,279 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-area-decompose",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(8, 20)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(8, 20)"
+  },
+  {
+   "name": "cc",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "dd",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "p",
+   "expr": "2 * randint(3, 15) * randint(1, 3)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Z prostokąta o bokach ' + str(a) + ' ' + un + ' i ' + str(b) + ' ' + un + ' wycięto w rogu prostokąt o bokach ' + str(cc) + ' ' + un + ' i ' + str(dd) + ' ' + un + '. Oblicz pole powstałej figury.') if mode == 0 else (('Trapez prostokątny ma podstawy ' + str(a + cc) + ' ' + un + ' i ' + str(a) + ' ' + un + ' oraz wysokość ' + str(2 * h) + ' ' + un + '. Pole możesz obliczyć, dzieląc trapez na prostokąt i trójkąt. Ile wynosi pole?') if mode == 1 else ('Środki boków kwadratu o polu ' + str(p) + ' ' + un + '² połączono kolejno odcinkami. Powstał mniejszy kwadrat. Oblicz jego pole.'))"
+  },
+  {
+   "name": "ans",
+   "expr": "a * b - cc * dd if mode == 0 else ((a + cc + a) * h if mode == 1 else p // 2)"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or (cc < a and dd < b)",
+  "mode != 2 or p % 2 == 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Pole figury = pole dużego prostokąta − pole wyciętego.' if mode == 0 else ('Trapez = prostokąt o bokach a i wysokości + trójkąt o podstawie równej różnicy podstaw.' if mode == 1 else 'Cztery odcięte trójkąty mają razem pole równe połowie pola dużego kwadratu.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans} @{un}²."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Prostokąt z wyciętym narożnikiem.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       {
+        "$expr": "b - dd"
+       }
+      ],
+      [
+       {
+        "$expr": "a - cc"
+       },
+       {
+        "$expr": "b - dd"
+       }
+      ],
+      [
+       {
+        "$expr": "a - cc"
+       },
+       {
+        "$expr": "b"
+       }
+      ],
+      [
+       0,
+       {
+        "$expr": "b"
+       }
+      ]
+     ],
+     "sides": [
+      {
+       "i": 0,
+       "text": {
+        "$expr": "str(a) + ' ' + un"
+       }
+      },
+      {
+       "i": 5,
+       "text": {
+        "$expr": "str(b) + ' ' + un"
+       }
+      },
+      {
+       "i": 2,
+       "text": {
+        "$expr": "str(cc) + ' ' + un"
+       }
+      },
+      {
+       "i": 3,
+       "text": {
+        "$expr": "str(dd) + ' ' + un"
+       }
+      }
+     ]
+    },
+    "when": "mode == 0"
+   },
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Trapez prostokątny.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       {
+        "$expr": "a + cc"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "a"
+       },
+       {
+        "$expr": "2 * h"
+       }
+      ],
+      [
+       0,
+       {
+        "$expr": "2 * h"
+       }
+      ]
+     ],
+     "sides": [
+      {
+       "i": 0,
+       "text": {
+        "$expr": "str(a + cc) + ' ' + un"
+       }
+      },
+      {
+       "i": 2,
+       "text": {
+        "$expr": "str(a) + ' ' + un"
+       }
+      },
+      {
+       "i": 3,
+       "text": {
+        "$expr": "str(2 * h) + ' ' + un"
+       }
+      }
+     ]
+    },
+    "when": "mode == 1"
+   },
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Kwadrat z połączonymi środkami boków.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "extras": [
+      {
+       "pts": [
+        [
+         1,
+         0
+        ],
+        [
+         2,
+         1
+        ],
+        [
+         1,
+         2
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "fill": "fill2"
+      }
+     ]
+    },
+    "when": "mode == 2"
+   }
+  ]
+ }
+}

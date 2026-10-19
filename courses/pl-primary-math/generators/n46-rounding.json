@@ -1,0 +1,101 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-rounding",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pmin": "1",
+    "pmax": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pmin": "3",
+    "pmax": "3"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "pmin": "3",
+    "pmax": "5"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "pi",
+   "expr": "randint(pmin, pmax)"
+  },
+  {
+   "name": "step",
+   "expr": "pow(10, pi)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(step, step * 1000 - 1)"
+  },
+  {
+   "name": "pn",
+   "expr": "['dziesiątek', 'setek', 'tysięcy', 'dziesiątek tysięcy', 'setek tysięcy'][pi - 1]"
+  },
+  {
+   "name": "r",
+   "expr": "(n + step // 2) // step * step"
+  }
+ ],
+ "constraints": [
+  "n % step != 0",
+  "n >= 2 * step"
+ ],
+ "selfCheck": [
+  "r % step == 0",
+  "abs(r - n) <= step // 2"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zaokrąglij liczbę @{n|int} do @{pn}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Patrzymy na cyfrę po prawej stronie rzędu zaokrąglania: 0–4 zostawiamy, 5–9 zwiększamy o 1."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{n|int} ≈ @{r|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "always_down",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "n // step * step"
+     }
+    },
+    "feedback": "Cyfra 5 lub większa oznacza zaokrąglenie w górę.",
+    "when": "n // step * step != r"
+   },
+   {
+    "id": "always_up",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "-(-n // step) * step"
+     }
+    },
+    "feedback": "Cyfra mniejsza niż 5 oznacza zaokrąglenie w dół.",
+    "when": "-(-n // step) * step != r"
+   }
+  ]
+ }
+}

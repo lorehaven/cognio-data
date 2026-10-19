@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-net-solid",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Siatka bryły"
+ },
+ "objectives": [
+  "IV-VI.4.20"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Z czego składa się siatka?"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Siatka danej bryły"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-net-solid.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-solid-elements"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Z siatki można złożyć bryłę. Policz i nazwij figury: podstawy i ściany boczne mówią, z jaką bryłą mamy do czynienia."
+  }
+ }
+}

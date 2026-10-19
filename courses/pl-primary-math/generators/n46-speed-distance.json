@@ -1,0 +1,96 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-distance",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "who",
+   "expr": "choice(['Pociąg', 'Rowerzysta', 'Samochód', 'Autobus'])"
+  },
+  {
+   "name": "v",
+   "expr": "10 * randint(2, 9)"
+  },
+  {
+   "name": "tm",
+   "expr": "30 * randint(1, 8) if mode == 1 else (randint(1, 6) * 60 if mode == 0 else 15 * randint(1, 16))"
+  },
+  {
+   "name": "h",
+   "expr": "tm / 60"
+  },
+  {
+   "name": "s",
+   "expr": "v * h"
+  },
+  {
+   "name": "ttxt",
+   "expr": "(str(tm // 60) + ' h') if tm % 60 == 0 else (str(tm) + ' min')"
+  }
+ ],
+ "constraints": [
+  "denom(s) in divisors(100)",
+  "tm >= 15"
+ ],
+ "selfCheck": [
+  "s / v * 60 == tm"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{who} jechał ze stałą prędkością @{v} km/h przez @{ttxt}. Jaką drogę przebył?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "s"
+   },
+   "unit": "km"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Droga = prędkość · czas. Czas musi być w godzinach, bo prędkość jest w km/h."
+   },
+   {
+    "kind": "compute",
+    "text": "@{tm} min = @{h|dec} h; @{v} · @{h|dec} = @{s|dec} km"
+   }
+  ],
+  "input": {
+   "unit": "km"
+  },
+  "errorRules": [
+   {
+    "id": "minutes_as_hours",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "v * tm"
+     },
+     "unit": "km"
+    },
+    "feedback": "Prędkość jest w km/h, więc czas zamień na godziny.",
+    "when": "mode == 2"
+   }
+  ]
+ }
+}

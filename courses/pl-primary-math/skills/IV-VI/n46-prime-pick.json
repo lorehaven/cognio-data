@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-prime-pick",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Liczby pierwsze i złożone"
+ },
+ "objectives": [
+  "IV-VI.1.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 50"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 100 (podstępne złożone)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-prime-pick.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Liczba pierwsza ma dokładnie dwa dzielniki: 1 i samą siebie (np. 2, 3, 5, 7, 11). Liczba złożona ma więcej dzielników (np. 9 = 3 · 3). Liczba 1 nie jest ani pierwsza, ani złożona."
+  }
+ }
+}

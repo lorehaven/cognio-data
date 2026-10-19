@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-height-id",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wysokość trójkąta"
+ },
+ "objectives": [
+  "IV-VI.4.13"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wskaż wysokość"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-height-id.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-line-relations"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wysokość trójkąta to odcinek od wierzchołka poprowadzony prostopadle do podstawy lub do jej przedłużenia. Szukaj odcinka tworzącego z podstawą kąt prosty."
+  }
+ }
+}

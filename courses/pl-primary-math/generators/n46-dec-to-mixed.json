@@ -1,0 +1,64 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-to-mixed",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "w",
+   "expr": "randint(1, 9)"
+  },
+  {
+   "name": "kk",
+   "expr": "randint(1, k)"
+  },
+  {
+   "name": "nn",
+   "expr": "randint(1, pow(10, kk) - 1)"
+  },
+  {
+   "name": "f",
+   "expr": "nn / pow(10, kk)"
+  },
+  {
+   "name": "x",
+   "expr": "w + f"
+  }
+ ],
+ "constraints": [
+  "nn % 10 != 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "mixed-number-input",
+  "prompt": "Zapisz liczbę @{x|dec} w postaci liczby mieszanej z ułamkiem nieskracalnym.",
+  "answer": {
+   "type": "mixed",
+   "whole": {
+    "$expr": "w"
+   },
+   "num": {
+    "$expr": "numer(f)"
+   },
+   "den": {
+    "$expr": "denom(f)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Część całkowita zostaje, a część po przecinku zamieniamy na ułamek i skracamy."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{x|dec} = $@{w}\\frac{@{numer(f)}}{@{denom(f)}}$"
+   }
+  ]
+ }
+}

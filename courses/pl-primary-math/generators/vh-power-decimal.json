@@ -1,0 +1,68 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-decimal",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "emax": "3"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "emax": "4"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "e",
+   "expr": "randint(2, emax)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(1, 9)"
+  },
+  {
+   "name": "neg",
+   "expr": "choice([-1, 1])"
+  },
+  {
+   "name": "base",
+   "expr": "neg * d / 10"
+  },
+  {
+   "name": "v",
+   "expr": "pow(base, e)"
+  },
+  {
+   "name": "bt",
+   "expr": "('(-0{,}' + str(d) + ')') if neg < 0 else ('0{,}' + str(d))"
+  }
+ ],
+ "constraints": [
+  "d != 0"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $@{bt}^{@{e}}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Pomnóż podstawę przez siebie @{e} razy; liczba miejsc po przecinku w wyniku to @{e} razy liczba miejsc w podstawie."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{v|dec}"
+   }
+  ]
+ }
+}

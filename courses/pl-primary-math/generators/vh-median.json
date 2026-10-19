@@ -1,0 +1,63 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-median",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "n": "5"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "n": "6"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "n": "7"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "n if n != 7 else choice([7, 8])"
+  },
+  {
+   "name": "vs",
+   "expr": "sample(1, 60, k)"
+  },
+  {
+   "name": "s",
+   "expr": "sorted(vs)"
+  },
+  {
+   "name": "med",
+   "expr": "s[k // 2] if k % 2 == 1 else (s[k // 2 - 1] + s[k // 2]) / 2"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Dane: @{join(vs, \", \")}. Oblicz medianę tych liczb.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "med"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mediana to środkowa liczba po uporządkowaniu danych od najmniejszej do największej. Przy parzystej liczbie danych – średnia dwóch środkowych."
+   },
+   {
+    "kind": "compute",
+    "text": "Po uporządkowaniu: @{join(s, \", \")}. Mediana: @{med|dec}."
+   }
+  ]
+ }
+}

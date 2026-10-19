@@ -1,0 +1,80 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-solve",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fmin": "0",
+    "fmax": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fmin": "2",
+    "fmax": "3"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "fmin": "4",
+    "fmax": "6"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "randint(fmin, fmax)"
+  },
+  {
+   "name": "xv",
+   "expr": "randint(2, 20)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "eqs",
+   "expr": "['x + ' + str(b) + ' = ' + str(xv + b), 'x − ' + str(b) + ' = ' + str(xv - b), str(a) + 'x = ' + str(a * xv), 'x : ' + str(a) + ' = ' + str(xv), str(a) + 'x + ' + str(b) + ' = ' + str(a * xv + b), '(x + ' + str(b) + ') : ' + str(a) + ' = ' + str(xv), str(a * xv + b) + ' − x = ' + str(a * xv + b - xv)]"
+  },
+  {
+   "name": "hints",
+   "expr": "['Odejmij ' + str(b) + ' od obu stron.', 'Dodaj ' + str(b) + ' do obu stron.', 'Podziel obie strony przez ' + str(a) + '.', 'Pomnóż obie strony przez ' + str(a) + '.', 'Najpierw odejmij ' + str(b) + ', potem podziel przez ' + str(a) + '.', 'Najpierw pomnóż przez ' + str(a) + ', potem odejmij ' + str(b) + '.', 'Odejmij od ' + str(a * xv + b) + ' prawą stronę.']"
+  }
+ ],
+ "constraints": [
+  "f != 3 or xv * a < 200"
+ ],
+ "selfCheck": [
+  "xv >= 2"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Rozwiąż równanie: $@{eqs[f]}$",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "xv"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{hints[f]}"
+   },
+   {
+    "kind": "conclude",
+    "text": "x = @{xv}. Sprawdzenie: podstaw @{xv} do równania."
+   }
+  ]
+ }
+}

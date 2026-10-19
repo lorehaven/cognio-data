@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-compare",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Porównywanie ułamków zwykłych"
+ },
+ "objectives": [
+  "IV-VI.1.26"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jednakowe mianowniki"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Jednakowe liczniki"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Różne mianowniki"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Także równe ułamki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-compare.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-part-figure"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Ułamki o tym samym mianowniku porównujemy po liczniku – większy licznik to większy ułamek. Przy różnych mianownikach najpierw sprowadź je do wspólnego."
+  }
+ }
+}

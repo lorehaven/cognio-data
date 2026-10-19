@@ -1,0 +1,52 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-unit-price",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Cena jednostkowa i opłacalność"
+ },
+ "objectives": [
+  "IV-VI.1.35"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ceny w pełnych 10 gr"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ceny w groszach"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-unit-price.json",
+   "levels": [
+    1,
+    2
+   ]
+  },
+  {
+   "type": "llm",
+   "ref": "authoring/shop-word-problems.llm.json"
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-total-cost"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Cena jednostkowa to cena jednej sztuki (albo jednego kilograma, litra). Żeby porównać oferty, dzielimy cenę opakowania przez liczbę sztuk."
+  }
+ }
+}

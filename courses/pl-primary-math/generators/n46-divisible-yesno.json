@@ -1,0 +1,83 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-divisible-yesno",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ds": "[2, 5, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ds": "[3, 9]"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ds": "[4]"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "ds": "[2, 3, 4, 5, 9, 10]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "choice(ds)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(100, 99999)"
+  },
+  {
+   "name": "yes",
+   "expr": "n % d == 0"
+  },
+  {
+   "name": "res",
+   "expr": "'daje resztę 0' if yes else 'daje resztę ' + str(n % d)"
+  }
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Czy liczba @{n|int} jest podzielna przez @{d}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (yes) else []) + (['b'] if (not yes) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdzamy cechę podzielności przez @{d}."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{n|int} : @{d} @{res}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Tak",
+    "correct": "yes"
+   },
+   {
+    "id": "b",
+    "text": "Nie",
+    "correct": "not yes"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

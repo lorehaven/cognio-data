@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-frequency",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "choice([20, 25, 40, 50, 100, 200])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, n - 2)"
+  },
+  {
+   "name": "what",
+   "expr": "choice(['orzeł w rzutach monetą', 'szóstka w rzutach kostką', 'trafienie do kosza w rzutach koszykarza'])"
+  },
+  {
+   "name": "f",
+   "expr": "k / n"
+  }
+ ],
+ "constraints": [
+  "k * 2 != n"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "W @{n} powtórzeniach doświadczenia (@{what}) zdarzenie zaszło @{k} razy. Oblicz częstość względną tego zdarzenia (jako liczbę dziesiętną).",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "f"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Częstość względna = liczba zajść zdarzenia : liczba wszystkich prób."
+   },
+   {
+    "kind": "compute",
+    "text": "@{k} : @{n} = @{f|dec}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-power-recognize",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "s1",
+   "expr": "randint(3, 30)"
+  },
+  {
+   "name": "s2",
+   "expr": "randint(3, 30)"
+  },
+  {
+   "name": "x1",
+   "expr": "pow(s1, kind)"
+  },
+  {
+   "name": "x2",
+   "expr": "pow(s2, kind) + randint(1, 3)"
+  },
+  {
+   "name": "x3",
+   "expr": "randint(20, 900)"
+  },
+  {
+   "name": "x4",
+   "expr": "randint(20, 900)"
+  },
+  {
+   "name": "x5",
+   "expr": "randint(20, 900)"
+  },
+  {
+   "name": "word",
+   "expr": "'kwadratami' if kind == 2 else 'sześcianami'"
+  }
+ ],
+ "constraints": [
+  "len(uniq([x1, x2, x3, x4, x5])) == 5",
+  "count([(is_square(x1) if kind == 2 else pow(icbrt(x1), 3) == x1), (is_square(x2) if kind == 2 else pow(icbrt(x2), 3) == x2), (is_square(x3) if kind == 2 else pow(icbrt(x3), 3) == x3), (is_square(x4) if kind == 2 else pow(icbrt(x4), 3) == x4), (is_square(x5) if kind == 2 else pow(icbrt(x5), 3) == x5)], true) >= 1",
+  "count([(is_square(x1) if kind == 2 else pow(icbrt(x1), 3) == x1), (is_square(x2) if kind == 2 else pow(icbrt(x2), 3) == x2), (is_square(x3) if kind == 2 else pow(icbrt(x3), 3) == x3), (is_square(x4) if kind == 2 else pow(icbrt(x4), 3) == x4), (is_square(x5) if kind == 2 else pow(icbrt(x5), 3) == x5)], false) >= 1"
+ ],
+ "task": {
+  "kind": "multi-select",
+  "prompt": "Które z liczb są @{word} liczb naturalnych? Zaznacz wszystkie.",
+  "answer": {
+   "type": "set",
+   "value": {
+    "$expr": "((['a'] if ((is_square(x1) if kind == 2 else pow(icbrt(x1), 3) == x1)) else []) + (['b'] if ((is_square(x2) if kind == 2 else pow(icbrt(x2), 3) == x2)) else []) + (['c'] if ((is_square(x3) if kind == 2 else pow(icbrt(x3), 3) == x3)) else []) + (['d'] if ((is_square(x4) if kind == 2 else pow(icbrt(x4), 3) == x4)) else []) + (['e'] if ((is_square(x5) if kind == 2 else pow(icbrt(x5), 3) == x5)) else []))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdzamy, czy liczba jest iloczynem dwóch (trzech) jednakowych czynników."
+   },
+   {
+    "kind": "conclude",
+    "text": "Na przykład @{x1|int} = $@{s1}^{@{kind}}$."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{x1|int}",
+    "correct": "(is_square(x1) if kind == 2 else pow(icbrt(x1), 3) == x1)"
+   },
+   {
+    "id": "b",
+    "text": "@{x2|int}",
+    "correct": "(is_square(x2) if kind == 2 else pow(icbrt(x2), 3) == x2)"
+   },
+   {
+    "id": "c",
+    "text": "@{x3|int}",
+    "correct": "(is_square(x3) if kind == 2 else pow(icbrt(x3), 3) == x3)"
+   },
+   {
+    "id": "d",
+    "text": "@{x4|int}",
+    "correct": "(is_square(x4) if kind == 2 else pow(icbrt(x4), 3) == x4)"
+   },
+   {
+    "id": "e",
+    "text": "@{x5|int}",
+    "correct": "(is_square(x5) if kind == 2 else pow(icbrt(x5), 3) == x5)"
+   }
+  ]
+ }
+}

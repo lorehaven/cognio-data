@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-div-nat",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dzielenie ułamka dziesiętnego przez liczbę naturalną"
+ },
+ "objectives": [
+  "IV-VI.1.28.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dzielnik jednocyfrowy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dzielnik dwucyfrowy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dzielnik trzycyfrowy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-div-nat.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-mul",
+  "n46-div"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzielimy ułamek dziesiętny przez liczbę naturalną jak zwykłe liczby naturalne. Przecinek w wyniku stawiamy dokładnie pod przecinkiem dzielnej."
+  }
+ }
+}

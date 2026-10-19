@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sense-check",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "it",
+   "expr": "choice([['ziemniaków', 'kg'], ['jabłek', 'kg'], ['wędliny', 'kg'], ['pomidorów', 'kg']])"
+  },
+  {
+   "name": "qty",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "price",
+   "expr": "randint(8, 40) * 10 / 100"
+  },
+  {
+   "name": "res",
+   "expr": "qty * price"
+  }
+ ],
+ "constraints": [
+  "denom(res) in divisors(100)",
+  "res >= 5",
+  "price != round(price, 0)",
+  "(fmt(res, 2) + ' zł') != (fmt(res / 10, 2) + ' zł')",
+  "(fmt(res, 2) + ' zł') != (fmt(res * 10, 2) + ' zł')",
+  "(fmt(res, 2) + ' zł') != (fmt(res / 100, 2) + ' zł')",
+  "(fmt(res / 10, 2) + ' zł') != (fmt(res * 10, 2) + ' zł')",
+  "(fmt(res / 10, 2) + ' zł') != (fmt(res / 100, 2) + ' zł')",
+  "(fmt(res * 10, 2) + ' zł') != (fmt(res / 100, 2) + ' zł')"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Marek kupił @{qty} kg @{it[0]} po @{price|money} za kilogram. Zanim policzył dokładnie, chciał ocenić, ile mniej więcej zapłaci. Który wynik jest sensowny?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Oszacuj: zaokrąglij ilość i cenę. @{qty} kg po około @{round(price, 0)|int} zł to około @{qty * round(price, 0)|int} zł."
+   },
+   {
+    "kind": "conclude",
+    "text": "Dokładnie: @{qty} · @{price|dec:2} = @{res|dec:2} zł."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{fmt(res, 2) + ' zł'}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{fmt(res / 10, 2) + ' zł'}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{fmt(res * 10, 2) + ' zł'}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{fmt(res / 100, 2) + ' zł'}",
+    "correct": "false"
+   }
+  ]
+ }
+}

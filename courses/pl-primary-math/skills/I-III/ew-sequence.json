@@ -1,0 +1,58 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-sequence",
+ "stage": "I-III",
+ "title": {
+  "pl": "Ciąg liczb: co będzie dalej?"
+ },
+ "objectives": [
+  "I-III.5.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodajemy to samo"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Odejmujemy to samo"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Podwajamy lub potrajamy"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Dodajemy coraz więcej"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-sequence.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "W ciągu liczb każdy następny wyraz powstaje według reguły, np. dodajemy 3. Znajdź regułę, patrząc na kolejne różnice."
+  }
+ }
+}

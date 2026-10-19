@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/path.schema.json",
+  "title": "Learning path of one stage (paths/<stage>.json): units → lessons, with unlock rules",
+  "type": "object",
+  "required": ["formatVersion", "stage", "entry", "units"],
+  "additionalProperties": false,
+  "$defs": {
+    "mixItem": { "type": "object", "required": ["skill"], "additionalProperties": false,
+      "properties": { "skill": { "$ref": "common.schema.json#/$defs/slug" }, "level": { "type": "integer", "minimum": 1 },
+                      "weight": { "type": "number", "minimum": 0, "default": 1 } } },
+    "lesson": { "type": "object", "required": ["id", "title", "kind"], "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/slug" },
+        "title": { "$ref": "common.schema.json#/$defs/localized" },
+        "kind": { "enum": ["learn", "practice", "review", "checkpoint", "quest"],
+                  "description": "learn = new skill (shows the skill's tutor.intro first); practice = more of the same; review = mix of earlier skills; checkpoint = end-of-unit test; quest = a story-driven multi-step activity (skill whose task source is a quest)" },
+        "skill": { "$ref": "common.schema.json#/$defs/slug", "description": "Single-skill lesson. Exactly one of skill / mix." },
+        "levels": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "minItems": 1,
+                    "description": "Crowns: level 1 completes the lesson and unlocks what follows; later entries are optional replays at higher difficulty" },
+        "mix": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/mixItem" }, "description": "Multi-skill lesson (review, checkpoint)" },
+        "tasks": { "type": "integer", "minimum": 4, "maximum": 30, "default": 10 },
+        "passRatio": { "type": "number", "minimum": 0.5, "maximum": 1, "default": 0.7,
+                       "description": "Share of tasks answered correctly (first try or after a hint) to complete the lesson" },
+        "requires": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" },
+                      "description": "Lessons that must be complete first. Default: the previous lesson in path order." },
+        "xp": { "type": "integer", "minimum": 0 }
+      } }
+  },
+  "properties": {
+    "formatVersion": { "type": "string", "pattern": "^1\\.\\d+$" },
+    "stage": { "enum": ["I-III", "IV-VI", "VII-VIII"] },
+    "entry": { "enum": ["open"],
+      "description": "'open' = the first lesson of this stage is unlocked from the very start. Every stage of the Polish course is open: finishing grades 1–3 is never required to start grade 4." },
+    "units": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "title", "lessons"], "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/slug" },
+        "title": { "$ref": "common.schema.json#/$defs/localized" },
+        "description": { "$ref": "common.schema.json#/$defs/localized" },
+        "icon": { "type": "string", "description": "symbolic icon name; the theme maps it to artwork" },
+        "area": { "type": "string", "description": "Area id from curriculum.json this unit mostly belongs to" },
+        "lessons": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/lesson" } },
+        "testOut": { "type": "object", "additionalProperties": false, "description": "Optional jump-ahead test (Duolingo-style): passing it completes every lesson of the unit",
+          "properties": { "tasks": { "type": "integer", "minimum": 8, "default": 15 }, "passRatio": { "type": "number", "minimum": 0.7, "maximum": 1, "default": 0.9 } } }
+      } } }
+  }
+}

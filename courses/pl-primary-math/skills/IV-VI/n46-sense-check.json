@@ -1,0 +1,42 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sense-check",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czy wynik jest sensowny?"
+ },
+ "objectives": [
+  "IV-VI.6.1.c",
+  "IV-VI.1.37"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Zakupy: przecinek w złym miejscu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-sense-check.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-estimate-product"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przed zapisaniem wyniku oszacuj: zaokrąglij liczby i policz w pamięci. Jeśli wynik jest bardzo odległy od szacunku, szukaj błędu."
+  }
+ }
+}

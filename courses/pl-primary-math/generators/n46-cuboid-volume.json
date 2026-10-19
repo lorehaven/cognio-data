@@ -1,0 +1,112 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-cuboid-volume",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Prostopadłościan ma krawędzie ' + str(a) + ' ' + un + ', ' + str(b) + ' ' + un + ' i ' + str(c) + ' ' + un + '. Oblicz jego objętość.') if mode == 0 else (('Krawędź sześcianu ma ' + str(a) + ' ' + un + '. Oblicz jego objętość.') if mode == 1 else ('Objętość prostopadłościanu wynosi ' + str(a * b * c) + ' ' + un + '³. Dwie krawędzie mają ' + str(a) + ' ' + un + ' i ' + str(b) + ' ' + un + '. Ile wynosi trzecia krawędź?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "a * b * c if mode == 0 else (a * a * a if mode == 1 else c)"
+  }
+ ],
+ "constraints": [
+  "mode != 2 or len(uniq([a, b, c])) == 3"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "un + '³' if mode < 2 else un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Objętość = długość · szerokość · wysokość.' if mode < 2 else 'Objętość : (a · b) daje trzecią krawędź.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '³' if mode < 2 else un"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "cuboid",
+    "essential": false,
+    "alt": "Prostopadłościan z podanymi krawędziami.",
+    "params": {
+     "a": {
+      "$expr": "a"
+     },
+     "b": {
+      "$expr": "b if mode != 1 else a"
+     },
+     "c": {
+      "$expr": "c if mode == 0 else (a if mode == 1 else c)"
+     },
+     "labels": {
+      "a": {
+       "$expr": "str(a) + ' ' + un"
+      },
+      "b": {
+       "$expr": "str(b if mode != 1 else a) + ' ' + un"
+      },
+      "c": {
+       "$expr": "str(c) + ' ' + un if mode == 0 else ('?' if mode == 2 else str(a) + ' ' + un)"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

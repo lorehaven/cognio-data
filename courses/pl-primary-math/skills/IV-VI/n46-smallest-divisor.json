@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-smallest-divisor",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Najmniejszy dzielnik większy od 1"
+ },
+ "objectives": [
+  "IV-VI.1.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby do 60"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby do 99"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-smallest-divisor.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-prime-pick"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Najmniejszy dzielnik większy niż 1 jest zawsze liczbą pierwszą. Sprawdzaj po kolei: 2, 3, 5, 7… stosując cechy podzielności."
+  }
+ }
+}

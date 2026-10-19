@@ -1,0 +1,63 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-write-digits",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "1000",
+    "hi": "9999"
+   },
+   "capsNote": "IV-VI.1.1"
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "10000",
+    "hi": "999999"
+   },
+   "capsNote": "IV-VI.1.1"
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "1000000",
+    "hi": "999999999"
+   },
+   "capsNote": "IV-VI.1.1"
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "n",
+   "expr": "(b // 1000) * 1000 + (b % 1000) * randint(0, 1)"
+  }
+ ],
+ "selfCheck": [
+  "n >= 1000"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zapisz cyframi liczbę: „@{words(n)}”.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "n"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Czytamy liczbę grupami: najpierw miliony, potem tysiące, na końcu setki, dziesiątki i jedności."
+   },
+   {
+    "kind": "conclude",
+    "text": "To liczba @{n|int}."
+   }
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-examples",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Liczba spełniająca warunki"
+ },
+ "objectives": [
+  "IV-VI.6.3.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa warunki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-examples.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "tutor": {
+  "intro": {
+   "pl": "Szukaj liczby, która spełnia wszystkie warunki jednocześnie. Sprawdzaj kolejne warunki, odrzucając liczby, które do nich nie pasują."
+  }
+ }
+}

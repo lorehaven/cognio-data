@@ -1,0 +1,93 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-lcm",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "12"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "30"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "99"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "l",
+   "expr": "lcm(a, b)"
+  }
+ ],
+ "constraints": [
+  "a != b",
+  "a % b != 0",
+  "b % a != 0"
+ ],
+ "selfCheck": [
+  "l % a == 0",
+  "l % b == 0",
+  "l // a * a == l",
+  "gcd(l // a, l // b) == 1"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Znajdź najmniejszą wspólną wielokrotność liczb @{a} i @{b}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "l"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wypisuj kolejne wielokrotności większej liczby, aż trafisz na taką, która dzieli się przez drugą."
+   },
+   {
+    "kind": "conclude",
+    "text": "NWW(@{a}, @{b}) = @{l|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "product",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a * b"
+     }
+    },
+    "feedback": "Iloczyn jest wspólną wielokrotnością, ale nie zawsze najmniejszą.",
+    "when": "a * b != l"
+   },
+   {
+    "id": "gcd_instead",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "gcd(a, b)"
+     }
+    },
+    "feedback": "Szukamy wielokrotności (liczby, na którą obie liczby się dzielą), a nie dzielnika.",
+    "when": "gcd(a, b) != l"
+   }
+  ]
+ }
+}

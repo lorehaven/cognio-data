@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-calendar-weeks",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "w",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(1, 6)"
+  },
+  {
+   "name": "total",
+   "expr": "randint(15, 200)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(1, 12)"
+  },
+  {
+   "name": "mo",
+   "expr": "randint(1, 11)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Wakacje trwają ' + pln(w, ['tydzień', 'tygodnie', 'tygodni']) + ' i ' + pln(d, ['dzień', 'dni', 'dni']) + '. Ile dni trwają wakacje?') if mode == 0 else (('Ile pełnych tygodni mieści się w ' + pln(total, ['dniu', 'dniach', 'dniach']) + '?') if mode == 1 else ('Kuba ma ' + pln(y, ['rok', 'lata', 'lat']) + ' i ' + pln(mo, ['miesiąc', 'miesiące', 'miesięcy']) + '. Ile to miesięcy?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "w * 7 + d if mode == 0 else (total // 7 if mode == 1 else y * 12 + mo)"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or total % 7 != 0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Tydzień ma 7 dni.' if mode < 2 else 'Rok ma 12 miesięcy.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(w) + ' · 7 + ' + str(d) + ' = ' + str(ans) if mode == 0 else (str(total) + ' : 7 = ' + str(total // 7) + ' r ' + str(total % 7) if mode == 1 else str(y) + ' · 12 + ' + str(mo) + ' = ' + str(ans)))}"
+   }
+  ]
+ }
+}

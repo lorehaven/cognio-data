@@ -1,0 +1,70 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-symmetry-letters",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "yes",
+   "expr": "shuffle(['A', 'H', 'I', 'M', 'O', 'T', 'U', 'V', 'W', 'X', 'Y', 'B', 'C', 'D', 'E'])"
+  },
+  {
+   "name": "no",
+   "expr": "shuffle(['F', 'G', 'J', 'L', 'P', 'R', 'S', 'Z'])"
+  }
+ ],
+ "constraints": [
+  "(yes[0]) != (no[0])",
+  "(yes[0]) != (no[1])",
+  "(yes[0]) != (no[2])",
+  "(no[0]) != (no[1])",
+  "(no[0]) != (no[2])",
+  "(no[1]) != (no[2])"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Którą literę (wielką, drukowaną) można złożyć wzdłuż prostej tak, że obie połowy się pokryją?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Oś symetrii to prosta, wzdłuż której można złożyć figurę tak, aby obie części się pokryły."
+   },
+   {
+    "kind": "conclude",
+    "text": "Litera @{yes[0]} ma oś symetrii."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{yes[0]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{no[0]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{no[1]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{no[2]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

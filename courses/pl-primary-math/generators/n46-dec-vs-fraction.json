@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-vs-fraction",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ds": "[2, 4, 5, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ds": "[8, 20, 25, 4, 5]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "choice(ds)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "kk",
+   "expr": "randint(1, 2)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(1, pow(10, kk) - 1) / pow(10, kk)"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Porównaj liczby $\\frac{@{a}}{@{b}}$ i @{y|dec}. Który znak należy wstawić między nie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (x < y) else []) + (['b'] if (x == y) else []) + (['c'] if (x > y) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zamień ułamek zwykły na dziesiętny (albo odwrotnie) i porównaj."
+   },
+   {
+    "kind": "compute",
+    "text": "$\\frac{@{a}}{@{b}} = @{x|dec}$"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "x < y"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "x == y"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "x > y"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

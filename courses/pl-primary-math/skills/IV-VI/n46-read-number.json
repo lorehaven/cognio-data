@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-read-number",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Przeczytaj liczbę"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 9 999"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 999 999"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 99 999 999"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-read-number.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-write-digits"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dziel duże liczby na grupy po trzy cyfry od prawej: jedności, tysiące, miliony. Czytaj grupa po grupie."
+  }
+ }
+}

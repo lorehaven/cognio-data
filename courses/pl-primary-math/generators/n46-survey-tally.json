@@ -1,0 +1,52 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-survey-tally",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "pool",
+   "expr": "choice([['kot', 'pies', 'rybki'], ['lody', 'ciastka', 'owoce'], ['rower', 'hulajnoga', 'rolki']])"
+  },
+  {
+   "name": "c",
+   "expr": "sample(3, 9, 3)"
+  },
+  {
+   "name": "answers",
+   "expr": "shuffle(repeat(pool[0], c[0]) + repeat(pool[1], c[1]) + repeat(pool[2], c[2]))"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "n",
+   "expr": "c[0] + c[1] + c[2]"
+  }
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "W ankiecie zapytano uczniów o ulubioną odpowiedź. Zebrano takie odpowiedzi: @{join(answers, \", \")}. Ile osób wybrało odpowiedź „@{pool[i]}”?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "c[i]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz odpowiedzi jedna po drugiej (możesz stawiać kreski) i zapisz wynik w tabeli."
+   },
+   {
+    "kind": "conclude",
+    "text": "„@{pool[i]}”: @{c[i]}. Wszystkich odpowiedzi: @{n}."
+   }
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-rhythm",
+ "stage": "I-III",
+ "title": {
+  "pl": "Rytm i powtarzający się wzór"
+ },
+ "objectives": [
+  "I-III.5.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wzór z dwóch elementów"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wzór z trzech elementów"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wzór z czterech elementów"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-rhythm.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "Rytm powtarza ten sam krótki wzór. Znajdź powtarzający się fragment i policz, który znak wypada na szukanym miejscu."
+  }
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-solid-object",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "solids",
+   "expr": "['sześcian', 'prostopadłościan', 'kula', 'walec']"
+  },
+  {
+   "name": "objs",
+   "expr": "[['kostka do gry', 'kostka lodu', 'pudełko po klockach w kształcie kostki'], ['pudełko po butach', 'cegła', 'lodówka'], ['piłka', 'globus', 'bombka choinkowa'], ['puszka po kukurydzy', 'rolka papieru', 'bęben']]"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "o",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "o2",
+   "expr": "randint(0, 2)"
+  }
+ ],
+ "constraints": [
+  "(solids[s] if mode == 0 else objs[s][o]) != (solids[(s + 1) % 4] if mode == 0 else objs[(s + 1) % 4][o2])",
+  "(solids[s] if mode == 0 else objs[s][o]) != (solids[(s + 2) % 4] if mode == 0 else objs[(s + 2) % 4][o2])",
+  "(solids[s] if mode == 0 else objs[s][o]) != (solids[(s + 3) % 4] if mode == 0 else objs[(s + 3) % 4][o2])",
+  "(solids[(s + 1) % 4] if mode == 0 else objs[(s + 1) % 4][o2]) != (solids[(s + 2) % 4] if mode == 0 else objs[(s + 2) % 4][o2])",
+  "(solids[(s + 1) % 4] if mode == 0 else objs[(s + 1) % 4][o2]) != (solids[(s + 3) % 4] if mode == 0 else objs[(s + 3) % 4][o2])",
+  "(solids[(s + 2) % 4] if mode == 0 else objs[(s + 2) % 4][o2]) != (solids[(s + 3) % 4] if mode == 0 else objs[(s + 3) % 4][o2])"
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{('Jaki kształt ma ' + objs[s][o] + '?' if mode == 0 else 'Który z przedmiotów ma kształt bryły: ' + solids[s] + '?')}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sześcian i prostopadłościan mają płaskie ściany; kula jest okrągła ze wszystkich stron; walec ma dwie okrągłe podstawy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Prawidłowa odpowiedź: @{(solids[s] if mode == 0 else objs[s][o])}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{solids[s] if mode == 0 else objs[s][o]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{solids[(s + 1) % 4] if mode == 0 else objs[(s + 1) % 4][o2]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{solids[(s + 2) % 4] if mode == 0 else objs[(s + 2) % 4][o2]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{solids[(s + 3) % 4] if mode == 0 else objs[(s + 3) % 4][o2]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

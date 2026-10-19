@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-time-units",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jednostki czasu"
+ },
+ "objectives": [
+  "IV-VI.2.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Na mniejsze jednostki"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Na większe jednostki"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Wszystkie przeliczenia"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-time-units.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "tutor": {
+  "intro": {
+   "pl": "Czas: 1 godzina = 60 minut, 1 minuta = 60 sekund, 1 godzina = 3600 sekund. Pół godziny to 30 minut, kwadrans to 15 minut."
+  }
+ }
+}

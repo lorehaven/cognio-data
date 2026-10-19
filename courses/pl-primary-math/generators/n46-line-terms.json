@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-line-terms",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "terms",
+   "expr": "['punkt', 'prosta', 'półprosta', 'odcinek']"
+  },
+  {
+   "name": "descs",
+   "expr": "[['Zaznaczamy go kropką i oznaczamy wielką literą.', 'Nie ma długości ani szerokości.', 'Wyznacza miejsce na rysunku, np. na mapie.'], ['Nie ma początku ani końca.', 'Ciągnie się bez końca w obie strony.', 'Przez dwa różne punkty można poprowadzić dokładnie jedną taką figurę.'], ['Ma początek, ale nie ma końca.', 'Ciągnie się bez końca tylko w jedną stronę.', 'Ma jeden koniec i biegnie w nieskończoność.'], ['Ma dwa końce i można zmierzyć jego długość.', 'Jest częścią prostej ograniczoną dwoma punktami.', 'Łączy dwa punkty najkrótszą drogą.']]"
+  },
+  {
+   "name": "ti",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "di",
+   "expr": "randint(0, 2)"
+  }
+ ],
+ "constraints": [
+  "(terms[ti]) != (terms[(ti + 1) % 4])",
+  "(terms[ti]) != (terms[(ti + 2) % 4])",
+  "(terms[ti]) != (terms[(ti + 3) % 4])",
+  "(terms[(ti + 1) % 4]) != (terms[(ti + 2) % 4])",
+  "(terms[(ti + 1) % 4]) != (terms[(ti + 3) % 4])",
+  "(terms[(ti + 2) % 4]) != (terms[(ti + 3) % 4])"
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Którą figurę opisuje zdanie: „@{descs[ti][di]}”?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Punkt – bez wymiarów. Prosta – bez końców. Półprosta – jeden koniec. Odcinek – dwa końce."
+   },
+   {
+    "kind": "conclude",
+    "text": "To: @{terms[ti]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{terms[ti]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{terms[(ti + 1) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{terms[(ti + 2) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{terms[(ti + 3) % 4]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

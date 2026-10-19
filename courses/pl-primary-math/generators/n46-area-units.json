@@ -1,0 +1,120 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-units",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pairs": "[[1, 2], [2, 1], [2, 3], [3, 2]]",
+    "lo": "2",
+    "hi": "90",
+    "dec": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pairs": "[[4, 3], [3, 4], [5, 3], [3, 5], [5, 4], [4, 5]]",
+    "lo": "2",
+    "hi": "90",
+    "dec": "0"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "pairs": "[[6, 5], [5, 6], [1, 0], [0, 1], [3, 1], [1, 3]]",
+    "lo": "2",
+    "hi": "90",
+    "dec": "0"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "N",
+   "expr": "['mm²', 'cm²', 'dm²', 'm²', 'a', 'ha', 'km²']"
+  },
+  {
+   "name": "F",
+   "expr": "[1 / 1000000, 1 / 10000, 1 / 100, 1, 100, 10000, 1000000]"
+  },
+  {
+   "name": "pair",
+   "expr": "choice(pairs)"
+  },
+  {
+   "name": "i",
+   "expr": "pair[0]"
+  },
+  {
+   "name": "j",
+   "expr": "pair[1]"
+  },
+  {
+   "name": "x",
+   "expr": "randint(lo, hi) / pow(10, dec)"
+  },
+  {
+   "name": "v",
+   "expr": "x * F[i] / F[j]"
+  },
+  {
+   "name": "ratio",
+   "expr": "F[i] / F[j]"
+  }
+ ],
+ "constraints": [
+  "denom(v) in divisors(10000)",
+  "v != x",
+  "x > 0"
+ ],
+ "selfCheck": [
+  "v * F[j] == x * F[i]"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Zamień @{x|dec} @{N[i]} na @{N[j]}.",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "v"
+   },
+   "unit": {
+    "$expr": "N[j]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('W jednym ' + N[i] + ' mieści się ' + fmt(ratio) + ' ' + N[j] + ', więc mnożymy.' if ratio >= 1 else 'W jednym ' + N[j] + ' mieści się ' + fmt(1 / ratio) + ' ' + N[i] + ', więc dzielimy.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(fmt(x) + ' · ' + fmt(ratio) + ' = ' + fmt(v) if ratio >= 1 else fmt(x) + ' : ' + fmt(1 / ratio) + ' = ' + fmt(v))}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "N[j]"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "wrong_direction",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "x * F[j] / F[i]"
+     },
+     "unit": {
+      "$expr": "N[j]"
+     }
+    },
+    "feedback": "Sprawdź kierunek: z większej jednostki na mniejszą mnożymy, z mniejszej na większą dzielimy.",
+    "when": "x * F[j] / F[i] != v and denom(x * F[j] / F[i]) in divisors(100000)"
+   }
+  ]
+ }
+}

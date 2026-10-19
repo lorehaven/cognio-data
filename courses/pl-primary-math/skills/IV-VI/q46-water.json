@@ -1,0 +1,38 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-water",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Misja: ile wody zużywa nasza klasa?"
+ },
+ "objectives": [
+  "IV-VI.5.2",
+  "IV-VI.5.3"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q46-water.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: opracowanie danych z życia, średnia arytmetyczna i wnioski."
+  }
+ },
+ "area": "IV-VI.5",
+ "prerequisites": [
+  "n46-mean"
+ ]
+}

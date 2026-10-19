@@ -1,0 +1,106 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-mul",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ka": "1",
+    "kb": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ka": "1",
+    "kb": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ka": "2",
+    "kb": "1"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "ka": "3",
+    "kb": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "na",
+   "expr": "randint(11, pow(10, ka + 1) - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "na / pow(10, ka)"
+  },
+  {
+   "name": "nb",
+   "expr": "randint(2, 9) if kb == 0 else randint(2, 19)"
+  },
+  {
+   "name": "y",
+   "expr": "nb / pow(10, kb)"
+  },
+  {
+   "name": "r",
+   "expr": "x * y"
+  }
+ ],
+ "constraints": [
+  "na % 10 != 0",
+  "nb % 10 != 0 or kb == 0"
+ ],
+ "selfCheck": [
+  "denom(r) in divisors(10000)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $@{x|dec} \\cdot @{y|dec}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mnożymy tak, jakby przecinków nie było, a w wyniku zostawiamy tyle miejsc po przecinku, ile mają razem oba czynniki."
+   },
+   {
+    "kind": "compute",
+    "text": "@{na} · @{nb} = @{na * nb}; miejsc po przecinku: @{ka + kb}; więc @{r|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "comma_shift",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "r * 10"
+     }
+    },
+    "feedback": "Policz miejsca po przecinku w obu czynnikach razem – tyle ma wynik."
+   },
+   {
+    "id": "comma_shift_down",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "r / 10"
+     }
+    },
+    "feedback": "Policz miejsca po przecinku w obu czynnikach razem – tyle ma wynik."
+   }
+  ]
+ }
+}

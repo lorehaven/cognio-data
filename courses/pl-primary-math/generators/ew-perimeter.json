@@ -1,0 +1,153 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-perimeter",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "f": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 12) if f < 2 else randint(10, 40)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 12) if f < 2 else randint(10, 40)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(abs(a - b) + 1, a + b - 1) if f > 0 else 0"
+  },
+  {
+   "name": "sq",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['cm', 'm'])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Kwadrat ma bok ' + str(a) + ' ' + un + '. Oblicz jego obwód.') if (f == 0 and sq) else (('Prostokąt ma boki ' + str(a) + ' ' + un + ' i ' + str(b) + ' ' + un + '. Oblicz jego obwód.') if f == 0 or f == 2 else ('Trójkąt ma boki ' + str(a) + ' ' + un + ', ' + str(b) + ' ' + un + ' i ' + str(c) + ' ' + un + '. Oblicz jego obwód.'))"
+  },
+  {
+   "name": "ans",
+   "expr": "4 * a if (f == 0 and sq) else (2 * a + 2 * b if f != 1 else a + b + c)"
+  }
+ ],
+ "constraints": [
+  "f == 1 or a != b"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Obwód to suma długości wszystkich boków."
+   },
+   {
+    "kind": "conclude",
+    "text": "Obwód: @{ans} @{un}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "area_instead",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "a * b"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "feedback": "To jest iloczyn boków. Obwód to suma wszystkich boków.",
+    "when": "f != 1 and not (f == 0 and sq)"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "rect",
+    "essential": false,
+    "alt": "Prostokąt (lub kwadrat) z podanymi bokami.",
+    "params": {
+     "w": {
+      "$expr": "a"
+     },
+     "h": {
+      "$expr": "a if (f == 0 and sq) else b"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "when": "f != 1"
+   },
+   {
+    "type": "figure",
+    "kind": "triangle-sides",
+    "essential": false,
+    "alt": "Trójkąt z podanymi bokami.",
+    "params": {
+     "sides": [
+      {
+       "$expr": "a"
+      },
+      {
+       "$expr": "b"
+      },
+      {
+       "$expr": "c"
+      }
+     ],
+     "labels": [
+      {
+       "$expr": "str(a) + ' ' + un"
+      },
+      {
+       "$expr": "str(b) + ' ' + un"
+      },
+      {
+       "$expr": "str(c) + ' ' + un"
+      }
+     ]
+    },
+    "when": "f == 1"
+   }
+  ]
+ }
+}

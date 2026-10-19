@@ -1,0 +1,49 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-infinite-round",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Zaokrąglanie rozwinięcia nieskończonego"
+ },
+ "objectives": [
+  "IV-VI.1.24",
+  "IV-VI.1.25"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do części dziesiątych"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do części setnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-infinite-round.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-infinite",
+  "n46-dec-round"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Niektóre ułamki mają nieskończone rozwinięcie dziesiętne. Aby je zaokrąglić, policz jedną cyfrę więcej, niż potrzebujesz, i zastosuj zasadę 0–4 w dół, 5–9 w górę."
+  }
+ }
+}

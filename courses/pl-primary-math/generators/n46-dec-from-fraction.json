@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-from-fraction",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ds": "[10, 100]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ds": "[1000]"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ds": "[2, 4, 5, 8, 20, 25, 50]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "choice(ds)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, d - 1)"
+  },
+  {
+   "name": "p10",
+   "expr": "10 if 10 % d == 0 else (100 if 100 % d == 0 else 1000)"
+  },
+  {
+   "name": "m",
+   "expr": "p10 // d"
+  },
+  {
+   "name": "v",
+   "expr": "k / d"
+  }
+ ],
+ "constraints": [
+  "k % 10 != 0 or d < 100"
+ ],
+ "selfCheck": [
+  "v * d == k",
+  "denom(v) in divisors(1000)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Zapisz ułamek $\\frac{@{k}}{@{d}}$ w postaci dziesiętnej.",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Mianownik wynosi już ' + str(d) + ', więc zapisujemy ułamek od razu dziesiętnie: tyle miejsc po przecinku, ile zer w mianowniku.' if m == 1 else 'Rozszerzamy ułamek tak, aby mianownik wynosił ' + str(p10) + ' (mnożymy licznik i mianownik przez ' + str(m) + ').')}"
+   },
+   {
+    "kind": "compute",
+    "text": "$\\frac{@{k}}{@{d}} = @{v|dec}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "wrong_places",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "k / (d * 10)"
+     }
+    },
+    "feedback": "Policz zera w mianowniku: tyle miejsc po przecinku musi mieć wynik.",
+    "when": "k / (d * 10) != v"
+   }
+  ]
+ }
+}

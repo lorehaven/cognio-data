@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-order",
+ "stage": "I-III",
+ "title": {
+  "pl": "Ustaw liczby w kolejności"
+ },
+ "objectives": [
+  "I-III.1.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 1000"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Do 10 000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-order.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby ustawić liczby w kolejności, porównuj je parami. Najmniejsza ma najmniej cyfr albo najmniejsze cyfry z lewej strony."
+  }
+ }
+}

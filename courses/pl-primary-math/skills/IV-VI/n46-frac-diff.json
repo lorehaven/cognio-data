@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-diff",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "O ile jeden ułamek jest większy od drugiego?"
+ },
+ "objectives": [
+  "IV-VI.1.30"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jednakowe mianowniki"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mianownik jednego jest wielokrotnością drugiego"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-diff.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby sprawdzić, o ile jeden ułamek jest większy od drugiego, sprowadź je do wspólnego mianownika i odejmij liczniki."
+  }
+ }
+}

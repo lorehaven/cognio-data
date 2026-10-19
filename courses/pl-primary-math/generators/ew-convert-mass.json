@@ -1,0 +1,100 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-convert-mass",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pairs": "[[2, 1]]",
+    "lo": "2",
+    "hi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pairs": "[[2, 0]]",
+    "lo": "2",
+    "hi": "20"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "pairs": "[[2, 1], [2, 0], [1, 2], [0, 2]]",
+    "lo": "10",
+    "hi": "90"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "N",
+   "expr": "['g', 'dag', 'kg']"
+  },
+  {
+   "name": "F",
+   "expr": "[1, 10, 1000]"
+  },
+  {
+   "name": "pair",
+   "expr": "choice(pairs)"
+  },
+  {
+   "name": "i",
+   "expr": "pair[0]"
+  },
+  {
+   "name": "j",
+   "expr": "pair[1]"
+  },
+  {
+   "name": "x",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "v",
+   "expr": "x * F[i] / F[j]"
+  },
+  {
+   "name": "ratio",
+   "expr": "F[i] / F[j]"
+  }
+ ],
+ "constraints": [
+  "denom(v) == 1",
+  "v != x"
+ ],
+ "selfCheck": [
+  "v * F[j] == x * F[i]"
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Zamień @{x|int} @{N[i]} na @{N[j]}.",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "v"
+   },
+   "unit": {
+    "$expr": "N[j]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('W jednym ' + N[i] + ' mieści się ' + fmt(ratio) + ' ' + N[j] + ', więc mnożymy.' if ratio >= 1 else 'W jednym ' + N[j] + ' mieści się ' + fmt(1 / ratio) + ' ' + N[i] + ', więc dzielimy.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(fmt(x) + ' · ' + fmt(ratio) + ' = ' + fmt(v) if ratio >= 1 else fmt(x) + ' : ' + fmt(1 / ratio) + ' = ' + fmt(v))}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "N[j]"
+   }
+  }
+ }
+}

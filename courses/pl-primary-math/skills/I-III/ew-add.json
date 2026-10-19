@@ -1,0 +1,65 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-add",
+ "stage": "I-III",
+ "title": {
+  "pl": "Dodawanie"
+ },
+ "objectives": [
+  "I-III.1.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwucyfrowa i jednocyfrowa"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Dwie liczby dwucyfrowe"
+   }
+  },
+  {
+   "level": 5,
+   "label": {
+    "pl": "Liczby trzycyfrowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-add.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Dodawanie to łączenie. Możemy dodawać po kolei, przechodząc przez dziesiątkę: 8 + 5 = 8 + 2 + 3 = 10 + 3 = 13."
+  }
+ }
+}

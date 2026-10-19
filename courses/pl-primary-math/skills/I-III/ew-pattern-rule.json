@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-pattern-rule",
+ "stage": "I-III",
+ "title": {
+  "pl": "Odkrywamy prawidłowości"
+ },
+ "objectives": [
+  "I-III.1.k"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Zamiana miejsc składników"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Zmieniamy jeden składnik"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Podwajamy czynnik"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Zero i jedynka"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-pattern-rule.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-add",
+  "ew-mul-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W dodawaniu możesz zmieniać kolejność składników: 3 + 8 = 8 + 3. Dzięki temu łatwiej liczyć, np. 7 + 5 + 3 = 7 + 3 + 5 = 15."
+  }
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-simplify",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "two": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "two": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "e",
+   "expr": "randint(-9, 9)"
+  },
+  {
+   "name": "orig",
+   "expr": "poly([a, b, c, d, e], ['x', 'y', 'x', 'y', '']) if two == 1 else poly([a, b, c, d, e], ['x', 'x²', 'x', 'x²', ''])"
+  },
+  {
+   "name": "v2",
+   "expr": "'y' if two == 1 else 'x²'"
+  },
+  {
+   "name": "good",
+   "expr": "poly([a + c, b + d, e], ['x', v2, ''])"
+  },
+  {
+   "name": "w1",
+   "expr": "poly([a - c, b + d, e], ['x', v2, ''])"
+  },
+  {
+   "name": "w2",
+   "expr": "poly([a + c, b - d, e], ['x', v2, ''])"
+  },
+  {
+   "name": "w3",
+   "expr": "poly([a + b + c + d, e], ['x', ''])"
+  }
+ ],
+ "constraints": [
+  "a != 0 and b != 0 and c != 0 and d != 0",
+  "a + c != 0 and b + d != 0",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Zredukuj wyrazy podobne w wyrażeniu: @{orig}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wyrazy podobne mają tę samą część literową (np. wszystkie z x, wszystkie z y). Dodaj ich współczynniki."
+   },
+   {
+    "kind": "conclude",
+    "text": "Po redukcji: @{good}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

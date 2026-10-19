@@ -1,0 +1,108 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-sub",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "alo": "2",
+    "ahi": "10",
+    "blo": "1",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "alo": "11",
+    "ahi": "20",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "alo": "21",
+    "ahi": "99",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "alo": "30",
+    "ahi": "99",
+    "blo": "11",
+    "bhi": "29"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(alo, ahi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "r",
+   "expr": "a - b"
+  },
+  {
+   "name": "b0",
+   "expr": "b - b % 10"
+  }
+ ],
+ "constraints": [
+  "r > 0",
+  "b % 10 != 0 or b < 10"
+ ],
+ "minDistinct": 25,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} − @{b}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Odejmujemy dziesiątki, potem jedności.' if b >= 10 else 'Odejmujemy po kolei, przechodząc przez dziesiątkę.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a) + ' − ' + str(b0) + ' = ' + str(a - b0) + ', a potem − ' + str(b % 10) + ' = ' + str(r) if b >= 10 and b % 10 != 0 else str(a) + ' − ' + str(b) + ' = ' + str(r))}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "off_by_one",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r + 1"
+     }
+    },
+    "feedback": "Sprawdź jeszcze raz – możesz policzyć na osi liczbowej."
+   },
+   {
+    "id": "off_by_ten",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "r + 10"
+     }
+    },
+    "feedback": "Przy przejściu przez dziesiątkę pamiętaj o pożyczce.",
+    "when": "a % 10 < b % 10"
+   }
+  ]
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-prime-pick",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pr": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]",
+    "co": "[9, 15, 21, 25, 27, 33, 35, 39, 45, 49]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pr": "[53, 59, 61, 67, 71, 73, 79, 83, 89, 97]",
+    "co": "[51, 57, 63, 65, 69, 77, 81, 85, 87, 91, 93, 95, 99]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(pr)"
+  },
+  {
+   "name": "c1",
+   "expr": "choice(co)"
+  },
+  {
+   "name": "c2",
+   "expr": "choice(co)"
+  },
+  {
+   "name": "c3",
+   "expr": "choice(co)"
+  },
+  {
+   "name": "dv",
+   "expr": "divisors(c1)[1]"
+  }
+ ],
+ "constraints": [
+  "len(uniq([c1, c2, c3])) == 3"
+ ],
+ "selfCheck": [
+  "is_prime(p)",
+  "not is_prime(c1)",
+  "not is_prime(c2)",
+  "not is_prime(c3)"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Która z liczb jest liczbą pierwszą?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (true) else []) + (['b'] if (false) else []) + (['c'] if (false) else []) + (['d'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Liczba pierwsza ma dokładnie dwa dzielniki: 1 i samą siebie."
+   },
+   {
+    "kind": "conclude",
+    "text": "Na przykład @{c1} = @{dv} · @{c1 // dv}, więc @{c1} nie jest pierwsza."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{p}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{c1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{c2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{c3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

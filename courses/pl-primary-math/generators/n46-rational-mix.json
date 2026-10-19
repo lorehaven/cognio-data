@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-rational-mix",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "op": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "op": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "choice([2, 4, 5, 10, 20, 25])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "ky",
+   "expr": "randint(1, 2)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(1, pow(10, ky + 1) - 1) / pow(10, ky)"
+  },
+  {
+   "name": "plus",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "r",
+   "expr": "x + y if op == 0 and plus else (x - y if op == 0 else x * y)"
+  },
+  {
+   "name": "sg",
+   "expr": "'+' if plus else '-'"
+  },
+  {
+   "name": "sgn",
+   "expr": "'\\\\cdot' if op == 1 else sg"
+  }
+ ],
+ "constraints": [
+  "op == 1 or plus or x > y",
+  "y != x",
+  "denom(r) in divisors(10000)",
+  "r > 0",
+  "gcd(a, b) == 1"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $\\frac{@{a}}{@{b}} @{sgn} @{y|dec}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zamień ułamek zwykły na dziesiętny (albo odwrotnie) i licz w jednej postaci."
+   },
+   {
+    "kind": "compute",
+    "text": "$\\frac{@{a}}{@{b}} = @{x|dec}$, więc @{r|dec}"
+   }
+  ]
+ }
+}

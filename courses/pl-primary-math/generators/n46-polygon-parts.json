@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-polygon-parts",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(4, 20)"
+  },
+  {
+   "name": "ans",
+   "expr": "n - 3 if ask == 0 else n * (n - 3) // 2"
+  }
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{('Ile przekątnych można poprowadzić z jednego wierzchołka wielokąta o ' + str(n) + ' bokach?' if ask == 0 else 'Ile wszystkich przekątnych ma wielokąt o ' + str(n) + ' bokach?')}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Z wierzchołka nie rysujemy przekątnych do niego samego ani do dwóch sąsiednich wierzchołków: n − 3.' if ask == 0 else 'Z każdego z n wierzchołków wychodzi n − 3 przekątnych, ale każdą policzyliśmy dwa razy.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "regular-polygon",
+    "essential": false,
+    "alt": "Wielokąt foremny.",
+    "params": {
+     "n": {
+      "$expr": "n"
+     },
+     "names": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ]
+    }
+   }
+  ]
+ }
+}

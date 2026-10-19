@@ -1,0 +1,86 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-odd-one-out",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "groups",
+   "expr": "[['jabłko', 'gruszka', 'śliwka', 'banan', 'truskawka'], ['marchewka', 'ogórek', 'pomidor', 'cebula', 'ziemniak'], ['kot', 'pies', 'chomik', 'królik', 'papuga'], ['sosna', 'dąb', 'brzoza', 'świerk', 'buk'], ['linijka', 'ołówek', 'gumka', 'temperówka', 'cyrkiel'], ['młotek', 'śrubokręt', 'piła', 'wiertarka', 'obcęgi']]"
+  },
+  {
+   "name": "g1",
+   "expr": "randint(0, 5)"
+  },
+  {
+   "name": "g2",
+   "expr": "(g1 + randint(1, 5)) % 6"
+  },
+  {
+   "name": "a",
+   "expr": "shuffle(groups[g1])"
+  },
+  {
+   "name": "b",
+   "expr": "groups[g2]"
+  },
+  {
+   "name": "odd",
+   "expr": "choice(b)"
+  }
+ ],
+ "constraints": [
+  "(odd) != (a[0])",
+  "(odd) != (a[1])",
+  "(odd) != (a[2])",
+  "(a[0]) != (a[1])",
+  "(a[0]) != (a[2])",
+  "(a[1]) != (a[2])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który wyraz nie pasuje do pozostałych: @{a[0]}, @{a[1]}, @{a[2]}, …",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zastanów się, co łączy trzy wyrazy. Ten, który nie pasuje, należy do innej grupy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Intruz: @{odd}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{odd}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{a[0]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{a[1]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{a[2]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

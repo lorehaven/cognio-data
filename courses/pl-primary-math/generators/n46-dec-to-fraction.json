@@ -1,0 +1,86 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-to-fraction",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "2",
+    "kmin": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "3",
+    "kmin": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "kk",
+   "expr": "randint(kmin, k)"
+  },
+  {
+   "name": "nn",
+   "expr": "randint(1, pow(10, kk) - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "nn / pow(10, kk)"
+  }
+ ],
+ "constraints": [
+  "nn % 10 != 0"
+ ],
+ "selfCheck": [
+  "x == nn / pow(10, kk)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Zapisz liczbę @{x|dec} w postaci ułamka zwykłego nieskracalnego.",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(x)"
+   },
+   "den": {
+    "$expr": "denom(x)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Liczbę po przecinku zapisujemy w liczniku, a w mianowniku piszemy 1 i tyle zer, ile jest miejsc po przecinku. Potem skracamy."
+   },
+   {
+    "kind": "compute",
+    "text": "@{x|dec} = $\\frac{@{nn}}{@{pow(10, kk)}}$"
+   },
+   {
+    "kind": "conclude",
+    "text": "Po skróceniu: $\\frac{@{numer(x)}}{@{denom(x)}}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "not_simplified",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "nn"
+     },
+     "den": {
+      "$expr": "pow(10, kk)"
+     },
+     "form": "any"
+    },
+    "feedback": "Skróć jeszcze ten ułamek.",
+    "when": "numer(x) != nn"
+   }
+  ]
+ }
+}

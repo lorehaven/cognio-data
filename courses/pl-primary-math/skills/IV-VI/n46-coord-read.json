@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-coord-read",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Współrzędne punktu"
+ },
+ "objectives": [
+  "IV-VI.4.16"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwsza ćwiartka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Cały układ współrzędnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-coord-read.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-int-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Współrzędne punktu podajemy jako parę (x, y): najpierw odległość w prawo lub w lewo od początku, potem w górę lub w dół."
+  }
+ }
+}

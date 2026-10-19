@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-read-timetable",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "t0",
+   "expr": "randint(6, 16) * 60 + randint(0, 3) * 15"
+  },
+  {
+   "name": "d1",
+   "expr": "randint(2, 5) * 10"
+  },
+  {
+   "name": "d2",
+   "expr": "randint(2, 5) * 10"
+  },
+  {
+   "name": "d3",
+   "expr": "randint(2, 5) * 10"
+  },
+  {
+   "name": "deps",
+   "expr": "[t0, t0 + d1, t0 + d1 + d2, t0 + d1 + d2 + d3]"
+  },
+  {
+   "name": "k",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "now",
+   "expr": "deps[k] + randint(1, deps[k + 1] - deps[k] - 1)"
+  },
+  {
+   "name": "nxt",
+   "expr": "deps[k + 1]"
+  },
+  {
+   "name": "rows",
+   "expr": "[[hhmm(deps[0])], [hhmm(deps[1])], [hhmm(deps[2])], [hhmm(deps[3])]]"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "time-input",
+  "prompt": "W tabeli podano godziny odjazdów autobusu. Jest godzina @{hhmm(now)}. O której odjedzie najbliższy autobus?",
+  "answer": {
+   "type": "time",
+   "value": {
+    "$expr": "hhmm(nxt)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź pierwszy odjazd, który jest później niż teraz."
+   },
+   {
+    "kind": "conclude",
+    "text": "Najbliższy autobus odjedzie o @{hhmm(nxt)}."
+   }
+  ],
+  "media": [
+   {
+    "type": "table",
+    "kind": "table",
+    "essential": true,
+    "alt": "Rozkład jazdy: cztery odjazdy.",
+    "params": {
+     "headers": [
+      "Odjazdy"
+     ],
+     "rows": {
+      "$expr": "rows"
+     }
+    }
+   }
+  ]
+ }
+}

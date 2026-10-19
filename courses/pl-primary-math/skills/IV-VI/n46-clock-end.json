@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-clock-end",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "O której godzinie?"
+ },
+ "objectives": [
+  "IV-VI.2.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "W obrębie godziny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przez pełną godzinę"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Godziny i minuty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-clock-end.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-time-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby obliczyć godzinę zakończenia, dodaj czas trwania do godziny rozpoczęcia. Pamiętaj, że 60 minut to godzina."
+  }
+ }
+}

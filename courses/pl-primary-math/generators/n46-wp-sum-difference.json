@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-sum-difference",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "q",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "th",
+   "expr": "choice([['naklejka', 'naklejki', 'naklejek'], ['kartka', 'kartki', 'kartek'], ['moneta', 'monety', 'monet'], ['książka', 'książki', 'książek']])"
+  },
+  {
+   "name": "small",
+   "expr": "randint(5, 40)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "big",
+   "expr": "small + d if mode == 0 else small * k"
+  },
+  {
+   "name": "total",
+   "expr": "small + big"
+  },
+  {
+   "name": "txt",
+   "expr": "(p[0] + ' ma o ' + pln(d, th) + ' więcej niż ' + q[0] + '. Razem mają ' + pln(total, th) + '. Ile ' + th[2] + ' ma ' + q[0] + '?') if mode == 0 else (p[0] + ' ma ' + str(k) + ' razy więcej ' + th[2] + ' niż ' + q[0] + '. Razem mają ' + pln(total, th) + '. Ile ' + th[2] + ' ma ' + q[0] + '?')"
+  }
+ ],
+ "constraints": [
+  "p[0] != q[0]",
+  "mode != 0 or (total - d) % 2 == 0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "small"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Gdyby oboje mieli tyle samo co mniejsza liczba, razem mieliby o różnicę mniej. Odejmij różnicę od sumy i podziel na dwie równe części.' if mode == 0 else 'Narysuj odcinki: mniejsza liczba to 1 część, większa to ' + str(k) + ' części. Razem ' + str(k + 1) + ' części.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(total) + ' − ' + str(d) + ' = ' + str(total - d) + '; ' + str(total - d) + ' : 2 = ' + str(small) if mode == 0 else str(total) + ' : ' + str(k + 1) + ' = ' + str(small))}"
+   }
+  ]
+ }
+}

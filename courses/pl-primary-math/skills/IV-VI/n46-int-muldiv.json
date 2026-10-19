@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-muldiv",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Mnożenie i dzielenie liczb całkowitych"
+ },
+ "objectives": [
+  "IV-VI.1.16"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mnożenie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dzielenie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-int-muldiv.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-int-addsub"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mnożenie i dzielenie liczb całkowitych: taki sam znak daje wynik dodatni, różne znaki – ujemny."
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-conclusions",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wnioski z rozumowania"
+ },
+ "objectives": [
+  "VII-VIII.5.2.c"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Co wynika z danych?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-conclusions.jsonl"
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-minimal-argument"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wniosek musi wynikać z podanych informacji. Uważaj na przejście od próbki do całej grupy."
+  }
+ }
+}

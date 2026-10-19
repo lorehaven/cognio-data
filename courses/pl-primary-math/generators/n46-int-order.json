@@ -1,0 +1,98 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-order",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "-10",
+    "hi": "10"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "-50",
+    "hi": "50"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "xs",
+   "expr": "sample(lo, hi, 5)"
+  },
+  {
+   "name": "desc",
+   "expr": "randint(0, 1) == 1"
+  }
+ ],
+ "constraints": [
+  "min(xs) < 0",
+  "len(xs) == 5",
+  "xs[0] != xs[1]",
+  "xs[0] != xs[2]",
+  "xs[0] != xs[3]",
+  "xs[0] != xs[4]",
+  "xs[1] != xs[2]",
+  "xs[1] != xs[3]",
+  "xs[1] != xs[4]",
+  "xs[2] != xs[3]",
+  "xs[2] != xs[4]",
+  "xs[3] != xs[4]"
+ ],
+ "task": {
+  "kind": "order-items",
+  "prompt": "@{('Ułóż liczby od największej do najmniejszej.' if desc else 'Ułóż liczby od najmniejszej do największej.')}",
+  "answer": {
+   "type": "sequence",
+   "value": {
+    "$expr": "(reverse(sorted(xs)) if desc else sorted(xs))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Liczby ujemne są mniejsze od zera: z dwóch ujemnych większa jest ta, która jest bliżej zera (−2 > −7)."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kolejność: @{(reverse(sorted(xs)) if desc else sorted(xs))|list:semi}"
+   }
+  ],
+  "input": {
+   "items": [
+    {
+     "id": {
+      "$expr": "str(xs[0])"
+     },
+     "text": "@{xs[0]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[1])"
+     },
+     "text": "@{xs[1]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[2])"
+     },
+     "text": "@{xs[2]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[3])"
+     },
+     "text": "@{xs[3]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[4])"
+     },
+     "text": "@{xs[4]|int}"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,256 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-water",
+ "title": {
+  "pl": "Misja: ile wody zużywa nasza klasa?"
+ },
+ "experience": 0,
+ "vars": [
+  {
+   "name": "m",
+   "expr": "randint(40, 90)"
+  },
+  {
+   "name": "r4",
+   "expr": "sample(m - 15, m + 15, 4)"
+  },
+  {
+   "name": "last",
+   "expr": "5 * m - sum(r4)"
+  },
+  {
+   "name": "vs",
+   "expr": "shuffle(r4 + [last])"
+  },
+  {
+   "name": "days",
+   "expr": "['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek']"
+  },
+  {
+   "name": "dp",
+   "expr": "['w poniedziałek', 'we wtorek', 'w środę', 'w czwartek', 'w piątek']"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 4)"
+  },
+  {
+   "name": "above",
+   "expr": "(1 if vs[0] > m else 0) + (1 if vs[1] > m else 0) + (1 if vs[2] > m else 0) + (1 if vs[3] > m else 0) + (1 if vs[4] > m else 0)"
+  },
+  {
+   "name": "g1",
+   "expr": "'W badanym tygodniu średnie dzienne zużycie wody w klasie wyniosło ' + str(m) + ' l.'"
+  },
+  {
+   "name": "g2",
+   "expr": "'W każdym tygodniu roku klasa zużywa dokładnie ' + str(sum(vs)) + ' l wody.'"
+  },
+  {
+   "name": "g3",
+   "expr": "'Cała szkoła zużywa dziennie ' + str(m) + ' l wody.'"
+  },
+  {
+   "name": "g4",
+   "expr": "'Zużycie wody rośnie od poniedziałku do piątku.'"
+  }
+ ],
+ "intro": "Klasa 4b prowadziła przez tydzień szkolny dziennik zużycia wody w szkolnej łazience (w litrach). Pomóż uczniom opracować dane i sformułować wnioski.",
+ "steps": [
+  {
+   "kind": "number-input",
+   "prompt": "Ile litrów wody zużyto @{dp[i]}?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "vs[i]"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Znajdź w tabeli właściwy dzień i odczytaj liczbę z drugiej kolumny."
+    },
+    {
+     "kind": "conclude",
+     "text": "Odpowiedź: @{vs[i]} l."
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Ile litrów wody klasa zużyła w ciągu całego tygodnia szkolnego (5 dni)?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "sum(vs)"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Dodaj zużycie ze wszystkich pięciu dni."
+    },
+    {
+     "kind": "compute",
+     "text": "@{join(vs, \" + \")} = @{sum(vs)}"
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Oblicz średnie dzienne zużycie wody (w litrach).",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "m"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Średnia = suma : liczba dni."
+    },
+    {
+     "kind": "compute",
+     "text": "@{sum(vs)} : 5 = @{m}"
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "W ilu dniach zużycie wody było większe od średniej?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "above"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Porównaj zużycie z każdego dnia ze średnią @{m} l."
+    },
+    {
+     "kind": "conclude",
+     "text": "Odpowiedź: @{above}."
+    }
+   ]
+  },
+  {
+   "kind": "decimal-input",
+   "prompt": "Klasa postanowiła zmniejszyć średnie dzienne zużycie wody o 10%. Ile litrów dziennie (średnio) będzie wtedy zużywać?",
+   "answer": {
+    "type": "decimal",
+    "value": {
+     "$expr": "m * 9 / 10"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "10% z @{m} l to @{m / 10|dec} l. Odejmij to od średniej."
+    },
+    {
+     "kind": "conclude",
+     "text": "Odpowiedź: @{m * 9 / 10|dec} l."
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Ile litrów wody klasa zaoszczędzi w ciągu 20 takich tygodni (po 5 dni), jeśli osiągnie ten cel?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "10 * m"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Dziennie oszczędza 10% średniej. Pomnóż przez liczbę dni: 20 · 5 = 100."
+    },
+    {
+     "kind": "compute",
+     "text": "@{m / 10|dec} · 100 = @{10 * m}"
+    }
+   ]
+  },
+  {
+   "kind": "multiple-choice",
+   "prompt": "Które zdanie jest poprawnym wnioskiem z zebranych danych?",
+   "answer": {
+    "type": "choice",
+    "value": {
+     "$expr": "'a'"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Wniosek może dotyczyć tylko tego, co zmierzono: tego tygodnia w tej klasie."
+    },
+    {
+     "kind": "conclude",
+     "text": "@{g1}"
+    }
+   ],
+   "options": [
+    {
+     "id": "a",
+     "text": "@{g1}",
+     "correct": "true"
+    },
+    {
+     "id": "b",
+     "text": "@{g2}",
+     "correct": "false"
+    },
+    {
+     "id": "c",
+     "text": "@{g3}",
+     "correct": "false"
+    },
+    {
+     "id": "d",
+     "text": "@{g4}",
+     "correct": "false"
+    }
+   ]
+  }
+ ],
+ "constraints": [
+  "last >= m - 25 and last <= m + 25",
+  "last not in r4",
+  "len(uniq([vs[0], vs[1], vs[2], vs[3], vs[4]])) == 5",
+  "above != 0 and above != 5 and not (vs[4] == m)",
+  "(g1) != (g2)",
+  "(g1) != (g3)",
+  "(g1) != (g4)",
+  "(g2) != (g3)",
+  "(g2) != (g4)",
+  "(g3) != (g4)"
+ ],
+ "selfCheck": [
+  "sum(vs) == 5 * m"
+ ],
+ "media": [
+  {
+   "type": "table",
+   "kind": "table",
+   "essential": true,
+   "alt": "Tabela: zużycie wody w kolejnych dniach (litry).",
+   "params": {
+    "headers": [
+     "Dzień",
+     "Zużycie wody (l)"
+    ],
+    "rows": {
+     "$expr": "[[days[0], vs[0]], [days[1], vs[1]], [days[2], vs[2]], [days[3], vs[3]], [days[4], vs[4]]]"
+    }
+   }
+  }
+ ],
+ "outro": "Świetna robota! Dzięki zebranym danym klasa wie, ile wody zużywa, i może zaplanować oszczędzanie."
+}

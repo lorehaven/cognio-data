@@ -1,0 +1,69 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-meaning",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "50"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, hi // f)"
+  },
+  {
+   "name": "a",
+   "expr": "f * q"
+  },
+  {
+   "name": "mode",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "it",
+   "expr": "choice([['jabłko', 'jabłka', 'jabłek'], ['ciastko', 'ciastka', 'ciastek'], ['naklejka', 'naklejki', 'naklejek'], ['kredka', 'kredki', 'kredek']])"
+  },
+  {
+   "name": "bag",
+   "expr": "choice([['torebki', 'torebek'], ['pudełka', 'pudełek'], ['koperty', 'kopert']])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Rozdzielono po równo ' + pln(a, it) + ' między ' + pln(f, ['dziecko', 'dzieci', 'dzieci']) + '. Ile ' + it[2] + ' dostało każde dziecko?') if mode == 0 else ('Mamy ' + pln(a, it) + '. Do każdej ' + bag[0] + ' wkładamy po ' + pln(f, it) + '. Ile ' + bag[1] + ' potrzeba?')"
+  }
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('To podział po równo: dzielimy wszystkie rzeczy na równe części.' if mode == 0 else 'To mieszczenie: sprawdzamy, ile razy ' + str(f) + ' mieści się w ' + str(a) + '.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} : @{f} = @{q}"
+   }
+  ]
+ }
+}

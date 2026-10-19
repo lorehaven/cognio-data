@@ -1,0 +1,102 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-circle-diameter",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "40",
+    "dec": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "99",
+    "dec": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(2, hi) / pow(10, dec) if dec > 0 else randint(2, hi)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "toR",
+   "expr": "randint(0, 1) == 1"
+  }
+ ],
+ "constraints": [
+  "not toR or denom(x / 2) in divisors(100)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{('Średnica koła ma ' if toR else 'Promień koła ma ')}@{x|dec} @{un}. Ile @{('wynosi jego promień' if toR else 'wynosi jego średnica')}?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "x / 2 if toR else x * 2"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Średnica jest dwa razy dłuższa niż promień: d = 2r."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(fmt(x) + ' : 2 = ' + fmt(x / 2) if toR else fmt(x) + ' · 2 = ' + fmt(x * 2))} @{un}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "swapped",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "x * 2 if toR else x / 2"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "feedback": "Średnica to dwa promienie. Pytasz o promień (połowa) czy o średnicę (podwójna)?"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "circle",
+    "essential": false,
+    "alt": "Koło z zaznaczonym promieniem lub średnicą.",
+    "params": {
+     "draw": {
+      "$expr": "['diameter'] if toR else ['radius']"
+     },
+     "labels": {
+      "diameter": {
+       "$expr": "fmt(x) + ' ' + un"
+      },
+      "radius": {
+       "$expr": "fmt(x) + ' ' + un"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

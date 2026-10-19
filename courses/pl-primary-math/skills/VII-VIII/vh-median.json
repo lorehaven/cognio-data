@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-median",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Mediana zestawu danych"
+ },
+ "objectives": [
+  "VII-VIII.4.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Nieparzysta liczba danych"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Parzysta liczba danych"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Siedem lub osiem danych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-median.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-mean-exact"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mediana to środkowa liczba po uporządkowaniu danych. Przy parzystej liczbie danych to średnia dwóch środkowych."
+  }
+ }
+}

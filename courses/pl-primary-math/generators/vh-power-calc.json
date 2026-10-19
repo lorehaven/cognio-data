@@ -1,0 +1,98 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-calc",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "e",
+   "expr": "randint(2, 4)"
+  },
+  {
+   "name": "bi",
+   "expr": "randint(2, 6) * choice([-1, 1])"
+  },
+  {
+   "name": "bn",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "bd",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "neg",
+   "expr": "choice([-1, 1])"
+  },
+  {
+   "name": "base",
+   "expr": "bi if kind == 0 else neg * bn / bd"
+  },
+  {
+   "name": "v",
+   "expr": "pow(base, e)"
+  },
+  {
+   "name": "bt",
+   "expr": "('(' + str(bi) + ')' if bi < 0 else str(bi)) if kind == 0 else ('\\\\left(' + ('-' if neg < 0 else '') + '\\\\frac{' + str(bn) + '}{' + str(bd) + '}\\\\right)')"
+  }
+ ],
+ "constraints": [
+  "kind == 1 or abs(bi) != 1",
+  "kind == 0 or gcd(bn, bd) == 1"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Oblicz: $@{bt}^{@{e}}$",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(v)"
+   },
+   "den": {
+    "$expr": "denom(v)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Potęga to wielokrotne mnożenie podstawy. Podstawa ujemna: wykładnik parzysty daje wynik dodatni, nieparzysty – ujemny."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: $@{v|frac}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "sign",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "-numer(v)"
+     },
+     "den": {
+      "$expr": "denom(v)"
+     },
+     "form": "any"
+    },
+    "feedback": "Sprawdź znak: parzysta liczba minusów daje plus.",
+    "when": "base < 0"
+   }
+  ]
+ }
+}

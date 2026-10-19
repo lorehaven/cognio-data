@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-add",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "max_places": "1",
+    "hi": "99"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "max_places": "2",
+    "hi": "999"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "max_places": "3",
+    "hi": "9999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "da",
+   "expr": "randint(1, max_places)"
+  },
+  {
+   "name": "db",
+   "expr": "randint(1, max_places)"
+  },
+  {
+   "name": "x",
+   "expr": "randint(1, hi) / pow(10, da)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(1, hi) / pow(10, db)"
+  }
+ ],
+ "constraints": [
+  "x != y",
+  "x + y >= 1"
+ ],
+ "selfCheck": [
+  "x + y > x",
+  "denom(x + y) in divisors(1000)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $@{x|dec} + @{y|dec}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "x + y"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zapisujemy liczby jedna pod drugą tak, by przecinek był pod przecinkiem. Brakujące miejsca uzupełniamy zerami."
+   },
+   {
+    "kind": "compute",
+    "text": "@{x|dec} + @{y|dec} = @{(x + y)|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "misaligned",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "(x * pow(10, da) + y * pow(10, db)) / pow(10, max(da, db))"
+     }
+    },
+    "feedback": "Przecinek pod przecinkiem! Cyfry o tej samej wartości (dziesiąte, setne…) muszą stać w jednej kolumnie.",
+    "when": "da != db"
+   }
+  ]
+ }
+}

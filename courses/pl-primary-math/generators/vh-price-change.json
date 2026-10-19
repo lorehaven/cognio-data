@@ -1,0 +1,135 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-price-change",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice([10, 15, 20, 25, 30, 40, 50])"
+  },
+  {
+   "name": "q",
+   "expr": "choice([10, 20, 25, 50])"
+  },
+  {
+   "name": "up",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "up2",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "price0",
+   "expr": "20 * randint(2, 30)"
+  },
+  {
+   "name": "f",
+   "expr": "(100 + p) / 100 if up else (100 - p) / 100"
+  },
+  {
+   "name": "price1",
+   "expr": "price0 * f"
+  },
+  {
+   "name": "g",
+   "expr": "(100 + q) / 100 if up2 else (100 - q) / 100"
+  },
+  {
+   "name": "price2",
+   "expr": "price1 * g"
+  },
+  {
+   "name": "word",
+   "expr": "'podniesiono' if up else 'obniżono'"
+  },
+  {
+   "name": "word2",
+   "expr": "'podniesiono' if up2 else 'obniżono'"
+  },
+  {
+   "name": "txt",
+   "expr": "('Cenę kurtki, która kosztowała ' + str(price0) + ' zł, ' + word + ' o ' + str(p) + '%. Ile kosztuje teraz?') if mode == 0 else (('Po ' + ('podwyżce' if up else 'obniżce') + ' o ' + str(p) + '% kurtka kosztuje ' + fmt(price1, 2) + ' zł. Ile kosztowała przed zmianą?') if mode == 1 else ('Cenę kurtki, która kosztowała ' + str(price0) + ' zł, najpierw ' + word + ' o ' + str(p) + '%, a potem ' + word2 + ' o ' + str(q) + '%. Ile kosztuje na końcu?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "price1 if mode == 0 else (price0 if mode == 1 else price2)"
+  }
+ ],
+ "constraints": [
+  "denom(price1) in divisors(100)",
+  "denom(price2) in divisors(100)",
+  "mode != 2 or price2 != price0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Mnożymy cenę przez współczynnik ' + fmt(f) + ': ' + ('podwyżka o p% to mnożenie przez 1 + p/100' if up else 'obniżka o p% to mnożenie przez 1 − p/100') + '.' if mode == 0 else ('Cena po zmianie to ' + fmt(f) + ' ceny początkowej, więc początkową znajdziemy dzieląc.' if mode == 1 else 'Każdą zmianę liczymy od ceny po poprzedniej zmianie.'))}"
+   },
+   {
+    "kind": "compute",
+    "text": "Odpowiedź: @{ans|dec:2} zł."
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  },
+  "errorRules": [
+   {
+    "id": "wrong_direction",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "price0 * (100 - p) / 100 if up else price0 * (100 + p) / 100"
+     },
+     "unit": "zł"
+    },
+    "feedback": "Sprawdź, czy cena rośnie (podwyżka), czy maleje (obniżka).",
+    "when": "mode == 0"
+   },
+   {
+    "id": "apply_to_new",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "price1 * f"
+     },
+     "unit": "zł"
+    },
+    "feedback": "Procent liczymy od ceny przed zmianą, nie po zmianie – tutaj cofamy się do ceny początkowej, więc dzielimy.",
+    "when": "mode == 1"
+   }
+  ]
+ }
+}

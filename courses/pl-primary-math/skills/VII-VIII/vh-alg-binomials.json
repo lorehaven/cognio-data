@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-binomials",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Mnożenie dwumianów"
+ },
+ "objectives": [
+  "VII-VIII.2.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Współczynnik przy x"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wyraz wolny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dowolne dwumiany"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-binomials.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-mul-mono"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mnożąc dwumiany, mnóż każdy wyraz pierwszego przez każdy wyraz drugiego i zredukuj wyrazy podobne: (x + 2)(x + 3) = x² + 5x + 6."
+  }
+ }
+}

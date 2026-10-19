@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-mul-mono",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Mnożenie jednomianu przez sumę"
+ },
+ "objectives": [
+  "VII-VIII.2.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Suma dwóch wyrazów"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Suma trzech wyrazów"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-mul-mono.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-addsub"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mnożąc jednomian przez sumę, mnożymy go przez każdy wyraz sumy osobno: 2x(x + 3) = 2x² + 6x."
+  }
+ }
+}

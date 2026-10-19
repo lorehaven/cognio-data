@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare-sources",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "item",
+   "expr": "choice(['zeszyt', 'długopis', 'plecak', 'piórnik', 'piłka'])"
+  },
+  {
+   "name": "p1",
+   "expr": "randint(3, 30)"
+  },
+  {
+   "name": "p2",
+   "expr": "randint(3, 30)"
+  }
+ ],
+ "constraints": [
+  "p1 != p2"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "W sklepie A cena towaru „@{item}” wynosi @{p1} zł, a w sklepie B – @{p2} zł. O ile złotych taniej kupisz w tańszym sklepie?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "abs(p1 - p2)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównaj dwie ceny i odejmij mniejszą od większej."
+   },
+   {
+    "kind": "compute",
+    "text": "@{max(p1, p2)} − @{min(p1, p2)} = @{abs(p1 - p2)}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-two",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   },
+   "minDistinct": 8
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   },
+   "minDistinct": 9
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   },
+   "minDistinct": 20
+  },
+  {
+   "level": 4,
+   "vars": {
+    "mode": "3"
+   },
+   "minDistinct": 10
+  }
+ ],
+ "vars": [
+  {
+   "name": "s",
+   "expr": "randint(3, 11)"
+  },
+  {
+   "name": "rel",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "e",
+   "expr": "randint(0, 8)"
+  },
+  {
+   "name": "e3",
+   "expr": "randint(0, 9)"
+  },
+  {
+   "name": "e2",
+   "expr": "randint(0, 11)"
+  },
+  {
+   "name": "c2t",
+   "expr": "['wypadną dwa orły', 'wypadną dwie reszki', 'wypadnie dokładnie jeden orzeł', 'wypadnie co najmniej jeden orzeł', 'wypadnie co najmniej jedna reszka', 'w obu rzutach wypadnie ten sam wynik', 'w rzutach wypadną różne wyniki', 'w pierwszym rzucie wypadnie orzeł', 'w pierwszym rzucie wypadnie orzeł, a w drugim reszka']"
+  },
+  {
+   "name": "c2n",
+   "expr": "[1, 1, 2, 3, 3, 2, 2, 2, 1]"
+  },
+  {
+   "name": "c3t",
+   "expr": "['wypadną trzy orły', 'wypadną trzy reszki', 'wypadną dokładnie dwa orły', 'wypadnie dokładnie jeden orzeł', 'wypadnie co najmniej jeden orzeł', 'wypadną co najmniej dwa orły', 'we wszystkich rzutach wypadnie ten sam wynik', 'wypadnie więcej orłów niż reszek', 'w pierwszym rzucie wypadnie orzeł', 'wypadną dokładnie dwie reszki']"
+  },
+  {
+   "name": "c3n",
+   "expr": "[1, 1, 3, 3, 7, 4, 2, 4, 4, 3]"
+  },
+  {
+   "name": "dt",
+   "expr": "['na obu kostkach wypadnie ta sama liczba oczek', 'iloczyn liczb oczek będzie parzysty', 'suma oczek będzie co najmniej 10', 'na co najmniej jednej kostce wypadnie szóstka', 'suma oczek będzie parzysta', 'suma oczek będzie mniejsza niż 6', 'iloczyn liczb oczek będzie nieparzysty', 'suma oczek będzie liczbą pierwszą', 'na pierwszej kostce wypadnie więcej oczek niż na drugiej', 'suma oczek będzie podzielna przez 3', 'na żadnej kostce nie wypadnie szóstka', 'na co najmniej jednej kostce wypadnie parzysta liczba oczek']"
+  },
+  {
+   "name": "dn",
+   "expr": "[6, 27, 6, 11, 18, 10, 9, 15, 15, 12, 25, 27]"
+  },
+  {
+   "name": "wq",
+   "expr": "6 - abs(s - 7) if rel == 0 else ((13 - s) * (14 - s) // 2 if (rel == 1 and s >= 7) else (36 - (s - 2) * (s - 1) // 2 if rel == 1 else ((s - 1) * s // 2 if s <= 7 else 36 - (12 - s) * (13 - s) // 2)))"
+  },
+  {
+   "name": "rt",
+   "expr": "['wyniesie ' + str(s), 'wyniesie co najmniej ' + str(s), 'wyniesie co najwyżej ' + str(s)][rel]"
+  },
+  {
+   "name": "ways",
+   "expr": "c2n[e] if mode == 0 else (c3n[e3] if mode == 1 else (wq if mode == 2 else dn[e2]))"
+  },
+  {
+   "name": "all",
+   "expr": "4 if mode == 0 else (8 if mode == 1 else 36)"
+  },
+  {
+   "name": "sol",
+   "expr": "ways / all"
+  },
+  {
+   "name": "txt",
+   "expr": "('Rzucamy dwa razy symetryczną monetą. Jakie jest prawdopodobieństwo, że ' + c2t[e] + '?') if mode == 0 else (('Rzucamy trzy razy symetryczną monetą. Jakie jest prawdopodobieństwo, że ' + c3t[e3] + '?') if mode == 1 else (('Rzucamy jednocześnie dwiema symetrycznymi sześciennymi kostkami do gry. Jakie jest prawdopodobieństwo, że suma oczek ' + rt + '?') if mode == 2 else ('Rzucamy jednocześnie dwiema symetrycznymi sześciennymi kostkami do gry. Jakie jest prawdopodobieństwo, że ' + dt[e2] + '?')))"
+  }
+ ],
+ "constraints": [
+  "denom(sol) != 1",
+  "ways > 0"
+ ],
+ "selfCheck": [
+  "mode != 2 or (wq >= 1 and wq <= 35)"
+ ],
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "@{txt} Podaj wynik jako ułamek nieskracalny.",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(sol)"
+   },
+   "den": {
+    "$expr": "denom(sol)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Wszystkich wyników jest 4: OO, OR, RO, RR.' if mode == 0 else ('Wszystkich wyników jest 8 (2 · 2 · 2). Wypisz wyniki sprzyjające.' if mode == 1 else 'Wszystkich wyników jest 36 (6 · 6). Wypisz wyniki sprzyjające.'))}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{ways} z @{all}, czyli $@{sol|frac}$"
+   }
+  ]
+ }
+}

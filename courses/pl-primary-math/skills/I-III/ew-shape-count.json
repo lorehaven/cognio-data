@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-shape-count",
+ "stage": "I-III",
+ "title": {
+  "pl": "Boki, wierzchołki, kąty"
+ },
+ "objectives": [
+  "I-III.3.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ile boków i wierzchołków?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-shape-count.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "prerequisites": [
+  "ew-shape-description"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Bok to odcinek, wierzchołek to róg. Trójkąt ma 3 boki i 3 wierzchołki, a kwadrat i prostokąt – po 4."
+  }
+ }
+}

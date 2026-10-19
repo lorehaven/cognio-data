@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-add-written",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dodawanie pisemne"
+ },
+ "objectives": [
+  "IV-VI.1.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 4 cyfr"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 6 cyfr"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Trzy składniki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-add-written.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-add-mental"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zapisz liczby jedna pod drugą: jedności pod jednościami. Dodawaj od prawej i pamiętaj o przeniesieniach do kolejnego rzędu."
+  }
+ }
+}

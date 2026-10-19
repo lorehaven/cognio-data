@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-lines-surroundings",
+ "stage": "I-III",
+ "title": {
+  "pl": "Proste równoległe i prostopadłe wokół nas"
+ },
+ "objectives": [
+  "I-III.3.f"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Rozpoznaj w otoczeniu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-lines-surroundings.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "tutor": {
+  "intro": {
+   "pl": "Proste równoległe są wszędzie tak samo oddalone i nigdy się nie spotykają, jak tory kolejowe. Proste prostopadłe przecinają się pod kątem prostym, jak rogi kartki."
+  }
+ }
+}

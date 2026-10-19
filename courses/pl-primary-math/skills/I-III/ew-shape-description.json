@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-shape-description",
+ "stage": "I-III",
+ "title": {
+  "pl": "Jaka to figura?"
+ },
+ "objectives": [
+  "I-III.3.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Poznaj figury płaskie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-shape-description.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "tutor": {
+  "intro": {
+   "pl": "Poznaj figury po cechach: trójkąt ma 3 boki, kwadrat ma 4 równe boki i proste kąty, prostokąt – 4 proste kąty, a koło nie ma boków."
+  }
+ }
+}

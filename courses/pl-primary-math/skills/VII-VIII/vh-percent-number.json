@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-percent-number",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Liczba, gdy znamy jej procent"
+ },
+ "objectives": [
+  "VII-VIII.1.1.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Procenty okrągłe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolne procenty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-percent-number.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-percent-of"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy znasz procent danej liczby, znajdź 1% (podziel przez liczbę procent), a potem pomnóż przez 100, aby otrzymać całość."
+  }
+ }
+}

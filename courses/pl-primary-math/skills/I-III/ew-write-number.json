@@ -1,0 +1,58 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-write-number",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zapisz liczbę cyframi"
+ },
+ "objectives": [
+  "I-III.1.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 1000"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Do 10 000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-write-number.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Liczby zapisujemy cyframi. Cyfra stoi na swoim miejscu: jedności, dziesiątki, setki, tysiące. Zero oznacza, że w danym rzędzie nic nie ma."
+  }
+ }
+}

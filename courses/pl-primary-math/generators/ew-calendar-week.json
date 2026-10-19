@@ -1,0 +1,93 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-calendar-week",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "back": "0"
+   },
+   "minDistinct": 30
+  },
+  {
+   "level": 2,
+   "vars": {
+    "back": "1"
+   },
+   "minDistinct": 30
+  }
+ ],
+ "vars": [
+  {
+   "name": "days",
+   "expr": "['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela']"
+  },
+  {
+   "name": "t",
+   "expr": "randint(0, 6)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "r",
+   "expr": "(t - n) % 7 if back == 1 else (t + n) % 7"
+  },
+  {
+   "name": "txt",
+   "expr": "('Dziś jest ' + days[t] + '. Jaki dzień tygodnia będzie za ' + pln(n, ['dzień', 'dni', 'dni']) + '?') if back == 0 else ('Dziś jest ' + days[t] + '. Jaki dzień tygodnia był ' + pln(n, ['dzień', 'dni', 'dni']) + ' temu?')"
+  }
+ ],
+ "constraints": [
+  "(days[r]) != (days[(r + 1) % 7])",
+  "(days[r]) != (days[(r + 2) % 7])",
+  "(days[r]) != (days[(r + 6) % 7])",
+  "(days[(r + 1) % 7]) != (days[(r + 2) % 7])",
+  "(days[(r + 1) % 7]) != (days[(r + 6) % 7])",
+  "(days[(r + 2) % 7]) != (days[(r + 6) % 7])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Tydzień ma 7 dni: poniedziałek, wtorek, środa, czwartek, piątek, sobota, niedziela. Przesuwaj się po jednym dniu."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{days[r]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{days[r]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{days[(r + 1) % 7]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{days[(r + 2) % 7]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{days[(r + 6) % 7]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-to-mixed",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dmax": "6"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dmax": "12"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "randint(2, dmax)"
+  },
+  {
+   "name": "w",
+   "expr": "randint(1, 6)"
+  },
+  {
+   "name": "r",
+   "expr": "randint(1, d - 1)"
+  },
+  {
+   "name": "n",
+   "expr": "w * d + r"
+  }
+ ],
+ "constraints": [
+  "gcd(r, d) == 1"
+ ],
+ "selfCheck": [
+  "w * d + r == n"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "mixed-number-input",
+  "prompt": "Zapisz ułamek niewłaściwy $\\frac{@{n}}{@{d}}$ w postaci liczby mieszanej.",
+  "answer": {
+   "type": "mixed",
+   "whole": {
+    "$expr": "w"
+   },
+   "num": {
+    "$expr": "r"
+   },
+   "den": {
+    "$expr": "d"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielimy licznik przez mianownik z resztą: iloraz to część całkowita, reszta to nowy licznik."
+   },
+   {
+    "kind": "compute",
+    "text": "@{n} : @{d} = @{w} r @{r}, więc $\\frac{@{n}}{@{d}} = @{w}\\frac{@{r}}{@{d}}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "forget_rest",
+    "answer": {
+     "type": "mixed",
+     "whole": {
+      "$expr": "w"
+     },
+     "num": {
+      "$expr": "r"
+     },
+     "den": {
+      "$expr": "n"
+     }
+    },
+    "feedback": "Mianownik zostaje taki sam jak w ułamku niewłaściwym."
+   }
+  ]
+ }
+}

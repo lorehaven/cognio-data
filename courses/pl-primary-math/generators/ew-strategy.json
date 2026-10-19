@@ -1,0 +1,120 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-strategy",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "op": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "op": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(20, 60)"
+  },
+  {
+   "name": "y0",
+   "expr": "randint(2, 5) * 10"
+  },
+  {
+   "name": "dl",
+   "expr": "randint(1, 2)"
+  },
+  {
+   "name": "y",
+   "expr": "y0 - dl"
+  },
+  {
+   "name": "sg",
+   "expr": "'+' if op == 0 else '−'"
+  },
+  {
+   "name": "inv",
+   "expr": "'−' if op == 0 else '+'"
+  },
+  {
+   "name": "base",
+   "expr": "str(x) + ' ' + sg + ' ' + str(y) + ' = ' + str(x) + ' ' + sg + ' ' + str(y0) + ' '"
+  },
+  {
+   "name": "good",
+   "expr": "base + inv + ' ' + str(dl)"
+  },
+  {
+   "name": "w1",
+   "expr": "base + sg + ' ' + str(dl)"
+  },
+  {
+   "name": "w2",
+   "expr": "base + inv + ' ' + str(dl + 1)"
+  },
+  {
+   "name": "w3",
+   "expr": "base + sg + ' ' + str(dl + 1)"
+  }
+ ],
+ "constraints": [
+  "op == 0 or x > y",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "selfCheck": [
+  "op == 1 or (x + y == x + y0 - dl)",
+  "op == 0 or (x - y == x - y0 + dl)"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Jak wygodnie obliczyć @{x} @{sg} @{y}? Wskaż poprawny zapis.",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{y} to prawie @{y0}: brakuje @{dl}. Policz z okrągłą liczbą, a potem popraw wynik o @{dl}."
+   },
+   {
+    "kind": "conclude",
+    "text": "Poprawny zapis: @{good}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-word",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Zadania tekstowe i równania"
+ },
+ "objectives": [
+  "VII-VIII.2.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kolejne liczby i obwód"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczba zagadka"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Bilety i monety (dwa równania w jednym)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-eq-word.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-eq-solve"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W zadaniu tekstowym oznacz niewiadomą literą, zapisz warunek jako równanie, rozwiąż je i sprawdź, czy wynik pasuje do treści."
+  }
+ }
+}

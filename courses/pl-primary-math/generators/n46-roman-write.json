@@ -1,0 +1,83 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-roman-write",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "2",
+    "hi": "39"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "41",
+    "hi": "399"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "401",
+    "hi": "2990"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(lo, hi)"
+  }
+ ],
+ "constraints": [
+  "(roman(n)) != (roman(n + 1))",
+  "(roman(n)) != (roman(n - 1))",
+  "(roman(n)) != (roman(n + 10))",
+  "(roman(n + 1)) != (roman(n - 1))",
+  "(roman(n + 1)) != (roman(n + 10))",
+  "(roman(n - 1)) != (roman(n + 10))"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który zapis rzymski przedstawia liczbę @{n|int}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Rozkładamy liczbę na tysiące, setki, dziesiątki i jedności i zapisujemy każdą część cyframi rzymskimi."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{n|int} = @{roman(n)}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{roman(n)}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{roman(n + 1)}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{roman(n - 1)}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{roman(n + 10)}",
+    "correct": "false"
+   }
+  ]
+ }
+}

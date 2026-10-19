@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-minimal-argument",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Uzasadnienie bez zbędnych argumentów"
+ },
+ "objectives": [
+  "VII-VIII.5.2.b"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Krótkie uzasadnienie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-minimal-argument.jsonl"
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-justify-right"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dobre uzasadnienie zawiera tylko niezbędne kroki. Sprawdzenie kilku przykładów nie jest dowodem – potrzebny jest argument ogólny."
+  }
+ }
+}

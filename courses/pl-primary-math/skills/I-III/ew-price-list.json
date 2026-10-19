@@ -1,0 +1,53 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-price-list",
+ "stage": "I-III",
+ "title": {
+  "pl": "Cennik"
+ },
+ "objectives": [
+  "I-III.4.b",
+  "I-III.5.a"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ile kosztują oba?"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "O ile różnią się ceny?"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Reszta z 20 zł"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-price-list.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.4",
+ "tutor": {
+  "intro": {
+   "pl": "Cennik pokazuje ceny towarów. Odszukaj potrzebne pozycje i dodaj ich ceny."
+  }
+ }
+}

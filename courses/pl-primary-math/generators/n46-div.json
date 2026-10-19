@@ -1,0 +1,110 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-div",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "qlo": "2",
+    "qhi": "33",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "qlo": "34",
+    "qhi": "333",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "qlo": "100",
+    "qhi": "1111",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "qlo": "2",
+    "qhi": "99",
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 5,
+   "vars": {
+    "qlo": "2",
+    "qhi": "99",
+    "blo": "101",
+    "bhi": "300"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(qlo, qhi)"
+  },
+  {
+   "name": "a",
+   "expr": "b * q"
+  }
+ ],
+ "selfCheck": [
+  "q * b == a"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a|int} : @{b|int}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielenie sprawdzamy mnożeniem: wynik · dzielnik = dzielna."
+   },
+   {
+    "kind": "compute",
+    "text": "@{q|int} · @{b|int} = @{a|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "off_by_one",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "q + 1"
+     }
+    },
+    "feedback": "Sprawdź mnożeniem: wynik razy dzielnik powinien dać dzielną."
+   },
+   {
+    "id": "digit_zero",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "q * 10"
+     }
+    },
+    "feedback": "Sprawdź, ile cyfr powinien mieć wynik (oszacuj)."
+   }
+  ]
+ }
+}

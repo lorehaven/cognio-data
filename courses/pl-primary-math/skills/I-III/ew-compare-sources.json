@@ -1,0 +1,38 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare-sources",
+ "stage": "I-III",
+ "title": {
+  "pl": "Gdzie taniej?"
+ },
+ "objectives": [
+  "I-III.4.b"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa sklepy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-compare-sources.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.4",
+ "tutor": {
+  "intro": {
+   "pl": "Żeby sprawdzić, gdzie taniej, porównaj ceny tego samego towaru. Różnicę obliczysz, odejmując mniejszą cenę od większej."
+  }
+ }
+}

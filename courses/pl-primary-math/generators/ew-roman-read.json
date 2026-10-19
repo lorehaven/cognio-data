@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-roman-read",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(1, 12)"
+  },
+  {
+   "name": "rom",
+   "expr": "roman(n)"
+  }
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Na tarczy zegara napisano @{rom}. Jaka to liczba?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "n"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "I = 1, V = 5, X = 10. Gdy mniejsza cyfra stoi przed większą, odejmujemy (IV = 4, IX = 9)."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{rom} = @{n}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-number-line",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek na osi liczbowej"
+ },
+ "objectives": [
+  "IV-VI.1.21"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Między 0 i 1"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Między 0 i 2"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-number-line.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-part-figure"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Na osi liczbowej jedną jednostkę dzielimy na równe części. Policz, ile części mieści się w jednostce – to mianownik – a potem ile części od zera."
+  }
+ }
+}

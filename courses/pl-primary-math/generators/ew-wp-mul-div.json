@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wp-mul-div",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "it",
+   "expr": "choice([['jabłko', 'jabłka', 'jabłek'], ['ciastko', 'ciastka', 'ciastek'], ['naklejka', 'naklejki', 'naklejek'], ['kredka', 'kredki', 'kredek'], ['klocek', 'klocki', 'klocków'], ['cukierek', 'cukierki', 'cukierków']])"
+  },
+  {
+   "name": "p",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "q",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Kupiono ' + pln(a, ['paczkę', 'paczki', 'paczek']) + ' po ' + pln(b, it) + '. Ile ' + it[2] + ' kupiono razem?') if k == 0 else (('Rozdzielono po równo ' + pln(a * b, it) + ' między ' + pln(a, ['osobę', 'osoby', 'osób']) + '. Ile ' + it[2] + ' dostała każda osoba?') if k == 1 else (p[0] + ' ma ' + pln(a * b, it) + ', a ' + q[0] + ' ma ' + pln(b, it) + '. Ile razy więcej ' + it[2] + ' ma ' + p[0] + '?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "a * b if k == 0 else (b if k == 1 else a)"
+  }
+ ],
+ "constraints": [
+  "p[0] != q[0]",
+  "a != b"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Mamy kilka takich samych grup – mnożymy.' if k == 0 else ('Dzielimy po równo – dzielimy.' if k == 1 else 'Pytanie „ile razy więcej” – dzielimy większą liczbę przez mniejszą.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "@{(str(a) + ' · ' + str(b) + ' = ' + str(a * b) if k == 0 else (str(a * b) + ' : ' + str(a) + ' = ' + str(b) if k == 1 else str(a * b) + ' : ' + str(b) + ' = ' + str(a)))}"
+   }
+  ]
+ }
+}

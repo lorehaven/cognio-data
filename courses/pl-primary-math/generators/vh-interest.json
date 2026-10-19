@@ -1,0 +1,83 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-interest",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "cap",
+   "expr": "100 * randint(5, 100)"
+  },
+  {
+   "name": "rate",
+   "expr": "choice([2, 3, 4, 5, 6, 8])"
+  },
+  {
+   "name": "tax",
+   "expr": "choice([8, 19, 23])"
+  },
+  {
+   "name": "net",
+   "expr": "100 * randint(5, 200)"
+  },
+  {
+   "name": "fee",
+   "expr": "choice([2, 3, 5])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Wpłacasz ' + fmt(cap) + ' zł na lokatę roczną oprocentowaną ' + str(rate) + '% w skali roku. Ile złotych odsetek otrzymasz po roku (bez podatku)?') if mode == 0 else (('Cena towaru bez podatku wynosi ' + fmt(net) + ' zł. Podatek VAT to ' + str(tax) + '%. Ile złotych wynosi podatek?') if mode == 1 else ('Pożyczasz ' + fmt(cap) + ' zł. Bank pobiera prowizję ' + str(fee) + '% pożyczonej kwoty. Ile złotych wynosi prowizja?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "cap * rate / 100 if mode == 0 else (net * tax / 100 if mode == 1 else cap * fee / 100)"
+  }
+ ],
+ "constraints": [
+  "denom(ans) in divisors(100)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odsetki, podatek i prowizja to procent pewnej kwoty: pomnóż kwotę przez p/100."
+   },
+   {
+    "kind": "compute",
+    "text": "Odpowiedź: @{ans|dec:2} zł."
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  }
+ }
+}

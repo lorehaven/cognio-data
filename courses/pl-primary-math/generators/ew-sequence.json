@@ -1,0 +1,86 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-sequence",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   },
+   "minDistinct": 20
+  },
+  {
+   "level": 4,
+   "vars": {
+    "kind": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "st",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "s0",
+   "expr": "randint(30, 60) if kind == 1 else (randint(1, 25) if kind == 2 else randint(1, 10))"
+  },
+  {
+   "name": "inc",
+   "expr": "randint(1, 3)"
+  },
+  {
+   "name": "mm",
+   "expr": "choice([2, 2, 3])"
+  },
+  {
+   "name": "seq",
+   "expr": "[s0, s0 + st, s0 + 2 * st, s0 + 3 * st, s0 + 4 * st] if kind == 0 else ([s0, s0 - st, s0 - 2 * st, s0 - 3 * st, s0 - 4 * st] if kind == 1 else ([s0, s0 * mm, s0 * mm * mm, s0 * pow(mm, 3), s0 * pow(mm, 4)] if kind == 2 else [s0, s0 + inc, s0 + 3 * inc, s0 + 6 * inc, s0 + 10 * inc]))"
+  },
+  {
+   "name": "shown",
+   "expr": "take(seq, 4)"
+  },
+  {
+   "name": "nxt",
+   "expr": "seq[4]"
+  }
+ ],
+ "constraints": [
+  "kind != 2 or s0 * pow(mm, 4) <= 400",
+  "kind != 1 or seq[4] > 0"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaka liczba będzie następna? @{shown|list}, ___",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "nxt"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Dodajemy ciągle tę samą liczbę.' if kind == 0 else ('Odejmujemy ciągle tę samą liczbę.' if kind == 1 else ('Każda liczba jest ' + str(mm) + ' razy większa od poprzedniej.' if kind == 2 else 'Dodajemy coraz więcej: 1, 2, 3, 4… razy to samo.')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Następna liczba: @{nxt}."
+   }
+  ]
+ }
+}

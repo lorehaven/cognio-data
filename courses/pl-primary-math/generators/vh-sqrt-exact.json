@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sqrt-exact",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   },
+   "minDistinct": 14
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   },
+   "minDistinct": 20
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   },
+   "minDistinct": 20
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 10)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "sg",
+   "expr": "choice([1, -1])"
+  },
+  {
+   "name": "fr",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "('\\\\sqrt{' + str(pow(a, 2)) + '}') if mode == 0 else ((('\\\\sqrt[3]{' + str(sg * pow(c, 3)) + '}') if fr == 0 else ('\\\\sqrt[3]{\\\\frac{' + str(pow(c, 3)) + '}{' + str(pow(d, 3)) + '}}')) if mode == 1 else '\\\\sqrt{\\\\frac{' + str(pow(b, 2)) + '}{' + str(pow(a, 2)) + '}}')"
+  },
+  {
+   "name": "v",
+   "expr": "a if mode == 0 else ((sg * c if fr == 0 else c / d) if mode == 1 else b / a)"
+  }
+ ],
+ "constraints": [
+  "mode != 2 or (gcd(a, b) == 1 and a != b)",
+  "mode != 1 or fr == 0 or (gcd(c, d) == 1 and c != d)"
+ ],
+ "minDistinct": 14,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Oblicz: $@{txt}$",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(v)"
+   },
+   "den": {
+    "$expr": "denom(v)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Szukamy liczby, której kwadrat jest równy liczbie pod pierwiastkiem.' if mode != 1 else 'Szukamy liczby, której sześcian jest równy liczbie pod pierwiastkiem (może być ujemna).')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: $@{v|frac}$"
+   }
+  ]
+ }
+}

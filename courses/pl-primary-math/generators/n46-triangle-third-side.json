@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-third-side",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "lo",
+   "expr": "abs(a - b) + 1"
+  },
+  {
+   "name": "hi",
+   "expr": "a + b - 1"
+  }
+ ],
+ "constraints": [
+  "a != b"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Dwa boki trójkąta mają długości @{a} cm i @{b} cm. Trzeci bok ma całkowitą długość w centymetrach. Ile różnych długości może mieć trzeci bok?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "hi - lo + 1"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Trzeci bok musi być krótszy niż suma dwóch boków i dłuższy niż ich różnica."
+   },
+   {
+    "kind": "compute",
+    "text": "Od @{lo} do @{hi} cm: to @{hi - lo + 1} możliwości."
+   }
+  ]
+ }
+}

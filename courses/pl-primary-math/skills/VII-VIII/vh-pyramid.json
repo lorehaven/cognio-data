@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyramid",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Ostrosłupy prawidłowe czworokątne: objętość i pole powierzchni"
+ },
+ "objectives": [
+  "VII-VIII.3.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Objętość z wysokości"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pole powierzchni z wysokości ściany"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Pole powierzchni z wysokości ostrosłupa"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Objętość z wysokości ściany"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-pyramid.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-pyramid-heights",
+  "vh-prism"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Objętość ostrosłupa to jedna trzecia pola podstawy razy wysokość. Pole powierzchni to pole podstawy plus pola ścian bocznych."
+  }
+ }
+}

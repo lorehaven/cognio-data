@@ -1,0 +1,233 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-rhombus-trapezoid",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "e",
+   "expr": "2 * randint(2, 10)"
+  },
+  {
+   "name": "f",
+   "expr": "randint(2, 14)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(3, 14)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 14)"
+  },
+  {
+   "name": "h",
+   "expr": "2 * randint(1, 6)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "ar",
+   "expr": "e * f / 2 if mode == 0 else (a + b) * h / 2"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or a != b"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{('Przekątne rombu mają długości ' + str(e) + ' ' + un + ' i ' + str(f) + ' ' + un + '. Oblicz pole rombu.' if mode == 0 else 'Podstawy trapezu mają ' + str(a) + ' ' + un + ' i ' + str(b) + ' ' + un + ', a jego wysokość ' + str(h) + ' ' + un + '. Oblicz pole trapezu.')}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ar"
+   },
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Pole rombu = połowa iloczynu przekątnych.' if mode == 0 else 'Pole trapezu = połowa iloczynu sumy podstaw i wysokości.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(e) + ' · ' + str(f) + ' : 2 = ' + fmt(ar) if mode == 0 else '(' + str(a) + ' + ' + str(b) + ') · ' + str(h) + ' : 2 = ' + fmt(ar))}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Romb z przekątnymi.",
+    "params": {
+     "pts": [
+      [
+       {
+        "$expr": "e / 2"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "e"
+       },
+       {
+        "$expr": "f / 2"
+       }
+      ],
+      [
+       {
+        "$expr": "e / 2"
+       },
+       {
+        "$expr": "f"
+       }
+      ],
+      [
+       0,
+       {
+        "$expr": "f / 2"
+       }
+      ]
+     ],
+     "segments": [
+      {
+       "from": [
+        0,
+        {
+         "$expr": "f / 2"
+        }
+       ],
+       "to": [
+        {
+         "$expr": "e"
+        },
+        {
+         "$expr": "f / 2"
+        }
+       ],
+       "text": {
+        "$expr": "str(e) + ' ' + un"
+       }
+      },
+      {
+       "from": [
+        {
+         "$expr": "e / 2"
+        },
+        0
+       ],
+       "to": [
+        {
+         "$expr": "e / 2"
+        },
+        {
+         "$expr": "f"
+        }
+       ],
+       "text": {
+        "$expr": "str(f) + ' ' + un"
+       }
+      }
+     ]
+    },
+    "when": "mode == 0"
+   },
+   {
+    "type": "figure",
+    "kind": "polygon",
+    "essential": false,
+    "alt": "Trapez z podstawami i wysokością.",
+    "params": {
+     "pts": [
+      [
+       0,
+       0
+      ],
+      [
+       {
+        "$expr": "max(a, b)"
+       },
+       0
+      ],
+      [
+       {
+        "$expr": "(max(a, b) + min(a, b)) / 2"
+       },
+       {
+        "$expr": "h"
+       }
+      ],
+      [
+       {
+        "$expr": "(max(a, b) - min(a, b)) / 2"
+       },
+       {
+        "$expr": "h"
+       }
+      ]
+     ],
+     "sides": [
+      {
+       "i": 0,
+       "text": {
+        "$expr": "str(max(a, b)) + ' ' + un"
+       }
+      },
+      {
+       "i": 2,
+       "text": {
+        "$expr": "str(min(a, b)) + ' ' + un"
+       }
+      }
+     ],
+     "segments": [
+      {
+       "from": [
+        {
+         "$expr": "(max(a, b) - min(a, b)) / 2"
+        },
+        {
+         "$expr": "h"
+        }
+       ],
+       "to": [
+        {
+         "$expr": "(max(a, b) - min(a, b)) / 2"
+        },
+        0
+       ],
+       "text": {
+        "$expr": "str(h) + ' ' + un"
+       }
+      }
+     ]
+    },
+    "when": "mode == 1"
+   }
+  ]
+ }
+}

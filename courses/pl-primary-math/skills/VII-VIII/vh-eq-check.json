@@ -1,0 +1,62 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-check",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Czy liczba jest rozwiązaniem równania?"
+ },
+ "objectives": [
+  "VII-VIII.2.9",
+  "VII-VIII.2.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Równanie pierwszego stopnia"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Równanie drugiego stopnia"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Równanie trzeciego stopnia"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Rozwiązanie ułamkowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-eq-check.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-evaluate"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby sprawdzić, czy liczba jest rozwiązaniem równania, wstaw ją w miejsce x po obu stronach. Jeśli wyniki są równe – jest rozwiązaniem."
+  }
+ }
+}

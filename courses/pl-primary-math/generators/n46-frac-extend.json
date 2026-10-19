@@ -1,0 +1,86 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-extend",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mhi": "30"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mhi": "100"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, mhi // b)"
+  },
+  {
+   "name": "m",
+   "expr": "b * k"
+  }
+ ],
+ "constraints": [
+  "gcd(a, b) == 1",
+  "k >= 2"
+ ],
+ "selfCheck": [
+  "a * k * b == a * m"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Rozszerz ułamek $\\frac{@{a}}{@{b}}$ tak, aby jego mianownik był równy @{m}. Jaki będzie licznik?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a * k"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mianownik pomnożono przez @{k} (bo @{b} · @{k} = @{m}), więc licznik też mnożymy przez @{k}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} · @{k} = @{a * k}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "add",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a + k"
+     }
+    },
+    "feedback": "Rozszerzanie to mnożenie licznika i mianownika przez tę samą liczbę – nie dodawanie."
+   },
+   {
+    "id": "unchanged",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a"
+     }
+    },
+    "feedback": "Licznik też trzeba zmienić, żeby wartość ułamka została taka sama."
+   }
+  ]
+ }
+}

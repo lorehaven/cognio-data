@@ -1,0 +1,49 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-wp-two-step",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zadania tekstowe: dwa kroki"
+ },
+ "objectives": [
+  "I-III.5.b",
+  "I-III.5.c"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Zakupy i reszta"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwie grupy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-wp-two-step.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "prerequisites": [
+  "ew-wp-mul-div"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zadanie dwuetapowe rozwiązujesz w dwóch krokach. Najpierw policz pierwszy wynik, potem użyj go w drugim działaniu."
+  }
+ }
+}

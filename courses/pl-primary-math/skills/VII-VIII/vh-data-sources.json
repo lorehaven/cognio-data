@@ -1,0 +1,34 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-data-sources",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Źródła i wiarygodność danych"
+ },
+ "objectives": [
+  "VII-VIII.4.1"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wiarygodne dane"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/vh-data-sources.jsonl"
+  }
+ ],
+ "area": "VII-VIII.4",
+ "tutor": {
+  "intro": {
+   "pl": "Zanim wyciągniesz wniosek z danych, sprawdź, skąd pochodzą, kto je zebrał, ile ich jest i czy próba jest reprezentatywna."
+  }
+ }
+}

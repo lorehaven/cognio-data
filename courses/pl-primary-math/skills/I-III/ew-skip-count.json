@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-skip-count",
+ "stage": "I-III",
+ "title": {
+  "pl": "Liczenie co 2, co 5, co 10…"
+ },
+ "objectives": [
+  "I-III.1.d"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "W przód do 100"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "W tył do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Przez zero w stronę liczb ujemnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-skip-count.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Liczenie co 2, co 5 czy co 10 to dodawanie tej samej liczby w kółko: 5, 10, 15, 20… Tak działa też tabliczka mnożenia."
+  }
+ }
+}

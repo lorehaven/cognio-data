@@ -1,0 +1,70 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-exists",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 25)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['cm', 'dm', 'm'])"
+  },
+  {
+   "name": "ok",
+   "expr": "a + b > c and a + c > b and b + c > a"
+  }
+ ],
+ "constraints": [
+  "a + b + c - max([a, b, c]) != max([a, b, c])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Czy z odcinków o długościach @{a} @{un}, @{b} @{un} i @{c} @{un} można zbudować trójkąt?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (ok) else []) + (['b'] if (not ok) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Trójkąt istnieje, gdy każdy bok jest krótszy niż suma dwóch pozostałych. Wystarczy sprawdzić najdłuższy bok."
+   },
+   {
+    "kind": "compute",
+    "text": "Najdłuższy bok: @{max([a, b, c])}, suma pozostałych: @{a + b + c - max([a, b, c])}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Tak",
+    "correct": "ok"
+   },
+   {
+    "id": "b",
+    "text": "Nie",
+    "correct": "not ok"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

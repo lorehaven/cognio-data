@@ -1,0 +1,52 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-nim",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(6, 20)"
+  },
+  {
+   "name": "first",
+   "expr": "n % (k + 1)"
+  }
+ ],
+ "constraints": [
+  "first != 0"
+ ],
+ "minDistinct": 10,
+ "task": {
+  "kind": "number-input",
+  "prompt": "W grze są @{n} patyczków. Gracze na zmianę zabierają od 1 do @{k} patyczków. Wygrywa ten, kto zabierze ostatni patyczek. Ty zaczynasz. Ile patyczków zabierzesz na początku, żeby wygrać?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "first"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Doprowadź do sytuacji, w której zostanie liczba patyczków podzielna przez @{k + 1}: wtedy rywal nie może wygrać."
+   },
+   {
+    "kind": "conclude",
+    "text": "Zabierasz @{first}, zostaje @{n - first}. Potem odpowiadasz tak, aby razem z rywalem zabrać zawsze @{k + 1}."
+   }
+  ]
+ }
+}

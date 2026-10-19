@@ -1,0 +1,107 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-estimate-sum",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pw": "100",
+    "lo": "1000",
+    "hi": "9999"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pw": "1000",
+    "lo": "10000",
+    "hi": "99999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(lo // 4, hi // 2)"
+  },
+  {
+   "name": "plus",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "ra",
+   "expr": "(a + pw // 2) // pw * pw"
+  },
+  {
+   "name": "rb",
+   "expr": "(b + pw // 2) // pw * pw"
+  },
+  {
+   "name": "est",
+   "expr": "ra + rb if plus else ra - rb"
+  },
+  {
+   "name": "sign",
+   "expr": "'+' if plus else '−'"
+  }
+ ],
+ "constraints": [
+  "a > b",
+  "est > pw",
+  "(est) != (est + pw)",
+  "(est) != (est - pw)",
+  "(est) != (est * 10)",
+  "(est + pw) != (est - pw)",
+  "(est + pw) != (est * 10)",
+  "(est - pw) != (est * 10)"
+ ],
+ "selfCheck": [
+  "abs((a + b if plus else a - b) - est) <= pw"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Oszacuj wynik działania @{a|int} @{sign} @{b|int}, zaokrąglając składniki do @{('setek' if pw == 100 else 'tysięcy')}. Który wynik jest najlepszy?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zaokrąglamy obie liczby: @{a|int} ≈ @{ra|int}, @{b|int} ≈ @{rb|int}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{ra|int} @{sign} @{rb|int} = @{est|int}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{est|int}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{est + pw|int}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{est - pw|int}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{est * 10|int}",
+    "correct": "false"
+   }
+  ]
+ }
+}

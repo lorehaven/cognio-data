@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-root-multiply",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "r",
+   "expr": "choice([2, 3, 5, 6, 7])"
+  },
+  {
+   "name": "s",
+   "expr": "choice([2, 3, 5])"
+  },
+  {
+   "name": "txt",
+   "expr": "'\\\\sqrt{' + str(a * a * r) + '} \\\\cdot \\\\sqrt{' + str(b * b * r) + '}' if mode == 0 else '\\\\sqrt{' + str(a * a * b * b * s) + '} : \\\\sqrt{' + str(s) + '}'"
+  },
+  {
+   "name": "v",
+   "expr": "a * b * r if mode == 0 else a * b"
+  },
+  {
+   "name": "rule",
+   "expr": "'Mnożymy liczby pod pierwiastkiem: $\\\\sqrt{x} \\\\cdot \\\\sqrt{y} = \\\\sqrt{xy}$.' if mode == 0 else 'Dzielimy liczby pod pierwiastkiem: $\\\\sqrt{x} : \\\\sqrt{y} = \\\\sqrt{x : y}$.'"
+  }
+ ],
+ "constraints": [
+  "mode != 0 or (a * a * r < 500 and b * b * r < 500)",
+  "mode != 1 or a * a * b * b * s < 2000"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: $@{txt}$",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{rule}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{v}."
+   }
+  ]
+ }
+}

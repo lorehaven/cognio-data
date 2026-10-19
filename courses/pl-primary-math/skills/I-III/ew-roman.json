@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-roman",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zapisz liczbę po rzymsku"
+ },
+ "objectives": [
+  "I-III.1.n"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby od 1 do 12"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-roman.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-roman-read"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Cyfry rzymskie: I = 1, V = 5, X = 10, L = 50, C = 100. Zapisz liczbę, dodając cyfry od największej, a 4 i 9 zapisz z odejmowaniem (IV, IX)."
+  }
+ }
+}

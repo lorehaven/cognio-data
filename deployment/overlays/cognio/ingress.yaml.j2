@@ -1,0 +1,19 @@
+# Public, because the app downloads from mobile networks. Everything served is a course pack or a model catalog:
+# not confidential, read-only, no authentication.
+- kind: ingress
+  immutable: true
+  name: cognio
+  issuer_name: letsencrypt-prod
+  secret_name: cognio
+  force_ssl_redirect: true
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+  routes:
+    - host: ennor.ddns.net
+      paths:
+        # No rewrite: the app owns the /cognio prefix itself (see COGNIO_BASE_PATH), so the full path is passed through.
+        - path: /cognio
+          pathType: Prefix
+          service_name: cognio-server
+          service_port: 8080

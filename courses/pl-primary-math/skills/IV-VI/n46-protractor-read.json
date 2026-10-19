@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-protractor-read",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odczytaj miarę kąta"
+ },
+ "objectives": [
+  "IV-VI.2.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne dziesiątki stopni"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolna liczba stopni"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-protractor-read.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "tutor": {
+  "intro": {
+   "pl": "Ustaw środek kątomierza w wierzchołku kąta, a jedno ramię na zerze skali. Odczytaj wartość tam, gdzie leży drugie ramię – pilnuj właściwej skali."
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-solid-counts",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wierzchołki, krawędzie i ściany graniastosłupów i ostrosłupów"
+ },
+ "objectives": [
+  "VII-VIII.3.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Graniastosłup prosty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ostrosłup prawidłowy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Jaki wielokąt w podstawie?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-solid-counts.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-solid-elements"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Graniastosłup n-kątny ma 2n wierzchołków, 3n krawędzi i n + 2 ściany; ostrosłup n-kątny ma n + 1 wierzchołków, 2n krawędzi i n + 1 ścian."
+  }
+ }
+}

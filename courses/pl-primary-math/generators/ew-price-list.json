@@ -1,0 +1,104 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-price-list",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "shuffle(['bułka', 'sok', 'jogurt', 'ciastko', 'banan', 'woda', 'kanapka'])"
+  },
+  {
+   "name": "pr",
+   "expr": "sample(1, 9, 4)"
+  },
+  {
+   "name": "rows",
+   "expr": "[[names[0], pr[0]], [names[1], pr[1]], [names[2], pr[2]], [names[3], pr[3]]]"
+  },
+  {
+   "name": "a",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "pair",
+   "expr": "names[a] + ' i ' + names[b]"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ile zapłacisz za dwa produkty z cennika: ' + pair + '?') if ask == 0 else (('O ile złotych różnią się ceny produktów: ' + pair + '?') if ask == 1 else ('Kupujesz dwa produkty z cennika: ' + pair + ', i płacisz banknotem 20 zł. Ile reszty dostaniesz?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "pr[a] + pr[b] if ask == 0 else (abs(pr[b] - pr[a]) if ask == 1 else 20 - pr[a] - pr[b])"
+  }
+ ],
+ "constraints": [
+  "a != b",
+  "ask != 1 or pr[b] != pr[a]"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Przeczytaj cennik w szkolnym sklepiku. @{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Dodaj ceny obu produktów.' if ask == 0 else ('Od większej ceny odejmij mniejszą.' if ask == 1 else 'Dodaj ceny, a potem odejmij od 20 zł.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans} zł."
+   }
+  ],
+  "input": {
+   "unit": "zł"
+  },
+  "media": [
+   {
+    "type": "table",
+    "kind": "table",
+    "essential": true,
+    "alt": "Cennik w sklepiku szkolnym.",
+    "params": {
+     "headers": [
+      "Towar",
+      "Cena (zł)"
+     ],
+     "rows": {
+      "$expr": "rows"
+     }
+    }
+   }
+  ]
+ }
+}

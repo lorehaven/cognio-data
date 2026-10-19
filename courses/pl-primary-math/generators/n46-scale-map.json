@@ -1,0 +1,67 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-scale-map",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ss": "[10, 20, 50, 100, 200, 500, 1000]",
+    "un": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ss": "[10000, 20000, 25000, 50000, 100000]",
+    "un": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "sc",
+   "expr": "choice(ss)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 30)"
+  },
+  {
+   "name": "map_cm",
+   "expr": "k"
+  },
+  {
+   "name": "real",
+   "expr": "map_cm * sc"
+  },
+  {
+   "name": "rtxt",
+   "expr": "fmt(real / 100) + ' m' if un == 0 else fmt(real / 100000) + ' km'"
+  }
+ ],
+ "constraints": [
+  "denom(real / 100) in divisors(100)",
+  "denom(real / 100000) in divisors(1000000)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Skala wynosi 1 : @{sc|int}. Rzeczywista odległość to @{rtxt}. Ile centymetrów ma ta odległość na rysunku?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "map_cm"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zamień rzeczywistą odległość na centymetry i podziel przez @{sc|int}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{real|int} cm : @{sc|int} = @{map_cm} cm"
+   }
+  ]
+ }
+}

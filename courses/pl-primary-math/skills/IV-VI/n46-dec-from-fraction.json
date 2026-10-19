@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-from-fraction",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek zwykły na dziesiętny"
+ },
+ "objectives": [
+  "IV-VI.1.23"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mianowniki 10 i 100"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mianownik 1000"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Rozszerzanie do 10, 100, 1000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-from-fraction.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-extend",
+  "n46-dec-place-value"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Ułamek o mianowniku 10, 100 lub 1000 zapisujemy od razu dziesiętnie: $\\frac{7}{100} = 0{,}07$. Inne mianowniki (np. 4, 5, 20, 25) rozszerzamy do 10, 100 lub 1000."
+  }
+ }
+}

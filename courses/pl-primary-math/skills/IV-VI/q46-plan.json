@@ -1,0 +1,39 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-plan",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Misja: plan sali w skali"
+ },
+ "objectives": [
+  "IV-VI.2.9",
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q46-plan.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: plan pomieszczenia w wybranej skali na podstawie pomiarów."
+  }
+ },
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-scale-map",
+  "n46-area-rect"
+ ]
+}

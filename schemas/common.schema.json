@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/common.schema.json",
+  "title": "Shared definitions for course packs (format 1.x)",
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[-.][a-z0-9A-Z]+)*$",
+      "maxLength": 96
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+    },
+    "localized": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "objectiveId": {
+      "type": "string",
+      "pattern": "^(I-III|IV-VI|VII-VIII)\\.\\d+\\.(\\d+|[a-z])(\\.[a-z])?$",
+      "description": "Objective id from curriculum.json (generic pattern: <stage>.<area>.<item>[.<part>])"
+    },
+    "decimalString": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9]\\d*)(\\.\\d+)?$",
+      "description": "Exact decimal with a DOT; the UI renders a comma."
+    },
+    "intString": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9]\\d*)$"
+    },
+    "value": {
+      "description": "Typed answer / data value. Numbers are strings (exactness, big ints).",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "int"
+            },
+            "value": {
+              "$ref": "#/$defs/intString"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "decimal"
+            },
+            "value": {
+              "$ref": "#/$defs/decimalString"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "num",
+            "den"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "rational"
+            },
+            "num": {
+              "$ref": "#/$defs/intString"
+            },
+            "den": {
+              "$ref": "#/$defs/intString"
+            },
+            "form": {
+              "enum": [
+                "any",
+                "lowest"
+              ],
+              "default": "any",
+              "description": "'lowest' = must be fully reduced to count as fully correct"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "whole",
+            "num",
+            "den"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "mixed"
+            },
+            "whole": {
+              "$ref": "#/$defs/intString"
+            },
+            "num": {
+              "$ref": "#/$defs/intString"
+            },
+            "den": {
+              "$ref": "#/$defs/intString"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value",
+            "unit"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "quantity"
+            },
+            "value": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "allowConversion": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "text"
+            },
+            "value": {
+              "type": "string"
+            },
+            "caseSensitive": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "choice"
+            },
+            "value": {
+              "type": "string",
+              "description": "option id"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "set"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "sequence"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "x",
+            "y"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "point"
+            },
+            "x": {
+              "$ref": "#/$defs/intString"
+            },
+            "y": {
+              "$ref": "#/$defs/intString"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "bool"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "time"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^([0-9]|1[0-9]|2[0-3]):[0-5][0-9]$",
+              "description": "clock time H:MM (24 h)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

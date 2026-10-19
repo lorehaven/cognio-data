@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-power",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "e": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "e": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a / b"
+  },
+  {
+   "name": "v",
+   "expr": "pow(x, e)"
+  }
+ ],
+ "constraints": [
+  "gcd(a, b) == 1"
+ ],
+ "minDistinct": 10,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Oblicz: $\\left(\\frac{@{a}}{@{b}}\\right)^{@{e}}$",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(v)"
+   },
+   "den": {
+    "$expr": "denom(v)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Potęgujemy osobno licznik i mianownik."
+   },
+   {
+    "kind": "conclude",
+    "text": "$\\frac{@{pow(a, e)}}{@{pow(b, e)}}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "only_denominator",
+    "answer": {
+     "type": "rational",
+     "num": {
+      "$expr": "a"
+     },
+     "den": {
+      "$expr": "pow(b, e)"
+     },
+     "form": "any"
+    },
+    "feedback": "Do potęgi podnosimy zarówno licznik, jak i mianownik.",
+    "when": "a != 1"
+   }
+  ]
+ }
+}

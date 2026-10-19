@@ -1,0 +1,102 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-counterexample",
+ "levels": [
+  {
+   "level": 1,
+   "minDistinct": 15
+  }
+ ],
+ "vars": [
+  {
+   "name": "s",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, 8)"
+  },
+  {
+   "name": "stmts",
+   "expr": "['Każda liczba podzielna przez 3 jest nieparzysta.', 'Każda liczba parzysta jest podzielna przez 4.', 'Każda liczba pierwsza jest nieparzysta.', 'Każda liczba podzielna przez 6 jest podzielna przez 12.']"
+  },
+  {
+   "name": "good",
+   "expr": "[6 * k, 4 * k + 2, 2, 6 * (2 * k - 1)][s]"
+  },
+  {
+   "name": "w1",
+   "expr": "[3 * (2 * k + 1), 4 * k, 3, 12 * k][s]"
+  },
+  {
+   "name": "w2",
+   "expr": "[4 * k + 1, 2 * (2 * k + 1) + 1, 5, 6 * k + 1][s]"
+  },
+  {
+   "name": "w3",
+   "expr": "[2 * (3 * k + 1) + 1, 8 * k, 7, 12 * k + 12][s]"
+  }
+ ],
+ "constraints": [
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "selfCheck": [
+  "s != 0 or (good % 3 == 0 and good % 2 == 0)",
+  "s != 1 or (good % 2 == 0 and good % 4 != 0)",
+  "s != 2 or (is_prime(good) and good % 2 == 0)",
+  "s != 3 or (good % 6 == 0 and good % 12 != 0)",
+  "s != 0 or (w1 % 3 == 0 and w1 % 2 == 1)",
+  "s != 1 or w1 % 4 == 0",
+  "s != 2 or (is_prime(w1) and w1 % 2 == 1)",
+  "s != 3 or w1 % 12 == 0"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Kuba twierdzi: „@{stmts[s]}”. Który przykład pokazuje, że Kuba się myli?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Kontrprzykład to liczba, która spełnia założenie twierdzenia, ale nie spełnia jego wniosku."
+   },
+   {
+    "kind": "conclude",
+    "text": "Liczba @{good} jest kontrprzykładem."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

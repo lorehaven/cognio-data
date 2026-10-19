@@ -1,0 +1,102 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-special-exact",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Przyprostokątne trójkąta prostokątnego równoramiennego mają po ' + str(a) + ' cm. Jaką długość ma jego przeciwprostokątna?') if mode == 0 else (('W trójkącie prostokątnym o kątach ostrych 30° i 60° krótsza przyprostokątna ma ' + str(a) + ' cm. Jaką długość ma dłuższa przyprostokątna?') if mode == 1 else ('Trójkąt równoboczny ma bok ' + str(2 * a) + ' cm. Jaką długość ma jego wysokość?'))"
+  },
+  {
+   "name": "good",
+   "expr": "str(a) + '√2 cm' if mode == 0 else str(a) + '√3 cm'"
+  },
+  {
+   "name": "w1",
+   "expr": "str(2 * a) + ' cm' if mode == 0 else str(a) + '√2 cm'"
+  },
+  {
+   "name": "w2",
+   "expr": "str(a) + '√3 cm' if mode == 0 else str(2 * a) + ' cm'"
+  },
+  {
+   "name": "w3",
+   "expr": "str(a * a) + ' cm' if mode == 0 else str(2 * a) + '√3 cm'"
+  }
+ ],
+ "constraints": [
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Z twierdzenia Pitagorasa: c² = a² + a² = 2a², więc c = a√2.' if mode == 0 else 'Jeśli krótsza przyprostokątna ma a, to przeciwprostokątna ma 2a, a dłuższa przyprostokątna: (2a)² − a² = 3a², czyli a√3. Wysokość trójkąta równobocznego o boku 2a ma tę samą długość.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Poprawna odpowiedź: @{good}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

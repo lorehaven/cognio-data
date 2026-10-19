@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-binomials",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "l",
+   "expr": "poly([a, b], [\"x\", \"\"])"
+  },
+  {
+   "name": "r",
+   "expr": "poly([c, d], [\"x\", \"\"])"
+  },
+  {
+   "name": "ask2",
+   "expr": "randint(0, 2) if ask == 2 else ask"
+  },
+  {
+   "name": "ans",
+   "expr": "[a * d + b * c, b * d, a * c][ask2]"
+  },
+  {
+   "name": "what",
+   "expr": "['współczynnik przy x', 'wyraz wolny (bez x)', 'współczynnik przy x²'][ask2]"
+  }
+ ],
+ "constraints": [
+  "b != 0 and d != 0",
+  "a * d + b * c != 0"
+ ],
+ "selfCheck": [
+  "a * c * 1 + (a * d + b * c) + b * d == (a + b) * (c + d)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Po wymnożeniu (@{l})(@{r}) i uporządkowaniu otrzymamy trójmian $ax^2 + bx + c$. Ile wynosi @{what}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "(ax + b)(cx + d) = acx² + (ad + bc)x + bd. Wymnóż każdy wyraz z każdym."
+   },
+   {
+    "kind": "conclude",
+    "text": "Po wymnożeniu: @{poly([a * c, a * d + b * c, b * d], ['x²', 'x', ''])}."
+   }
+  ]
+ }
+}

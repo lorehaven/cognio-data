@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-strat-split",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "clo": "3",
+    "chi": "9"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "c",
+   "expr": "randint(clo, chi)"
+  },
+  {
+   "name": "u",
+   "expr": "randint(2, 9) * 10"
+  },
+  {
+   "name": "w",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "b",
+   "expr": "u + w"
+  }
+ ],
+ "constraints": [
+  "w != c"
+ ],
+ "selfCheck": [
+  "c * u + w != c * b",
+  "(c + u) * w != c * b",
+  "c * u * w != c * b"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który zapis jest poprawnym sposobem obliczenia @{c} · @{b} przez rozbicie liczby @{b}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (true) else []) + (['b'] if (false) else []) + (['c'] if (false) else []) + (['d'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Rozbijamy @{b} na @{u} + @{w} i mnożymy każdą część osobno (rozdzielność mnożenia względem dodawania)."
+   },
+   {
+    "kind": "compute",
+    "text": "@{c * u} + @{c * w} = @{c * b}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$@{c} \\cdot @{b} = @{c} \\cdot @{u} + @{c} \\cdot @{w}$",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "$@{c} \\cdot @{b} = @{c} \\cdot @{u} + @{w}$",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "$@{c} \\cdot @{b} = (@{c} + @{u}) \\cdot @{w}$",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "$@{c} \\cdot @{b} = @{c} \\cdot @{u} \\cdot @{w}$",
+    "correct": "false"
+   }
+  ]
+ }
+}

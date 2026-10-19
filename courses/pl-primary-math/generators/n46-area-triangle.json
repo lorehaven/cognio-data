@@ -1,0 +1,136 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-triangle",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "half": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "half": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "half": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 20)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(2, 20)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "ar",
+   "expr": "a * h / 2"
+  }
+ ],
+ "constraints": [
+  "half != 0 or (a * h) % 2 == 0",
+  "a != h"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{('Podstawa trójkąta ma ' + str(a) + ' ' + un + ', a wysokość poprowadzona do tej podstawy ' + str(h) + ' ' + un + '. Oblicz pole trójkąta.' if half < 2 else 'Przyprostokątne trójkąta prostokątnego mają ' + str(a) + ' ' + un + ' i ' + str(h) + ' ' + un + '. Oblicz pole tego trójkąta.')}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ar"
+   },
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Pole trójkąta = połowa iloczynu podstawy i wysokości (w trójkącie prostokątnym – połowa iloczynu przyprostokątnych)."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a} · @{h} : 2 = @{ar|dec}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un + '²'"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "forgot_half",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "a * h"
+     },
+     "unit": {
+      "$expr": "un + '²'"
+     }
+    },
+    "feedback": "Trójkąt to połowa prostokąta o tej samej podstawie i wysokości – podziel iloczyn przez 2."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle",
+    "essential": false,
+    "alt": "Trójkąt z podstawą i wysokością.",
+    "params": {
+     "A": [
+      0,
+      0
+     ],
+     "B": [
+      {
+       "$expr": "a"
+      },
+      0
+     ],
+     "C": [
+      {
+       "$expr": "0 if half == 2 else a // 2"
+      },
+      {
+       "$expr": "h"
+      }
+     ],
+     "feet": [
+      {
+       "label": {
+        "$expr": "str(h) + ' ' + un"
+       },
+       "x": {
+        "$expr": "0 if half == 2 else a // 2"
+       }
+      }
+     ],
+     "baseLabel": {
+      "$expr": "str(a) + ' ' + un"
+     },
+     "names": [
+      "",
+      "",
+      ""
+     ]
+    }
+   }
+  ]
+ }
+}

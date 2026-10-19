@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-types",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rodzaje kątów"
+ },
+ "objectives": [
+  "IV-VI.4.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ostry, prosty, rozwarty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Także półpełny i pełny"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-angle-types.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "tutor": {
+  "intro": {
+   "pl": "Ostry: mniej niż 90°. Prosty: 90°. Rozwarty: między 90° a 180°. Półpełny: 180°. Pełny: 360°."
+  }
+ }
+}

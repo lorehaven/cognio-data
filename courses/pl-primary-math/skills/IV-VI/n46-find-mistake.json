@@ -1,0 +1,36 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-find-mistake",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Detektyw błędów"
+ },
+ "objectives": [
+  "IV-VI.6.1.c",
+  "IV-VI.6.2",
+  "IV-VI.1.9"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Znajdź błąd w rozwiązaniu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/n46-find-mistake.jsonl"
+  }
+ ],
+ "area": "IV-VI.6",
+ "tutor": {
+  "intro": {
+   "pl": "Czasem rozwiązanie wygląda dobrze, ale ma ukryty błąd. Czytaj krok po kroku i sprawdzaj każdy z nich. Możesz też sprawdzić wynik działaniem odwrotnym lub oszacować, czy jest sensowny."
+  }
+ }
+}

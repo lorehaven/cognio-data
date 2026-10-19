@@ -1,0 +1,114 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-factor",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "g",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(1, 5)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(1, 6) * choice([-1, 1])"
+  },
+  {
+   "name": "orig",
+   "expr": "poly([g * p, g * q], ['x', '']) if kind == 0 else poly([g * p, g * q], ['x²', 'x'])"
+  },
+  {
+   "name": "inner",
+   "expr": "poly([p, q], ['x', '']) if kind == 0 else poly([p, q], ['x', ''])"
+  },
+  {
+   "name": "pre",
+   "expr": "str(g) if kind == 0 else str(g) + 'x'"
+  },
+  {
+   "name": "good",
+   "expr": "pre + '(' + inner + ')'"
+  },
+  {
+   "name": "w1",
+   "expr": "pre + '(' + poly([p, q + 1], ['x', '']) + ')'"
+  },
+  {
+   "name": "w2",
+   "expr": "pre + '(' + poly([p, -q], ['x', '']) + ')'"
+  },
+  {
+   "name": "w3",
+   "expr": "(str(g * p) if kind == 0 else str(g * p) + 'x') + '(' + poly([1, q], ['x', '']) + ')'"
+  }
+ ],
+ "constraints": [
+  "gcd(abs(p), abs(q)) == 1",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "q != 0 and q != -1",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Wyłącz wspólny czynnik przed nawias: @{orig}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź największy wspólny czynnik obu wyrazów, wyłącz go i w nawiasie zapisz to, co zostaje."
+   },
+   {
+    "kind": "conclude",
+    "text": "Po wyłączeniu: @{good}. Sprawdzenie: wymnóż i porównaj."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

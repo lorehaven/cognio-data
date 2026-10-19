@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sci-compare",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Notacja wykładnicza: która liczba jest większa?"
+ },
+ "objectives": [
+  "VII-VIII.1.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ten sam wykładnik"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Różne wykładniki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-sci-compare.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-sci-exponent"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W notacji wykładniczej $a \\cdot 10^n$ porównaj najpierw wykładniki n: większy wykładnik to większa liczba. Przy równych wykładnikach porównaj a."
+  }
+ }
+}

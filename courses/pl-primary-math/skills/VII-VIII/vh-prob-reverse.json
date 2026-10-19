@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-reverse",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Ile kul jest w worku?"
+ },
+ "objectives": [
+  "VII-VIII.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Znamy prawdopodobieństwo"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ile kul dołożyć?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prob-reverse.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-prob-balls"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Liczba kul danego koloru to prawdopodobieństwo razy liczba wszystkich kul. Prawdopodobieństwo $\\frac{1}{2}$ oznacza, że kul obu kolorów jest tyle samo."
+  }
+ }
+}

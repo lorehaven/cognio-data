@@ -1,0 +1,207 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-lattice-area",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x1",
+   "expr": "randint(-5, 2)"
+  },
+  {
+   "name": "y1",
+   "expr": "randint(-5, 2)"
+  },
+  {
+   "name": "w",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "dx",
+   "expr": "randint(0, 8)"
+  },
+  {
+   "name": "t",
+   "expr": "choice([[3, 4, 5], [5, 12, 13], [6, 8, 10]])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Wierzchołki prostokąta ABCD o bokach równoległych do osi układu to A(' + str(x1) + ', ' + str(y1) + '), B(' + str(x1 + w) + ', ' + str(y1) + ') i C(' + str(x1 + w) + ', ' + str(y1 + h) + '). Oblicz pole prostokąta (jednostka: kratka).') if mode == 0 else (('Trójkąt ABC ma wierzchołki A(' + str(x1) + ', ' + str(y1) + '), B(' + str(x1 + w) + ', ' + str(y1) + ') i C(' + str(x1 + dx) + ', ' + str(y1 + h) + '). Oblicz jego pole (jednostka: kratka).') if mode == 1 else ('Trójkąt prostokątny ma wierzchołki A(' + str(x1) + ', ' + str(y1) + '), B(' + str(x1 + t[0]) + ', ' + str(y1) + ') i C(' + str(x1) + ', ' + str(y1 + t[1]) + '). Oblicz jego obwód (jednostka: długość boku kratki).'))"
+  },
+  {
+   "name": "ans",
+   "expr": "w * h if mode == 0 else (w * h // 2 if mode == 1 else t[0] + t[1] + t[2])"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or (w * h) % 2 == 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Policz długości boków z różnic współrzędnych i pomnóż.' if mode == 0 else ('Podstawa AB jest pozioma, a wysokość to różnica drugich współrzędnych C i A. Pole = podstawa · wysokość : 2.' if mode == 1 else 'Przyprostokątne są równoległe do osi. Przeciwprostokątną oblicz z twierdzenia Pitagorasa.'))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "coordinate-plane",
+    "essential": false,
+    "alt": "Układ współrzędnych z figurą.",
+    "params": {
+     "xMin": {
+      "$expr": "x1 - 1"
+     },
+     "xMax": {
+      "$expr": "x1 + max(w, dx, t[0]) + 1"
+     },
+     "yMin": {
+      "$expr": "y1 - 1"
+     },
+     "yMax": {
+      "$expr": "y1 + max(h, t[1]) + 1"
+     },
+     "polygons": [
+      {
+       "pts": [
+        [
+         {
+          "$expr": "x1"
+         },
+         {
+          "$expr": "y1"
+         }
+        ],
+        [
+         {
+          "$expr": "x1 + w"
+         },
+         {
+          "$expr": "y1"
+         }
+        ],
+        [
+         {
+          "$expr": "x1 + w"
+         },
+         {
+          "$expr": "y1 + h"
+         }
+        ],
+        [
+         {
+          "$expr": "x1"
+         },
+         {
+          "$expr": "y1 + h"
+         }
+        ]
+       ],
+       "show": {
+        "$expr": "mode == 0"
+       }
+      },
+      {
+       "pts": [
+        [
+         {
+          "$expr": "x1"
+         },
+         {
+          "$expr": "y1"
+         }
+        ],
+        [
+         {
+          "$expr": "x1 + w"
+         },
+         {
+          "$expr": "y1"
+         }
+        ],
+        [
+         {
+          "$expr": "x1 + dx"
+         },
+         {
+          "$expr": "y1 + h"
+         }
+        ]
+       ],
+       "show": {
+        "$expr": "mode == 1"
+       }
+      },
+      {
+       "pts": [
+        [
+         {
+          "$expr": "x1"
+         },
+         {
+          "$expr": "y1"
+         }
+        ],
+        [
+         {
+          "$expr": "x1 + t[0]"
+         },
+         {
+          "$expr": "y1"
+         }
+        ],
+        [
+         {
+          "$expr": "x1"
+         },
+         {
+          "$expr": "y1 + t[1]"
+         }
+        ]
+       ],
+       "show": {
+        "$expr": "mode == 2"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

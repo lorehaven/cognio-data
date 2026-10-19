@@ -1,0 +1,71 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-number-line-diff",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "100"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "1000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, hi // 2)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(1, hi // 3)"
+  },
+  {
+   "name": "b",
+   "expr": "a + d"
+  },
+  {
+   "name": "mode",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "txt",
+   "expr": "('O ile liczba ' + fmt(b) + ' jest większa od liczby ' + fmt(a) + '?') if mode == 0 else (('O ile liczba ' + fmt(a) + ' jest mniejsza od liczby ' + fmt(b) + '?') if mode == 1 else ('Która liczba jest o ' + fmt(d) + ' większa od ' + fmt(a) + '?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "d if mode < 2 else b"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Na osi liczbowej policz, o ile skoków trzeba przesunąć się z jednej liczby do drugiej."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a|int} → @{b|int}: skok o @{d|int}."
+   }
+  ]
+ }
+}

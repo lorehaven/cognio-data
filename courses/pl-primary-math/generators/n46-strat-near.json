@@ -1,0 +1,81 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-strat-near",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "tlo": "1",
+    "thi": "3"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "tlo": "1",
+    "thi": "9"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "c",
+   "expr": "randint(3, 9)"
+  },
+  {
+   "name": "t",
+   "expr": "randint(tlo, thi)"
+  },
+  {
+   "name": "b",
+   "expr": "100 - t"
+  }
+ ],
+ "selfCheck": [
+  "c * 100 - t != c * b",
+  "c * 100 + c * t != c * b",
+  "(c + 100) * t != c * b"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który zapis jest poprawnym, wygodnym sposobem obliczenia @{c} · @{b}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (true) else []) + (['b'] if (false) else []) + (['c'] if (false) else []) + (['d'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{b} jest blisko 100, więc liczymy @{c} · 100 i odejmujemy to, co za dużo: @{c} · @{t}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{c * 100} − @{c * t} = @{c * b}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$@{c} \\cdot @{b} = @{c} \\cdot 100 - @{c} \\cdot @{t}$",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "$@{c} \\cdot @{b} = @{c} \\cdot 100 - @{t}$",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "$@{c} \\cdot @{b} = @{c} \\cdot 100 + @{c} \\cdot @{t}$",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "$@{c} \\cdot @{b} = (@{c} + 100) \\cdot @{t}$",
+    "correct": "false"
+   }
+  ]
+ }
+}

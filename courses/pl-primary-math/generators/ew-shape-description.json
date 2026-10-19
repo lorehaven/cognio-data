@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-shape-description",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "['trójkąt', 'kwadrat', 'prostokąt', 'koło']"
+  },
+  {
+   "name": "descs",
+   "expr": "[['Ma 3 boki i 3 wierzchołki.', 'Ma trzy kąty.'], ['Ma 4 równe boki i 4 kąty proste.', 'Wszystkie jego boki mają tę samą długość, a kąty są proste.'], ['Ma 4 kąty proste, a przeciwległe boki mają równe długości.', 'Ma dwa dłuższe i dwa krótsze boki oraz cztery kąty proste.'], ['Nie ma boków ani wierzchołków.', 'Jest okrągłe, a wszystkie punkty brzegu są tak samo daleko od środka.']]"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "constraints": [
+  "(names[s]) != (names[(s + 1) % 4])",
+  "(names[s]) != (names[(s + 2) % 4])",
+  "(names[s]) != (names[(s + 3) % 4])",
+  "(names[(s + 1) % 4]) != (names[(s + 2) % 4])",
+  "(names[(s + 1) % 4]) != (names[(s + 3) % 4])",
+  "(names[(s + 2) % 4]) != (names[(s + 3) % 4])"
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Którą figurę opisuje zdanie: „@{descs[s][d]}”?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz boki i wierzchołki oraz zwróć uwagę na kąty proste."
+   },
+   {
+    "kind": "conclude",
+    "text": "To @{names[s]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{names[s]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{names[(s + 1) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{names[(s + 2) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{names[(s + 3) % 4]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/generator.schema.json",
+  "title": "Declarative task generator (generators/<id>.json) — pure data, no code",
+  "type": "object",
+  "required": [
+    "formatVersion",
+    "id",
+    "levels",
+    "task"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "expr": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Expression in the pack DSL (see docs/02-course-format.md §6)"
+    },
+    "template": {
+      "type": "string",
+      "description": "Text with @{name|filter:args} interpolation and optional $LaTeX-subset$"
+    }
+  },
+  "properties": {
+    "formatVersion": {
+      "type": "string",
+      "pattern": "^1\\.\\d+$"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "description": {
+      "type": "string"
+    },
+    "levels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "level"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "level": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "vars": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/expr"
+            },
+            "description": "Level constants, available in all expressions (e.g. max_den)"
+          },
+          "capsNote": {
+            "type": "string"
+          },
+          "minDistinct": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "vars": {
+      "type": "array",
+      "description": "Evaluated top to bottom, once; random calls consume the PRNG in this order",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "expr"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "expr": {
+            "$ref": "#/$defs/expr"
+          },
+          "require": {
+            "type": "boolean",
+            "description": "If this var evaluates to false/0 the whole draw is rejected at once (guards later vars that would fail, e.g. indexing a list that is too short). Counts toward the 1000 tries."
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/expr"
+      },
+      "description": "All must be true; otherwise the whole vars list is re-drawn (max 1000 tries)"
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "kind",
+        "prompt",
+        "answer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "prompt": {
+          "$ref": "#/$defs/template"
+        },
+        "input": {
+          "type": "object",
+          "description": "Kind-specific configuration; strings are templates, {\"$expr\": …} leaves are evaluated"
+        },
+        "options": {
+          "type": "array",
+          "description": "For choice kinds",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "text": {
+                "$ref": "#/$defs/template"
+              },
+              "correct": {
+                "$ref": "#/$defs/expr"
+              }
+            }
+          }
+        },
+        "answer": {
+          "type": "object",
+          "description": "Typed value (common.schema value) where every string field may be an expression written as {\"$expr\": \"...\"}"
+        },
+        "equivalent": {
+          "type": "array",
+          "description": "Answers that are numerically right but get a softer verdict",
+          "items": {
+            "type": "object",
+            "required": [
+              "answer",
+              "verdict"
+            ],
+            "properties": {
+              "answer": {
+                "type": "object"
+              },
+              "verdict": {
+                "enum": [
+                  "almost"
+                ]
+              },
+              "feedbackKey": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "errorRules": {
+          "type": "array",
+          "description": "Buggy procedures: the answer a child would give if they applied this wrong rule",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "answer",
+              "feedback"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "object"
+              },
+              "when": {
+                "$ref": "#/$defs/expr",
+                "description": "optional guard; rule applies only if true"
+              },
+              "feedback": {
+                "$ref": "#/$defs/template"
+              }
+            }
+          }
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Structured worked solution: grounding for hints, explanation and LLM rephrasing",
+          "items": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "text": {
+                "$ref": "#/$defs/template"
+              },
+              "kind": {
+                "enum": [
+                  "given",
+                  "idea",
+                  "compute",
+                  "check",
+                  "conclude"
+                ]
+              }
+            }
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "$ref": "task.schema.json#/properties/media/items"
+          }
+        }
+      }
+    },
+    "selfCheck": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/expr"
+      },
+      "description": "Invariants checked by the linter on every drawn task (never at runtime). Write them independently of the answer expression, e.g. 'q * b + r == a'."
+    },
+    "minDistinct": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Lint: at least this many distinct tasks in 200 seeds (default 12)"
+    }
+  }
+}

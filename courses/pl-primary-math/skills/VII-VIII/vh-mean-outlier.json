@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-mean-outlier",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Średnia czy mediana? Zarobki w firmie"
+ },
+ "objectives": [
+  "VII-VIII.4.4",
+  "VII-VIII.4.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna wysoka pensja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-mean-outlier.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-median"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Jedna bardzo duża lub mała wartość mocno zmienia średnią, a prawie nie zmienia mediany. Do opisu typowej wartości często lepsza jest mediana."
+  }
+ }
+}

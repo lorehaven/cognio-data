@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-bisector",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "d",
+   "expr": "randint(3, 40)"
+  },
+  {
+   "name": "al",
+   "expr": "2 * randint(10, 85)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(5, 85)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Punkt P leży na symetralnej odcinka AB. Odległość PA wynosi ' + str(d) + ' ' + un + '. Ile wynosi odległość PB?') if mode == 0 else (('Dwusieczna kąta o mierze ' + str(al) + '° dzieli go na dwa kąty. Ile stopni ma każdy z nich?') if mode == 1 else ('Dwusieczna kąta tworzy z jednym z jego ramion kąt o mierze ' + str(b) + '°. Ile stopni ma cały kąt?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "d if mode == 0 else (al // 2 if mode == 1 else 2 * b)"
+  },
+  {
+   "name": "u",
+   "expr": "un if mode == 0 else '°'"
+  },
+  {
+   "name": "sp",
+   "expr": "' ' if mode == 0 else ''"
+  }
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Każdy punkt symetralnej jest tak samo oddalony od końców odcinka.' if mode == 0 else 'Dwusieczna dzieli kąt na dwa kąty o równych miarach.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}@{sp}@{u}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  }
+ }
+}

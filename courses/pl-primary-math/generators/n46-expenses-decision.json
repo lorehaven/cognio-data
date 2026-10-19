@@ -1,0 +1,71 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-expenses-decision",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "base",
+   "expr": "randint(10, 30) * 10"
+  },
+  {
+   "name": "ds",
+   "expr": "sample(-5, 5, 4)"
+  },
+  {
+   "name": "xs",
+   "expr": "[base + 10 * ds[0], base + 10 * ds[1], base + 10 * ds[2], base + 10 * ds[3]]"
+  },
+  {
+   "name": "avg",
+   "expr": "sum(xs) / 4"
+  },
+  {
+   "name": "budget",
+   "expr": "avg + choice([-30, -20, -10, 10, 20, 30])"
+  }
+ ],
+ "constraints": [
+  "denom(avg) in divisors(100)",
+  "budget > 0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Przez cztery miesiące wydano na rachunki kolejno: @{join(xs, \", \")} zł. Co miesiąc odkładamy na rachunki @{budget|money}. Czy ta kwota wystarcza, żeby pokryć wydatki w przeciętnym miesiącu?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (budget >= avg) else []) + (['b'] if (budget < avg) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Oblicz średnie miesięczne wydatki i porównaj z kwotą, którą odkładamy."
+   },
+   {
+    "kind": "compute",
+    "text": "Średnio: @{sum(xs)} : 4 = @{avg|money}; odkładamy @{budget|money}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Tak, wystarcza",
+    "correct": "budget >= avg"
+   },
+   {
+    "id": "b",
+    "text": "Nie, nie wystarcza",
+    "correct": "budget < avg"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-line-chart",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odczytaj dane z wykresu liniowego"
+ },
+ "objectives": [
+  "IV-VI.5.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Odczyt wartości"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Największa wartość"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Zmiana między godzinami"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-line-chart.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "tutor": {
+  "intro": {
+   "pl": "Wykres liniowy pokazuje zmiany w czasie. Znajdź godzinę na osi poziomej i odczytaj wartość punktu na osi pionowej."
+  }
+ }
+}

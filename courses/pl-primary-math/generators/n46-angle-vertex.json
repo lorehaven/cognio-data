@@ -1,0 +1,95 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-vertex",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "ls",
+   "expr": "shuffle(['A', 'B', 'C', 'D', 'K', 'L', 'M', 'P', 'R', 'S'])"
+  },
+  {
+   "name": "p1",
+   "expr": "ls[0]"
+  },
+  {
+   "name": "p2",
+   "expr": "ls[1]"
+  },
+  {
+   "name": "p3",
+   "expr": "ls[2]"
+  },
+  {
+   "name": "p4",
+   "expr": "ls[3]"
+  },
+  {
+   "name": "q",
+   "expr": "('W kącie ' + p1 + p2 + p3 + ' wierzchołkiem jest punkt:') if ask == 0 else ('Które półproste są ramionami kąta ' + p1 + p2 + p3 + '?')"
+  }
+ ],
+ "constraints": [
+  "(p2 if ask == 0 else \"półproste \" + p2 + p1 + \" i \" + p2 + p3) != (p1 if ask == 0 else \"półproste \" + p1 + p2 + \" i \" + p1 + p3)",
+  "(p2 if ask == 0 else \"półproste \" + p2 + p1 + \" i \" + p2 + p3) != (p3 if ask == 0 else \"półproste \" + p3 + p1 + \" i \" + p3 + p2)",
+  "(p2 if ask == 0 else \"półproste \" + p2 + p1 + \" i \" + p2 + p3) != (p4 if ask == 0 else \"półproste \" + p2 + p4 + \" i \" + p2 + p3)",
+  "(p1 if ask == 0 else \"półproste \" + p1 + p2 + \" i \" + p1 + p3) != (p3 if ask == 0 else \"półproste \" + p3 + p1 + \" i \" + p3 + p2)",
+  "(p1 if ask == 0 else \"półproste \" + p1 + p2 + \" i \" + p1 + p3) != (p4 if ask == 0 else \"półproste \" + p2 + p4 + \" i \" + p2 + p3)",
+  "(p3 if ask == 0 else \"półproste \" + p3 + p1 + \" i \" + p3 + p2) != (p4 if ask == 0 else \"półproste \" + p2 + p4 + \" i \" + p2 + p3)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{q}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "W zapisie kąta literę wierzchołka piszemy w środku. Ramiona to półproste wychodzące z wierzchołka."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wierzchołek: @{p2}. Ramiona: @{p2}@{p1} i @{p2}@{p3}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{p2 if ask == 0 else \"półproste \" + p2 + p1 + \" i \" + p2 + p3}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{p1 if ask == 0 else \"półproste \" + p1 + p2 + \" i \" + p1 + p3}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{p3 if ask == 0 else \"półproste \" + p3 + p1 + \" i \" + p3 + p2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{p4 if ask == 0 else \"półproste \" + p2 + p4 + \" i \" + p2 + p3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

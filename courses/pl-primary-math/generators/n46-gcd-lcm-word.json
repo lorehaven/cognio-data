@@ -1,0 +1,93 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-gcd-lcm-word",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "g",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "x",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "a",
+   "expr": "g * x"
+  },
+  {
+   "name": "b",
+   "expr": "g * y"
+  },
+  {
+   "name": "pr",
+   "expr": "choice([[['jabłko', 'jabłka', 'jabłek'], ['gruszka', 'gruszki', 'gruszek']], [['ciastko', 'ciastka', 'ciastek'], ['wafelek', 'wafelki', 'wafelków']], [['cukierek', 'cukierki', 'cukierków'], ['draże', 'draże', 'draży']], [['długopis', 'długopisy', 'długopisów'], ['ołówek', 'ołówki', 'ołówków']]])"
+  },
+  {
+   "name": "it1",
+   "expr": "pr[0]"
+  },
+  {
+   "name": "it2",
+   "expr": "pr[1]"
+  },
+  {
+   "name": "who",
+   "expr": "choice(['Latarnia', 'Boja', 'Dzwonek'])"
+  },
+  {
+   "name": "txt",
+   "expr": "('Mamy ' + pln(a, it1) + ' i ' + pln(b, it2) + '. Chcemy zrobić jak najwięcej jednakowych paczek: w każdej ma być tyle samo ' + it1[2] + ' i tyle samo ' + it2[2] + ', a nic nie może zostać. Ile paczek zrobimy?') if mode == 0 else ('Dwa sygnały świetlne błysnęły jednocześnie. Pierwszy błyska co ' + str(a) + ' s, a drugi co ' + str(b) + ' s. Po ilu sekundach błysną znowu jednocześnie po raz pierwszy?')"
+  },
+  {
+   "name": "ans",
+   "expr": "gcd(a, b) if mode == 0 else lcm(a, b)"
+  }
+ ],
+ "constraints": [
+  "gcd(x, y) == 1",
+  "x != y",
+  "a != b"
+ ],
+ "selfCheck": [
+  "mode == 1 or (a % ans == 0 and b % ans == 0)",
+  "mode == 0 or (ans % a == 0 and ans % b == 0)"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Liczba paczek musi być dzielnikiem obu liczb, a ma być jak największa: szukamy NWD.' if mode == 0 else 'Szukamy najmniejszej liczby, która jest wielokrotnością obu okresów: NWW.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

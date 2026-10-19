@@ -1,0 +1,85 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prop-divide",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "parts": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "parts": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(1, 5)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, 6)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "unit",
+   "expr": "randint(2, 30) * 10"
+  },
+  {
+   "name": "total",
+   "expr": "(a + b) * unit if parts == 2 else (a + b + c) * unit"
+  },
+  {
+   "name": "ask",
+   "expr": "randint(0, parts - 1)"
+  },
+  {
+   "name": "rs",
+   "expr": "[a, b, c]"
+  },
+  {
+   "name": "shares",
+   "expr": "[a * unit, b * unit, c * unit]"
+  },
+  {
+   "name": "names",
+   "expr": "['Ola', 'Kuba', 'Maja']"
+  },
+  {
+   "name": "txt",
+   "expr": "'Ola i Kuba dzielą ' + str(total) + ' zł w stosunku ' + str(a) + ' : ' + str(b) + '. Ile złotych dostanie ' + ['Ola', 'Kuba'][ask] + '?' if parts == 2 else 'Ola, Kuba i Maja dzielą ' + str(total) + ' zł w stosunku ' + str(a) + ' : ' + str(b) + ' : ' + str(c) + '. Ile złotych dostanie ' + names[ask] + '?'"
+  }
+ ],
+ "constraints": [
+  "a != b",
+  "parts == 2 or (c != a and c != b)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "shares[ask]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zsumuj części stosunku, podziel kwotę przez sumę części (to jedna część), a potem pomnóż przez część danej osoby."
+   },
+   {
+    "kind": "compute",
+    "text": "@{str(total) + ' : ' + str(sum(take(rs, parts))) + ' = ' + str(unit) + '; ' + str(unit) + ' · ' + str(rs[ask]) + ' = ' + str(shares[ask])}"
+   }
+  ]
+ }
+}

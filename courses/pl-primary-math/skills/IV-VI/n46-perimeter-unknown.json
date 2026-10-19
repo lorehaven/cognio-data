@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-perimeter-unknown",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Brakujący bok prostokąta"
+ },
+ "objectives": [
+  "IV-VI.4.15"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Obwód i jeden bok"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-perimeter-unknown.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-perimeter-polygon"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Obwód prostokąta to 2 · (a + b). Połowa obwodu to suma dwóch sąsiednich boków – odejmij znany bok, aby znaleźć drugi."
+  }
+ }
+}

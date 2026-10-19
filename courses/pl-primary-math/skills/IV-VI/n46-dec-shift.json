@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-shift",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Mnożenie i dzielenie przez 10, 100, 1000"
+ },
+ "objectives": [
+  "IV-VI.1.28"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mnożenie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dzielenie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Mnożenie lub dzielenie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-shift.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-place-value"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Mnożenie przez 10, 100, 1000 przesuwa przecinek w prawo o 1, 2, 3 miejsca. Dzielenie przesuwa go w lewo."
+  }
+ }
+}

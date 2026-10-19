@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyramid-heights",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wysokość ostrosłupa i wysokość ściany bocznej"
+ },
+ "objectives": [
+  "VII-VIII.3.13"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wysokość ściany bocznej"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wysokość ostrosłupa"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Krawędź podstawy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-pyramid-heights.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-pyth-basic",
+  "vh-solid-counts"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W ostrosłupie prawidłowym wysokość ostrosłupa, połowa krawędzi podstawy i wysokość ściany bocznej tworzą trójkąt prostokątny – użyj twierdzenia Pitagorasa."
+  }
+ }
+}

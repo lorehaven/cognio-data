@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-root-bring-in",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Włączanie liczby pod znak pierwiastka"
+ },
+ "objectives": [
+  "VII-VIII.1.9.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwiastek kwadratowy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-root-bring-in.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-root-factor"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Liczbę przed pierwiastkiem można „wnieść” pod pierwiastek, podnosząc ją do kwadratu: $3\\sqrt{2} = \\sqrt{9 \\cdot 2} = \\sqrt{18}$."
+  }
+ }
+}

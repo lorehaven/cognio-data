@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-third-side",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ile możliwości ma trzeci bok?"
+ },
+ "objectives": [
+  "IV-VI.4.10",
+  "IV-VI.6.3.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Boki całkowite"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-triangle-third-side.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-exists"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trzeci bok trójkąta musi być krótszy niż suma dwóch pozostałych boków i dłuższy niż ich różnica. To wyznacza zakres możliwych długości."
+  }
+ }
+}

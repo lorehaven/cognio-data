@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-perimeter",
+ "stage": "I-III",
+ "title": {
+  "pl": "Obwód trójkąta i prostokąta"
+ },
+ "objectives": [
+  "I-III.3.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kwadrat i prostokąt"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trójkąt"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dłuższe boki"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-perimeter.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.3",
+ "prerequisites": [
+  "ew-shape-count",
+  "ew-add"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Obwód to długość drogi dookoła figury. Dodaj długości wszystkich boków."
+  }
+ }
+}

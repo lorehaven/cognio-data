@@ -1,0 +1,65 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-div",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dzielenie liczb naturalnych"
+ },
+ "objectives": [
+  "IV-VI.1.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwucyfrowa : jednocyfrowa"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzycyfrowa : jednocyfrowa"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Czterocyfrowa : jednocyfrowa"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Przez liczbę dwucyfrową"
+   }
+  },
+  {
+   "level": 5,
+   "label": {
+    "pl": "Przez liczbę trzycyfrową"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-div.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Dzielenie sprawdzamy mnożeniem: wynik razy dzielnik ma dać dzielną. Dzielimy po kolei od najwyższego rzędu."
+  }
+ }
+}

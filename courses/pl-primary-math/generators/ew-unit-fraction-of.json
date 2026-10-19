@@ -1,0 +1,68 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-unit-fraction-of",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ds": "[2, 4]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ds": "[2, 3, 4, 5, 8]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "pool",
+   "expr": "[2, 3, 4, 5, 8]"
+  },
+  {
+   "name": "d",
+   "expr": "choice(ds)"
+  },
+  {
+   "name": "idx",
+   "expr": "index(pool, d)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "n",
+   "expr": "d * q"
+  },
+  {
+   "name": "nm",
+   "expr": "['połowa', 'jedna trzecia', 'jedna czwarta', 'jedna piąta', 'jedna ósma']"
+  }
+ ],
+ "constraints": [
+  "n <= 100"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile wynosi @{nm[idx]} liczby @{n}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Podziel liczbę przez @{d}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{n} : @{d} = @{q}"
+   }
+  ]
+ }
+}

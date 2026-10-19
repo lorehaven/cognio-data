@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-circle-terms",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "terms",
+   "expr": "['promień', 'średnica', 'cięciwa', 'środek okręgu']"
+  },
+  {
+   "name": "descs",
+   "expr": "[['Odcinek łączący środek okręgu z punktem na okręgu.', 'Odcinek od środka okręgu do okręgu.'], ['Cięciwa przechodząca przez środek okręgu.', 'Najdłuższa cięciwa okręgu.'], ['Odcinek łączący dowolne dwa punkty okręgu.', 'Odcinek o końcach na okręgu.'], ['Punkt równo oddalony od wszystkich punktów okręgu.', 'Punkt, od którego mierzymy promień.']]"
+  },
+  {
+   "name": "ti",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "di",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "constraints": [
+  "(terms[ti]) != (terms[(ti + 1) % 4])",
+  "(terms[ti]) != (terms[(ti + 2) % 4])",
+  "(terms[ti]) != (terms[(ti + 3) % 4])",
+  "(terms[(ti + 1) % 4]) != (terms[(ti + 2) % 4])",
+  "(terms[(ti + 1) % 4]) != (terms[(ti + 3) % 4])",
+  "(terms[(ti + 2) % 4]) != (terms[(ti + 3) % 4])"
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który element okręgu opisuje zdanie: „@{descs[ti][di]}”?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Promień – od środka do okręgu. Średnica – przez środek, dwa promienie. Cięciwa – dowolne dwa punkty okręgu."
+   },
+   {
+    "kind": "conclude",
+    "text": "To: @{terms[ti]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{terms[ti]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{terms[(ti + 1) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{terms[(ti + 2) % 4]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{terms[(ti + 3) % 4]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

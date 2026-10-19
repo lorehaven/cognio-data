@@ -1,0 +1,41 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-to-mixed",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek dziesiętny na liczbę mieszaną"
+ },
+ "objectives": [
+  "IV-VI.1.22"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dziesiąte i setne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-to-mixed.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-to-fraction",
+  "n46-frac-to-mixed"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Część całkowita liczby dziesiętnej zostaje całością, a część po przecinku zamieniasz na ułamek zwykły i skracasz."
+  }
+ }
+}

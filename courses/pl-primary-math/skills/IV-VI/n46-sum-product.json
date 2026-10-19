@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sum-product",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Metoda prób i poprawek"
+ },
+ "objectives": [
+  "IV-VI.6.3.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwie liczby: suma i iloczyn"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Cyfry liczby dwucyfrowej"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-sum-product.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-wp-sum-difference"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Metoda prób i poprawek: wypisuj pary liczb o danej sumie, sprawdzaj ich iloczyn i poprawiaj próbę, aż wynik się zgodzi."
+  }
+ }
+}

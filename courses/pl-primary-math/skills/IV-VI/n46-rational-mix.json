@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-rational-mix",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Działania na ułamkach zwykłych i dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.32"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie i odejmowanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mnożenie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-rational-mix.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-from-fraction",
+  "n46-dec-mul"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy w działaniu są ułamki zwykłe i dziesiętne, zamień je na jedną postać – wybierz tę wygodniejszą – i dopiero licz."
+  }
+ }
+}

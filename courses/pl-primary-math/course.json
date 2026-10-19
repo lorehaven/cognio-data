@@ -1,0 +1,3805 @@
+{
+ "formatVersion": "1.0",
+ "id": "pl-primary-math",
+ "version": "0.1.0",
+ "language": "pl",
+ "title": {
+  "pl": "Matematyka – szkoła podstawowa (podstawa programowa 2026)"
+ },
+ "description": {
+  "pl": "Kurs zgodny z podstawą programową (Dz.U. 2026 poz. 378). Struktura: etapy I–III, IV–VI, VII–VIII → działy → wymagania szczegółowe → umiejętności (klasy zadań)."
+ },
+ "authors": [
+  "pawel.walus"
+ ],
+ "license": "private",
+ "engine": {
+  "min": "1.0.0",
+  "features": [
+   "decimal-input",
+   "find-the-mistake",
+   "fraction-input",
+   "multi-select",
+   "multiple-choice",
+   "number-input",
+   "order-items",
+   "quantity-input",
+   "quest"
+  ]
+ },
+ "curriculum": "curriculum.json",
+ "stages": [
+  {
+   "id": "I-III",
+   "title": {
+    "pl": "Etap I (klasy I–III)"
+   },
+   "skills": [
+    "skills/I-III/ew-add.json",
+    "skills/I-III/ew-bar-chart.json",
+    "skills/I-III/ew-calendar-week.json",
+    "skills/I-III/ew-choose-unit.json",
+    "skills/I-III/ew-classify-criterion.json",
+    "skills/I-III/ew-clock-read.json",
+    "skills/I-III/ew-compare-expr.json",
+    "skills/I-III/ew-compare-measures.json",
+    "skills/I-III/ew-compare-sources.json",
+    "skills/I-III/ew-compare.json",
+    "skills/I-III/ew-compound.json",
+    "skills/I-III/ew-convert-length.json",
+    "skills/I-III/ew-convert-mass.json",
+    "skills/I-III/ew-convert-time.json",
+    "skills/I-III/ew-directions.json",
+    "skills/I-III/ew-div-meaning.json",
+    "skills/I-III/ew-div-share-or-fit.json",
+    "skills/I-III/ew-div-table.json",
+    "skills/I-III/ew-div-two-digit.json",
+    "skills/I-III/ew-find-mistake.json",
+    "skills/I-III/ew-games.json",
+    "skills/I-III/ew-grid-robot.json",
+    "skills/I-III/ew-inverse-check.json",
+    "skills/I-III/ew-lines-surroundings.json",
+    "skills/I-III/ew-missing.json",
+    "skills/I-III/ew-money-coins.json",
+    "skills/I-III/ew-money-notation.json",
+    "skills/I-III/ew-mul-table.json",
+    "skills/I-III/ew-mul-two-digit.json",
+    "skills/I-III/ew-nim.json",
+    "skills/I-III/ew-number-line-diff.json",
+    "skills/I-III/ew-number-line-read.json",
+    "skills/I-III/ew-odd-even.json",
+    "skills/I-III/ew-odd-one-out-num.json",
+    "skills/I-III/ew-odd-one-out.json",
+    "skills/I-III/ew-order.json",
+    "skills/I-III/ew-pattern-rule.json",
+    "skills/I-III/ew-perimeter.json",
+    "skills/I-III/ew-pion-poziom.json",
+    "skills/I-III/ew-place-value.json",
+    "skills/I-III/ew-price-list.json",
+    "skills/I-III/ew-puzzle-heads-legs.json",
+    "skills/I-III/ew-read-timetable.json",
+    "skills/I-III/ew-recipe.json",
+    "skills/I-III/ew-rhythm.json",
+    "skills/I-III/ew-roman-read.json",
+    "skills/I-III/ew-roman.json",
+    "skills/I-III/ew-ruler-read.json",
+    "skills/I-III/ew-saving.json",
+    "skills/I-III/ew-sequence.json",
+    "skills/I-III/ew-shape-count.json",
+    "skills/I-III/ew-shape-description.json",
+    "skills/I-III/ew-shopping.json",
+    "skills/I-III/ew-skip-count.json",
+    "skills/I-III/ew-solid-object.json",
+    "skills/I-III/ew-strategy.json",
+    "skills/I-III/ew-sub.json",
+    "skills/I-III/ew-symmetry-count.json",
+    "skills/I-III/ew-symmetry-letters.json",
+    "skills/I-III/ew-table-read.json",
+    "skills/I-III/ew-tally.json",
+    "skills/I-III/ew-temp-diff.json",
+    "skills/I-III/ew-thermometer-read.json",
+    "skills/I-III/ew-time-add.json",
+    "skills/I-III/ew-unit-fraction-name.json",
+    "skills/I-III/ew-unit-fraction-of.json",
+    "skills/I-III/ew-wait-minutes.json",
+    "skills/I-III/ew-wp-add-sub.json",
+    "skills/I-III/ew-wp-mul-div.json",
+    "skills/I-III/ew-wp-two-step.json",
+    "skills/I-III/ew-write-number.json"
+   ],
+   "path": "paths/I-III.json"
+  },
+  {
+   "id": "IV-VI",
+   "title": {
+    "pl": "Etap II (klasy IV–VI)"
+   },
+   "skills": [
+    "skills/IV-VI/n46-add-mental.json",
+    "skills/IV-VI/n46-add-written.json",
+    "skills/IV-VI/n46-alg-equation-build.json",
+    "skills/IV-VI/n46-alg-evaluate.json",
+    "skills/IV-VI/n46-alg-expression.json",
+    "skills/IV-VI/n46-alg-formula.json",
+    "skills/IV-VI/n46-alg-solve.json",
+    "skills/IV-VI/n46-angle-convex.json",
+    "skills/IV-VI/n46-angle-pairs.json",
+    "skills/IV-VI/n46-angle-types.json",
+    "skills/IV-VI/n46-angle-vertex.json",
+    "skills/IV-VI/n46-area-composite.json",
+    "skills/IV-VI/n46-area-parallelogram.json",
+    "skills/IV-VI/n46-area-rect.json",
+    "skills/IV-VI/n46-area-rhombus-trapezoid.json",
+    "skills/IV-VI/n46-area-triangle.json",
+    "skills/IV-VI/n46-area-units.json",
+    "skills/IV-VI/n46-area-unknown-side.json",
+    "skills/IV-VI/n46-bar-chart.json",
+    "skills/IV-VI/n46-budget.json",
+    "skills/IV-VI/n46-calculator-use.json",
+    "skills/IV-VI/n46-calendar-weekday.json",
+    "skills/IV-VI/n46-calendar-weeks.json",
+    "skills/IV-VI/n46-capacity-units.json",
+    "skills/IV-VI/n46-choose-unit.json",
+    "skills/IV-VI/n46-circle-diameter.json",
+    "skills/IV-VI/n46-circle-terms.json",
+    "skills/IV-VI/n46-clock-duration.json",
+    "skills/IV-VI/n46-clock-end.json",
+    "skills/IV-VI/n46-clock-start.json",
+    "skills/IV-VI/n46-common-divisors.json",
+    "skills/IV-VI/n46-compare.json",
+    "skills/IV-VI/n46-compose.json",
+    "skills/IV-VI/n46-compound-to-decimal.json",
+    "skills/IV-VI/n46-coord-distance.json",
+    "skills/IV-VI/n46-coord-read.json",
+    "skills/IV-VI/n46-coord-rectangle.json",
+    "skills/IV-VI/n46-count-cases.json",
+    "skills/IV-VI/n46-count-multiples.json",
+    "skills/IV-VI/n46-counterexample.json",
+    "skills/IV-VI/n46-cuboid-compound.json",
+    "skills/IV-VI/n46-cuboid-surface.json",
+    "skills/IV-VI/n46-cuboid-volume.json",
+    "skills/IV-VI/n46-dec-add.json",
+    "skills/IV-VI/n46-dec-compare.json",
+    "skills/IV-VI/n46-dec-div-dec.json",
+    "skills/IV-VI/n46-dec-div-nat.json",
+    "skills/IV-VI/n46-dec-from-fraction.json",
+    "skills/IV-VI/n46-dec-infinite-round.json",
+    "skills/IV-VI/n46-dec-infinite.json",
+    "skills/IV-VI/n46-dec-mul.json",
+    "skills/IV-VI/n46-dec-number-line.json",
+    "skills/IV-VI/n46-dec-order.json",
+    "skills/IV-VI/n46-dec-place-value.json",
+    "skills/IV-VI/n46-dec-power.json",
+    "skills/IV-VI/n46-dec-round.json",
+    "skills/IV-VI/n46-dec-shift.json",
+    "skills/IV-VI/n46-dec-sub.json",
+    "skills/IV-VI/n46-dec-to-fraction.json",
+    "skills/IV-VI/n46-dec-to-mixed.json",
+    "skills/IV-VI/n46-dec-vs-fraction.json",
+    "skills/IV-VI/n46-decimal-to-compound.json",
+    "skills/IV-VI/n46-diff.json",
+    "skills/IV-VI/n46-digit-place.json",
+    "skills/IV-VI/n46-digital-tools.json",
+    "skills/IV-VI/n46-div-meaning.json",
+    "skills/IV-VI/n46-div-rem.json",
+    "skills/IV-VI/n46-div.json",
+    "skills/IV-VI/n46-divisible-digit.json",
+    "skills/IV-VI/n46-divisible-pick.json",
+    "skills/IV-VI/n46-divisible-yesno.json",
+    "skills/IV-VI/n46-estimate-product.json",
+    "skills/IV-VI/n46-estimate-sum.json",
+    "skills/IV-VI/n46-examples.json",
+    "skills/IV-VI/n46-exchange.json",
+    "skills/IV-VI/n46-expenses-average.json",
+    "skills/IV-VI/n46-expenses-decision.json",
+    "skills/IV-VI/n46-factorization-fact.json",
+    "skills/IV-VI/n46-factorization-pick.json",
+    "skills/IV-VI/n46-find-mistake.json",
+    "skills/IV-VI/n46-frac-addsub-mixed.json",
+    "skills/IV-VI/n46-frac-addsub.json",
+    "skills/IV-VI/n46-frac-compare.json",
+    "skills/IV-VI/n46-frac-diff.json",
+    "skills/IV-VI/n46-frac-div.json",
+    "skills/IV-VI/n46-frac-extend.json",
+    "skills/IV-VI/n46-frac-mul.json",
+    "skills/IV-VI/n46-frac-number-line.json",
+    "skills/IV-VI/n46-frac-of-number.json",
+    "skills/IV-VI/n46-frac-of-quantity.json",
+    "skills/IV-VI/n46-frac-order.json",
+    "skills/IV-VI/n46-frac-part-figure.json",
+    "skills/IV-VI/n46-frac-part-set.json",
+    "skills/IV-VI/n46-frac-power.json",
+    "skills/IV-VI/n46-frac-quotient.json",
+    "skills/IV-VI/n46-frac-simplify.json",
+    "skills/IV-VI/n46-frac-to-mixed.json",
+    "skills/IV-VI/n46-gcd-lcm-word.json",
+    "skills/IV-VI/n46-gcd.json",
+    "skills/IV-VI/n46-height-id.json",
+    "skills/IV-VI/n46-int-addsub.json",
+    "skills/IV-VI/n46-int-compare.json",
+    "skills/IV-VI/n46-int-context.json",
+    "skills/IV-VI/n46-int-distance.json",
+    "skills/IV-VI/n46-int-muldiv.json",
+    "skills/IV-VI/n46-int-order.json",
+    "skills/IV-VI/n46-isosceles.json",
+    "skills/IV-VI/n46-justify.json",
+    "skills/IV-VI/n46-lcd.json",
+    "skills/IV-VI/n46-lcm.json",
+    "skills/IV-VI/n46-len-units.json",
+    "skills/IV-VI/n46-line-chart.json",
+    "skills/IV-VI/n46-line-relations.json",
+    "skills/IV-VI/n46-line-terms.json",
+    "skills/IV-VI/n46-mass-units.json",
+    "skills/IV-VI/n46-mean.json",
+    "skills/IV-VI/n46-mixed-to-frac.json",
+    "skills/IV-VI/n46-mul.json",
+    "skills/IV-VI/n46-net-faces.json",
+    "skills/IV-VI/n46-net-solid.json",
+    "skills/IV-VI/n46-number-line.json",
+    "skills/IV-VI/n46-offer-compare.json",
+    "skills/IV-VI/n46-order-ops.json",
+    "skills/IV-VI/n46-order.json",
+    "skills/IV-VI/n46-percent-fraction.json",
+    "skills/IV-VI/n46-percent-key.json",
+    "skills/IV-VI/n46-percent-of.json",
+    "skills/IV-VI/n46-perimeter-polygon.json",
+    "skills/IV-VI/n46-perimeter-regular.json",
+    "skills/IV-VI/n46-perimeter-unknown.json",
+    "skills/IV-VI/n46-plan-compare.json",
+    "skills/IV-VI/n46-polygon-parts.json",
+    "skills/IV-VI/n46-power-calc.json",
+    "skills/IV-VI/n46-power-recognize.json",
+    "skills/IV-VI/n46-price-after-discount.json",
+    "skills/IV-VI/n46-prime-pick.json",
+    "skills/IV-VI/n46-protractor-read.json",
+    "skills/IV-VI/n46-quad-angle.json",
+    "skills/IV-VI/n46-quad-properties.json",
+    "skills/IV-VI/n46-ratio.json",
+    "skills/IV-VI/n46-rational-mix.json",
+    "skills/IV-VI/n46-read-number.json",
+    "skills/IV-VI/n46-receipt.json",
+    "skills/IV-VI/n46-roman-read.json",
+    "skills/IV-VI/n46-roman-write.json",
+    "skills/IV-VI/n46-rounding.json",
+    "skills/IV-VI/n46-ruler-read.json",
+    "skills/IV-VI/n46-scale-map.json",
+    "skills/IV-VI/n46-scale-real.json",
+    "skills/IV-VI/n46-sense-check.json",
+    "skills/IV-VI/n46-smallest-divisor.json",
+    "skills/IV-VI/n46-solid-elements.json",
+    "skills/IV-VI/n46-solid-recognize.json",
+    "skills/IV-VI/n46-speed-distance.json",
+    "skills/IV-VI/n46-speed-time.json",
+    "skills/IV-VI/n46-speed-units.json",
+    "skills/IV-VI/n46-speed-velocity.json",
+    "skills/IV-VI/n46-strat-assoc.json",
+    "skills/IV-VI/n46-strat-near.json",
+    "skills/IV-VI/n46-strat-split.json",
+    "skills/IV-VI/n46-sub-mental.json",
+    "skills/IV-VI/n46-sub-written.json",
+    "skills/IV-VI/n46-sum-product.json",
+    "skills/IV-VI/n46-survey-tally.json",
+    "skills/IV-VI/n46-symmetry-axes.json",
+    "skills/IV-VI/n46-table-read.json",
+    "skills/IV-VI/n46-time-units.json",
+    "skills/IV-VI/n46-total-cost.json",
+    "skills/IV-VI/n46-triangle-angle.json",
+    "skills/IV-VI/n46-triangle-by-angles.json",
+    "skills/IV-VI/n46-triangle-by-sides.json",
+    "skills/IV-VI/n46-triangle-exists.json",
+    "skills/IV-VI/n46-triangle-third-side.json",
+    "skills/IV-VI/n46-unit-price.json",
+    "skills/IV-VI/n46-wp-proportion.json",
+    "skills/IV-VI/n46-wp-reverse.json",
+    "skills/IV-VI/n46-wp-shopping.json",
+    "skills/IV-VI/n46-wp-sum-difference.json",
+    "skills/IV-VI/n46-write-digits.json",
+    "skills/IV-VI/q46-garden.json",
+    "skills/IV-VI/q46-plan.json",
+    "skills/IV-VI/q46-trip.json",
+    "skills/IV-VI/q46-water.json"
+   ],
+   "path": "paths/IV-VI.json"
+  },
+  {
+   "id": "VII-VIII",
+   "title": {
+    "pl": "Etap II (klasy VII–VIII)"
+   },
+   "skills": [
+    "skills/VII-VIII/q78-arch.json",
+    "skills/VII-VIII/q78-chart.json",
+    "skills/VII-VIII/q78-deposit.json",
+    "skills/VII-VIII/q78-nim.json",
+    "skills/VII-VIII/q78-ramp.json",
+    "skills/VII-VIII/vh-alg-addsub.json",
+    "skills/VII-VIII/vh-alg-binomials.json",
+    "skills/VII-VIII/vh-alg-build.json",
+    "skills/VII-VIII/vh-alg-evaluate.json",
+    "skills/VII-VIII/vh-alg-factor.json",
+    "skills/VII-VIII/vh-alg-formula.json",
+    "skills/VII-VIII/vh-alg-mul-mono.json",
+    "skills/VII-VIII/vh-alg-simplify.json",
+    "skills/VII-VIII/vh-area-decompose.json",
+    "skills/VII-VIII/vh-bisector.json",
+    "skills/VII-VIII/vh-calculator.json",
+    "skills/VII-VIII/vh-chart-choice.json",
+    "skills/VII-VIII/vh-circle-calc.json",
+    "skills/VII-VIII/vh-circle-pi.json",
+    "skills/VII-VIII/vh-conclusions.json",
+    "skills/VII-VIII/vh-congruent-criteria.json",
+    "skills/VII-VIII/vh-congruent-find.json",
+    "skills/VII-VIII/vh-converse.json",
+    "skills/VII-VIII/vh-count-pairs.json",
+    "skills/VII-VIII/vh-counterexample.json",
+    "skills/VII-VIII/vh-data-critical.json",
+    "skills/VII-VIII/vh-data-sources.json",
+    "skills/VII-VIII/vh-direct-prop.json",
+    "skills/VII-VIII/vh-eq-check.json",
+    "skills/VII-VIII/vh-eq-solve-frac.json",
+    "skills/VII-VIII/vh-eq-solve.json",
+    "skills/VII-VIII/vh-eq-word.json",
+    "skills/VII-VIII/vh-graph-change.json",
+    "skills/VII-VIII/vh-graph-distance.json",
+    "skills/VII-VIII/vh-indirect.json",
+    "skills/VII-VIII/vh-interest.json",
+    "skills/VII-VIII/vh-justify-right.json",
+    "skills/VII-VIII/vh-lattice-area.json",
+    "skills/VII-VIII/vh-lattice-vertex.json",
+    "skills/VII-VIII/vh-mean-exact.json",
+    "skills/VII-VIII/vh-mean-missing.json",
+    "skills/VII-VIII/vh-mean-outlier.json",
+    "skills/VII-VIII/vh-median.json",
+    "skills/VII-VIII/vh-minimal-argument.json",
+    "skills/VII-VIII/vh-percent-number.json",
+    "skills/VII-VIII/vh-percent-of.json",
+    "skills/VII-VIII/vh-percent-what.json",
+    "skills/VII-VIII/vh-power-calc.json",
+    "skills/VII-VIII/vh-power-decimal.json",
+    "skills/VII-VIII/vh-power-laws.json",
+    "skills/VII-VIII/vh-power-negative.json",
+    "skills/VII-VIII/vh-price-change.json",
+    "skills/VII-VIII/vh-prism.json",
+    "skills/VII-VIII/vh-prob-balls.json",
+    "skills/VII-VIII/vh-prob-dice.json",
+    "skills/VII-VIII/vh-prob-expected.json",
+    "skills/VII-VIII/vh-prob-frequency.json",
+    "skills/VII-VIII/vh-prob-reverse.json",
+    "skills/VII-VIII/vh-prob-two.json",
+    "skills/VII-VIII/vh-prop-divide.json",
+    "skills/VII-VIII/vh-pyramid-heights.json",
+    "skills/VII-VIII/vh-pyramid.json",
+    "skills/VII-VIII/vh-pyth-basic.json",
+    "skills/VII-VIII/vh-pyth-context.json",
+    "skills/VII-VIII/vh-real-model.json",
+    "skills/VII-VIII/vh-regular-angle.json",
+    "skills/VII-VIII/vh-root-bring-in.json",
+    "skills/VII-VIII/vh-root-factor.json",
+    "skills/VII-VIII/vh-root-multiply.json",
+    "skills/VII-VIII/vh-sci-compare.json",
+    "skills/VII-VIII/vh-sci-exponent.json",
+    "skills/VII-VIII/vh-similar-methods.json",
+    "skills/VII-VIII/vh-simplify-solution.json",
+    "skills/VII-VIII/vh-solid-counts.json",
+    "skills/VII-VIII/vh-special-exact.json",
+    "skills/VII-VIII/vh-special-numeric.json",
+    "skills/VII-VIII/vh-sqrt-approx.json",
+    "skills/VII-VIII/vh-sqrt-between.json",
+    "skills/VII-VIII/vh-sqrt-exact.json",
+    "skills/VII-VIII/vh-symmetry-axes.json",
+    "skills/VII-VIII/vh-symmetry-centre.json",
+    "skills/VII-VIII/vh-think-clever.json",
+    "skills/VII-VIII/vh-think-generalise.json",
+    "skills/VII-VIII/vh-think-structure.json"
+   ],
+   "path": "paths/VII-VIII.json"
+  }
+ ],
+ "files": [
+  {
+   "path": "authoring/shop-word-problems.llm.json",
+   "sha256": "c5389f41c01a1df6089544266c7d1d034763dd4853e7bbf70f73c4822516a47f",
+   "size": 4086
+  },
+  {
+   "path": "banks/ew-find-mistake.jsonl",
+   "sha256": "2964fe3eab3fb62c737aa948dd7af7c8baa43c044c05cfb358f7e747f73b3f74",
+   "size": 9409
+  },
+  {
+   "path": "banks/ew-games.jsonl",
+   "sha256": "d6638ced7aba38996c720140f51b964e14460f576967175adda739367ba2545c",
+   "size": 4631
+  },
+  {
+   "path": "banks/n46-digital-tools.jsonl",
+   "sha256": "b8ea0d4fa2145c49a1e4b9258976b8b4e7b0b40f3eaef14099a20fd2651db6d7",
+   "size": 5131
+  },
+  {
+   "path": "banks/n46-find-mistake.jsonl",
+   "sha256": "ecdd5613f3a7ca79692560addd047fb6444f8c8440beaacc1540686cb0c30009",
+   "size": 13898
+  },
+  {
+   "path": "banks/vh-calculator.jsonl",
+   "sha256": "b2cb4a6a1cd1af7b3cd680304e6c5cdf2542498e0730ef292d0b754a309a6995",
+   "size": 3886
+  },
+  {
+   "path": "banks/vh-chart-choice.jsonl",
+   "sha256": "61c667a84d58f4ac9c05d887ebdeb31d5b80fb7d14778da30f8e6adcd9f76300",
+   "size": 4619
+  },
+  {
+   "path": "banks/vh-conclusions.jsonl",
+   "sha256": "4e9363e664f2d20a540ddbc7efb6b7220da89d2c30657d82188f185ca1a9b264",
+   "size": 3712
+  },
+  {
+   "path": "banks/vh-congruent-criteria.jsonl",
+   "sha256": "4f7abf7ccd0d820088edb9fc9ee7bb34353ab72857e1c48f7650e51ff35f6667",
+   "size": 6679
+  },
+  {
+   "path": "banks/vh-converse.jsonl",
+   "sha256": "e6a6ed5d5606a3154f0e8ff7c409e82188cc7b65c641d2fd1a3bb23882ee9378",
+   "size": 5260
+  },
+  {
+   "path": "banks/vh-data-critical.jsonl",
+   "sha256": "a3db2e2052241c3e978681ba1a1944dac589e0b74f281c14769ca0257c40bf32",
+   "size": 6723
+  },
+  {
+   "path": "banks/vh-data-sources.jsonl",
+   "sha256": "71bc2548a017a11c3100890b502221a7f10c4cc7739a6cc3bbbc106e92fbdd03",
+   "size": 5100
+  },
+  {
+   "path": "banks/vh-indirect.jsonl",
+   "sha256": "94c05d72250e4b3b0f92945b1249713f8854a87357c06ee5dc826df8ad204af9",
+   "size": 4542
+  },
+  {
+   "path": "banks/vh-minimal-argument.jsonl",
+   "sha256": "9667eba1e14af1c512a4367e47b482e8e098a70a3fa7c56fee6553fcf93127a0",
+   "size": 3534
+  },
+  {
+   "path": "banks/vh-similar-methods.jsonl",
+   "sha256": "0d8e169663bbab98d1bce4a2b7aa04c69758cc0246cf8e13f54526519d3ac211",
+   "size": 4142
+  },
+  {
+   "path": "banks/vh-simplify-solution.jsonl",
+   "sha256": "7f2aec67af126375051ddf872523f4dfb91b472ea37da2a910c1a540ee77c4b0",
+   "size": 3192
+  },
+  {
+   "path": "curriculum.json",
+   "sha256": "3fef6458ca15057ac421ef160c21a40d0d787b4f0aa73bf9dfc582f5403dd918",
+   "size": 56298
+  },
+  {
+   "path": "generators/ew-add.json",
+   "sha256": "99207f7097cd0f02d116b0ba17250b81b362d96bbd2461ee0d371b54f784e1dd",
+   "size": 1952
+  },
+  {
+   "path": "generators/ew-bar-chart.json",
+   "sha256": "c6b61d2f912f0d6852194a473ff3db2654a36467f8468e4f0670f29325cea6ff",
+   "size": 1702
+  },
+  {
+   "path": "generators/ew-calendar-week.json",
+   "sha256": "6b7274813c8fe8173bf3b2cd176ee96bf9313285b892ad93fab1a849f901e28f",
+   "size": 1867
+  },
+  {
+   "path": "generators/ew-choose-unit.json",
+   "sha256": "41327252d451289f6f0736ec27eb5bc95004f88b28231a6a40aa6bc12988796a",
+   "size": 2000
+  },
+  {
+   "path": "generators/ew-classify-criterion.json",
+   "sha256": "3a2239e542f09086afd4810bc4bf2f137474dade987c86b6f2939b9a58c1faa1",
+   "size": 2076
+  },
+  {
+   "path": "generators/ew-clock-read.json",
+   "sha256": "1a36dfa35e4db2558bf75722f22058bb33a9ee2f1deac8fc720e743d5a3a0e48",
+   "size": 1230
+  },
+  {
+   "path": "generators/ew-compare-expr.json",
+   "sha256": "dfef96bd9fa75679b2eed0eebfa83abf117ee62c161721bb7065482d65f5e58b",
+   "size": 1647
+  },
+  {
+   "path": "generators/ew-compare-measures.json",
+   "sha256": "4c3b013b59bbfda419618cb4542a03a16e5f07bd0adfb59bc195bf4f3c1985c3",
+   "size": 1592
+  },
+  {
+   "path": "generators/ew-compare-sources.json",
+   "sha256": "3e1eb86ee50576768023bd49f5acf97ae775ac472fa511d5782eb122bd0cd3f8",
+   "size": 867
+  },
+  {
+   "path": "generators/ew-compare.json",
+   "sha256": "097e7ca8c51e1331e7067208022c1b433e71377a0d0604e8c469b4232713183d",
+   "size": 1331
+  },
+  {
+   "path": "generators/ew-compound.json",
+   "sha256": "d742584320c214d02ecc3d21a785ebd7dfefffb66fc109ee90687c8792b6c70e",
+   "size": 1183
+  },
+  {
+   "path": "generators/ew-convert-length.json",
+   "sha256": "dcb722a61e933dc93eca6f721cfbd80679e114189fcdd50129bf6d1242aedd4d",
+   "size": 1759
+  },
+  {
+   "path": "generators/ew-convert-mass.json",
+   "sha256": "245698ebcc03af728d5c8426e472622b75b11a5c6014bd7bc0c7fe6eed8cc517",
+   "size": 1630
+  },
+  {
+   "path": "generators/ew-convert-time.json",
+   "sha256": "1b334b1bb339732c057c8e2c2d2402521976f9e99980c8f6cb414e30070b8fd2",
+   "size": 1628
+  },
+  {
+   "path": "generators/ew-directions.json",
+   "sha256": "da6a3507052abcad06fafbe7516d31e0ebd906fb29010e9f51c73f57a053327a",
+   "size": 1961
+  },
+  {
+   "path": "generators/ew-div-meaning.json",
+   "sha256": "42289ea9139eeb5d58779dee2b18dc2c8aab2edbb7bc1c82d48b665b667f3502",
+   "size": 1499
+  },
+  {
+   "path": "generators/ew-div-share-or-fit.json",
+   "sha256": "f1ea693da8950841151c73fe27ca011e0dce420fe1acebc48c90380a0fb636b2",
+   "size": 1838
+  },
+  {
+   "path": "generators/ew-div-table.json",
+   "sha256": "cd267a23d3c3545b9aff9c17b2966ac42bc6e1aeeba232f35d31be5ce311c363",
+   "size": 1148
+  },
+  {
+   "path": "generators/ew-div-two-digit.json",
+   "sha256": "07c0094974132b920e4638f76ab3316e74be731d464f14e37047e9aee754d651",
+   "size": 780
+  },
+  {
+   "path": "generators/ew-grid-robot.json",
+   "sha256": "ee7f4c036e13e62d33a0cad02fcafb435c3bf97c2d87b7443c1d2cc5ad1b9a40",
+   "size": 1600
+  },
+  {
+   "path": "generators/ew-inverse-check.json",
+   "sha256": "2d83bb8e59f54e96a922555ca0255e0d30976160e7097a6e3f7ab2eecf3c5a94",
+   "size": 1540
+  },
+  {
+   "path": "generators/ew-lines-surroundings.json",
+   "sha256": "d5de8cb5217978d9dcbaea9ae09d782c2c901b8fb62ebfd92240e86e27533b29",
+   "size": 1378
+  },
+  {
+   "path": "generators/ew-missing.json",
+   "sha256": "9a518602991ff318e6250e983c6d7a30d9da9d0424e9f04609198c53e12e8d12",
+   "size": 1879
+  },
+  {
+   "path": "generators/ew-money-coins.json",
+   "sha256": "0e2558cd5b8e3abc2a4426f6cba0ed27f5fed2ed484e9306089e63da7c4eba5d",
+   "size": 1390
+  },
+  {
+   "path": "generators/ew-money-notation.json",
+   "sha256": "79b368f9a1c988964782c4418b8aa58c371830b9ddb78ce97a1abedbc53b32b0",
+   "size": 1059
+  },
+  {
+   "path": "generators/ew-mul-table.json",
+   "sha256": "3f664fce3eef3515b758d7eab0804741b6bd350497f73dd2c17c1ee7bc1878eb",
+   "size": 1429
+  },
+  {
+   "path": "generators/ew-mul-two-digit.json",
+   "sha256": "d2970b8e2125d138944da7bf0c47ea17cdfcb5da0f94af5b67804a9836edfa98",
+   "size": 832
+  },
+  {
+   "path": "generators/ew-nim.json",
+   "sha256": "848977a8059331b90c60cda523f79c8b1c645c415e188aa95e22a736edb4eee3",
+   "size": 1015
+  },
+  {
+   "path": "generators/ew-number-line-diff.json",
+   "sha256": "40068d5fb04d5ca9724b44034a9709622aabacf8695069a68a099eb169aff45c",
+   "size": 1226
+  },
+  {
+   "path": "generators/ew-number-line-read.json",
+   "sha256": "04f5020011497421ea079a0b82479cffeae013bbfce2ce18ae549a033d051abf",
+   "size": 1225
+  },
+  {
+   "path": "generators/ew-odd-even.json",
+   "sha256": "be283d7bc17888a69e9b07b48d3cecd104bc5f281e1fe5154ff9812940cfcf85",
+   "size": 1336
+  },
+  {
+   "path": "generators/ew-odd-one-out-num.json",
+   "sha256": "fa79639131d32a06041935edb47165be79c7e7dc3a92d891eb2785d0c51ae57a",
+   "size": 1607
+  },
+  {
+   "path": "generators/ew-odd-one-out.json",
+   "sha256": "b3f717b21c837f7a20ae4fc0df899ea55e42ac5d219be1bc44b1ac31b56f2418",
+   "size": 1654
+  },
+  {
+   "path": "generators/ew-order.json",
+   "sha256": "d2e219061cd04af5e8659f82cbd5a654419ea75144dc40a323f3d26e1a6040a8",
+   "size": 1693
+  },
+  {
+   "path": "generators/ew-pattern-rule.json",
+   "sha256": "7d6a7c5ca3600b02b9c722d412c8f2c8dab65334d2830198a94cd03e19045370",
+   "size": 1779
+  },
+  {
+   "path": "generators/ew-perimeter.json",
+   "sha256": "399b3ff03f0ff0d71404fd82ef23938e4228762fe69a181d246c35743c4c9c70",
+   "size": 2734
+  },
+  {
+   "path": "generators/ew-pion-poziom.json",
+   "sha256": "f5cb2e03a4e09f5fe453ce2a88ccc740d720ace487034eae530da427bd32bbe9",
+   "size": 1362
+  },
+  {
+   "path": "generators/ew-place-value.json",
+   "sha256": "f15d3bbf3deed44b4ea3ea3508194464d73b0c43b3ba3445bec2cead6cf00716",
+   "size": 1576
+  },
+  {
+   "path": "generators/ew-price-list.json",
+   "sha256": "e2ce88528af2710a984ac21e86d5d9ceab89004d250853b64d4aab2cfa8a8a2c",
+   "size": 2016
+  },
+  {
+   "path": "generators/ew-puzzle-heads-legs.json",
+   "sha256": "a21b643094ee7ef62e19211a91b0f103593cd1aca1b4c2dc7ae3053720c15885",
+   "size": 919
+  },
+  {
+   "path": "generators/ew-read-timetable.json",
+   "sha256": "c9b1f296731751d3a7a00a7bc74e06bc06aef9f0b0d89063171a09832de2ca05",
+   "size": 1481
+  },
+  {
+   "path": "generators/ew-recipe.json",
+   "sha256": "76f34978f1ad9ad82ffdc10bf19a826382954cf9e40d22823527fa1051d34335",
+   "size": 2039
+  },
+  {
+   "path": "generators/ew-rhythm.json",
+   "sha256": "86090eba9279ef98f2d1f978d3118302eff0aec4b90a8f4d61471cd266a395e2",
+   "size": 1708
+  },
+  {
+   "path": "generators/ew-roman-read.json",
+   "sha256": "5c974210e1392b5fb3162b901385cf53975fd69974c736eca84f37729b0728fc",
+   "size": 622
+  },
+  {
+   "path": "generators/ew-roman.json",
+   "sha256": "cfe49821513498b57ed25da2f220d1115d168d13e04f3d9099d514dd058120d9",
+   "size": 1262
+  },
+  {
+   "path": "generators/ew-ruler-read.json",
+   "sha256": "491b9e088d0d945d8d5870f4eb5ecebf46d3328d5e7f86dd9e7848d5ec7a6164",
+   "size": 1036
+  },
+  {
+   "path": "generators/ew-saving.json",
+   "sha256": "a33edf757d5c2e713d23f1181f4702df8b69a6d6d33c06ca40b69a8e5702a989",
+   "size": 1624
+  },
+  {
+   "path": "generators/ew-sequence.json",
+   "sha256": "6c3c835d35396a3beeeffc8b54ce98ae00c3f974afaa5ad09b2fa3c102368f65",
+   "size": 1737
+  },
+  {
+   "path": "generators/ew-shape-count.json",
+   "sha256": "b5cfa7902628f81382246da2bfa95ad5e3706bd40890e953a3fcbe26b27f7ad9",
+   "size": 1067
+  },
+  {
+   "path": "generators/ew-shape-description.json",
+   "sha256": "4e54e60aeddb369eec218bc9a41bd67a480ea88dfbed2a907502b93abfa8ebd7",
+   "size": 1806
+  },
+  {
+   "path": "generators/ew-shopping.json",
+   "sha256": "b5ee919d689bc6ef7165ecb1dda49ae52710a17a3a67d67fe6f1ce1a10b2bf63",
+   "size": 1906
+  },
+  {
+   "path": "generators/ew-skip-count.json",
+   "sha256": "a409b9aa069a36aff4fb0c1000ecf252f18c382c064b8da9e326406cef4b2ed5",
+   "size": 1280
+  },
+  {
+   "path": "generators/ew-solid-object.json",
+   "sha256": "130576aacf87b837e10704bfb0969eb3906fddcabbf034514a006e8f61da7aa4",
+   "size": 2559
+  },
+  {
+   "path": "generators/ew-strategy.json",
+   "sha256": "dfe0e78a8f07489220933544edf055867a6594c9ceb00bf000ca773f8668cbf3",
+   "size": 1935
+  },
+  {
+   "path": "generators/ew-sub.json",
+   "sha256": "b3b577974c7706b6d407b37f5d8eceeaaf0e5658d55c5e456e974457d2e0131e",
+   "size": 1805
+  },
+  {
+   "path": "generators/ew-symmetry-count.json",
+   "sha256": "06cce015115ec7242113b4726ce9eb38c317c9dc90ccb36c34916268c5821e01",
+   "size": 1301
+  },
+  {
+   "path": "generators/ew-symmetry-letters.json",
+   "sha256": "c84c079de6ed4135e703e5d4df606a4cde9b34b1a71f0f8415c72284da9dfca8",
+   "size": 1318
+  },
+  {
+   "path": "generators/ew-table-read.json",
+   "sha256": "35e6ce0384dbfa9c582af1c724fa4a13ca1da78ac889a91721b0b40303fedfca",
+   "size": 2104
+  },
+  {
+   "path": "generators/ew-tally.json",
+   "sha256": "af99d276c1de962a751c792a21c7e03b6ee1e6f1fb8ce14aa82e1b9b97c51836",
+   "size": 1100
+  },
+  {
+   "path": "generators/ew-temp-diff.json",
+   "sha256": "a9128550d710647635b68c170563f0ccc76a90a29f4949d21b0503983a7e9789",
+   "size": 1340
+  },
+  {
+   "path": "generators/ew-thermometer-read.json",
+   "sha256": "0c1c9ff42afcfba4086b60d466025c00006d2241b9286cb321122c1331f70ac4",
+   "size": 973
+  },
+  {
+   "path": "generators/ew-time-add.json",
+   "sha256": "a13e54cf1eba75f6c5a24cd80f5cc9732e071b67f297d944b65c03f8c36e9295",
+   "size": 1346
+  },
+  {
+   "path": "generators/ew-unit-fraction-name.json",
+   "sha256": "a20f802cfa1ca515a8c322343fecaaa9c1c836e8888d5b29404372cd0b071e40",
+   "size": 2206
+  },
+  {
+   "path": "generators/ew-unit-fraction-of.json",
+   "sha256": "ac0544a6fdf7f1595fb38a126409222ba9345f891920a67c643f5c43d69d6bca",
+   "size": 968
+  },
+  {
+   "path": "generators/ew-wait-minutes.json",
+   "sha256": "2f98b4d8acbc60f4e1f0013eb0a770ca7ac65a56c797056ae9ef34b537bcbb41",
+   "size": 1500
+  },
+  {
+   "path": "generators/ew-wp-add-sub.json",
+   "sha256": "1411d3330be3ad8d31f95fc24037a8504a59f856d2e58e0edaf136c5d64ba2a3",
+   "size": 2454
+  },
+  {
+   "path": "generators/ew-wp-mul-div.json",
+   "sha256": "81bd57a69f8143ee66faf0b8c0ef8c22ca54ccb9791f70dd8f89a58443e1d2ba",
+   "size": 2115
+  },
+  {
+   "path": "generators/ew-wp-two-step.json",
+   "sha256": "54ffd93bfb953c39f523a0ab4a34abd1e65b5bb941a517dccfe3c78f90d5acef",
+   "size": 1984
+  },
+  {
+   "path": "generators/ew-write-number.json",
+   "sha256": "a0cd35f08882b8a8f9108f7628419022d407803927b45848f9a945df27507e76",
+   "size": 840
+  },
+  {
+   "path": "generators/n46-add-mental.json",
+   "sha256": "831e277656eca01dfcec7ca8fe0a493a93400348a7df9e1dc510970b716d2bcd",
+   "size": 1514
+  },
+  {
+   "path": "generators/n46-add-written.json",
+   "sha256": "60219ed583f58fcfdda7aafc68bf3d814903d899cc0dee86882d470a6b1268d3",
+   "size": 1513
+  },
+  {
+   "path": "generators/n46-alg-equation-build.json",
+   "sha256": "edebe14f0ad7f1af68b5faab392a420dfb43baae2289d5ceb5cdc5009514f8c3",
+   "size": 3874
+  },
+  {
+   "path": "generators/n46-alg-evaluate.json",
+   "sha256": "c0515bb0307230abb56d6e2f7821f1d52524bdf459fac18763de9ccad724c637",
+   "size": 2075
+  },
+  {
+   "path": "generators/n46-alg-expression.json",
+   "sha256": "e6c5417d499fc182245c5657d24e7b602482b762b550bc21f63df0b75919f01e",
+   "size": 3528
+  },
+  {
+   "path": "generators/n46-alg-formula.json",
+   "sha256": "001e619fc06f42cebeec0912e4a502abfa4778cb17166541c7413a0857bcfe32",
+   "size": 1821
+  },
+  {
+   "path": "generators/n46-alg-solve.json",
+   "sha256": "4ec3ba4976da9594ee1249a0f1aae6c642c08b7d4c17eedee4fc2c8325f5a8f4",
+   "size": 1720
+  },
+  {
+   "path": "generators/n46-angle-convex.json",
+   "sha256": "1ec44e0be985701a8bab9ce94a7b0adbb5c9b03d7d9a63e3a1ad202e43b700f0",
+   "size": 1206
+  },
+  {
+   "path": "generators/n46-angle-pairs.json",
+   "sha256": "cb05103fd1c6bf430c35c9a30be9c3624d4deb7276eee65a9d40d4cce9279f0a",
+   "size": 2658
+  },
+  {
+   "path": "generators/n46-angle-types.json",
+   "sha256": "8b9e13076fb0b935658f3281fb31855edd0d6fb35d65ff87c057a98abaa0081c",
+   "size": 1904
+  },
+  {
+   "path": "generators/n46-angle-vertex.json",
+   "sha256": "1d4319de1990919c6dbe877966ab3bd0be8823e2b400e48125a9876157eb6128",
+   "size": 2544
+  },
+  {
+   "path": "generators/n46-area-composite.json",
+   "sha256": "90eaedb5d45cb27004f13c62aec3993080e007dfe67669a86ff1ad288fe304c7",
+   "size": 3808
+  },
+  {
+   "path": "generators/n46-area-parallelogram.json",
+   "sha256": "88559ff5f9edd5bdcc36914a7e92e0c547455ff9c590d01bbe6c937fef2440df",
+   "size": 2359
+  },
+  {
+   "path": "generators/n46-area-rect.json",
+   "sha256": "a737e33df007696ff812816a639ac729d0338f84428ad167cc2f83d2448122a4",
+   "size": 2096
+  },
+  {
+   "path": "generators/n46-area-rhombus-trapezoid.json",
+   "sha256": "9af0b162a90e5ae69c4c28955206557a8d20931b71612dadbdff18814cfd2c93",
+   "size": 3853
+  },
+  {
+   "path": "generators/n46-area-triangle.json",
+   "sha256": "d84f6009696b05bcb58d8934d58bdabd9af42263ecb27af141af1e428dc2e29c",
+   "size": 2381
+  },
+  {
+   "path": "generators/n46-area-units.json",
+   "sha256": "ac39b2b4e5535e66e64846cfb7f14dcfd276dcb1ee8cd481401cda0df483a84c",
+   "size": 2284
+  },
+  {
+   "path": "generators/n46-area-unknown-side.json",
+   "sha256": "5f046651866335bb4c71fc9846c5c77cfa919775fcd372f5ddfd609adb3a4794",
+   "size": 1354
+  },
+  {
+   "path": "generators/n46-bar-chart.json",
+   "sha256": "f3185b3062e72ac8ff3c4ddfd145145e82091b8d63c3da7ad883408d8bcaef79",
+   "size": 1818
+  },
+  {
+   "path": "generators/n46-budget.json",
+   "sha256": "2e9c5eed9ce5ea32d400c48212cde71677a6fec5e8e8fc8d77ded204532e71ae",
+   "size": 1988
+  },
+  {
+   "path": "generators/n46-calculator-use.json",
+   "sha256": "2d4cb6270d4d5e9acc2a7310ff05899f4e4bbd18e6fb35b2b05dea1920c2bd56",
+   "size": 1870
+  },
+  {
+   "path": "generators/n46-calendar-weekday.json",
+   "sha256": "896aa6382128f6af7d27ffcbc814290e4a99a4b64d01e9bff12a7a39746ede79",
+   "size": 1690
+  },
+  {
+   "path": "generators/n46-calendar-weeks.json",
+   "sha256": "faa0524e6c1490f0a5c3b6e5e702b4b93d2f983a13e00f4d6803e5af2efe7298",
+   "size": 1674
+  },
+  {
+   "path": "generators/n46-capacity-units.json",
+   "sha256": "8bd1abe39225e4274e62e0a63953bb2329e93ffe97d4221ae824aaed9bc369ef",
+   "size": 2210
+  },
+  {
+   "path": "generators/n46-choose-unit.json",
+   "sha256": "ce8fdbdb8a1cf6effced9aa38762427e5e175600f015e73898806db39c187764",
+   "size": 2075
+  },
+  {
+   "path": "generators/n46-circle-diameter.json",
+   "sha256": "11810052a9b5d385e7ea4257b3f44982db829d8074b53840fdf885dd09c7d1cd",
+   "size": 1916
+  },
+  {
+   "path": "generators/n46-circle-terms.json",
+   "sha256": "ba26deb90a45b6c54e553841761e1f456f6076b8068af655fad7d0eb5301100a",
+   "size": 1858
+  },
+  {
+   "path": "generators/n46-clock-duration.json",
+   "sha256": "10b5e71eb170703e621f8f1645a2b105c21c78eeb6648a7e90aa76e9f7fc5284",
+   "size": 1646
+  },
+  {
+   "path": "generators/n46-clock-end.json",
+   "sha256": "21cb3113d532b5651d3a6e0a0f572eb4594f0d3f08b2b73c5f496c42045ef6e9",
+   "size": 1890
+  },
+  {
+   "path": "generators/n46-clock-start.json",
+   "sha256": "54bbf15aa49d01308da32696985f88a1cb13e0360d8dc60e0d38078b68429247",
+   "size": 1061
+  },
+  {
+   "path": "generators/n46-common-divisors.json",
+   "sha256": "eb3146e4dafbe05c626514c5bc25d7c860eba5195664e4b22c3ae98fba9134ca",
+   "size": 2395
+  },
+  {
+   "path": "generators/n46-compare.json",
+   "sha256": "1f6990617667981982c11f2bb71af57354df6daaa16acc23e3f174c502cb0a65",
+   "size": 1429
+  },
+  {
+   "path": "generators/n46-compose.json",
+   "sha256": "a723c83a66ef687f34ac386f3b8c042f89ec1dcde76fb0ab0db0b0ba62b285c4",
+   "size": 1195
+  },
+  {
+   "path": "generators/n46-compound-to-decimal.json",
+   "sha256": "dfadbd4f1fee1631a04818cd185fb7a5df2650b4f6c57a0f0369b510c3070645",
+   "size": 1495
+  },
+  {
+   "path": "generators/n46-coord-distance.json",
+   "sha256": "86e61a037551c984f5459f80d4df4bd96f3b762f1458801284d699c1adee88bb",
+   "size": 1607
+  },
+  {
+   "path": "generators/n46-coord-read.json",
+   "sha256": "d616f154cad9ed8338ed8a8bbd81bbd94503fabbc2e5b436a295d4bc1f98cfb3",
+   "size": 1590
+  },
+  {
+   "path": "generators/n46-coord-rectangle.json",
+   "sha256": "5558df5bb78d5e96d989b45d818297b77860fc586efd3d7a09d2921e6bd738df",
+   "size": 1351
+  },
+  {
+   "path": "generators/n46-count-cases.json",
+   "sha256": "dd2e2992e3c82ec10bf4b204f9a1d3d6ef9f06cda6ba5d3a3578acddb34c4733",
+   "size": 1845
+  },
+  {
+   "path": "generators/n46-count-multiples.json",
+   "sha256": "9a076d59e25b3cb932f19c35d445e210455a825674d9504455fdbe9a00579a78",
+   "size": 1448
+  },
+  {
+   "path": "generators/n46-counterexample.json",
+   "sha256": "c2e44eb5833aefb07339b93d5cd5389a5a5149b8533191cb36594fa6ade78b54",
+   "size": 2145
+  },
+  {
+   "path": "generators/n46-cuboid-compound.json",
+   "sha256": "987807fc7e35348d262d028a2ff1ab34bb7fe77fb14d11c91acdd8d83645c855",
+   "size": 1932
+  },
+  {
+   "path": "generators/n46-cuboid-surface.json",
+   "sha256": "740d12d43566873765ba52768bdc9294ebb07c2d9b30c9e416decc665f51532a",
+   "size": 2931
+  },
+  {
+   "path": "generators/n46-cuboid-volume.json",
+   "sha256": "b9d332592fcbcc1fefbde77bb8e35c57530b2456c9af8cb38a7b79055b6bf214",
+   "size": 2345
+  },
+  {
+   "path": "generators/n46-dec-add.json",
+   "sha256": "b796ed78a8325c8b561773958d8e845610f24fc2f74f0db482fcb9ea88eb98c8",
+   "size": 1504
+  },
+  {
+   "path": "generators/n46-dec-compare.json",
+   "sha256": "5229c662fc126ef51ca38b13fffa3d6ddb2b9b9c132cd51eb08e0335e549a005",
+   "size": 1847
+  },
+  {
+   "path": "generators/n46-dec-div-dec.json",
+   "sha256": "79c1aa3cbdf3dbf3606c1028682cd80433601bca5815e1bcc7d9d1dcaf08fb55",
+   "size": 1211
+  },
+  {
+   "path": "generators/n46-dec-div-nat.json",
+   "sha256": "571646b00d0459e5ea6ca1804afd3f5d2be33828d67e92b7d6c4989ecdda3d18",
+   "size": 1545
+  },
+  {
+   "path": "generators/n46-dec-from-fraction.json",
+   "sha256": "58f1b2889c499b6f12104b90ac6c9442268ea506619025c604263365622da671",
+   "size": 1610
+  },
+  {
+   "path": "generators/n46-dec-infinite-round.json",
+   "sha256": "a564a6f6f868f6961b3eae34a8b5560835432abb6b968bd9a486e3b631c34a72",
+   "size": 1157
+  },
+  {
+   "path": "generators/n46-dec-infinite.json",
+   "sha256": "fb075ff3c4271ba0867fc838cb0383507617b29f2800ddc0cbc1296127bb43ae",
+   "size": 1533
+  },
+  {
+   "path": "generators/n46-dec-mul.json",
+   "sha256": "d83e297016cb71e4fb64455a570d18c0a5a6ae719bf2f9e1370c9f91c861604e",
+   "size": 1753
+  },
+  {
+   "path": "generators/n46-dec-number-line.json",
+   "sha256": "f06398af23cb31f838db6d6de309cc2f9abd4e7a72ff5499dc61b54e448e60e7",
+   "size": 1484
+  },
+  {
+   "path": "generators/n46-dec-order.json",
+   "sha256": "f5126e50e2e9e8672baf3e74f45d68d061cc4bd6a2888757fbaf183edd4869f5",
+   "size": 1869
+  },
+  {
+   "path": "generators/n46-dec-place-value.json",
+   "sha256": "7c7a08d2583e06379cf3a6488564fa910bfa872f960f39c87dda209e845d2032",
+   "size": 1176
+  },
+  {
+   "path": "generators/n46-dec-power.json",
+   "sha256": "2dd208f923e67506d111336a9c86b966be6d74f6d06872bbb02f915fc20e0ddc",
+   "size": 1142
+  },
+  {
+   "path": "generators/n46-dec-round.json",
+   "sha256": "dee1e54af6eff43d553a68a1ddf9d134c4aa25896abe4d4fba6d4bf8c3c1bb45",
+   "size": 1476
+  },
+  {
+   "path": "generators/n46-dec-shift.json",
+   "sha256": "bf18d6738b3ac7ab151adac7186faa80221c2c252697b814979a243f8be1fee3",
+   "size": 1508
+  },
+  {
+   "path": "generators/n46-dec-sub.json",
+   "sha256": "317c9ffe43cc18783659639f009a549ea5c6879fd8f1da76b005548dce81dee8",
+   "size": 1465
+  },
+  {
+   "path": "generators/n46-dec-to-fraction.json",
+   "sha256": "6c987309790eca05d64c1f1492438a0347288d875e09d528d1756c23bede1500",
+   "size": 1463
+  },
+  {
+   "path": "generators/n46-dec-to-mixed.json",
+   "sha256": "033d21ee283fe19b210115c2e385f7a82cf2588bd756baaf4bb4e6aec31e1f10",
+   "size": 1016
+  },
+  {
+   "path": "generators/n46-dec-vs-fraction.json",
+   "sha256": "5b626e48509a63e778fe60874615ec9a8ac6567b3e18ff4dbbc32f5a5afb2c37",
+   "size": 1320
+  },
+  {
+   "path": "generators/n46-decimal-to-compound.json",
+   "sha256": "78d82d70a669b42f14815392009675bfc474b9d58487823f53116e2b8f393e1b",
+   "size": 1221
+  },
+  {
+   "path": "generators/n46-diff.json",
+   "sha256": "42eb922570233aad702664c7cc938869a7b0f585c33fdc321f1bb4832d14377f",
+   "size": 1102
+  },
+  {
+   "path": "generators/n46-digit-place.json",
+   "sha256": "f1ff2e777f026286f081fb0d6198bec740be43175f12312c1066d76b953f4796",
+   "size": 1369
+  },
+  {
+   "path": "generators/n46-div-meaning.json",
+   "sha256": "1c3f083117cfa22b175ae181e93e989916da6cdfb2fb3f67446a17c398ff81e2",
+   "size": 1611
+  },
+  {
+   "path": "generators/n46-div-rem.json",
+   "sha256": "66478dfadbc423fe6cc47a8f075c0985e48a8f2916c0065254193c099f45e463",
+   "size": 1486
+  },
+  {
+   "path": "generators/n46-div.json",
+   "sha256": "abd8fe48fffe536b0acbcdb1171a749a74656ad6ffdb4d7db8af062d062b49b8",
+   "size": 1592
+  },
+  {
+   "path": "generators/n46-divisible-digit.json",
+   "sha256": "64f0318aa811c8fc86e4e17e7da9db004bc21324cb4bb475413620655d5170f5",
+   "size": 1145
+  },
+  {
+   "path": "generators/n46-divisible-pick.json",
+   "sha256": "9cdc81a960a2325bb4beceaacf8563dd29e20294962fd8e491149bef7a184281",
+   "size": 1735
+  },
+  {
+   "path": "generators/n46-divisible-yesno.json",
+   "sha256": "f8eeec8b446f9badc2eaf22eac4c184194c4c6c8184a161ac647e87de4854dd9",
+   "size": 1216
+  },
+  {
+   "path": "generators/n46-estimate-product.json",
+   "sha256": "3701e0da0db40fa74fcda0a2de198f3f9b13deb0aba39f37b6adcad824d97ceb",
+   "size": 1790
+  },
+  {
+   "path": "generators/n46-estimate-sum.json",
+   "sha256": "3199bf1cc910974bd33238ee46d1b07e8e778bdc976b9ec789eea49d0959685c",
+   "size": 1841
+  },
+  {
+   "path": "generators/n46-examples.json",
+   "sha256": "fc69487ff6ba5b34606ad75a75ba8471cbbb112b09c37c816241527567ac0af6",
+   "size": 1820
+  },
+  {
+   "path": "generators/n46-exchange.json",
+   "sha256": "c01c012ff947f9b93da3ea8f43cb56f8a7bf49fefd5a6fd4b763c5af89c78eb6",
+   "size": 1239
+  },
+  {
+   "path": "generators/n46-expenses-average.json",
+   "sha256": "c30ebc4df845850eab3ff98a6b021b0caebc70887c6f705b5796b5425c9b4ae5",
+   "size": 1398
+  },
+  {
+   "path": "generators/n46-expenses-decision.json",
+   "sha256": "7282716276efbc441f24c229f715939264a1d57399e834fadbe77e77a0df4384",
+   "size": 1475
+  },
+  {
+   "path": "generators/n46-factorization-fact.json",
+   "sha256": "73ece16c462dad404a911ca737a118d30ad42777382b6f72fc164575c2fff495",
+   "size": 1269
+  },
+  {
+   "path": "generators/n46-factorization-pick.json",
+   "sha256": "60ca9fa8b1c3ecfbea8e2dfd7e5453b6ff50af1d3cfc26f52f83ea8710d096bb",
+   "size": 1667
+  },
+  {
+   "path": "generators/n46-frac-addsub-mixed.json",
+   "sha256": "81592271d63e1077f92b64af25e5552060e2df4062d24c0f5d5e4e1bd6af4a1c",
+   "size": 1882
+  },
+  {
+   "path": "generators/n46-frac-addsub.json",
+   "sha256": "268d402fc4565099c2ea79932a0510b9e3efb4413be756b618c27b219669bfda",
+   "size": 2248
+  },
+  {
+   "path": "generators/n46-frac-compare.json",
+   "sha256": "a1407789592478680e6b12c454ae6dc95050419a9b4b34edbc94d252a34d4b8b",
+   "size": 1988
+  },
+  {
+   "path": "generators/n46-frac-diff.json",
+   "sha256": "d23562f644085166c928b807e81224bce525087e49f2606e3a941aab71e56a52",
+   "size": 1258
+  },
+  {
+   "path": "generators/n46-frac-div.json",
+   "sha256": "ab732e3201b6ecd5b5f7aa754f99cd36130ec058f1fd3381670f22c5c9b77287",
+   "size": 1994
+  },
+  {
+   "path": "generators/n46-frac-extend.json",
+   "sha256": "00f57fec8b39aa6beff95870f0bbfcb8df6929812db9183a0538bd18822ed179",
+   "size": 1454
+  },
+  {
+   "path": "generators/n46-frac-mul.json",
+   "sha256": "42b970a5629522b146122049d9257468d7842470dcc3508ca20ccdda3225c26b",
+   "size": 1946
+  },
+  {
+   "path": "generators/n46-frac-number-line.json",
+   "sha256": "150256c69dccb6a12b27688e92205f699ffd7dec2cd696e74092a9f9f0824071",
+   "size": 1454
+  },
+  {
+   "path": "generators/n46-frac-of-number.json",
+   "sha256": "941b1d263d8c87c57acc45646ba8295799a34b765f7292b7c40372e4968f8d8a",
+   "size": 1426
+  },
+  {
+   "path": "generators/n46-frac-of-quantity.json",
+   "sha256": "79fcb82bcec83faea7b4f3e02d51c90ce89d96d6e5cfbe68251617ed2d0bf1bb",
+   "size": 2047
+  },
+  {
+   "path": "generators/n46-frac-order.json",
+   "sha256": "fc2dfbd8ef9feb68c9898a4e16fc554b756d9fac84d3aaa6929c0f222cab866c",
+   "size": 1994
+  },
+  {
+   "path": "generators/n46-frac-part-figure.json",
+   "sha256": "95c2edac5974e2f8f77d01078b41a37da28d41d9c597b3b6fbfa0455b932f01f",
+   "size": 1949
+  },
+  {
+   "path": "generators/n46-frac-part-set.json",
+   "sha256": "92156d6636364793d69371bf88b7af811a7f0d6ddea0dc739a237b27809d92c4",
+   "size": 1444
+  },
+  {
+   "path": "generators/n46-frac-power.json",
+   "sha256": "7a238bac5f86d4db6ba27e7401b3d1217797c97e8d92f458b5286160d6409852",
+   "size": 1212
+  },
+  {
+   "path": "generators/n46-frac-quotient.json",
+   "sha256": "74f4731322cce53ac0b6050ceaa31e66bb54be9d1c2e310d024f976ed5e2e371",
+   "size": 1382
+  },
+  {
+   "path": "generators/n46-frac-simplify.json",
+   "sha256": "e5c3967e5378d88f6b7102c511acd926c128c27b97ce01b07763f63aee47b92b",
+   "size": 1947
+  },
+  {
+   "path": "generators/n46-frac-to-mixed.json",
+   "sha256": "4805d08389306c5ccd73e6c77d1b5ee36ada3c05efc288e91a120e2a01ae6143",
+   "size": 1388
+  },
+  {
+   "path": "generators/n46-gcd-lcm-word.json",
+   "sha256": "92b109ba56f3d0f2cf40b144b0bdf88d4e5660eadf18aeca28d58b29cf9e48bb",
+   "size": 2154
+  },
+  {
+   "path": "generators/n46-gcd.json",
+   "sha256": "91b673ee43032954ac36ae8f5c73383232ba53bdf02674455a2900f8c106df8a",
+   "size": 1436
+  },
+  {
+   "path": "generators/n46-height-id.json",
+   "sha256": "8287a621482b147641c3fa877adffee607c53d2a51191d2cd9e6c3887b293fb1",
+   "size": 2153
+  },
+  {
+   "path": "generators/n46-int-addsub.json",
+   "sha256": "15fc48869f359139d38cdbc3e50f7af3cf6439bac4dba9f73a09ede107104f65",
+   "size": 1520
+  },
+  {
+   "path": "generators/n46-int-compare.json",
+   "sha256": "2ffcad459a484b975174607794160a1766ba2554bed7f2645c20240caa86f701",
+   "size": 1210
+  },
+  {
+   "path": "generators/n46-int-context.json",
+   "sha256": "69c79893711ba1c33800a29705da8ad5d144b644e4d72ac9792451ac05fb077e",
+   "size": 2106
+  },
+  {
+   "path": "generators/n46-int-distance.json",
+   "sha256": "7daa92a24b93d50ab170eb09b17e77ff1b0703648b9bb3534028258cf47765d0",
+   "size": 1710
+  },
+  {
+   "path": "generators/n46-int-muldiv.json",
+   "sha256": "33022c947586dffe9676ca72e3a9cbcd16c69f9576853004cab4fc3f14ad23ca",
+   "size": 1143
+  },
+  {
+   "path": "generators/n46-int-order.json",
+   "sha256": "2b828e5e0f0a15b2d8aab74dd0c01dc732c74c90d2dead0fc4ac17a21e4953d5",
+   "size": 1678
+  },
+  {
+   "path": "generators/n46-isosceles.json",
+   "sha256": "69424c62a574de189e10b34532532f809d4ecc86d717660324da376df9cc0d3e",
+   "size": 2132
+  },
+  {
+   "path": "generators/n46-justify.json",
+   "sha256": "1c6871a99821c343b1a54e60b6dcfdc28f1d3c59cba653682c8b37931fd76d93",
+   "size": 1843
+  },
+  {
+   "path": "generators/n46-lcd.json",
+   "sha256": "799a84f2f0b015b2ee69af55efcb1aa20a0bc3a775170070adb4ad55e92ef0a1",
+   "size": 1578
+  },
+  {
+   "path": "generators/n46-lcm.json",
+   "sha256": "3b25e2b8b4fb81391cbd332d1470a80b5bbfd006fced93ab31b8d4af6e53bdee",
+   "size": 1528
+  },
+  {
+   "path": "generators/n46-len-units.json",
+   "sha256": "c65d94b6e8af78d9fb65a16006bdaad9f47946b79b85d5d0e6cf0f12570a13fc",
+   "size": 2234
+  },
+  {
+   "path": "generators/n46-line-chart.json",
+   "sha256": "1c9eace5fcd7eebcb08eefe9f57502ea9c0fe850573089e3b700a8156aa1808b",
+   "size": 1985
+  },
+  {
+   "path": "generators/n46-line-relations.json",
+   "sha256": "8e79ff8bd9874f5f32491941b477ba15eef259a15f0a952c1306a09391f87db6",
+   "size": 2095
+  },
+  {
+   "path": "generators/n46-line-terms.json",
+   "sha256": "f6b5428efc7713e9236aea20790ceb2c939f7ccf2b40d4effde223c40562aaf5",
+   "size": 2039
+  },
+  {
+   "path": "generators/n46-mass-units.json",
+   "sha256": "2f700798e131b0703a851500fd5dafc9a74292a84e4fb71a2fd6283e604e99b6",
+   "size": 2192
+  },
+  {
+   "path": "generators/n46-mean.json",
+   "sha256": "55bcb017d27dda784ea6d3799e534de8f0f798c5a4c44dd1d80cae403e67859c",
+   "size": 2269
+  },
+  {
+   "path": "generators/n46-mixed-to-frac.json",
+   "sha256": "db4f822d46800383f57f75fe66aec4c92be16069f43bbb94c429ecae5bc552d0",
+   "size": 1265
+  },
+  {
+   "path": "generators/n46-mul.json",
+   "sha256": "4697059094dbfb54c67e1b491c5c5847709140b632b5b23abbbb1054f51ac32b",
+   "size": 1493
+  },
+  {
+   "path": "generators/n46-net-faces.json",
+   "sha256": "df41a3d2f966edecfa050ce52025c642e423e1195103b6f1ea9f9226f5af8b38",
+   "size": 1116
+  },
+  {
+   "path": "generators/n46-net-solid.json",
+   "sha256": "caae3b099e125c5a773dfd563883e56696f3054961ce4f9f5a101f803c29540c",
+   "size": 2727
+  },
+  {
+   "path": "generators/n46-number-line.json",
+   "sha256": "517b0c2a0f73fade22f66926adc1f7a0b3cf0673e9f87f66661b5de016902260",
+   "size": 1742
+  },
+  {
+   "path": "generators/n46-offer-compare.json",
+   "sha256": "81d03304bed7de6faa8a99205af9f2cfea2e7f1367ffa5691cebd39103b67910",
+   "size": 1942
+  },
+  {
+   "path": "generators/n46-order-ops.json",
+   "sha256": "264cef9fbb1cb649a1be104300f92ce260087ac107546a15f8a763abc4be91b1",
+   "size": 2291
+  },
+  {
+   "path": "generators/n46-order.json",
+   "sha256": "94713ad9d3da191b5135c9225c40f5713861dc5631fde32019a407ab7b0fb739",
+   "size": 1893
+  },
+  {
+   "path": "generators/n46-percent-fraction.json",
+   "sha256": "74888bf9675329289d61481e3f92b5d9577aaae7efa377af5de7fb225093ca16",
+   "size": 2647
+  },
+  {
+   "path": "generators/n46-percent-key.json",
+   "sha256": "85ca89d1996628340a8d23acccf4b1d0c2352236166059aa6d465085af17a51a",
+   "size": 1262
+  },
+  {
+   "path": "generators/n46-percent-of.json",
+   "sha256": "ac98560f3b1616642d7acb67f240208233a81ca48b12f5fe503dbce80e4a05d8",
+   "size": 1825
+  },
+  {
+   "path": "generators/n46-perimeter-polygon.json",
+   "sha256": "bf3e97e5efbfa925dbb970ea429b55af5b084604ec3ef9986a83f515e2e06fd9",
+   "size": 1136
+  },
+  {
+   "path": "generators/n46-perimeter-regular.json",
+   "sha256": "e18efd15ee8f3547a31d31964e90492f93b6aa2af7085c91b1fce2a523a9c2ca",
+   "size": 1615
+  },
+  {
+   "path": "generators/n46-perimeter-unknown.json",
+   "sha256": "6dfac83e22efea6e834f2112e3368e9325dff0a9492b210a15e1b5f023cb680c",
+   "size": 1282
+  },
+  {
+   "path": "generators/n46-plan-compare.json",
+   "sha256": "bc2500188288f8c8e0594f9467ed5cc58c7955dab7fa745b34a3ce0c217143e5",
+   "size": 1542
+  },
+  {
+   "path": "generators/n46-polygon-parts.json",
+   "sha256": "72dfb07ad46891ee894779562fb2874a45c753fbdcf80d4e11c707ac89769609",
+   "size": 1353
+  },
+  {
+   "path": "generators/n46-power-calc.json",
+   "sha256": "7dcb72d68bfe78fbf38dd717b0b4025e3a1fb919ed5af7e5b35a0e1dd1de656a",
+   "size": 1409
+  },
+  {
+   "path": "generators/n46-power-recognize.json",
+   "sha256": "283549cf77c881f92ef8a1f40486c5229dd3888107bbb5b61dd86bc19919a3e4",
+   "size": 2869
+  },
+  {
+   "path": "generators/n46-price-after-discount.json",
+   "sha256": "5dd790fa0d81b9d4e166a576b8b265a6c1499365b464d2e4112153e523bf2cd8",
+   "size": 1517
+  },
+  {
+   "path": "generators/n46-prime-pick.json",
+   "sha256": "d7ccc2d4c995732a0a8ad69aafae85c8dac8d3d11c41faaa4af15ce6c518bebb",
+   "size": 1653
+  },
+  {
+   "path": "generators/n46-protractor-read.json",
+   "sha256": "fded78dc01bdf026a888842364592c0503dc3c0fdf7372461202d65557f13f57",
+   "size": 1374
+  },
+  {
+   "path": "generators/n46-quad-angle.json",
+   "sha256": "f74c69ffcc9eb017355c350f19baa527bebc11ee5dacb4c0e792bade3ac9d045",
+   "size": 1607
+  },
+  {
+   "path": "generators/n46-quad-properties.json",
+   "sha256": "6ef6db5c36eb49f8ef86a3153b4be1ae1cfd12d842b30ceca32bc24691381d7b",
+   "size": 2456
+  },
+  {
+   "path": "generators/n46-ratio.json",
+   "sha256": "703a1caae88ecf9d86c19308795c83f0c9fc222d397199fef9c53b49b8d17bff",
+   "size": 1065
+  },
+  {
+   "path": "generators/n46-rational-mix.json",
+   "sha256": "f4e0d3d563a7790163b744854d5a0e9c7d5dd80e9299592541692ca33111d660",
+   "size": 1355
+  },
+  {
+   "path": "generators/n46-read-number.json",
+   "sha256": "e51167322467a09d3f81b80fcb64690c48ed7d48b2345b93b66200301e56dca8",
+   "size": 1512
+  },
+  {
+   "path": "generators/n46-receipt.json",
+   "sha256": "7d357a654a33df231f14f25fe2d8e5eb2e6c982140dd438275b5304a086b4469",
+   "size": 2050
+  },
+  {
+   "path": "generators/n46-roman-read.json",
+   "sha256": "52760810196d9ec847b4f40f2860bfa086f3407e899ff50b9d57e4fcc80f4455",
+   "size": 788
+  },
+  {
+   "path": "generators/n46-roman-write.json",
+   "sha256": "b9f0c55901eb4b32fda59ddd1c5b80f09fd155471f7be9a099f605f6ff95fbe3",
+   "size": 1369
+  },
+  {
+   "path": "generators/n46-rounding.json",
+   "sha256": "1aa96433b9dcabff3ddb266ddc85c8d62ef0b802dd729b2da05e0f13f4ce1467",
+   "size": 1724
+  },
+  {
+   "path": "generators/n46-ruler-read.json",
+   "sha256": "8b30826c40e58234d31822eff13b40ea25acfeef952c6b5571e8e8f94e3ef01f",
+   "size": 1299
+  },
+  {
+   "path": "generators/n46-scale-map.json",
+   "sha256": "c5fe4e958e12fa478fe83a5d0a3cd2bfedaeceae3b3209cf962a8400ac633f09",
+   "size": 1200
+  },
+  {
+   "path": "generators/n46-scale-real.json",
+   "sha256": "0002454947adf864e5255ea146bc30c2e28f2674438002dac23bd266c6468974",
+   "size": 1693
+  },
+  {
+   "path": "generators/n46-sense-check.json",
+   "sha256": "3ab3f64be7e355165f304125721c5603412d5129947912a8f4d65aa74549d56b",
+   "size": 1886
+  },
+  {
+   "path": "generators/n46-smallest-divisor.json",
+   "sha256": "7557e0579a84d989415288c91aa24ee5275cd3690705e8899960e126b3dff540",
+   "size": 821
+  },
+  {
+   "path": "generators/n46-solid-elements.json",
+   "sha256": "5c2490dab738edfd540a825cd5ae3afe170e9b78322dfc3053f6bddf300ad2e7",
+   "size": 2017
+  },
+  {
+   "path": "generators/n46-solid-recognize.json",
+   "sha256": "f3e8e89dbb01278443177695e7a82df432c8d1577278debdef23b679e22137e5",
+   "size": 2318
+  },
+  {
+   "path": "generators/n46-speed-distance.json",
+   "sha256": "cb7f3d6a9b5c7f827595aa5354aed2f7ad759263ffd9f507e6a93b2ae894418e",
+   "size": 1672
+  },
+  {
+   "path": "generators/n46-speed-time.json",
+   "sha256": "ebcb2c9a14861a7f90f78d2635a6f277bc0cebd802793558e93d7cc267c8f2c4",
+   "size": 1331
+  },
+  {
+   "path": "generators/n46-speed-units.json",
+   "sha256": "9ead0e0695706977d991f9b449c1da1016e0bb3097d56580ecf1bff5a3c617da",
+   "size": 1252
+  },
+  {
+   "path": "generators/n46-speed-velocity.json",
+   "sha256": "0cd3256b5ad1691dd164c03401fbc1ca2ec82b40c315103f77060130b0b21057",
+   "size": 1491
+  },
+  {
+   "path": "generators/n46-strat-assoc.json",
+   "sha256": "48d310c7e90fcdc43b3b3c43c69eea3c0449dd63f9d7ffb7bc9ca3214253674b",
+   "size": 1708
+  },
+  {
+   "path": "generators/n46-strat-near.json",
+   "sha256": "6f7ad67d243d6ae14e061c2c1213f23e60a8a13fc6d38bf1270ac2b21034fdfc",
+   "size": 1521
+  },
+  {
+   "path": "generators/n46-strat-split.json",
+   "sha256": "94ef3ee545abe573b231c3f5800fe9ee1a44a120936c90c8de25ea4bff8e985e",
+   "size": 1558
+  },
+  {
+   "path": "generators/n46-sub-mental.json",
+   "sha256": "44ad1d3c5eb6e0aca1ba95e0544cba169c591921daccce46531f02ec93cb2c99",
+   "size": 1510
+  },
+  {
+   "path": "generators/n46-sub-written.json",
+   "sha256": "c82e404b4e468e87b8355457b1c0cfa87907bc6814b4a3244d9465f5e3c0cc1c",
+   "size": 1605
+  },
+  {
+   "path": "generators/n46-sum-product.json",
+   "sha256": "e9ac95f6b8b166847480a3590291c762c55cb9ab7a7e93517f0271566bbd06db",
+   "size": 1556
+  },
+  {
+   "path": "generators/n46-survey-tally.json",
+   "sha256": "c75ea5dd7dd8a994f482e41d209903f4d2ec800cafca05a6add014b367673dec",
+   "size": 1090
+  },
+  {
+   "path": "generators/n46-symmetry-axes.json",
+   "sha256": "0b3a3ad8685533a246ee347e85b4b6518989875f5e585e7a90ce490b8b2cf7c6",
+   "size": 2339
+  },
+  {
+   "path": "generators/n46-table-read.json",
+   "sha256": "72cd4e1342be1ec90a9d04b7060073e3635b7280264df7572ac179f51f62c9ab",
+   "size": 2102
+  },
+  {
+   "path": "generators/n46-time-units.json",
+   "sha256": "f1f263d02089e197e28f999cb0218b416a830df022eae95e14fbafda516c2e07",
+   "size": 1831
+  },
+  {
+   "path": "generators/n46-total-cost.json",
+   "sha256": "dcaa5839a6ae565c82763d81609cdfad5a903c3abc701d36c6ab39c70c5ac474",
+   "size": 2584
+  },
+  {
+   "path": "generators/n46-triangle-angle.json",
+   "sha256": "6b84284f2198035042545df436e42ad3b253e23d135939aaef8c2549f7024a4c",
+   "size": 2181
+  },
+  {
+   "path": "generators/n46-triangle-by-angles.json",
+   "sha256": "7dfae3eec9a245016ced0c1db67dcf7f00b7da54f82647ee4f426ed66d558b75",
+   "size": 1893
+  },
+  {
+   "path": "generators/n46-triangle-by-sides.json",
+   "sha256": "5e87f2165ea6207b469bdaafc15d5f382fa636a959a55ebb535d3180b67dd522",
+   "size": 2386
+  },
+  {
+   "path": "generators/n46-triangle-exists.json",
+   "sha256": "7b7d53923aaee515c90ee2b1ce597e7c862c384e672b883b151321b5cf3ce45a",
+   "size": 1299
+  },
+  {
+   "path": "generators/n46-triangle-third-side.json",
+   "sha256": "2b2760ff24d58982381d068d8f2e851aef58e8909832ecd230a4f4f2adc0eba1",
+   "size": 923
+  },
+  {
+   "path": "generators/n46-unit-price.json",
+   "sha256": "9030a610b4c435b88fc3dd4601d8548c9331b5c5c3156df8b6c8a2a9804c28aa",
+   "size": 2592
+  },
+  {
+   "path": "generators/n46-wp-proportion.json",
+   "sha256": "c08035b856ac24af3b819d253eb5a55b740a53d97382945c303d3929cda1f617",
+   "size": 2206
+  },
+  {
+   "path": "generators/n46-wp-reverse.json",
+   "sha256": "d171c86ed057c7471ee05627695ade98f4277f7d9407770d7affc33d00c0f9cc",
+   "size": 1441
+  },
+  {
+   "path": "generators/n46-wp-shopping.json",
+   "sha256": "7e1daf32ed619b51ed29648cb609876ad9dac7aac228e275b9324a86d5fc1ff7",
+   "size": 2659
+  },
+  {
+   "path": "generators/n46-wp-sum-difference.json",
+   "sha256": "82d62259cac8d2b8de823c030c522a7fbdf421590c9790b7f0780b36ef9401fc",
+   "size": 2119
+  },
+  {
+   "path": "generators/n46-write-digits.json",
+   "sha256": "45a27daef41b1f99ae5f42eae9bcd7914b4bc58f75899bf13c9b01f0f012a722",
+   "size": 988
+  },
+  {
+   "path": "generators/vh-alg-addsub.json",
+   "sha256": "73dd6b84ac4eb47ed4b7a3793adb27e96f8f9b70b97de965862a81fbfa4542a3",
+   "size": 2149
+  },
+  {
+   "path": "generators/vh-alg-binomials.json",
+   "sha256": "9da155aa9e8fa2bc067efa830b88ab3dbd6da5cc446cbb2a2c10275f22db24d0",
+   "size": 1537
+  },
+  {
+   "path": "generators/vh-alg-build.json",
+   "sha256": "ed28725e17ad39b7fa1f510b109bcb1b74a2e9edeefd1f09ece595964aa121ea",
+   "size": 2746
+  },
+  {
+   "path": "generators/vh-alg-evaluate.json",
+   "sha256": "003090d20e615aa30f97ef511a643537ae0b09c6c78167f20da6677e90356523",
+   "size": 1693
+  },
+  {
+   "path": "generators/vh-alg-factor.json",
+   "sha256": "0dff07eb2c894a5d29f7de40a9642e30a8957419a99d738a522d1f6a16ca5e1e",
+   "size": 2045
+  },
+  {
+   "path": "generators/vh-alg-formula.json",
+   "sha256": "2f5b82f7186c2d837877d1ba127cfb79f8456451009d66098cbc9c20db9c425f",
+   "size": 2072
+  },
+  {
+   "path": "generators/vh-alg-mul-mono.json",
+   "sha256": "9c75025b4c4fd606cb2620032d2edf31389c9ab4bae57e94bb42b10033bbccd4",
+   "size": 2047
+  },
+  {
+   "path": "generators/vh-alg-simplify.json",
+   "sha256": "8a8e82abe4d86c0d49cfaea2e24bf2d0a76f2c94974f27ca3ccdf13d0afdb44e",
+   "size": 1997
+  },
+  {
+   "path": "generators/vh-area-decompose.json",
+   "sha256": "4daa2a087177a5265b93a06cdf287677c7198e9aae749c36762098541bf7e6b9",
+   "size": 4702
+  },
+  {
+   "path": "generators/vh-bisector.json",
+   "sha256": "aa32faa65e83fc2750b6e0d3eb933bfdfabf3752fa116bc6287a49c47c3dafc6",
+   "size": 1668
+  },
+  {
+   "path": "generators/vh-circle-calc.json",
+   "sha256": "d528c014a342afaea27dd661336de38785662b991cfd809a7d9c5ae24932068e",
+   "size": 2890
+  },
+  {
+   "path": "generators/vh-circle-pi.json",
+   "sha256": "74a58ab076e56885cd73e96c897b02da8afcf015a072b77fc6a7c80d649b25f7",
+   "size": 1287
+  },
+  {
+   "path": "generators/vh-congruent-find.json",
+   "sha256": "7d7dbb980ebe8ad1ef0e73c196ae7d146d1c148309d36e7d87a55003c942a8b5",
+   "size": 3648
+  },
+  {
+   "path": "generators/vh-count-pairs.json",
+   "sha256": "a8c952014397f9baf1811832f9f5f18d5aaa83fa1780cdb238ed5b533c3611f8",
+   "size": 1750
+  },
+  {
+   "path": "generators/vh-counterexample.json",
+   "sha256": "2705784a38a243547d2c8aa00573802e69816a795b40e031e6bfdb7ed120cf6f",
+   "size": 1981
+  },
+  {
+   "path": "generators/vh-direct-prop.json",
+   "sha256": "5a5b295b4fd6728d4f275b1f50d17ae8731d1968940542c59d08b8b01d6b86b5",
+   "size": 1781
+  },
+  {
+   "path": "generators/vh-eq-check.json",
+   "sha256": "a297b72a07285e10de01230c0bcb91cbfeff7f05b1c0cab870d84890859d00ae",
+   "size": 2297
+  },
+  {
+   "path": "generators/vh-eq-solve-frac.json",
+   "sha256": "5fb21f963ee54504c739069a0ec2a0834ab2d83adbb2f3537abb8259f5571bbb",
+   "size": 1312
+  },
+  {
+   "path": "generators/vh-eq-solve.json",
+   "sha256": "2bec18d11b69ad187181d297dcb4e9789b378a413fd8fe17a593f06915c8bcea",
+   "size": 1995
+  },
+  {
+   "path": "generators/vh-eq-word.json",
+   "sha256": "f5a75ff0389e25f7473a94e4d42042fcece7f9a519eca815bded1ae5b71a52e4",
+   "size": 2398
+  },
+  {
+   "path": "generators/vh-graph-change.json",
+   "sha256": "657ee131ea9eaa0c1d27d08bd548681933e1a44fd5074918ddea61d8791fc12b",
+   "size": 2562
+  },
+  {
+   "path": "generators/vh-graph-distance.json",
+   "sha256": "66c3d41379906c3a4bebf84c4c520ca2fc65e7912fa39e2bd654e29e0878ef11",
+   "size": 2618
+  },
+  {
+   "path": "generators/vh-interest.json",
+   "sha256": "37e9539fa7f8e8fcbaffdef55d12a51ccef45dcd79ec0f1795c2d82dc2f69514",
+   "size": 1683
+  },
+  {
+   "path": "generators/vh-justify-right.json",
+   "sha256": "90162cc03e750e8059d7fc2dd61879a60ad9d377090870db2c4714edcb99e586",
+   "size": 2423
+  },
+  {
+   "path": "generators/vh-lattice-area.json",
+   "sha256": "59e386110ec5b85c06696f7f42f1a63c3e7a5c6e6f51f2e1e787ad5ea0d978d7",
+   "size": 4036
+  },
+  {
+   "path": "generators/vh-lattice-vertex.json",
+   "sha256": "3c185711b2491d2a580cfe31f99b23031718b12b5541f88092234d212fea8ab3",
+   "size": 3164
+  },
+  {
+   "path": "generators/vh-mean-exact.json",
+   "sha256": "c36f5e47ac61ad43468c3edd7549cac53f81a57e0387462faa2bce94d7846ed4",
+   "size": 1163
+  },
+  {
+   "path": "generators/vh-mean-missing.json",
+   "sha256": "8a475a315f0930fbcc8aeed6318061e99a359ee86779f9a381ab11490abbbf9e",
+   "size": 1535
+  },
+  {
+   "path": "generators/vh-mean-outlier.json",
+   "sha256": "74c9928c37d1bb3d3012f9804131126ee821f024a5baf2029bced476555ad8f4",
+   "size": 1887
+  },
+  {
+   "path": "generators/vh-median.json",
+   "sha256": "3a45b9876e578212fbba271d6938a59c0b077e2ed0c8659b25f965bbe91fd95e",
+   "size": 1050
+  },
+  {
+   "path": "generators/vh-percent-number.json",
+   "sha256": "aa2c4d155a952582e2bd3489d023d82d4d5693a8c13dc09a82f1544eac2be42d",
+   "size": 1223
+  },
+  {
+   "path": "generators/vh-percent-of.json",
+   "sha256": "581903793b0bd15abc8935b6a9a18309c3e1deb4e88bccf29b6e4f9a7c00d88f",
+   "size": 1075
+  },
+  {
+   "path": "generators/vh-percent-what.json",
+   "sha256": "64690a152f10cce640e5e5aa8bb0e4be75805dda3f57a4e2cb8a503bfafd1b0b",
+   "size": 1814
+  },
+  {
+   "path": "generators/vh-power-calc.json",
+   "sha256": "5ea2ab420907838dc0edd4bb654393536d743dc8a0f674e05e31eebc5546d4f8",
+   "size": 1705
+  },
+  {
+   "path": "generators/vh-power-decimal.json",
+   "sha256": "79e371379cd1f4dc81db78f94fd3245edf7fedd5675eb08ad97fe06bd68a74e4",
+   "size": 1023
+  },
+  {
+   "path": "generators/vh-power-laws.json",
+   "sha256": "6478c00acc1806b146e2218921973f658bfcb7c945e53427ba8a07336555a077",
+   "size": 2021
+  },
+  {
+   "path": "generators/vh-power-negative.json",
+   "sha256": "8e92dfdafcba69efb4e3a76b8e4b53d1ecef221a2a67efe83a9d3b214e232ffc",
+   "size": 1523
+  },
+  {
+   "path": "generators/vh-price-change.json",
+   "sha256": "69ac98622ae407a9f545e762a96b6ff8ac22186c26e07633b4091207a7cef27e",
+   "size": 3126
+  },
+  {
+   "path": "generators/vh-prism.json",
+   "sha256": "78cd41ff41fec488b5a329e8aeeeb1e6d5f3616c06b3d98685aa36939f3ff598",
+   "size": 2568
+  },
+  {
+   "path": "generators/vh-prob-balls.json",
+   "sha256": "8dcd48cb758b1a64ec87d3adeb4999ef0d03aad7fd23c5c099f714a8233616fd",
+   "size": 2163
+  },
+  {
+   "path": "generators/vh-prob-dice.json",
+   "sha256": "0dff30058f4db5ccd9793f3795b168382905834adef7acdc7b18fd200c11186e",
+   "size": 1534
+  },
+  {
+   "path": "generators/vh-prob-expected.json",
+   "sha256": "a3c8af61b458da6b6d42fef855d4450af4d52c8abf40972a540678f1a61583d7",
+   "size": 1029
+  },
+  {
+   "path": "generators/vh-prob-frequency.json",
+   "sha256": "6ba8e1f111be81f07d7e3090767a22ece1a0f27cfe8bc7c9186fb4602388282d",
+   "size": 982
+  },
+  {
+   "path": "generators/vh-prob-reverse.json",
+   "sha256": "6071ffef74d851d484317dab176602cf083ddd9294de6b6550c4da4c8929bbce",
+   "size": 1578
+  },
+  {
+   "path": "generators/vh-prob-two.json",
+   "sha256": "f6507d1c4bd6bb67dd9be44df1484f48b462acc80e7819847fc7aec4fe009267",
+   "size": 4160
+  },
+  {
+   "path": "generators/vh-prop-divide.json",
+   "sha256": "670f7f171aa61821c06235d10bc998e47f5f0ff8938adba68090bdb96b4268a3",
+   "size": 1731
+  },
+  {
+   "path": "generators/vh-pyramid-heights.json",
+   "sha256": "1614cec6e760dc0056bba0ab7fdeb8aea8e4366e727df285f881c10945ea524b",
+   "size": 2673
+  },
+  {
+   "path": "generators/vh-pyramid.json",
+   "sha256": "e6059f531c58d4df55592701b55f797eb824a324fecc993672531df5947a52e7",
+   "size": 3361
+  },
+  {
+   "path": "generators/vh-pyth-basic.json",
+   "sha256": "3744e5497703110f6ad127b6d8336c26fbc526dd021fdabdc4ff73fa76a8ee9d",
+   "size": 3236
+  },
+  {
+   "path": "generators/vh-pyth-context.json",
+   "sha256": "0a2702e8f1a7f56284c0bb71865ab814c8ffb9e098ef1bc85ab7c2f91f096f3b",
+   "size": 2680
+  },
+  {
+   "path": "generators/vh-real-model.json",
+   "sha256": "bfb4b1a440ac21ebb7e68dd0c88939a814061cdf049261b9e6027b41d179a31c",
+   "size": 2274
+  },
+  {
+   "path": "generators/vh-regular-angle.json",
+   "sha256": "c8835ba01298ebeb7eca26fd4356c5fbe074d5479165bfe2d63c1774bcdaed31",
+   "size": 2027
+  },
+  {
+   "path": "generators/vh-root-bring-in.json",
+   "sha256": "2ef38a7eb0c505d9cf591ff342825052ed4133a2c34247bc33d122a0c09eca6a",
+   "size": 957
+  },
+  {
+   "path": "generators/vh-root-factor.json",
+   "sha256": "8ba3eae179af4ecfebddaca8b33ca5f9e906f608378dbe3009e9db7eb8651a0e",
+   "size": 812
+  },
+  {
+   "path": "generators/vh-root-multiply.json",
+   "sha256": "9f5925ebb6f40127019fa4e0057080c9fc74763e4108e16c0e3a8e7e7bf2613c",
+   "size": 1348
+  },
+  {
+   "path": "generators/vh-sci-compare.json",
+   "sha256": "f7a8eb2cec445817d1a96e2e5120748360c6229edf243b18c946a1db2afb9427",
+   "size": 1531
+  },
+  {
+   "path": "generators/vh-sci-exponent.json",
+   "sha256": "e97b8e140fe8172b385672b714e9ff4a1409e483c499a41f1928aa0315dd8f68",
+   "size": 1062
+  },
+  {
+   "path": "generators/vh-solid-counts.json",
+   "sha256": "55976c1a144944bc89a6c29edaeae6b963c0ed06a7e55d658a8e163759f6a504",
+   "size": 2079
+  },
+  {
+   "path": "generators/vh-special-exact.json",
+   "sha256": "36a14ddffe4a3a0b8d8946b0dacfb5b8e2737fcbb9e17e2375db6ecc6557b5da",
+   "size": 2245
+  },
+  {
+   "path": "generators/vh-special-numeric.json",
+   "sha256": "49db8fae2680291764af9c820f3424f0502c9b51a5470e95616aafec86ea5962",
+   "size": 1802
+  },
+  {
+   "path": "generators/vh-sqrt-approx.json",
+   "sha256": "f8a5ecf54f8c5ff5b106c9ee5fdabdcceba38c29736b2bffa28bc6579b6267e7",
+   "size": 1229
+  },
+  {
+   "path": "generators/vh-sqrt-between.json",
+   "sha256": "d9b0fb0ad68086c0c06ad448322264115c2e3fd22689da6baa4bbd43113a63c4",
+   "size": 1630
+  },
+  {
+   "path": "generators/vh-sqrt-exact.json",
+   "sha256": "5cd3d3870ea4cf7011065a59507e3bdae325a048d5efdae054e990187b69ebb9",
+   "size": 1761
+  },
+  {
+   "path": "generators/vh-symmetry-axes.json",
+   "sha256": "c87f0c71e5352dbf8735ac5bf3de25aa26cbb4621279e5c05cabb189986bdea4",
+   "size": 1826
+  },
+  {
+   "path": "generators/vh-symmetry-centre.json",
+   "sha256": "b6265bdf1a6c5a70fd6781a7bfd439fde6d9c52248add532cdbb38d2a7275153",
+   "size": 2183
+  },
+  {
+   "path": "generators/vh-think-clever.json",
+   "sha256": "d6c9df452242979a8b00bcb054a567d5dc769091f3c5e3eb2550bc9e2a964880",
+   "size": 1123
+  },
+  {
+   "path": "generators/vh-think-generalise.json",
+   "sha256": "83e4c807e68ceb8c683712573b715584465f1104903281b18963eb90333b8521",
+   "size": 2057
+  },
+  {
+   "path": "generators/vh-think-structure.json",
+   "sha256": "cb91a1a4a765a555cbdb17aedf2dd48a9f3585742cc15f836c238f2c1d8f7570",
+   "size": 1619
+  },
+  {
+   "path": "paths/I-III.json",
+   "sha256": "21765e7f5a7a2070634ef4a01c028ef9868aadb16df5dfc56e99233f436194e3",
+   "size": 26772
+  },
+  {
+   "path": "paths/IV-VI.json",
+   "sha256": "5a8d7f3b47125c95224af6a2c7254301836270fe80fc528b0003cef80d0ae079",
+   "size": 73269
+  },
+  {
+   "path": "paths/VII-VIII.json",
+   "sha256": "e4202eca0184fae913bcf64a0bfc05c3bab3f5dfafceb32c701628ec357dbfa5",
+   "size": 31643
+  },
+  {
+   "path": "quests/q46-garden.json",
+   "sha256": "421138c19d3c9447cf89fe8452929a5a290e4787d0c1a0b268456c57f27d3011",
+   "size": 3937
+  },
+  {
+   "path": "quests/q46-plan.json",
+   "sha256": "0a8371b78dcb19ef2acb7cc8f2c76a3cb943a7347b59af242fa8543402b377ed",
+   "size": 3932
+  },
+  {
+   "path": "quests/q46-trip.json",
+   "sha256": "eb073f8d43fd51f1a3912a4ee7c2d8e7113049952a3fef2d08b8144ccfdd6e2e",
+   "size": 4619
+  },
+  {
+   "path": "quests/q46-water.json",
+   "sha256": "5a3f390e3d18299467d04e3a60d5b089d2a8ee3ac11600cab4a0625b07306622",
+   "size": 5459
+  },
+  {
+   "path": "quests/q78-arch.json",
+   "sha256": "e34a2ef184641f16e9ce64fe21f2bfe987584581f9f9413482f79c6af9f3418b",
+   "size": 3965
+  },
+  {
+   "path": "quests/q78-chart.json",
+   "sha256": "a3fd695610a632b154d8127ee7bb533fcfcb09fbcc2ae9f3bcdeab1ac5b6fac7",
+   "size": 5289
+  },
+  {
+   "path": "quests/q78-deposit.json",
+   "sha256": "2961c45f72cefe0e0d4657aa260d8d46aa26c2549de77338c6579fd29838b715",
+   "size": 4508
+  },
+  {
+   "path": "quests/q78-nim.json",
+   "sha256": "5aa8a11fba005d279f27e1b33b61a00a1e98f923edb1428271d943aeaa2264a8",
+   "size": 3278
+  },
+  {
+   "path": "quests/q78-ramp.json",
+   "sha256": "983e09ff7ccf9e428b103647a71cba82bdbd3b86af24da1a0c3d66004ef84731",
+   "size": 4779
+  },
+  {
+   "path": "skills/I-III/ew-add.json",
+   "sha256": "a3ad386555ea8e2ce3f1d18f71e1629fa6defe8cff2e0ffd6d1170903831270f",
+   "size": 865
+  },
+  {
+   "path": "skills/I-III/ew-bar-chart.json",
+   "sha256": "fa014bfe71473e4f9624177b2d9720ba782f060fc3753ae1d17f555849f585ba",
+   "size": 796
+  },
+  {
+   "path": "skills/I-III/ew-calendar-week.json",
+   "sha256": "e980bebff6ec88421467f00e1d8b6d22dbb7897608e7af808fbb0f6b6dc1713a",
+   "size": 725
+  },
+  {
+   "path": "skills/I-III/ew-choose-unit.json",
+   "sha256": "0ab802e3e84ac21118f9a6dfa10aa39f271ae40a909f6d9238036056c327798c",
+   "size": 673
+  },
+  {
+   "path": "skills/I-III/ew-classify-criterion.json",
+   "sha256": "ce738849f6d0c5221b20dfc7daf9b010ac4b509976a6a9dec1af5103ab1e0bd9",
+   "size": 651
+  },
+  {
+   "path": "skills/I-III/ew-clock-read.json",
+   "sha256": "a1d8ef5ca4c3b0a4af4bc856e20700fd30bd4ac07edcc4d6037232a376d57006",
+   "size": 846
+  },
+  {
+   "path": "skills/I-III/ew-compare-expr.json",
+   "sha256": "cc2b4ba65149653747419364c94e7660729d14200d6539e1ab5e53295a0d2128",
+   "size": 754
+  },
+  {
+   "path": "skills/I-III/ew-compare-measures.json",
+   "sha256": "d3a544377513201adfc69e2f62bd6f716623bdb14a8e213236752e6cbfe23d90",
+   "size": 694
+  },
+  {
+   "path": "skills/I-III/ew-compare-sources.json",
+   "sha256": "3bbae36d204f5971d66547b3dddb0ed754dc5bc5b1c9dc7ebb7b7d52d5241e82",
+   "size": 601
+  },
+  {
+   "path": "skills/I-III/ew-compare.json",
+   "sha256": "c1c4b6a9fc41d2684ca8df3451127de19fbead2a91efb6a6be6ea3b5d93ecd77",
+   "size": 818
+  },
+  {
+   "path": "skills/I-III/ew-compound.json",
+   "sha256": "17035fd605f6426e19be81a279308b997d0c47686a5c510126cf90f7829a1d5c",
+   "size": 812
+  },
+  {
+   "path": "skills/I-III/ew-convert-length.json",
+   "sha256": "734bbbdaded3bef7ba7df623a92945a02fbcae01fd99a783e085e9097dac2f02",
+   "size": 879
+  },
+  {
+   "path": "skills/I-III/ew-convert-mass.json",
+   "sha256": "670946f0b8a1399730b2c0eb7429adef7fea77a355e68caa13646f8df43e6dee",
+   "size": 682
+  },
+  {
+   "path": "skills/I-III/ew-convert-time.json",
+   "sha256": "ba0fa8784a1e75e770869c797ce75a859c21c3df6653e29a3b28e668db9f487c",
+   "size": 686
+  },
+  {
+   "path": "skills/I-III/ew-directions.json",
+   "sha256": "7dcbabc86a9515529cba2b3e835f48326e71dd0ee331fade9d55bd445de5c3fb",
+   "size": 585
+  },
+  {
+   "path": "skills/I-III/ew-div-meaning.json",
+   "sha256": "e5dca1af1d0cd24d97c7eb2fb824d1627fc582cd83c8e2db7aed11d93c56dc4b",
+   "size": 702
+  },
+  {
+   "path": "skills/I-III/ew-div-share-or-fit.json",
+   "sha256": "2b09f56a2a5cae7c4b1a4debd564edbadd818e409c8f39b3a2933763b7d660c7",
+   "size": 683
+  },
+  {
+   "path": "skills/I-III/ew-div-table.json",
+   "sha256": "b0bf81d1c0233f4788ba2a1788a70f6c9f1007f35eee4a0e06fbcd97ee99e013",
+   "size": 856
+  },
+  {
+   "path": "skills/I-III/ew-div-two-digit.json",
+   "sha256": "328dd6b84c341188bec207e1b32c396f8ca8ed32ae23dacad211147092e8900f",
+   "size": 715
+  },
+  {
+   "path": "skills/I-III/ew-find-mistake.json",
+   "sha256": "1197d0e96b786434a3496cd1c300cf22f63ff62aa168ffcd4c93fd5825081aaa",
+   "size": 578
+  },
+  {
+   "path": "skills/I-III/ew-games.json",
+   "sha256": "f7fc318bd0dba652828740428e4d8e2edf6ef12beddb28d4d0a1eaa1c274f9b8",
+   "size": 559
+  },
+  {
+   "path": "skills/I-III/ew-grid-robot.json",
+   "sha256": "fbad2455cef84ff1e2c6fc291f9db9d6b3cf6c3cbf44177a2a43ab7a3f8d7c52",
+   "size": 668
+  },
+  {
+   "path": "skills/I-III/ew-inverse-check.json",
+   "sha256": "e8edb99ff644863ba0991c61e0ac68abf8bc1ef540e37d982ba6a68215dc74cf",
+   "size": 751
+  },
+  {
+   "path": "skills/I-III/ew-lines-surroundings.json",
+   "sha256": "8e321819ae05f847b74e9f689e4449ff3134a9b1d4882dbd17800a106d3a7e63",
+   "size": 682
+  },
+  {
+   "path": "skills/I-III/ew-missing.json",
+   "sha256": "a0e319c5ab2cb360c00723c9a50d7f94d4ab5ae1058edff6400336c9755b88fc",
+   "size": 869
+  },
+  {
+   "path": "skills/I-III/ew-money-coins.json",
+   "sha256": "65bf8e79a5e770fa831f67b16335b6dfac760889125f50316ae410dbc1a16781",
+   "size": 702
+  },
+  {
+   "path": "skills/I-III/ew-money-notation.json",
+   "sha256": "c65482e2c4b9b1e5c51ce7ee3ae9dfa6566e8242b0283183c48056fb1b9c57f3",
+   "size": 752
+  },
+  {
+   "path": "skills/I-III/ew-mul-table.json",
+   "sha256": "0e1b1797bc9e16d4069156c6606db1b2b01251a801fdd7cad7b7a464edcad166",
+   "size": 820
+  },
+  {
+   "path": "skills/I-III/ew-mul-two-digit.json",
+   "sha256": "af832997f931892e182b9bd70bc9e8e516e4a2098001e7312799d3c3a0cfb717",
+   "size": 684
+  },
+  {
+   "path": "skills/I-III/ew-nim.json",
+   "sha256": "09478aabf0223bc11042b042a3379eadc8eb33b3e8c4809657205407d814e13e",
+   "size": 699
+  },
+  {
+   "path": "skills/I-III/ew-number-line-diff.json",
+   "sha256": "7db4fc1d205433d53ea0948ca686eb3b3135d6ce2123c2060a71d4b0f1ae209d",
+   "size": 739
+  },
+  {
+   "path": "skills/I-III/ew-number-line-read.json",
+   "sha256": "db059c86dce67d0d2cf173c218a5cd81a94221390e0a8280f17a4e583e0e433b",
+   "size": 745
+  },
+  {
+   "path": "skills/I-III/ew-odd-even.json",
+   "sha256": "2fd843f55bf61fed8fa1fe3aa9340439d2a43276856650e65997c613258a8098",
+   "size": 820
+  },
+  {
+   "path": "skills/I-III/ew-odd-one-out-num.json",
+   "sha256": "b80b7a760df705db50724554b3f3464a85f34a4802ed4ba3e3113158e6e5495d",
+   "size": 694
+  },
+  {
+   "path": "skills/I-III/ew-odd-one-out.json",
+   "sha256": "3698153cb7e3c60386de9ddf1509cda09d21e915a4aa7cceaeb8e1197a9e30f5",
+   "size": 568
+  },
+  {
+   "path": "skills/I-III/ew-order.json",
+   "sha256": "c9a980bc12f09fc06c14383c35a509a25cebe8875e50b3372401e0b9a9d08d07",
+   "size": 820
+  },
+  {
+   "path": "skills/I-III/ew-pattern-rule.json",
+   "sha256": "9ad7a4fbd30bfac1b65606180dbe0e8ed65a76e70d3cc1aa3d2ed6ee060a4c08",
+   "size": 913
+  },
+  {
+   "path": "skills/I-III/ew-perimeter.json",
+   "sha256": "b12b7baed094162f67a68632d4a73b9fc80f49993a1f8916c4be6c5d274dece6",
+   "size": 758
+  },
+  {
+   "path": "skills/I-III/ew-pion-poziom.json",
+   "sha256": "4ea98de52b96969bf9ef30bd8dc3258d54b1ce31ed738f2815b89f55388fb603",
+   "size": 621
+  },
+  {
+   "path": "skills/I-III/ew-place-value.json",
+   "sha256": "83b1436cfdf2c427e345376e123d3985c9c3b98e852786b5bc09bb9ccc3573d0",
+   "size": 783
+  },
+  {
+   "path": "skills/I-III/ew-price-list.json",
+   "sha256": "4c5c91afa13958a07a171ee905402b83d4b37868a13b641dc8e55abb1db630d1",
+   "size": 720
+  },
+  {
+   "path": "skills/I-III/ew-puzzle-heads-legs.json",
+   "sha256": "921ff1c05a650c2b7fe960390591e063ffff160de81bc6eec0b9449f7368dfe8",
+   "size": 583
+  },
+  {
+   "path": "skills/I-III/ew-read-timetable.json",
+   "sha256": "75539f8377ef6ca1096b286e50f0af9bc9cd849baa5fd923ed92b702a4f6dfb9",
+   "size": 624
+  },
+  {
+   "path": "skills/I-III/ew-recipe.json",
+   "sha256": "393cc18083bc648a0e3b01dcc5b6aaf9cf331b7aa56292b9e373e1e20e50add8",
+   "size": 696
+  },
+  {
+   "path": "skills/I-III/ew-rhythm.json",
+   "sha256": "8650dac196bb4aab8c20c2ee1f44c6039830d42f6d24eb55a49f75adefb13523",
+   "size": 774
+  },
+  {
+   "path": "skills/I-III/ew-roman-read.json",
+   "sha256": "8305f4bc0f7ce64970553eb24506ac6afb529c2926449f27df831210fb0258cc",
+   "size": 617
+  },
+  {
+   "path": "skills/I-III/ew-roman.json",
+   "sha256": "7d4c704faa61f83c8e3020f618d046d5d67c64dfe73e4aeb07f9f4f737633967",
+   "size": 642
+  },
+  {
+   "path": "skills/I-III/ew-ruler-read.json",
+   "sha256": "89e82029c3f3af32ad4e2abb5953be088a8e7a1ee452db968e09bcc2bafaaaab",
+   "size": 690
+  },
+  {
+   "path": "skills/I-III/ew-saving.json",
+   "sha256": "f120af9357d5791b66b3545e5b363ff157df52fedc4ded621aaf928f5fd1897d",
+   "size": 802
+  },
+  {
+   "path": "skills/I-III/ew-sequence.json",
+   "sha256": "cbb43d7416abc3172874409d7e08aad024c38f25c6da8f3124023d0d4799b2b4",
+   "size": 848
+  },
+  {
+   "path": "skills/I-III/ew-shape-count.json",
+   "sha256": "9b99b7a5bfc63feec579bc3e7623b907622806fd4f3031f08c54d099c4998b95",
+   "size": 638
+  },
+  {
+   "path": "skills/I-III/ew-shape-description.json",
+   "sha256": "bf4862005c9757b8b3abc987f1905b9cffeac1e5b67001a15da0ab3c7f56a50e",
+   "size": 618
+  },
+  {
+   "path": "skills/I-III/ew-shopping.json",
+   "sha256": "6e814f73b9b37edee7043b0b7e943b99d5acf0a7d5142c46b5c6c1b6738bf4f0",
+   "size": 796
+  },
+  {
+   "path": "skills/I-III/ew-skip-count.json",
+   "sha256": "a422e06597a29d375f54ca468a159c6bcd5c51ed41e8c5b968d4d00ced58b54f",
+   "size": 769
+  },
+  {
+   "path": "skills/I-III/ew-solid-object.json",
+   "sha256": "60d1768a4b8106d9e799b209c27d1f8ad175e413f8557b7fdd8c97273fd1e889",
+   "size": 764
+  },
+  {
+   "path": "skills/I-III/ew-strategy.json",
+   "sha256": "d87634e826d5c85aa343c0df54a90a5e6e652496203634281ac46da625e4b937",
+   "size": 707
+  },
+  {
+   "path": "skills/I-III/ew-sub.json",
+   "sha256": "7a80b62d961944edec7185d453329c2540af6b64f08f730af40076904821d099",
+   "size": 828
+  },
+  {
+   "path": "skills/I-III/ew-symmetry-count.json",
+   "sha256": "ceee6adfde435808c257222875b7bb30a33c4561340e81042d2b4cb47302fc24",
+   "size": 670
+  },
+  {
+   "path": "skills/I-III/ew-symmetry-letters.json",
+   "sha256": "4c75a8fe62973a6b84f83cae0f83e56d4b9ebf3cdf7e5f34d596c6169d4bcccf",
+   "size": 643
+  },
+  {
+   "path": "skills/I-III/ew-table-read.json",
+   "sha256": "accc176dc1c112a26d0d5c880d55205d4966cebd043387c4f5a0dc5bdf8ca7f5",
+   "size": 759
+  },
+  {
+   "path": "skills/I-III/ew-tally.json",
+   "sha256": "3fbd3c54f6deb7342fac9d062cd29b771625a9db11527a37a2ef3da3693d8e06",
+   "size": 669
+  },
+  {
+   "path": "skills/I-III/ew-temp-diff.json",
+   "sha256": "1a1eb094643c930e2fe3422b79a79b561637fef00b6c86178e55f51594d0103b",
+   "size": 772
+  },
+  {
+   "path": "skills/I-III/ew-thermometer-read.json",
+   "sha256": "c1d3fe09ea1e7cafdb43d0ffa5a7c3b98b240634f831406c436e3719b41fa0f7",
+   "size": 681
+  },
+  {
+   "path": "skills/I-III/ew-time-add.json",
+   "sha256": "9dac0c46375ede3acfd03c505f02632d0c58330c3752dac92077722c2492706d",
+   "size": 773
+  },
+  {
+   "path": "skills/I-III/ew-unit-fraction-name.json",
+   "sha256": "93ae7c7dceba5fe574794f57597366857464a086e5e9f262f23d6fe48a6c3bc1",
+   "size": 725
+  },
+  {
+   "path": "skills/I-III/ew-unit-fraction-of.json",
+   "sha256": "157a81dc3bdac216e76706242316938f8b476ba4acaa763d36ae177bab7a785c",
+   "size": 744
+  },
+  {
+   "path": "skills/I-III/ew-wait-minutes.json",
+   "sha256": "ee93007cb55cd64f174561c5587628bc5d84af06858339605c1d346724af93c4",
+   "size": 596
+  },
+  {
+   "path": "skills/I-III/ew-wp-add-sub.json",
+   "sha256": "2a96cb70da5e8c51af4828093ec979873190be0cb5bd050512532cdea0518774",
+   "size": 805
+  },
+  {
+   "path": "skills/I-III/ew-wp-mul-div.json",
+   "sha256": "ecc72df7e94eba53faa1ee40834ac16df679b1d73d5bccdcc7985fa7914da095",
+   "size": 836
+  },
+  {
+   "path": "skills/I-III/ew-wp-two-step.json",
+   "sha256": "91ac45bfd71769eaa3b81ae01e359dfd483cea11b17f45cd77737510493421dd",
+   "size": 731
+  },
+  {
+   "path": "skills/I-III/ew-write-number.json",
+   "sha256": "8c9d9607e0af3122732942352698186ccd84f399ed1f1f8eb707da72d629edd4",
+   "size": 811
+  },
+  {
+   "path": "skills/IV-VI/n46-add-mental.json",
+   "sha256": "4ccf8aa35021485dcca25ab129d73899d6b0a89b4ead8df71993c9d8bd99f2ce",
+   "size": 750
+  },
+  {
+   "path": "skills/IV-VI/n46-add-written.json",
+   "sha256": "dc371ffc0100d57598afd6b9b831e9e29291a19fe6aceb7c3df0021473a95e77",
+   "size": 777
+  },
+  {
+   "path": "skills/IV-VI/n46-alg-equation-build.json",
+   "sha256": "68f468be197d06f84e4ef3b39efc908c970d478df54cec5c730db325fe0dc812",
+   "size": 753
+  },
+  {
+   "path": "skills/IV-VI/n46-alg-evaluate.json",
+   "sha256": "8cebe3b678a72e8310e239495c70fdfa44088fe00a5e54931202cc40fd3c656f",
+   "size": 830
+  },
+  {
+   "path": "skills/IV-VI/n46-alg-expression.json",
+   "sha256": "b727e87b15d72c145905bed9a709c0f4c75ffd6ca275933acc763708171c331d",
+   "size": 750
+  },
+  {
+   "path": "skills/IV-VI/n46-alg-formula.json",
+   "sha256": "e155be72052b8bd9b53cdf2b52c39ce898d3f994d9b8445611a1feb71d651eaf",
+   "size": 855
+  },
+  {
+   "path": "skills/IV-VI/n46-alg-solve.json",
+   "sha256": "857e8f561c40123cb6e0b378acb50861fde79a701d1ea061be259434875cfaa2",
+   "size": 888
+  },
+  {
+   "path": "skills/IV-VI/n46-angle-convex.json",
+   "sha256": "8e72e12e1ab3f689fbc2e4c8d9618515abc6210e1fa07e9df7607fefedec45c4",
+   "size": 659
+  },
+  {
+   "path": "skills/IV-VI/n46-angle-pairs.json",
+   "sha256": "19653387af010c49dc9ea272799fc56198a2c0fa1b93e82869b038d6f29fd7a7",
+   "size": 952
+  },
+  {
+   "path": "skills/IV-VI/n46-angle-types.json",
+   "sha256": "dce629a16cd74eb63de0cd58dd201811f3457f6029f204f5d2365aa08802bf91",
+   "size": 662
+  },
+  {
+   "path": "skills/IV-VI/n46-angle-vertex.json",
+   "sha256": "345689e86b21c886c40a41825c34de2f2074b1ba90a4b3ed33cb9b460f24b3c8",
+   "size": 671
+  },
+  {
+   "path": "skills/IV-VI/n46-area-composite.json",
+   "sha256": "ab9826da48dbdca196fbadbcc1d263b91eb21e2f22e26b7ee8a5710592d74230",
+   "size": 739
+  },
+  {
+   "path": "skills/IV-VI/n46-area-parallelogram.json",
+   "sha256": "61f8abf216e851c2fa10459fc207577491b4c4e65a109174ff65153dd356f9f6",
+   "size": 669
+  },
+  {
+   "path": "skills/IV-VI/n46-area-rect.json",
+   "sha256": "569e0cda8bbdbeb7957264f488e0b4b92987128d99dea69fff1b105b2a011d5e",
+   "size": 796
+  },
+  {
+   "path": "skills/IV-VI/n46-area-rhombus-trapezoid.json",
+   "sha256": "abbb44189e34a26f791bf7f9270a29296cd3011e9c539d4d9dc342bb7dd2c79d",
+   "size": 711
+  },
+  {
+   "path": "skills/IV-VI/n46-area-triangle.json",
+   "sha256": "dab8572505a85dad04ade2ae0cd26d1ceb70ad3bd3894ff8a3328b1e9791a9c3",
+   "size": 870
+  },
+  {
+   "path": "skills/IV-VI/n46-area-units.json",
+   "sha256": "7056c9a930ff4f7380b5604b67e3945682ceb79b81594dac85426f7b45708281",
+   "size": 835
+  },
+  {
+   "path": "skills/IV-VI/n46-area-unknown-side.json",
+   "sha256": "0ae92509132e5cceddb1d75f8aeada57ca8c2a80905fbd70875a754c1aa53fc9",
+   "size": 691
+  },
+  {
+   "path": "skills/IV-VI/n46-bar-chart.json",
+   "sha256": "c1ad34553faa8c3d6814ccb9db9e194fbbf3a1108d87a6e4df44f4603adcdfc1",
+   "size": 686
+  },
+  {
+   "path": "skills/IV-VI/n46-budget.json",
+   "sha256": "10b6d96669ba7c470c4289241075a74b8de527c3a8991e84d022b833f1418c91",
+   "size": 785
+  },
+  {
+   "path": "skills/IV-VI/n46-calculator-use.json",
+   "sha256": "78403c65c6afb005e9fdd449116e09330ad199d8dbb2e635e73ad658ea76dbad",
+   "size": 608
+  },
+  {
+   "path": "skills/IV-VI/n46-calendar-weekday.json",
+   "sha256": "f4b7e5081dba5b1cf1f8b53d5855a7cf328bc4194d529a3c0a7c34e068677dc9",
+   "size": 732
+  },
+  {
+   "path": "skills/IV-VI/n46-calendar-weeks.json",
+   "sha256": "f7072f31f2bdc42e69901ce9c5a2e3b2b994d67555e0783a71e6e3e46a3012cb",
+   "size": 724
+  },
+  {
+   "path": "skills/IV-VI/n46-capacity-units.json",
+   "sha256": "1e3714a3abda1a40b91aeba6dc46a76bd876e0eaa161071344aa5acc39d6d98c",
+   "size": 781
+  },
+  {
+   "path": "skills/IV-VI/n46-choose-unit.json",
+   "sha256": "45091fc9fd03fc039bf5c50b22fa2bad2ec64971170f37096f0f7fbc2a09334a",
+   "size": 710
+  },
+  {
+   "path": "skills/IV-VI/n46-circle-diameter.json",
+   "sha256": "8b31a85b349d43e98a9c21c0898e0462ff28cc0e77e0a14f8ff7170edf256b97",
+   "size": 692
+  },
+  {
+   "path": "skills/IV-VI/n46-circle-terms.json",
+   "sha256": "c24d003db24db98fd82b5263faa94712a67c50513eb581805ca43fc6d4a2ca65",
+   "size": 706
+  },
+  {
+   "path": "skills/IV-VI/n46-clock-duration.json",
+   "sha256": "f0309627d8ddd9cd34ed61ceb0b7e7fb830d0afe30595da6edbee66ffb07d977",
+   "size": 803
+  },
+  {
+   "path": "skills/IV-VI/n46-clock-end.json",
+   "sha256": "520a9178dfc8236d73d387eb49b8f6bb5b5116be8af48a2d80e0647935b8b15f",
+   "size": 786
+  },
+  {
+   "path": "skills/IV-VI/n46-clock-start.json",
+   "sha256": "2df2a4eaba8bbcffc05fc4f145b62ad54ddf895e332a2e3ff262a1badd35ff99",
+   "size": 687
+  },
+  {
+   "path": "skills/IV-VI/n46-common-divisors.json",
+   "sha256": "89f532d531e372f13d672a12d56f719ad84d72d2333f42f06345c01334ad5c86",
+   "size": 710
+  },
+  {
+   "path": "skills/IV-VI/n46-compare.json",
+   "sha256": "4e47193a228c030d701c5e4caa5190a9530523aa46f8c1b71a8aad836fc7beea",
+   "size": 744
+  },
+  {
+   "path": "skills/IV-VI/n46-compose.json",
+   "sha256": "b4b70ce065dc8c474aa2255eeaf04f4e71847589926accf94f3acefd5aa878bf",
+   "size": 689
+  },
+  {
+   "path": "skills/IV-VI/n46-compound-to-decimal.json",
+   "sha256": "7d08f33f8d130e57443ea94c53029f9da8d736763a35b1cecda23f4895b341a2",
+   "size": 872
+  },
+  {
+   "path": "skills/IV-VI/n46-coord-distance.json",
+   "sha256": "4fe4efc2a640e976f7cc1ef47463c701999d5d6edcb5d988a90ded1c403383ba",
+   "size": 816
+  },
+  {
+   "path": "skills/IV-VI/n46-coord-read.json",
+   "sha256": "b7ea6524c0a0ca3572d9c78e83bb6396a9d9efd20bd67e73c8d1370fb31b92d6",
+   "size": 736
+  },
+  {
+   "path": "skills/IV-VI/n46-coord-rectangle.json",
+   "sha256": "92bedf826817768eb983c3549203e87a16e155c0b0ad0b7566276e68b43a8773",
+   "size": 776
+  },
+  {
+   "path": "skills/IV-VI/n46-count-cases.json",
+   "sha256": "4c22357496a2d48c2a428e1902d6da520370cb67a6b1467985e107d76d73a369",
+   "size": 797
+  },
+  {
+   "path": "skills/IV-VI/n46-count-multiples.json",
+   "sha256": "c89f56069e683739e2ba54aa1d15a51f95b74f748d53814454845aea8b6a2e19",
+   "size": 820
+  },
+  {
+   "path": "skills/IV-VI/n46-counterexample.json",
+   "sha256": "04ebfab8ccd64b31ce5669ce737b6fe4af81deed60f4f1afb17f11fe493dd2f9",
+   "size": 644
+  },
+  {
+   "path": "skills/IV-VI/n46-cuboid-compound.json",
+   "sha256": "c8e497ce891d952bb7db87a281a888d749a963f97d2e761f4ee49ba5efc3aef2",
+   "size": 806
+  },
+  {
+   "path": "skills/IV-VI/n46-cuboid-surface.json",
+   "sha256": "cdbd40bd68d56245ea691299f768efbab59862ca03e1841054680b7ff72339e9",
+   "size": 832
+  },
+  {
+   "path": "skills/IV-VI/n46-cuboid-volume.json",
+   "sha256": "6bc6ee6463bd938c555057fdad7254333d7fea4d9501d749802d013b00e4814f",
+   "size": 817
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-add.json",
+   "sha256": "dcf74939efc7f19b596828fd2482e3b241bae83ecd7f183f284b3b002cf6680f",
+   "size": 805
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-compare.json",
+   "sha256": "e4e33c478666fadc8d25f5740f3540bdeda104dcb41d3b8be793245246618584",
+   "size": 846
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-div-dec.json",
+   "sha256": "62d806679176d56ecf7b1ecddb8f6b2b20ded433bfd728bcdd2a2e7d85822522",
+   "size": 799
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-div-nat.json",
+   "sha256": "40924438e2a300f0fd15ec02ff0f06ed2fd4e8791d3eb5bf51ddc9883a393e93",
+   "size": 876
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-from-fraction.json",
+   "sha256": "2de59d51895b24a023a9d11495b71e712ab4ee04736d5e96a033a17146ebd193",
+   "size": 895
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-infinite-round.json",
+   "sha256": "f9e437427bfa191b97fd597c4bd429131e8dd01da2ff855c4290f6610c9870bf",
+   "size": 856
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-infinite.json",
+   "sha256": "31ed96c08045e05a4ee122616556bd32d34a68986fc3ad25dad96e8c5321b03c",
+   "size": 712
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-mul.json",
+   "sha256": "6b9a99dd8a35f08fcd705a8484498d012a623421591244b34aa12f21b35216c7",
+   "size": 939
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-number-line.json",
+   "sha256": "362ebc0b04e2e3304e1318a325ed62c34898d6594d089f0f874b9e71b02b65c0",
+   "size": 784
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-order.json",
+   "sha256": "764431e330ee2bae4599183f192fa81daf10175a2e755aaa5f26bd78dec62f77",
+   "size": 780
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-place-value.json",
+   "sha256": "c04ee84dd2adf367341362a2a2ce4e167fc1e1fb0011ac03cbddad6ee3ec4f1e",
+   "size": 811
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-power.json",
+   "sha256": "e9a08a755b157cf0a3cee31fc00ef0ed0a12e74f39b4d5d8507f6a4b0d184e54",
+   "size": 738
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-round.json",
+   "sha256": "dce08194f4a07b84952448c6bf5015ca6bb2e3864501960a2c302efbfe833e8f",
+   "size": 813
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-shift.json",
+   "sha256": "20cbd17d731a18c154128ed8c8ce0ebb9a79b6c6a18a30b32abf9320992fb452",
+   "size": 788
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-sub.json",
+   "sha256": "3bb3d7d41a87b6cbea4e62126ece9ce9bce0eee55e542b71dba021618d5cabf4",
+   "size": 806
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-to-fraction.json",
+   "sha256": "52283919e0335870a18e5cd3bef5676725855fb332a2580c5bbc0675588a273b",
+   "size": 776
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-to-mixed.json",
+   "sha256": "300c7191856574d9cccb6b729e224c4b43ee768bdc1019745a73c910de6ee05c",
+   "size": 688
+  },
+  {
+   "path": "skills/IV-VI/n46-dec-vs-fraction.json",
+   "sha256": "b1714088c3dba618866db7563c9cad32f3e4ac43e3fb3d45841fedae2276ccc9",
+   "size": 808
+  },
+  {
+   "path": "skills/IV-VI/n46-decimal-to-compound.json",
+   "sha256": "63e9e9a34468239ffd5d1ffee896e8122ea42f1b3c43dac99a1daf9bc3bcfce8",
+   "size": 781
+  },
+  {
+   "path": "skills/IV-VI/n46-diff.json",
+   "sha256": "0ed7d56ae42780de4a18ac194f3cb9a97d1cab09b8c360050e20a89122609c43",
+   "size": 731
+  },
+  {
+   "path": "skills/IV-VI/n46-digit-place.json",
+   "sha256": "8e0fb313515e1a10be90d4155a93cf2464d0b457ae083dbf1c92a6cba02aaa7c",
+   "size": 815
+  },
+  {
+   "path": "skills/IV-VI/n46-digital-tools.json",
+   "sha256": "ddc806e9e1287bb62ffe9701d55ebd6d8df5b2eeb5b0421a9e92008ac536e732",
+   "size": 593
+  },
+  {
+   "path": "skills/IV-VI/n46-div-meaning.json",
+   "sha256": "272646a13aab09e282e056df6bf1a3b513118d831828bd916d1d5aa4531e6c63",
+   "size": 699
+  },
+  {
+   "path": "skills/IV-VI/n46-div-rem.json",
+   "sha256": "af06c05b4e354d53246e5d50104ec5a46cf122326f7c6aac6e19ac2c101b2753",
+   "size": 809
+  },
+  {
+   "path": "skills/IV-VI/n46-div.json",
+   "sha256": "9e101472505027022cb796f94540da2c4aa57063efa417876d7f1101a6443535",
+   "size": 936
+  },
+  {
+   "path": "skills/IV-VI/n46-divisible-digit.json",
+   "sha256": "ea4397242306cd972ad03cd481e4dd2c732dc8cc316b044690b89cc6dec515eb",
+   "size": 764
+  },
+  {
+   "path": "skills/IV-VI/n46-divisible-pick.json",
+   "sha256": "fc89eb0b60a716f596565abcfac449b7fe41e0afb074aeb5e191f36090aec558",
+   "size": 992
+  },
+  {
+   "path": "skills/IV-VI/n46-divisible-yesno.json",
+   "sha256": "bb1cb551bb2f312895dbb567cdab50e4ceaa47ceb3a24bea4a919941e9ad2d68",
+   "size": 903
+  },
+  {
+   "path": "skills/IV-VI/n46-estimate-product.json",
+   "sha256": "73982c29d6ad7b0b609eb9daf5b01f6ac7915183bf0594148be96efd1f7445e8",
+   "size": 805
+  },
+  {
+   "path": "skills/IV-VI/n46-estimate-sum.json",
+   "sha256": "3bc1110af7842a8732ea3375df8e3eccead3c6ea6288c23149ead59211fabda9",
+   "size": 693
+  },
+  {
+   "path": "skills/IV-VI/n46-examples.json",
+   "sha256": "319dbcffd5dc84fd7eaafecf5ef82d0c4eb512060b52b4550d4d7f6e4f19ebd0",
+   "size": 603
+  },
+  {
+   "path": "skills/IV-VI/n46-exchange.json",
+   "sha256": "ffdba6149a2c35912dce7efcfc545557c47cd6eb3bc0a710a46fbf0251772bc7",
+   "size": 699
+  },
+  {
+   "path": "skills/IV-VI/n46-expenses-average.json",
+   "sha256": "f98c34aed2a8afb5410605dc59173f0276a271e074d20807c524d38bc44af937",
+   "size": 711
+  },
+  {
+   "path": "skills/IV-VI/n46-expenses-decision.json",
+   "sha256": "a43e428485db8504a7119675fe33a2f818f3b7b8ba278b47efa2ebcc3c390369",
+   "size": 671
+  },
+  {
+   "path": "skills/IV-VI/n46-factorization-fact.json",
+   "sha256": "5a1a6538c39bb896a4faba479aca801641c529b103804c4b71e6442199a11b92",
+   "size": 758
+  },
+  {
+   "path": "skills/IV-VI/n46-factorization-pick.json",
+   "sha256": "0bdf2e5937151fc5aff3dc941816ea699049ff8a7950addad5ae41636369dfdd",
+   "size": 769
+  },
+  {
+   "path": "skills/IV-VI/n46-find-mistake.json",
+   "sha256": "7c2107809c5ef5801ff73e766cb0145df529f4f76c27469a0ed62cdba549861d",
+   "size": 663
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-addsub-mixed.json",
+   "sha256": "a96f5ec318515e5e6a08b9a6482fc74313579d81e9d910b2b06fafd62dfe4226",
+   "size": 809
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-addsub.json",
+   "sha256": "0604351855016c3dad0888644129cfdbfee3bd811dab09a39b1fc02b2e97db6a",
+   "size": 1002
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-compare.json",
+   "sha256": "9dae614eaa116d9b051cd591c14c6a4c07feb399cffbe58a3e6895995359ac4d",
+   "size": 943
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-diff.json",
+   "sha256": "595a0c393160c6e3dc3fca60f7964fc870dd34b5fae2d2a7c9ed2b0d2943f82e",
+   "size": 770
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-div.json",
+   "sha256": "e8ba4d986025873b4ed526bc5af89dfb97060ed03114d390d9f55e2717c76a55",
+   "size": 817
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-extend.json",
+   "sha256": "29c0565ca4d40b7c35190a1ce59e36bfc729c1a88552cd61f4cbef711fd819ba",
+   "size": 713
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-mul.json",
+   "sha256": "f1288108a93ab3bea013625b2b197f9abc4f6da1168555d54ffb8708d5e3b020",
+   "size": 856
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-number-line.json",
+   "sha256": "0a6cd74ba0c468bb13900e16f6b3fdb0b75339dba9173669b428f307e464e36d",
+   "size": 763
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-of-number.json",
+   "sha256": "d26dd031ccc4b14f50f6e10d09c2d03db89d54edece26b153ac8c58a98d38949",
+   "size": 699
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-of-quantity.json",
+   "sha256": "b2c04e3d271a9ca4a25816b63027c9e0b9399ca12d7264d2dc2d65ebd59d6355",
+   "size": 719
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-order.json",
+   "sha256": "90a810f8617433c1406a48a7a077855aa4d1cdde46b721473088ce0cfefcb9c5",
+   "size": 724
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-part-figure.json",
+   "sha256": "f1d3eba2de4188740fe883ee90fd7efcc76d11d117d34720ba26dcea1a88f0ef",
+   "size": 774
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-part-set.json",
+   "sha256": "1bcca4778009878d8a40d59c5f66f7814cdd4910ce6962e80bb440deb98972b1",
+   "size": 743
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-power.json",
+   "sha256": "1dc9f24803c8c3b70e21626c8c9220ec9bb4787f293ffde5ec9f534f0db4c640",
+   "size": 709
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-quotient.json",
+   "sha256": "9bcf04518496954bccc8e51c34e5079f519433c447c64fd47ed11b29feafc741",
+   "size": 696
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-simplify.json",
+   "sha256": "f77414e368a1747fbeeae8e72a1618e61a80386f96ac216fc5b4a44b0ddd60bd",
+   "size": 744
+  },
+  {
+   "path": "skills/IV-VI/n46-frac-to-mixed.json",
+   "sha256": "f9f34021937aa8c5125501baea90489e11e717e67a436b1cef3c53a3318c2919",
+   "size": 789
+  },
+  {
+   "path": "skills/IV-VI/n46-gcd-lcm-word.json",
+   "sha256": "cbb2608e268fb917ba32beccf1d79b372afee37121649779d1c889bee8c298e7",
+   "size": 803
+  },
+  {
+   "path": "skills/IV-VI/n46-gcd.json",
+   "sha256": "933be107a7702649e25fdd1356a5aae51ee20b003555b97542176baef8d130d6",
+   "size": 707
+  },
+  {
+   "path": "skills/IV-VI/n46-height-id.json",
+   "sha256": "5a863c299b17f78a9c1be8473251494bc199cb94b3094fb7693bb11301b82b75",
+   "size": 676
+  },
+  {
+   "path": "skills/IV-VI/n46-int-addsub.json",
+   "sha256": "d325d8fafdeccf590958e3f029f50fbce472444e333b4b36430a0147fb4f0d7e",
+   "size": 836
+  },
+  {
+   "path": "skills/IV-VI/n46-int-compare.json",
+   "sha256": "f23ea2b9a3b4b699c482aa8408e2e93564f012c26bc6fa1af89f3aa43cf7d047",
+   "size": 684
+  },
+  {
+   "path": "skills/IV-VI/n46-int-context.json",
+   "sha256": "0cfc8b71b0e277f1ebf04d786b40ee1386445e999e6053afdc8643ff755d785c",
+   "size": 731
+  },
+  {
+   "path": "skills/IV-VI/n46-int-distance.json",
+   "sha256": "3be333d1294a4ff882a94287467a706cdc2bad37cc037d66524c3d8347e0ee0a",
+   "size": 723
+  },
+  {
+   "path": "skills/IV-VI/n46-int-muldiv.json",
+   "sha256": "0127b12a3d3bd8fb2899de09121b02d233e32974a7dae40342e51c5c3423dbe6",
+   "size": 694
+  },
+  {
+   "path": "skills/IV-VI/n46-int-order.json",
+   "sha256": "e2448a26cd8a02683317a53bdaccaa5d10fe4548b25ab43129d2974845f7b8f3",
+   "size": 711
+  },
+  {
+   "path": "skills/IV-VI/n46-isosceles.json",
+   "sha256": "7931251f844b23f8af631c4ba15c62ae7a036acb1c7873f84b78c1324037f5ba",
+   "size": 864
+  },
+  {
+   "path": "skills/IV-VI/n46-justify.json",
+   "sha256": "6f10b5d2d22c232aea49a2a6a51efa6b55f2ceeae40ae326c8568991b969a1fc",
+   "size": 679
+  },
+  {
+   "path": "skills/IV-VI/n46-lcd.json",
+   "sha256": "457b3fdaebe7f3a7db5d0fed2c02b9bbc99ee55e98a9c29d463569cf51978cce",
+   "size": 820
+  },
+  {
+   "path": "skills/IV-VI/n46-lcm.json",
+   "sha256": "30c2fa8fb0e3f62683a6e46008310f60977a99d6f8209d1a497f0f37ff9581d9",
+   "size": 825
+  },
+  {
+   "path": "skills/IV-VI/n46-len-units.json",
+   "sha256": "f760b6099d815dc70e82d05edfea11d6d59f33facce1e896c5261aac0adefc8c",
+   "size": 807
+  },
+  {
+   "path": "skills/IV-VI/n46-line-chart.json",
+   "sha256": "f296cad6ab51e264736aedd98d831eebc6249d3a28a43c027dd454609eeb98e1",
+   "size": 766
+  },
+  {
+   "path": "skills/IV-VI/n46-line-relations.json",
+   "sha256": "f14dd582810b84e732e561271516026997a54ecb4cadd1f06dad2fea8d1d8e79",
+   "size": 765
+  },
+  {
+   "path": "skills/IV-VI/n46-line-terms.json",
+   "sha256": "218db97547cdc9d99fda7b6836a3743a2c87112da3b744037e8b7e616fc405b6",
+   "size": 652
+  },
+  {
+   "path": "skills/IV-VI/n46-mass-units.json",
+   "sha256": "b417e61adc8b4431b50f8240b670f9d1222475d56b42eb5a7d7685c53a23730c",
+   "size": 672
+  },
+  {
+   "path": "skills/IV-VI/n46-mean.json",
+   "sha256": "99b402f0fb413ae19659afba4c7182bd99068a604662e6cd9cbc4324872d902a",
+   "size": 763
+  },
+  {
+   "path": "skills/IV-VI/n46-mixed-to-frac.json",
+   "sha256": "1a5faa961a70b53bbfa7e54e4c31799007c66d98d9761eaa842957425a18d46e",
+   "size": 784
+  },
+  {
+   "path": "skills/IV-VI/n46-mul.json",
+   "sha256": "1b0c329c886206aecc67540587321f383953f3090c4946b2dc65f5925b7541f1",
+   "size": 968
+  },
+  {
+   "path": "skills/IV-VI/n46-net-faces.json",
+   "sha256": "953457e1123bd761b428e0eec47a160dc36d0ca44731f7622efc2749c0cb14e0",
+   "size": 640
+  },
+  {
+   "path": "skills/IV-VI/n46-net-solid.json",
+   "sha256": "6a5822bab99ed492816182f12883b4007920b89639137537d53c29a4e2beb72b",
+   "size": 725
+  },
+  {
+   "path": "skills/IV-VI/n46-number-line.json",
+   "sha256": "a7daeac1a3c960b7e6c224b5220918b42a7461463f2f485f29a64508b6de79e6",
+   "size": 831
+  },
+  {
+   "path": "skills/IV-VI/n46-offer-compare.json",
+   "sha256": "75debf97d1a4c3cf11677f6f0f5f8faf0cc5d6d86501fdd6c179632a5f701080",
+   "size": 862
+  },
+  {
+   "path": "skills/IV-VI/n46-order-ops.json",
+   "sha256": "5096e09fc3dab9e912e42713bd692720b72364302f403538673716b99537b146",
+   "size": 893
+  },
+  {
+   "path": "skills/IV-VI/n46-order.json",
+   "sha256": "f35085b45ad42d3f42af6859d8c11a58c4be43dad14dd81778a23436389719c7",
+   "size": 744
+  },
+  {
+   "path": "skills/IV-VI/n46-percent-fraction.json",
+   "sha256": "bd941c92b9efc2252541630e2325955aab2488d89349f04974c91d6d6763e1e7",
+   "size": 736
+  },
+  {
+   "path": "skills/IV-VI/n46-percent-key.json",
+   "sha256": "e8f8e32a56347a66d0be94df55e46ec1295b45843861ca09157d725e9f74d7c9",
+   "size": 730
+  },
+  {
+   "path": "skills/IV-VI/n46-percent-of.json",
+   "sha256": "24c936812aa827dc041df6fa007db385dee89f376c0325b481f0662291f019fd",
+   "size": 702
+  },
+  {
+   "path": "skills/IV-VI/n46-perimeter-polygon.json",
+   "sha256": "d89f11aea692d0eda6a917960b83f6a8508a93d0baef08334554843f8408183d",
+   "size": 659
+  },
+  {
+   "path": "skills/IV-VI/n46-perimeter-regular.json",
+   "sha256": "ee83f31440f44178e7446e051ac64a65580a8501f7774184edcd7582abd26e49",
+   "size": 747
+  },
+  {
+   "path": "skills/IV-VI/n46-perimeter-unknown.json",
+   "sha256": "eebfe21d48d96767f06255f76ad0801800cb08e02a907300ebfde85fa87e3c7a",
+   "size": 665
+  },
+  {
+   "path": "skills/IV-VI/n46-plan-compare.json",
+   "sha256": "bbcbe3f20e86fb447834d2728762f1fbf31dd375d322a21636243372d18aa542",
+   "size": 695
+  },
+  {
+   "path": "skills/IV-VI/n46-polygon-parts.json",
+   "sha256": "a198a45e9e2a295ed17f672af5d50ebc9fb794c4a4852a8af65fde78f2f15cbe",
+   "size": 728
+  },
+  {
+   "path": "skills/IV-VI/n46-power-calc.json",
+   "sha256": "92af39925413c8c9dcba4bb657841812bd9d5ec413f0fda4da0cb1c1e50c5f67",
+   "size": 784
+  },
+  {
+   "path": "skills/IV-VI/n46-power-recognize.json",
+   "sha256": "7b76bb96f7fa179434189ccc99118c6dd4a5e9ddc0b4e0b66a8288208bf13628",
+   "size": 745
+  },
+  {
+   "path": "skills/IV-VI/n46-price-after-discount.json",
+   "sha256": "a15e1b54ff949fd07919e69b2c1b357eda2ee0ad1fa4728afabd262acea90471",
+   "size": 740
+  },
+  {
+   "path": "skills/IV-VI/n46-prime-pick.json",
+   "sha256": "9d003ce42f09230e6d173622d3246a590a6fbafce7d22d7b5c39dd0c746a0feb",
+   "size": 740
+  },
+  {
+   "path": "skills/IV-VI/n46-protractor-read.json",
+   "sha256": "f6b98ce3c94f5754fcad020e7b937f8249377f2003d81233bf80f0cbf27e7c27",
+   "size": 726
+  },
+  {
+   "path": "skills/IV-VI/n46-quad-angle.json",
+   "sha256": "ba6ef26fba847f4177d87ce9e0d87153ecab81b380bface7eb43a64f26811a14",
+   "size": 794
+  },
+  {
+   "path": "skills/IV-VI/n46-quad-properties.json",
+   "sha256": "a04b80b3461ddd3a416427d7212c2758222dfaa6055c234dc9de8e59b3da4268",
+   "size": 812
+  },
+  {
+   "path": "skills/IV-VI/n46-ratio.json",
+   "sha256": "ffa4fce41f361c295520391a0bd225a5f8aab98ee30eae8fc3a113e6ba8d5dfd",
+   "size": 768
+  },
+  {
+   "path": "skills/IV-VI/n46-rational-mix.json",
+   "sha256": "45ee60c44e5514803af00b90e94491e608fc9cbed2f4381c970d74d3994c33a5",
+   "size": 774
+  },
+  {
+   "path": "skills/IV-VI/n46-read-number.json",
+   "sha256": "03670e91ca6c072a01066a67a265ceee40daa701fe82459f60e3637e8d5d651a",
+   "size": 756
+  },
+  {
+   "path": "skills/IV-VI/n46-receipt.json",
+   "sha256": "09c5d50cedb6ea9eea8ad10c93805ed45d2f4a94a68b4956cd6b121a06e60da1",
+   "size": 713
+  },
+  {
+   "path": "skills/IV-VI/n46-roman-read.json",
+   "sha256": "9df50012e6c99a5af9fccb41b62f9541981088e70c2f0e3f927a7d2cefc66868",
+   "size": 788
+  },
+  {
+   "path": "skills/IV-VI/n46-roman-write.json",
+   "sha256": "76656ba877db38ad86e4cf7543b35f047cd11f0d9c5041502034517ec0544d83",
+   "size": 764
+  },
+  {
+   "path": "skills/IV-VI/n46-rounding.json",
+   "sha256": "da86c15af4dd64f0bc6d672446417d9348185c49d6168921b1d720aba3ebef2d",
+   "size": 770
+  },
+  {
+   "path": "skills/IV-VI/n46-ruler-read.json",
+   "sha256": "fb0c385512d935e24f6d19a3bca3e412c95d6e7314a8966da106cbf564a958d0",
+   "size": 792
+  },
+  {
+   "path": "skills/IV-VI/n46-scale-map.json",
+   "sha256": "d728b25431cd5161922800d563130c7152f27d9245a47019924e69c63c3e3540",
+   "size": 713
+  },
+  {
+   "path": "skills/IV-VI/n46-scale-real.json",
+   "sha256": "d85414592e39223818d6bf2e5d60247cf57727b7c16c215f4e88689b5aef552f",
+   "size": 759
+  },
+  {
+   "path": "skills/IV-VI/n46-sense-check.json",
+   "sha256": "77af2fd22377e1e6d1639be6d9b05564ef6d33050a11e019cbebfa6f8a6cd111",
+   "size": 702
+  },
+  {
+   "path": "skills/IV-VI/n46-smallest-divisor.json",
+   "sha256": "e40fc9d3070e429c233947a382bba7c49dca11f36d8a7eb6e18dd8b5e6ba4f01",
+   "size": 736
+  },
+  {
+   "path": "skills/IV-VI/n46-solid-elements.json",
+   "sha256": "8ca20d453db574dc85316557fda74c896d93a7bfb2f4558c76e82423d781572f",
+   "size": 909
+  },
+  {
+   "path": "skills/IV-VI/n46-solid-recognize.json",
+   "sha256": "cedb71406de2fd94e56e4aa2f0f7b293b2e0dd513f4325f4758d81bb7b6cfbb8",
+   "size": 668
+  },
+  {
+   "path": "skills/IV-VI/n46-speed-distance.json",
+   "sha256": "4ce2234b05ad69229f2eefc10507075927ac63a67ca65b8713130b4b0402fd22",
+   "size": 780
+  },
+  {
+   "path": "skills/IV-VI/n46-speed-time.json",
+   "sha256": "55b53f53797adc7e620e0a31781f18579174ead65e897fc73d2610fde053dcad",
+   "size": 681
+  },
+  {
+   "path": "skills/IV-VI/n46-speed-units.json",
+   "sha256": "a56e1cf7bf93e9ad5da0e489fa2a5aa42ee8cfb2e2caf7e91126380d47a253e9",
+   "size": 711
+  },
+  {
+   "path": "skills/IV-VI/n46-speed-velocity.json",
+   "sha256": "04d2da77ffabd96824801bc14dab36a36203846bebf4b07f56f68bdb9fc209a6",
+   "size": 703
+  },
+  {
+   "path": "skills/IV-VI/n46-strat-assoc.json",
+   "sha256": "4d25e3795ac4390ed1c0a3610028b4930e28c489208125ef8ddde97530d96a0d",
+   "size": 691
+  },
+  {
+   "path": "skills/IV-VI/n46-strat-near.json",
+   "sha256": "2c8a777edd7ff48f7e48846861b8aa82f50fcca9c853a76862fdd277fbb70913",
+   "size": 643
+  },
+  {
+   "path": "skills/IV-VI/n46-strat-split.json",
+   "sha256": "122874e7e49cc77d3238ad54c0e45116d90ea43ae30be63c89fed41f30780dc7",
+   "size": 579
+  },
+  {
+   "path": "skills/IV-VI/n46-sub-mental.json",
+   "sha256": "3bdf3071a966a922a4a18ef81c277048b8432ff301233a6648ec6d64d24b5f13",
+   "size": 759
+  },
+  {
+   "path": "skills/IV-VI/n46-sub-written.json",
+   "sha256": "5cfa1ce995f2c2a3a7bd903df78dfe067ad138aae5929946d1f0f63acc9e1991",
+   "size": 766
+  },
+  {
+   "path": "skills/IV-VI/n46-sum-product.json",
+   "sha256": "8dfa3f0ead7dcf846fcacfd6875a39d98c0c2843318ee53de6c56a99dd28418d",
+   "size": 743
+  },
+  {
+   "path": "skills/IV-VI/n46-survey-tally.json",
+   "sha256": "033cfdbfd54f4f8f3aac26bc0404c9d63a80f24f52f01f3d95fde212c197bb70",
+   "size": 550
+  },
+  {
+   "path": "skills/IV-VI/n46-symmetry-axes.json",
+   "sha256": "0b43f2cd95c2e7c7101dd21b56e22ae3fcb3bb8379a16d4184a3de1e5381a580",
+   "size": 767
+  },
+  {
+   "path": "skills/IV-VI/n46-table-read.json",
+   "sha256": "32a58fb8062015a313ba451bb39af52a7f2fff6f921bbd3864ad6bb366c958c0",
+   "size": 751
+  },
+  {
+   "path": "skills/IV-VI/n46-time-units.json",
+   "sha256": "56a4e8a42a2411f50333fc786ad66ca1d7e2c414691922c014846bdb1c4aaf50",
+   "size": 756
+  },
+  {
+   "path": "skills/IV-VI/n46-total-cost.json",
+   "sha256": "7f466bbfee545cbedcf4ffb53251eea136893c2c9fee98c338efd5ba066c41e8",
+   "size": 810
+  },
+  {
+   "path": "skills/IV-VI/n46-triangle-angle.json",
+   "sha256": "e36a73e1096c953ca0fe2bcea1af40a967f11388bb5fdc5d32d16a8c97b427c5",
+   "size": 798
+  },
+  {
+   "path": "skills/IV-VI/n46-triangle-by-angles.json",
+   "sha256": "f5ad77588087223fd78241a8140b1b67445ed0d9d8aaa212a79d02cc02e5fcc8",
+   "size": 700
+  },
+  {
+   "path": "skills/IV-VI/n46-triangle-by-sides.json",
+   "sha256": "b28d9980a6c034fb25620e8a6ba28af9f32a8b8ccc2bf9911029335cdf3c19f9",
+   "size": 703
+  },
+  {
+   "path": "skills/IV-VI/n46-triangle-exists.json",
+   "sha256": "3892cb68ca8677cba619a3fa76fe00a8f0349d1700fcc2c92a4b74c09a938a01",
+   "size": 662
+  },
+  {
+   "path": "skills/IV-VI/n46-triangle-third-side.json",
+   "sha256": "87ced42c338c265496551e331c70b581486cd0962656f35f0349ee05beeee909",
+   "size": 709
+  },
+  {
+   "path": "skills/IV-VI/n46-unit-price.json",
+   "sha256": "c080226ec3ed0c4c9a4a7d0ea29b3cbc225b4c1fd86aae15bc7e0cb6ec39457e",
+   "size": 837
+  },
+  {
+   "path": "skills/IV-VI/n46-wp-proportion.json",
+   "sha256": "07c4f8e27f9da1287943ba3e2b65d448e8431288a6a321bf6b80300701532d7d",
+   "size": 830
+  },
+  {
+   "path": "skills/IV-VI/n46-wp-reverse.json",
+   "sha256": "4706e8cb9dcd13bc297bcc8712eb88532d6a5efe819a6fa1e4b8d811f0d602db",
+   "size": 762
+  },
+  {
+   "path": "skills/IV-VI/n46-wp-shopping.json",
+   "sha256": "198834bd483210016865434544aa6c3d09ec29e09a749bd29fec1cc2e9b7f13c",
+   "size": 884
+  },
+  {
+   "path": "skills/IV-VI/n46-wp-sum-difference.json",
+   "sha256": "58dc00ffc81638dbc0cbcebf8d64a8ee506b5383a9813e11ada495d9e8fc0d0a",
+   "size": 791
+  },
+  {
+   "path": "skills/IV-VI/n46-write-digits.json",
+   "sha256": "2631c5e8be5c24a9e4af04f10cde80512c508c8ae02b111d9042ae4a70f51f20",
+   "size": 1043
+  },
+  {
+   "path": "skills/IV-VI/q46-garden.json",
+   "sha256": "eff2068546d63b440beeaeadae77e2ce5c749eb5e368e177c52689b2ad416021",
+   "size": 627
+  },
+  {
+   "path": "skills/IV-VI/q46-plan.json",
+   "sha256": "ad7f4c6142ee0ee0a3ec9dc35dd9aee64f80bb8847c7ec98e4bd3925964730b6",
+   "size": 557
+  },
+  {
+   "path": "skills/IV-VI/q46-trip.json",
+   "sha256": "05037d28747f87432e31fcefd9bd447b391ffc0d6eb5c7637dedb6cf779efbcb",
+   "size": 574
+  },
+  {
+   "path": "skills/IV-VI/q46-water.json",
+   "sha256": "812139b6c0f715a656dbb4bc1b35cadfd0bb9fbd2341d60f0eec2073cd3b2ab3",
+   "size": 548
+  },
+  {
+   "path": "skills/VII-VIII/q78-arch.json",
+   "sha256": "a490ac96526eb999c3fdf282ac6feb4d6c955a3f3e3b3b11f91ecaa66097a2a8",
+   "size": 598
+  },
+  {
+   "path": "skills/VII-VIII/q78-chart.json",
+   "sha256": "e4d9cdc33cd6bae4fb559529a142961ebe167c193f40e74c3def3ac10b740595",
+   "size": 566
+  },
+  {
+   "path": "skills/VII-VIII/q78-deposit.json",
+   "sha256": "fa7a57a421a7b738694e836bc0dd890b27a473c517b6a24bbb98213f481a6797",
+   "size": 567
+  },
+  {
+   "path": "skills/VII-VIII/q78-nim.json",
+   "sha256": "2c5f8a514a2938ae22221f44445a91bb906277786d6f50d38d9e6f2b16fd2ef7",
+   "size": 550
+  },
+  {
+   "path": "skills/VII-VIII/q78-ramp.json",
+   "sha256": "e67bc06fc2edeace8f0cbd178ac9d7058a8da0af26d0d669302370e2b44a40a4",
+   "size": 605
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-addsub.json",
+   "sha256": "430bcd5fca5ee1a2aebf1e0331a93659edefe15fcd27a1c9fbeb9079b9ac98c8",
+   "size": 758
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-binomials.json",
+   "sha256": "0fa6a9b45b24dd86da58165bb6993e5086251ba502898755994e65ab9be98826",
+   "size": 814
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-build.json",
+   "sha256": "acc74bd13666f13843e491e30855d8d79538ec7c6cbe2518f1ed056cdb3ef669",
+   "size": 734
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-evaluate.json",
+   "sha256": "11e481eac4662ea28039d53966736d475ae3be06338884168335c25db013fc56",
+   "size": 748
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-factor.json",
+   "sha256": "7f73139e59f421fb860f3b43ad3c8d3a614a46433b2c61b285cfafc1cb331cb9",
+   "size": 759
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-formula.json",
+   "sha256": "9ba0e5ce3239f4cb962cf8011e1fd4e0f8dab7344984e9d526f7ca51e14b8a3d",
+   "size": 718
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-mul-mono.json",
+   "sha256": "7053ae2713409bc17760cdda00a2c056699cd98db2624f41b4965e63f7a4d42d",
+   "size": 714
+  },
+  {
+   "path": "skills/VII-VIII/vh-alg-simplify.json",
+   "sha256": "ae8ba44bf63712424abf04b91bd81de6e11e1feeccdd03fba516abc52fceb89d",
+   "size": 733
+  },
+  {
+   "path": "skills/VII-VIII/vh-area-decompose.json",
+   "sha256": "fdb731f2b1fa9a656e1458fe242876b53efce8d7785f41b623215b1c354edec0",
+   "size": 847
+  },
+  {
+   "path": "skills/VII-VIII/vh-bisector.json",
+   "sha256": "87fc29220af5567aed789309cc16642cf62cd1b76e55db6d8e5c44fb8417c80d",
+   "size": 874
+  },
+  {
+   "path": "skills/VII-VIII/vh-calculator.json",
+   "sha256": "0c553aad3610e50924ee29592418e83a08f221fcb3567de0bd804bf90d25e9dc",
+   "size": 617
+  },
+  {
+   "path": "skills/VII-VIII/vh-chart-choice.json",
+   "sha256": "e96d7ef1e5092e1371d8d6b08e3780eaeb5c1d9460c6dafcaba597a69812de47",
+   "size": 630
+  },
+  {
+   "path": "skills/VII-VIII/vh-circle-calc.json",
+   "sha256": "772b0b5dc65edfe04ef273cfc2bbee520c76dd4531b105d909008b9aaf9364ac",
+   "size": 934
+  },
+  {
+   "path": "skills/VII-VIII/vh-circle-pi.json",
+   "sha256": "87bd354039522f137463f94ad2a2eaca25eb308d2e8b4cf946ee60691e454708",
+   "size": 848
+  },
+  {
+   "path": "skills/VII-VIII/vh-conclusions.json",
+   "sha256": "4b5d72284db804ecea9da5efceeb08c5e6adb6471909e0c6c31dcfd3dda55aa6",
+   "size": 580
+  },
+  {
+   "path": "skills/VII-VIII/vh-congruent-criteria.json",
+   "sha256": "6737115220139cd6545d675c1f7ac9dad233a588cc160411a683690adc0577c3",
+   "size": 699
+  },
+  {
+   "path": "skills/VII-VIII/vh-congruent-find.json",
+   "sha256": "d373c1c1b25ed24fd00a35221d94484f2d41169c592ea27fdf1f0fda87884e3b",
+   "size": 759
+  },
+  {
+   "path": "skills/VII-VIII/vh-converse.json",
+   "sha256": "f751da4c24e99121dbc0a61815970610a5c99eabbb7640d59f868498c3aa379d",
+   "size": 630
+  },
+  {
+   "path": "skills/VII-VIII/vh-count-pairs.json",
+   "sha256": "336e9f79056e8c73ecaccc3197bf20e9725d5c8678fbbf844b125fcd791a4633",
+   "size": 716
+  },
+  {
+   "path": "skills/VII-VIII/vh-counterexample.json",
+   "sha256": "cbdebdc7541d0cf5717552bfc9b554fa0d60fa5cd95a19aedf3188ba57d9e662",
+   "size": 675
+  },
+  {
+   "path": "skills/VII-VIII/vh-data-critical.json",
+   "sha256": "9b2af5b7aee69f8a0b7b3d3ce96c58907458bfe45abf6259f9f18fb3c815f074",
+   "size": 647
+  },
+  {
+   "path": "skills/VII-VIII/vh-data-sources.json",
+   "sha256": "955de0bad5a4abc0566f6214cfb7d7adddbe94525ee06dd0ba24a7c8726302a0",
+   "size": 573
+  },
+  {
+   "path": "skills/VII-VIII/vh-direct-prop.json",
+   "sha256": "123c13b5a10e1c5e178a7e213fa0da2fc174c4a3f2f2b10bc37000f771f37f9f",
+   "size": 761
+  },
+  {
+   "path": "skills/VII-VIII/vh-eq-check.json",
+   "sha256": "e5ceeb5eca0bfbf90ec01d0b690e4f393e97cfaf2f38b334e2b428e67c348862",
+   "size": 970
+  },
+  {
+   "path": "skills/VII-VIII/vh-eq-solve-frac.json",
+   "sha256": "b0892dfebbf3eccc52310d431a62278e614bdeff607d2869d655eda8621e9e71",
+   "size": 746
+  },
+  {
+   "path": "skills/VII-VIII/vh-eq-solve.json",
+   "sha256": "174c79b91e1957a11269164ce8786e344b79bc1cf1c721a691e9f412ed47b0f5",
+   "size": 896
+  },
+  {
+   "path": "skills/VII-VIII/vh-eq-word.json",
+   "sha256": "1e733748763d79ff1b0d9901c173f75826dbb7657b882b186657cdc89ce8dbda",
+   "size": 833
+  },
+  {
+   "path": "skills/VII-VIII/vh-graph-change.json",
+   "sha256": "c9fb6bdad6d83f5143180236f966cb5f275cc5a350967bd15521255eba5cb756",
+   "size": 865
+  },
+  {
+   "path": "skills/VII-VIII/vh-graph-distance.json",
+   "sha256": "40aa739dec7ee301367c5b1925a255bbca8ef8cf8b0a9551161c1d629326dfdf",
+   "size": 909
+  },
+  {
+   "path": "skills/VII-VIII/vh-indirect.json",
+   "sha256": "1134a61dbb18f25b5b1f0b19df4d336d89b6e0cacf944009b732eb3c61381257",
+   "size": 580
+  },
+  {
+   "path": "skills/VII-VIII/vh-interest.json",
+   "sha256": "5ec875086de1329d7507cab4b829c65e65ae09a4394070971c95ed6a3b3e68a6",
+   "size": 785
+  },
+  {
+   "path": "skills/VII-VIII/vh-justify-right.json",
+   "sha256": "06fd3ecfc709302cfd909980cf056bec59248c955cf0e7e4d1f6970bf872fb39",
+   "size": 738
+  },
+  {
+   "path": "skills/VII-VIII/vh-lattice-area.json",
+   "sha256": "ab479d101908fd9b2459d6ce0cf1535b2f18418a4d4393159a0c163f6b3dd703",
+   "size": 930
+  },
+  {
+   "path": "skills/VII-VIII/vh-lattice-vertex.json",
+   "sha256": "d2125df728a7f83a059007d96553833c23bee9653a090ea7d24ea49a18dac352",
+   "size": 1022
+  },
+  {
+   "path": "skills/VII-VIII/vh-mean-exact.json",
+   "sha256": "25c777e6597cf8dab5615828c288da793c30762d0ce06c92fc4d53471163c2df",
+   "size": 719
+  },
+  {
+   "path": "skills/VII-VIII/vh-mean-missing.json",
+   "sha256": "1769816e7cb1e1da886325fd8bd5ed4686c3c5272eab441f42d28a72371c66bd",
+   "size": 760
+  },
+  {
+   "path": "skills/VII-VIII/vh-mean-outlier.json",
+   "sha256": "d936bba38a82ed602780a1f126e9b0e7f4d240bfbd9402641ae389a989d15a4c",
+   "size": 701
+  },
+  {
+   "path": "skills/VII-VIII/vh-median.json",
+   "sha256": "0135eefb6157036e065d89f14e63c38fba4d6ec4b4e40e7a2fd711bef84b6946",
+   "size": 803
+  },
+  {
+   "path": "skills/VII-VIII/vh-minimal-argument.json",
+   "sha256": "d0693dc82bd852a1ee5b760b90bc25afc8276e6d113e53d54716b830b966de53",
+   "size": 647
+  },
+  {
+   "path": "skills/VII-VIII/vh-percent-number.json",
+   "sha256": "2211a3fac84cf0a9c10a4ccd1f970d4bacc6f633e2240fd8cc90c1ec13a8de18",
+   "size": 741
+  },
+  {
+   "path": "skills/VII-VIII/vh-percent-of.json",
+   "sha256": "a48f29bc902be52d18717929468ed802ac406c1e4560664e04581051e76153aa",
+   "size": 672
+  },
+  {
+   "path": "skills/VII-VIII/vh-percent-what.json",
+   "sha256": "a607510250f82e45360d980e8dc3ba5c3a7eaa389bcd192e00664e23804e291b",
+   "size": 713
+  },
+  {
+   "path": "skills/VII-VIII/vh-power-calc.json",
+   "sha256": "52a9d865e6b19ee0412c285e2f38bcd471c70226ed2b70be9b6b636a7cdbf430",
+   "size": 703
+  },
+  {
+   "path": "skills/VII-VIII/vh-power-decimal.json",
+   "sha256": "8c0e761f9ec525c9b48812c94f3a0dbe048755a691606773b01c943854dba4bf",
+   "size": 760
+  },
+  {
+   "path": "skills/VII-VIII/vh-power-laws.json",
+   "sha256": "cd6683015c268bee009b99463efca112d9bfa66539c7cafe66c3197f2ce0b2a6",
+   "size": 876
+  },
+  {
+   "path": "skills/VII-VIII/vh-power-negative.json",
+   "sha256": "4f57d2242f1227d2c64f7b5ff115d0396287665094c7bef57928522378ea61aa",
+   "size": 750
+  },
+  {
+   "path": "skills/VII-VIII/vh-price-change.json",
+   "sha256": "b0a3da408ffb855ae88313a9c26d071ee1365e5530c9ba68fb4eea8064431985",
+   "size": 826
+  },
+  {
+   "path": "skills/VII-VIII/vh-prism.json",
+   "sha256": "bd62eeb84210470773310222d5782b0cc8292230107e30e57af25ae25f1c7cdc",
+   "size": 852
+  },
+  {
+   "path": "skills/VII-VIII/vh-prob-balls.json",
+   "sha256": "4db364ea7733e4b5850b6f417be1424bd0042733f543773f2def0ffe8bfab5b5",
+   "size": 842
+  },
+  {
+   "path": "skills/VII-VIII/vh-prob-dice.json",
+   "sha256": "f721bca2f3a065bc0fe9af8904f6f77c3b115338841f6d431a2c2fe19a20c9b6",
+   "size": 651
+  },
+  {
+   "path": "skills/VII-VIII/vh-prob-expected.json",
+   "sha256": "49832c1c1e8c8a70529048cadb3e0136ad2bcc9e84b99f499795eeae6dadd125",
+   "size": 660
+  },
+  {
+   "path": "skills/VII-VIII/vh-prob-frequency.json",
+   "sha256": "db032c02d51ee78eb516cda255ae648c0a65b11543d1b802444137161e12a74c",
+   "size": 680
+  },
+  {
+   "path": "skills/VII-VIII/vh-prob-reverse.json",
+   "sha256": "a75eefd6737d981fb3f353771d533fa7c9e761ce3a84faf3a51f467025f209b3",
+   "size": 765
+  },
+  {
+   "path": "skills/VII-VIII/vh-prob-two.json",
+   "sha256": "29a3853cbcf565ef6a04e675fd039c1179f135f294ab359e3c2a4810653468f8",
+   "size": 881
+  },
+  {
+   "path": "skills/VII-VIII/vh-prop-divide.json",
+   "sha256": "1b63469845df9ea313e28f32701c1339cca3ad978fefb2444992fc2ef665713f",
+   "size": 758
+  },
+  {
+   "path": "skills/VII-VIII/vh-pyramid-heights.json",
+   "sha256": "4e655a830539effdf7b627c3ef9a6da909073ca42138706be68eca9f6e701a97",
+   "size": 924
+  },
+  {
+   "path": "skills/VII-VIII/vh-pyramid.json",
+   "sha256": "7f4e973fc6cada6667fdfcb786c643f29cd6d75027ee740857394f15492bdb6f",
+   "size": 1014
+  },
+  {
+   "path": "skills/VII-VIII/vh-pyth-basic.json",
+   "sha256": "625d53a9f4733a1184cc8a2cf5dd652aee32692f19e0c2bfb410d1d8133a17eb",
+   "size": 809
+  },
+  {
+   "path": "skills/VII-VIII/vh-pyth-context.json",
+   "sha256": "b2ae42943009bc12184d64a86a79d612b93f3f2a2880ba8e0434cfcc04291c55",
+   "size": 827
+  },
+  {
+   "path": "skills/VII-VIII/vh-real-model.json",
+   "sha256": "ec887ae42b83c5ae805984e26c0840109e5881eb5da89acf12d88a222c518b07",
+   "size": 907
+  },
+  {
+   "path": "skills/VII-VIII/vh-regular-angle.json",
+   "sha256": "42a501a94ecdbdbf5ddf1939ba42af71c9ae28549cec1711855842359421f6fa",
+   "size": 858
+  },
+  {
+   "path": "skills/VII-VIII/vh-root-bring-in.json",
+   "sha256": "dd040416eb60a6488acb375bb0238bc915a8405ff3812dbad3e5802a248fb4f1",
+   "size": 689
+  },
+  {
+   "path": "skills/VII-VIII/vh-root-factor.json",
+   "sha256": "bf5db0d339f2a63217a85f7471d81c5b90c32e86179095af13d3a4c86a8fc486",
+   "size": 709
+  },
+  {
+   "path": "skills/VII-VIII/vh-root-multiply.json",
+   "sha256": "c01ff80a08773e81f7bc846226cc60e202e84debd6fe3538e1c94129e58bc69f",
+   "size": 784
+  },
+  {
+   "path": "skills/VII-VIII/vh-sci-compare.json",
+   "sha256": "1aaa06ebae59eb9e221c9b300c61b4d12303774d3b3f5c30438ee997e631077f",
+   "size": 785
+  },
+  {
+   "path": "skills/VII-VIII/vh-sci-exponent.json",
+   "sha256": "2273c1422ca68a51d404be0bbe0fb82122b634a569a70a0e414bfef111fe865e",
+   "size": 749
+  },
+  {
+   "path": "skills/VII-VIII/vh-similar-methods.json",
+   "sha256": "8988e5c39b6eb63c40b9927ce68517a41e55430db1d5ae1c7d0dd1dd99c4dd6a",
+   "size": 602
+  },
+  {
+   "path": "skills/VII-VIII/vh-simplify-solution.json",
+   "sha256": "e047c1bb33e997b28072e54804284aa09c15942494a8452ce87d0a73370a8419",
+   "size": 637
+  },
+  {
+   "path": "skills/VII-VIII/vh-solid-counts.json",
+   "sha256": "309f0955d2930e1922277926c59302b65beb4c5ce8cc19b98232f67d56175e84",
+   "size": 900
+  },
+  {
+   "path": "skills/VII-VIII/vh-special-exact.json",
+   "sha256": "65488c17c84eaae443be0160f6ba5b2bb7496c4944738b6d89fbcfc9ebf29c9c",
+   "size": 960
+  },
+  {
+   "path": "skills/VII-VIII/vh-special-numeric.json",
+   "sha256": "0d6feb181c5c104f60bb2fd72826f44cb2872510a20df575549a1b07f8ba8cce",
+   "size": 938
+  },
+  {
+   "path": "skills/VII-VIII/vh-sqrt-approx.json",
+   "sha256": "60f4d66c600e39819d8f5d97d1423b7593a3c0e81c9723d40b3788a52a1605b4",
+   "size": 928
+  },
+  {
+   "path": "skills/VII-VIII/vh-sqrt-between.json",
+   "sha256": "039f539c2d32104f36ca9708c55110a93d9f7e9150d1bcb358d2c8013ad3acb5",
+   "size": 804
+  },
+  {
+   "path": "skills/VII-VIII/vh-sqrt-exact.json",
+   "sha256": "e452e184a6e1dc724215c22ca2987a8dd62a52e0d4685788491c1399136225c2",
+   "size": 861
+  },
+  {
+   "path": "skills/VII-VIII/vh-symmetry-axes.json",
+   "sha256": "9faf5fdb49322db872e8b906c29d162ec129746c949b7400f3149115c70ef548",
+   "size": 684
+  },
+  {
+   "path": "skills/VII-VIII/vh-symmetry-centre.json",
+   "sha256": "95a113fd70190c7ca0f756cbc03acf17c674880053c262738aef766cd006dd8a",
+   "size": 671
+  },
+  {
+   "path": "skills/VII-VIII/vh-think-clever.json",
+   "sha256": "80cd741ebbf88c682ed5bf8de5631780af73dc3191817af98ff89ad613d96e99",
+   "size": 815
+  },
+  {
+   "path": "skills/VII-VIII/vh-think-generalise.json",
+   "sha256": "d46141b6cf5746f4e352cddcbab1b3668bdcca503ad8c82ac8d4c6fc41970be3",
+   "size": 801
+  },
+  {
+   "path": "skills/VII-VIII/vh-think-structure.json",
+   "sha256": "570513971ab21da76fdd5d03b396f399c824113a7e6f6bccc5d9be8c5e9f7965",
+   "size": 732
+  }
+ ]
+}

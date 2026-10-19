@@ -1,0 +1,122 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-addsub",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "minus": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "minus": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(-5, 6)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-5, 6)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(-5, 6)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(-5, 6)"
+  },
+  {
+   "name": "e",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "f",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "s",
+   "expr": "1 if minus == 0 else -1"
+  },
+  {
+   "name": "txt",
+   "expr": "'(' + poly([a, b, e], ['x', 'y', '']) + ') ' + ('+' if minus == 0 else '−') + ' (' + poly([c, d, f], ['x', 'y', '']) + ')'"
+  },
+  {
+   "name": "good",
+   "expr": "poly([a + s * c, b + s * d, e + s * f], ['x', 'y', ''])"
+  },
+  {
+   "name": "w1",
+   "expr": "poly([a + s * c, b + s * d, e - s * f], ['x', 'y', ''])"
+  },
+  {
+   "name": "w2",
+   "expr": "poly([a - s * c, b - s * d, e + s * f], ['x', 'y', ''])"
+  },
+  {
+   "name": "w3",
+   "expr": "poly([a + s * c, b - s * d, e + s * f], ['x', 'y', ''])"
+  }
+ ],
+ "constraints": [
+  "a != 0 and b != 0 and c != 0 and d != 0",
+  "e != 0 and f != 0",
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Wykonaj działanie: @{txt}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Opuść nawiasy i zredukuj wyrazy podobne.' if minus == 0 else 'Minus przed nawiasem zmienia znaki wszystkich wyrazów w nawiasie. Potem zredukuj wyrazy podobne.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Wynik: @{good}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

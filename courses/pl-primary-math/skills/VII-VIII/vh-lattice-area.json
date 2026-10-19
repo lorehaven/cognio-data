@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-lattice-area",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Pola i obwody figur o wierzchołkach kratowych"
+ },
+ "objectives": [
+  "VII-VIII.3.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Prostokąt"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trójkąt z poziomą podstawą"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Obwód trójkąta prostokątnego"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-lattice-area.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-lattice-vertex",
+  "n46-area-triangle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Długości boków figury o wierzchołkach kratowych odczytasz z różnic współrzędnych. Pole prostokąta to iloczyn boków, a trójkąta – połowa podstawy razy wysokość."
+  }
+ }
+}

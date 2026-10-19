@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-count-pairs",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Reguła mnożenia"
+ },
+ "objectives": [
+  "VII-VIII.1.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa wybory"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwa wybory z ograniczeniem"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-count-pairs.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "n46-count-cases"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Reguła mnożenia: jeśli pierwszą rzecz można wybrać na a sposobów, a drugą na b, to wszystkich par jest a · b."
+  }
+ }
+}

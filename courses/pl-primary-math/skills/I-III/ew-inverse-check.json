@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-inverse-check",
+ "stage": "I-III",
+ "title": {
+  "pl": "Sprawdzamy działaniem odwrotnym"
+ },
+ "objectives": [
+  "I-III.1.o"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie i odejmowanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mnożenie i dzielenie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-inverse-check.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-sub"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dodawanie i odejmowanie to działania odwrotne, podobnie mnożenie i dzielenie. Jeśli 7 + 5 = 12, to 12 − 5 = 7. Możesz tak sprawdzić wynik."
+  }
+ }
+}

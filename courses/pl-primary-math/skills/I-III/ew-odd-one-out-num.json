@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-odd-one-out-num",
+ "stage": "I-III",
+ "title": {
+  "pl": "Liczba, która nie pasuje"
+ },
+ "objectives": [
+  "I-III.5.g"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Parzyste i nieparzyste"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wielokrotności"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-odd-one-out-num.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "Znajdź cechę, którą mają trzy z czterech liczb (np. parzystość albo wielokrotność 5). Liczba, która jej nie ma, nie pasuje."
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-number-line-diff",
+ "stage": "I-III",
+ "title": {
+  "pl": "Skoki po osi liczbowej"
+ },
+ "objectives": [
+  "I-III.1.e"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 1000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-number-line-diff.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Na osi liczbowej różnica między liczbami to liczba skoków od jednej do drugiej. Przeskakuj po jednej kresce lub większymi krokami."
+  }
+ }
+}

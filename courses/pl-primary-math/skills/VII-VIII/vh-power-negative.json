@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-power-negative",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Potęgi o wykładniku ujemnym"
+ },
+ "objectives": [
+  "VII-VIII.1.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Podstawa całkowita"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Podstawa ułamkowa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-power-negative.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-power-calc"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wykładnik ujemny oznacza odwrotność: $a^{-n} = \\frac{1}{a^n}$, a $\\left(\\frac{a}{b}\\right)^{-n} = \\left(\\frac{b}{a}\\right)^n$."
+  }
+ }
+}

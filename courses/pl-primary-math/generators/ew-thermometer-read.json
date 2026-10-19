@@ -1,0 +1,65 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-thermometer-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "0",
+    "hi": "30"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "-15",
+    "hi": "30"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "tv",
+   "expr": "randint(lo, hi)"
+  }
+ ],
+ "constraints": [
+  "tv != 0"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile stopni Celsjusza pokazuje termometr?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "tv"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź, gdzie kończy się słupek. Poniżej zera temperatura jest ujemna."
+   },
+   {
+    "kind": "conclude",
+    "text": "Termometr pokazuje @{tv} °C."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "thermometer",
+    "essential": true,
+    "alt": "Termometr ze słupkiem rtęci.",
+    "params": {
+     "value": {
+      "$expr": "tv"
+     },
+     "min": -20,
+     "max": 40
+    }
+   }
+  ]
+ }
+}

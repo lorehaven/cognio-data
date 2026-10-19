@@ -1,0 +1,49 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-receipt",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Paragon sklepowy"
+ },
+ "objectives": [
+  "IV-VI.5.1",
+  "IV-VI.2.13"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Suma do zapłaty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Reszta z banknotu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-receipt.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "prerequisites": [
+  "n46-total-cost"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Na paragonie wartość pozycji to ilość razy cena. Suma do zapłaty to suma wartości wszystkich pozycji."
+  }
+ }
+}

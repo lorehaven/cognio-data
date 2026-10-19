@@ -1,0 +1,78 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-sqrt-between",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "cube": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "cube": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "lo",
+   "expr": "randint(2, 12) if cube == 0 else randint(2, 6)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(lo * lo + 1, (lo + 1) * (lo + 1) - 1) if cube == 0 else randint(pow(lo, 3) + 1, pow(lo + 1, 3) - 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "'\\\\sqrt{' + str(n) + '}' if cube == 0 else '\\\\sqrt[3]{' + str(n) + '}'"
+  }
+ ],
+ "constraints": [
+  "lo > 1"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Między którymi kolejnymi liczbami całkowitymi leży liczba $@{txt}$?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (true) else []) + (['b'] if (false) else []) + (['c'] if (false) else []) + (['d'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź największy kwadrat (sześcian) mniejszy niż @{n} i najmniejszy większy niż @{n}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(lo * lo) + ' < ' + str(n) + ' < ' + str((lo + 1) * (lo + 1)) if cube == 0 else str(pow(lo, 3)) + ' < ' + str(n) + ' < ' + str(pow(lo + 1, 3)))}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{lo} i @{lo + 1}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{lo + 1} i @{lo + 2}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{lo - 1} i @{lo}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{lo + 2} i @{lo + 3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-circle-pi",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wyniki w postaci wielokrotności π"
+ },
+ "objectives": [
+  "VII-VIII.3.7"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Długość okręgu"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pole koła"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Pole z długości okręgu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-circle-pi.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-circle-calc"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wyniki można zostawić w postaci wielokrotności liczby π: długość okręgu to 2πr, a pole koła πr². Wtedy wystarczy obliczyć współczynnik przy π."
+  }
+ }
+}

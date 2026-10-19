@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-regular-angle",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Kąty wielokąta foremnego"
+ },
+ "objectives": [
+  "VII-VIII.3.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Kąt wewnętrzny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kąt zewnętrzny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ile boków ma wielokąt?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-regular-angle.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-quad-angle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kąty zewnętrzne wielokąta wypukłego dają razem 360°. W wielokącie foremnym są równe, więc kąt zewnętrzny to 360° : n, a wewnętrzny 180° minus ten kąt."
+  }
+ }
+}

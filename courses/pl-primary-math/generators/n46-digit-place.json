@@ -1,0 +1,82 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-digit-place",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "4"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "6"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "9"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(pow(10, k - 1), pow(10, k) - 1)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(0, k - 1)"
+  },
+  {
+   "name": "pn",
+   "expr": "['jedności', 'dziesiątek', 'setek', 'tysięcy', 'dziesiątek tysięcy', 'setek tysięcy', 'milionów', 'dziesiątek milionów', 'setek milionów'][p]"
+  },
+  {
+   "name": "ds",
+   "expr": "digits(n)"
+  },
+  {
+   "name": "d",
+   "expr": "ds[k - 1 - p]"
+  }
+ ],
+ "selfCheck": [
+  "(n // pow(10, p)) % 10 == d"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaka cyfra stoi na miejscu @{pn} w liczbie @{n|int}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "d"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Miejsca liczymy od prawej: jedności, dziesiątki, setki, tysiące…"
+   },
+   {
+    "kind": "conclude",
+    "text": "Na miejscu @{pn} stoi cyfra @{d}."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "from_left",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "ds[p]"
+     }
+    },
+    "feedback": "Miejsca liczymy od prawej strony liczby, a nie od lewej.",
+    "when": "ds[p] != d"
+   }
+  ]
+ }
+}

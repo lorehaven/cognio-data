@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-bar-chart",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "cats",
+   "expr": "choice([['kot', 'pies', 'chomik', 'rybki', 'papuga'], ['piłka nożna', 'koszykówka', 'pływanie', 'tenis', 'siatkówka'], ['czerwony', 'niebieski', 'zielony', 'żółty', 'fioletowy']])"
+  },
+  {
+   "name": "topic",
+   "expr": "choice(['Ulubione zwierzęta uczniów klasy 4a', 'Ulubione sporty uczniów klasy 4b', 'Ulubione kolory uczniów klasy 4c'])"
+  },
+  {
+   "name": "vs",
+   "expr": "sample(2, 20, 5)"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 4)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(0, 4)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ilu uczniów wybrało odpowiedź „' + cats[i] + '”?') if ask == 0 else ('O ile więcej uczniów wybrało odpowiedź „' + cats[i] + '” niż „' + cats[j] + '”?')"
+  },
+  {
+   "name": "ans",
+   "expr": "vs[i] if ask == 0 else vs[i] - vs[j]"
+  }
+ ],
+ "constraints": [
+  "ask == 0 or vs[i] > vs[j]"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Diagram słupkowy przedstawia wyniki ankiety. @{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź słupek podpisany odpowiednią odpowiedzią i odczytaj jego wysokość na osi pionowej."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "chart",
+    "kind": "bar",
+    "essential": true,
+    "alt": "Diagram słupkowy: @{topic}.",
+    "params": {
+     "title": {
+      "$expr": "topic"
+     },
+     "labels": {
+      "$expr": "cats"
+     },
+     "values": {
+      "$expr": "vs"
+     }
+    }
+   }
+  ]
+ }
+}

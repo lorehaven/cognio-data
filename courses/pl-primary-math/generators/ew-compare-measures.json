@@ -1,0 +1,68 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare-measures",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "pairs",
+   "expr": "[[3, 'm', 250, 'cm', 'm', 3, 250, 'długość'], [2, 'kg', 1500, 'g', 'kg', 2, 1500, 'masa'], [1, 'h', 50, 'min', 'h', 60, 50, 'czas'], [4, 'km', 3500, 'm', 'km', 4000, 3500, 'długość'], [1, 'm', 120, 'cm', 'm', 100, 120, 'długość'], [3, 'kg', 2500, 'g', 'kg', 3000, 2500, 'masa'], [2, 'h', 90, 'min', 'h', 120, 90, 'czas'], [5, 'm', 450, 'cm', 'm', 500, 450, 'długość']]"
+  },
+  {
+   "name": "p",
+   "expr": "choice(pairs)"
+  },
+  {
+   "name": "v1",
+   "expr": "p[5]"
+  },
+  {
+   "name": "v2",
+   "expr": "p[6]"
+  }
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Co jest większe: @{p[0]} @{p[1]} czy @{p[2]} @{p[3]}? (Porównaj, zamieniając na tę samą jednostkę.)",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (v1 > v2) else []) + (['b'] if (v2 > v1) else []) + (['c'] if (v1 == v2) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zamień obie wielkości na tę samą mniejszą jednostkę i porównaj liczby."
+   },
+   {
+    "kind": "compute",
+    "text": "@{p[0]} @{p[1]} = @{v1} @{p[3]}, a drugą wielkością jest @{v2} @{p[3]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{p[0]} @{p[1]}",
+    "correct": "v1 > v2"
+   },
+   {
+    "id": "b",
+    "text": "@{p[2]} @{p[3]}",
+    "correct": "v2 > v1"
+   },
+   {
+    "id": "c",
+    "text": "Są równe",
+    "correct": "v1 == v2"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-roman",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(1, 12)"
+  }
+ ],
+ "constraints": [
+  "(roman(n)) != (roman(n % 12 + 1))",
+  "(roman(n)) != (roman((n + 2) % 12 + 1))",
+  "(roman(n)) != (roman((n + 4) % 12 + 1))",
+  "(roman(n % 12 + 1)) != (roman((n + 2) % 12 + 1))",
+  "(roman(n % 12 + 1)) != (roman((n + 4) % 12 + 1))",
+  "(roman((n + 2) % 12 + 1)) != (roman((n + 4) % 12 + 1))"
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Którym zapisem rzymskim przedstawimy liczbę @{n}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "I = 1, V = 5, X = 10. Gdy mniejsza cyfra stoi przed większą, odejmujemy (IV = 4, IX = 9)."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{n} = @{roman(n)}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{roman(n)}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{roman(n % 12 + 1)}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{roman((n + 2) % 12 + 1)}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{roman((n + 4) % 12 + 1)}",
+    "correct": "false"
+   }
+  ]
+ }
+}

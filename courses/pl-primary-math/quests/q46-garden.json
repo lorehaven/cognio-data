@@ -1,0 +1,199 @@
+{
+ "formatVersion": "1.0",
+ "id": "q46-garden",
+ "title": {
+  "pl": "Misja: szkolny ogródek warzywny"
+ },
+ "experience": 3,
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(8, 20)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(5, 12)"
+  },
+  {
+   "name": "pm",
+   "expr": "randint(12, 30)"
+  },
+  {
+   "name": "gm",
+   "expr": "randint(3, 9)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 4)"
+  }
+ ],
+ "intro": "Szkoła zakłada prostokątny ogródek o wymiarach @{a} m na @{b} m. Warzywa zajmą @{k}/5 jego powierzchni. Ogródek trzeba ogrodzić i obsiać. Oblicz, co potrzeba kupić i ile to będzie kosztowało.",
+ "steps": [
+  {
+   "kind": "quantity-input",
+   "prompt": "Ogrodzenie ma obejmować cały obwód ogródka z wyjątkiem furtki o szerokości 3 m. Ile metrów siatki trzeba kupić?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "2 * (a + b) - 3"
+    },
+    "unit": "m"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Obwód prostokąta to 2 · (a + b). Od obwodu odejmij szerokość furtki."
+    },
+    {
+     "kind": "compute",
+     "text": "2 · (@{a} + @{b}) − 3 = @{2 * (a + b) - 3}"
+    }
+   ],
+   "input": {
+    "unit": "m"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Metr siatki kosztuje @{pm} zł. Ile złotych kosztuje cała siatka?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "(2 * (a + b) - 3) * pm"
+    },
+    "unit": "zł"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Koszt = liczba metrów · cena metra."
+    },
+    {
+     "kind": "compute",
+     "text": "@{2 * (a + b) - 3} · @{pm} = @{(2 * (a + b) - 3) * pm}"
+    }
+   ],
+   "input": {
+    "unit": "zł"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma cały ogródek?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "a * b"
+    },
+    "unit": "m²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole prostokąta = długość · szerokość."
+    },
+    {
+     "kind": "compute",
+     "text": "@{a} · @{b} = @{a * b}"
+    }
+   ],
+   "input": {
+    "unit": "m²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole zajmą warzywa?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "a * b * k / 5"
+    },
+    "unit": "m²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Znajdź jedną piątą pola i pomnóż przez @{k}."
+    },
+    {
+     "kind": "compute",
+     "text": "@{a * b} : 5 · @{k} = @{a * b * k / 5}"
+    }
+   ],
+   "input": {
+    "unit": "m²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Na każdy metr kwadratowy warzyw trzeba wysiać @{gm} g nasion. Ile gramów nasion trzeba kupić?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "a * b * k / 5 * gm"
+    },
+    "unit": "g"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole warzyw razy ilość nasion na 1 m²."
+    },
+    {
+     "kind": "compute",
+     "text": "@{a * b * k / 5} · @{gm} = @{a * b * k / 5 * gm}"
+    }
+   ],
+   "input": {
+    "unit": "g"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jaki procent powierzchni ogródka zajmują warzywa?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "20 * k"
+    },
+    "unit": "%"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "$\\frac{1}{5}$ to 20%. Pomnóż przez @{k}."
+    },
+    {
+     "kind": "compute",
+     "text": "@{k} · 20% = @{20 * k}%"
+    }
+   ],
+   "input": {
+    "unit": "%"
+   }
+  }
+ ],
+ "constraints": [
+  "(a * b) % 5 == 0",
+  "a != b"
+ ],
+ "media": [
+  {
+   "type": "figure",
+   "kind": "rect",
+   "essential": false,
+   "alt": "Prostokątny ogródek z podanymi wymiarami.",
+   "params": {
+    "w": {
+     "$expr": "a"
+    },
+    "h": {
+     "$expr": "b"
+    },
+    "unit": "m"
+   }
+  }
+ ],
+ "outro": "Ogródek jest zaplanowany: wiemy, ile siatki i nasion trzeba kupić oraz jaką część zajmą warzywa."
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-order",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ustaw ułamki w kolejności"
+ },
+ "objectives": [
+  "IV-VI.1.26"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jednakowe mianowniki"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mianowniki 2, 4, 8 lub 3, 6, 12 lub 5, 10, 20"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-order.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby ustawić ułamki w kolejności, sprowadź je do wspólnego mianownika i porównaj liczniki."
+  }
+ }
+}

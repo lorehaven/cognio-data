@@ -1,0 +1,58 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-number-line",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Liczba na osi liczbowej"
+ },
+ "objectives": [
+  "IV-VI.1.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Co 10, od 0"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Co 100, od 0"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Co 50 lub 500"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Duże odstępy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-number-line.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Na osi liczbowej policz, na ile równych odcinków podzielono odległość między podpisanymi liczbami. To mówi, ile wynosi jedna kreska."
+  }
+ }
+}

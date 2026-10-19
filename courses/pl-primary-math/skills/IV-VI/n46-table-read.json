@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-table-read",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odczytaj dane z tabeli"
+ },
+ "objectives": [
+  "IV-VI.5.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Suma w wierszu"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Różnica największej i najmniejszej"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Największa wartość"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-table-read.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "tutor": {
+  "intro": {
+   "pl": "Dane w tabeli odczytujesz z przecięcia wiersza i kolumny. Znajdź oba nagłówki i odczytaj komórkę."
+  }
+ }
+}

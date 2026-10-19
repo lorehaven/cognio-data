@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "m": "10"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "m": "100"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(-m, m)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-m, m)"
+  }
+ ],
+ "constraints": [
+  "a != b",
+  "(a < 0) or (b < 0)"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Porównaj liczby @{a} i @{b}. Który znak należy wstawić między nie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (a < b) else []) + (['b'] if (a == b) else []) + (['c'] if (a > b) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Na osi liczbowej większa jest ta liczba, która leży bardziej na prawo. Każda liczba dodatnia jest większa od ujemnej."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{a} @{('<' if a < b else '>')} @{b}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "a < b"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "a == b"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "a > b"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

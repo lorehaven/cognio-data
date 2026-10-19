@@ -1,0 +1,42 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-plan-compare",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Który abonament się opłaca?"
+ },
+ "objectives": [
+  "IV-VI.5.4",
+  "IV-VI.1.35"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Porównanie na 12 miesięcy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-plan-compare.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "prerequisites": [
+  "n46-expenses-decision"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby wybrać opłacalny abonament, policz łączny koszt każdego w całym okresie i porównaj, nie tylko miesięczną opłatę."
+  }
+ }
+}

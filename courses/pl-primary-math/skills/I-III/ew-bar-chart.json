@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-bar-chart",
+ "stage": "I-III",
+ "title": {
+  "pl": "Odczytaj dane z diagramu słupkowego"
+ },
+ "objectives": [
+  "I-III.4.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Odczyt słupka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Który słupek jest najwyższy?"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Różnica słupków"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-bar-chart.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.4",
+ "tutor": {
+  "intro": {
+   "pl": "Diagram słupkowy pokazuje liczby za pomocą słupków. Im wyższy słupek, tym większa liczba. Wysokość słupka odczytujesz na osi z liczbami."
+  }
+ }
+}

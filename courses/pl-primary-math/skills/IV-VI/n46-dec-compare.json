@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-compare",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Porównywanie ułamków dziesiętnych"
+ },
+ "objectives": [
+  "IV-VI.1.26"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Tyle samo miejsc po przecinku"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Różna liczba miejsc"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Także zapisy równe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-compare.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-place-value"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Porównuj ułamki dziesiętne od lewej: część całkowita, potem dziesiąte, setne… Dopisanie zer na końcu nie zmienia wartości."
+  }
+ }
+}

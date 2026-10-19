@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-think-structure",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Zapisz związki między danymi"
+ },
+ "objectives": [
+  "VII-VIII.5.1.a"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wiek: tabelka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Głowy i nogi"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-think-structure.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.5",
+ "prerequisites": [
+  "vh-eq-word"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy trudnym zadaniu uporządkuj dane: tabelka, rysunek lub równanie. Zapisz, co jest niewiadomą i jak się wiąże z danymi."
+  }
+ }
+}

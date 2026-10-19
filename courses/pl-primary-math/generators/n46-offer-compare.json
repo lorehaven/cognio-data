@@ -1,0 +1,103 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-offer-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pr": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pr": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "pr": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "kind",
+   "expr": "randint(0, 1) if pr == 2 else pr"
+  },
+  {
+   "name": "price",
+   "expr": "choice([10, 12, 20, 24, 30, 40, 50])"
+  },
+  {
+   "name": "pct",
+   "expr": "choice([20, 25, 30, 40])"
+  },
+  {
+   "name": "nA",
+   "expr": "3 if kind == 0 else 2"
+  },
+  {
+   "name": "costA",
+   "expr": "2 * price if kind == 0 else price * 3 / 2"
+  },
+  {
+   "name": "costB",
+   "expr": "nA * price * (100 - pct) / 100"
+  },
+  {
+   "name": "descA",
+   "expr": "'Oferta A: trzecia sztuka gratis (płacisz za dwie).' if kind == 0 else 'Oferta A: druga sztuka za połowę ceny.'"
+  },
+  {
+   "name": "qty",
+   "expr": "pln(nA, ['sztukę', 'sztuki', 'sztuk'])"
+  }
+ ],
+ "constraints": [
+  "costA != costB",
+  "denom(costB) in divisors(100)"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Jedna sztuka kosztuje @{price} zł. Chcemy kupić @{qty}. @{descA} Oferta B: @{pct}% taniej na każdą sztukę. Która oferta jest korzystniejsza?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (costA < costB) else []) + (['b'] if (costB < costA) else []) + (['c'] if (costA == costB) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz łączny koszt w obu ofertach i porównaj."
+   },
+   {
+    "kind": "compute",
+    "text": "A: @{costA|dec:2} zł, B: @{costB|dec:2} zł."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Oferta A",
+    "correct": "costA < costB"
+   },
+   {
+    "id": "b",
+    "text": "Oferta B",
+    "correct": "costB < costA"
+   },
+   {
+    "id": "c",
+    "text": "Obie kosztują tyle samo",
+    "correct": "costA == costB"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

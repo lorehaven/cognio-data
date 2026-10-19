@@ -1,0 +1,89 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-compare",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "1000",
+    "hi": "9999"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "100000",
+    "hi": "999999"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "1000000",
+    "hi": "9999999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "delta",
+   "expr": "randint(1, 9) * pow(10, k)"
+  },
+  {
+   "name": "b",
+   "expr": "a + delta if randint(0, 1) == 1 else a - delta"
+  }
+ ],
+ "constraints": [
+  "b >= lo",
+  "b <= hi"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Porównaj liczby @{a|int} i @{b|int}. Który znak należy wstawić między nie?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (a < b) else []) + (['b'] if (a == b) else []) + (['c'] if (a > b) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównujemy cyfry od najwyższego rzędu. Pierwsza różna cyfra rozstrzyga."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{a|int} @{('<' if a < b else '>')} @{b|int}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "$<$",
+    "correct": "a < b"
+   },
+   {
+    "id": "b",
+    "text": "$=$",
+    "correct": "a == b"
+   },
+   {
+    "id": "c",
+    "text": "$>$",
+    "correct": "a > b"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-number-line",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "t": "1 / 10"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "t": "1 / 100"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "t": "1 / 1000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "lo0",
+   "expr": "randint(0, 9)"
+  },
+  {
+   "name": "lo",
+   "expr": "lo0 * 10 * t"
+  },
+  {
+   "name": "hi",
+   "expr": "lo + 10 * t"
+  },
+  {
+   "name": "j",
+   "expr": "randint(1, 9)"
+  },
+  {
+   "name": "p",
+   "expr": "lo + j * t"
+  }
+ ],
+ "selfCheck": [
+  "p > lo",
+  "p < hi"
+ ],
+ "minDistinct": 9,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Jaką liczbę oznacza punkt A na osi liczbowej?",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "p"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Jeden odcinek osi to @{t|dec}. Od @{lo|dec} przesuwamy się o @{j} takich odcinków."
+   },
+   {
+    "kind": "compute",
+    "text": "@{lo|dec} + @{j} · @{t|dec} = @{p|dec}"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "number-line",
+    "essential": true,
+    "alt": "Oś liczbowa od @{lo|dec} do @{hi|dec} z dziesięcioma równymi odcinkami i punktem A.",
+    "params": {
+     "min": {
+      "$expr": "lo"
+     },
+     "max": {
+      "$expr": "hi"
+     },
+     "tick": {
+      "$expr": "t"
+     },
+     "labelEvery": 5,
+     "points": [
+      {
+       "label": "A",
+       "at": {
+        "$expr": "p"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

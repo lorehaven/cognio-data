@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-shopping",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "shuffle([['zeszyt', 'zeszyt'], ['długopis', 'długopis'], ['gumka', 'gumka'], ['pierniczek', 'pierniczek'], ['sok', 'sok'], ['bułka', 'bułka']])"
+  },
+  {
+   "name": "p1",
+   "expr": "randint(2, 12) if mode == 0 else randint(2, 12) * 50 / 100 + 1"
+  },
+  {
+   "name": "p2",
+   "expr": "randint(2, 12) if mode == 0 else randint(2, 12) * 50 / 100 + 1"
+  },
+  {
+   "name": "bill",
+   "expr": "choice([10, 20, 50])"
+  },
+  {
+   "name": "cost",
+   "expr": "p1 + p2"
+  },
+  {
+   "name": "txt",
+   "expr": "('Cena: ' + names[0][0] + ' – ' + fmt(p1, 2 if mode > 0 else 0) + ' zł, ' + names[1][0] + ' – ' + fmt(p2, 2 if mode > 0 else 0) + ' zł. Ile zapłacimy za oba?') if mode < 2 else ('Cena: ' + names[0][0] + ' – ' + fmt(p1, 2) + ' zł, ' + names[1][0] + ' – ' + fmt(p2, 2) + ' zł. Kupiono oba i zapłacono banknotem ' + str(bill) + ' zł. Ile reszty?')"
+  },
+  {
+   "name": "ans",
+   "expr": "cost if mode < 2 else bill - cost"
+  }
+ ],
+ "constraints": [
+  "mode < 2 or bill > cost",
+  "mode != 0 or p1 != p2"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Dodaj ceny obu towarów.' if mode < 2 else 'Dodaj ceny obu towarów, a potem odejmij od banknotu.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "@{('Razem: ' + fmt(cost, 2) + ' zł.' if mode < 2 else 'Reszta: ' + str(bill) + ' − ' + fmt(cost, 2) + ' = ' + fmt(bill - cost, 2) + ' zł.')}"
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  }
+ }
+}

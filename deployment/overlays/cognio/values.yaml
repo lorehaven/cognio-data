@@ -1,0 +1,6 @@
+# cognio-server's configuration, committed. Plain values only (there are no secrets: the server only serves
+# course packs, which are not confidential). Anything here can be overridden at install with --set, or locally
+# from an uncommitted .env.
+# The app serves everything under this prefix; keep it in step with the ingress path and the probe paths.
+COGNIO_BASE_PATH: "/cognio"
+COGNIO_LOG_LEVEL: "INFO"

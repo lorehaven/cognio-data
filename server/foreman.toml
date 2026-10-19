@@ -1,0 +1,104 @@
+# Build / push / deploy for cognio-server, run through one interface.
+#
+#   foreman run test          unit tests (pytest)
+#   foreman run dev           run locally on :8080 with ./data
+#   foreman run build-docker  build the image
+#   foreman run publish       build-docker, then push to the registry (ennor.ddns.net)
+#   foreman run push-data     rsync ../dist/courses/*.cognio and ../dist/models/catalog.json to the node's data directory
+#   foreman run deploy        riveter apply of ../deployment, then restart the pod so it pulls the image
+#   foreman run release       test, publish and deploy, in order
+#
+# The image name and tag are read from ../deployment/overlays/cognio/deployment.yaml.j2, the one place
+# they are written: bump the tag there (and pyproject.toml's version) for a new release.
+#
+# publish needs a prior `docker login ennor.ddns.net`, or WAREHOUSE_USER + WAREHOUSE_PASS to log in for you.
+# deploy needs kubectl access to the cluster and the age key (RIVETER_AGE_KEY_FILE, default ~/.config/riveter/age.key).
+# push-data needs ssh access to the node: DATA_REMOTE (default ossiriand.arda:/mnt/dev/cognio/data).
+
+[project]
+name = "cognio-server"
+description = "build/push/deploy commands for cognio-server"
+
+[tasks.test]
+description = "unit tests"
+command = ["uv", "run", "pytest", "-q"]
+done = "tests passed"
+
+[tasks.dev]
+description = "running locally on :8080 with ./data"
+command = ["bash", "-c", "mkdir -p data/courses data/models && DATA_DIR=./data PORT=8080 uv run python -m cognio_server"]
+done = "stopped"
+
+[tasks.build-docker]
+description = "building the Docker image"
+command = [
+  "bash", "-c",
+  '''
+  set -e
+  image=$(grep -oP 'image: \K\S+' ../deployment/overlays/cognio/deployment.yaml.j2 | head -1)
+  docker build -t "$image" .
+  echo "built $image"
+  ''',
+]
+done = "image built"
+
+[tasks.publish]
+description = "building and pushing the Docker image"
+command = [
+  "bash", "-c",
+  '''
+  set -e
+  image=$(grep -oP 'image: \K\S+' ../deployment/overlays/cognio/deployment.yaml.j2 | head -1)
+  docker build -t "$image" .
+  if [ -n "$WAREHOUSE_USER" ] && [ -n "$WAREHOUSE_PASS" ]; then
+    echo "$WAREHOUSE_PASS" | docker login "$(echo "$image" | cut -d/ -f1)" -u "$WAREHOUSE_USER" --password-stdin
+  fi
+  docker push "$image"
+  ''',
+]
+done = "published"
+
+# The data directory is a hostPath on the node, mounted read-only into the pod. New files appear in the index
+# on the next request; no restart is needed.
+[tasks.push-data]
+description = "copying course packs and the model catalog to the node"
+command = ["bash", "scripts/push-data.sh"]
+done = "data pushed"
+
+# pull_policy is Always, but an unchanged manifest does not restart the pod, hence the rollout restart.
+[tasks.deploy]
+description = "applying the overlay and restarting cognio-server"
+command = [
+  "bash", "-c",
+  '''
+  set -e
+  export RIVETER_AGE_KEY_FILE="$(printenv RIVETER_AGE_KEY_FILE || echo "$HOME/.config/riveter/age.key")"
+  cd ../deployment
+  riveter --env cognio apply --scope all
+  kubectl -n cognio rollout restart deployment/cognio-server
+  kubectl -n cognio rollout status deployment/cognio-server --timeout=300s
+  ''',
+]
+done = "deployed"
+
+[tasks.release]
+description = "test, publish and deploy, in order"
+command = [
+  "bash", "-c",
+  '''
+  set -e
+  uv run pytest -q
+  image=$(grep -oP 'image: \K\S+' ../deployment/overlays/cognio/deployment.yaml.j2 | head -1)
+  docker build -t "$image" .
+  if [ -n "$WAREHOUSE_USER" ] && [ -n "$WAREHOUSE_PASS" ]; then
+    echo "$WAREHOUSE_PASS" | docker login "$(echo "$image" | cut -d/ -f1)" -u "$WAREHOUSE_USER" --password-stdin
+  fi
+  docker push "$image"
+  export RIVETER_AGE_KEY_FILE="$(printenv RIVETER_AGE_KEY_FILE || echo "$HOME/.config/riveter/age.key")"
+  cd ../deployment
+  riveter --env cognio apply --scope all
+  kubectl -n cognio rollout restart deployment/cognio-server
+  kubectl -n cognio rollout status deployment/cognio-server --timeout=300s
+  ''',
+]
+done = "released"

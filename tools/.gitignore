@@ -1,0 +1,11 @@
+# reference implementation and tooling (cognio.py, render.py, gallery.py, curriculum scripts)
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# generated review sheets
+gallery*.html
+*.svg.tmp
+*.log

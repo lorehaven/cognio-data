@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-quad-properties",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Własności czworokątów"
+ },
+ "objectives": [
+  "IV-VI.4.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Które czworokąty mają daną własność?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-quad-properties.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-by-sides"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Kwadrat ma wszystkie boki równe i wszystkie kąty proste. Prostokąt ma kąty proste i równe przeciwległe boki. Romb ma wszystkie boki równe. Równoległobok ma dwie pary boków równoległych. Trapez ma co najmniej jedną parę boków równoległych."
+  }
+ }
+}

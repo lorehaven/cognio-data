@@ -1,0 +1,110 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-estimate-product",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "alo": "12",
+    "ahi": "99",
+    "blo": "12",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "12",
+    "bhi": "99"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(alo, ahi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "pa",
+   "expr": "pow(10, len(digits(a)) - 1)"
+  },
+  {
+   "name": "pb",
+   "expr": "pow(10, len(digits(b)) - 1)"
+  },
+  {
+   "name": "ra",
+   "expr": "(a + pa // 2) // pa * pa"
+  },
+  {
+   "name": "rb",
+   "expr": "(b + pb // 2) // pb * pb"
+  },
+  {
+   "name": "est",
+   "expr": "ra * rb"
+  }
+ ],
+ "constraints": [
+  "est >= 100",
+  "est % 100 == 0",
+  "(est) != (est * 10)",
+  "(est) != (est // 10)",
+  "(est) != (est * 100)",
+  "(est * 10) != (est // 10)",
+  "(est * 10) != (est * 100)",
+  "(est // 10) != (est * 100)"
+ ],
+ "selfCheck": [
+  "abs(a * b - est) * 2 < est * 3",
+  "est >= 100"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Które oszacowanie jest najbliższe wynikowi działania @{a} · @{b}?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zaokrąglamy obie liczby do najwyższego rzędu: @{a} ≈ @{ra}, @{b} ≈ @{rb}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{ra} · @{rb} = @{est|int}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{est|int}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{est * 10|int}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{est // 10|int}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{est * 100|int}",
+    "correct": "false"
+   }
+  ]
+ }
+}

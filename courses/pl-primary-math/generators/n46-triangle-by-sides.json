@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-by-sides",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(3, 12)"
+  },
+  {
+   "name": "sides",
+   "expr": "shuffle([a, a, a] if t == 0 else ([a, a, b] if t == 1 else [a, b, c]))"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['cm', 'dm', 'm'])"
+  }
+ ],
+ "constraints": [
+  "t != 1 or b != a",
+  "t != 2 or (a != b and b != c and a != c)",
+  "max(sides) < sum(sides) - max(sides)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Trójkąt ma boki długości @{sides[0]} @{un}, @{sides[1]} @{un} i @{sides[2]} @{un}. Wybierz najdokładniejszą nazwę tego trójkąta.",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (sides[0] == sides[1] and sides[1] == sides[2]) else []) + (['b'] if ((sides[0] == sides[1] or sides[1] == sides[2] or sides[0] == sides[2]) and not (sides[0] == sides[1] and sides[1] == sides[2])) else []) + (['c'] if (sides[0] != sides[1] and sides[1] != sides[2] and sides[0] != sides[2]) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównaj długości boków: wszystkie równe – równoboczny; dwa równe – równoramienny; wszystkie różne – różnoboczny."
+   },
+   {
+    "kind": "conclude",
+    "text": "Boki: @{sides|list:semi}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Równoboczny",
+    "correct": "sides[0] == sides[1] and sides[1] == sides[2]"
+   },
+   {
+    "id": "b",
+    "text": "Równoramienny (ale nie równoboczny)",
+    "correct": "(sides[0] == sides[1] or sides[1] == sides[2] or sides[0] == sides[2]) and not (sides[0] == sides[1] and sides[1] == sides[2])"
+   },
+   {
+    "id": "c",
+    "text": "Różnoboczny",
+    "correct": "sides[0] != sides[1] and sides[1] != sides[2] and sides[0] != sides[2]"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "triangle-sides",
+    "essential": false,
+    "alt": "Trójkąt z podanymi bokami.",
+    "params": {
+     "sides": {
+      "$expr": "sides"
+     },
+     "labels": {
+      "$expr": "[str(sides[0]) + ' ' + un, str(sides[1]) + ' ' + un, str(sides[2]) + ' ' + un]"
+     }
+    }
+   }
+  ]
+ }
+}

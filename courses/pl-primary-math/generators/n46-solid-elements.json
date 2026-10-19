@@ -1,0 +1,97 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-solid-elements",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pyr": "0",
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pyr": "1",
+    "ask": "0"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "pyr": "2",
+    "ask": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(3, 8)"
+  },
+  {
+   "name": "isp",
+   "expr": "randint(0, 1) if pyr == 2 else pyr"
+  },
+  {
+   "name": "el",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "kind",
+   "expr": "('graniastosłup' if isp == 0 else 'ostrosłup')"
+  },
+  {
+   "name": "base",
+   "expr": "['trójkątną', 'czworokątną', 'pięciokątną', 'sześciokątną', 'siedmiokątną', 'ośmiokątną'][n - 3]"
+  },
+  {
+   "name": "what",
+   "expr": "['wierzchołków', 'krawędzi', 'ścian'][el]"
+  },
+  {
+   "name": "cnt",
+   "expr": "[[2 * n, 3 * n, n + 2], [n + 1, 2 * n, n + 1]][isp][el]"
+  }
+ ],
+ "selfCheck": [
+  "[2 * n - 3 * n + n + 2, n + 1 - 2 * n + n + 1][isp] == 2"
+ ],
+ "minDistinct": 18,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile @{what} ma @{('graniastosłup' if isp == 0 else 'ostrosłup')} o podstawie @{('trójkątnej' if n == 3 else ('czworokątnej' if n == 4 else ('pięciokątnej' if n == 5 else ('sześciokątnej' if n == 6 else ('siedmiokątnej' if n == 7 else 'ośmiokątnej')))))}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "cnt"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Graniastosłup o podstawie n-kątnej ma 2n wierzchołków, 3n krawędzi i n + 2 ścian.' if isp == 0 else 'Ostrosłup o podstawie n-kątnej ma n + 1 wierzchołków, 2n krawędzi i n + 1 ścian.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{cnt}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "solid",
+    "essential": false,
+    "alt": "Bryła o podstawie n-kątnej.",
+    "params": {
+     "kind": {
+      "$expr": "'prism' if isp == 0 else 'pyramid'"
+     },
+     "n": {
+      "$expr": "n"
+     }
+    }
+   }
+  ]
+ }
+}

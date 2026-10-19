@@ -1,0 +1,39 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-deposit",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Misja: która lokata jest lepsza?"
+ },
+ "objectives": [
+  "VII-VIII.1.9",
+  "VII-VIII.4.4"
+ ],
+ "tags": [
+  "finance",
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Misja"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "quest",
+   "ref": "quests/q78-deposit.json"
+  }
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Doświadczenie: porównanie ofert finansowych z użyciem obliczeń."
+  }
+ },
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-interest"
+ ]
+}

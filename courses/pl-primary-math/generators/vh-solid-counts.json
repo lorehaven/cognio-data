@@ -1,0 +1,104 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-solid-counts",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(4, 10)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "t",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "nm",
+   "expr": "['wierzchołków', 'krawędzi', 'ścian']"
+  },
+  {
+   "name": "sn",
+   "expr": "['graniastosłup prosty', 'ostrosłup prawidłowy']"
+  },
+  {
+   "name": "cnt",
+   "expr": "[[2 * n, 3 * n, n + 2], [n + 1, 2 * n, n + 1]][t if mode == 2 else mode][q]"
+  },
+  {
+   "name": "kind",
+   "expr": "mode if mode < 2 else t"
+  },
+  {
+   "name": "txt",
+   "expr": "('Graniastosłup prosty ma w podstawie ' + str(n) + '-kąt. Ile ma ' + nm[q] + '?') if mode == 0 else (('Ostrosłup prawidłowy ma w podstawie ' + str(n) + '-kąt. Ile ma ' + nm[q] + '?') if mode == 1 else (cap(sn[t]) + ' ma ' + str(cnt) + ' ' + nm[q] + '. Ile boków ma wielokąt w podstawie?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "cnt if mode < 2 else n"
+  }
+ ],
+ "selfCheck": [
+  "kind != 0 or (2 * n) - (3 * n) + (n + 2) == 2",
+  "kind != 1 or (n + 1) - (2 * n) + (n + 1) == 2"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Graniastosłup o podstawie n-kątnej ma 2n wierzchołków, 3n krawędzi i n + 2 ściany.' if kind == 0 else 'Ostrosłup o podstawie n-kątnej ma n + 1 wierzchołków, 2n krawędzi i n + 1 ścian.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "solid",
+    "essential": false,
+    "alt": "Bryła o podstawie n-kątnej.",
+    "params": {
+     "kind": {
+      "$expr": "'prism' if mode == 0 else 'pyramid'"
+     },
+     "n": {
+      "$expr": "n"
+     }
+    },
+    "when": "mode < 2"
+   }
+  ]
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-coord-rectangle",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czwarty wierzchołek prostokąta"
+ },
+ "objectives": [
+  "IV-VI.4.16",
+  "IV-VI.4.17"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwsza ćwiartka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Cały układ współrzędnych"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-coord-rectangle.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-coord-read"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W prostokącie o bokach równoległych do osi czwarty wierzchołek ma współrzędną x jak jeden sąsiad i współrzędną y jak drugi."
+  }
+ }
+}

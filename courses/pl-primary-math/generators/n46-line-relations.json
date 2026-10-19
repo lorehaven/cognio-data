@@ -1,0 +1,90 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-line-relations",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "n": "2"
+   },
+   "minDistinct": 10
+  },
+  {
+   "level": 2,
+   "vars": {
+    "n": "3"
+   },
+   "minDistinct": 20
+  }
+ ],
+ "vars": [
+  {
+   "name": "ns",
+   "expr": "choice([['a', 'b', 'c', 'd'], ['k', 'l', 'm', 'n'], ['p', 'q', 'r', 's']])"
+  },
+  {
+   "name": "r1",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "r2",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "r3",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "perp",
+   "expr": "(r1 + r2 + r3 * (n - 2)) % 2"
+  },
+  {
+   "name": "rel",
+   "expr": "['równoległe', 'prostopadłe']"
+  },
+  {
+   "name": "txt",
+   "expr": "('Proste ' + ns[0] + ' i ' + ns[1] + ' są ' + rel[r1] + '. Proste ' + ns[1] + ' i ' + ns[2] + ' są ' + rel[r2] + '. Jak ustawione są proste ' + ns[0] + ' i ' + ns[2] + '?') if n == 2 else ('Proste ' + ns[0] + ' i ' + ns[1] + ' są ' + rel[r1] + ', proste ' + ns[1] + ' i ' + ns[2] + ' są ' + rel[r2] + ', a proste ' + ns[2] + ' i ' + ns[3] + ' są ' + rel[r3] + '. Jak ustawione są proste ' + ns[0] + ' i ' + ns[3] + '?')"
+  }
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (perp == 1) else []) + (['b'] if (perp == 0) else []) + (['c'] if (false) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dwie proste równoległe do trzeciej są równoległe do siebie. Każde „przejście” przez prostopadłość obraca kierunek o 90°: nieparzysta liczba prostopadłości daje proste prostopadłe, parzysta – równoległe."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{('Proste są prostopadłe.' if perp == 1 else 'Proste są równoległe.')}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Są prostopadłe",
+    "correct": "perp == 1"
+   },
+   {
+    "id": "b",
+    "text": "Są równoległe",
+    "correct": "perp == 0"
+   },
+   {
+    "id": "c",
+    "text": "Nie da się tego określić",
+    "correct": "false"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-order",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "20",
+    "sp": "14"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "100",
+    "sp": "60"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "1000",
+    "sp": "500"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "hi": "10000",
+    "sp": "4000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "lo",
+   "expr": "randint(1, hi - sp)"
+  },
+  {
+   "name": "xs",
+   "expr": "sample(lo, lo + sp, 4)"
+  },
+  {
+   "name": "desc",
+   "expr": "randint(0, 1) == 1"
+  }
+ ],
+ "constraints": [
+  "len(xs) == 4",
+  "xs[0] != xs[1]",
+  "xs[0] != xs[2]",
+  "xs[0] != xs[3]",
+  "xs[1] != xs[2]",
+  "xs[1] != xs[3]",
+  "xs[2] != xs[3]"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "order-items",
+  "prompt": "@{('Ułóż liczby od największej do najmniejszej.' if desc else 'Ułóż liczby od najmniejszej do największej.')}",
+  "answer": {
+   "type": "sequence",
+   "value": {
+    "$expr": "(reverse(sorted(xs)) if desc else sorted(xs))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównuj liczby po kolei. Najmniejsza ma najmniej dziesiątek (setek, tysięcy)."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kolejność: @{(reverse(sorted(xs)) if desc else sorted(xs))|list:semi}"
+   }
+  ],
+  "input": {
+   "items": [
+    {
+     "id": {
+      "$expr": "str(xs[0])"
+     },
+     "text": "@{xs[0]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[1])"
+     },
+     "text": "@{xs[1]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[2])"
+     },
+     "text": "@{xs[2]|int}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[3])"
+     },
+     "text": "@{xs[3]|int}"
+    }
+   ]
+  }
+ }
+}

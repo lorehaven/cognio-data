@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-triangle",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Pole trójkąta"
+ },
+ "objectives": [
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Podstawa i wysokość (parzysty iloczyn)"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dowolne liczby"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Trójkąt prostokątny"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-triangle.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-rect",
+  "n46-height-id"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pole trójkąta to połowa iloczynu podstawy i wysokości poprowadzonej do tej podstawy. Trójkąt to połowa prostokąta o tej samej podstawie i wysokości."
+  }
+ }
+}

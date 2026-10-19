@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-div-rem",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dzielenie z resztą"
+ },
+ "objectives": [
+  "IV-VI.1.13"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przez jednocyfrową"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przez dwucyfrową"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Większe liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-div-rem.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-div"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzielenie z resztą: znajdź największą wielokrotność dzielnika, która mieści się w dzielnej. Co zostaje, to reszta (zawsze mniejsza od dzielnika)."
+  }
+ }
+}

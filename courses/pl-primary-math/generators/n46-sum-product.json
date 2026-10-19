@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sum-product",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   },
+   "minDistinct": 40
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   },
+   "minDistinct": 25
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(a + 1, 15)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, 8)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(c + 1, 9)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Dwie liczby naturalne mają sumę ' + str(a + b) + ' i iloczyn ' + str(a * b) + '. Jaka jest większa z tych liczb?') if mode == 0 else ('Cyfry pewnej liczby dwucyfrowej mają sumę ' + str(c + d) + ' i iloczyn ' + str(c * d) + '. Jaka jest największa liczba dwucyfrowa o takich cyfrach?')"
+  },
+  {
+   "name": "ans",
+   "expr": "b if mode == 0 else 10 * d + c"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or c * d != 0"
+ ],
+ "selfCheck": [
+  "mode != 0 or ans * (a + b - ans) == a * b"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wypisuj pary liczb o danej sumie i sprawdzaj ich iloczyn. Poprawiaj próbę, aż iloczyn się zgodzi."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a) + ' + ' + str(b) + ' = ' + str(a + b) + ' i ' + str(a) + ' · ' + str(b) + ' = ' + str(a * b) if mode == 0 else 'Cyfry: ' + str(c) + ' i ' + str(d) + '; największa liczba: ' + str(10 * d + c))}"
+   }
+  ]
+ }
+}

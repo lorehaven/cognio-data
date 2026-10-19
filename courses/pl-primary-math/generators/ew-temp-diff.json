@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-temp-diff",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "2",
+    "hi": "30"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "-12",
+    "hi": "12"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t1",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "t2",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "warmer",
+   "expr": "t2 > t1"
+  }
+ ],
+ "constraints": [
+  "t1 != t2",
+  "lo >= 0 or t1 * t2 < 0 or randint(0, 1) == 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Rano termometr pokazywał @{t1} °C, a w południe @{t2} °C. O ile stopni @{('zrobiło się cieplej' if warmer else 'zrobiło się chłodniej')}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "abs(t2 - t1)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz, ile stopni dzieli obie temperatury na termometrze. Gdy przechodzisz przez zero, policz osobno część poniżej i powyżej."
+   },
+   {
+    "kind": "compute",
+    "text": "Różnica: @{abs(t2 - t1)} °C."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "forgot_zero",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "abs(abs(t2) - abs(t1))"
+     }
+    },
+    "feedback": "Gdy jedna temperatura jest poniżej zera, a druga powyżej, stopnie sumujemy.",
+    "when": "t1 * t2 < 0"
+   }
+  ]
+ }
+}

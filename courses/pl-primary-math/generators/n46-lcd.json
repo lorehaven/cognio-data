@@ -1,0 +1,87 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-lcd",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "hi": "12",
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "hi": "12",
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "hi": "20",
+    "ask": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "b",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, hi)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, b - 1)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, d - 1)"
+  },
+  {
+   "name": "l",
+   "expr": "lcm(b, d)"
+  },
+  {
+   "name": "q",
+   "expr": "'Jaki jest najmniejszy wspólny mianownik ułamków ' + '$\\\\frac{' + str(a) + '}{' + str(b) + '}$ i $\\\\frac{' + str(c) + '}{' + str(d) + '}$?' if ask == 0 else 'Sprowadź ułamki $\\\\frac{' + str(a) + '}{' + str(b) + '}$ i $\\\\frac{' + str(c) + '}{' + str(d) + '}$ do najmniejszego wspólnego mianownika. Ile wynosi licznik pierwszego ułamka?'"
+  },
+  {
+   "name": "ans",
+   "expr": "l if ask == 0 else a * (l // b)"
+  }
+ ],
+ "constraints": [
+  "b != d",
+  "gcd(a, b) == 1 or ask == 0",
+  "l <= 100"
+ ],
+ "selfCheck": [
+  "l % b == 0",
+  "l % d == 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{q}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wspólny mianownik to wspólna wielokrotność mianowników; najmniejszy to NWW(@{b}, @{d}) = @{l}."
+   },
+   {
+    "kind": "compute",
+    "text": "Mnożnik pierwszego ułamka: @{l // b}, drugiego: @{l // d}."
+   }
+  ]
+ }
+}

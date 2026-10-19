@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-to-mixed",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek niewłaściwy na liczbę mieszaną"
+ },
+ "objectives": [
+  "IV-VI.1.20"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mianowniki do 6"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mianowniki do 12"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-to-mixed.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-div-rem",
+  "n46-frac-part-set"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Ułamek niewłaściwy ma licznik większy lub równy mianownikowi, np. $\\frac{7}{3}$. Liczba mieszana składa się z całości i ułamka: $2\\frac{1}{3}$."
+  }
+ }
+}

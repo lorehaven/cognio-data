@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-composite",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Pole figury złożonej"
+ },
+ "objectives": [
+  "IV-VI.4.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa prostokąty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Prostokąt z wyciętym kwadratem"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-composite.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-rect"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Figurę złożoną podziel na proste części albo odejmij wyciętą część od większej figury. Potem dodaj lub odejmij pola."
+  }
+ }
+}

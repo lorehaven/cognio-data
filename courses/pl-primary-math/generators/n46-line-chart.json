@@ -1,0 +1,102 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-line-chart",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t0",
+   "expr": "randint(6, 14)"
+  },
+  {
+   "name": "d",
+   "expr": "sample(-3, 5, 6)"
+  },
+  {
+   "name": "ys",
+   "expr": "[t0, t0 + d[0], t0 + d[0] + d[1], t0 + d[0] + d[1] + d[2], t0 + d[0] + d[1] + d[2] + d[3], t0 + d[0] + d[1] + d[2] + d[3] + d[4]]"
+  },
+  {
+   "name": "hours",
+   "expr": "[6, 8, 10, 12, 14, 16]"
+  },
+  {
+   "name": "i",
+   "expr": "randint(0, 4)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(i + 1, 5)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Jaka była temperatura o godzinie ' + str(hours[i]) + ':00?') if ask == 0 else (('Jaka była największa temperatura zmierzona tego dnia?') if ask == 1 else ('O ile stopni zmieniła się temperatura między godziną ' + str(hours[i]) + ':00 a ' + str(hours[j]) + ':00? Podaj wynik bez znaku.'))"
+  },
+  {
+   "name": "ans",
+   "expr": "ys[i] if ask == 0 else (max(ys) if ask == 1 else abs(ys[j] - ys[i]))"
+  }
+ ],
+ "constraints": [
+  "min(ys) >= 0",
+  "max(ys) <= 30",
+  "ask != 2 or ys[i] != ys[j]"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Wykres pokazuje temperaturę powietrza (w °C) mierzoną co 2 godziny. @{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Znajdź na osi poziomej godzinę, a potem odczytaj wartość punktu na osi pionowej."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ],
+  "media": [
+   {
+    "type": "chart",
+    "kind": "line",
+    "essential": true,
+    "alt": "Wykres liniowy temperatury w ciągu dnia.",
+    "params": {
+     "x": {
+      "$expr": "hours"
+     },
+     "y": {
+      "$expr": "ys"
+     },
+     "xLabel": "godzina",
+     "yLabel": "°C"
+    }
+   }
+  ]
+ }
+}

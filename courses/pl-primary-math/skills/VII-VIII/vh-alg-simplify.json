@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-simplify",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Redukcja wyrazów podobnych"
+ },
+ "objectives": [
+  "VII-VIII.2.3"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna zmienna"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwie zmienne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-simplify.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-build"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wyrazy podobne to jednomiany z taką samą częścią literową, np. 3x i −5x. Dodajemy je, dodając współczynniki: 3x − 5x = −2x."
+  }
+ }
+}

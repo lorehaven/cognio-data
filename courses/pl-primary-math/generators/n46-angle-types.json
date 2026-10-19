@@ -1,0 +1,96 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-types",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ts": "[0, 1, 2]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ts": "[0, 1, 2, 3, 4]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "['ostry', 'prosty', 'rozwarty', 'półpełny', 'pełny']"
+  },
+  {
+   "name": "t",
+   "expr": "choice(ts)"
+  },
+  {
+   "name": "deg",
+   "expr": "[randint(5, 85), 90, randint(95, 175), 180, 360][t]"
+  }
+ ],
+ "constraints": [
+  "('kąt ' + names[t]) != ('kąt ' + names[(t + 1) % 5])",
+  "('kąt ' + names[t]) != ('kąt ' + names[(t + 2) % 5])",
+  "('kąt ' + names[t]) != ('kąt ' + names[(t + 3) % 5])",
+  "('kąt ' + names[(t + 1) % 5]) != ('kąt ' + names[(t + 2) % 5])",
+  "('kąt ' + names[(t + 1) % 5]) != ('kąt ' + names[(t + 3) % 5])",
+  "('kąt ' + names[(t + 2) % 5]) != ('kąt ' + names[(t + 3) % 5])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Kąt ma miarę @{deg}°. Jaki to kąt?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Ostry: mniej niż 90°. Prosty: 90°. Rozwarty: między 90° a 180°. Półpełny: 180°. Pełny: 360°."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{deg}° – kąt @{names[t]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{'kąt ' + names[t]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{'kąt ' + names[(t + 1) % 5]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{'kąt ' + names[(t + 2) % 5]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{'kąt ' + names[(t + 3) % 5]}",
+    "correct": "false"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "angle",
+    "essential": false,
+    "alt": "Kąt o mierze @{deg}°.",
+    "params": {
+     "degrees": {
+      "$expr": "deg"
+     }
+    }
+   }
+  ]
+ }
+}

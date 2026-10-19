@@ -1,0 +1,101 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-receipt",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "shuffle(['mleko', 'chleb', 'masło', 'ser', 'jogurt', 'jajka', 'makaron', 'sok'])"
+  },
+  {
+   "name": "q",
+   "expr": "sample(1, 5, 3)"
+  },
+  {
+   "name": "pr",
+   "expr": "[randint(2, 12) * 50 / 100 + 1, randint(2, 12) * 50 / 100 + 1, randint(2, 12) * 50 / 100 + 1]"
+  },
+  {
+   "name": "vals",
+   "expr": "[q[0] * pr[0], q[1] * pr[1], q[2] * pr[2]]"
+  },
+  {
+   "name": "total",
+   "expr": "sum(vals)"
+  },
+  {
+   "name": "bill",
+   "expr": "choice([50, 100, 200])"
+  },
+  {
+   "name": "rows",
+   "expr": "[[names[0], q[0], fmt(pr[0], 2), fmt(vals[0], 2)], [names[1], q[1], fmt(pr[1], 2), fmt(vals[1], 2)], [names[2], q[2], fmt(pr[2], 2), fmt(vals[2], 2)]]"
+  },
+  {
+   "name": "ans",
+   "expr": "total if ask == 0 else bill - total"
+  }
+ ],
+ "constraints": [
+  "len(uniq(pr)) == 3",
+  "bill > total"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Na paragonie zapisano zakupy. @{('Ile złotych wynosi suma do zapłaty?' if ask == 0 else 'Klient zapłacił banknotem ' + str(bill) + ' zł. Ile reszty powinien otrzymać?')}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dodaj wartości wszystkich pozycji z ostatniej kolumny."
+   },
+   {
+    "kind": "compute",
+    "text": "Suma: @{total|dec:2} zł.@{(' Reszta: ' + str(bill) + ' − ' + fmt(total, 2) + ' = ' + fmt(bill - total, 2) + ' zł.' if ask == 1 else '')}"
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  },
+  "media": [
+   {
+    "type": "table",
+    "kind": "table",
+    "essential": true,
+    "alt": "Paragon z trzema pozycjami.",
+    "params": {
+     "headers": [
+      "Towar",
+      "Ilość",
+      "Cena (zł)",
+      "Wartość (zł)"
+     ],
+     "rows": {
+      "$expr": "rows"
+     }
+    }
+   }
+  ]
+ }
+}

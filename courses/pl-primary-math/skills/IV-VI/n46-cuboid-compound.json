@@ -1,0 +1,49 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-cuboid-compound",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Objętość bryły złożonej i pojemność"
+ },
+ "objectives": [
+  "IV-VI.4.22",
+  "IV-VI.2.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa prostopadłościany"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Akwarium: litry"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-cuboid-compound.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-cuboid-volume",
+  "n46-capacity-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Objętość bryły złożonej to suma objętości jej części. Litr to 1000 cm³, więc pojemność przeliczysz dzieląc cm³ przez 1000."
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-of-quantity",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek wielkości w zadaniach"
+ },
+ "objectives": [
+  "IV-VI.1.31"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna część"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwie części"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-of-quantity.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-of-number"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby obliczyć ułamek wielkości, podziel ją przez mianownik (jedna część), a potem pomnóż przez licznik."
+  }
+ }
+}

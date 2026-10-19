@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-perimeter-polygon",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Obwód wielokąta"
+ },
+ "objectives": [
+  "IV-VI.4.15"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Czworokąt"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pięciokąt i sześciokąt"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-perimeter-polygon.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-dec-add"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Obwód wielokąta to suma długości wszystkich jego boków."
+  }
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-inverse-check",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(5, 40)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(5, 40)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(3, 9)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(3, 9)"
+  },
+  {
+   "name": "which",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Wiesz, że ' + str(a) + ' + ' + str(b) + ' = ' + str(a + b) + '. Ile wynosi ' + str(a + b) + ' − ' + str(b) + '?') if mode == 0 and which == 0 else (('Wiesz, że ' + str(a + b) + ' − ' + str(b) + ' = ' + str(a) + '. Ile wynosi ' + str(a) + ' + ' + str(b) + '?') if mode == 0 else (('Wiesz, że ' + str(c) + ' · ' + str(d) + ' = ' + str(c * d) + '. Ile wynosi ' + str(c * d) + ' : ' + str(d) + '?') if which == 0 else ('Wiesz, że ' + str(c * d) + ' : ' + str(d) + ' = ' + str(c) + '. Ile wynosi ' + str(c) + ' · ' + str(d) + '?')))"
+  },
+  {
+   "name": "ans",
+   "expr": "(a if which == 0 else a + b) if mode == 0 else (c if which == 0 else c * d)"
+  }
+ ],
+ "minDistinct": 25,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dodawanie i odejmowanie są działaniami odwrotnymi, tak samo jak mnożenie i dzielenie."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

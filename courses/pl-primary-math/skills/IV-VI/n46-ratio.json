@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-ratio",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ile razy większa, ile razy mniejsza"
+ },
+ "objectives": [
+  "IV-VI.1.14"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Małe liczby"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Większe liczby"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Duże liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-ratio.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-diff"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Porównanie ilorazowe mówi, ile razy jedna liczba jest większa od drugiej: podziel większą przez mniejszą."
+  }
+ }
+}

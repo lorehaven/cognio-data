@@ -1,0 +1,8 @@
+# Python generator of the course pack: build.py writes courses/<pack> and dist/*.cognio, nothing here
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.log
+*.tmp

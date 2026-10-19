@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-proportion",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ctx": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ctx": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ctx": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "u",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(k + 1, 15)"
+  },
+  {
+   "name": "total",
+   "expr": "k * u"
+  },
+  {
+   "name": "ans",
+   "expr": "n * u"
+  },
+  {
+   "name": "txt",
+   "expr": "('Za ' + pln(k, ['zeszyt', 'zeszyty', 'zeszytów']) + ' zapłacono ' + str(total) + ' zł. Ile złotych kosztuje ' + pln(n, ['zeszyt', 'zeszyty', 'zeszytów']) + ' w tej samej cenie?') if ctx == 0 else (('Rowerzysta w ciągu ' + pln(k, ['godziny', 'godzin', 'godzin']) + ' przejeżdża ' + str(total) + ' km. Ile kilometrów przejedzie w ciągu ' + pln(n, ['godziny', 'godzin', 'godzin']) + ' jadąc tak samo szybko?') if ctx == 1 else ('Do ciasta dla ' + pln(k, ['osoby', 'osób', 'osób']) + ' potrzeba ' + str(total * 10) + ' g mąki. Ile gramów mąki potrzeba na takie samo ciasto dla ' + pln(n, ['osoby', 'osób', 'osób']) + '?'))"
+  },
+  {
+   "name": "res",
+   "expr": "ans if ctx < 2 else ans * 10"
+  }
+ ],
+ "constraints": [
+  "n != k"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "res"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw policz, ile przypada na jedną sztukę (godzinę, osobę): podziel. Potem pomnóż przez żądaną liczbę."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(total if ctx < 2 else total * 10) + ' : ' + str(k) + ' = ' + str(u if ctx < 2 else u * 10) + '; ' + str(u if ctx < 2 else u * 10) + ' · ' + str(n) + ' = ' + str(res))}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "add_difference",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "total + (n - k) * (1 if ctx < 2 else 10)"
+     }
+    },
+    "feedback": "Gdy liczba sztuk rośnie, wynik rośnie proporcjonalnie (mnożymy), a nie o tyle samo.",
+    "when": "total + (n - k) * (1 if ctx < 2 else 10) != res"
+   }
+  ]
+ }
+}

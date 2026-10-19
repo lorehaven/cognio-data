@@ -1,0 +1,50 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-estimate-product",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Oszacuj iloczyn"
+ },
+ "objectives": [
+  "IV-VI.1.37",
+  "IV-VI.6.1.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwie liczby dwucyfrowe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzycyfrowa i dwucyfrowa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-estimate-product.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "keyIdeas": [
+   {
+    "pl": "Szacowanie pomaga sprawdzić, czy wynik ma sensowną wielkość."
+   }
+  ],
+  "intro": {
+   "pl": "Aby oszacować iloczyn, zaokrąglij czynniki do pełnych dziesiątek lub setek i pomnóż. Wynik jest przybliżony."
+  }
+ }
+}

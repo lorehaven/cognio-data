@@ -1,0 +1,13 @@
+# Everything cognio-server reads from its environment (see server/.env.example). Values are in values.yaml.
+# /data is the hostPath /mnt/dev/cognio/data (courses/*.cognio, models/catalog.json).
+- kind: configmap
+  name: cognio-env
+  app_name: cognio
+  instance: cognio
+  data:
+    TZ: Europe/Warsaw
+    DATA_DIR: /data
+    HOST: 0.0.0.0
+    PORT: "8080"
+    BASE_PATH: ${COGNIO_BASE_PATH}
+    LOG_LEVEL: ${COGNIO_LOG_LEVEL}

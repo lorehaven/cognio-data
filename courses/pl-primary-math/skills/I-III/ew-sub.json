@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-sub",
+ "stage": "I-III",
+ "title": {
+  "pl": "Odejmowanie"
+ },
+ "objectives": [
+  "I-III.1.g"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwucyfrowa minus jednocyfrowa"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Dwucyfrowa minus dwucyfrowa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-sub.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-add"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Przy odejmowaniu przechodź przez dziesiątkę: 15 − 7 = 15 − 5 − 2 = 8. Wynik możesz sprawdzić dodawaniem."
+  }
+ }
+}

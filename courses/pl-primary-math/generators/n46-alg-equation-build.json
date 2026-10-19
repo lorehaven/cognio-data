@@ -1,0 +1,118 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-equation-build",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pmin": "0",
+    "pmax": "3"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pmin": "4",
+    "pmax": "7"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "xv",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(pmin, pmax)"
+  },
+  {
+   "name": "m",
+   "expr": "[xv + k, xv * k, xv - k, xv // k, xv * k + n, 2 * xv + n, 2 * (xv - k), 2 * xv + k][p]"
+  },
+  {
+   "name": "texts",
+   "expr": "['Pomyślałem liczbę, dodałem do niej ' + str(k) + ' i otrzymałem ' + str(m) + '.', 'Pomyślałem liczbę, pomnożyłem ją przez ' + str(k) + ' i otrzymałem ' + str(m) + '.', 'Pomyślałem liczbę, odjąłem od niej ' + str(k) + ' i otrzymałem ' + str(m) + '.', 'Pomyślałem liczbę, podzieliłem ją przez ' + str(k) + ' i otrzymałem ' + str(xv // k) + '.', 'Pomyślałem liczbę, pomnożyłem ją przez ' + str(k) + ', dodałem ' + str(n) + ' i otrzymałem ' + str(m) + '.', 'Do podwojonej liczby dodałem ' + str(n) + ' i otrzymałem ' + str(m) + '.', 'Od pewnej liczby odjąłem ' + str(k) + ', wynik podwoiłem i otrzymałem ' + str(m) + '.', 'Ola ma x zł, a Ania ma o ' + str(k) + ' zł więcej. Razem mają ' + str(m) + ' zł.']"
+  },
+  {
+   "name": "good",
+   "expr": "['x + ' + str(k) + ' = ' + str(m), str(k) + ' · x = ' + str(m), 'x − ' + str(k) + ' = ' + str(m), 'x : ' + str(k) + ' = ' + str(xv // k), str(k) + ' · x + ' + str(n) + ' = ' + str(m), '2 · x + ' + str(n) + ' = ' + str(m), '(x − ' + str(k) + ') · 2 = ' + str(m), 'x + (x + ' + str(k) + ') = ' + str(m)]"
+  },
+  {
+   "name": "w1",
+   "expr": "['x − ' + str(k) + ' = ' + str(m), 'x + ' + str(k) + ' = ' + str(m), 'x + ' + str(k) + ' = ' + str(m), 'x · ' + str(k) + ' = ' + str(xv // k), str(k) + ' · (x + ' + str(n) + ') = ' + str(m), 'x + 2 + ' + str(n) + ' = ' + str(m), 'x − ' + str(k) + ' · 2 = ' + str(m), 'x + ' + str(k) + ' = ' + str(m)]"
+  },
+  {
+   "name": "w2",
+   "expr": "[str(k) + ' · x = ' + str(m), 'x : ' + str(k) + ' = ' + str(m), str(k) + ' − x = ' + str(m), 'x + ' + str(k) + ' = ' + str(xv // k), 'x + ' + str(k) + ' + ' + str(n) + ' = ' + str(m), '2 + x + ' + str(n) + ' = ' + str(m), '2 · x − ' + str(k) + ' = ' + str(m), '2 · x + ' + str(k) + ' = ' + str(m)]"
+  },
+  {
+   "name": "w3",
+   "expr": "['x : ' + str(k) + ' = ' + str(m), str(k) + ' − x = ' + str(m), 'x : ' + str(k) + ' = ' + str(m), str(k) + ' : x = ' + str(xv // k), str(k) + ' · x − ' + str(n) + ' = ' + str(m), '2 · (x + ' + str(n) + ') = ' + str(m), 'x · 2 − ' + str(k) + ' = ' + str(m), 'x · (x + ' + str(k) + ') = ' + str(m)]"
+  }
+ ],
+ "constraints": [
+  "p != 3 or xv % k == 0",
+  "p != 3 or xv // k >= 2",
+  "p != 6 or xv > k",
+  "p != 2 or xv > k",
+  "len(uniq([good[p], w1[p], w2[p], w3[p]])) == 4",
+  "(good[p]) != (w1[p])",
+  "(good[p]) != (w2[p])",
+  "(good[p]) != (w3[p])",
+  "(w1[p]) != (w2[p])",
+  "(w1[p]) != (w3[p])",
+  "(w2[p]) != (w3[p])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{texts[p]} Które równanie opisuje tę sytuację, jeśli x oznacza niewiadomą?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zapisz każde zdanie jako działanie na niewiadomej x. Szukany wynik stoi po prawej stronie znaku równości."
+   },
+   {
+    "kind": "conclude",
+    "text": "Równanie: @{good[p]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good[p]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1[p]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2[p]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3[p]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-area-units",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jednostki pola"
+ },
+ "objectives": [
+  "IV-VI.2.4",
+  "IV-VI.2.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "cm² i dm², m²"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "a, ha i m²"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "km², ha, mm²"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-area-units.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-len-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Jednostki pola: 1 m² = 100 dm² = 10 000 cm², 1 a = 100 m², 1 ha = 100 a = 10 000 m², 1 km² = 100 ha. Przeliczając pola, mnożymy lub dzielimy przez 100, 10 000…"
+  }
+ }
+}

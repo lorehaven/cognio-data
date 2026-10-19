@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-decimal-to-compound",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamki dziesiętne na wyrażenia dwumianowane"
+ },
+ "objectives": [
+  "IV-VI.2.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Metry i centymetry, złote i grosze"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kilogramy, kilometry, litry"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-decimal-to-compound.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-compound-to-decimal"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Część całkowita to większa jednostka, a część po przecinku zamieniasz na mniejszą: 5,72 m = 5 m 72 cm."
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-perimeter-regular",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Obwód kwadratu i trójkąta równobocznego"
+ },
+ "objectives": [
+  "IV-VI.4.15"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Z długości boku"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Długość boku z obwodu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-perimeter-regular.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-perimeter-polygon"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W figurach foremnych wszystkie boki są równe, więc obwód to liczba boków razy długość jednego boku."
+  }
+ }
+}

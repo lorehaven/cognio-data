@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-mean-missing",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Średnia po dodaniu nowej wartości"
+ },
+ "objectives": [
+  "VII-VIII.4.4",
+  "VII-VIII.4.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Brakujący wynik"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Średnia wzrosła lub zmalała"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-mean-missing.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-mean-exact"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Suma wyników to średnia razy liczba wyników. Porównaj sumy przed i po dodaniu nowej wartości, aby ją znaleźć."
+  }
+ }
+}

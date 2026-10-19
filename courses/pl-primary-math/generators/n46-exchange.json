@@ -1,0 +1,64 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-exchange",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "rev": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "rev": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "rate",
+   "expr": "choice([4, 4.25, 4.5, 4.2, 4.3, 5])"
+  },
+  {
+   "name": "eur",
+   "expr": "randint(2, 60)"
+  },
+  {
+   "name": "pln",
+   "expr": "eur * rate"
+  },
+  {
+   "name": "txt",
+   "expr": "('Kurs wymiany: 1 euro = ' + fmt(rate, 2) + ' zł. Ile złotych kosztuje ' + str(eur) + ' euro?') if rev == 0 else ('Kurs wymiany: 1 euro = ' + fmt(rate, 2) + ' zł. Ile euro kupisz za ' + fmt(pln, 2) + ' zł?')"
+  },
+  {
+   "name": "ans",
+   "expr": "pln if rev == 0 else eur"
+  }
+ ],
+ "selfCheck": [
+  "pln == eur * rate"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Mnożymy liczbę euro przez kurs.' if rev == 0 else 'Dzielimy kwotę w złotych przez kurs.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(eur) + ' · ' + fmt(rate, 2) + ' = ' + fmt(pln, 2) if rev == 0 else fmt(pln, 2) + ' : ' + fmt(rate, 2) + ' = ' + str(eur))}"
+   }
+  ]
+ }
+}

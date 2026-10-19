@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-solid-elements",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wierzchołki, krawędzie i ściany"
+ },
+ "objectives": [
+  "IV-VI.4.19"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Graniastosłupy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ostrosłupy"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dowolna bryła, dowolny element"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-solid-elements.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-solid-recognize"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Bryły mają wierzchołki (rogi), krawędzie (kanty) i ściany. Graniastosłup n-kątny: 2n wierzchołków, 3n krawędzi, n + 2 ściany. Ostrosłup n-kątny: n + 1 wierzchołków, 2n krawędzi, n + 1 ścian."
+  }
+ }
+}

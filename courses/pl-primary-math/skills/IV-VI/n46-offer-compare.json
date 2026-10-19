@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-offer-compare",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Promocje: co się bardziej opłaca?"
+ },
+ "objectives": [
+  "IV-VI.1.35",
+  "IV-VI.1.34"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Trzecia sztuka gratis"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Druga sztuka za pół ceny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Obie promocje"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-offer-compare.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-price-after-discount"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby porównać oferty, policz łączny koszt w obu i porównaj wyniki. Uważaj na promocje typu „trzecia sztuka gratis”."
+  }
+ }
+}

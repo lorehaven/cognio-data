@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-strat-near",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wygodne mnożenie: blisko 100"
+ },
+ "objectives": [
+  "IV-VI.1.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby 97–99"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby 91–99"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-strat-near.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Gdy liczba jest blisko 100, mnóż przez 100 i odejmij nadmiar: 6 · 98 = 6 · 100 − 6 · 2."
+  }
+ }
+}

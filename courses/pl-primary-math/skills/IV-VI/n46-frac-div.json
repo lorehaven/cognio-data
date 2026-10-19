@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-div",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dzielenie ułamków"
+ },
+ "objectives": [
+  "IV-VI.1.27"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ułamek podzielony przez liczbę"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ułamek podzielony przez ułamek"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Liczby mieszane"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-div.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-mul"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzielenie przez ułamek to mnożenie przez jego odwrotność: $\\frac{2}{3} : \\frac{4}{5} = \\frac{2}{3} \\cdot \\frac{5}{4}$."
+  }
+ }
+}

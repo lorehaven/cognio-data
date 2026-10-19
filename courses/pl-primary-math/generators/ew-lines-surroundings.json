@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-lines-surroundings",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice([['Szyny kolejowe obok siebie', 'równoległe'], ['Ściana i podłoga w pokoju', 'prostopadłe'], ['Wskazówki zegara o godzinie 3:00', 'prostopadłe'], ['Dwie sąsiednie krawędzie kartki papieru', 'prostopadłe'], ['Pasy na przejściu dla pieszych', 'równoległe'], ['Dwie przeciwległe krawędzie stołu', 'równoległe'], ['Pionowy słup i poziomy chodnik', 'prostopadłe'], ['Linie w zeszycie do pisania', 'równoległe']])"
+  }
+ ],
+ "minDistinct": 8,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{f[0]} to przykład prostych …",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (f[1] == 'równoległe') else []) + (['b'] if (f[1] == 'prostopadłe') else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Równoległe nigdy się nie przecinają i są wszędzie tak samo oddalone. Prostopadłe przecinają się pod kątem prostym."
+   },
+   {
+    "kind": "conclude",
+    "text": "To są proste @{f[1]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "równoległych",
+    "correct": "f[1] == 'równoległe'"
+   },
+   {
+    "id": "b",
+    "text": "prostopadłych",
+    "correct": "f[1] == 'prostopadłe'"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-money-notation",
+ "stage": "I-III",
+ "title": {
+  "pl": "Zapis cen z przecinkiem"
+ },
+ "objectives": [
+  "I-III.2.d",
+  "I-III.2.h"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Ile groszy ma cena?"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Zapisz cenę z przecinkiem"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-money-notation.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "prerequisites": [
+  "ew-money-coins"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Złotówka ma 100 groszy. W zapisie 12,50 zł przed przecinkiem są złote, a po przecinku – grosze: 12 zł 50 gr."
+  }
+ }
+}

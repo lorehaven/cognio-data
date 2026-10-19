@@ -1,0 +1,53 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-roman-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "1",
+    "hi": "39"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "40",
+    "hi": "399"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "400",
+    "hi": "3000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(lo, hi)"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zapisz liczbę @{roman(n)} w systemie dziesiątkowym.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "n"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000. Mniejsza cyfra przed większą się odejmuje (IV = 4)."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{roman(n)} = @{n|int}"
+   }
+  ]
+ }
+}

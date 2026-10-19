@@ -1,0 +1,70 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-power",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "e": "2",
+    "bhi": "19"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "e": "3",
+    "bhi": "19"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "bn",
+   "expr": "randint(2, bhi)"
+  },
+  {
+   "name": "b",
+   "expr": "bn / 10"
+  },
+  {
+   "name": "v",
+   "expr": "pow(b, e)"
+  }
+ ],
+ "constraints": [
+  "bn % 10 != 0"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $@{b|dec}^{@{e}}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mnożymy podstawę przez siebie @{e} razy. Liczbę miejsc po przecinku w wyniku liczymy tak jak przy mnożeniu."
+   },
+   {
+    "kind": "compute",
+    "text": "@{b|dec}@{('²' if e == 2 else '³')} = @{v|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "multiply_exponent",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "b * e"
+     }
+    },
+    "feedback": "Wykładnik mówi, ile razy mnożymy podstawę przez siebie – to nie jest mnożenie przez wykładnik."
+   }
+  ]
+ }
+}

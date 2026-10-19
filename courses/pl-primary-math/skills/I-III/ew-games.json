@@ -1,0 +1,34 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-games",
+ "stage": "I-III",
+ "title": {
+  "pl": "Gry i strategie"
+ },
+ "objectives": [
+  "I-III.5.e"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pomyśl jak gracz"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/ew-games.jsonl"
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "W grach planszowych i kościanych pomaga myślenie z wyprzedzeniem: co zrobi rywal po moim ruchu? Szukamy ruchu, który daje większą szansę wygranej."
+  }
+ }
+}

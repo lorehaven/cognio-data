@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare-measures",
+ "stage": "I-III",
+ "title": {
+  "pl": "Co jest dłuższe, cięższe, dłuższe w czasie?"
+ },
+ "objectives": [
+  "I-III.2.j"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Porównaj wielkości"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-compare-measures.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "prerequisites": [
+  "ew-convert-length"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wielkości w różnych jednostkach porównujemy, zamieniając je na tę samą jednostkę. Np. 1 m = 100 cm, więc 120 cm to więcej niż 1 m."
+  }
+ }
+}

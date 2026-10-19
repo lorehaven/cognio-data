@@ -1,0 +1,68 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-count-pairs",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "cx",
+   "expr": "randint(1, 3)"
+  },
+  {
+   "name": "g",
+   "expr": "choice([[['bluzka', 'bluzki', 'bluzek'], ['spódnica', 'spódnice', 'spódnic'], 'zestawów'], [['zupa', 'zupy', 'zup'], ['sałatka', 'sałatki', 'sałatek'], 'obiadów'], [['czapka', 'czapki', 'czapek'], ['szalik', 'szaliki', 'szalików'], 'kompletów'], [['kanapka', 'kanapki', 'kanapek'], ['sok', 'soki', 'soków'], 'zestawów lunchowych']])"
+  },
+  {
+   "name": "base",
+   "expr": "'Do wyboru jest ' + pln(a, g[0]) + ' i ' + pln(b, g[1]) + '. '"
+  },
+  {
+   "name": "txt",
+   "expr": "base + 'Ile różnych ' + g[2] + ' można utworzyć, wybierając po jednej rzeczy z każdej grupy?' if k == 0 else base + 'Odrzucamy ' + pln(cx, ['element', 'elementy', 'elementów']) + ' z pierwszej grupy, bo nie pasują do niczego z drugiej. Ile różnych ' + g[2] + ' można utworzyć z pozostałych?'"
+  }
+ ],
+ "constraints": [
+  "k == 0 or a > cx"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a * b if k == 0 else (a - cx) * b"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Do każdego wyboru z pierwszej grupy można dobrać każdy z drugiej: mnożymy.' if k == 0 else 'Najpierw odrzuć niepasujące elementy, potem pomnóż.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "@{('Odpowiedź: ' + str(a * b if k == 0 else (a - cx) * b) + '.')}"
+   }
+  ]
+ }
+}

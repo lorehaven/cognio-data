@@ -1,0 +1,94 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-mul",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "alo": "11",
+    "ahi": "99",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "2",
+    "bhi": "9"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "alo": "11",
+    "ahi": "99",
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "11",
+    "bhi": "99"
+   }
+  },
+  {
+   "level": 5,
+   "vars": {
+    "alo": "101",
+    "ahi": "999",
+    "blo": "101",
+    "bhi": "999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(alo, ahi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a|int} · @{b|int}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a * b"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Mnożymy przez każdą cyfrę drugiej liczby i dodajemy wyniki cząstkowe (pamiętaj o przesunięciu)."
+   },
+   {
+    "kind": "compute",
+    "text": "@{a|int} · @{b|int} = @{a * b|int}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "no_shift",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a * ((b % 10) + (b // 10))"
+     }
+    },
+    "feedback": "Mnożąc przez cyfrę dziesiątek, przesuń wynik o jedno miejsce w lewo (dopisz zero).",
+    "when": "b >= 10 and b < 100 and a * ((b % 10) + (b // 10)) != a * b"
+   }
+  ]
+ }
+}

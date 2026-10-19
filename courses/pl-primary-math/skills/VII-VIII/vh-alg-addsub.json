@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-addsub",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Dodawanie i odejmowanie sum algebraicznych"
+ },
+ "objectives": [
+  "VII-VIII.2.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Odejmowanie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-addsub.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-simplify"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dodając sumy algebraiczne, opuść nawiasy i zredukuj wyrazy podobne. Przy odejmowaniu minus przed nawiasem zmienia znaki wszystkich wyrazów w nawiasie."
+  }
+ }
+}

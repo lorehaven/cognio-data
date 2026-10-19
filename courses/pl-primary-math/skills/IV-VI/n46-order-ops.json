@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-order-ops",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kolejność wykonywania działań"
+ },
+ "objectives": [
+  "IV-VI.1.36"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mnożenie przed dodawaniem"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Nawiasy i dzielenie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Złożone wyrażenia"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-order-ops.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Kolejność działań: 1) nawiasy, 2) mnożenie i dzielenie od lewej do prawej, 3) dodawanie i odejmowanie od lewej do prawej."
+  },
+  "keyIdeas": [
+   {
+    "pl": "Mnożenie i dzielenie są „silniejsze” niż dodawanie i odejmowanie."
+   }
+  ]
+ }
+}

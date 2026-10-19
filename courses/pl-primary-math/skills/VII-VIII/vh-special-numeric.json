@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-special-numeric",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Trójkąty 30°–60°–90° i 45°–45°–90°"
+ },
+ "objectives": [
+  "VII-VIII.3.5"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Krótsza przyprostokątna i przeciwprostokątna"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przeciwprostokątna i krótsza przyprostokątna"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Pole trójkąta 45°–45°–90°"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-special-numeric.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-pyth-basic"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Trójkąt 30°–60°–90°: krótsza przyprostokątna to połowa przeciwprostokątnej. Trójkąt prostokątny równoramienny to połowa kwadratu."
+  }
+ }
+}

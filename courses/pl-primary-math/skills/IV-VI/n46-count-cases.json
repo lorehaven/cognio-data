@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-count-cases",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rozważ wszystkie przypadki"
+ },
+ "objectives": [
+  "IV-VI.6.3.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Zestawy ubrań"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby z podanych cyfr"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Mecze w turnieju"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-count-cases.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-wp-sum-difference"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby policzyć wszystkie możliwości, wypisz je systematycznie albo pomnóż liczbę wyborów w każdym kroku."
+  }
+ }
+}

@@ -1,0 +1,534 @@
+[
+ {
+  "type": "figure",
+  "kind": "grid-shape",
+  "params": {
+   "cols": 8,
+   "rows": 6,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "axis": {
+    "type": "v",
+    "at": 4
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "grid-shape",
+  "params": {
+   "cols": 8,
+   "rows": 6,
+   "poly": [
+    [
+     1,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "fill": "fill"
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "grid-shape",
+  "params": {
+   "cols": 6,
+   "rows": 5,
+   "cells": [
+    [
+     0,
+     0
+    ]
+   ],
+   "axis": {
+    "type": "h",
+    "at": 2
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "balance",
+  "params": {
+   "left": [
+    "x",
+    "x",
+    "3"
+   ],
+   "right": [
+    "9"
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "net",
+  "params": {
+   "a": 4,
+   "b": 3,
+   "c": 2,
+   "labels": {
+    "a": "S"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "cuboid",
+  "params": {
+   "a": 4,
+   "b": 3,
+   "c": 2,
+   "labels": {
+    "a": "4 cm",
+    "b": "3 cm",
+    "c": "2 cm"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "circle",
+  "params": {
+   "draw": [
+    "radius",
+    "diameter",
+    "chord"
+   ],
+   "labels": {
+    "radius": "r",
+    "diameter": "d",
+    "chord": "AB",
+    "center": "O"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "solid",
+  "params": {
+   "kind": "pyramid",
+   "n": 4,
+   "show": [
+    "height",
+    "slant"
+   ],
+   "labels": {
+    "h": "H",
+    "s": "h",
+    "e": "a"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "solid",
+  "params": {
+   "kind": "prism",
+   "n": 3,
+   "show": [
+    "height"
+   ],
+   "labels": {
+    "h": "H"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "solid",
+  "params": {
+   "kind": "prism",
+   "n": 6,
+   "show": [],
+   "labels": {}
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "solid",
+  "params": {
+   "kind": "pyramid",
+   "n": 5,
+   "show": [
+    "height"
+   ],
+   "labels": {
+    "e": "a"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "regular-polygon",
+  "params": {
+   "n": 6,
+   "angles": [
+    {
+     "i": 0,
+     "text": "?"
+    }
+   ],
+   "sides": [
+    {
+     "i": 0,
+     "text": "a"
+    }
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "polygon",
+  "params": {
+   "pts": [
+    [
+     0,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "names": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "sides": [
+    {
+     "i": 0,
+     "text": "5 cm"
+    },
+    {
+     "i": 2,
+     "text": "3 cm"
+    }
+   ],
+   "angles": [
+    {
+     "i": 0,
+     "text": "α"
+    }
+   ],
+   "diagonals": [
+    [
+     0,
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "right-triangle",
+  "params": {
+   "a": 4,
+   "b": 3,
+   "labels": {
+    "a": "8 cm",
+    "b": "6 cm",
+    "c": "?"
+   },
+   "names": [
+    "C",
+    "B",
+    "A"
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "right-triangle",
+  "params": {
+   "a": 24,
+   "b": 7,
+   "labels": {
+    "a": "24",
+    "b": "?",
+    "c": "25"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "angle-pair",
+  "params": {
+   "kind": "adjacent",
+   "alpha": 65
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "angle-pair",
+  "params": {
+   "kind": "vertical",
+   "alpha": 50
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "angle-pair",
+  "params": {
+   "kind": "corresponding",
+   "alpha": 60
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "angle-pair",
+  "params": {
+   "kind": "alternate",
+   "alpha": 110
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "triangle-angles",
+  "params": {
+   "angles": [
+    90,
+    35,
+    55
+   ],
+   "labels": [
+    "",
+    "35°",
+    "?"
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "coordinate-plane",
+  "params": {
+   "xMin": -4,
+   "xMax": 6,
+   "yMin": -3,
+   "yMax": 5,
+   "points": [
+    {
+     "label": "A",
+     "x": 2,
+     "y": 3
+    }
+   ],
+   "polygons": [
+    {
+     "pts": [
+      [
+       -2,
+       -1
+      ],
+      [
+       3,
+       -1
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fill": "fill"
+    }
+   ],
+   "lines": [
+    {
+     "from": [
+      -3,
+      -2
+     ],
+     "to": [
+      4,
+      4
+     ],
+     "dash": [
+      4,
+      3
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "arch",
+  "params": {
+   "w": 4,
+   "h": 3,
+   "labels": {
+    "w": "4 m",
+    "h": "3 m",
+    "r": "r"
+   }
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "thermometer",
+  "params": {
+   "value": -5,
+   "min": -20,
+   "max": 40
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "fraction-bar",
+  "params": {
+   "parts": 4,
+   "shaded": 6
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "number-line",
+  "params": {
+   "min": 0,
+   "max": 2,
+   "partsPerUnit": 4,
+   "points": [
+    {
+     "label": "A",
+     "at": {
+      "num": 5,
+      "den": 4
+     }
+    }
+   ]
+  }
+ },
+ {
+  "type": "figure",
+  "kind": "protractor",
+  "params": {
+   "degrees": 70,
+   "mirrored": true
+  }
+ },
+ {
+  "type": "chart",
+  "kind": "pie",
+  "params": {
+   "labels": [
+    "kot",
+    "pies",
+    "ryby"
+   ],
+   "values": [
+    5,
+    8,
+    3
+   ],
+   "showValues": true
+  }
+ },
+ {
+  "type": "chart",
+  "kind": "pictogram",
+  "params": {
+   "labels": [
+    "kot",
+    "pies"
+   ],
+   "counts": [
+    3,
+    5
+   ],
+   "per": 2
+  }
+ },
+ {
+  "type": "chart",
+  "kind": "bar",
+  "params": {
+   "labels": [
+    "sty",
+    "lut",
+    "mar",
+    "kwi"
+   ],
+   "values": [
+    200,
+    205,
+    212,
+    220
+   ],
+   "yMin": 190,
+   "title": "Wykres B"
+  }
+ },
+ {
+  "type": "chart",
+  "kind": "line",
+  "params": {
+   "x": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "y": [
+    200,
+    205,
+    212,
+    220
+   ],
+   "yMin": 190
+  }
+ },
+ {
+  "type": "table",
+  "kind": "table",
+  "params": {
+   "headers": [
+    "Towar",
+    "Cena"
+   ],
+   "rows": [
+    [
+     "woda",
+     1.5
+    ],
+    [
+     "chleb",
+     4
+    ]
+   ]
+  }
+ }
+]

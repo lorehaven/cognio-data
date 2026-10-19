@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-strat-split",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wygodne mnożenie: rozbicie liczby"
+ },
+ "objectives": [
+  "IV-VI.1.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jednocyfrowa · dwucyfrowa"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-strat-split.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Rozbij jedną liczbę na części i pomnóż każdą osobno: 29 · 6 = 20 · 6 + 9 · 6."
+  }
+ }
+}

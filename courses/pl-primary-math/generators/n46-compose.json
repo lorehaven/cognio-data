@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-compose",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "thi": "9"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "thi": "999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "randint(1, thi)"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 9)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(0, 9)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(0, 9)"
+  },
+  {
+   "name": "T",
+   "expr": "['tysiąc', 'tysiące', 'tysięcy']"
+  },
+  {
+   "name": "Sx",
+   "expr": "['setka', 'setki', 'setek']"
+  },
+  {
+   "name": "D",
+   "expr": "['dziesiątka', 'dziesiątki', 'dziesiątek']"
+  },
+  {
+   "name": "J",
+   "expr": "['jedność', 'jedności', 'jedności']"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zapisz liczbę, w której jest: @{t|pl:T}, @{s|pl:Sx}, @{d|pl:D} i @{j|pl:J}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "t * 1000 + s * 100 + d * 10 + j"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zamieniamy każdą część na liczbę i dodajemy."
+   },
+   {
+    "kind": "compute",
+    "text": "@{t * 1000|int} + @{s * 100} + @{d * 10} + @{j} = @{t * 1000 + s * 100 + d * 10 + j|int}"
+   }
+  ]
+ }
+}

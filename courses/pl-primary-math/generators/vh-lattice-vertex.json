@@ -1,0 +1,144 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-lattice-vertex",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "mode": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(-6, 6)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "ax",
+   "expr": "x + q if mode == 0 else (x if mode == 1 else -x)"
+  },
+  {
+   "name": "ay",
+   "expr": "y + h if mode == 0 else (-y if mode == 1 else (y if mode == 2 else -y))"
+  }
+ ],
+ "constraints": [
+  "mode == 0 or (x != 0 and y != 0)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "point-input",
+  "prompt": "@{('Trzy wierzchołki równoległoboku ABCD to A(' + str(x) + ', ' + str(y) + '), B(' + str(x + p) + ', ' + str(y) + ') i C(' + str(x + p + q) + ', ' + str(y + h) + '). Jakie współrzędne ma wierzchołek D?') if mode == 0 else (('Punkt A(' + str(x) + ', ' + str(y) + ') odbito symetrycznie względem osi OX. Jakie współrzędne ma obraz punktu A?') if mode == 1 else (('Punkt A(' + str(x) + ', ' + str(y) + ') odbito symetrycznie względem osi OY. Jakie współrzędne ma obraz punktu A?') if mode == 2 else ('Punkt A(' + str(x) + ', ' + str(y) + ') odbito symetrycznie względem początku układu współrzędnych. Jakie współrzędne ma obraz punktu A?')))}",
+  "answer": {
+   "type": "point",
+   "x": {
+    "$expr": "ax"
+   },
+   "y": {
+    "$expr": "ay"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('W równoległoboku wektor od A do D jest taki sam jak od B do C.' if mode == 0 else ('Przy odbiciu względem osi OX zmienia się znak współrzędnej y.' if mode == 1 else ('Przy odbiciu względem osi OY zmienia się znak współrzędnej x.' if mode == 2 else 'Przy symetrii względem początku układu zmieniają się znaki obu współrzędnych.')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Szukany punkt ma współrzędne (@{ax}, @{ay})."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "coordinate-plane",
+    "essential": false,
+    "alt": "Układ współrzędnych z zaznaczonymi punktami.",
+    "params": {
+     "xMin": {
+      "$expr": "min(x, -x, 0) - 2"
+     },
+     "xMax": {
+      "$expr": "max(x + p + q, -x, 0) + 2"
+     },
+     "yMin": {
+      "$expr": "min(y, -y, 0) - 2"
+     },
+     "yMax": {
+      "$expr": "max(y + h, -y, 0) + 2"
+     },
+     "points": [
+      {
+       "label": "A",
+       "x": {
+        "$expr": "x"
+       },
+       "y": {
+        "$expr": "y"
+       }
+      },
+      {
+       "label": "B",
+       "x": {
+        "$expr": "x + p"
+       },
+       "y": {
+        "$expr": "y"
+       },
+       "show": {
+        "$expr": "mode == 0"
+       }
+      },
+      {
+       "label": "C",
+       "x": {
+        "$expr": "x + p + q"
+       },
+       "y": {
+        "$expr": "y + h"
+       },
+       "show": {
+        "$expr": "mode == 0"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

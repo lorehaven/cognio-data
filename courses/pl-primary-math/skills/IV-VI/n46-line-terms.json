@@ -1,0 +1,37 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-line-terms",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Punkt, prosta, półprosta, odcinek"
+ },
+ "objectives": [
+  "IV-VI.4.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Poznaj figury"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-line-terms.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "tutor": {
+  "intro": {
+   "pl": "Punkt nie ma wymiarów. Prosta nie ma początku ani końca. Półprosta ma początek, ale nie ma końca. Odcinek ma początek i koniec, więc możemy zmierzyć jego długość."
+  }
+ }
+}

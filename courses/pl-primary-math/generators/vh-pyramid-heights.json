@@ -1,0 +1,121 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyramid-heights",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "tr",
+   "expr": "choice([[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29]])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, 3)"
+  },
+  {
+   "name": "sw",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['cm', 'dm', 'm'])"
+  },
+  {
+   "name": "m",
+   "expr": "tr[sw] * k"
+  },
+  {
+   "name": "hh",
+   "expr": "tr[1 - sw] * k"
+  },
+  {
+   "name": "hs",
+   "expr": "tr[2] * k"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ostrosłup prawidłowy czworokątny ma krawędź podstawy ' + str(2 * m) + ' ' + un + ' i wysokość ' + str(hh) + ' ' + un + '. Oblicz wysokość ściany bocznej.') if mode == 0 else (('Ostrosłup prawidłowy czworokątny ma krawędź podstawy ' + str(2 * m) + ' ' + un + ' i wysokość ściany bocznej ' + str(hs) + ' ' + un + '. Oblicz wysokość ostrosłupa.') if mode == 1 else ('Ostrosłup prawidłowy czworokątny ma wysokość ' + str(hh) + ' ' + un + ' i wysokość ściany bocznej ' + str(hs) + ' ' + un + '. Oblicz krawędź podstawy.'))"
+  },
+  {
+   "name": "ans",
+   "expr": "hs if mode == 0 else (hh if mode == 1 else 2 * m)"
+  }
+ ],
+ "selfCheck": [
+  "hh * hh + m * m == hs * hs"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wysokość ostrosłupa, odcinek łączący spodek wysokości ze środkiem krawędzi podstawy (połowa krawędzi podstawy) i wysokość ściany bocznej tworzą trójkąt prostokątny. Wysokość ściany bocznej jest jego przeciwprostokątną."
+   },
+   {
+    "kind": "compute",
+    "text": "@{hh}² + @{m}² = @{hs}²"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "solid",
+    "essential": false,
+    "alt": "Ostrosłup prawidłowy czworokątny z wysokością i wysokością ściany bocznej.",
+    "params": {
+     "kind": "pyramid",
+     "n": 4,
+     "show": [
+      "height",
+      "slant"
+     ],
+     "labels": {
+      "h": {
+       "$expr": "'H = ?' if mode == 1 else 'H = ' + str(hh) + ' ' + un"
+      },
+      "s": {
+       "$expr": "'h = ?' if mode == 0 else 'h = ' + str(hs) + ' ' + un"
+      },
+      "e": {
+       "$expr": "'a = ?' if mode == 2 else 'a = ' + str(2 * m) + ' ' + un"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

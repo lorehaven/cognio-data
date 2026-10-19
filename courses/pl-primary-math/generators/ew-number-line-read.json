@@ -1,0 +1,84 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-number-line-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "t": "1",
+    "n": "20"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "t": "10",
+    "n": "10"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "t": "100",
+    "n": "10"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "hi",
+   "expr": "t * n"
+  },
+  {
+   "name": "p",
+   "expr": "randint(1, n - 1) * t"
+  }
+ ],
+ "minDistinct": 9,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaką liczbę oznacza punkt A na osi liczbowej?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "p"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz, ile wynosi jedna kreska. Potem policz kreski od zera do punktu A."
+   },
+   {
+    "kind": "compute",
+    "text": "@{p // t} · @{t} = @{p}"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "number-line",
+    "essential": true,
+    "alt": "Oś liczbowa od 0 do @{hi} z zaznaczonym punktem A.",
+    "params": {
+     "min": 0,
+     "max": {
+      "$expr": "hi"
+     },
+     "tick": {
+      "$expr": "t"
+     },
+     "labelEvery": 5,
+     "points": [
+      {
+       "label": "A",
+       "at": {
+        "$expr": "p"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

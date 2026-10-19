@@ -1,0 +1,128 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-graph-distance",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ask": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ask": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "ask": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "ask": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "v1",
+   "expr": "randint(6, 24)"
+  },
+  {
+   "name": "v2",
+   "expr": "choice([0, 6, 12, 18, 24])"
+  },
+  {
+   "name": "v3",
+   "expr": "randint(6, 24)"
+  },
+  {
+   "name": "v4",
+   "expr": "randint(6, 24)"
+  },
+  {
+   "name": "ys",
+   "expr": "[0, v1, v1 + v2, v1 + v2 + v3, v1 + v2 + v3 + v4]"
+  },
+  {
+   "name": "hours",
+   "expr": "[0, 1, 2, 3, 4]"
+  },
+  {
+   "name": "i",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "j",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ile kilometrów przejechał rowerzysta po ' + str(i) + ' godzinach jazdy?') if ask == 0 else (('Z jaką prędkością (w km/h) jechał rowerzysta w ' + str(j) + '. godzinie?') if ask == 1 else (('Ile kilometrów przejechał rowerzysta w drugiej i trzeciej godzinie razem?') if ask == 2 else ('Jaka była średnia prędkość (w km/h) rowerzysty na całej 4-godzinnej trasie?')))"
+  },
+  {
+   "name": "ans",
+   "expr": "ys[i] if ask == 0 else (ys[j] - ys[j - 1] if ask == 1 else (ys[3] - ys[1] if ask == 2 else ys[4] // 4))"
+  },
+  {
+   "name": "u",
+   "expr": "'km' if ask == 0 or ask == 2 else 'km/h'"
+  }
+ ],
+ "constraints": [
+  "ask != 3 or (ys[4] % 4 == 0)",
+  "ask != 1 or ys[j] != ys[j - 1] or v2 == 0",
+  "ys[4] <= 90"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Wykres pokazuje drogę przebytą przez rowerzystę w ciągu 4 godzin. @{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Odczytaj wartość na osi pionowej dla danej godziny.' if ask == 0 else ('Prędkość w jednej godzinie to przyrost drogi w tej godzinie.' if ask == 1 else ('Odejmij odczytane drogi po 3 i po 1 godzinie.' if ask == 2 else 'Średnia prędkość = cała droga : cały czas.')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans} @{u}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "media": [
+   {
+    "type": "chart",
+    "kind": "line",
+    "essential": true,
+    "alt": "Wykres liniowy: droga rowerzysty w kolejnych godzinach.",
+    "params": {
+     "x": {
+      "$expr": "hours"
+     },
+     "y": {
+      "$expr": "ys"
+     },
+     "xLabel": "czas (h)",
+     "yLabel": "droga (km)"
+    }
+   }
+  ]
+ }
+}

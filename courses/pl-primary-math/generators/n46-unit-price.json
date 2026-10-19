@@ -1,0 +1,113 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-unit-price",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "gran": "10"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "gran": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "items",
+   "expr": "[['zeszyt', 'zeszyty', 'zeszytów', 150, 800], ['długopis', 'długopisy', 'długopisów', 100, 600], ['batonik', 'batoniki', 'batoników', 200, 450], ['bułka', 'bułki', 'bułek', 80, 250], ['pomarańcza', 'pomarańcze', 'pomarańczy', 150, 350], ['naklejka', 'naklejki', 'naklejek', 50, 300], ['bilet', 'bilety', 'biletów', 250, 1500], ['kredka', 'kredki', 'kredek', 100, 400]]"
+  },
+  {
+   "name": "it",
+   "expr": "choice(items)"
+  },
+  {
+   "name": "n1",
+   "expr": "choice([2, 3, 4, 5, 6, 8, 10, 12])"
+  },
+  {
+   "name": "n2",
+   "expr": "choice([2, 3, 4, 5, 6, 8, 10, 12])"
+  },
+  {
+   "name": "u1",
+   "expr": "randint(it[3] // gran, it[4] // gran) * gran / 100"
+  },
+  {
+   "name": "u2",
+   "expr": "randint(it[3] // gran, it[4] // gran) * gran / 100"
+  },
+  {
+   "name": "p1",
+   "expr": "n1 * u1"
+  },
+  {
+   "name": "p2",
+   "expr": "n2 * u2"
+  }
+ ],
+ "constraints": [
+  "n1 != n2",
+  "u1 != u2"
+ ],
+ "selfCheck": [
+  "p1 / n1 == u1",
+  "p2 / n2 == u2"
+ ],
+ "minDistinct": 100,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "W sklepie sprzedają te same produkty w dwóch ofertach. Oferta A: @{n1|pl:it} za @{p1|money}. Oferta B: @{n2|pl:it} za @{p2|money}. Która oferta jest korzystniejsza, jeśli chcemy płacić jak najmniej za jedną sztukę?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (u1 < u2) else []) + (['b'] if (u2 < u1) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Paczki mają różną liczbę sztuk, więc porównujemy cenę jednej sztuki."
+   },
+   {
+    "kind": "compute",
+    "text": "Oferta A: @{p1|money} : @{n1} = @{u1|money} za sztukę. Oferta B: @{p2|money} : @{n2} = @{u2|money} za sztukę."
+   },
+   {
+    "kind": "conclude",
+    "text": "Taniej wychodzi oferta @{('A' if u1 < u2 else 'B')}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Oferta A",
+    "correct": "u1 < u2"
+   },
+   {
+    "id": "b",
+    "text": "Oferta B",
+    "correct": "u2 < u1"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  },
+  "errorRules": [
+   {
+    "id": "compare_totals",
+    "answer": {
+     "type": "choice",
+     "value": {
+      "$expr": "'a' if p1 < p2 else 'b'"
+     }
+    },
+    "feedback": "Porównałeś ceny całych paczek, a paczki mają różną liczbę sztuk. Policz, ile kosztuje jedna sztuka.",
+    "when": "(p1 < p2) != (u1 < u2)"
+   }
+  ]
+ }
+}

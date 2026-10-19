@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-congruent-find",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Trójkąty przystające: odpowiadające boki i kąty"
+ },
+ "objectives": [
+  "VII-VIII.3.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Trzeci kąt"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Odpowiadający bok"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-congruent-find.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "n46-triangle-angle"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "W trójkątach przystających odpowiadające sobie kąty i boki są równe. Sprawdź, które wierzchołki sobie odpowiadają."
+  }
+ }
+}

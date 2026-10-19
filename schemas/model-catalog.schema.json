@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/model-catalog.schema.json",
+  "title": "Catalog of optional on-device tutor models (models/catalog.json)",
+  "type": "object", "required": ["formatVersion", "kind", "models"], "additionalProperties": false,
+  "properties": {
+    "formatVersion": { "type": "string", "pattern": "^1\\.\\d+$" }, "kind": { "const": "model-catalog" },
+    "updated": { "type": "string" }, "note": { "type": "string" },
+    "models": { "type": "array", "items": { "type": "object",
+      "required": ["id", "title", "format", "runtime", "file", "sources", "license", "requirements"], "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" }, "title": { "type": "string" }, "family": { "type": "string" }, "params": { "type": "string" },
+        "languages": { "type": "array", "items": { "type": "string" } },
+        "license": { "type": "object", "required": ["spdx"], "properties": { "spdx": { "type": "string" }, "attribution": { "type": "string" } } },
+        "format": { "enum": ["gguf"] }, "runtime": { "enum": ["llama.cpp"] }, "quant": { "type": "string" },
+        "chatTemplate": { "enum": ["chatml", "gemma", "llama3", "embedded"] },
+        "file": { "type": "object", "required": ["name", "size", "sha256"], "properties": {
+          "name": { "type": "string" }, "size": { "type": "integer" }, "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" } } },
+        "sources": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^https://" } },
+        "requirements": { "type": "object", "properties": { "minRamMb": { "type": "integer" },
+          "abis": { "type": "array", "items": { "type": "string" } }, "freeStorageMb": { "type": "integer" } } },
+        "tier": { "enum": ["low-memory", "recommended", "high-quality"] } } } }
+  }
+}

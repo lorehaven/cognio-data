@@ -1,0 +1,57 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-total-cost",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Koszt zakupu kilku sztuk"
+ },
+ "objectives": [
+  "IV-VI.1.35",
+  "IV-VI.2.13"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jeden towar"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwa towary"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Z resztą z banknotu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-total-cost.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-mul",
+  "n46-dec-add"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Koszt kilku sztuk to cena jednej sztuki razy liczba sztuk. Jeśli kupujesz różne towary, dodaj koszty."
+  }
+ }
+}

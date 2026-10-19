@@ -1,0 +1,116 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-shopping",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice([['Ola', 'a'], ['Kasia', 'a'], ['Ania', 'a'], ['Tomek', ''], ['Marek', ''], ['Kuba', '']])"
+  },
+  {
+   "name": "th",
+   "expr": "shuffle([['zeszyt', 'zeszyty', 'zeszytów'], ['długopis', 'długopisy', 'długopisów'], ['kredka', 'kredki', 'kredek'], ['gumka', 'gumki', 'gumek'], ['linijka', 'linijki', 'linijek'], ['teczka', 'teczki', 'teczek']])"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "u1",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "u2",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "u3",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "cost",
+   "expr": "a * u1 + b * u2 + (c * u3 if mode == 2 else 0)"
+  },
+  {
+   "name": "bill",
+   "expr": "choice([50, 100])"
+  },
+  {
+   "name": "first",
+   "expr": "p[0] + ' kupił' + p[1] + ' ' + pln(a, th[0]) + ' po ' + str(u1) + ' zł i ' + pln(b, th[1]) + ' po ' + str(u2) + ' zł'"
+  },
+  {
+   "name": "txt",
+   "expr": "first + (' oraz ' + pln(c, th[2]) + ' po ' + str(u3) + ' zł' if mode == 2 else '') + ('. Zapłacił' + p[1] + ' banknotem ' + str(bill) + ' zł. Ile reszty otrzymał' + p[1] + '?' if mode == 1 else '. Ile zapłacił' + p[1] + ' za wszystkie zakupy?')"
+  },
+  {
+   "name": "ans",
+   "expr": "cost if mode != 1 else bill - cost"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or bill > cost",
+  "len(uniq([th[0][0], th[1][0], th[2][0]])) == 3"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz osobno koszt każdego towaru (liczba sztuk razy cena), potem dodaj koszty@{(' i odejmij od banknotu' if mode == 1 else '')}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a) + ' · ' + str(u1) + ' + ' + str(b) + ' · ' + str(u2) + (' + ' + str(c) + ' · ' + str(u3) if mode == 2 else '') + ' = ' + str(cost) + ' zł' + ((', reszta: ' + str(bill) + ' − ' + str(cost) + ' = ' + str(bill - cost) + ' zł') if mode == 1 else ''))}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "answer_cost",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "cost"
+     }
+    },
+    "feedback": "To jest koszt zakupów. Zadanie pyta o resztę z banknotu.",
+    "when": "mode == 1"
+   }
+  ]
+ }
+}

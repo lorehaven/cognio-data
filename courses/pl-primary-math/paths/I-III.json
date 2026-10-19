@@ -1,0 +1,1631 @@
+{
+ "formatVersion": "1.0",
+ "stage": "I-III",
+ "entry": "open",
+ "units": [
+  {
+   "id": "ew-u1",
+   "title": {
+    "pl": "Liczby i ich zapis"
+   },
+   "description": {
+    "pl": "Czytamy, zapisujemy, porównujemy i układamy liczby."
+   },
+   "icon": "numbers",
+   "lessons": [
+    {
+     "id": "ew-u1-01",
+     "title": {
+      "pl": "Zapisz liczbę cyframi"
+     },
+     "kind": "learn",
+     "skill": "ew-write-number",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "ew-u1-02",
+     "title": {
+      "pl": "Rzędy liczby"
+     },
+     "kind": "learn",
+     "skill": "ew-place-value",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u1-03",
+     "title": {
+      "pl": "Która liczba jest większa?"
+     },
+     "kind": "learn",
+     "skill": "ew-compare",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u1-04",
+     "title": {
+      "pl": "Ustaw liczby w kolejności"
+     },
+     "kind": "learn",
+     "skill": "ew-order",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u1-05",
+     "title": {
+      "pl": "Powtórka: liczby"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "ew-write-number",
+       "level": 1
+      },
+      {
+       "skill": "ew-place-value",
+       "level": 1
+      },
+      {
+       "skill": "ew-compare",
+       "level": 1
+      },
+      {
+       "skill": "ew-order",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "ew-u1-06",
+     "title": {
+      "pl": "Parzysta czy nieparzysta?"
+     },
+     "kind": "learn",
+     "skill": "ew-odd-even",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u1-07",
+     "title": {
+      "pl": "Liczenie co 2, co 5, co 10…"
+     },
+     "kind": "learn",
+     "skill": "ew-skip-count",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u1-08",
+     "title": {
+      "pl": "Skoki po osi liczbowej"
+     },
+     "kind": "learn",
+     "skill": "ew-number-line-diff",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u1-09",
+     "title": {
+      "pl": "Liczba na osi liczbowej"
+     },
+     "kind": "learn",
+     "skill": "ew-number-line-read",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u1-10",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-write-number",
+       "level": 2
+      },
+      {
+       "skill": "ew-place-value",
+       "level": 2
+      },
+      {
+       "skill": "ew-compare",
+       "level": 2
+      },
+      {
+       "skill": "ew-order",
+       "level": 2
+      },
+      {
+       "skill": "ew-odd-even",
+       "level": 2
+      },
+      {
+       "skill": "ew-skip-count",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.1"
+  },
+  {
+   "id": "ew-u2",
+   "title": {
+    "pl": "Dodawanie i odejmowanie"
+   },
+   "description": {
+    "pl": "Rachunki w pamięci, także z przejściem przez dziesiątkę."
+   },
+   "icon": "plusminus",
+   "lessons": [
+    {
+     "id": "ew-u2-01",
+     "title": {
+      "pl": "Dodawanie"
+     },
+     "kind": "learn",
+     "skill": "ew-add",
+     "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u2-02",
+     "title": {
+      "pl": "Odejmowanie"
+     },
+     "kind": "learn",
+     "skill": "ew-sub",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u2-03",
+     "title": {
+      "pl": "Powtórka: dodawanie i odejmowanie"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "ew-add",
+       "level": 1
+      },
+      {
+       "skill": "ew-sub",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "ew-u2-04",
+     "title": {
+      "pl": "Sprytne liczenie"
+     },
+     "kind": "learn",
+     "skill": "ew-strategy",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u2-05",
+     "title": {
+      "pl": "Brakująca liczba"
+     },
+     "kind": "learn",
+     "skill": "ew-missing",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u2-06",
+     "title": {
+      "pl": "Sprawdzamy działaniem odwrotnym"
+     },
+     "kind": "learn",
+     "skill": "ew-inverse-check",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u2-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-add",
+       "level": 2
+      },
+      {
+       "skill": "ew-sub",
+       "level": 2
+      },
+      {
+       "skill": "ew-strategy",
+       "level": 2
+      },
+      {
+       "skill": "ew-missing",
+       "level": 2
+      },
+      {
+       "skill": "ew-inverse-check",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.1"
+  },
+  {
+   "id": "ew-u3",
+   "title": {
+    "pl": "Mnożenie i dzielenie"
+   },
+   "description": {
+    "pl": "Tabliczka mnożenia i dzielenie jako podział i mieszczenie."
+   },
+   "icon": "timesdiv",
+   "lessons": [
+    {
+     "id": "ew-u3-01",
+     "title": {
+      "pl": "Tabliczka mnożenia"
+     },
+     "kind": "learn",
+     "skill": "ew-mul-table",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-02",
+     "title": {
+      "pl": "Dzielenie w zakresie tabliczki mnożenia"
+     },
+     "kind": "learn",
+     "skill": "ew-div-table",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-03",
+     "title": {
+      "pl": "Podział po równo i mieszczenie"
+     },
+     "kind": "learn",
+     "skill": "ew-div-meaning",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-04",
+     "title": {
+      "pl": "Podział czy mieszczenie?"
+     },
+     "kind": "learn",
+     "skill": "ew-div-share-or-fit",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-05",
+     "title": {
+      "pl": "Powtórka: mnożenie i dzielenie"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "ew-mul-table",
+       "level": 1
+      },
+      {
+       "skill": "ew-div-table",
+       "level": 1
+      },
+      {
+       "skill": "ew-div-meaning",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "ew-u3-06",
+     "title": {
+      "pl": "Mnożenie liczby dwucyfrowej"
+     },
+     "kind": "learn",
+     "skill": "ew-mul-two-digit",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-07",
+     "title": {
+      "pl": "Dzielenie liczby dwucyfrowej"
+     },
+     "kind": "learn",
+     "skill": "ew-div-two-digit",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-08",
+     "title": {
+      "pl": "Odkrywamy prawidłowości"
+     },
+     "kind": "learn",
+     "skill": "ew-pattern-rule",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u3-09",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-mul-table",
+       "level": 2
+      },
+      {
+       "skill": "ew-div-table",
+       "level": 2
+      },
+      {
+       "skill": "ew-div-meaning",
+       "level": 2
+      },
+      {
+       "skill": "ew-mul-two-digit",
+       "level": 2
+      },
+      {
+       "skill": "ew-div-two-digit",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.1"
+  },
+  {
+   "id": "ew-u4",
+   "title": {
+    "pl": "Znaki, liczby rzymskie i ułamki"
+   },
+   "description": {
+    "pl": "Porównujemy wyrażenia, czytamy liczby rzymskie i poznajemy połowę, trzecią i czwartą część."
+   },
+   "icon": "fractions",
+   "lessons": [
+    {
+     "id": "ew-u4-01",
+     "title": {
+      "pl": "Znaki <, > i ="
+     },
+     "kind": "learn",
+     "skill": "ew-compare-expr",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u4-02",
+     "title": {
+      "pl": "Przeczytaj liczbę rzymską"
+     },
+     "kind": "learn",
+     "skill": "ew-roman-read",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u4-03",
+     "title": {
+      "pl": "Zapisz liczbę po rzymsku"
+     },
+     "kind": "learn",
+     "skill": "ew-roman",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u4-04",
+     "title": {
+      "pl": "Ułamki o liczniku 1"
+     },
+     "kind": "learn",
+     "skill": "ew-unit-fraction-name",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u4-05",
+     "title": {
+      "pl": "Połowa, trzecia, czwarta część liczby"
+     },
+     "kind": "learn",
+     "skill": "ew-unit-fraction-of",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u4-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-compare-expr",
+       "level": 2
+      },
+      {
+       "skill": "ew-roman-read",
+       "level": 1
+      },
+      {
+       "skill": "ew-roman",
+       "level": 1
+      },
+      {
+       "skill": "ew-unit-fraction-name",
+       "level": 2
+      },
+      {
+       "skill": "ew-unit-fraction-of",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.1"
+  },
+  {
+   "id": "ew-u5",
+   "title": {
+    "pl": "Mierzymy: długość, temperatura, czas"
+   },
+   "description": {
+    "pl": "Linijka, termometr i zegar."
+   },
+   "icon": "ruler",
+   "lessons": [
+    {
+     "id": "ew-u5-01",
+     "title": {
+      "pl": "Odczytaj długość z linijki"
+     },
+     "kind": "learn",
+     "skill": "ew-ruler-read",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "ew-u5-02",
+     "title": {
+      "pl": "Odczytaj temperaturę"
+     },
+     "kind": "learn",
+     "skill": "ew-thermometer-read",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u5-03",
+     "title": {
+      "pl": "O ile stopni cieplej, o ile zimniej?"
+     },
+     "kind": "learn",
+     "skill": "ew-temp-diff",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u5-04",
+     "title": {
+      "pl": "Która godzina?"
+     },
+     "kind": "learn",
+     "skill": "ew-clock-read",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u5-05",
+     "title": {
+      "pl": "O której godzinie?"
+     },
+     "kind": "learn",
+     "skill": "ew-time-add",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u5-06",
+     "title": {
+      "pl": "Powtórka: pomiary"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "ew-ruler-read",
+       "level": 1
+      },
+      {
+       "skill": "ew-thermometer-read",
+       "level": 1
+      },
+      {
+       "skill": "ew-temp-diff",
+       "level": 1
+      },
+      {
+       "skill": "ew-clock-read",
+       "level": 1
+      },
+      {
+       "skill": "ew-time-add",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "ew-u5-07",
+     "title": {
+      "pl": "Jaka jednostka pasuje?"
+     },
+     "kind": "learn",
+     "skill": "ew-choose-unit",
+     "levels": [
+      1
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "ew-u5-08",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-ruler-read",
+       "level": 2
+      },
+      {
+       "skill": "ew-thermometer-read",
+       "level": 2
+      },
+      {
+       "skill": "ew-temp-diff",
+       "level": 2
+      },
+      {
+       "skill": "ew-clock-read",
+       "level": 2
+      },
+      {
+       "skill": "ew-time-add",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.2"
+  },
+  {
+   "id": "ew-u6",
+   "title": {
+    "pl": "Jednostki miar"
+   },
+   "description": {
+    "pl": "Zamieniamy centymetry, kilogramy i godziny."
+   },
+   "icon": "scale",
+   "lessons": [
+    {
+     "id": "ew-u6-01",
+     "title": {
+      "pl": "Jednostki długości"
+     },
+     "kind": "learn",
+     "skill": "ew-convert-length",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 9
+    },
+    {
+     "id": "ew-u6-02",
+     "title": {
+      "pl": "Jednostki masy"
+     },
+     "kind": "learn",
+     "skill": "ew-convert-mass",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 9
+    },
+    {
+     "id": "ew-u6-03",
+     "title": {
+      "pl": "Jednostki czasu"
+     },
+     "kind": "learn",
+     "skill": "ew-convert-time",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u6-04",
+     "title": {
+      "pl": "Wyrażenia dwumianowane"
+     },
+     "kind": "learn",
+     "skill": "ew-compound",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u6-05",
+     "title": {
+      "pl": "Co jest dłuższe, cięższe, dłuższe w czasie?"
+     },
+     "kind": "learn",
+     "skill": "ew-compare-measures",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u6-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-convert-length",
+       "level": 2
+      },
+      {
+       "skill": "ew-convert-mass",
+       "level": 2
+      },
+      {
+       "skill": "ew-convert-time",
+       "level": 2
+      },
+      {
+       "skill": "ew-compound",
+       "level": 2
+      },
+      {
+       "skill": "ew-compare-measures",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.2"
+  },
+  {
+   "id": "ew-u7",
+   "title": {
+    "pl": "Pieniądze"
+   },
+   "description": {
+    "pl": "Monety, ceny z przecinkiem, zakupy i reszta."
+   },
+   "icon": "wallet",
+   "lessons": [
+    {
+     "id": "ew-u7-01",
+     "title": {
+      "pl": "Monety i banknoty"
+     },
+     "kind": "learn",
+     "skill": "ew-money-coins",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u7-02",
+     "title": {
+      "pl": "Zapis cen z przecinkiem"
+     },
+     "kind": "learn",
+     "skill": "ew-money-notation",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u7-03",
+     "title": {
+      "pl": "Zakupy i reszta"
+     },
+     "kind": "learn",
+     "skill": "ew-shopping",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u7-04",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-money-coins",
+       "level": 2
+      },
+      {
+       "skill": "ew-money-notation",
+       "level": 2
+      },
+      {
+       "skill": "ew-shopping",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.2"
+  },
+  {
+   "id": "ew-u8",
+   "title": {
+    "pl": "Bryły i figury"
+   },
+   "description": {
+    "pl": "Bryły wokół nas, figury płaskie, obwód i symetria."
+   },
+   "icon": "shapes",
+   "lessons": [
+    {
+     "id": "ew-u8-01",
+     "title": {
+      "pl": "Bryły wokół nas"
+     },
+     "kind": "learn",
+     "skill": "ew-solid-object",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u8-02",
+     "title": {
+      "pl": "Jaka to figura?"
+     },
+     "kind": "learn",
+     "skill": "ew-shape-description",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u8-03",
+     "title": {
+      "pl": "Boki, wierzchołki, kąty"
+     },
+     "kind": "learn",
+     "skill": "ew-shape-count",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u8-04",
+     "title": {
+      "pl": "Obwód trójkąta i prostokąta"
+     },
+     "kind": "learn",
+     "skill": "ew-perimeter",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u8-05",
+     "title": {
+      "pl": "Powtórka: figury"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "ew-solid-object",
+       "level": 1
+      },
+      {
+       "skill": "ew-shape-description",
+       "level": 1
+      },
+      {
+       "skill": "ew-shape-count",
+       "level": 1
+      },
+      {
+       "skill": "ew-perimeter",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "ew-u8-06",
+     "title": {
+      "pl": "Które litery mają oś symetrii?"
+     },
+     "kind": "learn",
+     "skill": "ew-symmetry-letters",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u8-07",
+     "title": {
+      "pl": "Ile osi symetrii?"
+     },
+     "kind": "learn",
+     "skill": "ew-symmetry-count",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u8-08",
+     "title": {
+      "pl": "Gdzie jest przedmiot?"
+     },
+     "kind": "learn",
+     "skill": "ew-directions",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u8-09",
+     "title": {
+      "pl": "Robot na kratkach"
+     },
+     "kind": "learn",
+     "skill": "ew-grid-robot",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u8-10",
+     "title": {
+      "pl": "Proste równoległe i prostopadłe wokół nas"
+     },
+     "kind": "learn",
+     "skill": "ew-lines-surroundings",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u8-11",
+     "title": {
+      "pl": "Pion, poziom, skos"
+     },
+     "kind": "learn",
+     "skill": "ew-pion-poziom",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "ew-u8-12",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-solid-object",
+       "level": 2
+      },
+      {
+       "skill": "ew-shape-description",
+       "level": 1
+      },
+      {
+       "skill": "ew-perimeter",
+       "level": 2
+      },
+      {
+       "skill": "ew-symmetry-letters",
+       "level": 1
+      },
+      {
+       "skill": "ew-directions",
+       "level": 1
+      },
+      {
+       "skill": "ew-grid-robot",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.3"
+  },
+  {
+   "id": "ew-u9",
+   "title": {
+    "pl": "Dane i tabele"
+   },
+   "description": {
+    "pl": "Czytamy tabele, diagramy i cenniki."
+   },
+   "icon": "chart",
+   "lessons": [
+    {
+     "id": "ew-u9-01",
+     "title": {
+      "pl": "Odczytaj dane z tabeli"
+     },
+     "kind": "learn",
+     "skill": "ew-table-read",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u9-02",
+     "title": {
+      "pl": "Odczytaj dane z diagramu słupkowego"
+     },
+     "kind": "learn",
+     "skill": "ew-bar-chart",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u9-03",
+     "title": {
+      "pl": "Cennik"
+     },
+     "kind": "learn",
+     "skill": "ew-price-list",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u9-04",
+     "title": {
+      "pl": "Gdzie taniej?"
+     },
+     "kind": "learn",
+     "skill": "ew-compare-sources",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u9-05",
+     "title": {
+      "pl": "Zapisz wyniki w tabeli"
+     },
+     "kind": "learn",
+     "skill": "ew-tally",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u9-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-table-read",
+       "level": 2
+      },
+      {
+       "skill": "ew-bar-chart",
+       "level": 2
+      },
+      {
+       "skill": "ew-price-list",
+       "level": 2
+      },
+      {
+       "skill": "ew-compare-sources",
+       "level": 1
+      },
+      {
+       "skill": "ew-tally",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.4"
+  },
+  {
+   "id": "ew-u10",
+   "title": {
+    "pl": "Zadania z życia"
+   },
+   "description": {
+    "pl": "Rozkład jazdy, przepisy, kalendarz i zadania tekstowe."
+   },
+   "icon": "book",
+   "lessons": [
+    {
+     "id": "ew-u10-01",
+     "title": {
+      "pl": "Rozkład jazdy"
+     },
+     "kind": "learn",
+     "skill": "ew-read-timetable",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-02",
+     "title": {
+      "pl": "Ile minut czekać?"
+     },
+     "kind": "learn",
+     "skill": "ew-wait-minutes",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-03",
+     "title": {
+      "pl": "Przepis kulinarny"
+     },
+     "kind": "learn",
+     "skill": "ew-recipe",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-04",
+     "title": {
+      "pl": "Dni tygodnia"
+     },
+     "kind": "learn",
+     "skill": "ew-calendar-week",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-05",
+     "title": {
+      "pl": "Powtórka: czytamy teksty z liczbami"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "ew-read-timetable",
+       "level": 1
+      },
+      {
+       "skill": "ew-wait-minutes",
+       "level": 1
+      },
+      {
+       "skill": "ew-recipe",
+       "level": 1
+      },
+      {
+       "skill": "ew-calendar-week",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "ew-u10-06",
+     "title": {
+      "pl": "Zadania tekstowe: dodawanie i odejmowanie"
+     },
+     "kind": "learn",
+     "skill": "ew-wp-add-sub",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-07",
+     "title": {
+      "pl": "Zadania tekstowe: mnożenie i dzielenie"
+     },
+     "kind": "learn",
+     "skill": "ew-wp-mul-div",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-08",
+     "title": {
+      "pl": "Zadania tekstowe: dwa kroki"
+     },
+     "kind": "learn",
+     "skill": "ew-wp-two-step",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-09",
+     "title": {
+      "pl": "Kury i króliki"
+     },
+     "kind": "learn",
+     "skill": "ew-puzzle-heads-legs",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u10-10",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-read-timetable",
+       "level": 1
+      },
+      {
+       "skill": "ew-recipe",
+       "level": 2
+      },
+      {
+       "skill": "ew-wp-add-sub",
+       "level": 2
+      },
+      {
+       "skill": "ew-wp-mul-div",
+       "level": 2
+      },
+      {
+       "skill": "ew-wp-two-step",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.5"
+  },
+  {
+   "id": "ew-u11",
+   "title": {
+    "pl": "Myślenie matematyczne"
+   },
+   "description": {
+    "pl": "Rytmy, ciągi, klasyfikowanie, gry i szukanie błędów."
+   },
+   "icon": "brain",
+   "lessons": [
+    {
+     "id": "ew-u11-01",
+     "title": {
+      "pl": "Ciąg liczb: co będzie dalej?"
+     },
+     "kind": "learn",
+     "skill": "ew-sequence",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u11-02",
+     "title": {
+      "pl": "Rytm i powtarzający się wzór"
+     },
+     "kind": "learn",
+     "skill": "ew-rhythm",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u11-03",
+     "title": {
+      "pl": "Co nie pasuje?"
+     },
+     "kind": "learn",
+     "skill": "ew-odd-one-out",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u11-04",
+     "title": {
+      "pl": "Liczba, która nie pasuje"
+     },
+     "kind": "learn",
+     "skill": "ew-odd-one-out-num",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u11-05",
+     "title": {
+      "pl": "Co łączy te liczby?"
+     },
+     "kind": "learn",
+     "skill": "ew-classify-criterion",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u11-06",
+     "title": {
+      "pl": "Gra: kto zabierze ostatni patyczek?"
+     },
+     "kind": "learn",
+     "skill": "ew-nim",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "ew-u11-07",
+     "title": {
+      "pl": "Gry i strategie"
+     },
+     "kind": "learn",
+     "skill": "ew-games",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "ew-u11-08",
+     "title": {
+      "pl": "Oszczędzanie kieszonkowego"
+     },
+     "kind": "learn",
+     "skill": "ew-saving",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "ew-u11-09",
+     "title": {
+      "pl": "Detektyw błędów"
+     },
+     "kind": "learn",
+     "skill": "ew-find-mistake",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "ew-u11-10",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "ew-sequence",
+       "level": 2
+      },
+      {
+       "skill": "ew-rhythm",
+       "level": 2
+      },
+      {
+       "skill": "ew-odd-one-out",
+       "level": 1
+      },
+      {
+       "skill": "ew-odd-one-out-num",
+       "level": 2
+      },
+      {
+       "skill": "ew-nim",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "I-III.5"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-perimeter-unknown",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(3, 20)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 20)"
+  },
+  {
+   "name": "per",
+   "expr": "2 * (a + b)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  }
+ ],
+ "constraints": [
+  "a != b"
+ ],
+ "selfCheck": [
+  "2 * (a + b) == per"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "Obwód prostokąta wynosi @{per} @{un}, a jeden z jego boków ma @{a} @{un}. Ile wynosi długość drugiego boku?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "b"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Obwód prostokąta to 2 · (a + b). Połowa obwodu to a + b."
+   },
+   {
+    "kind": "compute",
+    "text": "@{per} : 2 = @{per // 2}; @{per // 2} − @{a} = @{b}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "half_only",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "per // 2"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "feedback": "To jest suma dwóch różnych boków. Odejmij jeszcze znany bok."
+   }
+  ]
+ }
+}

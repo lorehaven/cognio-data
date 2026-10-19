@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-equation-build",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułóż równanie do zadania"
+ },
+ "objectives": [
+  "IV-VI.3.4"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedno działanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dwa działania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-alg-equation-build.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.3",
+ "prerequisites": [
+  "n46-alg-expression"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby ułożyć równanie, oznacz niewiadomą literą x i zapisz zdania z zadania działaniami. Wynik z zadania stoi po prawej stronie znaku =."
+  }
+ }
+}

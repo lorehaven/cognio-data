@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-coord-distance",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "0",
+    "hi": "12"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "-10",
+    "hi": "10"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "horiz",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "c",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "ax",
+   "expr": "p if horiz else c"
+  },
+  {
+   "name": "ay",
+   "expr": "c if horiz else p"
+  },
+  {
+   "name": "bx",
+   "expr": "q if horiz else c"
+  },
+  {
+   "name": "by",
+   "expr": "c if horiz else q"
+  }
+ ],
+ "constraints": [
+  "p != q"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Punkty A(@{ax}, @{ay}) i B(@{bx}, @{by}) leżą w układzie współrzędnych. Jaka jest długość odcinka AB (w jednostkach układu)?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "abs(p - q)"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Punkty mają jedną współrzędną taką samą, więc leżą na prostej poziomej lub pionowej. Odległość to różnica drugich współrzędnych."
+   },
+   {
+    "kind": "compute",
+    "text": "|@{p} − (@{q})| = @{abs(p - q)}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "sum_instead",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "abs(p) + abs(q)"
+     }
+    },
+    "feedback": "Jeśli obie liczby leżą po tej samej stronie zera, nie dodajemy ich – odejmujemy.",
+    "when": "abs(p) + abs(q) != abs(p - q)"
+   }
+  ]
+ }
+}

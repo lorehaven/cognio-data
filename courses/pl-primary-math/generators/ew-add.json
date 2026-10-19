@@ -1,0 +1,122 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-add",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "alo": "1",
+    "ahi": "9",
+    "blo": "1",
+    "bhi": "9",
+    "cap": "10"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "alo": "2",
+    "ahi": "19",
+    "blo": "2",
+    "bhi": "9",
+    "cap": "20"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "alo": "11",
+    "ahi": "95",
+    "blo": "2",
+    "bhi": "9",
+    "cap": "100"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "alo": "11",
+    "ahi": "89",
+    "blo": "11",
+    "bhi": "89",
+    "cap": "100"
+   }
+  },
+  {
+   "level": 5,
+   "vars": {
+    "alo": "101",
+    "ahi": "899",
+    "blo": "11",
+    "bhi": "99",
+    "cap": "1000"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(alo, ahi)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(blo, bhi)"
+  },
+  {
+   "name": "s",
+   "expr": "a + b"
+  },
+  {
+   "name": "b0",
+   "expr": "b - b % 10"
+  }
+ ],
+ "constraints": [
+  "s <= cap",
+  "b % 10 != 0 or b < 10"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} + @{b}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "s"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Dodajemy dziesiątki, potem jedności.' if b >= 10 else 'Dodajemy po kolei.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a) + ' + ' + str(b0) + ' = ' + str(a + b0) + ', a potem + ' + str(b % 10) + ' = ' + str(s) if b >= 10 and b % 10 != 0 else str(a) + ' + ' + str(b) + ' = ' + str(s))}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "off_by_one",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "s + 1"
+     }
+    },
+    "feedback": "Sprawdź jeszcze raz – możesz policzyć na palcach lub na osi liczbowej."
+   },
+   {
+    "id": "off_by_ten",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "s - 10"
+     }
+    },
+    "feedback": "Pamiętaj o przejściu przez dziesiątkę.",
+    "when": "s > 10"
+   }
+  ]
+ }
+}

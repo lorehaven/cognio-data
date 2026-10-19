@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-compound-to-decimal",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wyrażenia dwumianowane na ułamki dziesiętne"
+ },
+ "objectives": [
+  "IV-VI.2.10"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Metry i centymetry, złote i grosze"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kilogramy i dekagramy, grami"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Kilometry, litry, tony"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-compound-to-decimal.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-dec-to-fraction"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "1 cm to $\\frac{1}{100}$ m, więc 72 cm to 0,72 m. Zamieniając jednostki, przesuwaj przecinek zgodnie z przelicznikiem."
+  }
+ }
+}

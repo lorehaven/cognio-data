@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-reverse",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Działania odwrotne: jaką liczbę pomyślałem?"
+ },
+ "objectives": [
+  "IV-VI.6.1.b",
+  "IV-VI.6.3.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa działania"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy działania"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-wp-reverse.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "prerequisites": [
+  "n46-alg-solve"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby odgadnąć pomyślaną liczbę, cofaj działania od końca: odwrotnością dodawania jest odejmowanie, a mnożenia – dzielenie."
+  }
+ }
+}

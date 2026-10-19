@@ -1,0 +1,149 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyth-basic",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "choice([[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29]])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(1, 4)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['mm', 'cm', 'dm', 'm'])"
+  },
+  {
+   "name": "sw",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "a",
+   "expr": "t[0] * k"
+  },
+  {
+   "name": "b",
+   "expr": "t[1] * k"
+  },
+  {
+   "name": "c",
+   "expr": "t[2] * k"
+  },
+  {
+   "name": "given1",
+   "expr": "a if mode == 1 else a"
+  },
+  {
+   "name": "given2",
+   "expr": "c if mode == 1 else b"
+  },
+  {
+   "name": "ans",
+   "expr": "c if mode == 0 else b"
+  }
+ ],
+ "selfCheck": [
+  "a * a + b * b == c * c"
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{('Przyprostokątne trójkąta prostokątnego mają długości ' + str(a) + ' ' + un + ' i ' + str(b) + ' ' + un + '. Oblicz długość przeciwprostokątnej.') if mode == 0 else ('W trójkącie prostokątnym przeciwprostokątna ma ' + str(c) + ' ' + un + ', a jedna z przyprostokątnych ' + str(a) + ' ' + un + '. Oblicz długość drugiej przyprostokątnej.')}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Twierdzenie Pitagorasa: a² + b² = c², gdzie c to przeciwprostokątna.' if mode == 0 else 'Z a² + b² = c² wynika b² = c² − a². Odejmij kwadraty i wyciągnij pierwiastek.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(a) + '² + ' + str(b) + '² = ' + str(a * a + b * b) + ' = ' + str(c) + '²') if mode == 0 else (str(c) + '² − ' + str(a) + '² = ' + str(c * c - a * a) + ' = ' + str(b) + '²')}"
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "un"
+   }
+  },
+  "errorRules": [
+   {
+    "id": "sum",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "a + b"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "feedback": "To suma długości przyprostokątnych. Zastosuj twierdzenie Pitagorasa: dodaj kwadraty i wyciągnij pierwiastek.",
+    "when": "mode == 0"
+   },
+   {
+    "id": "added_squares",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "isqrt(c * c + a * a) if is_square(c * c + a * a) else c + a"
+     },
+     "unit": {
+      "$expr": "un"
+     }
+    },
+    "feedback": "Przeciwprostokątna jest najdłuższym bokiem – kwadraty odejmujemy, nie dodajemy.",
+    "when": "mode == 1 and is_square(c * c + a * a)"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "right-triangle",
+    "essential": false,
+    "alt": "Trójkąt prostokątny z zaznaczonymi bokami; znak zapytania oznacza szukany bok.",
+    "params": {
+     "a": {
+      "$expr": "a"
+     },
+     "b": {
+      "$expr": "b"
+     },
+     "labels": {
+      "a": {
+       "$expr": "str(a) + ' ' + un"
+      },
+      "b": {
+       "$expr": "(str(b) + ' ' + un) if mode == 0 else '?'"
+      },
+      "c": {
+       "$expr": "'?' if mode == 0 else (str(c) + ' ' + un)"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

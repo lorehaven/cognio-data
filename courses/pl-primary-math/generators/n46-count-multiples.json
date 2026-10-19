@@ -1,0 +1,75 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-count-multiples",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "k",
+   "expr": "randint(3, 9)"
+  },
+  {
+   "name": "k2",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "n",
+   "expr": "randint(30, 150)"
+  },
+  {
+   "name": "digits3",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "q",
+   "expr": "('Ile liczb od 1 do ' + str(n) + ' jest podzielnych przez ' + str(k) + '?') if kind == 0 else (('Ile jest liczb ' + ('trzycyfrowych' if digits3 == 1 else 'dwucyfrowych') + ' podzielnych przez ' + str(k) + '?') if kind == 1 else ('Ile liczb od 1 do ' + str(n) + ' jest podzielnych jednocześnie przez ' + str(k) + ' i przez ' + str(k2) + '?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "n // k if kind == 0 else ((999 // k - 99 // k if digits3 == 1 else 99 // k - 9 // k) if kind == 1 else n // lcm(k, k2))"
+  }
+ ],
+ "constraints": [
+  "k % k2 != 0",
+  "k2 % k != 0",
+  "ans >= 2"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{q}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Takie liczby to kolejne wielokrotności. Sprawdź, ile ich mieści się w podanym zakresie."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-order",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "base",
+   "expr": "randint(1, 9)"
+  },
+  {
+   "name": "ns",
+   "expr": "sample(1, pow(10, k) * 2 - 1, 5)"
+  },
+  {
+   "name": "xs",
+   "expr": "[base + ns[0] / pow(10, k), base + ns[1] / pow(10, k), base + ns[2] / pow(10, k), base + ns[3] / pow(10, k), base + ns[4] / pow(10, k)]"
+  },
+  {
+   "name": "desc",
+   "expr": "randint(0, 1) == 1"
+  }
+ ],
+ "constraints": [
+  "len(xs) == 5",
+  "xs[0] != xs[1]",
+  "xs[0] != xs[2]",
+  "xs[0] != xs[3]",
+  "xs[0] != xs[4]",
+  "xs[1] != xs[2]",
+  "xs[1] != xs[3]",
+  "xs[1] != xs[4]",
+  "xs[2] != xs[3]",
+  "xs[2] != xs[4]",
+  "xs[3] != xs[4]"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "order-items",
+  "prompt": "@{('Ułóż liczby od największej do najmniejszej.' if desc else 'Ułóż liczby od najmniejszej do największej.')}",
+  "answer": {
+   "type": "sequence",
+   "value": {
+    "$expr": "(reverse(sorted(xs)) if desc else sorted(xs))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównuj cyfry od lewej: najpierw część całkowita, potem dziesiąte, setne, tysięczne."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kolejność: @{(reverse(sorted(xs)) if desc else sorted(xs))|list:semi}"
+   }
+  ],
+  "input": {
+   "items": [
+    {
+     "id": {
+      "$expr": "str(xs[0])"
+     },
+     "text": "@{xs[0]|dec}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[1])"
+     },
+     "text": "@{xs[1]|dec}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[2])"
+     },
+     "text": "@{xs[2]|dec}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[3])"
+     },
+     "text": "@{xs[3]|dec}"
+    },
+    {
+     "id": {
+      "$expr": "str(xs[4])"
+     },
+     "text": "@{xs[4]|dec}"
+    }
+   ]
+  }
+ }
+}

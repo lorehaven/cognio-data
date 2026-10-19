@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-real-model",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Zadania z życia: płytki, farba, ogrodzenie"
+ },
+ "objectives": [
+  "VII-VIII.3.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Płytki na podłodze"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Farba na ścianę"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Siatka wokół okrągłego placu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-real-model.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-circle-calc",
+  "n46-area-rect"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zadanie z życia zamień na model geometryczny: policz pole albo obwód, a potem uwzględnij, że płytki czy farbę kupuje się w całych sztukach (zaokrąglij w górę)."
+  }
+ }
+}

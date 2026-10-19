@@ -1,0 +1,111 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-pairs",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "kind": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "kind": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "kind": "2"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "kind": "3"
+   },
+   "minDistinct": 20
+  }
+ ],
+ "vars": [
+  {
+   "name": "al",
+   "expr": "randint(20, 160)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(1, 17) * 10"
+  },
+  {
+   "name": "big",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Kąty α i β są przyległe. Kąt α ma miarę ' + str(al) + '°. Ile stopni ma kąt β?') if kind == 0 else (('Kąty α i β są wierzchołkowe. Kąt α ma miarę ' + str(al) + '°. Ile stopni ma kąt β?') if kind == 1 else (('Dwie proste równoległe przecięto trzecią prostą. Kąt α ma miarę ' + str(al) + '°, a kąt β jest jego kątem ' + choice(['odpowiadającym', 'naprzemianległym']) + '. Ile stopni ma kąt β?') if kind == 2 else ('Kąty przyległe różnią się o ' + str(d) + '°. Ile stopni ma ' + ('większy' if big == 1 else 'mniejszy') + ' z nich?')))"
+  },
+  {
+   "name": "ans",
+   "expr": "180 - al if kind == 0 else (al if kind < 3 else ((180 + d) // 2 if big == 1 else (180 - d) // 2))"
+  }
+ ],
+ "constraints": [
+  "kind != 3 or (180 - d) % 2 == 0",
+  "al != 90"
+ ],
+ "selfCheck": [
+  "ans > 0"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Kąty przyległe razem dają 180°.' if kind == 0 else ('Kąty wierzchołkowe są równe.' if kind == 1 else ('Kąty odpowiadające i naprzemianległe przy prostych równoległych są równe.' if kind == 2 else 'Dwa kąty przyległe dają razem 180°; jeden jest o różnicę większy od drugiego.')))}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}°."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "wrong_relation",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "al if kind == 0 else 180 - al"
+     }
+    },
+    "feedback": "Sprawdź, czy kąty mają być równe (wierzchołkowe, odpowiadające, naprzemianległe), czy mają dawać razem 180° (przyległe).",
+    "when": "kind < 3 and al != 90"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "angle-pair",
+    "essential": false,
+    "alt": "Dwie proste i zaznaczone kąty α i β.",
+    "params": {
+     "kind": {
+      "$expr": "['adjacent', 'vertical', 'corresponding'][kind]"
+     },
+     "alpha": {
+      "$expr": "al"
+     }
+    },
+    "when": "kind < 3"
+   }
+  ]
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-power-calc",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "bmin": "2",
+    "bmax": "5",
+    "emin": "2",
+    "emax": "3"
+   },
+   "minDistinct": 8
+  },
+  {
+   "level": 2,
+   "vars": {
+    "bmin": "6",
+    "bmax": "15",
+    "emin": "2",
+    "emax": "2"
+   },
+   "minDistinct": 10
+  },
+  {
+   "level": 3,
+   "vars": {
+    "bmin": "2",
+    "bmax": "10",
+    "emin": "3",
+    "emax": "5"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "base",
+   "expr": "randint(bmin, bmax)"
+  },
+  {
+   "name": "e",
+   "expr": "randint(emin, emax)"
+  },
+  {
+   "name": "v",
+   "expr": "pow(base, e)"
+  }
+ ],
+ "selfCheck": [
+  "v == product(repeat(base, e))"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: $@{base}^{@{e}}$",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Potęga to iloczyn tylu jednakowych czynników, ile wynosi wykładnik: $@{base}^{@{e}} = @{join(repeat(base, e), \" \\\\cdot \")}$."
+   },
+   {
+    "kind": "conclude",
+    "text": "$@{base}^{@{e}} = @{v|int}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "multiply_exponent",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "base * e"
+     }
+    },
+    "feedback": "Wykładnik mówi, ile razy mnożymy podstawę przez siebie – to nie jest mnożenie przez wykładnik.",
+    "when": "base * e != v"
+   }
+  ]
+ }
+}

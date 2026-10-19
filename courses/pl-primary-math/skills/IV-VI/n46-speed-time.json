@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-speed-time",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Czas: t = s : v"
+ },
+ "objectives": [
+  "IV-VI.2.12"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wynik w godzinach"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wynik w minutach"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-speed-time.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-speed-distance"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Czas = droga : prędkość. Wynik wychodzi w jednostce czasu zgodnej z jednostką prędkości."
+  }
+ }
+}

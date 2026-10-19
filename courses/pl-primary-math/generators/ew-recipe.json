@@ -1,0 +1,73 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-recipe",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "2"
+   },
+   "minDistinct": 20
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "3"
+   },
+   "minDistinct": 20
+  }
+ ],
+ "vars": [
+  {
+   "name": "rec",
+   "expr": "choice([[['naleśnik', 'naleśniki', 'naleśników'], 'mąki', 'g', 25], [['naleśnik', 'naleśniki', 'naleśników'], 'mleka', 'ml', 50], [['babeczka', 'babeczki', 'babeczek'], 'cukru', 'g', 10], [['babeczka', 'babeczki', 'babeczek'], 'masła', 'g', 20], [['porcja kisielu', 'porcje kisielu', 'porcji kisielu'], 'wody', 'ml', 100], [['kanapka', 'kanapki', 'kanapek'], 'szynki', 'g', 15], [['gofr', 'gofry', 'gofrów'], 'mąki', 'g', 30], [['placek', 'placki', 'placków'], 'jabłek', 'g', 40], [['kubek kakao', 'kubki kakao', 'kubków kakao'], 'mleka', 'ml', 200], [['szklanka kompotu', 'szklanki kompotu', 'szklanek kompotu'], 'wody', 'ml', 150]])"
+  },
+  {
+   "name": "base",
+   "expr": "choice([2, 4, 6])"
+  },
+  {
+   "name": "half",
+   "expr": "randint(0, 1) == 1 if f == 3 else False"
+  },
+  {
+   "name": "target",
+   "expr": "base // 2 if half else base * f"
+  },
+  {
+   "name": "per",
+   "expr": "rec[3]"
+  },
+  {
+   "name": "amount",
+   "expr": "per * target"
+  },
+  {
+   "name": "txt",
+   "expr": "'Przepis na ' + pln(base, rec[0]) + ': ' + str(per * base) + ' ' + rec[2] + ' ' + rec[1] + '. Ile ' + rec[2] + ' ' + rec[1] + ' potrzeba na ' + pln(target, rec[0]) + '?'"
+  }
+ ],
+ "constraints": [
+  "target != base"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "amount"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Liczby składników zmieniają się tyle razy, ile razy zmienia się liczba porcji.' if not half else 'Porcji jest dwa razy mniej, więc składników też dwa razy mniej.')}"
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(per * base) + ' · ' + str(f) + ' = ' + str(amount) if not half else str(per * base) + ' : 2 = ' + str(amount))}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-ruler-read",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "start",
+   "expr": "randint(1, 5) if mode == 1 else 0"
+  },
+  {
+   "name": "len",
+   "expr": "randint(2, 12)"
+  }
+ ],
+ "minDistinct": 10,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Ile centymetrów ma odcinek narysowany obok linijki?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "len"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Odczytaj, gdzie odcinek się zaczyna i gdzie kończy. Policz, ile centymetrów jest pomiędzy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odcinek ma @{len} cm."
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "ruler",
+    "essential": true,
+    "alt": "Linijka z odcinkiem.",
+    "params": {
+     "startMm": {
+      "$expr": "start * 10"
+     },
+     "lengthMm": {
+      "$expr": "len * 10"
+     },
+     "unit": "cm"
+    }
+   }
+  ]
+ }
+}

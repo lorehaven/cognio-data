@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-cuboid-surface",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Pole powierzchni prostopadłościanu"
+ },
+ "objectives": [
+  "IV-VI.4.21"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Prostopadłościan"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Sześcian"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Krawędź sześcianu z pola powierzchni"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-cuboid-surface.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-area-rect",
+  "n46-net-solid"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Powierzchnia prostopadłościanu to 6 prostokątów: po dwa o wymiarach a×b, b×c i a×c. Dodaj ich pola."
+  }
+ }
+}

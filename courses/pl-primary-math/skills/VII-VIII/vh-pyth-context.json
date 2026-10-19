@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-pyth-context",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Pitagoras w różnych figurach"
+ },
+ "objectives": [
+  "VII-VIII.3.4",
+  "VII-VIII.3.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przekątna i drabina"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Wysokość trójkąta równoramiennego i bok rombu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-pyth-context.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.3",
+ "prerequisites": [
+  "vh-pyth-basic"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Szukaj trójkąta prostokątnego w rysunku: drabina i ściana, przekątna prostokąta, wysokość trójkąta równoramiennego. Potem zastosuj twierdzenie Pitagorasa."
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-circle-terms",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Okrąg, koło, cięciwa, średnica"
+ },
+ "objectives": [
+  "IV-VI.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Nazwy elementów"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-circle-terms.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-circle-diameter"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Środek okręgu to punkt w jednakowej odległości od okręgu. Promień łączy środek z okręgiem, cięciwa łączy dwa punkty okręgu, a średnica to cięciwa przez środek."
+  }
+ }
+}

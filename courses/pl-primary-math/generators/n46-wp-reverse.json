@@ -1,0 +1,76 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-wp-reverse",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ops": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ops": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 5)"
+  },
+  {
+   "name": "r1",
+   "expr": "x * a"
+  },
+  {
+   "name": "r2",
+   "expr": "r1 + b"
+  },
+  {
+   "name": "r3",
+   "expr": "r2 * c"
+  },
+  {
+   "name": "txt",
+   "expr": "'Pomyślałem liczbę, pomnożyłem ją przez ' + str(a) + ', dodałem ' + str(b) + (', wynik pomnożyłem przez ' + str(c) if ops == 3 else '') + ' i otrzymałem ' + str(r2 if ops == 2 else r3) + '. Jaką liczbę pomyślałem?'"
+  }
+ ],
+ "selfCheck": [
+  "(x * a + b) * (c if ops == 3 else 1) == (r2 if ops == 2 else r3)"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "x"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Cofamy działania od końca: odwrotnością mnożenia jest dzielenie, a dodawania – odejmowanie."
+   },
+   {
+    "kind": "compute",
+    "text": "@{((str(r3) + ' : ' + str(c) + ' = ' + str(r2) + '; ') if ops == 3 else '') + str(r2) + ' − ' + str(b) + ' = ' + str(r1) + '; ' + str(r1) + ' : ' + str(a) + ' = ' + str(x)}"
+   }
+  ]
+ }
+}

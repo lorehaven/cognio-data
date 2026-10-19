@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-triangle-angle",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Trzeci kąt trójkąta"
+ },
+ "objectives": [
+  "IV-VI.4.8"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa znane kąty"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trójkąt prostokątny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Kąty w zależności od siebie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-triangle-angle.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.4",
+ "prerequisites": [
+  "n46-triangle-by-angles"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Suma kątów w trójkącie wynosi 180°. Jeśli znasz dwa kąty, trzeci to 180° minus ich suma."
+  }
+ }
+}

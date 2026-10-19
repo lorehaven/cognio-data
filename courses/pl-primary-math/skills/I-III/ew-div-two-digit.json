@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-two-digit",
+ "stage": "I-III",
+ "title": {
+  "pl": "Dzielenie liczby dwucyfrowej"
+ },
+ "objectives": [
+  "I-III.1.i"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Przez 2 i 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przez 3 i 5"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-div-two-digit.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-div-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzielimy liczbę dwucyfrową przez jednocyfrową krok po kroku. Wynik sprawdź mnożeniem: wynik razy dzielnik ma dać dzielną."
+  }
+ }
+}

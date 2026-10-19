@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-meaning",
+ "stage": "I-III",
+ "title": {
+  "pl": "Podział po równo i mieszczenie"
+ },
+ "objectives": [
+  "I-III.1.h"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 50"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-div-meaning.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-div-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzielenie ma dwa znaczenia. Podział po równo: 12 ciastek dla 3 osób. Mieszczenie: ile razy 3 mieści się w 12 – to też 4."
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-find-mistake",
+ "stage": "I-III",
+ "title": {
+  "pl": "Detektyw błędów"
+ },
+ "objectives": [
+  "I-III.5.d",
+  "I-III.5.c"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Znajdź błąd w rozwiązaniu"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/ew-find-mistake.jsonl"
+  }
+ ],
+ "area": "I-III.5",
+ "tutor": {
+  "intro": {
+   "pl": "Czasem rozwiązanie ma błąd. Czytaj po kolei każdy krok i sprawdzaj go. Możesz też sprawdzić wynik działaniem odwrotnym."
+  }
+ }
+}

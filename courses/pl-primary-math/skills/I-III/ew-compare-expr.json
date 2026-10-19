@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare-expr",
+ "stage": "I-III",
+ "title": {
+  "pl": "Znaki <, > i ="
+ },
+ "objectives": [
+  "I-III.1.m"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dodawanie i odejmowanie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Z mnożeniem"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-compare-expr.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-compare"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Zanim wstawisz znak <, > albo =, policz wartość każdej strony. Dopiero potem porównaj dwa wyniki."
+  }
+ }
+}

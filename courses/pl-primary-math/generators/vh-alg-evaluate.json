@@ -1,0 +1,91 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-evaluate",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "terms": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "terms": "3"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(-4, 4)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(-4, 4)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(-5, 5)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(-5, 5)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(-5, 5)"
+  },
+  {
+   "name": "cs",
+   "expr": "[a, b, c] if terms == 3 else [a, b, 0]"
+  },
+  {
+   "name": "vs",
+   "expr": "['x²', 'xy', 'y']"
+  },
+  {
+   "name": "v",
+   "expr": "cs[0] * x * x + cs[1] * x * y + cs[2] * y"
+  }
+ ],
+ "constraints": [
+  "a != 0 and b != 0",
+  "terms == 2 or c != 0",
+  "x != 0 and y != 0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz wartość wyrażenia @{poly(cs, vs)} dla x = @{x} i y = @{y}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Podstaw liczby w miejsce liter (liczby ujemne wstaw w nawiasach) i wykonaj działania we właściwej kolejności."
+   },
+   {
+    "kind": "compute",
+    "text": "@{(str(cs[0]) + ' · ' + par(x) + '² + ' + par(cs[1]) + ' · ' + par(x) + ' · ' + par(y) + (' + ' + par(cs[2]) + ' · ' + par(y) if terms == 3 else '') + ' = ' + str(v))}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "square_sign",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "cs[0] * (-x * x) + cs[1] * x * y + cs[2] * y"
+     }
+    },
+    "feedback": "Kwadrat liczby ujemnej jest dodatni: (−2)² = 4, a nie −4.",
+    "when": "x < 0 and cs[0] != 0"
+   }
+  ]
+ }
+}

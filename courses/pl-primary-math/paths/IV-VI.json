@@ -1,0 +1,4304 @@
+{
+ "formatVersion": "1.0",
+ "stage": "IV-VI",
+ "entry": "open",
+ "units": [
+  {
+   "id": "n46-u1",
+   "title": {
+    "pl": "Zapis i odczyt liczb"
+   },
+   "description": {
+    "pl": "Czytamy i zapisujemy duże liczby naturalne."
+   },
+   "icon": "numbers",
+   "lessons": [
+    {
+     "id": "n46-u1-01",
+     "title": {
+      "pl": "Zapisz liczbę cyframi"
+     },
+     "kind": "learn",
+     "skill": "n46-write-digits",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u1-02",
+     "title": {
+      "pl": "Przeczytaj liczbę"
+     },
+     "kind": "learn",
+     "skill": "n46-read-number",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u1-03",
+     "title": {
+      "pl": "Cyfra na danym miejscu"
+     },
+     "kind": "learn",
+     "skill": "n46-digit-place",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u1-04",
+     "title": {
+      "pl": "Złóż liczbę z części"
+     },
+     "kind": "learn",
+     "skill": "n46-compose",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u1-05",
+     "title": {
+      "pl": "Powtórka: zapis liczb"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-write-digits",
+       "level": 1
+      },
+      {
+       "skill": "n46-read-number",
+       "level": 1
+      },
+      {
+       "skill": "n46-digit-place",
+       "level": 1
+      },
+      {
+       "skill": "n46-compose",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u1-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-write-digits",
+       "level": 2
+      },
+      {
+       "skill": "n46-read-number",
+       "level": 2
+      },
+      {
+       "skill": "n46-digit-place",
+       "level": 2
+      },
+      {
+       "skill": "n46-compose",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u2",
+   "title": {
+    "pl": "Porównywanie i zaokrąglanie"
+   },
+   "description": {
+    "pl": "Porównujemy liczby, ustawiamy je w kolejności, zaznaczamy na osi i zaokrąglamy."
+   },
+   "icon": "compare",
+   "lessons": [
+    {
+     "id": "n46-u2-01",
+     "title": {
+      "pl": "Porównywanie liczb naturalnych"
+     },
+     "kind": "learn",
+     "skill": "n46-compare",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u2-02",
+     "title": {
+      "pl": "Ustaw liczby w kolejności"
+     },
+     "kind": "learn",
+     "skill": "n46-order",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u2-03",
+     "title": {
+      "pl": "Liczba na osi liczbowej"
+     },
+     "kind": "learn",
+     "skill": "n46-number-line",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "n46-u2-04",
+     "title": {
+      "pl": "Zaokrąglanie liczb naturalnych"
+     },
+     "kind": "learn",
+     "skill": "n46-rounding",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u2-05",
+     "title": {
+      "pl": "O ile większa, o ile mniejsza"
+     },
+     "kind": "learn",
+     "skill": "n46-diff",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u2-06",
+     "title": {
+      "pl": "Ile razy większa, ile razy mniejsza"
+     },
+     "kind": "learn",
+     "skill": "n46-ratio",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u2-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-compare",
+       "level": 2
+      },
+      {
+       "skill": "n46-order",
+       "level": 2
+      },
+      {
+       "skill": "n46-number-line",
+       "level": 2
+      },
+      {
+       "skill": "n46-rounding",
+       "level": 2
+      },
+      {
+       "skill": "n46-diff",
+       "level": 2
+      },
+      {
+       "skill": "n46-ratio",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u3",
+   "title": {
+    "pl": "Liczby rzymskie"
+   },
+   "description": {
+    "pl": "Zamieniamy liczby rzymskie na dziesiątkowe i odwrotnie."
+   },
+   "icon": "roman",
+   "lessons": [
+    {
+     "id": "n46-u3-01",
+     "title": {
+      "pl": "Z rzymskich na dziesiątkowe"
+     },
+     "kind": "learn",
+     "skill": "n46-roman-read",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u3-02",
+     "title": {
+      "pl": "Z dziesiątkowych na rzymskie"
+     },
+     "kind": "learn",
+     "skill": "n46-roman-write",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u3-03",
+     "title": {
+      "pl": "Powtórka: liczby rzymskie"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-roman-read",
+       "level": 1
+      },
+      {
+       "skill": "n46-roman-write",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u3-04",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-roman-read",
+       "level": 2
+      },
+      {
+       "skill": "n46-roman-write",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u4",
+   "title": {
+    "pl": "Dodawanie i odejmowanie"
+   },
+   "description": {
+    "pl": "Rachunki w pamięci i pisemnie."
+   },
+   "icon": "plusminus",
+   "lessons": [
+    {
+     "id": "n46-u4-01",
+     "title": {
+      "pl": "Dodawanie w pamięci"
+     },
+     "kind": "learn",
+     "skill": "n46-add-mental",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u4-02",
+     "title": {
+      "pl": "Odejmowanie w pamięci"
+     },
+     "kind": "learn",
+     "skill": "n46-sub-mental",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u4-03",
+     "title": {
+      "pl": "Powtórka: w pamięci"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-add-mental",
+       "level": 1
+      },
+      {
+       "skill": "n46-sub-mental",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u4-04",
+     "title": {
+      "pl": "Dodawanie pisemne"
+     },
+     "kind": "learn",
+     "skill": "n46-add-written",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u4-05",
+     "title": {
+      "pl": "Odejmowanie pisemne"
+     },
+     "kind": "learn",
+     "skill": "n46-sub-written",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u4-06",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-add-mental",
+       "level": 2
+      },
+      {
+       "skill": "n46-sub-mental",
+       "level": 2
+      },
+      {
+       "skill": "n46-add-written",
+       "level": 2
+      },
+      {
+       "skill": "n46-sub-written",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u5",
+   "title": {
+    "pl": "Mnożenie i dzielenie"
+   },
+   "description": {
+    "pl": "Mnożymy i dzielimy liczby naturalne, także z resztą, i liczymy sprytnie."
+   },
+   "icon": "timesdiv",
+   "lessons": [
+    {
+     "id": "n46-u5-01",
+     "title": {
+      "pl": "Mnożenie liczb naturalnych"
+     },
+     "kind": "learn",
+     "skill": "n46-mul",
+     "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u5-02",
+     "title": {
+      "pl": "Dzielenie liczb naturalnych"
+     },
+     "kind": "learn",
+     "skill": "n46-div",
+     "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u5-03",
+     "title": {
+      "pl": "Podział czy mieszczenie?"
+     },
+     "kind": "learn",
+     "skill": "n46-div-meaning",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u5-04",
+     "title": {
+      "pl": "Dzielenie z resztą"
+     },
+     "kind": "learn",
+     "skill": "n46-div-rem",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u5-05",
+     "title": {
+      "pl": "Powtórka: mnożenie i dzielenie"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-mul",
+       "level": 1
+      },
+      {
+       "skill": "n46-div",
+       "level": 1
+      },
+      {
+       "skill": "n46-div-meaning",
+       "level": 1
+      },
+      {
+       "skill": "n46-div-rem",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u5-06",
+     "title": {
+      "pl": "Wygodne mnożenie: łączność"
+     },
+     "kind": "learn",
+     "skill": "n46-strat-assoc",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "n46-u5-07",
+     "title": {
+      "pl": "Wygodne mnożenie: blisko 100"
+     },
+     "kind": "learn",
+     "skill": "n46-strat-near",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u5-08",
+     "title": {
+      "pl": "Wygodne mnożenie: rozbicie liczby"
+     },
+     "kind": "learn",
+     "skill": "n46-strat-split",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u5-09",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-mul",
+       "level": 2
+      },
+      {
+       "skill": "n46-div",
+       "level": 2
+      },
+      {
+       "skill": "n46-div-rem",
+       "level": 2
+      },
+      {
+       "skill": "n46-strat-assoc",
+       "level": 2
+      },
+      {
+       "skill": "n46-strat-near",
+       "level": 2
+      },
+      {
+       "skill": "n46-strat-split",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u6",
+   "title": {
+    "pl": "Kolejność działań, szacowanie, potęgi"
+   },
+   "description": {
+    "pl": "Obliczamy w dobrej kolejności, szacujemy wyniki i poznajemy potęgi."
+   },
+   "icon": "calculator",
+   "lessons": [
+    {
+     "id": "n46-u6-01",
+     "title": {
+      "pl": "Kolejność wykonywania działań"
+     },
+     "kind": "learn",
+     "skill": "n46-order-ops",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u6-02",
+     "title": {
+      "pl": "Oszacuj iloczyn"
+     },
+     "kind": "learn",
+     "skill": "n46-estimate-product",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u6-03",
+     "title": {
+      "pl": "Oszacuj sumę lub różnicę"
+     },
+     "kind": "learn",
+     "skill": "n46-estimate-sum",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u6-04",
+     "title": {
+      "pl": "Powtórka: działania"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-order-ops",
+       "level": 1
+      },
+      {
+       "skill": "n46-estimate-product",
+       "level": 1
+      },
+      {
+       "skill": "n46-estimate-sum",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u6-05",
+     "title": {
+      "pl": "Obliczanie potęg"
+     },
+     "kind": "learn",
+     "skill": "n46-power-calc",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "n46-u6-06",
+     "title": {
+      "pl": "Kwadraty i sześciany liczb"
+     },
+     "kind": "learn",
+     "skill": "n46-power-recognize",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u6-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-order-ops",
+       "level": 2
+      },
+      {
+       "skill": "n46-estimate-product",
+       "level": 2
+      },
+      {
+       "skill": "n46-estimate-sum",
+       "level": 2
+      },
+      {
+       "skill": "n46-power-calc",
+       "level": 2
+      },
+      {
+       "skill": "n46-power-recognize",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u7",
+   "title": {
+    "pl": "Podzielność i liczby pierwsze"
+   },
+   "description": {
+    "pl": "Cechy podzielności, liczby pierwsze i rozkład na czynniki pierwsze."
+   },
+   "icon": "divide",
+   "lessons": [
+    {
+     "id": "n46-u7-01",
+     "title": {
+      "pl": "Która liczba jest podzielna?"
+     },
+     "kind": "learn",
+     "skill": "n46-divisible-pick",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-02",
+     "title": {
+      "pl": "Czy liczba jest podzielna?"
+     },
+     "kind": "learn",
+     "skill": "n46-divisible-yesno",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-03",
+     "title": {
+      "pl": "Brakująca cyfra"
+     },
+     "kind": "learn",
+     "skill": "n46-divisible-digit",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-04",
+     "title": {
+      "pl": "Powtórka: podzielność"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-divisible-pick",
+       "level": 1
+      },
+      {
+       "skill": "n46-divisible-yesno",
+       "level": 1
+      },
+      {
+       "skill": "n46-divisible-digit",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u7-05",
+     "title": {
+      "pl": "Liczby pierwsze i złożone"
+     },
+     "kind": "learn",
+     "skill": "n46-prime-pick",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-06",
+     "title": {
+      "pl": "Najmniejszy dzielnik większy od 1"
+     },
+     "kind": "learn",
+     "skill": "n46-smallest-divisor",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-07",
+     "title": {
+      "pl": "Rozkład na czynniki pierwsze"
+     },
+     "kind": "learn",
+     "skill": "n46-factorization-pick",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-08",
+     "title": {
+      "pl": "Czynniki pierwsze: pytania"
+     },
+     "kind": "learn",
+     "skill": "n46-factorization-fact",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u7-09",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-divisible-pick",
+       "level": 2
+      },
+      {
+       "skill": "n46-divisible-digit",
+       "level": 2
+      },
+      {
+       "skill": "n46-prime-pick",
+       "level": 2
+      },
+      {
+       "skill": "n46-smallest-divisor",
+       "level": 2
+      },
+      {
+       "skill": "n46-factorization-pick",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u8",
+   "title": {
+    "pl": "NWD i NWW"
+   },
+   "description": {
+    "pl": "Wspólne dzielniki i wielokrotności oraz zadania z ich użyciem."
+   },
+   "icon": "overlap",
+   "lessons": [
+    {
+     "id": "n46-u8-01",
+     "title": {
+      "pl": "Największy wspólny dzielnik"
+     },
+     "kind": "learn",
+     "skill": "n46-gcd",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u8-02",
+     "title": {
+      "pl": "Najmniejsza wspólna wielokrotność"
+     },
+     "kind": "learn",
+     "skill": "n46-lcm",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u8-03",
+     "title": {
+      "pl": "Wspólne dzielniki"
+     },
+     "kind": "learn",
+     "skill": "n46-common-divisors",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u8-04",
+     "title": {
+      "pl": "Powtórka: NWD i NWW"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-gcd",
+       "level": 1
+      },
+      {
+       "skill": "n46-lcm",
+       "level": 1
+      },
+      {
+       "skill": "n46-common-divisors",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u8-05",
+     "title": {
+      "pl": "Dzielniki i wielokrotności w zadaniach"
+     },
+     "kind": "learn",
+     "skill": "n46-gcd-lcm-word",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u8-06",
+     "title": {
+      "pl": "Ile jest takich liczb?"
+     },
+     "kind": "learn",
+     "skill": "n46-count-multiples",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "n46-u8-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-gcd",
+       "level": 2
+      },
+      {
+       "skill": "n46-lcm",
+       "level": 2
+      },
+      {
+       "skill": "n46-common-divisors",
+       "level": 2
+      },
+      {
+       "skill": "n46-gcd-lcm-word",
+       "level": 2
+      },
+      {
+       "skill": "n46-count-multiples",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u9",
+   "title": {
+    "pl": "Liczby całkowite"
+   },
+   "description": {
+    "pl": "Liczby ujemne, ich porównywanie i rachunki na osi liczbowej."
+   },
+   "icon": "negative",
+   "lessons": [
+    {
+     "id": "n46-u9-01",
+     "title": {
+      "pl": "Liczby ujemne w życiu"
+     },
+     "kind": "learn",
+     "skill": "n46-int-context",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u9-02",
+     "title": {
+      "pl": "Porównywanie liczb całkowitych"
+     },
+     "kind": "learn",
+     "skill": "n46-int-compare",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u9-03",
+     "title": {
+      "pl": "Ustaw liczby całkowite w kolejności"
+     },
+     "kind": "learn",
+     "skill": "n46-int-order",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u9-04",
+     "title": {
+      "pl": "Odległość na osi liczbowej"
+     },
+     "kind": "learn",
+     "skill": "n46-int-distance",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u9-05",
+     "title": {
+      "pl": "Powtórka: liczby ujemne"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-int-context",
+       "level": 1
+      },
+      {
+       "skill": "n46-int-compare",
+       "level": 1
+      },
+      {
+       "skill": "n46-int-order",
+       "level": 1
+      },
+      {
+       "skill": "n46-int-distance",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u9-06",
+     "title": {
+      "pl": "Dodawanie i odejmowanie liczb całkowitych"
+     },
+     "kind": "learn",
+     "skill": "n46-int-addsub",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u9-07",
+     "title": {
+      "pl": "Mnożenie i dzielenie liczb całkowitych"
+     },
+     "kind": "learn",
+     "skill": "n46-int-muldiv",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u9-08",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-int-context",
+       "level": 2
+      },
+      {
+       "skill": "n46-int-compare",
+       "level": 2
+      },
+      {
+       "skill": "n46-int-order",
+       "level": 2
+      },
+      {
+       "skill": "n46-int-distance",
+       "level": 2
+      },
+      {
+       "skill": "n46-int-addsub",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u10",
+   "title": {
+    "pl": "Ułamki zwykłe – pojęcie"
+   },
+   "description": {
+    "pl": "Część całości, skracanie, rozszerzanie, liczby mieszane i oś liczbowa."
+   },
+   "icon": "pie",
+   "lessons": [
+    {
+     "id": "n46-u10-01",
+     "title": {
+      "pl": "Jaka część figury?"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-part-figure",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-02",
+     "title": {
+      "pl": "Jaka część zbioru?"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-part-set",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-03",
+     "title": {
+      "pl": "Ułamek jako iloraz"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-quotient",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-04",
+     "title": {
+      "pl": "Skracanie ułamków"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-simplify",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-05",
+     "title": {
+      "pl": "Rozszerzanie ułamków"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-extend",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-06",
+     "title": {
+      "pl": "Wspólny mianownik"
+     },
+     "kind": "learn",
+     "skill": "n46-lcd",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-07",
+     "title": {
+      "pl": "Powtórka: pojęcie ułamka"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-frac-part-figure",
+       "level": 1
+      },
+      {
+       "skill": "n46-frac-part-set",
+       "level": 1
+      },
+      {
+       "skill": "n46-frac-simplify",
+       "level": 1
+      },
+      {
+       "skill": "n46-frac-extend",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u10-08",
+     "title": {
+      "pl": "Ułamek niewłaściwy na liczbę mieszaną"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-to-mixed",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-09",
+     "title": {
+      "pl": "Liczba mieszana na ułamek niewłaściwy"
+     },
+     "kind": "learn",
+     "skill": "n46-mixed-to-frac",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-10",
+     "title": {
+      "pl": "Ułamek na osi liczbowej"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-number-line",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u10-11",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-frac-part-set",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-simplify",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-extend",
+       "level": 2
+      },
+      {
+       "skill": "n46-lcd",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-to-mixed",
+       "level": 2
+      },
+      {
+       "skill": "n46-mixed-to-frac",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-number-line",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u11",
+   "title": {
+    "pl": "Porównywanie ułamków"
+   },
+   "description": {
+    "pl": "Który ułamek jest większy i o ile?"
+   },
+   "icon": "scale",
+   "lessons": [
+    {
+     "id": "n46-u11-01",
+     "title": {
+      "pl": "Porównywanie ułamków zwykłych"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-compare",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u11-02",
+     "title": {
+      "pl": "Ustaw ułamki w kolejności"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-order",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u11-03",
+     "title": {
+      "pl": "O ile jeden ułamek jest większy od drugiego?"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-diff",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u11-04",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-frac-compare",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-order",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-diff",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u12",
+   "title": {
+    "pl": "Działania na ułamkach zwykłych"
+   },
+   "description": {
+    "pl": "Dodajemy, odejmujemy, mnożymy i dzielimy ułamki i liczby mieszane."
+   },
+   "icon": "fractions",
+   "lessons": [
+    {
+     "id": "n46-u12-01",
+     "title": {
+      "pl": "Dodawanie i odejmowanie ułamków"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-addsub",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u12-02",
+     "title": {
+      "pl": "Liczby mieszane: dodawanie i odejmowanie"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-addsub-mixed",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u12-03",
+     "title": {
+      "pl": "Powtórka: dodawanie i odejmowanie"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-frac-addsub",
+       "level": 1
+      },
+      {
+       "skill": "n46-frac-addsub-mixed",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u12-04",
+     "title": {
+      "pl": "Mnożenie ułamków"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-mul",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u12-05",
+     "title": {
+      "pl": "Dzielenie ułamków"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-div",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u12-06",
+     "title": {
+      "pl": "Ułamek danej liczby"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-of-number",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u12-07",
+     "title": {
+      "pl": "Ułamek wielkości w zadaniach"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-of-quantity",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u12-08",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-frac-addsub",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-addsub-mixed",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-mul",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-div",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-of-number",
+       "level": 2
+      },
+      {
+       "skill": "n46-frac-of-quantity",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u13",
+   "title": {
+    "pl": "Ułamki dziesiętne – zapis"
+   },
+   "description": {
+    "pl": "Miejsca po przecinku, zamiana na ułamki zwykłe, porównywanie i zaokrąglanie."
+   },
+   "icon": "decimal",
+   "lessons": [
+    {
+     "id": "n46-u13-01",
+     "title": {
+      "pl": "Cyfra na miejscu dziesiętnym"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-place-value",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-02",
+     "title": {
+      "pl": "Ułamek zwykły na dziesiętny"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-from-fraction",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-03",
+     "title": {
+      "pl": "Ułamek dziesiętny na zwykły"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-to-fraction",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-04",
+     "title": {
+      "pl": "Ułamek dziesiętny na liczbę mieszaną"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-to-mixed",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-05",
+     "title": {
+      "pl": "Powtórka: zapis dziesiętny"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-dec-place-value",
+       "level": 1
+      },
+      {
+       "skill": "n46-dec-from-fraction",
+       "level": 1
+      },
+      {
+       "skill": "n46-dec-to-fraction",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u13-06",
+     "title": {
+      "pl": "Porównywanie ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-compare",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-07",
+     "title": {
+      "pl": "Ustaw ułamki dziesiętne w kolejności"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-order",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-08",
+     "title": {
+      "pl": "Ułamek zwykły czy dziesiętny – który większy?"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-vs-fraction",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-09",
+     "title": {
+      "pl": "Ułamek dziesiętny na osi liczbowej"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-number-line",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-10",
+     "title": {
+      "pl": "Zaokrąglanie ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-round",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u13-11",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-dec-place-value",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-from-fraction",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-to-fraction",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-compare",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-order",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-round",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u14",
+   "title": {
+    "pl": "Działania na ułamkach dziesiętnych"
+   },
+   "description": {
+    "pl": "Dodajemy, odejmujemy, mnożymy i dzielimy ułamki dziesiętne."
+   },
+   "icon": "calc-decimal",
+   "lessons": [
+    {
+     "id": "n46-u14-01",
+     "title": {
+      "pl": "Dodawanie ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-add",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-02",
+     "title": {
+      "pl": "Odejmowanie ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-sub",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-03",
+     "title": {
+      "pl": "Mnożenie ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-mul",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-04",
+     "title": {
+      "pl": "Mnożenie i dzielenie przez 10, 100, 1000"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-shift",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-05",
+     "title": {
+      "pl": "Powtórka: dodawanie, odejmowanie, mnożenie"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-dec-add",
+       "level": 1
+      },
+      {
+       "skill": "n46-dec-sub",
+       "level": 1
+      },
+      {
+       "skill": "n46-dec-mul",
+       "level": 1
+      },
+      {
+       "skill": "n46-dec-shift",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u14-06",
+     "title": {
+      "pl": "Dzielenie ułamka dziesiętnego przez liczbę naturalną"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-div-nat",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-07",
+     "title": {
+      "pl": "Dzielenie przez ułamek dziesiętny"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-div-dec",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-08",
+     "title": {
+      "pl": "Rozwinięcie dziesiętne nieskończone"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-infinite",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-09",
+     "title": {
+      "pl": "Zaokrąglanie rozwinięcia nieskończonego"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-infinite-round",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-10",
+     "title": {
+      "pl": "Potęgi ułamków dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-dec-power",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "n46-u14-11",
+     "title": {
+      "pl": "Potęgi ułamków zwykłych"
+     },
+     "kind": "learn",
+     "skill": "n46-frac-power",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "n46-u14-12",
+     "title": {
+      "pl": "Działania na ułamkach zwykłych i dziesiętnych"
+     },
+     "kind": "learn",
+     "skill": "n46-rational-mix",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u14-13",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-dec-add",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-sub",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-mul",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-div-nat",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-div-dec",
+       "level": 2
+      },
+      {
+       "skill": "n46-dec-infinite-round",
+       "level": 2
+      },
+      {
+       "skill": "n46-rational-mix",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u15",
+   "title": {
+    "pl": "Procenty"
+   },
+   "description": {
+    "pl": "Procent jako część całości, procent z liczby i obniżki."
+   },
+   "icon": "percent",
+   "lessons": [
+    {
+     "id": "n46-u15-01",
+     "title": {
+      "pl": "1%, 10%, 25%, 50% i 100% jako ułamek"
+     },
+     "kind": "learn",
+     "skill": "n46-percent-fraction",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u15-02",
+     "title": {
+      "pl": "Procent z liczby: 50%, 25%, 10%, 1%"
+     },
+     "kind": "learn",
+     "skill": "n46-percent-key",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u15-03",
+     "title": {
+      "pl": "Procent danej wielkości w zadaniach"
+     },
+     "kind": "learn",
+     "skill": "n46-percent-of",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u15-04",
+     "title": {
+      "pl": "Cena po obniżce"
+     },
+     "kind": "learn",
+     "skill": "n46-price-after-discount",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u15-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-percent-fraction",
+       "level": 2
+      },
+      {
+       "skill": "n46-percent-key",
+       "level": 2
+      },
+      {
+       "skill": "n46-percent-of",
+       "level": 2
+      },
+      {
+       "skill": "n46-price-after-discount",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u16",
+   "title": {
+    "pl": "Zakupy i pieniądze"
+   },
+   "description": {
+    "pl": "Koszty, promocje, cena jednostkowa, kieszonkowe i kursy walut."
+   },
+   "icon": "wallet",
+   "lessons": [
+    {
+     "id": "n46-u16-01",
+     "title": {
+      "pl": "Koszt zakupu kilku sztuk"
+     },
+     "kind": "learn",
+     "skill": "n46-total-cost",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u16-02",
+     "title": {
+      "pl": "Cena jednostkowa i opłacalność"
+     },
+     "kind": "learn",
+     "skill": "n46-unit-price",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u16-03",
+     "title": {
+      "pl": "Promocje: co się bardziej opłaca?"
+     },
+     "kind": "learn",
+     "skill": "n46-offer-compare",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u16-04",
+     "title": {
+      "pl": "Powtórka: zakupy"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-total-cost",
+       "level": 1
+      },
+      {
+       "skill": "n46-unit-price",
+       "level": 1
+      },
+      {
+       "skill": "n46-offer-compare",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u16-05",
+     "title": {
+      "pl": "Kieszonkowe i oszczędzanie"
+     },
+     "kind": "learn",
+     "skill": "n46-budget",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u16-06",
+     "title": {
+      "pl": "Wymiana walut"
+     },
+     "kind": "learn",
+     "skill": "n46-exchange",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u16-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-total-cost",
+       "level": 2
+      },
+      {
+       "skill": "n46-unit-price",
+       "level": 2
+      },
+      {
+       "skill": "n46-offer-compare",
+       "level": 2
+      },
+      {
+       "skill": "n46-budget",
+       "level": 2
+      },
+      {
+       "skill": "n46-exchange",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.1"
+  },
+  {
+   "id": "n46-u17",
+   "title": {
+    "pl": "Jednostki miar"
+   },
+   "description": {
+    "pl": "Długość, masa, pojemność i pole: przeliczamy jednostki."
+   },
+   "icon": "ruler",
+   "lessons": [
+    {
+     "id": "n46-u17-01",
+     "title": {
+      "pl": "Jednostki długości"
+     },
+     "kind": "learn",
+     "skill": "n46-len-units",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u17-02",
+     "title": {
+      "pl": "Jednostki masy"
+     },
+     "kind": "learn",
+     "skill": "n46-mass-units",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u17-03",
+     "title": {
+      "pl": "Jednostki objętości i pojemności"
+     },
+     "kind": "learn",
+     "skill": "n46-capacity-units",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u17-04",
+     "title": {
+      "pl": "Jednostki pola"
+     },
+     "kind": "learn",
+     "skill": "n46-area-units",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u17-05",
+     "title": {
+      "pl": "Powtórka: jednostki"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-len-units",
+       "level": 1
+      },
+      {
+       "skill": "n46-mass-units",
+       "level": 1
+      },
+      {
+       "skill": "n46-capacity-units",
+       "level": 1
+      },
+      {
+       "skill": "n46-area-units",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u17-06",
+     "title": {
+      "pl": "Wyrażenia dwumianowane na ułamki dziesiętne"
+     },
+     "kind": "learn",
+     "skill": "n46-compound-to-decimal",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u17-07",
+     "title": {
+      "pl": "Ułamki dziesiętne na wyrażenia dwumianowane"
+     },
+     "kind": "learn",
+     "skill": "n46-decimal-to-compound",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u17-08",
+     "title": {
+      "pl": "Jaka jednostka pasuje?"
+     },
+     "kind": "learn",
+     "skill": "n46-choose-unit",
+     "levels": [
+      1
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "n46-u17-09",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-len-units",
+       "level": 2
+      },
+      {
+       "skill": "n46-mass-units",
+       "level": 2
+      },
+      {
+       "skill": "n46-capacity-units",
+       "level": 2
+      },
+      {
+       "skill": "n46-area-units",
+       "level": 2
+      },
+      {
+       "skill": "n46-compound-to-decimal",
+       "level": 2
+      },
+      {
+       "skill": "n46-decimal-to-compound",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.2"
+  },
+  {
+   "id": "n46-u18",
+   "title": {
+    "pl": "Czas i kalendarz"
+   },
+   "description": {
+    "pl": "Godziny, minuty, dni, tygodnie i miesiące."
+   },
+   "icon": "clock",
+   "lessons": [
+    {
+     "id": "n46-u18-01",
+     "title": {
+      "pl": "Jednostki czasu"
+     },
+     "kind": "learn",
+     "skill": "n46-time-units",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u18-02",
+     "title": {
+      "pl": "O której godzinie?"
+     },
+     "kind": "learn",
+     "skill": "n46-clock-end",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u18-03",
+     "title": {
+      "pl": "Kiedy wyjść z domu?"
+     },
+     "kind": "learn",
+     "skill": "n46-clock-start",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u18-04",
+     "title": {
+      "pl": "Ile to trwało?"
+     },
+     "kind": "learn",
+     "skill": "n46-clock-duration",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u18-05",
+     "title": {
+      "pl": "Dni, tygodnie i miesiące"
+     },
+     "kind": "learn",
+     "skill": "n46-calendar-weeks",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u18-06",
+     "title": {
+      "pl": "Jaki to będzie dzień tygodnia?"
+     },
+     "kind": "learn",
+     "skill": "n46-calendar-weekday",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u18-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-time-units",
+       "level": 2
+      },
+      {
+       "skill": "n46-clock-end",
+       "level": 2
+      },
+      {
+       "skill": "n46-clock-start",
+       "level": 2
+      },
+      {
+       "skill": "n46-clock-duration",
+       "level": 2
+      },
+      {
+       "skill": "n46-calendar-weeks",
+       "level": 2
+      },
+      {
+       "skill": "n46-calendar-weekday",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.2"
+  },
+  {
+   "id": "n46-u19",
+   "title": {
+    "pl": "Skala, prędkość i pomiary"
+   },
+   "description": {
+    "pl": "Plany i mapy, droga, prędkość, czas oraz odczyty z przyrządów."
+   },
+   "icon": "map",
+   "lessons": [
+    {
+     "id": "n46-u19-01",
+     "title": {
+      "pl": "Skala: odległość w rzeczywistości"
+     },
+     "kind": "learn",
+     "skill": "n46-scale-real",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u19-02",
+     "title": {
+      "pl": "Skala: odległość na mapie"
+     },
+     "kind": "learn",
+     "skill": "n46-scale-map",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u19-03",
+     "title": {
+      "pl": "Droga: s = v · t"
+     },
+     "kind": "learn",
+     "skill": "n46-speed-distance",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u19-04",
+     "title": {
+      "pl": "Prędkość: v = s : t"
+     },
+     "kind": "learn",
+     "skill": "n46-speed-velocity",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u19-05",
+     "title": {
+      "pl": "Czas: t = s : v"
+     },
+     "kind": "learn",
+     "skill": "n46-speed-time",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u19-06",
+     "title": {
+      "pl": "m/s i km/h"
+     },
+     "kind": "learn",
+     "skill": "n46-speed-units",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "n46-u19-07",
+     "title": {
+      "pl": "Odczytaj długość z linijki"
+     },
+     "kind": "learn",
+     "skill": "n46-ruler-read",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "n46-u19-08",
+     "title": {
+      "pl": "Odczytaj miarę kąta"
+     },
+     "kind": "learn",
+     "skill": "n46-protractor-read",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u19-09",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-scale-real",
+       "level": 2
+      },
+      {
+       "skill": "n46-scale-map",
+       "level": 2
+      },
+      {
+       "skill": "n46-speed-distance",
+       "level": 2
+      },
+      {
+       "skill": "n46-speed-velocity",
+       "level": 2
+      },
+      {
+       "skill": "n46-speed-time",
+       "level": 2
+      },
+      {
+       "skill": "n46-speed-units",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.2"
+  },
+  {
+   "id": "n46-u20",
+   "title": {
+    "pl": "Litery zamiast liczb"
+   },
+   "description": {
+    "pl": "Wyrażenia algebraiczne, wzory i równania."
+   },
+   "icon": "algebra",
+   "lessons": [
+    {
+     "id": "n46-u20-01",
+     "title": {
+      "pl": "Wyrażenie algebraiczne z treści zadania"
+     },
+     "kind": "learn",
+     "skill": "n46-alg-expression",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u20-02",
+     "title": {
+      "pl": "Wartość wyrażenia algebraicznego"
+     },
+     "kind": "learn",
+     "skill": "n46-alg-evaluate",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u20-03",
+     "title": {
+      "pl": "Obliczanie ze wzoru"
+     },
+     "kind": "learn",
+     "skill": "n46-alg-formula",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u20-04",
+     "title": {
+      "pl": "Powtórka: wyrażenia i wzory"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-alg-expression",
+       "level": 1
+      },
+      {
+       "skill": "n46-alg-evaluate",
+       "level": 1
+      },
+      {
+       "skill": "n46-alg-formula",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u20-05",
+     "title": {
+      "pl": "Ułóż równanie do zadania"
+     },
+     "kind": "learn",
+     "skill": "n46-alg-equation-build",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u20-06",
+     "title": {
+      "pl": "Rozwiązywanie prostych równań"
+     },
+     "kind": "learn",
+     "skill": "n46-alg-solve",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u20-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-alg-expression",
+       "level": 2
+      },
+      {
+       "skill": "n46-alg-evaluate",
+       "level": 2
+      },
+      {
+       "skill": "n46-alg-formula",
+       "level": 2
+      },
+      {
+       "skill": "n46-alg-equation-build",
+       "level": 2
+      },
+      {
+       "skill": "n46-alg-solve",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.3"
+  },
+  {
+   "id": "n46-u21",
+   "title": {
+    "pl": "Dane i statystyka"
+   },
+   "description": {
+    "pl": "Tabele, diagramy, wykresy, ankiety, średnia i wydatki."
+   },
+   "icon": "chart",
+   "lessons": [
+    {
+     "id": "n46-u21-01",
+     "title": {
+      "pl": "Odczytaj dane z tabeli"
+     },
+     "kind": "learn",
+     "skill": "n46-table-read",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-02",
+     "title": {
+      "pl": "Odczytaj dane z diagramu słupkowego"
+     },
+     "kind": "learn",
+     "skill": "n46-bar-chart",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-03",
+     "title": {
+      "pl": "Odczytaj dane z wykresu liniowego"
+     },
+     "kind": "learn",
+     "skill": "n46-line-chart",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-04",
+     "title": {
+      "pl": "Paragon sklepowy"
+     },
+     "kind": "learn",
+     "skill": "n46-receipt",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-05",
+     "title": {
+      "pl": "Powtórka: odczyt danych"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-table-read",
+       "level": 1
+      },
+      {
+       "skill": "n46-bar-chart",
+       "level": 1
+      },
+      {
+       "skill": "n46-line-chart",
+       "level": 1
+      },
+      {
+       "skill": "n46-receipt",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u21-06",
+     "title": {
+      "pl": "Wyniki ankiety"
+     },
+     "kind": "learn",
+     "skill": "n46-survey-tally",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-07",
+     "title": {
+      "pl": "Średnia arytmetyczna"
+     },
+     "kind": "learn",
+     "skill": "n46-mean",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-08",
+     "title": {
+      "pl": "Średnie wydatki"
+     },
+     "kind": "learn",
+     "skill": "n46-expenses-average",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-09",
+     "title": {
+      "pl": "Czy budżet wystarczy?"
+     },
+     "kind": "learn",
+     "skill": "n46-expenses-decision",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-10",
+     "title": {
+      "pl": "Który abonament się opłaca?"
+     },
+     "kind": "learn",
+     "skill": "n46-plan-compare",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u21-11",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-table-read",
+       "level": 2
+      },
+      {
+       "skill": "n46-bar-chart",
+       "level": 2
+      },
+      {
+       "skill": "n46-line-chart",
+       "level": 2
+      },
+      {
+       "skill": "n46-survey-tally",
+       "level": 1
+      },
+      {
+       "skill": "n46-mean",
+       "level": 2
+      },
+      {
+       "skill": "n46-expenses-average",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.5"
+  },
+  {
+   "id": "n46-u22",
+   "title": {
+    "pl": "Proste i kąty"
+   },
+   "description": {
+    "pl": "Punkt, prosta, kąty, proste prostopadłe i równoległe."
+   },
+   "icon": "angle",
+   "lessons": [
+    {
+     "id": "n46-u22-01",
+     "title": {
+      "pl": "Punkt, prosta, półprosta, odcinek"
+     },
+     "kind": "learn",
+     "skill": "n46-line-terms",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "n46-u22-02",
+     "title": {
+      "pl": "Rodzaje kątów"
+     },
+     "kind": "learn",
+     "skill": "n46-angle-types",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u22-03",
+     "title": {
+      "pl": "Kąt wypukły czy wklęsły?"
+     },
+     "kind": "learn",
+     "skill": "n46-angle-convex",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u22-04",
+     "title": {
+      "pl": "Wierzchołek i ramiona kąta"
+     },
+     "kind": "learn",
+     "skill": "n46-angle-vertex",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u22-05",
+     "title": {
+      "pl": "Powtórka: figury i kąty"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-line-terms",
+       "level": 1
+      },
+      {
+       "skill": "n46-angle-types",
+       "level": 1
+      },
+      {
+       "skill": "n46-angle-vertex",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u22-06",
+     "title": {
+      "pl": "Proste prostopadłe i równoległe"
+     },
+     "kind": "learn",
+     "skill": "n46-line-relations",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "n46-u22-07",
+     "title": {
+      "pl": "Kąty przyległe, wierzchołkowe, odpowiadające"
+     },
+     "kind": "learn",
+     "skill": "n46-angle-pairs",
+     "levels": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u22-08",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-line-terms",
+       "level": 1
+      },
+      {
+       "skill": "n46-angle-types",
+       "level": 2
+      },
+      {
+       "skill": "n46-angle-vertex",
+       "level": 2
+      },
+      {
+       "skill": "n46-line-relations",
+       "level": 2
+      },
+      {
+       "skill": "n46-angle-pairs",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.4"
+  },
+  {
+   "id": "n46-u23",
+   "title": {
+    "pl": "Trójkąty i koła"
+   },
+   "description": {
+    "pl": "Rodzaje trójkątów, suma kątów, nierówność trójkąta oraz koło i okrąg."
+   },
+   "icon": "triangle",
+   "lessons": [
+    {
+     "id": "n46-u23-01",
+     "title": {
+      "pl": "Przekątne wielokąta"
+     },
+     "kind": "learn",
+     "skill": "n46-polygon-parts",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "n46-u23-02",
+     "title": {
+      "pl": "Promień i średnica"
+     },
+     "kind": "learn",
+     "skill": "n46-circle-diameter",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-03",
+     "title": {
+      "pl": "Okrąg, koło, cięciwa, średnica"
+     },
+     "kind": "learn",
+     "skill": "n46-circle-terms",
+     "levels": [
+      1
+     ],
+     "tasks": 4
+    },
+    {
+     "id": "n46-u23-04",
+     "title": {
+      "pl": "Trójkąt: ostrokątny, prostokątny czy rozwartokątny?"
+     },
+     "kind": "learn",
+     "skill": "n46-triangle-by-angles",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-05",
+     "title": {
+      "pl": "Trójkąt: równoboczny, równoramienny czy różnoboczny?"
+     },
+     "kind": "learn",
+     "skill": "n46-triangle-by-sides",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-06",
+     "title": {
+      "pl": "Trzeci kąt trójkąta"
+     },
+     "kind": "learn",
+     "skill": "n46-triangle-angle",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-07",
+     "title": {
+      "pl": "Trójkąt równoramienny"
+     },
+     "kind": "learn",
+     "skill": "n46-isosceles",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-08",
+     "title": {
+      "pl": "Czy da się zbudować trójkąt?"
+     },
+     "kind": "learn",
+     "skill": "n46-triangle-exists",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-09",
+     "title": {
+      "pl": "Ile możliwości ma trzeci bok?"
+     },
+     "kind": "learn",
+     "skill": "n46-triangle-third-side",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u23-10",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-circle-diameter",
+       "level": 2
+      },
+      {
+       "skill": "n46-triangle-by-angles",
+       "level": 1
+      },
+      {
+       "skill": "n46-triangle-by-sides",
+       "level": 1
+      },
+      {
+       "skill": "n46-triangle-angle",
+       "level": 2
+      },
+      {
+       "skill": "n46-isosceles",
+       "level": 2
+      },
+      {
+       "skill": "n46-triangle-exists",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.4"
+  },
+  {
+   "id": "n46-u24",
+   "title": {
+    "pl": "Czworokąty i symetria"
+   },
+   "description": {
+    "pl": "Własności czworokątów, osie symetrii, wysokości."
+   },
+   "icon": "square",
+   "lessons": [
+    {
+     "id": "n46-u24-01",
+     "title": {
+      "pl": "Własności czworokątów"
+     },
+     "kind": "learn",
+     "skill": "n46-quad-properties",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u24-02",
+     "title": {
+      "pl": "Czwarty kąt czworokąta"
+     },
+     "kind": "learn",
+     "skill": "n46-quad-angle",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u24-03",
+     "title": {
+      "pl": "Osie symetrii figur"
+     },
+     "kind": "learn",
+     "skill": "n46-symmetry-axes",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u24-04",
+     "title": {
+      "pl": "Wysokość trójkąta"
+     },
+     "kind": "learn",
+     "skill": "n46-height-id",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u24-05",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-quad-properties",
+       "level": 1
+      },
+      {
+       "skill": "n46-quad-angle",
+       "level": 2
+      },
+      {
+       "skill": "n46-symmetry-axes",
+       "level": 2
+      },
+      {
+       "skill": "n46-height-id",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.4"
+  },
+  {
+   "id": "n46-u25",
+   "title": {
+    "pl": "Obwody i pola figur"
+   },
+   "description": {
+    "pl": "Obwód wielokąta, pola prostokąta, trójkąta, równoległoboku, rombu i trapezu."
+   },
+   "icon": "area",
+   "lessons": [
+    {
+     "id": "n46-u25-01",
+     "title": {
+      "pl": "Obwód wielokąta"
+     },
+     "kind": "learn",
+     "skill": "n46-perimeter-polygon",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-02",
+     "title": {
+      "pl": "Obwód kwadratu i trójkąta równobocznego"
+     },
+     "kind": "learn",
+     "skill": "n46-perimeter-regular",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-03",
+     "title": {
+      "pl": "Brakujący bok prostokąta"
+     },
+     "kind": "learn",
+     "skill": "n46-perimeter-unknown",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-04",
+     "title": {
+      "pl": "Powtórka: obwody"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-perimeter-polygon",
+       "level": 1
+      },
+      {
+       "skill": "n46-perimeter-regular",
+       "level": 1
+      },
+      {
+       "skill": "n46-perimeter-unknown",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u25-05",
+     "title": {
+      "pl": "Pole prostokąta i kwadratu"
+     },
+     "kind": "learn",
+     "skill": "n46-area-rect",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-06",
+     "title": {
+      "pl": "Pole trójkąta"
+     },
+     "kind": "learn",
+     "skill": "n46-area-triangle",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-07",
+     "title": {
+      "pl": "Pole równoległoboku"
+     },
+     "kind": "learn",
+     "skill": "n46-area-parallelogram",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-08",
+     "title": {
+      "pl": "Pole rombu i trapezu"
+     },
+     "kind": "learn",
+     "skill": "n46-area-rhombus-trapezoid",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-09",
+     "title": {
+      "pl": "Pole figury złożonej"
+     },
+     "kind": "learn",
+     "skill": "n46-area-composite",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-10",
+     "title": {
+      "pl": "Brakujący bok lub wysokość"
+     },
+     "kind": "learn",
+     "skill": "n46-area-unknown-side",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u25-11",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-perimeter-polygon",
+       "level": 2
+      },
+      {
+       "skill": "n46-area-rect",
+       "level": 2
+      },
+      {
+       "skill": "n46-area-triangle",
+       "level": 2
+      },
+      {
+       "skill": "n46-area-parallelogram",
+       "level": 1
+      },
+      {
+       "skill": "n46-area-rhombus-trapezoid",
+       "level": 2
+      },
+      {
+       "skill": "n46-area-composite",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.4"
+  },
+  {
+   "id": "n46-u26",
+   "title": {
+    "pl": "Układ współrzędnych"
+   },
+   "description": {
+    "pl": "Zaznaczanie i odczytywanie punktów oraz odległości."
+   },
+   "icon": "grid",
+   "lessons": [
+    {
+     "id": "n46-u26-01",
+     "title": {
+      "pl": "Współrzędne punktu"
+     },
+     "kind": "learn",
+     "skill": "n46-coord-read",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u26-02",
+     "title": {
+      "pl": "Odległość punktów o wspólnej współrzędnej"
+     },
+     "kind": "learn",
+     "skill": "n46-coord-distance",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u26-03",
+     "title": {
+      "pl": "Czwarty wierzchołek prostokąta"
+     },
+     "kind": "learn",
+     "skill": "n46-coord-rectangle",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u26-04",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-coord-read",
+       "level": 2
+      },
+      {
+       "skill": "n46-coord-distance",
+       "level": 2
+      },
+      {
+       "skill": "n46-coord-rectangle",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.4"
+  },
+  {
+   "id": "n46-u27",
+   "title": {
+    "pl": "Bryły"
+   },
+   "description": {
+    "pl": "Graniastosłupy, ostrosłupy, siatki, pole powierzchni i objętość."
+   },
+   "icon": "cube",
+   "lessons": [
+    {
+     "id": "n46-u27-01",
+     "title": {
+      "pl": "Rozpoznaj bryłę"
+     },
+     "kind": "learn",
+     "skill": "n46-solid-recognize",
+     "levels": [
+      1
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "n46-u27-02",
+     "title": {
+      "pl": "Wierzchołki, krawędzie i ściany"
+     },
+     "kind": "learn",
+     "skill": "n46-solid-elements",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 9
+    },
+    {
+     "id": "n46-u27-03",
+     "title": {
+      "pl": "Siatka bryły"
+     },
+     "kind": "learn",
+     "skill": "n46-net-solid",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u27-04",
+     "title": {
+      "pl": "Ile figur ma siatka?"
+     },
+     "kind": "learn",
+     "skill": "n46-net-faces",
+     "levels": [
+      1
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "n46-u27-05",
+     "title": {
+      "pl": "Pole powierzchni prostopadłościanu"
+     },
+     "kind": "learn",
+     "skill": "n46-cuboid-surface",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u27-06",
+     "title": {
+      "pl": "Objętość prostopadłościanu"
+     },
+     "kind": "learn",
+     "skill": "n46-cuboid-volume",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u27-07",
+     "title": {
+      "pl": "Objętość bryły złożonej i pojemność"
+     },
+     "kind": "learn",
+     "skill": "n46-cuboid-compound",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u27-08",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-solid-recognize",
+       "level": 1
+      },
+      {
+       "skill": "n46-solid-elements",
+       "level": 2
+      },
+      {
+       "skill": "n46-net-solid",
+       "level": 2
+      },
+      {
+       "skill": "n46-net-faces",
+       "level": 1
+      },
+      {
+       "skill": "n46-cuboid-surface",
+       "level": 2
+      },
+      {
+       "skill": "n46-cuboid-volume",
+       "level": 2
+      },
+      {
+       "skill": "n46-cuboid-compound",
+       "level": 2
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.4"
+  },
+  {
+   "id": "n46-u28",
+   "title": {
+    "pl": "Zadania tekstowe"
+   },
+   "description": {
+    "pl": "Planujemy rozwiązanie w krokach, rysujemy i sprawdzamy sensowność wyniku."
+   },
+   "icon": "book",
+   "lessons": [
+    {
+     "id": "n46-u28-01",
+     "title": {
+      "pl": "Zakupy: zadania tekstowe"
+     },
+     "kind": "learn",
+     "skill": "n46-wp-shopping",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u28-02",
+     "title": {
+      "pl": "Suma i różnica, suma i iloraz"
+     },
+     "kind": "learn",
+     "skill": "n46-wp-sum-difference",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u28-03",
+     "title": {
+      "pl": "Działania odwrotne: jaką liczbę pomyślałem?"
+     },
+     "kind": "learn",
+     "skill": "n46-wp-reverse",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u28-04",
+     "title": {
+      "pl": "Rozumowanie proporcjonalne"
+     },
+     "kind": "learn",
+     "skill": "n46-wp-proportion",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u28-05",
+     "title": {
+      "pl": "Czy wynik jest sensowny?"
+     },
+     "kind": "learn",
+     "skill": "n46-sense-check",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u28-06",
+     "title": {
+      "pl": "Powtórka: zadania tekstowe"
+     },
+     "kind": "review",
+     "mix": [
+      {
+       "skill": "n46-wp-shopping",
+       "level": 1
+      },
+      {
+       "skill": "n46-wp-sum-difference",
+       "level": 1
+      },
+      {
+       "skill": "n46-wp-reverse",
+       "level": 1
+      },
+      {
+       "skill": "n46-wp-proportion",
+       "level": 1
+      }
+     ],
+     "tasks": 12
+    },
+    {
+     "id": "n46-u28-07",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-wp-shopping",
+       "level": 2
+      },
+      {
+       "skill": "n46-wp-sum-difference",
+       "level": 2
+      },
+      {
+       "skill": "n46-wp-reverse",
+       "level": 2
+      },
+      {
+       "skill": "n46-wp-proportion",
+       "level": 2
+      },
+      {
+       "skill": "n46-sense-check",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.6"
+  },
+  {
+   "id": "n46-u29",
+   "title": {
+    "pl": "Myślenie matematyczne"
+   },
+   "description": {
+    "pl": "Przykłady i kontrprzykłady, próby i poprawki, wszystkie przypadki i uzasadnianie."
+   },
+   "icon": "brain",
+   "lessons": [
+    {
+     "id": "n46-u29-01",
+     "title": {
+      "pl": "Liczba spełniająca warunki"
+     },
+     "kind": "learn",
+     "skill": "n46-examples",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u29-02",
+     "title": {
+      "pl": "Kontrprzykład"
+     },
+     "kind": "learn",
+     "skill": "n46-counterexample",
+     "levels": [
+      1
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "n46-u29-03",
+     "title": {
+      "pl": "Metoda prób i poprawek"
+     },
+     "kind": "learn",
+     "skill": "n46-sum-product",
+     "levels": [
+      1,
+      2
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u29-04",
+     "title": {
+      "pl": "Rozważ wszystkie przypadki"
+     },
+     "kind": "learn",
+     "skill": "n46-count-cases",
+     "levels": [
+      1,
+      2,
+      3
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "n46-u29-05",
+     "title": {
+      "pl": "Które uzasadnienie jest poprawne?"
+     },
+     "kind": "learn",
+     "skill": "n46-justify",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u29-06",
+     "title": {
+      "pl": "Detektyw błędów"
+     },
+     "kind": "learn",
+     "skill": "n46-find-mistake",
+     "levels": [
+      1
+     ],
+     "tasks": 8
+    },
+    {
+     "id": "n46-u29-07",
+     "title": {
+      "pl": "Kiedy użyć kalkulatora?"
+     },
+     "kind": "learn",
+     "skill": "n46-calculator-use",
+     "levels": [
+      1
+     ],
+     "tasks": 10
+    },
+    {
+     "id": "n46-u29-08",
+     "title": {
+      "pl": "Narzędzia cyfrowe i pomiary"
+     },
+     "kind": "learn",
+     "skill": "n46-digital-tools",
+     "levels": [
+      1
+     ],
+     "tasks": 5
+    },
+    {
+     "id": "n46-u29-09",
+     "title": {
+      "pl": "Sprawdzian działu"
+     },
+     "kind": "checkpoint",
+     "mix": [
+      {
+       "skill": "n46-examples",
+       "level": 1
+      },
+      {
+       "skill": "n46-counterexample",
+       "level": 1
+      },
+      {
+       "skill": "n46-sum-product",
+       "level": 2
+      },
+      {
+       "skill": "n46-count-cases",
+       "level": 2
+      },
+      {
+       "skill": "n46-justify",
+       "level": 1
+      }
+     ],
+     "tasks": 15,
+     "passRatio": 0.8
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   },
+   "area": "IV-VI.6"
+  },
+  {
+   "id": "n46-uQ",
+   "title": {
+    "pl": "Misje"
+   },
+   "description": {
+    "pl": "Dłuższe zadania z życia: dane, budżet, plan i ogródek."
+   },
+   "icon": "quest",
+   "lessons": [
+    {
+     "id": "n46-uQ-01",
+     "title": {
+      "pl": "Misja: ile wody zużywa nasza klasa?"
+     },
+     "kind": "quest",
+     "skill": "q46-water",
+     "levels": [
+      1
+     ],
+     "tasks": 7
+    },
+    {
+     "id": "n46-uQ-02",
+     "title": {
+      "pl": "Misja: budżet wycieczki klasowej"
+     },
+     "kind": "quest",
+     "skill": "q46-trip",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "n46-uQ-03",
+     "title": {
+      "pl": "Misja: plan sali w skali"
+     },
+     "kind": "quest",
+     "skill": "q46-plan",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    },
+    {
+     "id": "n46-uQ-04",
+     "title": {
+      "pl": "Misja: szkolny ogródek warzywny"
+     },
+     "kind": "quest",
+     "skill": "q46-garden",
+     "levels": [
+      1
+     ],
+     "tasks": 6
+    }
+   ],
+   "testOut": {
+    "tasks": 15,
+    "passRatio": 0.9
+   }
+  }
+ ]
+}

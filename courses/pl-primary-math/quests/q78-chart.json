@@ -1,0 +1,262 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-chart",
+ "title": {
+  "pl": "Misja: ten sam wykres, dwie historie"
+ },
+ "experience": 3,
+ "vars": [
+  {
+   "name": "pct",
+   "expr": "5 * randint(1, 6)"
+  },
+  {
+   "name": "jan",
+   "expr": "20 * randint(5, 25)"
+  },
+  {
+   "name": "d2",
+   "expr": "jan * pct // 100"
+  },
+  {
+   "name": "apr",
+   "expr": "jan + d2"
+  },
+  {
+   "name": "dd",
+   "expr": "choice([10, 20, 25, 50])"
+  },
+  {
+   "name": "ymin",
+   "expr": "jan - dd"
+  },
+  {
+   "name": "mids",
+   "expr": "sorted([jan + randint(0, d2), jan + randint(0, d2)])"
+  },
+  {
+   "name": "vals",
+   "expr": "[jan, mids[0], mids[1], apr]"
+  },
+  {
+   "name": "vis",
+   "expr": "d2 * 100 // dd"
+  },
+  {
+   "name": "g1",
+   "expr": "'Sprzedaż w kwietniu była o ' + str(pct) + '% większa niż w styczniu.'"
+  },
+  {
+   "name": "g2",
+   "expr": "'Sprzedaż w kwietniu była ' + str(vis) + ' razy większa niż w styczniu.'"
+  },
+  {
+   "name": "g3",
+   "expr": "'Sprzedaż wzrosła o ' + str(vis) + '%.'"
+  },
+  {
+   "name": "g4",
+   "expr": "'Sprzedaż prawie się podwoiła.'"
+  }
+ ],
+ "intro": "Sklep prezentuje sprzedaż w czterech miesiącach (w tys. zł) na dwóch wykresach. Wykres A ma oś zaczynającą się od zera, a wykres B – od @{ymin}. Sprawdź, jak sposób prezentacji wpływa na wrażenie.",
+ "steps": [
+  {
+   "kind": "number-input",
+   "prompt": "Ile wynosi sprzedaż w kwietniu (w tys. zł)?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "apr"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Odczytaj ostatni słupek na osi pionowej."
+    },
+    {
+     "kind": "conclude",
+     "text": "Odpowiedź: @{apr}."
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "O ile procent wzrosła sprzedaż od stycznia do kwietnia?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "pct"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Różnicę (kwiecień − styczeń) podziel przez wartość styczniową i zamień na procent."
+    },
+    {
+     "kind": "compute",
+     "text": "(@{apr} − @{jan}) : @{jan} = @{pct}%"
+    }
+   ]
+  },
+  {
+   "kind": "number-input",
+   "prompt": "Na wykresie B słupek kwietniowy jest wyższy od styczniowego (licząc wysokości słupków od początku osi, czyli od @{ymin}) o ile procent?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "vis"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Wysokość słupka na wykresie B to wartość minus @{ymin}. Porównaj wysokości: @{jan - ymin} i @{apr - ymin}."
+    },
+    {
+     "kind": "compute",
+     "text": "(@{apr - ymin} − @{jan - ymin}) : @{jan - ymin} = @{vis}%"
+    }
+   ]
+  },
+  {
+   "kind": "multiple-choice",
+   "prompt": "Który wykres może wprowadzać odbiorców w błąd co do skali wzrostu?",
+   "answer": {
+    "type": "choice",
+    "value": {
+     "$expr": "((['a'] if (false) else []) + (['b'] if (true) else []) + (['c'] if (false) else []))[0]"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Ucięta oś powiększa wizualnie różnice między słupkami."
+    },
+    {
+     "kind": "conclude",
+     "text": "Wykres B wygląda na dużo większy wzrost, niż wynika z danych."
+    }
+   ],
+   "options": [
+    {
+     "id": "a",
+     "text": "Wykres A (oś od zera)",
+     "correct": "false"
+    },
+    {
+     "id": "b",
+     "text": "Wykres B (oś ucięta)",
+     "correct": "true"
+    },
+    {
+     "id": "c",
+     "text": "Żaden z nich",
+     "correct": "false"
+    }
+   ],
+   "input": {
+    "fixedOrder": true
+   }
+  },
+  {
+   "kind": "multiple-choice",
+   "prompt": "Które zdanie jest rzetelnym wnioskiem z danych?",
+   "answer": {
+    "type": "choice",
+    "value": {
+     "$expr": "'a'"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Rzetelny wniosek opiera się na liczbach, a nie na wrażeniu z wykresu."
+    },
+    {
+     "kind": "conclude",
+     "text": "@{g1}"
+    }
+   ],
+   "options": [
+    {
+     "id": "a",
+     "text": "@{g1}",
+     "correct": "true"
+    },
+    {
+     "id": "b",
+     "text": "@{g2}",
+     "correct": "false"
+    },
+    {
+     "id": "c",
+     "text": "@{g3}",
+     "correct": "false"
+    },
+    {
+     "id": "d",
+     "text": "@{g4}",
+     "correct": "false"
+    }
+   ]
+  }
+ ],
+ "constraints": [
+  "(d2 * 100) % dd == 0",
+  "d2 >= 5",
+  "vis != pct",
+  "vis < 600",
+  "g2 != g3",
+  "(g1) != (g2)",
+  "(g1) != (g3)",
+  "(g1) != (g4)",
+  "(g2) != (g3)",
+  "(g2) != (g4)",
+  "(g3) != (g4)"
+ ],
+ "media": [
+  {
+   "type": "chart",
+   "kind": "bar",
+   "essential": true,
+   "alt": "Wykres A: sprzedaż w miesiącach, oś od zera.",
+   "params": {
+    "title": "Wykres A",
+    "labels": [
+     "sty",
+     "lut",
+     "mar",
+     "kwi"
+    ],
+    "values": {
+     "$expr": "vals"
+    }
+   }
+  },
+  {
+   "type": "chart",
+   "kind": "bar",
+   "essential": true,
+   "alt": "Wykres B: te same dane, oś zaczyna się od wartości większej od zera.",
+   "params": {
+    "title": "Wykres B",
+    "labels": [
+     "sty",
+     "lut",
+     "mar",
+     "kwi"
+    ],
+    "values": {
+     "$expr": "vals"
+    },
+    "yMin": {
+     "$expr": "ymin"
+    }
+   }
+  }
+ ],
+ "outro": "Już wiesz: ten sam zestaw danych można pokazać tak, by wzrost wyglądał na mały lub ogromny. Zawsze sprawdzaj oś wykresu!"
+}

@@ -1,0 +1,75 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-special-numeric",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 30)"
+  },
+  {
+   "name": "h",
+   "expr": "2 * randint(2, 15)"
+  },
+  {
+   "name": "txt",
+   "expr": "('W trójkącie prostokątnym o kątach ostrych 30° i 60° krótsza przyprostokątna ma ' + str(a) + ' cm. Ile centymetrów ma przeciwprostokątna?') if mode == 0 else (('W trójkącie prostokątnym o kątach ostrych 30° i 60° przeciwprostokątna ma ' + str(2 * a) + ' cm. Ile centymetrów ma krótsza przyprostokątna?') if mode == 1 else ('W trójkącie prostokątnym równoramiennym przeciwprostokątna ma ' + str(h) + ' cm. Ile centymetrów kwadratowych wynosi pole tego trójkąta?'))"
+  },
+  {
+   "name": "ans",
+   "expr": "2 * a if mode == 0 else (a if mode == 1 else h * h // 4)"
+  },
+  {
+   "name": "u",
+   "expr": "'cm' if mode < 2 else 'cm²'"
+  }
+ ],
+ "minDistinct": 12,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('W trójkącie 30°–60°–90° przyprostokątna leżąca naprzeciw kąta 30° jest dwa razy krótsza od przeciwprostokątnej.' if mode < 2 else 'Dwa takie trójkąty złożone przeciwprostokątnymi tworzą kwadrat o przekątnej równej tej przeciwprostokątnej. Pole kwadratu o przekątnej d to d² : 2, a trójkąt jest jego połową.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans} @{u}."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  }
+ }
+}

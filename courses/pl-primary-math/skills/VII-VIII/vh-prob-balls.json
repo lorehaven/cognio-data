@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-balls",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Losowanie kuli z worka"
+ },
+ "objectives": [
+  "VII-VIII.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jeden kolor"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Kula nie jest tego koloru"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Jeden z dwóch kolorów"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prob-balls.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "n46-frac-simplify"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Gdy wszystkie wyniki są jednakowo możliwe, prawdopodobieństwo zdarzenia to liczba wyników sprzyjających podzielona przez liczbę wszystkich wyników."
+  }
+ }
+}

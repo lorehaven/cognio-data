@@ -1,0 +1,57 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-div-two-digit",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fs": "[2, 10]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fs": "[3, 5]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice(fs)"
+  },
+  {
+   "name": "q",
+   "expr": "randint(2, 33) if f != 10 else randint(2, 9)"
+  },
+  {
+   "name": "a",
+   "expr": "f * q"
+  }
+ ],
+ "constraints": [
+  "a >= 10",
+  "a <= 99"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz: @{a} : @{f}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Sprawdź mnożeniem: wynik razy @{f} ma dać @{a}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{q} · @{f} = @{a}"
+   }
+  ]
+ }
+}

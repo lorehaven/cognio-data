@@ -1,0 +1,1608 @@
+{
+ "formatVersion": "1.0",
+ "kind": "curriculum",
+ "curriculumId": "pl-podstawa-matematyka-2026",
+ "legalBasis": "Rozporządzenie Ministra Edukacji z dnia 11 marca 2026 r. (Dz.U. 2026 poz. 378)",
+ "note": "Texts are verbatim from the regulation (whitespace/hyphenation normalised). The regulation defines stages, not school years.",
+ "stages": [
+  {
+   "id": "I-III",
+   "title": "Etap I (klasy I–III) – Edukacja matematyczna",
+   "grades": [
+    1,
+    2,
+    3
+   ],
+   "source": "Dz.U. 2026 poz. 378, edukacja wczesnoszkolna, pkt 5 „Edukacja matematyczna”",
+   "goals": [],
+   "experiences": [],
+   "areas": [
+    {
+     "id": "I-III.1",
+     "no": 1,
+     "name": "liczby",
+     "objectives": [
+      {
+       "id": "I-III.1.a",
+       "ref": "5.1a",
+       "text": "odczytuje, zapisuje, porównuje i porządkuje liczby naturalne w zakresie co najmniej do 10 000,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.b",
+       "ref": "5.1b",
+       "text": "rozumie, że wartość liczby zależy od liczby cyfr oraz ich położenia w jej zapisie,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.c",
+       "ref": "5.1c",
+       "text": "rozumie pojęcia: liczba parzysta, liczba nieparzysta,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.d",
+       "ref": "5.1d",
+       "text": "dolicza do podanej liczby naturalnej i odlicza od podanej liczby naturalnej, po jeden, po dwa, po trzy itp. także z przekroczeniem liczby 0 w stronę liczb ujemnych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.e",
+       "ref": "5.1e",
+       "text": "posługuje się modelami osi liczbowej (np. linijką, centymetrem krawieckim, skalą na termometrze, rysunkiem) przy porównywaniu liczb i budowaniu intuicji pojęć „mniejsze o”, „większe o” w kontekstach praktycznych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.f",
+       "ref": "5.1f",
+       "text": "dodaje liczby naturalne dwucyfrowe i trzycyfrowe w pamięci lub stosując zapisy wyników cząstkowych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.g",
+       "ref": "5.1g",
+       "text": "odejmuje od siebie liczby naturalne dwucyfrowe w przykładach, których wynik jest liczbą naturalną, w pamięci lub stosując zapisy wyników cząstkowych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.h",
+       "ref": "5.1h",
+       "text": "mnoży i dzieli liczby naturalne w zakresie tabliczki mnożenia, mnoży liczby dwucyfrowe przez 2, 3, 5, 10, posługuje się tabliczką mnożenia, a także interpretuje dzielenie jako mieszczenie i podział,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.i",
+       "ref": "5.1i",
+       "text": "dzieli liczby naturalne dwucyfrowe przez 2, 3, 5, 10 w przykładach, gdy wynik jest liczbą naturalną,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.j",
+       "ref": "5.1j",
+       "text": "tworzy i stosuje własne strategie obliczeń,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.k",
+       "ref": "5.1k",
+       "text": "odkrywa prawidłowości w dodawaniu, odejmowaniu, mnożeniu i dzieleniu liczb,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.l",
+       "ref": "5.1l",
+       "text": "znajduje brakującą liczbę w równości „z okienkiem” typu: 7 + ▢ = 19, ▢ + 8 = 21, 9 + 17 = ▢, także w przypadku odejmowania, mnożenia i dzielenia,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.m",
+       "ref": "5.1m",
+       "text": "posługuje się znakami: +, –, ·, :, <, >, =,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.n",
+       "ref": "5.1n",
+       "text": "odczytuje i zapisuje w kontekstach praktycznych liczby rzymskie w zakresie co najmniej do XII,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.o",
+       "ref": "5.1o",
+       "text": "sprawdza poprawność obliczeń, wykorzystując związki między dodawaniem i odejmowaniem oraz mnożeniem i dzieleniem,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.1.p",
+       "ref": "5.1p",
+       "text": "odczytuje i zapisuje wybrane ułamki o liczniku 1 (½, ⅓, ¼, ⅕, ⅛), w prostych przypadkach interpretuje część danej całości za pomocą ułamka;",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "I-III.2",
+     "no": 2,
+     "name": "miary",
+     "objectives": [
+      {
+       "id": "I-III.2.a",
+       "ref": "5.2a",
+       "text": "mierzy, zapisuje i odczytuje wyniki pomiaru: czasu, długości, masy, pojemności, w tym odmierza produkty za pomocą miarki i wagi,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.b",
+       "ref": "5.2b",
+       "text": "mierzy, zapisuje i odczytuje wyniki pomiaru: temperatury, uwzględniając odczyty dodatnie i ujemne, a także oblicza różnice temperatur, w tym te związane ze wzrostem i spadkiem temperatury przechodzącym przez 0 °C,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.c",
+       "ref": "5.2c",
+       "text": "posługuje się w codziennych sytuacjach jednostkami: kilometr, metr, centymetr, milimetr, tona, kilogram, dekagram, gram, doba, godzina, minuta, sekunda, litr, mililitr,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.d",
+       "ref": "5.2d",
+       "text": "posługuje się w codziennych sytuacjach jednostkami: złoty, grosz – moduł ekonomiczno-finansowy,",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.e",
+       "ref": "5.2e",
+       "text": "zamienia w kontekstach praktycznych jednostki długości: centymetry na milimetry, metry na centymetry oraz kilometry na metry, a w prostych rachunkowo przypadkach także odwrotnie,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.f",
+       "ref": "5.2f",
+       "text": "zamienia w kontekstach praktycznych jednostki masy: kilogramy na dekagramy oraz kilogramy na gramy, a w prostych rachunkowo przypadkach także odwrotnie,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.g",
+       "ref": "5.2g",
+       "text": "zamienia w kontekstach praktycznych jednostki czasu: godziny na minuty oraz minuty na sekundy,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.h",
+       "ref": "5.2h",
+       "text": "wykonuje w kontekstach praktycznych obliczenia pieniężne, m.in związane z budżetem domowym, zakupami, oszczędzaniem, a także odczytuje zapis dziesiętny cen towarów – moduł ekonomiczno-finansowy,",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.i",
+       "ref": "5.2i",
+       "text": "posługuje się wyrażeniami dwumianowanymi i w prostych przypadkach zamienia je na wielkości opisane jednym mianem,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.2.j",
+       "ref": "5.2j",
+       "text": "porównuje długość przedmiotów, odległość, pojemność, wartość i czas trwania wybranych czynności, szacuje te wielkości oraz sprawdza wynik oszacowania;",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "I-III.3",
+     "no": 3,
+     "name": "figury",
+     "objectives": [
+      {
+       "id": "I-III.3.a",
+       "ref": "5.3a",
+       "text": "rozpoznaje w swoim otoczeniu i opisuje przedmioty w kształcie prostopadłościanu, sześcianu, kuli, walca,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.3.b",
+       "ref": "5.3b",
+       "text": "rozpoznaje w swoim otoczeniu i opisuje trójkąty, czworokąty, w tym prostokąty z uwzględnieniem kwadratów, oraz koła, rysuje je, w tym używając przyborów matematycznych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.3.c",
+       "ref": "5.3c",
+       "text": "oblicza obwody trójkątów, prostokątów, w tym kwadratów,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.3.d",
+       "ref": "5.3d",
+       "text": "bada różne formy i kształty (np. ornamenty i wzory z kultury regionalnej i sztuki) w poszukiwaniu osi symetrii – moduł kultura,",
+       "flags": [
+        "culture"
+       ],
+       "parts": []
+      },
+      {
+       "id": "I-III.3.e",
+       "ref": "5.3e",
+       "text": "orientuje się w schemacie własnego ciała, wyprowadza kierunki od siebie i od innych osób, ustala i opisuje relacje między obiektami, w przestrzeni i na kartce,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.3.f",
+       "ref": "5.3f",
+       "text": "rozpoznaje w kontekstach praktycznych linie równoległe i prostopadłe; posługuje się pojęciami: pion, poziom, skos, a także korzysta z sieci kwadratowej;",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "I-III.4",
+     "no": 4,
+     "name": "dane",
+     "objectives": [
+      {
+       "id": "I-III.4.a",
+       "ref": "5.4a",
+       "text": "odczytuje i interpretuje dane przedstawione za pomocą prostych tabel i diagramów słupkowych – moduł ekonomiczno-finansowy,",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "I-III.4.b",
+       "ref": "5.4b",
+       "text": "wyszukuje i porównuje informacje z różnych źródeł, w kontekstach praktycznych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.4.c",
+       "ref": "5.4c",
+       "text": "prezentuje informacje w wybrany sposób (np. za pomocą diagramu, tabeli), także wykorzystując technologie cyfrowe;",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "I-III.5",
+     "no": 5,
+     "name": "myślenie matematyczne",
+     "objectives": [
+      {
+       "id": "I-III.5.a",
+       "ref": "5.5a",
+       "text": "czyta i rozumie proste teksty zawierające treści zmatematyzowane (np. rozkłady jazdy, kalendarz, cenniki, przepisy, instrukcje itp.),",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.b",
+       "ref": "5.5b",
+       "text": "tworzy dogodny dla siebie sposób rozwiązania zadania, także nietypowego, wykorzystując: rysunek, piktogramy, liczmany, symbole itp.,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.c",
+       "ref": "5.5c",
+       "text": "rozwiązuje zadania tekstowe, tworząc własne strategie, wyjaśnia innym zastosowany sposób rozwiązania,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.d",
+       "ref": "5.5d",
+       "text": "weryfikuje rozwiązania uzyskane przez siebie i innych i rozmawia o nich,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.e",
+       "ref": "5.5e",
+       "text": "korzysta z umiejętności strategicznego myślenia, także podczas gier planszowych, kościanych, karcianych,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.f",
+       "ref": "5.5f",
+       "text": "dostrzega, kontynuuje i opisuje rytmy i regularności przedstawione w różny sposób,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.g",
+       "ref": "5.5g",
+       "text": "klasyfikuje obiekty i wyjaśnia kryterium klasyfikacji,",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "I-III.5.h",
+       "ref": "5.5h",
+       "text": "wykorzystuje umiejętności matematyczne w codziennych sytuacjach, w tym sytuacjach zakupowych czy związanych z zarządzaniem kieszonkowym czy oszczędzaniem – moduł ekonomiczno-finansowy.",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "IV-VI",
+   "title": "Etap II (klasy IV–VI) – Matematyka",
+   "grades": [
+    4,
+    5,
+    6
+   ],
+   "source": "Dz.U. 2026 poz. 378, Matematyka, klasy IV–VI",
+   "goals": [
+    "Korzystanie z narzędzi matematycznych – rozumienie i używanie pojęć oraz własności matematycznych także w nowej sytuacji, dostrzeganie związków między własnościami oraz różnic i podobieństw między obiektami matematycznymi.",
+    "Wykonywanie obliczeń w pamięci lub z zastosowaniem różnych form zapisu; stosowanie w obliczeniach nie tylko wyuczonych procedur, ale także własnych strategii obliczeń; analizowanie błędów i rozumienie przyczyn ich powstania.",
+    "Odczytywanie i krytyczne interpretowanie podanych informacji oraz przetwarzanie formy ich prezentacji w celu ułatwienia interpretacji danych.",
+    "Dostrzeganie matematyki w zagadnieniach z różnych dziedzin i budowanie przekonania o własnej skuteczności w stosowaniu metod matematycznych, formułowanie opisu matematycznego prostych sytuacji, w szczególności w życiu codziennym.",
+    "Rozwiązywanie problemów matematycznych samodzielnie i we współpracy z innymi, poszukiwanie rozwiązań wykraczających poza zwykłe zastosowania znanych schematów.",
+    "Kształtowanie potrzeby uzasadniania faktów matematycznych, formułowanie zrozumiałych argumentów uzasadniających poprawność prostych rozumowań, weryfikowanie argumentów podawanych przez innych."
+   ],
+   "experiences": [
+    "indywidualnie lub w grupie opracowuje zestaw danych liczbowych związanych z aktualnym zagadnieniem społecznym lub środowiskowym, oblicza średnie arytmetyczne, interpretuje dane i przedstawia wnioski;",
+    "w grupie przygotowuje symulację kosztów wybranego przedsięwzięcia (np. remontu, wycieczki klasowej), zbiera oferty cenowe, tworzy budżet, analizuje opłacalność różnych wariantów, przedstawia i uzasadnia propozycję najlepszego rozwiązania;",
+    "w grupie na podstawie własnych pomiarów wybranych przez siebie pomieszczeń lub fragmentów terenu sporządza ich plan w wybranej skali albo jego model przestrzenny – rzeczywisty lub w aplikacji cyfrowej;",
+    "w toku realizacji wymagań szczegółowych każdego z działów, indywidualnie lub w grupie, rozwiązuje interdyscyplinarny problem z życia codziennego, który wymaga zastosowania wiedzy i umiejętności matematycznych z tego działu oraz z dotychczasowego toku nauki, problem definiuje sam lub z pomocą nauczyciela, prezentuje wyniki swojej pracy."
+   ],
+   "areas": [
+    {
+     "id": "IV-VI.1",
+     "no": 1,
+     "name": "Liczby",
+     "objectives": [
+      {
+       "id": "IV-VI.1.1",
+       "ref": "1.1",
+       "text": "stosuje dziesiątkowy system zapisu liczb naturalnych, w tym porównuje i zaokrągla liczby naturalne oraz interpretuje je na osi liczbowej;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.2",
+       "ref": "1.2",
+       "text": "odczytuje i zapisuje liczby naturalne w systemie rzymskim w zakresie od 1 do 3000;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.3",
+       "ref": "1.3",
+       "text": "rozpoznaje liczby podzielne przez 2, 3, 4, 5, 9, 10;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.4",
+       "ref": "1.4",
+       "text": "zna pojęcie liczby pierwszej i rozpoznaje liczbę złożoną, gdy jest ona jednocyfrowa lub dwucyfrowa, a także gdy na istnienie dzielnika wskazuje cecha podzielności;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.5",
+       "ref": "1.5",
+       "text": "rozkłada liczby jedno- lub dwucyfrowe na czynniki pierwsze;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.6",
+       "ref": "1.6",
+       "text": "znajduje wspólne dzielniki i wspólne wielokrotności dwóch liczb jedno- lub dwucyfrowych, w tym największy wspólny dzielnik i najmniejszą wspólną wielokrotność;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.7",
+       "ref": "1.7",
+       "text": "posługuje się dzielnikami i wielokrotnościami liczb w obliczeniach i rozumowaniach;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.8",
+       "ref": "1.8",
+       "text": "określa liczebność zbioru liczb z pewnego niewielkiego zakresu, opisanego za pomocą pewnych warunków;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.9",
+       "ref": "1.9",
+       "text": "dodaje i odejmuje liczby naturalne w pamięci lub z zapisem obliczeń pośrednich;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.10",
+       "ref": "1.10",
+       "text": "mnoży i dzieli liczbę naturalną przez liczbę jednocyfrową, dwucyfrową lub trzycyfrową w pamięci lub z zapisem obliczeń pośrednich;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.11",
+       "ref": "1.11",
+       "text": "interpretuje dzielenie liczb naturalnych jako podział oraz jako mieszczenie;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.12",
+       "ref": "1.12",
+       "text": "wykonuje działania na liczbach naturalnych, stosując wygodne dla siebie strategie ułatwiające obliczenia, w tym własności przemienności i łączności dodawania i mnożenia oraz rozdzielność mnożenia i dzielenia względem dodawania i odejmowania;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.13",
+       "ref": "1.13",
+       "text": "wykonuje dzielenie z resztą liczb naturalnych i korzysta z własności reszt;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.14",
+       "ref": "1.14",
+       "text": "porównuje różnicowo i ilorazowo liczby naturalne;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.15",
+       "ref": "1.15",
+       "text": "oblicza potęgi liczb naturalnych o wykładnikach całkowitych dodatnich, wśród liczb dwucyfrowych rozpoznaje liczby będące kwadratami i sześcianami liczb całkowitych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.16",
+       "ref": "1.16",
+       "text": "posługuje się liczbami całkowitymi także w sytuacjach wynikających z życia codziennego, porównuje liczby całkowite i wykonuje na nich proste rachunki pamięciowe, interpretuje liczby całkowite na osi liczbowej oraz oblicza odległość dwóch liczb całkowitych na osi liczbowej;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.17",
+       "ref": "1.17",
+       "text": "przedstawia część danej całości za pomocą ułamka oraz interpretuje ułamek właściwy jako część danej całości;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.18",
+       "ref": "1.18",
+       "text": "interpretuje ułamek jako iloraz liczb naturalnych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.19",
+       "ref": "1.19",
+       "text": "skraca i rozszerza ułamki zwykłe, sprowadza ułamki do wspólnego mianownika;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.20",
+       "ref": "1.20",
+       "text": "przedstawia ułamek niewłaściwy w postaci liczby mieszanej, a liczbę mieszaną w postaci ułamka niewłaściwego;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.21",
+       "ref": "1.21",
+       "text": "zaznacza ułamki zwykłe i dziesiętne na osi liczbowej oraz odczytuje ułamki zwykłe i dziesiętne zaznaczone na osi liczbowej;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.22",
+       "ref": "1.22",
+       "text": "zapisuje ułamki dziesiętne skończone w postaci ułamków zwykłych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.23",
+       "ref": "1.23",
+       "text": "zamienia ułamki zwykłe o mianownikach będących dzielnikami liczb 10, 100, 1000 itd. na ułamki dziesiętne;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.24",
+       "ref": "1.24",
+       "text": "zapisuje ułamki zwykłe, których mianowniki nie są dzielnikami liczb 10, 100, 1000 itd., w postaci rozwinięcia dziesiętnego nieskończonego w przypadkach niewymagających skomplikowanych rachunków;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.25",
+       "ref": "1.25",
+       "text": "zaokrągla ułamki dziesiętne;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.26",
+       "ref": "1.26",
+       "text": "porównuje ułamki (zwykłe i dziesiętne);",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.27",
+       "ref": "1.27",
+       "text": "dodaje, odejmuje, mnoży i dzieli ułamki zwykłe o mianownikach jedno- i dwucyfrowych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.28",
+       "ref": "1.28",
+       "text": "wykonuje obliczenia na ułamkach dziesiętnych w pamięci lub z zapisem obliczeń pośrednich w zakresie:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "IV-VI.1.28.a",
+         "key": "a",
+         "text": "dodaje, odejmuje i mnoży ułamki dziesiętne w przypadkach, gdy ułamki mają co najwyżej trzy cyfry po przecinku,"
+        },
+        {
+         "id": "IV-VI.1.28.b",
+         "key": "b",
+         "text": "dzieli ułamki dziesiętne w przypadkach dających się sprowadzić do dzielenia przez liczbę naturalną co najwyżej trzycyfrową;"
+        }
+       ]
+      },
+      {
+       "id": "IV-VI.1.29",
+       "ref": "1.29",
+       "text": "oblicza potęgi o wykładnikach całkowitych dodatnich ułamków zwykłych i dziesiętnych, także za pomocą kalkulatora;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.30",
+       "ref": "1.30",
+       "text": "porównuje różnicowo ułamki;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.31",
+       "ref": "1.31",
+       "text": "oblicza ułamek danej wielkości;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.32",
+       "ref": "1.32",
+       "text": "wykonuje nieskomplikowane rachunki, w których występują liczby wymierne;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.33",
+       "ref": "1.33",
+       "text": "interpretuje 100 % danej wielkości jako całość, 50 % – jako połowę, 25 % – jako jedną czwartą, 10 % – jako jedną dziesiątą, 1 % – jako jedną setną część tej wielkości;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.34",
+       "ref": "1.34",
+       "text": "oblicza procent danej wielkości w przypadkach osadzonych w kontekście praktycznym;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.35",
+       "ref": "1.35",
+       "text": "oblicza cenę jednostkową i koszt zakupu kilku sztuk towaru, porównuje opłacalność różnych opcji zakupu (np. rabat, promocja, zakup w pakiecie) – moduł ekonomiczno-finansowy;",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.36",
+       "ref": "1.36",
+       "text": "stosuje reguły dotyczące kolejności wykonywania działań;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.37",
+       "ref": "1.37",
+       "text": "szacuje wyniki działań;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.1.38",
+       "ref": "1.38",
+       "text": "używa kalkulatora w zadaniach, w których obliczenia są złożone, a ich wykonywanie nie jest głównym celem zadania, na przykład w problemach opartych na rzeczywistych danych.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "IV-VI.2",
+     "no": 2,
+     "name": "Miary",
+     "objectives": [
+      {
+       "id": "IV-VI.2.1",
+       "ref": "2.1",
+       "text": "mierzy odcinki z dokładnością do 1 mm i szacuje ich długości w sytuacjach praktycznych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.2",
+       "ref": "2.2",
+       "text": "posługuje się jednostkami długości: milimetr, centymetr, decymetr, metr i kilometr, w sytuacjach praktycznych przelicza te jednostki z jednej na drugą;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.3",
+       "ref": "2.3",
+       "text": "mierzy kąty mniejsze niż 180° z dokładnością do jednego stopnia oraz rysuje dowolne kąty, gdy ich miara jest podana w pełnych stopniach;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.4",
+       "ref": "2.4",
+       "text": "stosuje jednostki pola: mm2, cm2, dm2, m2, km2, ar, hektar;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.5",
+       "ref": "2.5",
+       "text": "stosuje jednostki objętości i pojemności: cm3, dm3, m3, mililitr, litr;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.6",
+       "ref": "2.6",
+       "text": "przelicza jednostki pola i jednostki objętości w kontekstach praktycznych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.7",
+       "ref": "2.7",
+       "text": "stosuje, w tym przelicza, jednostki masy w kontekstach praktycznych: gram, dekagram, kilogram, tona;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.8",
+       "ref": "2.8",
+       "text": "wykonuje proste obliczenia kalendarzowe w dniach, tygodniach, miesiącach i latach;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.9",
+       "ref": "2.9",
+       "text": "wykonuje proste obliczenia zegarowe w godzinach, minutach i sekundach;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.10",
+       "ref": "2.10",
+       "text": "zamienia wyrażenia dwumianowane na ułamki dziesiętne, a ułamki dziesiętne na wyrażenia dwumianowane;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.11",
+       "ref": "2.11",
+       "text": "oblicza rzeczywistą długość odcinka, gdy dana jest jego długość w skali, oraz oblicza długość odcinka w skali, gdy dana jest jego rzeczywista długość;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.12",
+       "ref": "2.12",
+       "text": "w kontekście praktycznym oblicza: drogę przy danej prędkości i czasie, prędkość przy danej drodze i czasie, czas przy danej drodze i prędkości oraz stosuje jednostki prędkości km/h oraz m/s;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.13",
+       "ref": "2.13",
+       "text": "wykonuje obliczenia pieniężne związane z codziennymi wydatkami, budżetem, oszczędzaniem, wymianą walut i porównywaniem cen, interpretuje dokumenty z jednostkami miar i cenami – moduł ekonomiczno-finansowy;",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.2.14",
+       "ref": "2.14",
+       "text": "stosuje proste aplikacje i narzędzia cyfrowe do rozwiązywania problemów związanych z pomiarami i przeliczaniem jednostek.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "IV-VI.3",
+     "no": 3,
+     "name": "Algebra",
+     "objectives": [
+      {
+       "id": "IV-VI.3.1",
+       "ref": "3.1",
+       "text": "opisuje wielkości oraz zależności między wielkościami za pomocą wyrażeń algebraicznych na podstawie informacji osadzonych w kontekście praktycznym;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.3.2",
+       "ref": "3.2",
+       "text": "oblicza wartości prostych wyrażeń algebraicznych w sytuacjach niewymagających skomplikowanych rachunków oraz porównuje, analizuje i interpretuje otrzymane wyniki;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.3.3",
+       "ref": "3.3",
+       "text": "korzysta z nieskomplikowanych wzorów, w których występują oznaczenia literowe;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.3.4",
+       "ref": "3.4",
+       "text": "układa równania na podstawie informacji podanych w zadaniu;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.3.5",
+       "ref": "3.5",
+       "text": "rozwiązuje proste równania pierwszego stopnia z jedną niewiadomą występującą po jednej stronie równania.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "IV-VI.4",
+     "no": 4,
+     "name": "Figury",
+     "objectives": [
+      {
+       "id": "IV-VI.4.1",
+       "ref": "4.1",
+       "text": "rozpoznaje i nazywa figury: punkt, prosta, półprosta, odcinek;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.2",
+       "ref": "4.2",
+       "text": "rozpoznaje, nazywa i rysuje kąty, rozróżnia kąt ostry, prosty, rozwarty, półpełny, pełny, wklęsły i wypukły, wskazuje wierzchołek i ramiona kąta;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.3",
+       "ref": "4.3",
+       "text": "rozpoznaje oraz rysuje proste i odcinki prostopadłe i równoległe, także na kartce w kratkę;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.4",
+       "ref": "4.4",
+       "text": "rozpoznaje kąty przyległe, wierzchołkowe, odpowiadające i naprzemianległe oraz stosuje ich własności;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.5",
+       "ref": "4.5",
+       "text": "rozpoznaje, nazywa i rysuje wielokąty, wskazuje ich wierzchołki i kąty wewnętrzne, boki, przekątne;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.6",
+       "ref": "4.6",
+       "text": "rozpoznaje, nazywa i rysuje koło i okrąg, wskazuje ich środek, promień, średnicę, cięciwę, rysuje cięciwę koła i okręgu, a także (przy danym środku) promień i średnicę;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.7",
+       "ref": "4.7",
+       "text": "rozpoznaje, nazywa, rysuje trójkąt ostrokątny, prostokątny i rozwartokątny oraz różnoboczny, równoramienny i równoboczny;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.8",
+       "ref": "4.8",
+       "text": "stosuje twierdzenia o sumie miar kątów w trójkącie i sumie miar kątów w czworokącie;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.9",
+       "ref": "4.9",
+       "text": "wskazuje ramiona trójkąta równoramiennego, korzysta z równości kątów przy podstawie trójkąta równoramiennego oraz z równości jego ramion;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.10",
+       "ref": "4.10",
+       "text": "konstruuje trójkąt o podanych bokach, ustala możliwość zbudowania trójkąta o danych długościach boków;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.11",
+       "ref": "4.11",
+       "text": "rozpoznaje, nazywa, rysuje kwadrat, prostokąt, romb, równoległobok, trapez, w tym trapez równoramienny i prostokątny, oraz stosuje ich własności;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.12",
+       "ref": "4.12",
+       "text": "rozpoznaje i rysuje figury osiowosymetryczne, wskazuje i rysuje ich osie symetrii;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.13",
+       "ref": "4.13",
+       "text": "rozpoznaje i rysuje wysokości w trójkącie, równoległoboku, trapezie;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.14",
+       "ref": "4.14",
+       "text": "oblicza pole trójkąta, kwadratu, prostokąta, rombu, równoległoboku, trapezu oraz pola figur, które można z nich zbudować;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.15",
+       "ref": "4.15",
+       "text": "oblicza obwód wielokąta o podanych długościach boków;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.16",
+       "ref": "4.16",
+       "text": "zaznacza w układzie współrzędnych punkty o podanych współrzędnych całkowitych oraz odczytuje współrzędne zaznaczonych punktów kratowych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.17",
+       "ref": "4.17",
+       "text": "oblicza odległość między punktami w układzie współrzędnych, których pierwsze lub drugie współrzędne są takie same;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.18",
+       "ref": "4.18",
+       "text": "rozpoznaje ostrosłup, graniastosłup, w tym prostopadłościan i sześcian, rozpoznaje walec, stożek i kulę;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.19",
+       "ref": "4.19",
+       "text": "wskazuje wierzchołki, krawędzie, ściany boczne i podstawy graniastosłupów i ostrosłupów;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.20",
+       "ref": "4.20",
+       "text": "rozpoznaje i rysuje siatkę graniastosłupa prostego, w tym sześcianu, ostrosłupa prawidłowego czworokątnego lub trójkątnego, wykonuje model graniastosłupa prostego i ostrosłupa z podanej lub samodzielnie stworzonej siatki;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.21",
+       "ref": "4.21",
+       "text": "oblicza pole powierzchni prostopadłościanu;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.4.22",
+       "ref": "4.22",
+       "text": "oblicza objętość prostopadłościanu o podanych długościach jego krawędzi i objętość bryły zbudowanej z kilku prostopadłościanów.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "IV-VI.5",
+     "no": 5,
+     "name": "Dane",
+     "objectives": [
+      {
+       "id": "IV-VI.5.1",
+       "ref": "5.1",
+       "text": "interpretuje dane przedstawione w tekście oraz za pomocą tabel, diagramów i wykresów, w tym wykresów wykonanych za pomocą linii ciągłej, w szczególności porównuje ceny, koszty i wydatki przedstawione w tabelach, na wykresach lub paragonach – moduł ekonomiczno-finansowy;",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.5.2",
+       "ref": "5.2",
+       "text": "przeprowadza proste badania statystyczne: zbiera dane, zapisuje je w uporządkowanej formie i przedstawia wnioski wynikające z zebranych informacji;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.5.3",
+       "ref": "5.3",
+       "text": "oblicza średnią arytmetyczną przy opisie zjawisk z życia codziennego;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "IV-VI.5.4",
+       "ref": "5.4",
+       "text": "interpretuje dane dotyczące wydatków, oblicza ich średnią wartość oraz formułuje wnioski dotyczące opłacalności różnych rozwiązań – moduł ekonomiczno-finansowy.",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "IV-VI.6",
+     "no": 6,
+     "name": "Myślenie matematyczne",
+     "objectives": [
+      {
+       "id": "IV-VI.6.1",
+       "ref": "6.1",
+       "text": "stosuje ogólne metody rozwiązywania problemów matematycznych, w tym:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "IV-VI.6.1.a",
+         "key": "a",
+         "text": "zapisuje związki między danymi w zadaniu (np. za pomocą rysunku, diagramu lub innego skrótowego sposobu przedstawiania danych),"
+        },
+        {
+         "id": "IV-VI.6.1.b",
+         "key": "b",
+         "text": "tworzy strategię rozwiązania problemu przez dzielenie rozwiązania na etapy,"
+        },
+        {
+         "id": "IV-VI.6.1.c",
+         "key": "c",
+         "text": "ocenia sensowność rozwiązania (np. przez szacowanie, sprawdzanie wszystkich warunków zadania, ocenianie rzędu wielkości otrzymanego wyniku);"
+        }
+       ]
+      },
+      {
+       "id": "IV-VI.6.2",
+       "ref": "6.2",
+       "text": "wyjaśnia swój sposób myślenia przy rozwiązywaniu problemu matematycznego, w tym:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "IV-VI.6.2.a",
+         "key": "a",
+         "text": "opowiada o swoim sposobie rozwiązania zadania,"
+        },
+        {
+         "id": "IV-VI.6.2.b",
+         "key": "b",
+         "text": "podaje argumenty uzasadniające kolejne kroki rozwiązania;"
+        }
+       ]
+      },
+      {
+       "id": "IV-VI.6.3",
+       "ref": "6.3",
+       "text": "prowadzi rozumowania matematyczne, w tym:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "IV-VI.6.3.a",
+         "key": "a",
+         "text": "podaje przykłady obiektów matematycznych spełniających dane warunki oraz obiektów ich niespełniających,"
+        },
+        {
+         "id": "IV-VI.6.3.b",
+         "key": "b",
+         "text": "stosuje metodę prób i poprawek,"
+        },
+        {
+         "id": "IV-VI.6.3.c",
+         "key": "c",
+         "text": "rozważa wszystkie przypadki,"
+        },
+        {
+         "id": "IV-VI.6.3.d",
+         "key": "d",
+         "text": "używa rozumowania proporcjonalnego, także jako metody ułatwiającej mnożenie i dzielenie."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "VII-VIII",
+   "title": "Etap II (klasy VII–VIII) – Matematyka",
+   "grades": [
+    7,
+    8
+   ],
+   "source": "Dz.U. 2026 poz. 378, Matematyka, klasy VII i VIII",
+   "goals": [
+    "Korzystanie z narzędzi matematycznych – rozumienie i używanie pojęć oraz własności matematycznych także w nowej sytuacji, dostrzeganie związków między własnościami oraz różnic i podobieństw między obiektami matematycznymi.",
+    "Wykonywanie obliczeń arytmetycznych i algebraicznych, dążenie do optymalnego sposobu rachowania, używanie kalkulatora lub aplikacji obliczeniowych, gdy jest to uzasadnione złożonością rachunku lub celem zadania.",
+    "Wyciąganie wniosków z informacji podanych za pomocą tekstu, tabel, diagramów, wykresów itp., używanie pojęć, narzędzi i argumentów matematycznych do krytycznego interpretowania danych, w tym do rozpoznawania nieuprawnionych wniosków.",
+    "Stosowanie adekwatnych narzędzi matematycznych do opisu, analizy i rozwiązywania problemów z różnych dziedzin, w tym z życia codziennego.",
+    "Budowanie kilkuetapowych strategii rozwiązania problemu matematycznego, dostrzeganie poprawnych rozwiązań problemu, analizowanie rozwiązania w celu sprawdzenia jego poprawności lub uproszczenia sposobu rozumowania.",
+    "Prowadzenie rozumowań i uzasadnianie ich poprawności, formułowanie wniosków wynikających z przesłanek, dobieranie argumentów przez podawanie przykładów i kontrprzykładów, weryfikowanie rozumowań podanych przez innych."
+   ],
+   "experiences": [
+    "podejmuje próbę opisu i analizy wybranego elementu architektury lub innego dzieła sztuki, wykorzystując język matematyki, dokonując obliczeń pozwalających na opis obiektu i analizę jego właściwości, prezentuje wyniki swojej pracy;",
+    "pracując w grupie, zbiera informacje na temat wybranego typu produktu lub wybranej usługi finansowej oferowanej przez różne podmioty, wykorzystuje obliczenia matematyczne oraz narzędzia cyfrowe do porównania tych produktów lub usług, wyciąga wnioski i prezentuje je;",
+    "pracując w grupie, analizuje nieskomplikowaną grę strategiczną, opisuje możliwe strategie, sprawdza, czy gra ma strategię wygrywającą, opisuje w języku matematycznym, która decyzja ruchu w grze daje większe szanse wygranej;",
+    "indywidualnie lub w grupie bada wpływ sposobu przedstawiania danych na ich interpretację, wyszukując lub samodzielnie przygotowując kilka różnych wykresów lub diagramów ilustrujących ten sam zestaw danych, oraz formułuje wnioski na temat możliwej manipulacji wizualnej i jej konsekwencji;",
+    "w toku realizacji wymagań szczegółowych każdego z działów, indywidualnie lub w grupie, rozwiązuje interdyscyplinarny problem z życia codziennego, który wymaga zastosowania wiedzy i umiejętności matematycznych z tego działu oraz dotychczasowego toku nauki, problem definiuje sam lub z pomocą nauczyciela, prezentuje wyniki swojej pracy."
+   ],
+   "areas": [
+    {
+     "id": "VII-VIII.1",
+     "no": 1,
+     "name": "Liczby",
+     "objectives": [
+      {
+       "id": "VII-VIII.1.1",
+       "ref": "1.1",
+       "text": "prowadzi obliczenia i rozumowania, w których korzysta z zapisu procentowego, w tym oblicza:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "VII-VIII.1.1.a",
+         "key": "a",
+         "text": "jakim procentem jednej liczby jest druga liczba,"
+        },
+        {
+         "id": "VII-VIII.1.1.b",
+         "key": "b",
+         "text": "podany procent danej liczby,"
+        },
+        {
+         "id": "VII-VIII.1.1.c",
+         "key": "c",
+         "text": "liczbę na podstawie danego jej procentu;"
+        }
+       ]
+      },
+      {
+       "id": "VII-VIII.1.2",
+       "ref": "1.2",
+       "text": "stosuje obliczenia procentowe do rozwiązywania problemów w kontekście praktycznym, w tym finansowym, takie jak obliczanie: cen po podwyżce lub przed jej podwyżką albo obniżką, odsetek dla rocznej lokaty, kosztów kredytu, wysokości podatków – moduł ekonomiczno-finansowy;",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.3",
+       "ref": "1.3",
+       "text": "oblicza potęgi liczb wymiernych o wykładnikach naturalnych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.4",
+       "ref": "1.4",
+       "text": "zamienia potęgi o wykładniku całkowitym ujemnym na odpowiednie potęgi o wykładnikach naturalnych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.5",
+       "ref": "1.5",
+       "text": "stosuje własności działań na potęgach o podstawach naturalnych i wykładnikach całkowitych, w tym:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "VII-VIII.1.5.a",
+         "key": "a",
+         "text": "mnoży i dzieli potęgi o takich samych podstawach,"
+        },
+        {
+         "id": "VII-VIII.1.5.b",
+         "key": "b",
+         "text": "mnoży i dzieli potęgi o takich samych wykładnikach,"
+        },
+        {
+         "id": "VII-VIII.1.5.c",
+         "key": "c",
+         "text": "podnosi potęgę do potęgi;"
+        }
+       ]
+      },
+      {
+       "id": "VII-VIII.1.6",
+       "ref": "1.6",
+       "text": "zapisuje liczby w notacji wykładniczej i porównuje liczby zapisane w ten sposób;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.7",
+       "ref": "1.7",
+       "text": "oblicza wartości pierwiastków kwadratowych i sześciennych z liczb, które są odpowiednio kwadratami lub sześcianami liczb wymiernych, a przybliżone wartości pierwiastków z innych liczb oblicza za pomocą kalkulatora;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.8",
+       "ref": "1.8",
+       "text": "szacuje wartość prostego wyrażenia arytmetycznego zawierającego pierwiastki;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.9",
+       "ref": "1.9",
+       "text": "stosuje własności działań na pierwiastkach dla pierwiastków kwadratowych i sześciennych, w tym:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "VII-VIII.1.9.a",
+         "key": "a",
+         "text": "oblicza pierwiastki z iloczynu i ilorazu dwóch liczb,"
+        },
+        {
+         "id": "VII-VIII.1.9.b",
+         "key": "b",
+         "text": "mnoży i dzieli pierwiastki tego samego stopnia,"
+        },
+        {
+         "id": "VII-VIII.1.9.c",
+         "key": "c",
+         "text": "wyłącza liczbę przed znak pierwiastka i włącza liczbę pod znak pierwiastka;"
+        }
+       ]
+      },
+      {
+       "id": "VII-VIII.1.10",
+       "ref": "1.10",
+       "text": "rozpoznaje zależności wprost proporcjonalne, stosuje je do wyznaczania wartości jednej wielkości na podstawie drugiej oraz wykorzystuje podział proporcjonalny na dwie lub trzy części w kontekście praktycznym;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.11",
+       "ref": "1.11",
+       "text": "stosuje regułę mnożenia do zliczania par elementów w sytuacjach wymagających dwukrotnego wyboru;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.1.12",
+       "ref": "1.12",
+       "text": "używa kalkulatora i aplikacji komputerowych do wykonywania obliczeń przy rozwiązywaniu problemów osadzonych w kontekście praktycznym.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "VII-VIII.2",
+     "no": 2,
+     "name": "Algebra",
+     "objectives": [
+      {
+       "id": "VII-VIII.2.1",
+       "ref": "2.1",
+       "text": "tworzy wyrażenia algebraiczne, także wyrażenia dwóch zmiennych, opisujące związki między wielkościami przedstawionymi w zadaniu oraz używa ich do rozwiązywania zadań, w tym osadzonych w kontekście praktycznym;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.2",
+       "ref": "2.2",
+       "text": "oblicza wartość liczbową wyrażenia algebraicznego będącego sumą co najwyżej trzech jednomianów dla podanych całkowitych wartości zmiennych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.3",
+       "ref": "2.3",
+       "text": "porządkuje jednomiany i redukuje wyrazy podobne w sumach algebraicznych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.4",
+       "ref": "2.4",
+       "text": "dodaje i odejmuje sumy algebraiczne składające się z kilku jednomianów o współczynnikach całkowitych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.5",
+       "ref": "2.5",
+       "text": "mnoży jednomian przez sumę algebraiczną co najwyżej trzech jednomianów o współczynnikach całkowitych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.6",
+       "ref": "2.6",
+       "text": "wyłącza poza nawias jednomian z sumy algebraicznej złożonej z dwóch jednomianów o współczynnikach całkowitych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.7",
+       "ref": "2.7",
+       "text": "mnoży przez siebie dwa dwumiany o współczynnikach całkowitych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.8",
+       "ref": "2.8",
+       "text": "przekształca proste wzory, aby wyznaczyć zadaną wielkość, w tym we wzorach geometrycznych i fizycznych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.9",
+       "ref": "2.9",
+       "text": "sprawdza, czy dana liczba całkowita jest rozwiązaniem równania (stopnia pierwszego, drugiego lub trzeciego) z jedną niewiadomą;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.10",
+       "ref": "2.10",
+       "text": "sprawdza, czy dana liczba wymierna jest rozwiązaniem równania stopnia pierwszego;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.11",
+       "ref": "2.11",
+       "text": "rozwiązuje równania pierwszego stopnia, a także równania, które dają się w prosty sposób sprowadzić do równania pierwszego stopnia;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.2.12",
+       "ref": "2.12",
+       "text": "rozwiązuje zadania tekstowe za pomocą równań pierwszego stopnia z jedną niewiadomą lub dwóch równań pierwszego stopnia z dwiema niewiadomymi, które dają się w prosty sposób sprowadzić do jednego równania pierwszego stopnia.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "VII-VIII.3",
+     "no": 3,
+     "name": "Figury",
+     "objectives": [
+      {
+       "id": "VII-VIII.3.1",
+       "ref": "3.1",
+       "text": "rozpoznaje na rysunku i rysuje symetralną odcinka oraz dwusieczną kąta, posługuje się ich własnościami;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.2",
+       "ref": "3.2",
+       "text": "rozpoznaje i rysuje figury osiowosymetryczne i środkowosymetryczne, wskazuje ich osie symetrii i środek symetrii;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.3",
+       "ref": "3.3",
+       "text": "oblicza miarę kąta wewnętrznego wielokąta foremnego;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.4",
+       "ref": "3.4",
+       "text": "dostrzega trójkąty prostokątne w różnych sytuacjach geometrycznych, stosuje twierdzenie Pitagorasa;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.5",
+       "ref": "3.5",
+       "text": "korzysta z własności trójkątów prostokątnych szczególnych, to jest trójkątów prostokątnych o kątach ostrych 30° i 60° oraz trójkątów prostokątnych równoramiennych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.6",
+       "ref": "3.6",
+       "text": "stosuje cechy przystawania trójkątów;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.7",
+       "ref": "3.7",
+       "text": "oblicza długość okręgu i pole koła;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.8",
+       "ref": "3.8",
+       "text": "dzieli wielokąty na części lub dostrzega figury jako części innej figury w celu obliczania, porównywania lub szacowania pól oraz dostrzegania innych zależności;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.9",
+       "ref": "3.9",
+       "text": "rozwiązuje problemy dotyczące rzeczywistych obiektów, które dają się przedstawić za pomocą modelu geometrycznego, również w sytuacji wymagającej koniecznych uproszczeń;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.10",
+       "ref": "3.10",
+       "text": "rysuje w układzie współrzędnych wielokąty o wierzchołkach w punktach kratowych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.11",
+       "ref": "3.11",
+       "text": "oblicza pola i obwody trójkątów i czworokątów o wierzchołkach w punktach kratowych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.12",
+       "ref": "3.12",
+       "text": "rozpoznaje graniastosłupy proste i prawidłowe oraz ostrosłupy prawidłowe;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.13",
+       "ref": "3.13",
+       "text": "wskazuje wysokość ścian bocznych i wysokość ostrosłupa;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.3.14",
+       "ref": "3.14",
+       "text": "oblicza pola powierzchni i objętości graniastosłupów prostych oraz ostrosłupów prawidłowych.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "VII-VIII.4",
+     "no": 4,
+     "name": "Dane i zdarzenia losowe",
+     "objectives": [
+      {
+       "id": "VII-VIII.4.1",
+       "ref": "4.1",
+       "text": "pozyskuje i selekcjonuje dane z różnych źródeł, porządkuje je i ocenia ich wiarygodność;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.4.2",
+       "ref": "4.2",
+       "text": "dobiera sposób przedstawienia danych ułatwiający ich analizę, posługując się odpowiednimi aplikacjami komputerowymi;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.4.3",
+       "ref": "4.3",
+       "text": "interpretuje zależność między dwiema wielkościami opisaną za pomocą wykresu, przykładowo zmianę pewnej wielkości w czasie, w tym: przebyta droga, wysokość wynagrodzeń, koszty życia, inflacja – moduł ekonomiczno-finansowy;",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.4.4",
+       "ref": "4.4",
+       "text": "stosuje średnią arytmetyczną i medianę w kontekście praktycznym do porównania zestawów danych, w tym danych finansowych – moduł ekonomiczno-finansowy;",
+       "flags": [
+        "finance"
+       ],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.4.5",
+       "ref": "4.5",
+       "text": "krytycznie interpretuje dane, w tym dane finansowe, wyciąga z nich wnioski i uzasadnia je, odwołując się do własności zestawu danych;",
+       "flags": [],
+       "parts": []
+      },
+      {
+       "id": "VII-VIII.4.6",
+       "ref": "4.6",
+       "text": "przeprowadza proste doświadczenia losowe polegające przykładowo na jednokrotnym lub dwukrotnym rzucie monetą lub kostką do gry oraz na losowaniu kuli spośród zestawu kul, analizuje doświadczenia losowe i określa, jakie jest prawdopodobieństwo rozważanych zdarzeń.",
+       "flags": [],
+       "parts": []
+      }
+     ]
+    },
+    {
+     "id": "VII-VIII.5",
+     "no": 5,
+     "name": "Myślenie matematyczne",
+     "objectives": [
+      {
+       "id": "VII-VIII.5.1",
+       "ref": "5.1",
+       "text": "stosuje ogólne metody rozwiązywania problemów matematycznych, w tym:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "VII-VIII.5.1.a",
+         "key": "a",
+         "text": "zapisuje związki między danymi występującymi w zadaniu w sposób ułatwiający analizę problemu,"
+        },
+        {
+         "id": "VII-VIII.5.1.b",
+         "key": "b",
+         "text": "analizuje swoje rozwiązanie problemu i – jeśli to możliwe – upraszcza rozwiązanie,"
+        },
+        {
+         "id": "VII-VIII.5.1.c",
+         "key": "c",
+         "text": "stawia dodatkowe pytania wynikające z otrzymanego rozwiązania,"
+        },
+        {
+         "id": "VII-VIII.5.1.d",
+         "key": "d",
+         "text": "dostrzega podobieństwa między metodami rozwiązywania różnych problemów matematycznych;"
+        }
+       ]
+      },
+      {
+       "id": "VII-VIII.5.2",
+       "ref": "5.2",
+       "text": "wyjaśnia swój sposób myślenia przy rozwiązywaniu problemu matematycznego przez:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "VII-VIII.5.2.a",
+         "key": "a",
+         "text": "podawanie argumentów matematycznych uzasadniających kolejne kroki rozumowania,"
+        },
+        {
+         "id": "VII-VIII.5.2.b",
+         "key": "b",
+         "text": "budowanie uzasadnienia odwołującego się tylko do niezbędnych argumentów,"
+        },
+        {
+         "id": "VII-VIII.5.2.c",
+         "key": "c",
+         "text": "formułowanie wniosków wynikających z rozumowania;"
+        }
+       ]
+      },
+      {
+       "id": "VII-VIII.5.3",
+       "ref": "5.3",
+       "text": "prowadzi rozumowania matematyczne, wykazując przy tym umiejętność:",
+       "flags": [],
+       "parts": [
+        {
+         "id": "VII-VIII.5.3.a",
+         "key": "a",
+         "text": "odróżniania twierdzenia od twierdzenia odwrotnego,"
+        },
+        {
+         "id": "VII-VIII.5.3.b",
+         "key": "b",
+         "text": "stosowania nieskomplikowanych, jednokrokowych rozumowań nie wprost,"
+        },
+        {
+         "id": "VII-VIII.5.3.c",
+         "key": "c",
+         "text": "uogólniania zaobserwowanych przypadków szczególnych,"
+        },
+        {
+         "id": "VII-VIII.5.3.d",
+         "key": "d",
+         "text": "uzasadniania, np. przez podanie kontrprzykładu, że dana własność nie zachodzi."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

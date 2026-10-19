@@ -1,0 +1,74 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-solve-frac",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "f": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "f": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 7)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(1, 6)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(-9, 9)"
+  },
+  {
+   "name": "sol",
+   "expr": "b / a if f == 0 else (d + 0) / (a + c)"
+  },
+  {
+   "name": "eq",
+   "expr": "str(a) + 'x = ' + str(b) if f == 0 else poly([a, 0], ['x', '']) + ' = ' + poly([-c, d], ['x', ''])"
+  }
+ ],
+ "constraints": [
+  "denom(sol) != 1",
+  "f != 1 or d != 0",
+  "f != 1 or gcd(abs(d), a + c) != abs(a + c)"
+ ],
+ "minDistinct": 25,
+ "task": {
+  "kind": "fraction-input",
+  "prompt": "Rozwiąż równanie: $@{eq}$. Podaj wynik jako ułamek nieskracalny.",
+  "answer": {
+   "type": "rational",
+   "num": {
+    "$expr": "numer(sol)"
+   },
+   "den": {
+    "$expr": "denom(sol)"
+   },
+   "form": "lowest"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Podziel obie strony przez ' + str(a) + '.' if f == 0 else 'Przenieś wyrazy z x na jedną stronę i podziel obie strony przez ' + str(a + c) + '.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "x = $@{sol|frac}$"
+   }
+  ]
+ }
+}

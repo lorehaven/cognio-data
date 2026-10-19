@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-sub-mental",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odejmowanie w pamięci"
+ },
+ "objectives": [
+  "IV-VI.1.9"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Liczby dwucyfrowe"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzycyfrowa minus dwucyfrowa"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwie liczby trzycyfrowe"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-sub-mental.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Odejmuj w pamięci etapami: najpierw dziesiątki, potem jedności. Np. 83 − 37 = 83 − 30 − 7 = 53 − 7 = 46."
+  }
+ }
+}

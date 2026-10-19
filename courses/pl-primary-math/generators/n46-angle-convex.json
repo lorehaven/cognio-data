@@ -1,0 +1,67 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-angle-convex",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "deg",
+   "expr": "randint(10, 350)"
+  }
+ ],
+ "constraints": [
+  "deg != 180"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Kąt ma miarę @{deg}°. Jaki to kąt?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "((['a'] if (deg < 180) else []) + (['b'] if (deg > 180) else []))[0]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Kąt wypukły ma miarę mniejszą niż 180°, a wklęsły – większą niż 180° (i mniejszą niż 360°)."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{deg}° – kąt @{('wypukły' if deg < 180 else 'wklęsły')}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "Wypukły (mniejszy niż 180°)",
+    "correct": "deg < 180"
+   },
+   {
+    "id": "b",
+    "text": "Wklęsły (większy niż 180°)",
+    "correct": "deg > 180"
+   }
+  ],
+  "input": {
+   "fixedOrder": true
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "angle",
+    "essential": false,
+    "alt": "Kąt o mierze @{deg}°.",
+    "params": {
+     "degrees": {
+      "$expr": "deg"
+     }
+    }
+   }
+  ]
+ }
+}

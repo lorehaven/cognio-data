@@ -1,0 +1,46 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-money-coins",
+ "stage": "I-III",
+ "title": {
+  "pl": "Monety i banknoty"
+ },
+ "objectives": [
+  "I-III.2.d",
+  "I-III.2.h"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Złote"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Grosze"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-money-coins.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "tutor": {
+  "intro": {
+   "pl": "Pieniądze w Polsce to złote (zł) i grosze (gr). 1 zł to 100 gr. Mamy monety: 1 gr, 2 gr, 5 gr, 10 gr, 20 gr, 50 gr, 1 zł, 2 zł, 5 zł oraz banknoty."
+  }
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-money-notation",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "z",
+   "expr": "randint(1, 20)"
+  },
+  {
+   "name": "g",
+   "expr": "randint(1, 19) * 5"
+  },
+  {
+   "name": "txt",
+   "expr": "('Cena batonika to ' + fmt(z + g / 100, 2) + ' zł. Ile to groszy?') if mode == 0 else ('Cena soku to ' + str(z) + ' zł ' + str(g) + ' gr. Zapisz tę cenę w złotych z przecinkiem (np. 3,40).')"
+  },
+  {
+   "name": "ans",
+   "expr": "z * 100 + g if mode == 0 else z + g / 100"
+  }
+ ],
+ "constraints": [
+  "g < 100"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "1 zł = 100 gr. W zapisie 12,50 zł po przecinku są grosze."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{(str(ans) + ' gr' if mode == 0 else fmt(ans, 2) + ' zł')}"
+   }
+  ]
+ }
+}

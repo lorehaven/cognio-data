@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-roman-write",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Z dziesiątkowych na rzymskie"
+ },
+ "objectives": [
+  "IV-VI.1.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 39"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 399"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 3000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-roman-write.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-roman-read"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Rozłóż liczbę na tysiące, setki, dziesiątki i jedności i każdą zapisz cyframi rzymskimi: M, D, C, L, X, V, I."
+  }
+ }
+}

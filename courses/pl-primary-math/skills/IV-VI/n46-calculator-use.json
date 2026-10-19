@@ -1,0 +1,38 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-calculator-use",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Kiedy użyć kalkulatora?"
+ },
+ "objectives": [
+  "IV-VI.1.38",
+  "IV-VI.6.1.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wybierz sytuację"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-calculator-use.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.6",
+ "tutor": {
+  "intro": {
+   "pl": "Kalkulator pomaga, gdy liczb jest dużo albo są duże. Przy łatwych rachunkach i ćwiczeniach licz w pamięci."
+  }
+ }
+}

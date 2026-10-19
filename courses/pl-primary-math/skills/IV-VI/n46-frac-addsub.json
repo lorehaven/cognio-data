@@ -1,0 +1,61 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-addsub",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dodawanie i odejmowanie ułamków"
+ },
+ "objectives": [
+  "IV-VI.1.27"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jednakowe mianowniki"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Jeden mianownik dzieli drugi"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Mianowniki względnie pierwsze"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Dowolne mianowniki do 20"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-addsub.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-lcd"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby dodać lub odjąć ułamki o różnych mianownikach, sprowadzamy je do wspólnego mianownika. Przy jednakowych mianownikach dodajemy (odejmujemy) tylko liczniki: $\\frac{2}{7} + \\frac{3}{7} = \\frac{5}{7}$."
+  }
+ }
+}

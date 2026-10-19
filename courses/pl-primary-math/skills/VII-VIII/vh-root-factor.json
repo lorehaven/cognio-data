@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-root-factor",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wyłączanie liczby przed znak pierwiastka"
+ },
+ "objectives": [
+  "VII-VIII.1.9.c"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pierwiastek kwadratowy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-root-factor.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-sqrt-exact"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby wyłączyć liczbę przed pierwiastek, rozłóż liczbę pod pierwiastkiem na iloczyn kwadratu i drugiej liczby: $\\sqrt{12} = \\sqrt{4 \\cdot 3} = 2\\sqrt{3}$."
+  }
+ }
+}

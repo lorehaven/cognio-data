@@ -1,0 +1,93 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-expression",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "pmin": "0",
+    "pmax": "3"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "pmin": "4",
+    "pmax": "7"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "lt",
+   "expr": "choice(['x', 'a', 'n', 'm'])"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(pmin, pmax)"
+  },
+  {
+   "name": "texts",
+   "expr": "['Kasia ma ' + lt + ' lat. Jej siostra jest o ' + pln(k, ['rok', 'lata', 'lat']) + ' starsza. Jakie wyrażenie opisuje wiek siostry?', 'Jeden zeszyt kosztuje ' + lt + ' zł. Jakie wyrażenie opisuje koszt ' + str(k) + ' zeszytów?', 'W pudełku było ' + lt + ' cukierków. Ola zjadła ' + pln(k, ['cukierek', 'cukierki', 'cukierków']) + '. Jakie wyrażenie opisuje liczbę cukierków, które zostały?', 'Tata miał ' + lt + ' zł i podzielił je po równo między ' + pln(k, ['osobę', 'osoby', 'osób']) + '. Jakie wyrażenie opisuje, ile złotych dostała każda osoba?', 'Bilet do kina kosztuje ' + lt + ' zł. Kupiono ' + str(k) + ' biletów i zapłacono banknotem 100 zł. Jakie wyrażenie opisuje resztę?', 'Ola ma ' + lt + ' zł, a Ania ma o ' + str(k) + ' zł więcej. Jakie wyrażenie opisuje, ile mają razem?', 'Prostokąt ma szerokość ' + lt + ' cm, a długość o ' + str(k) + ' cm większą. Jakie wyrażenie opisuje obwód prostokąta?', 'Zeszyt kosztuje ' + lt + ' zł, a długopis o ' + str(k) + ' zł mniej. Jakie wyrażenie opisuje koszt zeszytu i długopisu razem?']"
+  },
+  {
+   "name": "opts",
+   "expr": "[[lt + ' + ' + str(k), lt + ' − ' + str(k), str(k) + ' · ' + lt, lt + ' : ' + str(k)], [str(k) + ' · ' + lt, lt + ' + ' + str(k), lt + ' : ' + str(k), lt + ' − ' + str(k)], [lt + ' − ' + str(k), lt + ' + ' + str(k), str(k) + ' − ' + lt, str(k) + ' · ' + lt], [lt + ' : ' + str(k), lt + ' − ' + str(k), str(k) + ' · ' + lt, str(k) + ' : ' + lt], ['100 − ' + str(k) + ' · ' + lt, str(k) + ' · ' + lt + ' − 100', '100 − ' + lt, '(100 − ' + str(k) + ') · ' + lt], [lt + ' + (' + lt + ' + ' + str(k) + ')', lt + ' + ' + str(k), lt + ' · (' + lt + ' + ' + str(k) + ')', '2 · ' + lt + ' − ' + str(k)], ['2 · (' + lt + ' + ' + lt + ' + ' + str(k) + ')', lt + ' + ' + lt + ' + ' + str(k), '2 · ' + lt + ' + ' + str(k), lt + ' · (' + lt + ' + ' + str(k) + ')'], [lt + ' + (' + lt + ' − ' + str(k) + ')', lt + ' + ' + lt + ' + ' + str(k), '2 · ' + lt + ' + ' + str(k), lt + ' · (' + lt + ' − ' + str(k) + ')']]"
+  }
+ ],
+ "constraints": [
+  "(opts[p][0]) != (opts[p][1])",
+  "(opts[p][0]) != (opts[p][2])",
+  "(opts[p][0]) != (opts[p][3])",
+  "(opts[p][1]) != (opts[p][2])",
+  "(opts[p][1]) != (opts[p][3])",
+  "(opts[p][2]) != (opts[p][3])"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{texts[p]}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Zapisz, co się dzieje z niewiadomą: dodajemy, odejmujemy, mnożymy czy dzielimy? Litera zastępuje liczbę, której nie znamy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Poprawne wyrażenie: @{opts[p][0]}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{opts[p][0]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{opts[p][1]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{opts[p][2]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{opts[p][3]}",
+    "correct": "false"
+   }
+  ]
+ }
+}

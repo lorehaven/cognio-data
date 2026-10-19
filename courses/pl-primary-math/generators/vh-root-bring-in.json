@@ -1,0 +1,52 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-root-bring-in",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "a",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "r",
+   "expr": "choice([2, 3, 5, 6, 7])"
+  }
+ ],
+ "minDistinct": 20,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Zapisz $@{a}\\sqrt{@{r}}$ w postaci $\\sqrt{n}$. Ile wynosi n?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "a * a * r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Liczbę przed pierwiastkiem podnosimy do kwadratu i mnożymy przez liczbę pod pierwiastkiem."
+   },
+   {
+    "kind": "conclude",
+    "text": "$@{a}\\sqrt{@{r}} = \\sqrt{@{a * a} \\cdot @{r}} = \\sqrt{@{a * a * r}}$"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "no_square",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a * r"
+     }
+    },
+    "feedback": "Liczba przed pierwiastkiem trafia pod pierwiastek podniesiona do kwadratu."
+   }
+  ]
+ }
+}

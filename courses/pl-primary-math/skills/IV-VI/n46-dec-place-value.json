@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-place-value",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Cyfra na miejscu dziesiętnym"
+ },
+ "objectives": [
+  "IV-VI.1.22"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dziesiąte"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Setne"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Tysięczne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-place-value.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Ułamek dziesiętny ma część całkowitą i część ułamkową oddzielone przecinkiem. Pierwsza cyfra po przecinku to dziesiąte, druga – setne, trzecia – tysięczne części całości."
+  }
+ }
+}

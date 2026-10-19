@@ -1,0 +1,83 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-price-after-discount",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[10, 20, 50]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[5, 10, 15, 20, 25, 30, 40, 50]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "price",
+   "expr": "20 * randint(2, 30)"
+  },
+  {
+   "name": "disc",
+   "expr": "price * p / 100"
+  },
+  {
+   "name": "r",
+   "expr": "price - disc"
+  },
+  {
+   "name": "item",
+   "expr": "choice(['Bluza', 'Plecak', 'Rower', 'Zestaw klocków', 'Para butów', 'Gra planszowa'])"
+  }
+ ],
+ "selfCheck": [
+  "r + disc == price",
+  "denom(r) in divisors(100)"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{item} kosztuje @{price|int} zł. Cena została obniżona o @{p}%. Ile kosztuje po obniżce?",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "r"
+   },
+   "unit": "zł"
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Najpierw policz, ile wynosi obniżka: @{p}% z @{price|int} zł. Potem odejmij ją od ceny."
+   },
+   {
+    "kind": "compute",
+    "text": "Obniżka: @{disc|dec} zł. Cena po obniżce: @{price|int} − @{disc|dec} = @{r|dec} zł."
+   }
+  ],
+  "input": {
+   "unit": "zł",
+   "decimals": 2
+  },
+  "errorRules": [
+   {
+    "id": "answer_discount",
+    "answer": {
+     "type": "quantity",
+     "value": {
+      "$expr": "disc"
+     },
+     "unit": "zł"
+    },
+    "feedback": "To jest wysokość obniżki, a nie nowa cena."
+   }
+  ]
+ }
+}

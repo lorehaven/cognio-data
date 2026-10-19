@@ -1,0 +1,59 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-compare",
+ "stage": "I-III",
+ "title": {
+  "pl": "Która liczba jest większa?"
+ },
+ "objectives": [
+  "I-III.1.a",
+  "I-III.1.m"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do 20"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do 100"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Do 1000"
+   }
+  },
+  {
+   "level": 4,
+   "label": {
+    "pl": "Do 10 000"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-compare.json",
+   "levels": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "tutor": {
+  "intro": {
+   "pl": "Liczba z większą liczbą cyfr jest większa. Gdy liczby mają tyle samo cyfr, porównuj je od lewej strony, aż trafisz na różne cyfry."
+  }
+ }
+}

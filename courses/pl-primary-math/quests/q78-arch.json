@@ -1,0 +1,186 @@
+{
+ "formatVersion": "1.0",
+ "id": "q78-arch",
+ "title": {
+  "pl": "Misja: okno w kształcie łuku"
+ },
+ "experience": 0,
+ "vars": [
+  {
+   "name": "w",
+   "expr": "2 * randint(10, 20)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(10, 30)"
+  }
+ ],
+ "intro": "Zabytkowa kamienica ma okno w kształcie prostokąta z półkolem na górze. Szerokość okna wynosi @{w} dm, wysokość prostokątnej części @{h} dm, a półkole ma średnicę równą szerokości okna. Opisz okno językiem matematyki (przyjmij π ≈ 3,14).",
+ "steps": [
+  {
+   "kind": "number-input",
+   "prompt": "Jaki promień ma półkole (w decymetrach)?",
+   "answer": {
+    "type": "int",
+    "value": {
+     "$expr": "w // 2"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Promień to połowa średnicy."
+    },
+    {
+     "kind": "compute",
+     "text": "@{w} : 2 = @{w // 2}"
+    }
+   ]
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma prostokątna część okna?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "w * h"
+    },
+    "unit": "dm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole prostokąta = szerokość · wysokość."
+    },
+    {
+     "kind": "compute",
+     "text": "@{w} · @{h} = @{w * h}"
+    }
+   ],
+   "input": {
+    "unit": "dm²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma półkole?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "314 / 100 * (w // 2) * (w // 2) / 2"
+    },
+    "unit": "dm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Pole półkola to połowa pola koła: $\\frac{1}{2}\\pi r^2$."
+    },
+    {
+     "kind": "compute",
+     "text": "3,14 · @{w // 2}² : 2 = @{314 / 100 * (w // 2) * (w // 2) / 2|dec}"
+    }
+   ],
+   "input": {
+    "unit": "dm²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jakie pole ma całe okno?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "w * h + 314 / 100 * (w // 2) * (w // 2) / 2"
+    },
+    "unit": "dm²"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Dodaj pole prostokąta i półkola."
+    },
+    {
+     "kind": "compute",
+     "text": "@{w * h} + @{314 / 100 * (w // 2) * (w // 2) / 2|dec} = @{w * h + 314 / 100 * (w // 2) * (w // 2) / 2|dec}"
+    }
+   ],
+   "input": {
+    "unit": "dm²"
+   }
+  },
+  {
+   "kind": "quantity-input",
+   "prompt": "Jaką długość ma drewniana rama okna (trzy boki prostokąta i łuk półkola; dolnego boku nie liczymy)?",
+   "answer": {
+    "type": "quantity",
+    "value": {
+     "$expr": "2 * h + w + 314 / 100 * (w // 2)"
+    },
+    "unit": "dm"
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Ramę tworzą dwa pionowe boki, bok dolny oraz półokrąg o długości $\\pi r$."
+    },
+    {
+     "kind": "compute",
+     "text": "2 · @{h} + @{w} + 3,14 · @{w // 2} = @{2 * h + w + 314 / 100 * (w // 2)|dec}"
+    }
+   ],
+   "input": {
+    "unit": "dm"
+   }
+  },
+  {
+   "kind": "decimal-input",
+   "prompt": "Ile metrów kwadratowych szkła potrzeba na całe okno? (1 m² = 100 dm²)",
+   "answer": {
+    "type": "decimal",
+    "value": {
+     "$expr": "(w * h + 314 / 100 * (w // 2) * (w // 2) / 2) / 100"
+    }
+   },
+   "steps": [
+    {
+     "kind": "idea",
+     "text": "Zamień pole z dm² na m², dzieląc przez 100."
+    },
+    {
+     "kind": "conclude",
+     "text": "Odpowiedź: @{(w * h + 314 / 100 * (w // 2) * (w // 2) / 2) / 100|dec} m²."
+    }
+   ]
+  }
+ ],
+ "constraints": [
+  "h != w"
+ ],
+ "media": [
+  {
+   "type": "figure",
+   "kind": "arch",
+   "essential": false,
+   "alt": "Okno: prostokąt z półkolem na górze.",
+   "params": {
+    "w": {
+     "$expr": "w"
+    },
+    "h": {
+     "$expr": "h"
+    },
+    "labels": {
+     "w": {
+      "$expr": "str(w) + ' dm'"
+     },
+     "h": {
+      "$expr": "str(h) + ' dm'"
+     },
+     "r": "r"
+    }
+   }
+  }
+ ],
+ "outro": "Okno opisane: znasz jego pole, długość ramy i zapotrzebowanie na szkło."
+}

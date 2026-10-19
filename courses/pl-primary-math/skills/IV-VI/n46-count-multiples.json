@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-count-multiples",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ile jest takich liczb?"
+ },
+ "objectives": [
+  "IV-VI.1.8"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Od 1 do n"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Liczby dwu- i trzycyfrowe"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Podzielne przez dwie liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-count-multiples.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-divisible-pick"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wielokrotności to liczby z tabliczki mnożenia danej liczby: 6, 12, 18… Policz, ile z nich mieści się w podanym zakresie."
+  }
+ }
+}

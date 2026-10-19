@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-root-multiply",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Mnożenie i dzielenie pierwiastków"
+ },
+ "objectives": [
+  "VII-VIII.1.9.a",
+  "VII-VIII.1.9.b"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Iloczyn pierwiastków"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Iloraz pierwiastków"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-root-multiply.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.1",
+ "prerequisites": [
+  "vh-root-factor"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Pierwiastki mnożymy i dzielimy pod jednym znakiem: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ oraz $\\sqrt{a} : \\sqrt{b} = \\sqrt{a : b}$."
+  }
+ }
+}

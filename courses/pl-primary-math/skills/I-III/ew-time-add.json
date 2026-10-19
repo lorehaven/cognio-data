@@ -1,0 +1,55 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-time-add",
+ "stage": "I-III",
+ "title": {
+  "pl": "O której godzinie?"
+ },
+ "objectives": [
+  "I-III.2.a",
+  "I-III.2.g"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Pełne godziny"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Pół godziny"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Kwadrans i minuty"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-time-add.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.2",
+ "prerequisites": [
+  "ew-clock-read"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby dodać czas, dodaj minuty do godziny rozpoczęcia. 60 minut to 1 godzina, np. 14:45 + 30 min = 15:15."
+  }
+ }
+}

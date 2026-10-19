@@ -1,0 +1,56 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-saving",
+ "stage": "I-III",
+ "title": {
+  "pl": "Oszczędzanie kieszonkowego"
+ },
+ "objectives": [
+  "I-III.5.h",
+  "I-III.2.h"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Po ilu tygodniach?"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Ile uzbieram?"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Ile brakuje?"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-saving.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "I-III.5",
+ "prerequisites": [
+  "ew-shopping"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby dowiedzieć się, po ilu tygodniach uzbierasz kwotę, podziel brakującą sumę przez to, co odkładasz co tydzień."
+  }
+ }
+}

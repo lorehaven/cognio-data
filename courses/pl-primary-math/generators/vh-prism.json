@@ -1,0 +1,118 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prism",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "mode": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "choice([[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 15, 17]])"
+  },
+  {
+   "name": "hh",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "un",
+   "expr": "choice(['cm', 'dm', 'm'])"
+  },
+  {
+   "name": "pb",
+   "expr": "t[0] * t[1] // 2"
+  },
+  {
+   "name": "v",
+   "expr": "pb * hh"
+  },
+  {
+   "name": "pc",
+   "expr": "2 * pb + (t[0] + t[1] + t[2]) * hh"
+  },
+  {
+   "name": "base",
+   "expr": "'Podstawą graniastosłupa prostego jest trójkąt prostokątny o przyprostokątnych ' + str(t[0]) + ' ' + un + ' i ' + str(t[1]) + ' ' + un"
+  },
+  {
+   "name": "txt",
+   "expr": "base + ' (przeciwprostokątna ma ' + str(t[2]) + ' ' + un + '). Wysokość graniastosłupa wynosi ' + str(hh) + ' ' + un + '. Oblicz jego objętość.' if mode == 0 else (base + ' (przeciwprostokątna ma ' + str(t[2]) + ' ' + un + '). Wysokość graniastosłupa wynosi ' + str(hh) + ' ' + un + '. Oblicz jego pole powierzchni całkowitej.' if mode == 1 else (base + '. Objętość graniastosłupa wynosi ' + str(v) + ' ' + un + '³. Oblicz jego wysokość.'))"
+  },
+  {
+   "name": "ans",
+   "expr": "v if mode == 0 else (pc if mode == 1 else hh)"
+  },
+  {
+   "name": "u",
+   "expr": "un + '³' if mode == 0 else (un + '²' if mode == 1 else un)"
+  }
+ ],
+ "selfCheck": [
+  "t[0] * t[0] + t[1] * t[1] == t[2] * t[2]"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "quantity-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "quantity",
+   "value": {
+    "$expr": "ans"
+   },
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Objętość = pole podstawy · wysokość.' if mode == 0 else ('Pole powierzchni = 2 · pole podstawy + pole powierzchni bocznej (obwód podstawy · wysokość).' if mode == 1 else 'Wysokość = objętość : pole podstawy.'))}"
+   },
+   {
+    "kind": "compute",
+    "text": "Pole podstawy: @{pb} @{un}²."
+   }
+  ],
+  "input": {
+   "unit": {
+    "$expr": "u"
+   }
+  },
+  "media": [
+   {
+    "type": "figure",
+    "kind": "solid",
+    "essential": false,
+    "alt": "Graniastosłup prosty o podstawie trójkątnej.",
+    "params": {
+     "kind": "prism",
+     "n": 3,
+     "show": [
+      "height"
+     ],
+     "labels": {
+      "h": {
+       "$expr": "'H = ?' if mode == 2 else 'H = ' + str(hh) + ' ' + un"
+      }
+     }
+    }
+   }
+  ]
+ }
+}

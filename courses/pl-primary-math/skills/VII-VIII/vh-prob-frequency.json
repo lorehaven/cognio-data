@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-prob-frequency",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Doświadczenia losowe: częstość"
+ },
+ "objectives": [
+  "VII-VIII.4.6"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Częstość względna"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-prob-frequency.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "VII-VIII.4",
+ "prerequisites": [
+  "vh-prob-balls"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Częstość względna to liczba zajść zdarzenia podzielona przez liczbę prób. Gdy prób jest dużo, zbliża się do prawdopodobieństwa."
+  }
+ }
+}

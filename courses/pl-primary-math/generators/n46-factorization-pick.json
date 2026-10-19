@@ -1,0 +1,109 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-factorization-pick",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "12",
+    "hi": "60"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "40",
+    "hi": "99"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "f",
+   "expr": "factorize(n)"
+  },
+  {
+   "name": "m",
+   "expr": "len(f)"
+  },
+  {
+   "name": "ok",
+   "expr": "m >= 3",
+   "require": true
+  },
+  {
+   "name": "good",
+   "expr": "join(f, ' · ')"
+  },
+  {
+   "name": "w1",
+   "expr": "join([f[0] * f[1]] + drop(f, 2), ' · ')"
+  },
+  {
+   "name": "w2",
+   "expr": "join(take(f, m - 2) + [f[m - 2] * f[m - 1]], ' · ')"
+  },
+  {
+   "name": "w3",
+   "expr": "join(take(f, m - 1) + [f[m - 1] + 2], ' · ')"
+  }
+ ],
+ "constraints": [
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "selfCheck": [
+  "product(f) == n",
+  "is_prime(f[m - 1])"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Który zapis jest rozkładem liczby @{n} na czynniki pierwsze?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Dzielimy przez kolejne liczby pierwsze (2, 3, 5, 7…), aż dojdziemy do 1."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{n} = @{good}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

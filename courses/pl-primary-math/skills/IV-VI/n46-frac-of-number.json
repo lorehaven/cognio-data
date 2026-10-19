@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-of-number",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ułamek danej liczby"
+ },
+ "objectives": [
+  "IV-VI.1.31"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Mianowniki do 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Większe liczby"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-of-number.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-frac-part-set"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby obliczyć ułamek $\\frac{a}{b}$ z liczby, dzielimy tę liczbę przez b, a wynik mnożymy przez a."
+  }
+ }
+}

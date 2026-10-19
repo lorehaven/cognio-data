@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-div-dec",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ky": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ky": "2"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "yn",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "y",
+   "expr": "yn / pow(10, ky)"
+  },
+  {
+   "name": "qn",
+   "expr": "randint(2, 60)"
+  },
+  {
+   "name": "q",
+   "expr": "qn"
+  },
+  {
+   "name": "x",
+   "expr": "q * y"
+  }
+ ],
+ "constraints": [
+  "yn % 10 != 0"
+ ],
+ "selfCheck": [
+  "q * y == x"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "decimal-input",
+  "prompt": "Oblicz: $@{x|dec} : @{y|dec}$",
+  "answer": {
+   "type": "decimal",
+   "value": {
+    "$expr": "q"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Przesuwamy przecinki w dzielnej i dzielniku o tyle samo miejsc w prawo, aż dzielnik będzie liczbą naturalną."
+   },
+   {
+    "kind": "compute",
+    "text": "@{x * pow(10, ky)|dec} : @{yn} = @{q}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "comma_shift",
+    "answer": {
+     "type": "decimal",
+     "value": {
+      "$expr": "q / pow(10, ky)"
+     }
+    },
+    "feedback": "Przesunięcie przecinków w obu liczbach nie zmienia wyniku dzielenia."
+   }
+  ]
+ }
+}

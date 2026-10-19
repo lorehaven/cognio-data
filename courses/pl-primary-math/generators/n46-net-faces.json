@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-net-faces",
+ "levels": [
+  {
+   "level": 1,
+   "minDistinct": 10
+  }
+ ],
+ "vars": [
+  {
+   "name": "names",
+   "expr": "['sześcian', 'graniastosłup sześciokątny', 'ostrosłup czworokątny prawidłowy', 'graniastosłup trójkątny', 'prostopadłościan', 'ostrosłup trójkątny prawidłowy', 'graniastosłup pięciokątny', 'ostrosłup sześciokątny prawidłowy']"
+  },
+  {
+   "name": "faces",
+   "expr": "[6, 8, 5, 5, 6, 4, 7, 7]"
+  },
+  {
+   "name": "s",
+   "expr": "randint(0, 7)"
+  },
+  {
+   "name": "ph",
+   "expr": "randint(0, 1)"
+  }
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{('Z ilu figur (ścian) składa się siatka bryły: ' + names[s] + '?' if ph == 0 else 'Ile wielokątów trzeba wyciąć z papieru, aby zbudować siatkę bryły: ' + names[s] + '?')}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "faces[s]"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Siatka ma tyle figur, ile ścian ma bryła: podstawy i ściany boczne."
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{faces[s]}."
+   }
+  ]
+ }
+}

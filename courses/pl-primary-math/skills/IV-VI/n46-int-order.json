@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-order",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Ustaw liczby całkowite w kolejności"
+ },
+ "objectives": [
+  "IV-VI.1.16"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Od −10 do 10"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Od −50 do 50"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-int-order.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Z dwóch liczb ujemnych większa jest ta, która leży bliżej zera: −2 > −7. Ułóż liczby od najmniejszej do największej, patrząc na oś liczbową."
+  }
+ }
+}

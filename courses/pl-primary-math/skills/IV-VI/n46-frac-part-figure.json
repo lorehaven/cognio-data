@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-frac-part-figure",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Jaka część figury?"
+ },
+ "objectives": [
+  "IV-VI.1.17"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Do ósmych części"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Do dwunastych części"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-frac-part-figure.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Ułamek zwykły $\\frac{a}{b}$ mówi, że całość podzielono na b równych części i wzięto a z nich. Mianownik (b) pokazuje, na ile części podzielono całość, a licznik (a) – ile części bierzemy."
+  }
+ }
+}

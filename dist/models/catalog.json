@@ -1,0 +1,47 @@
+{
+  "formatVersion": "1.0",
+  "kind": "model-catalog",
+  "updated": "2026-10-18",
+  "note": "Optional tutor models the app may download. Catalog can later be served from the owner's server; the app always verifies sha256 and size.",
+  "models": [
+    {
+      "id": "bielik-1.5b-v3.0-instruct-q4km",
+      "title": "Bielik 1.5B v3.0 Instruct (Q4_K_M)",
+      "family": "bielik", "params": "1.5B", "languages": ["pl"],
+      "license": { "spdx": "Apache-2.0", "attribution": "SpeakLeash & ACK Cyfronet AGH – Bielik-1.5B-v3.0-Instruct" },
+      "format": "gguf", "runtime": "llama.cpp", "quant": "Q4_K_M",
+      "chatTemplate": "chatml",
+      "file": { "name": "Bielik-1.5B-v3.0-Instruct-Q4_K_M.gguf", "size": 972797408,
+                "sha256": "ea9cc250a6c65718c290fd963d8e3237b924ccfc7632f20a6127bba5904a50d9" },
+      "sources": [ "https://huggingface.co/second-state/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct-Q4_K_M.gguf" ],
+      "requirements": { "minRamMb": 3072, "abis": ["arm64-v8a"], "freeStorageMb": 1500 },
+      "tier": "recommended"
+    },
+    {
+      "id": "bielik-1.5b-v3.0-instruct-q3km",
+      "title": "Bielik 1.5B v3.0 Instruct (Q3_K_M, smaller, lower quality)",
+      "family": "bielik", "params": "1.5B", "languages": ["pl"],
+      "license": { "spdx": "Apache-2.0", "attribution": "SpeakLeash & ACK Cyfronet AGH – Bielik-1.5B-v3.0-Instruct" },
+      "format": "gguf", "runtime": "llama.cpp", "quant": "Q3_K_M",
+      "chatTemplate": "chatml",
+      "file": { "name": "Bielik-1.5B-v3.0-Instruct-Q3_K_M.gguf", "size": 782735840,
+                "sha256": "2fb35dc9538e92416b5cb601d0711ab389097d06401726aa50bfc7e0e61a402c" },
+      "sources": [ "https://huggingface.co/second-state/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct-Q3_K_M.gguf" ],
+      "requirements": { "minRamMb": 2560, "abis": ["arm64-v8a"], "freeStorageMb": 1300 },
+      "tier": "low-memory"
+    },
+    {
+      "id": "bielik-1.5b-v3.0-instruct-q8",
+      "title": "Bielik 1.5B v3.0 Instruct (Q8_0, best quality)",
+      "family": "bielik", "params": "1.5B", "languages": ["pl"],
+      "license": { "spdx": "Apache-2.0", "attribution": "SpeakLeash & ACK Cyfronet AGH – Bielik-1.5B-v3.0-Instruct" },
+      "format": "gguf", "runtime": "llama.cpp", "quant": "Q8_0",
+      "chatTemplate": "chatml",
+      "file": { "name": "Bielik-1.5B-v3.0-Instruct.Q8_0.gguf", "size": 1699568288,
+                "sha256": "e206ebbd9ee00cc8f14af5a096ad3f193a59608c63905316e8dc680c96655a60" },
+      "sources": [ "https://huggingface.co/speakleash/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct.Q8_0.gguf" ],
+      "requirements": { "minRamMb": 4096, "abis": ["arm64-v8a"], "freeStorageMb": 2400 },
+      "tier": "high-quality"
+    }
+  ]
+}

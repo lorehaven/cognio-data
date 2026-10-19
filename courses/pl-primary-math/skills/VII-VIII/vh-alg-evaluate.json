@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-evaluate",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Wartość wyrażenia algebraicznego"
+ },
+ "objectives": [
+  "VII-VIII.2.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dwa jednomiany"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzy jednomiany"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-alg-evaluate.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-alg-build"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wartość wyrażenia obliczysz, podstawiając liczby w miejsce liter. Liczby ujemne wstawiaj w nawiasach i pamiętaj o kolejności działań."
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-percent-of",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[10, 20, 50, 25]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[5, 10, 15, 20, 25, 30, 40, 50, 60, 75, 80]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "p",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "step",
+   "expr": "100 // gcd(p, 100)"
+  },
+  {
+   "name": "n",
+   "expr": "step * randint(2, 30)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "txts",
+   "expr": "['W szkole jest ' + str(n) + ' uczniów. ' + str(p) + '% z nich jeździ do szkoły rowerem. Ilu uczniów jeździ rowerem?', 'Zbiornik o pojemności ' + str(n) + ' litrów jest napełniony w ' + str(p) + '%. Ile litrów wody jest w zbiorniku?', 'Trasa wycieczki ma ' + str(n) + ' km. Uczniowie przeszli już ' + str(p) + '% trasy. Ile kilometrów już przeszli?', 'Sklep przyjął dostawę ' + str(n) + ' kg jabłek. Pierwszego dnia sprzedano ' + str(p) + '% dostawy. Ile kilogramów jabłek sprzedano?']"
+  },
+  {
+   "name": "r",
+   "expr": "n * p / 100"
+  }
+ ],
+ "constraints": [
+  "n >= 20",
+  "denom(r) == 1"
+ ],
+ "selfCheck": [
+  "r * 100 == n * p"
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txts[c]}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "r"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "1% to jedna setna: @{n} : 100 = @{n / 100|dec}. Bierzemy @{p} takich części."
+   },
+   {
+    "kind": "compute",
+    "text": "@{p} · @{n / 100|dec} = @{r|dec}"
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "one_percent_only",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "n // 100"
+     }
+    },
+    "feedback": "To jest dopiero 1%. Trzeba jeszcze pomnożyć przez liczbę procent.",
+    "when": "p != 1 and n % 100 == 0"
+   }
+  ]
+ }
+}

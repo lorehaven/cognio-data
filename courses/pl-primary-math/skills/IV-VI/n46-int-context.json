@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-context",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Liczby ujemne w życiu"
+ },
+ "objectives": [
+  "IV-VI.1.16"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Małe zmiany"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Przejście przez zero"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-int-context.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "tutor": {
+  "intro": {
+   "pl": "Liczby ujemne leżą na osi liczbowej na lewo od zera. Im bardziej na lewo, tym liczba mniejsza. Temperatura poniżej zera, poziom pod ziemią czy dług to przykłady liczb ujemnych."
+  }
+ }
+}

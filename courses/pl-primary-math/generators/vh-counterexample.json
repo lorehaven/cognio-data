@@ -1,0 +1,99 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-counterexample",
+ "levels": [
+  {
+   "level": 1
+  }
+ ],
+ "vars": [
+  {
+   "name": "s",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(2, 6)"
+  },
+  {
+   "name": "pi",
+   "expr": "randint(0, 3)"
+  },
+  {
+   "name": "wi",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "stm",
+   "expr": "['Kwadrat każdej liczby jest większy od tej liczby.', 'Suma dwóch liczb pierwszych jest liczbą pierwszą.', 'Każda liczba podzielna przez 4 jest podzielna przez 8.', 'Pierwiastek kwadratowy z każdej liczby dodatniej jest mniejszy od tej liczby.']"
+  },
+  {
+   "name": "good",
+   "expr": "['1/' + str(k), ['3 i 5', '5 i 7', '7 i 11', '3 i 7'][pi], str(4 * (2 * k + 1)), '1/' + str(k * k)][s]"
+  },
+  {
+   "name": "w1",
+   "expr": "[str(k + 1), '2 i 3', str(8 * k), str(k * k)][s]"
+  },
+  {
+   "name": "w2",
+   "expr": "[str(k * k), '2 i 5', str(16 * k), str(4 * k)][s]"
+  },
+  {
+   "name": "w3",
+   "expr": "[str(k + 5), '2 i 11', str(8 * k + 8), str(k + 3)][s]"
+  }
+ ],
+ "constraints": [
+  "len(uniq([good, w1, w2, w3])) == 4",
+  "(good) != (w1)",
+  "(good) != (w2)",
+  "(good) != (w3)",
+  "(w1) != (w2)",
+  "(w1) != (w3)",
+  "(w2) != (w3)"
+ ],
+ "minDistinct": 15,
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "Kasia twierdzi: „@{stm[s]}” Który przykład pokazuje, że Kasia się myli?",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Kontrprzykład to konkretny przypadek, który spełnia założenie twierdzenia, ale nie spełnia jego tezy."
+   },
+   {
+    "kind": "conclude",
+    "text": "Kontrprzykład: @{good}."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{good}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{w1}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{w2}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{w3}",
+    "correct": "false"
+   }
+  ]
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-decimal-to-compound",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "ps": "[['m', 'cm', 100], ['zł', 'gr', 100]]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "ps": "[['kg', 'dag', 100], ['kg', 'g', 1000], ['km', 'm', 1000], ['l', 'ml', 1000]]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "pp",
+   "expr": "choice(ps)"
+  },
+  {
+   "name": "big",
+   "expr": "pp[0]"
+  },
+  {
+   "name": "small",
+   "expr": "pp[1]"
+  },
+  {
+   "name": "r",
+   "expr": "pp[2]"
+  },
+  {
+   "name": "a",
+   "expr": "randint(1, 20)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, r - 1)"
+  },
+  {
+   "name": "x",
+   "expr": "a + b / r"
+  }
+ ],
+ "constraints": [
+  "b % 10 != 0 or r == 1000"
+ ],
+ "selfCheck": [
+  "(x - a) * r == b"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Uzupełnij: @{x|dec} @{big} = @{a} @{big} ? @{small}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "b"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Część całkowita to @{a} @{big}. Część po przecinku zamieniamy na @{small}: @{x - a|dec} · @{r} = @{b}."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{x|dec} @{big} = @{a} @{big} @{b} @{small}"
+   }
+  ]
+ }
+}

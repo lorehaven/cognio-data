@@ -1,0 +1,103 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-common-divisors",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "gmax": "6"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "gmax": "12"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "g",
+   "expr": "randint(4, gmax)"
+  },
+  {
+   "name": "x",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(2, 8)"
+  },
+  {
+   "name": "a",
+   "expr": "g * x"
+  },
+  {
+   "name": "b",
+   "expr": "g * y"
+  },
+  {
+   "name": "c",
+   "expr": "sample(2, 20, 6)"
+  }
+ ],
+ "constraints": [
+  "a != b",
+  "a <= 99",
+  "b <= 99",
+  "count([a % c[0] == 0 and b % c[0] == 0, a % c[1] == 0 and b % c[1] == 0, a % c[2] == 0 and b % c[2] == 0, a % c[3] == 0 and b % c[3] == 0, a % c[4] == 0 and b % c[4] == 0, a % c[5] == 0 and b % c[5] == 0], true) >= 1",
+  "count([a % c[0] == 0 and b % c[0] == 0, a % c[1] == 0 and b % c[1] == 0, a % c[2] == 0 and b % c[2] == 0, a % c[3] == 0 and b % c[3] == 0, a % c[4] == 0 and b % c[4] == 0, a % c[5] == 0 and b % c[5] == 0], false) >= 1"
+ ],
+ "task": {
+  "kind": "multi-select",
+  "prompt": "Które z liczb są wspólnymi dzielnikami liczb @{a} i @{b}? Zaznacz wszystkie.",
+  "answer": {
+   "type": "set",
+   "value": {
+    "$expr": "((['a'] if (a % c[0] == 0 and b % c[0] == 0) else []) + (['b'] if (a % c[1] == 0 and b % c[1] == 0) else []) + (['c'] if (a % c[2] == 0 and b % c[2] == 0) else []) + (['d'] if (a % c[3] == 0 and b % c[3] == 0) else []) + (['e'] if (a % c[4] == 0 and b % c[4] == 0) else []) + (['f'] if (a % c[5] == 0 and b % c[5] == 0) else []))"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Wspólny dzielnik musi dzielić jednocześnie @{a} i @{b}."
+   },
+   {
+    "kind": "conclude",
+    "text": "NWD(@{a}, @{b}) = @{gcd(a, b)}, a wspólne dzielniki to dzielniki NWD."
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{c[0]}",
+    "correct": "a % c[0] == 0 and b % c[0] == 0"
+   },
+   {
+    "id": "b",
+    "text": "@{c[1]}",
+    "correct": "a % c[1] == 0 and b % c[1] == 0"
+   },
+   {
+    "id": "c",
+    "text": "@{c[2]}",
+    "correct": "a % c[2] == 0 and b % c[2] == 0"
+   },
+   {
+    "id": "d",
+    "text": "@{c[3]}",
+    "correct": "a % c[3] == 0 and b % c[3] == 0"
+   },
+   {
+    "id": "e",
+    "text": "@{c[4]}",
+    "correct": "a % c[4] == 0 and b % c[4] == 0"
+   },
+   {
+    "id": "f",
+    "text": "@{c[5]}",
+    "correct": "a % c[5] == 0 and b % c[5] == 0"
+   }
+  ]
+ }
+}

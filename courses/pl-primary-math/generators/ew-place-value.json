@@ -1,0 +1,79 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-place-value",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "k": "2"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "k": "3"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "k": "4"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "n",
+   "expr": "randint(pow(10, k - 1) + 1, pow(10, k) - 1)"
+  },
+  {
+   "name": "mode",
+   "expr": "randint(0, 1)"
+  },
+  {
+   "name": "p",
+   "expr": "randint(0, k - 1)"
+  },
+  {
+   "name": "pn",
+   "expr": "['jedności', 'dziesiątek', 'setek', 'tysięcy'][p]"
+  },
+  {
+   "name": "d",
+   "expr": "(n // pow(10, p)) % 10"
+  },
+  {
+   "name": "ds",
+   "expr": "digits(n)"
+  },
+  {
+   "name": "forms",
+   "expr": "[['tysiąc', 'tysiące', 'tysięcy'], ['setka', 'setki', 'setek'], ['dziesiątka', 'dziesiątki', 'dziesiątek'], ['jedność', 'jedności', 'jedności']]"
+  },
+  {
+   "name": "compose",
+   "expr": "'Zapisz liczbę, w której jest: ' + pln(ds[0], forms[4 - k]) + ', ' + pln(ds[1], forms[5 - k]) + (', ' + pln(ds[2], forms[6 - k]) if k > 2 else '') + (' i ' + pln(ds[3], forms[7 - k]) if k > 3 else '') + '.'"
+  }
+ ],
+ "minDistinct": 30,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{('Jaka cyfra stoi na miejscu ' + pn + ' w liczbie ' + fmt(n) + '?') if mode == 0 else compose}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "d if mode == 0 else n"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Miejsca w liczbie od prawej: jedności, dziesiątki, setki, tysiące."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{(str(d) if mode == 0 else fmt(n))}"
+   }
+  ]
+ }
+}

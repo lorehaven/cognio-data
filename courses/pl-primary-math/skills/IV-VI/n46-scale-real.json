@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-scale-real",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Skala: odległość w rzeczywistości"
+ },
+ "objectives": [
+  "IV-VI.2.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Plany i modele (skale do 1:1000)"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Mapy (skale od 1:10 000)"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-scale-real.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "prerequisites": [
+  "n46-len-units"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Aby znaleźć odległość w rzeczywistości, pomnóż odległość na mapie przez mianownik skali i zamień na wygodną jednostkę."
+  }
+ }
+}

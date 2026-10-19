@@ -1,0 +1,40 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-dec-infinite",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Rozwinięcie dziesiętne nieskończone"
+ },
+ "objectives": [
+  "IV-VI.1.24"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wybierz poprawny zapis"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-dec-infinite.json",
+   "levels": [
+    1
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-dec-from-fraction"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Dzieląc licznik przez mianownik, czasem reszty się powtarzają i cyfry wracają w kółko, np. $\\frac{1}{3} = 0{,}333\\ldots$. To rozwinięcie nieskończone okresowe."
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-calendar-weeks",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dni, tygodnie i miesiące"
+ },
+ "objectives": [
+  "IV-VI.2.8"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Tygodnie i dni"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Dni na tygodnie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Lata i miesiące"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-calendar-weeks.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.2",
+ "tutor": {
+  "intro": {
+   "pl": "Tydzień ma 7 dni. Aby zamienić dni na tygodnie, podziel przez 7; reszta to pozostałe dni."
+  }
+ }
+}

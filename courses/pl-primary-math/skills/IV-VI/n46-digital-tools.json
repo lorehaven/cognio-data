@@ -1,0 +1,35 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-digital-tools",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Narzędzia cyfrowe i pomiary"
+ },
+ "objectives": [
+  "IV-VI.2.14",
+  "IV-VI.6.1.c"
+ ],
+ "tags": [
+  "thinking"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Wybierz mądrze narzędzie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "bank",
+   "ref": "banks/n46-digital-tools.jsonl"
+  }
+ ],
+ "area": "IV-VI.6",
+ "tutor": {
+  "intro": {
+   "pl": "Aplikacje, kalkulator i arkusz kalkulacyjny przyspieszają pracę, ale to ty decydujesz, jakie dane wpisać i czy wynik ma sens."
+  }
+ }
+}

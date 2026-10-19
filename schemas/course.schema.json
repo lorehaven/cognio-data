@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cognio.example/schemas/course.schema.json",
+  "title": "Course manifest (course.json)",
+  "type": "object",
+  "required": [
+    "formatVersion",
+    "id",
+    "version",
+    "language",
+    "title",
+    "engine",
+    "curriculum",
+    "files"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "formatVersion": {
+      "type": "string",
+      "pattern": "^1\\.\\d+$",
+      "description": "Major = breaking. App refuses unknown majors."
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+    },
+    "title": {
+      "$ref": "common.schema.json#/$defs/localized"
+    },
+    "description": {
+      "$ref": "common.schema.json#/$defs/localized"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "license": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "object",
+      "required": [
+        "min"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "$ref": "common.schema.json#/$defs/semver",
+          "description": "Minimum DSL/engine version"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Required optional features, e.g. task kinds"
+        }
+      }
+    },
+    "curriculum": {
+      "type": "string",
+      "description": "Path of curriculum.json inside the pack"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "skills"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "$ref": "common.schema.json#/$defs/localized"
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "paths of skill files"
+          },
+          "path": {
+            "type": "string",
+            "description": "path file of the stage (paths/<stage>.json)"
+          }
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "description": "Integrity list of every other file in the pack",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256",
+          "size"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "replaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Skill id renames between versions (learner progress is migrated)"
+    },
+    "signature": {
+      "type": "object",
+      "properties": {
+        "alg": {
+          "const": "ed25519"
+        },
+        "keyId": {
+          "type": "string"
+        },
+        "sig": {
+          "type": "string"
+        }
+      },
+      "description": "Reserved for server distribution; optional while packs are side-loaded"
+    }
+  }
+}

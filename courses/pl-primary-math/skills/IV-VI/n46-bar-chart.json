@@ -1,0 +1,44 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-bar-chart",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Odczytaj dane z diagramu słupkowego"
+ },
+ "objectives": [
+  "IV-VI.5.1"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Odczyt jednego słupka"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Różnica i suma"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-bar-chart.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "tutor": {
+  "intro": {
+   "pl": "Diagram słupkowy porównuje liczby: wysokość słupka odczytasz na osi pionowej. Zwróć uwagę na podpisy pod słupkami."
+  }
+ }
+}

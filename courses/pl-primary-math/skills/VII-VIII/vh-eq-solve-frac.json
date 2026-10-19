@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-eq-solve-frac",
+ "stage": "VII-VIII",
+ "title": {
+  "pl": "Równania z rozwiązaniem ułamkowym"
+ },
+ "objectives": [
+  "VII-VIII.2.11"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedno działanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Niewiadoma po obu stronach"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/vh-eq-solve-frac.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "VII-VIII.2",
+ "prerequisites": [
+  "vh-eq-solve"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Rozwiązanie równania nie musi być liczbą całkowitą. Gdy ax = b, to x = b : a – zapisz wynik jako ułamek i skróć."
+  }
+ }
+}

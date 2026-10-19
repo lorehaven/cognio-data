@@ -1,0 +1,76 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-alg-formula",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fs": "[0, 1, 2]"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fs": "[3, 4, 5]"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "choice(fs)"
+  },
+  {
+   "name": "t",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "v",
+   "expr": "randint(2, 15)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "h",
+   "expr": "randint(2, 12)"
+  },
+  {
+   "name": "texts",
+   "expr": "['Ze wzoru s = v · t wyznacz t i oblicz jego wartość dla s = ' + str(v * t) + ' i v = ' + str(v) + '.', 'Ze wzoru P = a · h wyznacz h i oblicz jego wartość dla P = ' + str(a * h) + ' i a = ' + str(a) + '.', 'Ze wzoru V = a · b · c wyznacz c i oblicz jego wartość dla V = ' + str(a * h * t) + ', a = ' + str(a) + ' i b = ' + str(h) + '.', 'Ze wzoru O = 2a + 2b wyznacz b i oblicz jego wartość dla O = ' + str(2 * a + 2 * h) + ' i a = ' + str(a) + '.', 'Ze wzoru P = ½ · a · h wyznacz h i oblicz jego wartość dla P = ' + str(a * h) + ' i a = ' + str(2 * a) + '.', 'Ze wzoru P = ½ · (a + b) · h wyznacz b i oblicz jego wartość dla P = ' + str((a + t) * h) + ', a = ' + str(a) + ' i h = ' + str(2 * h) + '.']"
+  },
+  {
+   "name": "ans",
+   "expr": "[t, h, t, h, h, t][f]"
+  },
+  {
+   "name": "ideas",
+   "expr": "['Podziel obie strony wzoru przez v: t = s : v.', 'Podziel obie strony wzoru przez a: h = P : a.', 'Podziel obie strony wzoru przez a · b: c = V : (a · b).', 'Odejmij 2a od obu stron, potem podziel przez 2: b = (O − 2a) : 2.', 'Pomnóż obie strony przez 2, potem podziel przez a: h = 2P : a.', 'Pomnóż obie strony przez 2, podziel przez h i odejmij a: b = 2P : h − a.']"
+  }
+ ],
+ "constraints": [
+  "f != 3 or h != a"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{texts[f]}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{ideas[f]}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

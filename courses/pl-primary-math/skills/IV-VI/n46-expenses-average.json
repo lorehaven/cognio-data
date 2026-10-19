@@ -1,0 +1,48 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-expenses-average",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Średnie wydatki"
+ },
+ "objectives": [
+  "IV-VI.5.4"
+ ],
+ "tags": [
+  "finance",
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Średnia z czterech miesięcy"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Średnia z sześciu miesięcy"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-expenses-average.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "IV-VI.5",
+ "prerequisites": [
+  "n46-mean"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Średnie wydatki to suma wydatków podzielona przez liczbę okresów, np. miesięcy."
+  }
+ }
+}

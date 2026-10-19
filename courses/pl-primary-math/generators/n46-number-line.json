@@ -1,0 +1,110 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-number-line",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "tick": "10",
+    "step0": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "tick": "100",
+    "step0": "0"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "tick": "50",
+    "step0": "1"
+   }
+  },
+  {
+   "level": 4,
+   "vars": {
+    "tick": "1000",
+    "step0": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "t",
+   "expr": "tick if step0 == 0 else choice([tick, tick * 2, tick * 5])"
+  },
+  {
+   "name": "m",
+   "expr": "randint(0, 9) * 10 * t if step0 == 1 else 0"
+  },
+  {
+   "name": "lo",
+   "expr": "m"
+  },
+  {
+   "name": "hi",
+   "expr": "lo + 10 * t"
+  },
+  {
+   "name": "p",
+   "expr": "lo + randint(1, 9) * t"
+  }
+ ],
+ "selfCheck": [
+  "p > lo",
+  "p < hi",
+  "(p - lo) % t == 0"
+ ],
+ "minDistinct": 9,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Jaką liczbę oznacza punkt A na osi liczbowej?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "p"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Policz, ile wynosi jedna kreska: od @{lo|int} do @{hi|int} jest 10 odcinków, więc jeden ma @{t|int}."
+   },
+   {
+    "kind": "compute",
+    "text": "@{lo|int} + @{(p - lo) // t} · @{t|int} = @{p|int}"
+   }
+  ],
+  "media": [
+   {
+    "type": "figure",
+    "kind": "number-line",
+    "essential": true,
+    "alt": "Oś liczbowa od @{lo|int} do @{hi|int} z dziesięcioma równymi odcinkami i zaznaczonym punktem A.",
+    "params": {
+     "min": {
+      "$expr": "lo"
+     },
+     "max": {
+      "$expr": "hi"
+     },
+     "tick": {
+      "$expr": "t"
+     },
+     "labelEvery": 5,
+     "points": [
+      {
+       "label": "A",
+       "at": {
+        "$expr": "p"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

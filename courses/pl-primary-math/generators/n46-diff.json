@@ -1,0 +1,75 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-diff",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "lo": "20",
+    "hi": "200",
+    "dhi": "60"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "lo": "100",
+    "hi": "999",
+    "dhi": "400"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "lo": "1000",
+    "hi": "99999",
+    "dhi": "9999"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "y",
+   "expr": "randint(lo, hi)"
+  },
+  {
+   "name": "d",
+   "expr": "randint(2, dhi)"
+  },
+  {
+   "name": "big",
+   "expr": "randint(0, 1) == 1"
+  },
+  {
+   "name": "x",
+   "expr": "y + d if big else y - d"
+  },
+  {
+   "name": "adj",
+   "expr": "'większa' if big else 'mniejsza'"
+  }
+ ],
+ "constraints": [
+  "x > 0"
+ ],
+ "task": {
+  "kind": "number-input",
+  "prompt": "O ile liczba @{x|int} jest @{adj} od liczby @{y|int}?",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "d"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Porównanie różnicowe: odejmujemy mniejszą liczbę od większej."
+   },
+   {
+    "kind": "compute",
+    "text": "@{max(x, y)|int} − @{min(x, y)|int} = @{d|int}"
+   }
+  ]
+ }
+}

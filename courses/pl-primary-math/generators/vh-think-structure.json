@@ -1,0 +1,72 @@
+{
+ "formatVersion": "1.0",
+ "id": "vh-think-structure",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "mode": "0"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "mode": "1"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "x",
+   "expr": "randint(5, 25)"
+  },
+  {
+   "name": "dd",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "k",
+   "expr": "randint(5, 15)"
+  },
+  {
+   "name": "ch",
+   "expr": "randint(5, 25)"
+  },
+  {
+   "name": "rb",
+   "expr": "randint(5, 25)"
+  },
+  {
+   "name": "txt",
+   "expr": "('Ola jest o ' + str(dd) + ' lat starsza od Kuby. Za ' + str(k) + ' lat suma ich wieków wyniesie ' + str(2 * x + dd + 2 * k) + '. Ile lat ma teraz Kuba?') if mode == 0 else ('Na podwórku są kury i króliki. Liczba wszystkich głów wynosi ' + str(ch + rb) + ', a liczba wszystkich nóg ' + str(2 * ch + 4 * rb) + '. Ile jest królików?')"
+  },
+  {
+   "name": "ans",
+   "expr": "x if mode == 0 else rb"
+  }
+ ],
+ "constraints": [
+  "mode != 1 or ch != rb"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "@{txt}",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "ans"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "@{('Zrób tabelkę: wiek Kuby x, wiek Oli x + ' + str(dd) + '; za ' + str(k) + ' lat każde jest starsze o ' + str(k) + '. Zapisz sumę jako równanie.' if mode == 0 else 'Gdyby wszystkie zwierzęta były kurami, na każdą głowę przypadałyby 2 nogi. Każdy królik ma o 2 nogi więcej, więc różnica nóg i podwojonej liczby głów to 2 · liczba królików.')}"
+   },
+   {
+    "kind": "conclude",
+    "text": "Odpowiedź: @{ans}."
+   }
+  ]
+ }
+}

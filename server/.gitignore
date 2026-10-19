@@ -1,0 +1,25 @@
+# Python course-pack server (uv project)
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# local data directory of `foreman run dev` (course packs and the model catalog are pushed by `foreman run push-data`)
+/data/
+
+# secrets: copy .env.example to .env
+.env
+.env.*
+!.env.example
+
+# foreman logs
+.run/
+*.log
+# uv.lock is tracked on purpose: the Docker image installs from it

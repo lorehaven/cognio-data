@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-int-addsub",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Dodawanie i odejmowanie liczb całkowitych"
+ },
+ "objectives": [
+  "IV-VI.1.16"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Dodawanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Odejmowanie"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dodawanie i odejmowanie"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-int-addsub.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.1",
+ "prerequisites": [
+  "n46-int-context"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Liczby ujemne leżą na osi na lewo od zera. Dodawanie liczby ujemnej to odejmowanie jej wartości bez znaku, a odejmowanie liczby ujemnej to dodawanie."
+  }
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-evaluate",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "fmin": "0",
+    "fmax": "1"
+   }
+  },
+  {
+   "level": 2,
+   "vars": {
+    "fmin": "2",
+    "fmax": "3"
+   }
+  },
+  {
+   "level": 3,
+   "vars": {
+    "fmin": "4",
+    "fmax": "5"
+   }
+  }
+ ],
+ "vars": [
+  {
+   "name": "f",
+   "expr": "randint(fmin, fmax)"
+  },
+  {
+   "name": "a",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "b",
+   "expr": "randint(1, 12)"
+  },
+  {
+   "name": "c",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "x",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "y",
+   "expr": "randint(2, 9)"
+  },
+  {
+   "name": "exprs",
+   "expr": "['$' + str(a) + 'x + ' + str(b) + '$', '$' + str(a) + 'x - ' + str(b) + '$', '$' + str(a) + '(x + ' + str(b) + ')$', '$x^2 + ' + str(b) + '$', '$' + str(a) + 'x + ' + str(c) + 'y$', '$' + str(a) + 'xy - ' + str(b) + '$']"
+  },
+  {
+   "name": "vals",
+   "expr": "[a * x + b, a * x - b, a * (x + b), x * x + b, a * x + c * y, a * x * y - b]"
+  },
+  {
+   "name": "g1",
+   "expr": "'$x = ' + str(x) + '$'"
+  },
+  {
+   "name": "g2",
+   "expr": "'$x = ' + str(x) + '$ i $y = ' + str(y) + '$'"
+  },
+  {
+   "name": "given",
+   "expr": "[g1, g1, g1, g1, g2, g2]"
+  },
+  {
+   "name": "v",
+   "expr": "vals[f]"
+  }
+ ],
+ "constraints": [
+  "f != 1 or a * x > b",
+  "f != 5 or a * x * y > b"
+ ],
+ "selfCheck": [
+  "v > 0"
+ ],
+ "minDistinct": 40,
+ "task": {
+  "kind": "number-input",
+  "prompt": "Oblicz wartość wyrażenia @{exprs[f]} dla @{given[f]}.",
+  "answer": {
+   "type": "int",
+   "value": {
+    "$expr": "v"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Podstaw liczbę w miejsce litery i wykonaj działania we właściwej kolejności."
+   },
+   {
+    "kind": "conclude",
+    "text": "Wartość wyrażenia: @{v}."
+   }
+  ],
+  "errorRules": [
+   {
+    "id": "concat",
+    "answer": {
+     "type": "int",
+     "value": {
+      "$expr": "a * 10 + x if f == 0 else v"
+     }
+    },
+    "feedback": "Zapis 3x oznacza 3 · x, a nie liczbę „3x” (trzydzieści kilka).",
+    "when": "f == 0"
+   }
+  ]
+ }
+}

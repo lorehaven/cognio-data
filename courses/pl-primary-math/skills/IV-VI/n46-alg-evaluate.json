@@ -1,0 +1,54 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-alg-evaluate",
+ "stage": "IV-VI",
+ "title": {
+  "pl": "Wartość wyrażenia algebraicznego"
+ },
+ "objectives": [
+  "IV-VI.3.2"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Jedna zmienna, jedno działanie"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Nawiasy i kwadrat"
+   }
+  },
+  {
+   "level": 3,
+   "label": {
+    "pl": "Dwie zmienne"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/n46-alg-evaluate.json",
+   "levels": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "area": "IV-VI.3",
+ "prerequisites": [
+  "n46-alg-expression"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Wartość wyrażenia obliczysz, wstawiając liczbę w miejsce litery. Np. dla x = 3 wyrażenie 2x + 1 ma wartość 2 · 3 + 1 = 7."
+  }
+ }
+}

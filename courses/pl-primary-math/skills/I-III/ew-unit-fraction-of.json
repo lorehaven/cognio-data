@@ -1,0 +1,47 @@
+{
+ "formatVersion": "1.0",
+ "id": "ew-unit-fraction-of",
+ "stage": "I-III",
+ "title": {
+  "pl": "Połowa, trzecia, czwarta część liczby"
+ },
+ "objectives": [
+  "I-III.1.p"
+ ],
+ "tags": [
+  "no-calculator"
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "label": {
+    "pl": "Połowa i czwarta część"
+   }
+  },
+  {
+   "level": 2,
+   "label": {
+    "pl": "Trzecia, piąta i ósma część"
+   }
+  }
+ ],
+ "taskSources": [
+  {
+   "type": "generator",
+   "ref": "generators/ew-unit-fraction-of.json",
+   "levels": [
+    1,
+    2
+   ]
+  }
+ ],
+ "area": "I-III.1",
+ "prerequisites": [
+  "ew-div-table"
+ ],
+ "tutor": {
+  "intro": {
+   "pl": "Połowa to dzielenie przez 2, trzecia część – przez 3, czwarta – przez 4. Np. połowa z 10 to 5."
+  }
+ }
+}

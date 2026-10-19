@@ -1,0 +1,96 @@
+{
+ "formatVersion": "1.0",
+ "id": "n46-percent-fraction",
+ "levels": [
+  {
+   "level": 1,
+   "vars": {
+    "dirn": "0"
+   },
+   "minDistinct": 30
+  },
+  {
+   "level": 2,
+   "vars": {
+    "dirn": "1"
+   },
+   "minDistinct": 30
+  }
+ ],
+ "vars": [
+  {
+   "name": "i",
+   "expr": "randint(0, 4)"
+  },
+  {
+   "name": "ph",
+   "expr": "randint(0, 2)"
+  },
+  {
+   "name": "sh",
+   "expr": "shuffle([1, 2, 3, 4])"
+  },
+  {
+   "name": "pcs",
+   "expr": "['100%', '50%', '25%', '10%', '1%']"
+  },
+  {
+   "name": "frs",
+   "expr": "['$1$', '$\\\\frac{1}{2}$', '$\\\\frac{1}{4}$', '$\\\\frac{1}{10}$', '$\\\\frac{1}{100}$']"
+  },
+  {
+   "name": "q",
+   "expr": "(['Który ułamek jest równy ' + pcs[i] + ' całości?', 'Zamień ' + pcs[i] + ' na ułamek.', 'Jaką część całości stanowi ' + pcs[i] + '?'][ph]) if dirn == 0 else (['Ile procent całości stanowi ułamek ' + frs[i] + '?', 'Zamień ułamek ' + frs[i] + ' na procent.', 'Ułamek ' + frs[i] + ' całości to ile procent?'][ph])"
+  }
+ ],
+ "constraints": [
+  "(frs[i] if dirn == 0 else pcs[i]) != (frs[(i + sh[0]) % 5] if dirn == 0 else pcs[(i + sh[0]) % 5])",
+  "(frs[i] if dirn == 0 else pcs[i]) != (frs[(i + sh[1]) % 5] if dirn == 0 else pcs[(i + sh[1]) % 5])",
+  "(frs[i] if dirn == 0 else pcs[i]) != (frs[(i + sh[2]) % 5] if dirn == 0 else pcs[(i + sh[2]) % 5])",
+  "(frs[(i + sh[0]) % 5] if dirn == 0 else pcs[(i + sh[0]) % 5]) != (frs[(i + sh[1]) % 5] if dirn == 0 else pcs[(i + sh[1]) % 5])",
+  "(frs[(i + sh[0]) % 5] if dirn == 0 else pcs[(i + sh[0]) % 5]) != (frs[(i + sh[2]) % 5] if dirn == 0 else pcs[(i + sh[2]) % 5])",
+  "(frs[(i + sh[1]) % 5] if dirn == 0 else pcs[(i + sh[1]) % 5]) != (frs[(i + sh[2]) % 5] if dirn == 0 else pcs[(i + sh[2]) % 5])"
+ ],
+ "task": {
+  "kind": "multiple-choice",
+  "prompt": "@{q}",
+  "answer": {
+   "type": "choice",
+   "value": {
+    "$expr": "'a'"
+   }
+  },
+  "steps": [
+   {
+    "kind": "idea",
+    "text": "Procent to jedna setna całości: 1% = $\\frac{1}{100}$. Stąd 50% to połowa, 25% to jedna czwarta, 10% to jedna dziesiąta, a 100% to cała całość."
+   },
+   {
+    "kind": "conclude",
+    "text": "@{pcs[i]} = @{frs[i]}"
+   }
+  ],
+  "options": [
+   {
+    "id": "a",
+    "text": "@{frs[i] if dirn == 0 else pcs[i]}",
+    "correct": "true"
+   },
+   {
+    "id": "b",
+    "text": "@{frs[(i + sh[0]) % 5] if dirn == 0 else pcs[(i + sh[0]) % 5]}",
+    "correct": "false"
+   },
+   {
+    "id": "c",
+    "text": "@{frs[(i + sh[1]) % 5] if dirn == 0 else pcs[(i + sh[1]) % 5]}",
+    "correct": "false"
+   },
+   {
+    "id": "d",
+    "text": "@{frs[(i + sh[2]) % 5] if dirn == 0 else pcs[(i + sh[2]) % 5]}",
+    "correct": "false"
+   }
+  ]
+ }
+}
