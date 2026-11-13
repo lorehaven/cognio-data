@@ -48,7 +48,7 @@ mkdir -p data/courses && cp ../dist/*.cognio data/courses/ && curl localhost:808
 `foreman.toml` mirrors kindle-sync: `foreman run release` = test + build + push the image + `riveter apply` of
 `../deployment` + rollout. The image tag lives in `../deployment/overlays/cognio/deployment.yaml.j2`.
 `foreman run push-data` rsyncs `../dist/*.cognio` and `../models/catalog.json` to the node
-(`DATA_REMOTE`, default `ossiriand.arda:/mnt/dev/cognio/data`).
+(`DATA_REMOTE`, default `ossiriand.arda:/mnt/tools/cognio/data`).
 Publishing a new course version = `python3 -I ../tools/cognio.py pack ...` → `foreman run push-data`.
 
 ## Not (yet) here

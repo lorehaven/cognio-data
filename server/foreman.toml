@@ -13,7 +13,7 @@
 #
 # publish needs a prior `docker login ennor.ddns.net`, or WAREHOUSE_USER + WAREHOUSE_PASS to log in for you.
 # deploy needs kubectl access to the cluster and the age key (RIVETER_AGE_KEY_FILE, default ~/.config/riveter/age.key).
-# push-data needs ssh access to the node: DATA_REMOTE (default ossiriand.arda:/mnt/dev/cognio/data).
+# push-data needs ssh access to the node: DATA_REMOTE (default ossiriand.arda:/mnt/tools/cognio/data).
 
 [project]
 name = "cognio-server"

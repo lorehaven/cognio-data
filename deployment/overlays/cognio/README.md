@@ -5,7 +5,7 @@ Same age key as the other overlays (`~/.config/riveter/age.key`), though this ov
 
 | Workload | What | State |
 |---|---|---|
-| `cognio-server` | read-only file server for `.cognio` packs and the model catalog | `/mnt/dev/cognio/data` on the node (`courses/`, `models/`), mounted read-only at `/data` - **back up** |
+| `cognio-server` | read-only file server for `.cognio` packs and the model catalog | `/mnt/tools/cognio/data` on the node (`courses/`, `models/`), mounted read-only at `/data` - **back up** |
 
 Public at `https://ennor.ddns.net/cognio/` (ingress, Let's Encrypt, path passed through unchanged; the app owns the
 `/cognio` prefix via `COGNIO_BASE_PATH`). Index: `https://ennor.ddns.net/cognio/index.json`.
